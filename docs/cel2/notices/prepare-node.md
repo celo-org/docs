@@ -1,30 +1,35 @@
 # Preparing for the L2 hardfork
 
-## Before the migration
+Node operators must review this page and complete all required steps to prepare for the L2 hardfork.
 
-// TODO(Alec) page where the correct client version and migration block number are listed. This can also mention pre-migration
+## Upgrade L1 nodes
 
-:::warning
-__It is not recommended to migrate from an L1 archive datadir.__
+Prior to the L2 hardfork, node operators must upgrade their existing L1 nodes to the appropriate release below. These releases each define hardfork block numbers such that nodes will stop producing or accepting blocks after the block immediately preceding the hardfork block number.
 
-If you only have an L1 archive node, we recommend syncing an L1 full node in preparation for the Mainnet migration. You can still run an L2 archive node after migrating from an L1 full node datadir. See the [archive node docs](#running-a-celo-archive-node) for more information.
-:::
-
-Prior to the hardfork, node operators must upgrade their existing L1 nodes to
-the respective release below. These releases will have a hardfork block
-configured. L1 nodes with a hardfork block will cease producing or accepting
-blocks at the block immediately preceding the hardfork block.
-
-* Alfajores *26384000*
+* Alfajores
+  * Hardfork Block Number: *26384000*
   * Celo L1 client: [celo-blockchain v1.8.7](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.7).
   * Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7`
-* Baklava *28308600*
+* Baklava
+  * Hardfork Block Number: *28308600*
   * Celo L1 client: [celo-blockchain v1.8.8](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.8).
   * Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8`
 
-### Run the pre-migration tool
+## Run pre-migration
 
-Node operators who wish to minimize the migration downtime during the hardfork can perform pre-migrations with the following steps.
+Node operators who plan to migrate their pre-hardfork data to an L2 node are strongly encouraged to run a pre-migration ~1-2 days before the hardfork. This will migrate the majority of data and minimize downtime during the full migration.
+
+To learn more about the migration process and tooling, see [Migrating a Celo L1 Node](../operators/migrate-node.md).
+
+:::warning
+__Migrating archive data is not recommended.__
+
+Both the pre-migration and full migration must be run on full node data. If you only have Celo archive nodes, we recommend syncing a full node in preparation for the L2 hardfork. You should not migrate archive data even if you plan to run an L2 archive node. See [Running an archive node](../operators/run-node.md#running-an-archive-node) for more information.
+:::
+
+We recommend running the migration script (which includes commands for both the pre-migration and full migration) using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). If necessary, the script can also be run from source but the process will be more manual. // TODO(Alec) Do we even want this or should we just tell partners not to run the script from source?
+
+// TODO(Alec) rewrite these steps
 
 1. Stop your L1 node.
 2. Pull the latest version of
