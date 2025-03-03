@@ -41,7 +41,7 @@ We recommend running the migration script (which includes commands for both the 
 
 3. Run pre-migration command, where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
 
-    :::warn
+    :::warning
     Please ensure your node is stopped before running the migration tool.
     :::
 
