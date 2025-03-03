@@ -24,7 +24,7 @@ RedStone offers a radically different design of Oracles catering for the needs o
 - Use signed meta-transactions to deliver prices on-chain
 - Although the data at RedStone is persisted on the Arweave chain, it could be used with any other blockchain
 
-You can read much more about the RedStone protocol [in the RedStone compiled documentation.](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
+You can read much more about the RedStone protocol [in the RedStone compiled documentation.](https://github.com/redstone-finance/redstone-oracles-monorepo)
 
 ## 📈 What data is available
 

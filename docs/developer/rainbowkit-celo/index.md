@@ -20,7 +20,15 @@ RainbowKit is a React library that makes it easy to add wallet connection to you
 npm install @rainbow-me/rainbowkit@2 viem@2 wagmi@2
 ```
 
-## Example Config
+## Create config
+
+Create a file named **`consts`** under **`src/config`**
+
+```sh
+export const WALLET_CONNECT_PROJECT_ID = 'YOUR_PROJECT_ID'
+```
+
+## Example
 
 ```ts
 import '@rainbow-me/rainbowkit/styles.css';
@@ -39,11 +47,12 @@ import {
   getDefaultConfig,
   lightTheme,
 } from '@rainbow-me/rainbowkit';
+
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider, http } from 'wagmi';
 import { celo, celoAlfajores } from 'wagmi/chains';
-
-import { WALLET_CONNECT_PROJECT_ID } from 'src/config/consts';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { WALLET_CONNECT_PROJECT_ID } from '/src/config/consts';
 
 const queryClient = new QueryClient();
 
@@ -71,7 +80,7 @@ function App() {
       <WagmiProvider config={config}>
           <QueryClientProvider client={queryClient}>
             <RainbowKitProvider>
-              Your APP Here
+              <ConnectButton />
             </RainbowKitProvider>
           </QueryClientProvider>
         </WagmiProvider>

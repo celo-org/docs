@@ -85,7 +85,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ## Verify Contracts on Celo
 
-- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)
 - [Using CeloScan](/developer/verify/celoscan)
 - [Using Hardhat](/developer/verify/hardhat)

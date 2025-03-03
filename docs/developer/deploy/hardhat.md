@@ -117,7 +117,7 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 ## Verify Contracts on Celo
 
-- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)
 - [Using CeloScan](/developer/verify/celoscan)
 - [Using Hardhat](/developer/verify/hardhat)

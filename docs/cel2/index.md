@@ -62,9 +62,9 @@ The Celo L2 testnet, Alfajores, went live! This provides a testing environment f
 
 #### October 2024: Code Freeze and Audits
 
-The core dev team will freeze all feature development by October 14th. All further development will focus on bug fixes and partner support.
+The core dev team froze all feature development by mid-October and underwent a thorough external audit. The result is available at https://celo.org/audits.
 
-#### Q1 2025: Baklava L2 Testnet Launch
+#### 20th February, 2025: Baklava L2 Testnet Launch
 
 Using the final audited release, the Celo validator community will perform a dry run of the L2 upgrade on the Baklava network.
 

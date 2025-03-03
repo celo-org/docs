@@ -141,6 +141,11 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+     {
+      type: "doc",
+      label: "Building an App with Thirdweb",
+      id: "build/thirdweb-quickstart",
+    },   
     {
       type: "category",
       label: "Build with AI",
@@ -264,7 +269,6 @@ const sidebars = {
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
     { type: "doc", label: "Network Information", id: "network/index" },
-    { type: "doc", label: "Developer Tools", id: "learn/developer-tools" },
     {
           type: "category",
           label: "Nodes",
@@ -385,13 +389,33 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Bridges",
-      id: "protocol/bridge/index"
+      label: "Token Bridges",
+      id: "protocol/token-bridges"
+    },
+    {
+      type: "doc",
+      label: "Cross Chain Messaging",
+      id: "protocol/cross-chain-messaging"
     },
     {
       type: "category",
       label: "Explorers",
       items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/explorers/overview",
+        },
+        {
+          type: "doc",
+          label: "Block Explorers",
+          id: "developer/explorers/block-explorers",
+        },
+        {
+          type: "doc",
+          label: "Analytics",
+          id: "developer/explorers/analytics",
+        },
         {
           type: "link",
           label: "Blockscout",
@@ -408,7 +432,9 @@ const sidebars = {
       type: "category",
       label: "Indexers",
       items: [
+        { type: "doc", label: "Overview", id: "developer/indexer/overview" },
         { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+        { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
       ],
     },
     // {
@@ -556,13 +582,18 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "viem",
+          id: "developer/viem/index",
+        },
+        {
+          type: "doc",
           label: "thirdweb SDK",
           id: "developer/thirdweb-sdk/index",
         },
         {
           type: "doc",
-          label: "Web3.js",
-          id: "developer/web3/index",
+          label: "Ethers.js",
+          id: "developer/ethers/index",
         },
         {
           type: "category",
@@ -618,8 +649,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "rainbowkit-celo",
+          label: "rainbowkit-celo (deprectated)",
           id: "developer/rainbowkit-celo/index",
+        },
+        {
+          type: "doc",
+          label: "Web3.js",
+          id: "developer/web3/index",
         },
       ],
     },
@@ -634,8 +670,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Using Celo Explorer",
-          id: "developer/verify/celo-explorer",
+          label: "Using Blockscout",
+          id: "developer/verify/blockscout",
         },
         {
           type: "doc",
@@ -1231,7 +1267,7 @@ const sidebars = {
     { type: "doc", label: "Node", id: "cli/node" },
     { type: "doc", label: "Oracle", id: "cli/oracle" },
     { type: "doc", label: "Plugins", id: "cli/plugins" },
-    { type: "doc", label: "Reserve", id: "cli/reserve" },
+    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
     { type: "doc", label: "Validator", id: "cli/validator" },
@@ -1274,7 +1310,10 @@ const sidebars = {
     {
       type: "category",
       label: "Node operators & Validators",
-      link: { type: "doc", id: "cel2/operators/overview" },
+      link: {
+        type: "doc",
+        id: "cel2/operators/overview"
+      },
       collapsed: false,
       items: [
         {
@@ -1284,17 +1323,12 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a node with Docker",
-          id: "cel2/operators/docker-node",
+          label: "Running a Celo node",
+          id: "cel2/operators/run-node",
         },
         {
           type: "doc",
-          label: "Building a node from source",
-          id: "cel2/operators/custom-node",
-        },
-        {
-          type: "doc",
-          label: "Migrating a L1 node",
+          label: "Migrating an L1 node",
           id: "cel2/operators/migrate-node",
         },
         {
@@ -1304,8 +1338,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a RPC provider",
-          id: "cel2/operators/community-rpc-provider",
+          label: "Running a community RPC node",
+          id: "cel2/operators/community-rpc-node",
         },
       ]
     },
@@ -1327,7 +1361,7 @@ const sidebars = {
       items: [
         {
           type : "doc",
-          label: "Bridging from CELO from L1 to L2",
+          label: "Bridging CELO from L1 to L2",
           id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {

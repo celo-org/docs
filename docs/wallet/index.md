@@ -45,7 +45,7 @@ Celo Terminal is a wallet and dApp platform designed as a hub for managing and r
 
 - Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
-- Maintainers: [WOTrust](https://twitter.com/wotrust1)
+- Maintainers: [WOTrust](https://x.com/wotrust1)
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
 
@@ -55,7 +55,7 @@ Othello Wallet (formerly known as CeloWallet) is a lightweight, wallet for both 
 
 - Homepage: [celowallet.app](https://celowallet.app/setup)
 - Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
+- Maintainers: [J M Rossy](https://x.com/RossyWrote)
 - Ledger support: Yes
 - [Source Code](https://github.com/jmrossy/celo-web-wallet)
 
