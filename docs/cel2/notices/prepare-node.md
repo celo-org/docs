@@ -49,11 +49,17 @@ We recommend running the migration script (which includes commands for both the 
     ./migrate pre <network> <path-to-your-L1-datadir> [<L2_destination_datadir>]
     ```
 
-    If a destination datadir is specified, ensure the value of `DATADIR_PATH` inside `.env` is updated to match. //TODO(Alec) are we missing a step to cp the right `.env` file like we have in the instructions for running a node?
+    If a destination datadir is specified, ensure the value of `DATADIR_PATH` inside `.env` is updated to match when you start your node.
 
     The pre-migration process will take some time to complete.
 
 4. Once the pre-migration is complete, you can start your L1 node again.
+
+When you run the full migration, you must use the same destination datadir in order to benefit from the pre-migration.
+
+There is no limit to the number of times a pre-migration can be run. Each subsequent run of a pre-migration will migrate the blocks added since the previous pre-migration, and will be significantly quicker than the first pre-migration.
+
+The full migration will also run a pre-migration, so don't be confused if you see logs from the pre-migration when running the full migration.
 
 ### Run pre-migration from source
 
