@@ -7,6 +7,7 @@ This page will be updated continuously with information on upgrade runbooks and 
 
 * The Alfajores testnet has been migrated on block **26384000**, September 26, 2024.
 * The Baklava testnet has been migrated on block **28308600**, February 20, 2025.
+* Mainnet will be migrated on block **31056500**, March 25, 2025.
 
 :::
 
@@ -31,3 +32,9 @@ The hardfork is scheduled for the following block on each network.
 * Minimum `celo-blockchain` version: [v1.8.8](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.8)
 * `op-geth`: [celo-v2.0.0-rc4](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0-rc4)
 * `op-node`: [celo-v2.0.0-rc4](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0-rc4)
+
+### Mainnet
+
+* Block number: `31056500`
+* Date: March 25, 2025
+* Final client versions following soon!
