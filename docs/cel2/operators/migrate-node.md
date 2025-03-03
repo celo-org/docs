@@ -53,7 +53,7 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
 
 3. Run the full migration command, where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
 
-   :::warn
+   :::warning
    Please ensure your node is stopped before running the migration tool.
    :::
 
