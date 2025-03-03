@@ -2,6 +2,20 @@
 
 This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
+## Recommended Hardware
+
+// TODO(Alec)
+
+### Testnets (Alfajores and Baklava)
+
+- 16GB+ RAM
+- 500 GB SSD (NVME Recommended)
+- 100mb/s+ Download
+
+### Mainnet
+
+- TBD
+
 ## Run node with docker
 
 To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
