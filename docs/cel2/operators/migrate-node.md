@@ -61,7 +61,7 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
    ./migrate full <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]
    ```
 
-   If a destination datadir is specified, ensure that `DATADIR_PATH` inside `.env` is updated to match.
+   If a destination datadir is specified, ensure that `DATADIR_PATH` inside `.env` is updated to match when you start your node.
 
    The migration process will take at least several minutes to complete.
 
@@ -78,6 +78,36 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
 ### Run migration from source
 
 // TODO(Alec)
+
+1. Check out the latest version of the script in [celo optimism monorepo](https://github.com/celo-org/optimism).
+
+   ```bash
+   git clone https://github.com/celo-org/optimism
+   cd optimism/op-chain-ops
+   ```
+
+2. Build the script
+
+   ```bash
+   make celo-migrate
+   ```
+
+3. Run the continuity script (`check-db`)
+
+   The continuity script checks the provided datadir for gaps in chain data. It reads all headers, bodies, hashes, receipts, and total difficulties for every block number from genesis through the tip of the chain, and makes sure that all the expected data is present. It also makes sure that each block number and parent hash aligns with that of the previous block.
+
+   Though uncommon, it is possible for legacy Celo nodes to have gaps in data. Before the L2 hardfork, it's important to ensure your node does not have missing data so that it can provide it to nodes that are snap syncing via the p2p network. Also, node operators who want to ensure their node provides a fully functioning RPC api will want to ensure that no gaps exist.
+
+   // TODO(Alec)
+
+   You should run the continuity script as follows before each pre-migration and full migration:
+
+   ```bash
+   go run ./cmd/celo-migrate check-db --db-path <path-to-your-L1-datadir> [--fail-fast]
+   ```
+
+   This command takes in an optional `--fail-fast` flag that will make it exit at the first gap detected as it does when run via [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). If the `--fail-fast` flag is not provided then the script will collect all the gaps it finds and print them out at the end.
+
 
 ## Troubleshooting
 
