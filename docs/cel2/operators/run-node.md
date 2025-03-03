@@ -2,6 +2,10 @@
 
 This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
+:::note
+This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
+:::
+
 ## Recommended Hardware
 
 // TODO(Alec)
@@ -20,11 +24,13 @@ This guide is designed to help node operators run a Celo L2 node, and assumes yo
 
 To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
 
-For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
+See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) for instructions on installing docker and docker compose if needed.
 
 :::note
-This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
+If using Docker Desktop on MacOS you will most likely need to increase the virtual disk limit in order to accomodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
 :::
+
+For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
 
 ### Running a full node
 
