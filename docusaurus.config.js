@@ -75,7 +75,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Alfajores & Baklava L2 Testnets are live! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
+        'Alfajores & Baklava L2 Testnets are experiencing problems, caused by the <a href="https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md">Holesky chain split</a>! We\'re working on restoring the Celo testnets. More information on the <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/pectra-upgrade">Pectra upgrade page</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
