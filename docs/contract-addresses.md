@@ -99,5 +99,5 @@ $ celocli network:contracts --node https://forno.celo.org
 Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
 
 ```bash
-celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+$ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 ```
