@@ -747,8 +747,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Using Celo Explorer",
-          id: "developer/verify/celo-explorer",
+          label: "Using Blockscout",
+          id: "developer/verify/blockscout",
         },
         {
           type: "doc",
@@ -1387,7 +1387,10 @@ const sidebars = {
     {
       type: "category",
       label: "Node operators & Validators",
-      link: { type: "doc", id: "cel2/operators/overview" },
+      link: {
+        type: "doc",
+        id: "cel2/operators/overview"
+      },
       collapsed: false,
       items: [
         {
@@ -1402,7 +1405,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Migrating a L1 node",
+          label: "Migrating an L1 node",
           id: "cel2/operators/migrate-node",
         },
         {
@@ -1430,7 +1433,7 @@ const sidebars = {
       items: [
         {
           type : "doc",
-          label: "Bridging from CELO from L1 to L2",
+          label: "Bridging CELO from L1 to L2",
           id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {

@@ -31,16 +31,21 @@ module.exports = {
     // },
   ],
   plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/cel2/l2-operator-guide",
+            to: "/cel2/operators/overview",
+          },
+        ],
+      },
+    ],
     require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    // [
-    //   "@docusaurus/plugin-client-redirects",
-    //   {
-    //     redirects: [],
-    //   },
-    // ],
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -70,7 +75,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Baklava L2 Testnet update is coming on February 20! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
+        'Alfajores & Baklava L2 Testnets are experiencing problems, caused by the <a href="https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md">Holesky chain split</a>! We\'re working on restoring the Celo testnets. More information on the <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/pectra-upgrade">Pectra upgrade page</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
