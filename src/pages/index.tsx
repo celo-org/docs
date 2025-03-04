@@ -654,7 +654,7 @@ export default function HomePage(): JSX.Element {
               developers.
             </Translate>
           </div>
-          <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
+          {/* <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold pb-7">
@@ -665,7 +665,7 @@ export default function HomePage(): JSX.Element {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
@@ -676,10 +676,23 @@ export default function HomePage(): JSX.Element {
                 "https://discord.com/invite/celo"
               )}
               {sectionFourCard(
+                "Get Technical Support",
+                "Join our Telegram",
+                "img/homepage/connect.svg",
+                "https://t.me/buildwithcelo"
+              )}
+
+              {sectionFourCard(
+                "Get Daily Updates",
+                "Follow our Developer Twitter",
+                "img/homepage/ambassador.svg",
+                "https://x.com/CeloDevs"
+              )}
+              {sectionFourCard(
                 "Bring Your Ideas to Life",
-                "Sign up for upcoming hackathons",
+                "Sign up for upcoming hackathons and workshops",
                 "img/homepage/contribute.svg",
-                "https://lemonade.social/celo"
+                "https://celo.lemonade.social/"
               )}
 
               {sectionFourCard(

@@ -68,9 +68,9 @@ The core dev team froze all feature development by mid-October and underwent a t
 
 Using the final audited release, the Celo validator community will perform a dry run of the L2 upgrade on the Baklava network.
 
-#### Q1 2025: Celo L2 Mainnet Launch
+#### 25th March, 2025: Celo L2 Mainnet Launch
 
-Following a successful Baklava upgrade, the Celo L2 Mainnet will officially launch. All nodes must be updated by this time to avoid disruption. Further announcements will confirm the exact date.
+Following a successful Baklava upgrade, the Celo L2 Mainnet will officially go live. All nodes must be updated by this time to avoid disruption.
 
 ## Useful Links
 
