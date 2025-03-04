@@ -389,8 +389,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Token Bridges",
-      id: "protocol/token-bridges"
+      label: "Bridges",
+      id: "protocol/bridges"
     },
     {
       type: "doc",
