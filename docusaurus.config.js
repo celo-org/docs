@@ -135,10 +135,10 @@ module.exports = {
               to: "validator/",
               label: "Validators",
             },
-            {
-              to: "holder/",
-              label: "Holder",
-            },
+            //{
+            //  to: "holder/",
+            //  label: "Holder",
+            //},
             {
               to: "cli/",
               label: "CLI",
@@ -148,6 +148,16 @@ module.exports = {
               label: "dApps",
               target: "_blank",
             },
+            {
+              to: "https://celo.org",
+              label: "Celo Website",
+              target: "_blank",
+            },
+            {
+              to: "https://discord.com/invite/celo",
+              label: "Celo Discord",
+              target: "_blank",
+            },            
           ],
         },
         {
