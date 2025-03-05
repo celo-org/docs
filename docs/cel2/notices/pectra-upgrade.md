@@ -4,17 +4,11 @@ This page outlines breaking changes related to the Ethereum Pectra (Prague-Elect
 
 The Pectra upgrade for Holesky L1 was activated on slot: 3710976 (Mon, Feb 24 at 21:55:12 UTC).
 
-:::danger
-The Pectra upgrade on Holesky caused a [chain split](https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md) which in turn stalled the Celo Alfajores and Baklava networks.
-
-The team is working on activating them again. Updates and instructions will follow here.
-:::
-
 ## Testnet issues
 
 Holesky, the L1 chain that both Alfajores and Baklava testnets use, suffered from a chain split shortly after the Pectra hardfork. The network now produces blocks again, but is not yet finalizing again. For more information see the [Post-Mortem](https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md).
 
-This chain split caused problems on the Celo testnets. As of Monday, March 3rd, the sequencer on Baklava is producing blocks again. Alfajores will be enabled in the next days.
+This chain split caused problems on the Celo testnets. Those problems have been solved and both testnets work as expected.
 
 Until Holesky finalizes again, the testnet sequencers will not use finalized blocks as the L1 origin. Please let us know if you run into any problems.
 
