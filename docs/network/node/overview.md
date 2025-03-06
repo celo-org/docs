@@ -78,7 +78,7 @@ All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pa
 
 <PageRef url="https://drpc.org/chainlist/celo" pageName="DRPC" />
 
-### [dRPC](https://drpc.org/chainlist/celo)
+### [Laval](https://docs.lavanet.xyz/celo-dev)
 
 Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
