@@ -37,4 +37,5 @@ The hardfork is scheduled for the following block on each network.
 
 * Block number: `31056500`
 * Date: March 25, 2025
-* Final client versions following soon!
+* Minimum `celo-blockchain` version: [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9)
+* Final L2 client versions following soon!
