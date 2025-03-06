@@ -76,7 +76,7 @@ const tools = await getOnChainTools({
 - **On-Chain Tools for NFT Minting**: We define a custom mintNFT tool directly within the plugins array.
   - **name: "mintNFT"**: The name of the tool, which the AI agent will use to identify and call it.
   - **description**: A crucial description that tells the AI agent when and how to use this tool. It specifies that the tool is for minting NFTs and expects recipientAddress and optional metadata as input.
-  - **execute({ recipientAddress, metadata })**: This is the function that will be executed when the AI agent decides to use the mintNFT tool.
+  - **execute(recipientAddress, metadata)**: This is the function that will be executed when the AI agent decides to use the mintNFT tool.
   - **Placeholder Implementation**: Currently, the execute function is a placeholder. It logs a message indicating that NFT minting is initiated but does not contain actual minting logic.
   - **Implementation using viem** (To be added - see "Implementing the mintNFT Tool" section below): The actual implementation of NFT minting within this execute function will involve using viem to interact with an NFT smart contract on Celo. This will include:
     - Connecting to the NFT Contract: Using viem to get an instance of your deployed NFT contract using its address and ABI.
