@@ -1,4 +1,4 @@
-## Tutorial: Build an AI Agent to Send Tokens on Celo
+# Tutorial: Build an AI Agent to Send Tokens on Celo
 
 This tutorial will guide you through creating an AI-powered agent capable of sending tokens on the Celo blockchain. We will adapt the provided code, which demonstrates sending tokens on the Sepolia test network, to function seamlessly on Celo. This will allow you to build an interactive agent that can send both native CELO and ERC20 tokens based on natural language prompts.
 
