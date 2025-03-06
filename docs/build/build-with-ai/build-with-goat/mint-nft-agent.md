@@ -252,7 +252,7 @@ pnpm ts-node index.ts
 Interact with the agent using natural language prompts to mint NFTs. Here are example prompts:
 
 - "Mint an NFT for address 0x1234...5678" - Instruct the agent to mint an NFT to the specified recipient address. (Replace 0x1234...5678 with an actual Celo address).
-- "Mint an NFT with metadata {'name': 'My NFT', 'description': 'A test NFT'}" - Instruct the agent to mint an NFT with specific metadata. (The exact format of metadata and how it's handled will depend on your mintNFT tool implementation and NFT contract).
+- "Mint an NFT with metadata `{'name': 'My NFT', 'description': 'A test NFT'}`" - Instruct the agent to mint an NFT with specific metadata. (The exact format of metadata and how it's handled will depend on your mintNFT tool implementation and NFT contract).
 
 **Example Interaction:**
 
