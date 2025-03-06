@@ -156,6 +156,27 @@ const sidebars = {
           id: "build/build-with-ai/overview",
         },
         {
+          type: "category",
+          label: "Build with GOAT",
+          items: [
+            {
+              type: "doc",
+              label: "Build with GOAT",
+              id: "build/build-with-ai/build-with-goat/token-swap-agent",
+            },
+            {
+              type: "doc",
+              label: "Build an NFT Minting Agent",
+              id: "build/build-with-ai/build-with-goat/mint-nft-agent",
+            },
+            {
+              type: "doc",
+              label: "Build a Token Sending Agent",
+              id: "build/build-with-ai/build-with-goat/send-token-agent",
+            },
+          ],
+        },
+        {
           type: "doc",
           label: "Resources",
           id: "build/build-with-ai/resources",
