@@ -1,14 +1,16 @@
 # Preparing for Pectra L1 hardfork
 
-This page outlines breaking changes related to the Ethereum Pectra (Prague-Electra) L1 hard fork for node operators on the Celo Alfajores L2 testnet.
+This page outlines breaking changes related to the Ethereum Pectra (Prague-Electra) L1 hard fork for node operators on the Celo Alfajores & Baklava L2 Testnets. Please also have a look at the [Optimism Pectra update information](https://docs.optimism.io/notices/pectra-changes).
 
-See also the [Optimism Pectra update information](https://docs.optimism.io/notices/pectra-changes).
+The Pectra upgrade for Holesky L1 was activated on slot: 3710976 (Mon, Feb 24 at 21:55:12 UTC).
 
-:::info
-This page will be updated continuously with information and timelines. Ethereum L1 clients are currently scheduled to have a release by Feb 13th.
+## Testnet issues
 
-The Pectra upgrade for Holesky L1 is proposed for slot: 3710976 (Mon, Feb 24 at 21:55:12 UTC).
-:::
+Holesky, the L1 chain that both Alfajores and Baklava testnets use, suffered from a chain split shortly after the Pectra hardfork. The network now produces blocks again, but is not yet finalizing again. For more information see the [Post-Mortem](https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md).
+
+This chain split caused problems on the Celo testnets. Those problems have been solved and both testnets work as expected.
+
+Until Holesky finalizes again, the testnet sequencers will not use finalized blocks as the L1 origin. Please let us know if you run into any problems.
 
 ## For node operators on Alfajores
 

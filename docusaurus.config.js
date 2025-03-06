@@ -31,16 +31,21 @@ module.exports = {
     // },
   ],
   plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/cel2/l2-operator-guide",
+            to: "/cel2/operators/overview",
+          },
+        ],
+      },
+    ],
     require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    // [
-    //   "@docusaurus/plugin-client-redirects",
-    //   {
-    //     redirects: [],
-    //   },
-    // ],
     [
       "@docusaurus/plugin-ideal-image",
       {
