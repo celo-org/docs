@@ -51,16 +51,34 @@ We recommend running the migration script (which includes commands for both the 
 
     If a destination datadir is specified, ensure the value of `DATADIR_PATH` inside `.env` is updated to match when you start your node.
 
-    The pre-migration process will take some time to complete.
+### Run pre-migration from source
 
-4. Once the pre-migration is complete, you can start your L1 node again.
+If you'd like to run the pre-migration manually without Docker, you can do so by running the migration tool from source:
+
+1. Stop your node.
+
+2. Checkout and build migration script.
+
+    ```bash
+    git clone https://github.com/celo-org/optimism.git
+    cd optimism/op-chain-ops
+    make celo-migrate
+    ```
+
+3. Run the pre-migration.
+
+    ```bash
+    go run ./cmd/celo-migrate pre \
+    --old-db <path-to-your-L1-datadir> \
+    --new-db <path-to-your-L2-destination-datadir>
+    ```
+
+Once the pre-migration is complete, you can start your L1 node again. The pre-migration may take several hours to complete.
+
+### Notes
+
+You can repeat this process as many times as needed leading up to the full migration. We highly recommend pre-migrating at least once for mainnet, as migrating mainnet chaindata can take over 2 hours.
 
 When you run the full migration, you must use the same destination datadir in order to benefit from the pre-migration.
 
-There is no limit to the number of times a pre-migration can be run. Each subsequent run of a pre-migration will migrate the blocks added since the previous pre-migration, and will be significantly quicker than the first pre-migration.
-
-The full migration will also run a pre-migration, so don't be confused if you see logs from the pre-migration when running the full migration.
-
-### Run pre-migration from source
-
- // TODO(Alec) Do we even want this or should we just tell partners not to run the script from source?
+The full migration will also run a pre-migration, so you will see logs from the pre-migration when running the full migration even if you already ran a pre-migration.
