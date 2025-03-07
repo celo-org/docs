@@ -8,8 +8,6 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
 
 ## Recommended Hardware
 
-// TODO(Alec)
-
 ### Testnets (Alfajores and Baklava)
 
 - 16GB+ RAM
@@ -291,7 +289,7 @@ The following sections contain all the informmation required to set up your node
 
 #### Transactions are not being executed when submitted to a node
 
-If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
+If your node is synced but transtransactions submitted to it are not executed, make sure the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
 
 #### Self-hosted public RPC does not retrieve transactions by hash
 
