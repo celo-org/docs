@@ -145,7 +145,12 @@ const sidebars = {
       type: "doc",
       label: "Building an App with Thirdweb",
       id: "build/thirdweb-quickstart",
-    },   
+    },
+     {
+      type: "doc",
+      label: "One-Click Quickstart",
+      id: "build/one-click-quickstart",
+    },    
     {
       type: "category",
       label: "Build with AI",
