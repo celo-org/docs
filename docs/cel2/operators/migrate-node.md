@@ -63,6 +63,9 @@ blocks at the block immediately preceding the hardfork block.
 * Baklava *28308600*
   * Celo L1 client: [celo-blockchain v1.8.8](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.8).
   * Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8`
+* Mainnet *31056500*
+  * Celo L1 client: [celo-blockchain v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9).
+  * Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9`
 
 ### Run the pre-migration tool
 
