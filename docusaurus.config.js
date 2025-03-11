@@ -131,14 +131,14 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "validator/",
-              label: "Validators",
-            },
+            //{
+            //  to: "protocol/",
+            //  label: "Protocol",
+            //},
+            //{
+            //  to: "validator/",
+            //  label: "Validators",
+            //},
             {
               to: "holder/",
               label: "Holder",
