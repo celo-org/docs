@@ -210,7 +210,9 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
 Docker images are the easiest way to run a Celo node, but you can always build your own node from source code. You might wish to do this if you want to run on a specific architecture or inspect the source code.
 
-The following sections contain all the informmation required to set up your node from source.
+The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase is still the best reference for how to run your nodes from source, and below you can find all the [Network config & Assets](#network-config--assets) needed to participate in the hardfork.
+
+Please reach out to our team on Discord if you have any questions.
 
 ### Network config & Assets
 
@@ -285,7 +287,9 @@ The following sections contain all the informmation required to set up your node
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
 
-### Common problems
+### Troubleshooting
+
+Please reach out to our team on Discord if your problem is not answered below.
 
 #### Transactions are not being executed when submitted to a node
 
