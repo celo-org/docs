@@ -46,6 +46,10 @@ The Gingerbread hardfork is implemented to prepare for Celo L2 with a focus on i
 
 cLabs <ColoredText>[proposed the OP Stack](https://forum.celo.org/t/clabs-proposes-migrating-celo-to-an-ethereum-l2-leveraging-the-op-stack/7902)</ColoredText> for its Layer 2 migration to align more closely with Ethereum, reduce production time, enhance security, and maintain its unique features with minimal migration risk.
 
+#### March 2025: [Celo announces L2 Mainnet Activation Date](https://x.com/Celo/status/1896617306509500661)
+
+Celo L2 Mainnet Activation date will be on March 26, 2025 at 3am UTC.
+
 ## White Papers
 
 For a deeper understanding of Celo's evolution and the technical foundations behind it, check out our <ColoredText>[white papers](https://celo.org/papers)</ColoredText>. These documents cover the innovations and decisions that have shaped Celo.

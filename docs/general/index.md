@@ -11,7 +11,7 @@ Celo is a blockchain network designed for the real world, with a mission to buil
 
 # What is Celo?
 
-Celo is an emerging Ethereum Layer-2 designed to make blockchain technology accessible to all. With its focus on scalability, low fees, and ease of use, Celo is ideal for building blockchain products that reach millions of users around the globe.
+Celo is an Ethereum Layer-2 designed to make blockchain technology accessible to all. With its focus on scalability, low fees, and ease of use, Celo is ideal for building blockchain products that reach millions of users around the globe.
 
 <ReactYouTube videoId={'4a70pVEcRw4'} />
 
@@ -84,7 +84,7 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 ## Cryptocurrency for a beautiful planet
 
-Celo is an emerging Ethereum Layer-2 and mobile-first blockchain network built for the real world and designed for fast, low-cost payments worldwide. Here are few of the key features of Celo:
+Celo is an Ethereum Layer-2 and mobile-first blockchain network built for the real world and designed for fast, low-cost payments worldwide. Here are few of the key features of Celo:
 
 - [Layer-1 to an Ethereum Layer-2 protocol](https://blog.celo.org/celobrate-cel2-4-years-of-mainnet-on-earth-day-861ffe557cdb)
 - [Proof-of-stake](https://medium.com/celoorg/celos-proof-of-stake-mechanism-31061fbebea)
