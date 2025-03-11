@@ -127,7 +127,7 @@ To resolve this:
 
 To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.
 
-If needed, you can also run the check-db script on its own as follows.
+If needed, you can also run the `check-db` script on its own as follows.
 
 1. Check out and build the latest version of the script in [celo optimism monorepo](https://github.com/celo-org/optimism).
 
