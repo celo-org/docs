@@ -133,8 +133,7 @@ If needed, you can also run the `check-db` script on its own as follows.
 
    ```bash
    git clone https://github.com/celo-org/optimism
-   cd optimism
-   cd op-chain-ops
+   cd optimism/op-chain-ops
    make celo-migrate
    ```
 
