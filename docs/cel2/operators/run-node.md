@@ -11,12 +11,20 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
 ### Testnets (Alfajores and Baklava)
 
 - 16GB+ RAM
-- 500 GB SSD (NVME Recommended)
+- 500GB SSD (NVME Recommended)
 - 100mb/s+ Download
 
 ### Mainnet
 
-- TBD
+- 16GB+ RAM
+- 1TB+ SSD (NVME Recommended)
+- 100mb/s+ Download
+
+:::warning
+Storage size requirements will increase over time, especially for archive nodes.
+
+If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](#running-an-archive-node).
+:::
 
 ## Run node with docker
 

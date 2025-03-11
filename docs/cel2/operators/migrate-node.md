@@ -42,6 +42,14 @@ The full migration process constists of a pre-migration followed by some additio
 
 Once the hardfork block number is reached, we recommend node operators migrate using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). Alternatively, the migration tool can be [run from source](#run-migration-from-source).
 
+### Hardware requirements
+
+- Make sure you have enough storage to accomodate 2x the pre-hardfork chaindata. Chaindata size can vary, so please double check your node.
+
+- We recommend using local storage for the source and destination datadirs.
+
+- 16GB+ RAM recommended
+
 ### Run migration with docker
 
 To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates. You can use it to migrate your L1 node as follows.
