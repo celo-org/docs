@@ -9,7 +9,7 @@ This page will be kept updated with key information about the hardfork.
 
 :::
 
-Node operators should review this page along with [Migrating a Celo L1 Node](../operators/migrate-node.md) and [Running a Celo Node](run-node.md).
+Node operators should review this page along with [Migrating a Celo L1 Node](../operators/migrate-node.md) and [Running a Celo Node](../operators/run-node.md).
 
 Besides that, the two main steps to prepare for the hardfork are
 
@@ -25,7 +25,7 @@ These releases each define hardfork block numbers such that nodes will stop prod
 
 Node operators who plan to migrate their pre-hardfork data to an L2 node are strongly encouraged to run a pre-migration ~1-2 days before the hardfork. This will migrate the majority of data and minimize downtime during the full migration. To learn more about the migration process and tooling, see [Migrating a Celo L1 Node](../operators/migrate-node.md).
 
-Note that you may also choose to start an L2 node from scratch using `snap` sync, in which case you don't need to run any data migrations. See [Running a Celo Node](run-node.md).
+Note that you may also choose to start an L2 node from scratch using `snap` sync, in which case you don't need to run any data migrations. See [Running a Celo Node](../operators/run-node.md).
 
 :::warning
 __Migrating archive data is not recommended.__
