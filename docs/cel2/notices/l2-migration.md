@@ -1,4 +1,4 @@
-# Preparing for the L2 hardfork
+# Preparing for the L2 migration
 
 :::info
 This page will be kept updated with key information about the hardfork.
@@ -11,24 +11,24 @@ This page will be kept updated with key information about the hardfork.
 
 Node operators should review this page along with [Migrating a Celo L1 Node](../operators/migrate-node.md) and [Running a Celo Node](../operators/run-node.md).
 
-Besides that, the two main steps to prepare for the hardfork are
+The two main steps to prepare for the hardfork are
 
 1. Upgrading L1 nodes
-2. Running a pre-migration (or choosing to use `snap` sync to start your L2 node)
+2. Running a pre-migration (Or choosing to use `snap` sync to start your L2 node, in which case no migrations are needed. See [Running a Celo Node](../operators/run-node.md).)
 
 ## Upgrade L1 nodes
 
-Prior to the L2 hardfork, all node operators must upgrade their existing L1 ("celo-blockchain") nodes to the appropriate release version. You can find the hardfork release versions for each network listed in the Key Information section below.
+Prior to the L2 hardfork, all node operators must upgrade their existing L1 (`celo-blockchain`) nodes to the appropriate release version. You can find the hardfork release versions for each network listed in the Key Information section below.
 These releases each define hardfork block numbers such that nodes will stop producing or accepting blocks immediately before the hardfork.
 
 ## Run a pre-migration
 
+Note that you may choose to start an L2 node from scratch using `snap` sync, in which case you don't need to run any data migrations. See [Running a Celo Node](../operators/run-node.md) for more information.
+
 Node operators who plan to migrate their pre-hardfork data to an L2 node are strongly encouraged to run a pre-migration ~1-2 days before the hardfork. This will migrate the majority of data and minimize downtime during the full migration. To learn more about the migration process and tooling, see [Migrating a Celo L1 Node](../operators/migrate-node.md).
 
-Note that you may also choose to start an L2 node from scratch using `snap` sync, in which case you don't need to run any data migrations. See [Running a Celo Node](../operators/run-node.md).
-
 :::warning
-__Migrating archive data is not recommended.__
+**Migrating archive data is not recommended.**
 
 Both the pre-migration and full migration must be run on full node data. If you only have Celo archive nodes, we recommend syncing a full node in preparation for the L2 hardfork. You should not migrate archive data even if you plan to run an L2 archive node. See [Running an archive node](../operators/run-node.md#running-an-archive-node) for more information.
 :::
@@ -83,11 +83,11 @@ Once the pre-migration is complete, you can start your L1 node again. The pre-mi
 
 #### Notes
 
-You can repeat this process as many times as needed leading up to the full migration. We highly recommend pre-migrating at least once for mainnet, as migrating mainnet chaindata can take over 2 hours.
+* You can repeat this process as many times as needed leading up to the full migration. We highly recommend pre-migrating at least once for mainnet, as migrating mainnet chaindata can take over 2 hours.
 
-When you run the full migration, you must use the same destination datadir in order to benefit from the pre-migration.
+* When you run the full migration, you must use the same destination datadir in order to benefit from the pre-migration.
 
-The full migration will also run a pre-migration, so you will see logs from the pre-migration when running the full migration even if you already ran a pre-migration.
+* The full migration will also run a pre-migration, so you will see logs from the pre-migration when running the full migration even if you already ran a pre-migration.
 
 ## Key Information
 

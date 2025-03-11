@@ -220,11 +220,11 @@ Docker images are the easiest way to run a Celo node, but you can always build y
 
 The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase is still the best reference for how to run your nodes from source, and below you can find all the [Network config & Assets](#network-config--assets) needed to participate in the hardfork.
 
-Please reach out to our team on Discord if you have any questions.
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
 
-### Network config & Assets
+## Network config & Assets
 
-#### Alfajores
+### Alfajores
 
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
@@ -259,7 +259,7 @@ Please reach out to our team on Discord if you have any questions.
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc3)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
 
-#### Baklava
+### Baklava
 
 - [Final Celo L1 chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-l1-final.tar.zst)
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zst)
@@ -295,14 +295,14 @@ Please reach out to our team on Discord if you have any questions.
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
 
-### Troubleshooting
+## Troubleshooting
 
-Please reach out to our team on Discord if your problem is not answered below.
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if your problem is not answered below.
 
-#### Transactions are not being executed when submitted to a node
+### Transactions are not being executed when submitted to a node
 
 If your node is synced but transtransactions submitted to it are not executed, make sure the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
 
-#### Self-hosted public RPC does not retrieve transactions by hash
+### Self-hosted public RPC does not retrieve transactions by hash
 
 If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.
