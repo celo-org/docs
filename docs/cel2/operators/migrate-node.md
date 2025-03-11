@@ -16,7 +16,7 @@ Migrating a pre-hardfork datadir involves these high-level steps:
 
 1. Upgrade your L1 node to the [latest client release](run-node.md#network-config--assets) so it will stop producing blocks at
    at the hardfork.
-2. 1-2 days before the hardfork, stop your node and run a pre-migration to migrate the majority of data. This is not required, but is highly recommended for minimizing downtime. See [Preparing for the L2 Hardfork](../notices/prepare-node.md).
+2. 1-2 days before the hardfork, stop your node and run a pre-migration to migrate the majority of data. This is not required, but is highly recommended for minimizing downtime. See [Preparing for the L2 Hardfork](../notices/l2-migration.md).
 3. Restart your node and wait for the hardfork.
 4. Shut down your node once the hardfork block number is reached.
 5. Pull the necessary network configuration artifacts once available (e.g. hardfork block time).
@@ -28,7 +28,7 @@ Please note that the node must be stopped before the migration tool is run, even
 
 ## Before the hardfork
 
-There are some important steps node operators should take ahead of the L2 hardfork. These include upgrading to the [latest client release](run-node.md#network-config--assets) so that the L1 network will stop producing blocks at the hardfork, and __running a pre-migration 1-2 days before the hardfork__. If you have not yet read the [Preparing for the L2 hardfork](../notices/prepare-node.md) page, please do so before continuing.
+There are some important steps node operators should take ahead of the L2 hardfork. These include upgrading to the [latest client release](run-node.md#network-config--assets) so that the L1 network will stop producing blocks at the hardfork, and __running a pre-migration 1-2 days before the hardfork__. If you have not yet read the [Preparing for the L2 hardfork](../notices/l2-migration.md) page, please do so before continuing.
 
 ## Running the migration
 
@@ -38,7 +38,7 @@ __It is not recommended to migrate from an L1 archive datadir.__
 If you only have an L1 archive node, we recommend syncing an L1 full node in preparation for the Mainnet migration. You can still run an L2 archive node after migrating from an L1 full node datadir. See [Running a Celo archive node](run-node.md#running-an-archive-node) for more.
 :::
 
-The full migration process constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/prepare-node.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
+The full migration process constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
 
 Once the hardfork block number is reached, we recommend node operators migrate using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). Alternatively, the migration tool can be [run from source](#run-migration-from-source).
 
@@ -46,7 +46,7 @@ Once the hardfork block number is reached, we recommend node operators migrate u
 
 To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates. You can use it to migrate your L1 node as follows.
 
-1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 hardfork](../notices/prepare-node.md) for instructions.
+1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 hardfork](../notices/l2-migration.md) for instructions.
 
 2. Once the hardfork block number is reached, stop your L1 node.
 
@@ -73,7 +73,7 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
 
 If you'd prefer not to use Docker, you can run the migration script directly from source:
 
-1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 hardfork](../notices/prepare-node.md) for instructions.
+1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 hardfork](../notices/l2-migration.md) for instructions.
 
 2. Once the hardfork block number is reached, stop your L1 node.
 
