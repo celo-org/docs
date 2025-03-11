@@ -5,15 +5,9 @@ description: Overview of the similarities and differences between the Celo and E
 
 # Celo for Ethereum Developers
 
-Overview of the similarities and differences between the Celo and Ethereum blockchains.
+Celo is an Ethereum Layer 2 solution.
 
 ---
-
-:::warning
-Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
-
-For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
 
 :::tip
 
@@ -23,8 +17,7 @@ For a general overview of the Celo network and architecture, see [the Celo Overv
 
 ## What is Celo's Relationship to Ethereum?
 
-Celo is a layer 1 protocol and blockchain platform, and the Celo Mainnet is entirely separate from the Ethereum network.
-While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), it has several significant differences, including a proof-of-stake based PBFT consensus mechanism. All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
+While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), Celo is now an Ethereum Layer 2 solution.
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
