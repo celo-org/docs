@@ -39,6 +39,10 @@ module.exports = {
             from: "/cel2/l2-operator-guide",
             to: "/cel2/operators/overview",
           },
+          {
+            from: "/cel2/operators/rpc-provider",
+            to: "/cel2/operators/community-rpc-node",
+          },
         ],
       },
     ],
@@ -75,7 +79,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Alfajores & Baklava L2 Testnets are experiencing problems, caused by the <a href="https://github.com/ethereum/pm/blob/master/Pectra/holesky-postmortem.md">Holesky chain split</a>! We\'re working on restoring the Celo testnets. More information on the <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/pectra-upgrade">Pectra upgrade page</a>.',
+        'Alfajores & Baklava L2 Testnets are live! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -127,18 +131,6 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "validator/",
-              label: "Validators",
-            },
-            //{
-            //  to: "holder/",
-            //  label: "Holder",
-            //},
             {
               to: "cli/",
               label: "CLI",

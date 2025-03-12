@@ -13,11 +13,11 @@ const sidebars = {
       label: "Our History",
       id: "general/history",
     },
-    {
-      type: "doc",
-      label: "L1 Architecture",
-      id: "general/architecture",
-    },
+    //{
+    //  type: "doc",
+    //  label: "L1 Architecture",
+    //  id: "general/architecture",
+    //},
     {
       type: "category",
       label: "Using Celo",
@@ -188,11 +188,356 @@ const sidebars = {
         },
       ],
     },
-    //{
-    //  type: "link",
-    //  label: "Celo Website",
-    //  href: "https://celo.org",
-    //},
+    {
+      type: "category",
+      label: "Proof-of-Stake",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/pos/index",
+        },
+        {
+          type: "doc",
+          label: "Validator Groups",
+          id: "protocol/pos/validator-groups",
+        },
+        {
+          type: "doc",
+          label: "Locked CELO",
+          id: "protocol/pos/locked-gold",
+        },
+        {
+          type: "doc",
+          label: "Validator Elections",
+          id: "protocol/pos/validator-elections",
+        },
+        {
+          type: "category",
+          label: "Epoch Rewards",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "protocol/pos/epoch-rewards",
+            },
+            {
+              type: "doc",
+              label: "Validator Rewards",
+              id: "protocol/pos/epoch-rewards-validator",
+            },
+            {
+              type: "doc",
+              label: "Locked CELO Rewards",
+              id: "protocol/pos/epoch-rewards-locked-gold",
+            },
+            {
+              type: "doc",
+              label: "Community Fund",
+              id: "protocol/pos/epoch-rewards-community-fund",
+            },
+            {
+              type: "doc",
+              label: "Carbon Offsetting Fund",
+              id: "protocol/pos/epoch-rewards-carbon-offsetting-fund",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Penalties",
+          id: "protocol/pos/penalties",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Consensus",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/consensus/index",
+        },
+        {
+          type: "doc",
+          label: "Validator Set Differences",
+          id: "protocol/consensus/validator-set-differences",
+        },
+        {
+          type: "doc",
+          label: "Locating Nodes",
+          id: "protocol/consensus/locating-nodes",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Governance",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/governance/index",
+        },
+        {
+          type: "doc",
+          label: "Create Proposal",
+          id: "protocol/governance/create-proposal",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Transactions",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/transaction/index",
+        },
+        "protocol/transaction/native-currency",
+        "protocol/transaction/erc20-transaction-fees",
+        "protocol/transaction/gas-pricing",
+        "protocol/transaction/escrow",
+        "protocol/transaction/tx-comment-encryption",
+        "protocol/transaction/transaction-types",
+      ],
+    },
+    {
+      type: "category",
+      label: "Stability",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/stability/index",
+        },
+        "protocol/stability/doto",
+        "protocol/stability/granda-mento",
+        "protocol/stability/oracles",
+        "protocol/stability/stability-fees",
+        "protocol/stability/adding-stable-assets",
+      ],
+    },
+    {
+      type: "category",
+      label: "Identity",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "protocol/identity/index",
+        },
+        {
+          type: "link",
+          label: "Social Connect",
+          href: "https://github.com/celo-org/Social-Connect",
+        },
+        "protocol/identity/metadata",
+        "protocol/identity/smart-contract-accounts",
+        "protocol/identity/encrypted-cloud-backup",
+        {
+          type: "doc",
+          label: "Privacy Research",
+          id: "protocol/identity/privacy-research",
+        },
+        {
+          type: "category",
+          label: "ODIS",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "protocol/identity/odis",
+            },
+            {
+              type: "category",
+              label: "Use Cases",
+              items: [
+                "protocol/identity/odis-use-case-phone-number-privacy",
+                "protocol/identity/odis-use-case-key-hardening",
+              ],
+            },
+            {
+              type: "category",
+              label: "Domains",
+              items: [
+                {
+                  type: "doc",
+                  label: "Overview",
+                  id: "protocol/identity/odis-domain",
+                },
+                {
+                  type: "doc",
+                  label: "Sequential Delay Domain",
+                  id: "protocol/identity/odis-domain-sequential-delay-domain",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Celo Randomness",
+      id: "protocol/randomness",
+    },
+    {
+      type: "category",
+      label: "Contracts",
+      items: [
+        {
+          type: "doc",
+          label: "Add A Contract",
+          id: "protocol/contracts/add-contract",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: " Release Process",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "community/release-process/index",
+        },
+        {
+          type: "doc",
+          label: "Smart Contracts",
+          id: "community/release-process/smart-contracts",
+        },
+        {
+          type: "doc",
+          label: "Blockchain Client",
+          id: "community/release-process/blockchain-client",
+        },
+        {
+          type: "doc",
+          label: "CeloCLI and ContractKit",
+          id: "community/release-process/base-cli-contractkit-dappkit-utils",
+        },
+        {
+          type: "doc",
+          label: "Attestation Service",
+          id: "community/release-process/attestation-service",
+        },
+        {
+          type: "doc",
+          label: "Celo Oracles",
+          id: "community/release-process/celo-oracles",
+        },
+      ],
+    },
+		],
+		},
+		        {
+		type: "category",
+		label: "Validator",
+		items: [
+			{
+			type: "doc",
+			label: "Overview",
+			id: "validator/index",
+			},
+    {
+      type: "category",
+      label: "Run a Validator",
+      items: [
+        {
+          type: "doc",
+          label: "Mainnet Validator",
+          id: "validator/run/mainnet",
+        },
+        {
+          type: "doc",
+          label: "Baklava Validator",
+          id: "validator/run/baklava",
+        },
+      ],
+    },
+    // {
+    //   type: "doc",
+    //   label: "Attestation Service",
+    //   id: "validator/attestation",
+    // },
+    {
+      type: "category",
+      label: "Key Management",
+      items: [
+        {
+          type: "doc",
+          label: "Summary",
+          id: "validator/key-management/summary",
+        },
+        {
+          type: "doc",
+          label: "Key Management",
+          id: "validator/key-management/detailed",
+        },
+        {
+          type: "doc",
+          label: "Key Rotation",
+          id: "validator/key-management/key-rotation",
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Nodes and Services",
+      id: "validator/security",
+    },
+    {
+      type: "doc",
+      label: "Monitoring",
+      id: "validator/monitoring",
+    },
+    {
+      type: "doc",
+      label: "DevOps Best Practices",
+      id: "validator/devops-best-practices",
+    },
+    {
+      type: "doc",
+      label: "Node Upgrades",
+      id: "validator/node-upgrade",
+    },
+    {
+      type: "doc",
+      label: "Running Proxies",
+      id: "validator/proxy",
+    },
+    {
+      type: "doc",
+      label: "Validator Explorer",
+      id: "validator/validator-explorer",
+    },
+    {
+      type: "doc",
+      label: "Voting Policy",
+      id: "validator/celo-foundation-voting-policy",
+    },
+    {
+      type: "doc",
+      label: "Celo Signal",
+      id: "validator/celo-signal",
+    },
+    {
+      type: "doc",
+      label: "Validator FAQ",
+      id: "validator/troubleshooting-faq",
+    },
+    ],			
+		}
+      ],
+    },
+    {
+      type: "link",
+      label: "Celo Website",
+      href: "https://celo.org",
+    },
     // {
     //   type: "doc",
     //   label: "Web2 to Web3",
@@ -466,8 +811,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Token Bridges",
-      id: "protocol/token-bridges"
+      label: "Bridges",
+      id: "protocol/bridges"
     },
     {
       type: "doc",
@@ -862,100 +1207,100 @@ const sidebars = {
   //   },
   // ],
 
-  // ######################################
-  // Validators
-  // ######################################
+  //// ######################################
+  //// Validators
+  //// ######################################
 
-  validatorsSidebar: [
-    { type: "doc", label: "Overview", id: "validator/index" },
-    {
-      type: "category",
-      label: "Run a Validator",
-      items: [
-        {
-          type: "doc",
-          label: "Mainnet Validator",
-          id: "validator/run/mainnet",
-        },
-        {
-          type: "doc",
-          label: "Baklava Validator",
-          id: "validator/run/baklava",
-        },
-      ],
-    },
-    // {
-    //   type: "doc",
-    //   label: "Attestation Service",
-    //   id: "validator/attestation",
-    // },
-    {
-      type: "category",
-      label: "Key Management",
-      items: [
-        {
-          type: "doc",
-          label: "Summary",
-          id: "validator/key-management/summary",
-        },
-        {
-          type: "doc",
-          label: "Key Management",
-          id: "validator/key-management/detailed",
-        },
-        {
-          type: "doc",
-          label: "Key Rotation",
-          id: "validator/key-management/key-rotation",
-        },
-      ],
-    },
-    {
-      type: "doc",
-      label: "Nodes and Services",
-      id: "validator/security",
-    },
-    {
-      type: "doc",
-      label: "Monitoring",
-      id: "validator/monitoring",
-    },
-    {
-      type: "doc",
-      label: "DevOps Best Practices",
-      id: "validator/devops-best-practices",
-    },
-    {
-      type: "doc",
-      label: "Node Upgrades",
-      id: "validator/node-upgrade",
-    },
-    {
-      type: "doc",
-      label: "Running Proxies",
-      id: "validator/proxy",
-    },
-    {
-      type: "doc",
-      label: "Validator Explorer",
-      id: "validator/validator-explorer",
-    },
-    {
-      type: "doc",
-      label: "Voting Policy",
-      id: "validator/celo-foundation-voting-policy",
-    },
-    {
-      type: "doc",
-      label: "Celo Signal",
-      id: "validator/celo-signal",
-    },
-    {
-      type: "doc",
-      label: "Validator FAQ",
-      id: "validator/troubleshooting-faq",
-    },
-  ],
+  //validatorsSidebar: [
+    //{ type: "doc", label: "Overview", id: "validator/index" },
+    //{
+      //type: "category",
+      //label: "Run a Validator",
+      //items: [
+        //{
+          //type: "doc",
+          //label: "Mainnet Validator",
+          //id: "validator/run/mainnet",
+        //},
+        //{
+          //type: "doc",
+          //label: "Baklava Validator",
+          //id: "validator/run/baklava",
+        //},
+      //],
+    //},
+    //// {
+    ////   type: "doc",
+    ////   label: "Attestation Service",
+    ////   id: "validator/attestation",
+    //// },
+    //{
+      //type: "category",
+      //label: "Key Management",
+      //items: [
+        //{
+          //type: "doc",
+          //label: "Summary",
+          //id: "validator/key-management/summary",
+        //},
+        //{
+          //type: "doc",
+          //label: "Key Management",
+          //id: "validator/key-management/detailed",
+        //},
+        //{
+          //type: "doc",
+          //label: "Key Rotation",
+          //id: "validator/key-management/key-rotation",
+        //},
+      //],
+    //},
+    //{
+      //type: "doc",
+      //label: "Nodes and Services",
+      //id: "validator/security",
+    //},
+    //{
+      //type: "doc",
+      //label: "Monitoring",
+      //id: "validator/monitoring",
+    //},
+    //{
+      //type: "doc",
+      //label: "DevOps Best Practices",
+      //id: "validator/devops-best-practices",
+    //},
+    //{
+      //type: "doc",
+      //label: "Node Upgrades",
+      //id: "validator/node-upgrade",
+    //},
+    //{
+      //type: "doc",
+      //label: "Running Proxies",
+      //id: "validator/proxy",
+    //},
+    //{
+      //type: "doc",
+      //label: "Validator Explorer",
+      //id: "validator/validator-explorer",
+    //},
+    //{
+      //type: "doc",
+      //label: "Voting Policy",
+      //id: "validator/celo-foundation-voting-policy",
+    //},
+    //{
+      //type: "doc",
+      //label: "Celo Signal",
+      //id: "validator/celo-signal",
+    //},
+    //{
+      //type: "doc",
+      //label: "Validator FAQ",
+      //id: "validator/troubleshooting-faq",
+    //},
+  //],
 
   // ######################################
   // Community
@@ -983,333 +1328,16 @@ const sidebars = {
       href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
     },
   ],
-
-  // ######################################
-  // Protocol
-  // ######################################
-
-  protocolSidebar: [
-    { type: "doc", label: "Overview", id: "protocol/index" },
-    {
-      type: "category",
-      label: "Proof-of-Stake",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/pos/index",
-        },
-        {
-          type: "doc",
-          label: "Validator Groups",
-          id: "protocol/pos/validator-groups",
-        },
-        {
-          type: "doc",
-          label: "Locked CELO",
-          id: "protocol/pos/locked-gold",
-        },
-        {
-          type: "doc",
-          label: "Validator Elections",
-          id: "protocol/pos/validator-elections",
-        },
-        {
-          type: "category",
-          label: "Epoch Rewards",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "protocol/pos/epoch-rewards",
-            },
-            {
-              type: "doc",
-              label: "Validator Rewards",
-              id: "protocol/pos/epoch-rewards-validator",
-            },
-            {
-              type: "doc",
-              label: "Locked CELO Rewards",
-              id: "protocol/pos/epoch-rewards-locked-gold",
-            },
-            {
-              type: "doc",
-              label: "Community Fund",
-              id: "protocol/pos/epoch-rewards-community-fund",
-            },
-            {
-              type: "doc",
-              label: "Carbon Offsetting Fund",
-              id: "protocol/pos/epoch-rewards-carbon-offsetting-fund",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Penalties",
-          id: "protocol/pos/penalties",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Consensus",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/consensus/index",
-        },
-        {
-          type: "doc",
-          label: "Validator Set Differences",
-          id: "protocol/consensus/validator-set-differences",
-        },
-        {
-          type: "doc",
-          label: "Locating Nodes",
-          id: "protocol/consensus/locating-nodes",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Governance",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/governance/index",
-        },
-        {
-          type: "doc",
-          label: "Create Proposal",
-          id: "protocol/governance/create-proposal",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Transactions",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/transaction/index",
-        },
-        "protocol/transaction/native-currency",
-        "protocol/transaction/erc20-transaction-fees",
-        "protocol/transaction/gas-pricing",
-        "protocol/transaction/escrow",
-        "protocol/transaction/tx-comment-encryption",
-        "protocol/transaction/transaction-types",
-      ],
-    },
-    {
-      type: "category",
-      label: "Stability",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/stability/index",
-        },
-        "protocol/stability/doto",
-        "protocol/stability/granda-mento",
-        "protocol/stability/oracles",
-        "protocol/stability/stability-fees",
-        "protocol/stability/adding-stable-assets",
-      ],
-    },
-    {
-      type: "category",
-      label: "Identity",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "protocol/identity/index",
-        },
-        {
-          type: "link",
-          label: "Social Connect",
-          href: "https://github.com/celo-org/Social-Connect",
-        },
-        "protocol/identity/metadata",
-        "protocol/identity/smart-contract-accounts",
-        "protocol/identity/encrypted-cloud-backup",
-        {
-          type: "doc",
-          label: "Privacy Research",
-          id: "protocol/identity/privacy-research",
-        },
-        {
-          type: "category",
-          label: "ODIS",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "protocol/identity/odis",
-            },
-            {
-              type: "category",
-              label: "Use Cases",
-              items: [
-                "protocol/identity/odis-use-case-phone-number-privacy",
-                "protocol/identity/odis-use-case-key-hardening",
-              ],
-            },
-            {
-              type: "category",
-              label: "Domains",
-              items: [
-                {
-                  type: "doc",
-                  label: "Overview",
-                  id: "protocol/identity/odis-domain",
-                },
-                {
-                  type: "doc",
-                  label: "Sequential Delay Domain",
-                  id: "protocol/identity/odis-domain-sequential-delay-domain",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "doc",
-      label: "Celo Randomness",
-      id: "protocol/randomness",
-    },
-    {
-      type: "category",
-      label: "Contracts",
-      items: [
-        {
-          type: "doc",
-          label: "Add A Contract",
-          id: "protocol/contracts/add-contract",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: " Release Process",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "community/release-process/index",
-        },
-        {
-          type: "doc",
-          label: "Smart Contracts",
-          id: "community/release-process/smart-contracts",
-        },
-        {
-          type: "doc",
-          label: "Blockchain Client",
-          id: "community/release-process/blockchain-client",
-        },
-        {
-          type: "doc",
-          label: "CeloCLI and ContractKit",
-          id: "community/release-process/base-cli-contractkit-dappkit-utils",
-        },
-        {
-          type: "doc",
-          label: "Attestation Service",
-          id: "community/release-process/attestation-service",
-        },
-        {
-          type: "doc",
-          label: "Celo Oracles",
-          id: "community/release-process/celo-oracles",
-        },
-      ],
-    },
-  ],
-
-  //// ######################################
-  //// Holder
-  //// ######################################
-  //holderSiderbar: [
-    //{ type: "doc", label: "Overview", id: "holder/index" },
-    //{
-      //type: "category",
-      //label: "Manage",
-      //items: [
-        //{
-          //type: "doc",
-          //label: "Self-Custody",
-          //id: "holder/manage/self-custody",
-        //},
-        //{
-          //type: "doc",
-          //label: "Release Gold",
-          //id: "holder/manage/release-gold",
-        //},
-        //{
-          //type: "doc",
-          //label: "Exchange Assets",
-          //id: "holder/manage/exchange",
-        //},
-        //{
-          //type: "doc",
-          //label: "Asset Management",
-          //id: "holder/manage/asset",
         //},
       //],
     //},
     //{
       //type: "category",
-      //label: "Voting",
-      //items: [
-        //{
-          //type: "doc",
-          //label: "Validator Elections",
-          //id: "holder/vote/validator",
-        //},
-        //{
-          //type: "doc",
-          //label: "Voting on Governance",
-          //id: "holder/vote/governance",
-        //},
-        //{
-          //type: "doc",
-          //label: "Governable Parameters",
-          //id: "holder/vote/governance-parameters",
         //},
       //],
     //},
     //{
       //type: "category",
-      //label: "Recovery",
-      //items: [
-        //{
-          //type: "doc",
-          //label: "Recover from ETH Address",
-          //id: "holder/recover/from-eth-address",
-        //},
-        //{
-          //type: "doc",
-          //label: "Recover from Celo Address",
-          //id: "holder/recover/from-celo-address",
-        //},
-      //],
-    //},
-    //{
-      //type: "link",
-      //label: "Exchanges",
-      //href: "https://coinmarketcap.com/currencies/celo/markets/",
-    //},
-  //],
-
   // ######################################
   // CLI
   // ######################################
