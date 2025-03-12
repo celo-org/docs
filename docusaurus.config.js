@@ -39,6 +39,10 @@ module.exports = {
             from: "/cel2/l2-operator-guide",
             to: "/cel2/operators/overview",
           },
+          {
+            from: "/cel2/operators/rpc-provider",
+            to: "/cel2/operators/community-rpc-node",
+          },
         ],
       },
     ],
@@ -127,14 +131,14 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "validator/",
-              label: "Validators",
-            },
+            //{
+            //  to: "protocol/",
+            //  label: "Protocol",
+            //},
+            //{
+            //  to: "validator/",
+            //  label: "Validators",
+            //},
             {
               to: "holder/",
               label: "Holder",
