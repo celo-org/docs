@@ -96,7 +96,7 @@ const sidebars = {
       label: "Exchanges",
       href: "https://coinmarketcap.com/currencies/celo/markets/",
     },      
-      ]
+      ],
 	  },
       
         {
@@ -431,9 +431,7 @@ const sidebars = {
         },
       ],
     },
-		],
-		},
-		        {
+	{
 		type: "category",
 		label: "Validator",
 		items: [
@@ -529,10 +527,6 @@ const sidebars = {
       label: "Validator FAQ",
       id: "validator/troubleshooting-faq",
     },
-    ],			
-		}
-      ],
-    },
     {
       type: "link",
       label: "Celo Website",
@@ -552,7 +546,8 @@ const sidebars = {
     // { type: "doc", label: "Gallery", id: "general/gallery" },
     // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
-
+},
+],
   // ######################################
   // Build on Celo
   // ######################################
@@ -600,8 +595,8 @@ const sidebars = {
               type: "doc",
               label: "Launch AI Agent Memecoins",
               id: "build/build-with-ai/examples/ai-memecoins",
-            }
-          ]
+            },
+          ],
         },
       ]
     },
@@ -650,7 +645,7 @@ const sidebars = {
     {
       type: "doc",
       label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
+      id: "build/build-on-socialconnect",
     },
     {
       type: "category",
@@ -812,12 +807,12 @@ const sidebars = {
     {
       type: "doc",
       label: "Bridges",
-      id: "protocol/bridges"
+      id: "protocol/bridges",
     },
     {
       type: "doc",
       label: "Cross Chain Messaging",
-      id: "protocol/cross-chain-messaging"
+      id: "protocol/cross-chain-messaging",
     },
     {
       type: "category",
@@ -1405,7 +1400,7 @@ const sidebars = {
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
         },
-      ]
+      ],
     },
     {
       type: "doc",
@@ -1417,7 +1412,7 @@ const sidebars = {
       label: "Node operators & Validators",
       link: {
         type: "doc",
-        id: "cel2/operators/overview"
+        id: "cel2/operators/overview",
       },
       collapsed: false,
       items: [
@@ -1441,7 +1436,7 @@ const sidebars = {
           label: "Running a community RPC node",
           id: "cel2/operators/community-rpc-node",
         },
-      ]
+      ],
     },
     { 
       type: "category",
