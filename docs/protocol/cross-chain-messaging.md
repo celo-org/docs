@@ -18,6 +18,7 @@ Cross-Chain Messaging enables seamless communication and data transfer between d
 
 - [Chainlink CCIP Docs](https://docs.chain.link/ccip)
 - [NFT Minting from Celo to Ethereum Using Chainlink CCIP](https://github.com/celo-org/celo-ccip-workshop)
+- [Chainlink Functions](https://docs.chain.link/chainlink-functions/supported-networks#celo)
 
 ## Hyperlane
 
