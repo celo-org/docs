@@ -110,17 +110,16 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    --l2-allocs <path-to-l2-allocs.json> \
    --outfile.rollup-config <path-to-output-rollup-config.json> \
    --outfile.genesis <path-to-output-genesis.json> \
+   --migration-block-number <MIGRATION_BLOCK_NUMBER> \
    --old-db <path-to-your-L1-datadir> \
    --new-db <path-to-your-L2-destination-datadir>
    ```
 
-   You can find these artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) once they're available.
+   You can find the required input artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) section once they're available.
 
-   :::note
-   We are working on changes to automate fetching some of these parameters for mainnet. This section is likely to change soon.
-   :::
+   We recommend using the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase as an additional reference for running the migration from source.
 
-The full migration process will take at least several minutes to complete, assuming most data has been pre-migrated. If no pre-migration was performed it could take several hours.
+The full migration process will take at least 5 minutes to complete for mainnet, assuming most data has been pre-migrated. If no pre-migration was performed it could take several hours.
 
 Congrats! Your datadir is now ready to use with a Celo L2 node. See [Running a Celo Node](run-node.md) for instructions on how to start your Celo L2 node.
 
