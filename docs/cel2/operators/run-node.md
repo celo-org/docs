@@ -224,6 +224,15 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ## Network config & Assets
 
+### Mainnet
+
+- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
+- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
+
+- Container images:
+  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9)
+
 ### Alfajores
 
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
