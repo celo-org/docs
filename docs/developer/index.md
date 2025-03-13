@@ -13,12 +13,6 @@ Explore our comprehensive suite of tools, guides, and resources designed to help
 
 ---
 
-:::warning
-Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
-
-For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ## Quickstart
 
 Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.

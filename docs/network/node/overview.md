@@ -11,12 +11,6 @@ Connect to nodes and services in the Celo Ecosystem.
 
 import PageRef from '@components/PageRef'
 
-:::warning
-Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
-
-For the latest information, please refer to our [Celo L2 documentation](../../cel2/index.md).
-:::
-
 ### Forno
 
 [Forno](./forno.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
