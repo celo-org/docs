@@ -5,6 +5,7 @@ View and manage ReleaseGold contracts
 
 * [`celocli releasecelo:authorize`](#celocli-releaseceloauthorize)
 * [`celocli releasecelo:create-account`](#celocli-releasecelocreate-account)
+* [`celocli releasecelo:locked-celo`](#celocli-releasecelolocked-celo)
 * [`celocli releasecelo:locked-gold`](#celocli-releasecelolocked-gold)
 * [`celocli releasecelo:refund-and-finalize`](#celocli-releasecelorefund-and-finalize)
 * [`celocli releasecelo:revoke`](#celocli-releasecelorevoke)
@@ -163,6 +164,81 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/create-account.ts)_
 
+## `celocli releasecelo:locked-celo`
+
+Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
+
+```
+USAGE
+  $ celocli releasecelo:locked-celo --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -a
+    lock|unlock|withdraw --value 10000000000000000000000 [-k <value> | --useLedger | ]
+    [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yes]
+
+FLAGS
+  -a, --action=<option>
+      (required) Action to perform on contract's celo
+      <options: lock|unlock|withdraw>
+
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the ReleaseGold Contract
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --value=10000000000000000000000
+      (required) Amount of celo to perform `action` with
+
+  --yes
+      Answer yes to prompt
+
+DESCRIPTION
+  Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided
+  ReleaseGold contract.
+
+ALIASES
+  $ celocli releasecelo:locked-celo
+
+EXAMPLES
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
+
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
+
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
 ## `celocli releasecelo:locked-gold`
 
 Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
@@ -217,12 +293,15 @@ DESCRIPTION
   Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided
   ReleaseGold contract.
 
+ALIASES
+  $ celocli releasecelo:locked-celo
+
 EXAMPLES
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
 
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
 
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias

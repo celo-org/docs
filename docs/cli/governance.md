@@ -3,6 +3,7 @@
 
 Interact with on-chain governance proposals and hotfixes
 
+* [`celocli governance:approve`](#celocli-governanceapprove)
 * [`celocli governance:approvehotfix`](#celocli-governanceapprovehotfix)
 * [`celocli governance:build-proposal`](#celocli-governancebuild-proposal)
 * [`celocli governance:dequeue`](#celocli-governancedequeue)
@@ -25,9 +26,95 @@ Interact with on-chain governance proposals and hotfixes
 * [`celocli governance:whitelisthotfix`](#celocli-governancewhitelisthotfix)
 * [`celocli governance:withdraw`](#celocli-governancewithdraw)
 
+## `celocli governance:approve`
+
+Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
+
+```
+USAGE
+  $ celocli governance:approve --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--proposalID <value> | --hotfix <value>]
+    [--useMultiSig | --useSafe] [--type approver|securityCouncil ]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Approver's address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --hotfix=<value>
+      Hash of hotfix proposal
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --proposalID=<value>
+      UUID of proposal to approve
+
+  --type=<option>
+      Determines which type of hotfix approval (approver or security council) to use.
+      <options: approver|securityCouncil>
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --useMultiSig
+      True means the request will be sent through multisig.
+
+  --useSafe
+      True means the request will be sent through SAFE (http://safe.global)
+
+DESCRIPTION
+  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
+  this command
+
+ALIASES
+  $ celocli governance:approvehotfix
+
+EXAMPLES
+  approve --proposalID 99 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+  approve --proposalID 99 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --useMultiSig
+
+  approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig
+
+  approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig --type securityCouncil
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/governance/approve.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/approve.ts)_
+
 ## `celocli governance:approvehotfix`
 
-Approve a dequeued governance proposal (or hotfix)
+Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
 
 ```
 USAGE
@@ -83,10 +170,10 @@ FLAGS
       True means the request will be sent through SAFE (http://safe.global)
 
 DESCRIPTION
-  Approve a dequeued governance proposal (or hotfix)
+  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
+  this command
 
 ALIASES
-  $ celocli governance:approve
   $ celocli governance:approvehotfix
 
 EXAMPLES
@@ -576,8 +663,8 @@ Submit a governance proposal
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL https://www.celo.org [-k
-    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [--useMultiSig | --useSafe]] [--safeAddress
@@ -600,8 +687,9 @@ FLAGS
   --deposit=<value>
       (required) Amount of Celo to attach to proposal
 
-  --descriptionURL=https://www.celo.org
-      (required) A URL where further information about the proposal can be viewed
+  --descriptionURL=<value>
+      (required) A URL where further information about the proposal can be viewed. This
+      needs to be a valid proposal URL on https://github.com/celo-org/governance
 
   --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       Address of the multi-sig contract
@@ -650,9 +738,9 @@ DESCRIPTION
   Submit a governance proposal
 
 EXAMPLES
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
 
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
