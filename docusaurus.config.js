@@ -136,8 +136,8 @@ module.exports = {
               label: "CLI",
             },
             {
-              to: "https://www.celopg.eco/ecosystem",
-              label: "dApps",
+              to: "https://celo.org/ecosystem",
+              label: "Celo Ecosystem",
               target: "_blank",
             },
             {
