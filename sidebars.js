@@ -686,10 +686,11 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Addresses",
+          label: "Contracts",
           items: [
-            { type: "doc", label: "Contracts", id: "contract-addresses" },
-            { type: "doc", label: "Tokens", id: "token-addresses" },
+            { type: "doc", label: "Core Contracts", id: "contract-addresses" },
+            { type: "doc", label: "Tokens Addresses", id: "token-addresses" },
+            { type: "doc", label: "Uniswap Addresses", id: "uniswap-addresses" },
           ],
         },
     {
