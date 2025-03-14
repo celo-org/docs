@@ -509,16 +509,27 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+    {
+      type: "category",
+      label: "Build with Thirdweb",
+      items: [
+     {
+      type: "doc",
+      label: "Overview",
+      id: "build/build-with-thirdweb/overview",
+    },      
      {
       type: "doc",
       label: "Building an App with Thirdweb",
-      id: "build/thirdweb-quickstart",
+      id: "build/build-with-thirdweb/thirdweb-quickstart",
     },
      {
       type: "doc",
-      label: "One-Click Quickstart",
-      id: "build/one-click-quickstart",
-    },    
+      label: "Transfer and NFT Minting",
+      id: "build/build-with-thirdweb/tranfer-and-nft_minting",
+      },      
+    ]
+    },   
     {
       type: "category",
       label: "Build with AI",

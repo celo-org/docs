@@ -1,5 +1,5 @@
 ---
-title: One-Click Quickstart
+title: Celo Transfer and NFT Minting with Thirdweb
 ---
 
 Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 
