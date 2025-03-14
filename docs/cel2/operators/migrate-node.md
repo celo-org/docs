@@ -14,18 +14,24 @@ The terms L1 and pre-hardfork are used interchangeably to reference Celo before 
 
 Migrating a pre-hardfork datadir involves these high-level steps:
 
-1. Upgrade your L1 node to the [latest client release](run-node.md#network-config--assets) so it will stop producing blocks at
-   at the hardfork.
+1. Upgrade your L1 node to the [latest client release](run-node.md#network-config--assets) so it will stop producing blocks at the hardfork.
 2. 1-2 days before the hardfork, stop your node and run a pre-migration to migrate the majority of data. This is not required, but is highly recommended for minimizing downtime. See [Preparing for the L2 migration](../notices/l2-migration.md).
 3. Restart your node and wait for the hardfork.
 4. Shut down your node once the hardfork block number is reached.
-5. Pull the necessary network configuration artifacts once available (e.g. hardfork block time).
-6. Run the migration tool to migrate your L1 datadir and produce the hardfork block.
-7. Launch your L2 node with the migrated datadir.
+5. Run the migration tool to migrate your L1 datadir and produce the hardfork block.
+6. Launch your L2 node with the migrated datadir.
 
-The migration tool can be run multiple times as the L1 chain data grows and will continue migrating from where it last left off.
+### Important Notes
 
-Please note that the node must be stopped before the migration tool is run, even once it has reached the hardfork.
+- The migration tool can be run multiple times as the L1 chain data grows and will continue migrating from where it last left off.
+
+- All migrations writing to a given destination datadir must use the same node's source datadir. That is, you should not run the pre-migration with a db snapshot from node A and then run the full migration with a db snapshot from node B.
+
+- Your node must be stopped before the migration tool is run, even once it has reached the hardfork.
+
+- You should not attempt to migrate archive node data, only full node data.
+
+- While the pre-migration can be run multiple times and will get faster each time, you should avoid running the full migration more than once as it will be slower the second time.
 
 ## Before the hardfork
 
@@ -105,18 +111,15 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    --outfile.rollup-config <path-to-output-rollup-config.json> \
    --outfile.genesis <path-to-output-genesis.json> \
    --migration-block-number <MIGRATION_BLOCK_NUMBER> \
-   --migration-block-time <MIGRATION_BLOCK_TIMESTAMP> \
    --old-db <path-to-your-L1-datadir> \
    --new-db <path-to-your-L2-destination-datadir>
    ```
 
-   You can find these artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) once they're available.
+   You can find the required input artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) section once they're available.
 
-   :::note
-   We are working on changes to automate fetching some of these parameters for mainnet. This section is likely to change soon.
-   :::
+   We recommend using the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase as an additional reference for running the migration from source.
 
-The full migration process will take at least several minutes to complete, assuming most data has been pre-migrated. If no pre-migration was performed it could take several hours.
+The full migration process will take at least 5 minutes to complete for mainnet, assuming most data has been pre-migrated. If no pre-migration was performed it could take several hours.
 
 Congrats! Your datadir is now ready to use with a Celo L2 node. See [Running a Celo Node](run-node.md) for instructions on how to start your Celo L2 node.
 
