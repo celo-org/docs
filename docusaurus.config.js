@@ -132,10 +132,6 @@ module.exports = {
           position: "left",
           items: [
             {
-              to: "cli/",
-              label: "CLI",
-            },
-            {
               to: "https://celo.org/ecosystem",
               label: "Celo Ecosystem",
               target: "_blank",
