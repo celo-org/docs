@@ -595,8 +595,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
+      label: "Build with Self",
+      id: "build/build-with-self"
     },
     {
       type: "category",
