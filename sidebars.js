@@ -925,6 +925,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Using Foundry",
+          id: "developer/deploy/foundry",
+        },        
+        {
+          type: "doc",
           label: "Using thirdweb",
           id: "developer/deploy/thirdweb",
         },
