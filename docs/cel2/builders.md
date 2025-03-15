@@ -40,7 +40,7 @@ Additionally, have a look at the [ContractKit Celo L2 Guide](https://docs.google
 Reach out to us!
 
 - Technical question? [celo-org discussions on GitHub](https://github.com/orgs/celo-org/discussions/categories/cel2)
-- Any type of question? Reach out on [Discord](https://chat.celo.org) in the #celo-L2-support channel
+- Any type of question? Reach out on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel.
 
 Also check out these resources:
   

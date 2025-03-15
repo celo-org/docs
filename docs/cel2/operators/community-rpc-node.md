@@ -25,7 +25,7 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 1. Create a new metadata file. If, instead, you want to update an existing one, download it instead of creating it.
 
     ```bash
-    $ celocli account:create-metadata ./metadata.json --from $VALIDATOR_SIGNER`
+    $ celocli account:create-metadata ./metadata.json --from $VALIDATOR_SIGNER
     ```
 
 2. Register your public RPC URL:
