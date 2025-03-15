@@ -517,17 +517,17 @@ const sidebars = {
       type: "doc",
       label: "Overview",
       id: "build/build-with-thirdweb/overview",
-    },      
-     {
-      type: "doc",
-      label: "Building an App with Thirdweb",
-      id: "build/build-with-thirdweb/thirdweb-quickstart",
     },
      {
       type: "doc",
-      label: "Transfer and NFT Minting",
-      id: "build/build-with-thirdweb/tranfer-and-nft_minting",
-      },      
+      label: "One-click quickstart",
+      id: "build/build-with-thirdweb/one-click quickstart",
+      },          
+     {
+      type: "doc",
+      label: "Celo NFT drop Tutorial",
+      id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
+    },      
     ]
     },   
     {
