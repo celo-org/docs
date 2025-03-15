@@ -509,10 +509,26 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+    {
+      type: "category",
+      label: "Build with Thirdweb",
+      items: [
      {
       type: "doc",
-      label: "Building an App with Thirdweb",
-      id: "build/thirdweb-quickstart",
+      label: "Overview",
+      id: "build/build-with-thirdweb/overview",
+    },
+     {
+      type: "doc",
+      label: "One-click quickstart",
+      id: "build/build-with-thirdweb/one-click quickstart",
+      },          
+     {
+      type: "doc",
+      label: "Celo NFT drop Tutorial",
+      id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
+    },      
+    ]
     },   
     {
       type: "category",
