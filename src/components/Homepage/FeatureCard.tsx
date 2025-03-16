@@ -49,7 +49,7 @@ export default function FeatureCard({
             )}
           </div>
           <div className="p-8 flex flex-col flex-1">
-            <h3 className="!font-futura !text-3xl mb-3 !text-[#2E1065] !font-light">
+            <h3 className="!font-futura !text-5xl !md:text-4xl mb-3 !text-[#2E1065] !font-light">
               {title}
             </h3>
             <p className="!font-futura !text-gray-600">{description}</p>
@@ -58,7 +58,7 @@ export default function FeatureCard({
       ) : (
         <div className="flex flex-col h-full">
           <div className="p-8 flex flex-col flex-1">
-            <h3 className="!font-futura !text-3xl mb-3 !text-[#2E1065] !font-light">
+            <h3 className="!font-futura !text-5xl !md:text-4xl mb-3 !text-[#2E1065] !font-light">
               {title}
             </h3>
             <p className="!font-futura !text-gray-600">{description}</p>

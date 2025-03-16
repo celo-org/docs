@@ -5,7 +5,7 @@ import DiscoverPattern from "./Pattern/DiscoverPattern";
 export default function DiscoverSection() {
   return (
     <section className="relative bg-gradient-to-r to-[#650091] from-[#1E002B] overflow-hidden h-screen md:h-[800px] m-4 rounded-lg">
-      <div className="absolute -bottom-4 right-0 h-auto">
+      <div className="absolute hidden md:block -bottom-4 right-0 h-auto">
         <div className="relative w-full object-contain">
           <img
             src="/img/smart-phone.png"
@@ -23,7 +23,7 @@ export default function DiscoverSection() {
                 <DiscoverPattern />
               </div>
               <p
-                className={`!mt-8 font-futura text-7xl md:text-6xl lg:text-7xl text-sand mb-6 leading-[1.1]`}
+                className={`!mt-8 !font-futura !font-light text-5xl md:text-6xl lg:text-7xl text-sand mb-6 leading-[1.1]`}
               >
                 Discover what you can build on Celo
               </p>

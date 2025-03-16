@@ -67,11 +67,11 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative flex flex-col items-center justify-center bg-gypsum text-fig px-4 overflow-hidden h-screen md:h-[800px] m-4 rounded-lg">
           <h1
-            className={`!font-futura !font-light !text-7xl !text-violet-950 !md:text-7xl lg:text-7xl mb-6 max-w-2xl mx-auto text-center`}
+            className={`!font-futura !font-light !text-5xl !text-violet-950 !md:text-7xl lg:text-7xl !mb-4 md:!mb-6 max-w-2xl mx-auto text-center`}
           >
             Build for the Real World on Celo
           </h1>
-          <p className="!font-futura text-xl text-slate-500 mb-8 max-w-lg mx-auto text-center">
+          <p className="!font-futura !text-lg !md:text-xl text-slate-500 mb-8 max-w-lg mx-auto text-center">
             Create mobile-first decentralized applications accessible to
             everyone, everywhere.
           </p>
