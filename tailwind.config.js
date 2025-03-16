@@ -1,4 +1,6 @@
 // tailwind.config.js
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   corePlugins: {
@@ -28,6 +30,10 @@ module.exports = {
         citrus: "#FF9A51",
         lotus: "#FFA3EB",
         lavender: "#B490FF",
+      },
+      fontFamily: {
+        advercase: ["Advercase", ...fontFamily.sans],
+        futura: ["Futura", ...fontFamily.sans],
       },
     },
   },

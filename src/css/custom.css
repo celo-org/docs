@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @config '../../tailwind.config.js';
 
@@ -31,6 +31,41 @@
 /* Variables that don't change even when mode changes can be defined here */
 :root {
   --site-color-svg-icon-favorite: #e9669e;
+}
+
+@font-face {
+  font-family: "Advercase";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/advercase-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Advercase";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/advercase-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/futura-bold-font.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/futura-book-font.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/fonts/futura-light-font.ttf") format("ttf");
 }
 
 .navbar--dark {
