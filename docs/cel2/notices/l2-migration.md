@@ -18,8 +18,7 @@ The two main steps to prepare for the hardfork are
 
 ## Upgrade L1 nodes
 
-Prior to the L2 hardfork, all node operators must upgrade their existing L1 (`celo-blockchain`) nodes to the appropriate release version. You can find the hardfork release versions for each network listed in the Key Information section below.
-These releases each define hardfork block numbers such that nodes will stop producing or accepting blocks immediately before the hardfork.
+Prior to the L2 hardfork, all node operators must upgrade their existing L1 (`celo-blockchain`) nodes to version [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9). This release defines hardfork block numbers such that nodes will stop producing or accepting blocks immediately before the hardfork.
 
 ## Run a pre-migration
 
