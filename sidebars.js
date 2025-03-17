@@ -929,9 +929,15 @@ const sidebars = {
           id: "developer/deploy/foundry",
         },        
         {
-          type: "doc",
+          type: "category",
           label: "Using thirdweb",
-          id: "developer/deploy/thirdweb",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "developer/deploy/index",
+            },
+          ],
         },
         {
           type: "doc",
