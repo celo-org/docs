@@ -680,8 +680,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
+      label: "Build with Self",
+      id: "build/build-with-self"
     },
     {
       type: "category",
@@ -1007,6 +1007,11 @@ const sidebars = {
           label: "Overview",
           id: "developer/deploy/index",
         },
+        {
+          type: "doc",
+          label: "Using Foundry",
+          id: "developer/deploy/foundry",
+        },        
         {
           type: "doc",
           label: "Using thirdweb",
@@ -1656,7 +1661,6 @@ const sidebars = {
   // ######################################
   // CLI
   // ######################################
-
   //cli: [
     //{
       //type: "doc",
@@ -1712,13 +1716,18 @@ const sidebars = {
       items: [
         {
           type : "doc",
-          label: "Celo L2 migration",
+          label: "Celo L2 Migration",
           id: "cel2/notices/l2-migration",
         },
         {
           type : "doc",
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
+		 },
+        {
+          type : "doc",
+          label: "Day 1 Partners",
+          id: "cel2/notices/day-1-partners",
         },
       ]
     },
@@ -1729,7 +1738,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node operators & Validators",
+      label: "Node operators",
       link: {
         type: "doc",
         id: "cel2/operators/overview"
@@ -1743,20 +1752,27 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a Celo node",
+          label: "Running a Celo Node",
           id: "cel2/operators/run-node",
         },
         {
           type: "doc",
-          label: "Migrating an L1 node",
+          label: "Migrating an L1 Node",
           id: "cel2/operators/migrate-node",
         },
+      ]
+    },
+    {
+      type: "category",
+      label: "Validators",
+      collapsed: false,
+      items: [
         {
           type: "doc",
-          label: "Running a community RPC node",
+          label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
         },
-      ]
+      ],
     },
     { 
       type: "category",
