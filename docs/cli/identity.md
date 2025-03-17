@@ -5,7 +5,7 @@ Interact with ODIS and the attestations service
 
 * [`celocli identity:withdraw-attestation-rewards`](#celocli-identitywithdraw-attestation-rewards)
 
-## `celocli identity:withdraw-attestation-rewards`
+## `celocli identity:withdraw-attestation-rewards` {#celocli-identitywithdraw-attestation-rewards}
 
 Withdraw accumulated attestation rewards for a given currency
 

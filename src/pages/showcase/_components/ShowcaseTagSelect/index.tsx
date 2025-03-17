@@ -79,7 +79,7 @@ function ShowcaseTagSelect(
           }
         }}
         onBlur={(e) => {
-          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("blur"));
+          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("blur-sm"));
         }}
         onChange={toggleTag}
         checked={selected}

@@ -1,4 +1,6 @@
 // tailwind.config.js
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   corePlugins: {
@@ -29,19 +31,10 @@ module.exports = {
         lotus: "#FFA3EB",
         lavender: "#B490FF",
       },
+      fontFamily: {
+        advercase: ["Advercase", ...fontFamily.sans],
+        futura: ["Futura", ...fontFamily.sans],
+      },
     },
   },
-  plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
-  ],
 };

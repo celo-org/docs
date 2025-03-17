@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import styles from "./styles.module.css";
@@ -25,7 +25,7 @@ export default function Tooltip({
 }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
-    null
+    null,
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
@@ -48,7 +48,7 @@ export default function Tooltip({
           },
         },
       ],
-    }
+    },
   );
 
   const timeout = useRef<number | null>(null);
@@ -68,7 +68,7 @@ export default function Tooltip({
 
   useEffect(() => {
     const showEvents = ["mouseenter", "focus"];
-    const hideEvents = ["mouseleave", "blur"];
+    const hideEvents = ["mouseleave", "blur-sm"];
 
     const handleOpen = () => {
       // There is no point in displaying an empty tooltip.
@@ -138,7 +138,7 @@ export default function Tooltip({
                 />
               </div>
             ),
-            container
+            container,
           )
         : container}
     </>

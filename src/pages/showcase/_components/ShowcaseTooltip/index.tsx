@@ -68,7 +68,7 @@ export default function Tooltip({
 
   useEffect(() => {
     const showEvents = ["mouseenter", "focus"];
-    const hideEvents = ["mouseleave", "blur"];
+    const hideEvents = ["mouseleave", "blur-sm"];
 
     const handleOpen = () => {
       // There is no point in displaying an empty tooltip.

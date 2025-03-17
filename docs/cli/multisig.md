@@ -7,7 +7,7 @@ Approves an existing transaction on a multi-sig contract
 * [`celocli multisig:show ARG1`](#celocli-multisigshow-arg1)
 * [`celocli multisig:transfer ARG1`](#celocli-multisigtransfer-arg1)
 
-## `celocli multisig:approve`
+## `celocli multisig:approve` {#celocli-multisigapprove}
 
 Approves an existing transaction on a multi-sig contract
 
@@ -72,7 +72,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/multisig/approve.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/multisig/approve.ts)_
 
-## `celocli multisig:show ARG1`
+## `celocli multisig:show ARG1` {#celocli-multisigshow-arg1}
 
 Shows information about multi-sig contract
 
@@ -111,7 +111,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/multisig/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/multisig/show.ts)_
 
-## `celocli multisig:transfer ARG1`
+## `celocli multisig:transfer ARG1` {#celocli-multisigtransfer-arg1}
 
 Ability to approve CELO transfers to and from multisig. Submit transaction or approve a matching existing transaction
 
