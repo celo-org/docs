@@ -1,8 +1,8 @@
 ---
-title: One-click Quickstart
+title: One-Click Quickstart
 ---
 
-Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 
+Create and deploy Web3 apps effortlessly with Thirdweb and Celo. 
 
 ---
 
@@ -21,21 +21,21 @@ By the end of this tutorial, you will:
 ## Fund Your Wallet  
 
 1. Ensure you have sufficient funds to cover the transaction fees.  
-2. Visit the [Alfajores Faucet](https://faucet.celo.org/alfajores) to claim test tokens using your wallet address. ***Remember to claim only what you need.***
+2. Visit the [Alfajores Faucet](https://faucet.celo.org/alfajores) to claim test tokens using a wallet address. ***Remember to claim only what you need.***
 
 ## Create a Contract on Thirdweb
 
 1. Visit [Thirdweb](https://thirdweb.com/login) and log in or create a new account.  
 2. Navigate to **`Contracts`** and click **`Deploy Contract`**.  
-3. Since multiple smart contracts have already been audited, we don’t need to write them from scratch.  
+3. Since multiple smart contracts have already been audited, there's no need to write them from scratch.  
 4. Select **`NFT Drop`** and click **`Deploy`**.  
-5. Configure your token by setting its **Name** (mandatory), **Symbol**, and optionally adding an **Image** and **Description**.  
+5. Configure the token by setting its **Name** (mandatory), **Symbol**, and optionally adding an **Image** and **Description**.  
 6. In the **Deploy Options** section, choose **`Celo Alfajores`** as the Chain (if not selected by default).  
 7. Click **`Deploy Now`** to finalize the process.  
-8. After deployment, you’ll be redirected to the dashboard to upload your NFTs.  
-9. Provide a **name**, upload an **image**, add a **description**, and define **traits** for your NFT.  
-10. **Lazy Mint** your NFT.  
-11. Copy your **`contract address`** from the NFT dashboard.  
+8. After deployment, well’ll be redirected to the dashboard to upload your NFTs.  
+9. Provide a **name**, upload an **image**, add a **description**, and define **traits** for the NFT.  
+10. **Lazy Mint** the NFT.  
+11. Copy the **`contract address`** from the NFT dashboard.  
 
 ## Make the NFT Mintable
 
@@ -83,10 +83,10 @@ By the end of this tutorial, you will:
    npm run dev
 	```
 	
-Once the project is running, you’ll see two links, the first named **Send Celo** and the second named **Mint NFT**. 
-The first one will be displayed by default. Click on the **Connect** button to connect your wallet. You can enter an 
+Once the project is running, there will be two links, the first named **Send Celo** and the second named **Mint NFT**. 
+The first one will be displayed by default. Click on the **Connect** button to connect the wallet. Enter an 
 address and an amount of Celo to transfer. The second link will display an NFT along with its description and by pressing
-the mint button, you will pay 0.1 Celo.
+the mint button, 0.1 Celo will be paid.
 
 ## Join Build with Celo - Proof of Ship
 

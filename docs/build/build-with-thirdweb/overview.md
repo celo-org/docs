@@ -13,7 +13,7 @@ Thirdweb streamlines blockchain development with pre-built contracts, SDKs, and 
 
 ## Why Thirdweb? {#why-thirdweb}
 
-You should use Thirdweb because it eliminates the complexity of Web3 development, letting you focus on building rather than managing blockchain intricacies.
+Using Thirdweb is recommended because it eliminates the complexity of Web3 development, focusing on building rather than managing blockchain intricacies.
 
 * Pre-built Smart Contracts
 * SDKs & APIs
