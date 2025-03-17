@@ -1,5 +1,5 @@
 ---
-title: Celo NFT drop Tutorial
+title: Celo NFT Drop Tutorial
 ---
 
 Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 

@@ -1,5 +1,5 @@
 ---
-title: One-click quickstart
+title: One-click Quickstart
 ---
 
 Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 

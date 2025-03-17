@@ -520,12 +520,12 @@ const sidebars = {
     },
      {
       type: "doc",
-      label: "One-click quickstart",
+      label: "One-click Quickstart",
       id: "build/build-with-thirdweb/one-click quickstart",
       },          
      {
       type: "doc",
-      label: "Celo NFT drop Tutorial",
+      label: "Celo NFT Drop Tutorial",
       id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
     },      
     ]
