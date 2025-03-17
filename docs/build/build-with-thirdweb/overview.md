@@ -1,5 +1,7 @@
 # Getting Started with Thirdweb
 
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Why Thirdweb?](#why-thirdweb)
