@@ -595,8 +595,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
+      label: "Build with Self",
+      id: "build/build-with-self"
     },
     {
       type: "category",
@@ -1617,40 +1617,31 @@ const sidebars = {
       label: "Introduction",
       id: "cli/index",
     },
+    // TOPICS
     { type: "doc", label: "Account", id: "cli/account" },
-    { type: "doc", label: "Commands", id: "cli/commands" },
     { type: "doc", label: "Config", id: "cli/config" },
     { type: "doc", label: "DKG", id: "cli/dkg" },
     { type: "doc", label: "Election", id: "cli/election" },
+    { type: "doc", label: "Epochs", id: "cli/epochs" },
     { type: "doc", label: "Exchange", id: "cli/exchange" },
-    {
-      type: "doc",
-      label: "Governance",
-      id: "cli/governance",
-    },
-    { type: "doc", label: "Help", id: "cli/help" },
+    { type: "doc", label: "Governance", id: "cli/governance" },
     { type: "doc", label: "Identity", id: "cli/identity" },
-    {
-      type: "doc",
-      label: "LockedGold",
-      id: "cli/lockedgold",
-    },
-    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+    { type: "doc", label: "LockedGold", id: "cli/lockedgold", },
     { type: "doc", label: "Multisig", id: "cli/multisig" },
     { type: "doc", label: "Network", id: "cli/network" },
     { type: "doc", label: "Node", id: "cli/node" },
     { type: "doc", label: "Oracle", id: "cli/oracle" },
-    { type: "doc", label: "Plugins", id: "cli/plugins" },
+    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
     //{ type: "doc", label: "Reserve", id: "cli/reserve" },
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
     { type: "doc", label: "Validator", id: "cli/validator" },
-    { type: "doc", label: "Utilities", id: "cli/utils" },
-    {
-      type: "doc",
-      label: "ValidatorGroup",
-      id: "cli/validatorgroup",
-    },
+    { type: "doc", label: "Validator Group", id: "cli/validatorgroup" },
+    // COMMANDS
+    { type: "doc", label: "Autocomplete", id: "cli/autocomplete" },
+    { type: "doc", label: "Commands", id: "cli/commands" },
+    { type: "doc", label: "Help", id: "cli/help" },   
+    { type: "doc", label: "Plugins", id: "cli/plugins" },
   ],
 
   cel2: [
@@ -1666,13 +1657,18 @@ const sidebars = {
       items: [
         {
           type : "doc",
-          label: "Celo L2 migration",
+          label: "Celo L2 Migration",
           id: "cel2/notices/l2-migration",
         },
         {
           type : "doc",
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
+		 },
+        {
+          type : "doc",
+          label: "Day 1 Partners",
+          id: "cel2/notices/day-1-partners",
         },
       ]
     },
@@ -1683,7 +1679,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node operators & Validators",
+      label: "Node operators",
       link: {
         type: "doc",
         id: "cel2/operators/overview"
@@ -1697,20 +1693,27 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a Celo node",
+          label: "Running a Celo Node",
           id: "cel2/operators/run-node",
         },
         {
           type: "doc",
-          label: "Migrating an L1 node",
+          label: "Migrating an L1 Node",
           id: "cel2/operators/migrate-node",
         },
+      ]
+    },
+    {
+      type: "category",
+      label: "Validators",
+      collapsed: false,
+      items: [
         {
           type: "doc",
-          label: "Running a community RPC node",
+          label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
         },
-      ]
+      ],
     },
     { 
       type: "category",

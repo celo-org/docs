@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require("path");
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require("remark-math").default;
+const katex = require("rehype-katex").default;
 const DefaultLocale = "en";
 
 module.exports = {
@@ -50,6 +50,7 @@ module.exports = {
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
+    "./src/plugins/tailwind-config.js",
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -61,17 +62,6 @@ module.exports = {
         disableInDev: true,
       },
     ],
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
   ],
   themeConfig: {
     twitterImage: "img/preview.png",
@@ -79,7 +69,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Alfajores & Baklava L2 Testnets are live! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
+        'Celo L2 migration is happening <a target="_blank" rel="noopener noreferrer" href="https://celo.blockscout.com/block/countdown/31056500"> soon</a>. Make sure to <a target="_blank" rel="noopener noreferrer" href="/cel2">upgrade your nodes</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -323,14 +313,10 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl: "https://github.com/celo-org/docs/edit/main/",
           editUrl: ({ locale, versionDocsDirPath, docPath }) => {
-            // Link to Crowdin for French docs
             if (locale !== DefaultLocale) {
               return `https://celo.crowdin.com/celo-docs/${locale}`;
             }
-            // Link to Github for English docs
             return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`;
           },
           routeBasePath: "/",
