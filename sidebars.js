@@ -1668,6 +1668,11 @@ const sidebars = {
           type : "doc",
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
+		 },
+        {
+          type : "doc",
+          label: "Day 1 Partners",
+          id: "cel2/notices/day-1-partners",
         },
       ]
     },
