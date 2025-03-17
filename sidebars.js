@@ -1678,7 +1678,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node operators & Validators",
+      label: "Node operators",
       link: {
         type: "doc",
         id: "cel2/operators/overview"
@@ -1704,8 +1704,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node Operators & Validators",
-      id: "cel2/validators",
+      label: "Validators",
       collapsed: false,
       items: [
         {
