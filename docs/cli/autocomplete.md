@@ -5,7 +5,7 @@ Display autocomplete installation instructions.
 
 * [`celocli autocomplete [SHELL]`](#celocli-autocomplete-shell)
 
-## `celocli autocomplete [SHELL]`
+## `celocli autocomplete [SHELL]` {#celocli-autocomplete-shell}
 
 Display autocomplete installation instructions.
 
