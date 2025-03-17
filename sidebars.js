@@ -22,6 +22,81 @@ const sidebars = {
       type: "category",
       label: "Using Celo",
       items: [
+      {
+	  type: "category",
+      label: "Holder",
+      items: [
+    { type: "doc", label: "Overview", id: "holder/index" },
+    {
+      type: "category",
+      label: "Manage",
+      items: [
+        {
+          type: "doc",
+          label: "Self-Custody",
+          id: "holder/manage/self-custody",
+        },
+        {
+          type: "doc",
+          label: "Release Gold",
+          id: "holder/manage/release-gold",
+        },
+        {
+          type: "doc",
+          label: "Exchange Assets",
+          id: "holder/manage/exchange",
+        },
+        {
+          type: "doc",
+          label: "Asset Management",
+          id: "holder/manage/asset",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Voting",
+      items: [
+        {
+          type: "doc",
+          label: "Validator Elections",
+          id: "holder/vote/validator",
+        },
+        {
+          type: "doc",
+          label: "Voting on Governance",
+          id: "holder/vote/governance",
+        },
+        {
+          type: "doc",
+          label: "Governable Parameters",
+          id: "holder/vote/governance-parameters",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Recovery",
+      items: [
+        {
+          type: "doc",
+          label: "Recover from ETH Address",
+          id: "holder/recover/from-eth-address",
+        },
+        {
+          type: "doc",
+          label: "Recover from Celo Address",
+          id: "holder/recover/from-celo-address",
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Exchanges",
+      href: "https://coinmarketcap.com/currencies/celo/markets/",
+    },      
+      ],
+	  },      
         {
           type: "doc",
           label: "Wallets",
@@ -475,6 +550,16 @@ const sidebars = {
       label: "Validator FAQ",
       id: "validator/troubleshooting-faq",
     },
+    {
+      type: "link",
+      label: "Celo Website",
+      href: "https://celo.org",
+    },
+    {
+      type: "link",
+      label: "Celo Discord",
+      href: "https://discord.com/invite/celo",
+    },        
     ],			
 		}
       ],
@@ -562,7 +647,7 @@ const sidebars = {
               type: "doc",
               label: "Launch AI Agent Memecoins",
               id: "build/build-with-ai/examples/ai-memecoins",
-            }
+            },
           ]
         },
       ]
@@ -697,11 +782,10 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Contracts",
+          label: "Addresses",
           items: [
-            { type: "doc", label: "Core Contracts", id: "contract-addresses" },
-            { type: "doc", label: "Tokens Addresses", id: "token-addresses" },
-            { type: "doc", label: "Uniswap Addresses", id: "uniswap-addresses" },
+            { type: "doc", label: "Contracts", id: "contract-addresses" },
+            { type: "doc", label: "Tokens", id: "token-addresses" },
           ],
         },
     {
@@ -970,6 +1054,48 @@ const sidebars = {
           label: "Overview",
           id: "developer/sdks/celo-sdks",
         },
+        
+
+    {
+      type: "category",
+      label: "CLI",
+      items: [
+         { type: "doc", label: "Account", id: "cli/account" },
+    { type: "doc", label: "Commands", id: "cli/commands" },
+    { type: "doc", label: "Config", id: "cli/config" },
+    { type: "doc", label: "DKG", id: "cli/dkg" },
+    { type: "doc", label: "Election", id: "cli/election" },
+    { type: "doc", label: "Exchange", id: "cli/exchange" },
+    {
+      type: "doc",
+      label: "Governance",
+      id: "cli/governance",
+    },
+    { type: "doc", label: "Help", id: "cli/help" },
+    { type: "doc", label: "Identity", id: "cli/identity" },
+    {
+      type: "doc",
+      label: "LockedGold",
+      id: "cli/lockedgold",
+    },
+    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+    { type: "doc", label: "Multisig", id: "cli/multisig" },
+    { type: "doc", label: "Network", id: "cli/network" },
+    { type: "doc", label: "Node", id: "cli/node" },
+    { type: "doc", label: "Oracle", id: "cli/oracle" },
+    { type: "doc", label: "Plugins", id: "cli/plugins" },
+    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
+    { type: "doc", label: "Rewards", id: "cli/rewards" },
+    { type: "doc", label: "Transfer", id: "cli/transfer" },
+    { type: "doc", label: "Validator", id: "cli/validator" },
+    { type: "doc", label: "Utilities", id: "cli/utils" },
+    {
+      type: "doc",
+      label: "ValidatorGroup",
+      id: "cli/validatorgroup",
+    },
+      ],
+    },  
         {
           type: "doc",
           label: "viem",
@@ -1549,116 +1675,49 @@ const sidebars = {
   //],
 
   // ######################################
-  // Holder
-  // ######################################
-  holderSiderbar: [
-    { type: "doc", label: "Overview", id: "holder/index" },
-    {
-      type: "category",
-      label: "Manage",
-      items: [
-        {
-          type: "doc",
-          label: "Self-Custody",
-          id: "holder/manage/self-custody",
-        },
-        {
-          type: "doc",
-          label: "Release Gold",
-          id: "holder/manage/release-gold",
-        },
-        {
-          type: "doc",
-          label: "Exchange Assets",
-          id: "holder/manage/exchange",
-        },
-        {
-          type: "doc",
-          label: "Asset Management",
-          id: "holder/manage/asset",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Voting",
-      items: [
-        {
-          type: "doc",
-          label: "Validator Elections",
-          id: "holder/vote/validator",
-        },
-        {
-          type: "doc",
-          label: "Voting on Governance",
-          id: "holder/vote/governance",
-        },
-        {
-          type: "doc",
-          label: "Governable Parameters",
-          id: "holder/vote/governance-parameters",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Recovery",
-      items: [
-        {
-          type: "doc",
-          label: "Recover from ETH Address",
-          id: "holder/recover/from-eth-address",
-        },
-        {
-          type: "doc",
-          label: "Recover from Celo Address",
-          id: "holder/recover/from-celo-address",
-        },
-      ],
-    },
-    {
-      type: "link",
-      label: "Exchanges",
-      href: "https://coinmarketcap.com/currencies/celo/markets/",
-    },
-  ],
-
-  // ######################################
   // CLI
   // ######################################
-
-  cli: [
-    {
-      type: "doc",
-      label: "Introduction",
-      id: "cli/index",
-    },
-    // TOPICS
-    { type: "doc", label: "Account", id: "cli/account" },
-    { type: "doc", label: "Config", id: "cli/config" },
-    { type: "doc", label: "DKG", id: "cli/dkg" },
-    { type: "doc", label: "Election", id: "cli/election" },
-    { type: "doc", label: "Epochs", id: "cli/epochs" },
-    { type: "doc", label: "Exchange", id: "cli/exchange" },
-    { type: "doc", label: "Governance", id: "cli/governance" },
-    { type: "doc", label: "Identity", id: "cli/identity" },
-    { type: "doc", label: "LockedGold", id: "cli/lockedgold", },
-    { type: "doc", label: "Multisig", id: "cli/multisig" },
-    { type: "doc", label: "Network", id: "cli/network" },
-    { type: "doc", label: "Node", id: "cli/node" },
-    { type: "doc", label: "Oracle", id: "cli/oracle" },
-    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
-    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
-    { type: "doc", label: "Rewards", id: "cli/rewards" },
-    { type: "doc", label: "Transfer", id: "cli/transfer" },
-    { type: "doc", label: "Validator", id: "cli/validator" },
-    { type: "doc", label: "Validator Group", id: "cli/validatorgroup" },
-    // COMMANDS
-    { type: "doc", label: "Autocomplete", id: "cli/autocomplete" },
-    { type: "doc", label: "Commands", id: "cli/commands" },
-    { type: "doc", label: "Help", id: "cli/help" },   
-    { type: "doc", label: "Plugins", id: "cli/plugins" },
-  ],
+  //cli: [
+    //{
+      //type: "doc",
+      //label: "Introduction",
+      //id: "cli/index",
+    //},
+    //{ type: "doc", label: "Account", id: "cli/account" },
+    //{ type: "doc", label: "Commands", id: "cli/commands" },
+    //{ type: "doc", label: "Config", id: "cli/config" },
+    //{ type: "doc", label: "DKG", id: "cli/dkg" },
+    //{ type: "doc", label: "Election", id: "cli/election" },
+    //{ type: "doc", label: "Exchange", id: "cli/exchange" },
+    //{
+      //type: "doc",
+      //label: "Governance",
+      //id: "cli/governance",
+    //},
+    //{ type: "doc", label: "Help", id: "cli/help" },
+    //{ type: "doc", label: "Identity", id: "cli/identity" },
+    //{
+      //type: "doc",
+      //label: "LockedGold",
+      //id: "cli/lockedgold",
+    //},
+    //{ type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+    //{ type: "doc", label: "Multisig", id: "cli/multisig" },
+    //{ type: "doc", label: "Network", id: "cli/network" },
+    //{ type: "doc", label: "Node", id: "cli/node" },
+    //{ type: "doc", label: "Oracle", id: "cli/oracle" },
+    //{ type: "doc", label: "Plugins", id: "cli/plugins" },
+    ////{ type: "doc", label: "Reserve", id: "cli/reserve" },
+    //{ type: "doc", label: "Rewards", id: "cli/rewards" },
+    //{ type: "doc", label: "Transfer", id: "cli/transfer" },
+    //{ type: "doc", label: "Validator", id: "cli/validator" },
+    //{ type: "doc", label: "Utilities", id: "cli/utils" },
+    //{
+      //type: "doc",
+      //label: "ValidatorGroup",
+      //id: "cli/validatorgroup",
+    //},
+  //],
 
   cel2: [
     {
