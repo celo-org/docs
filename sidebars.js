@@ -1708,7 +1708,7 @@ const sidebars = {
       id: "cel2/validators",
       collapsed: false,
       items: [
-	{
+        {
           type: "doc",
           label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
