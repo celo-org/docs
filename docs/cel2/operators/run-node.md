@@ -52,7 +52,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 2. Configure your `.env` file.
 
     __Copy default configurations__
-  
+
     The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
@@ -134,7 +134,7 @@ Please ensure neither datadir is being used by a running node before proceeding.
 2. Configure your `.env` file.
 
     __Copy default configurations__
-  
+
     The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
@@ -223,6 +223,18 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
 Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
 
 ## Network config & Assets
+
+### Mainnet
+
+- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
+- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
+
+- Container images:
+  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
 
 ### Alfajores
 

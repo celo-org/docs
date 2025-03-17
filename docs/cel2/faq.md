@@ -5,11 +5,13 @@ description: Frequently Asked Questions about Cel2
 
 ### When is the Celo mainnet becoming an L2?
 
-Following the final testnet dry run on the Baklava testnet the mainnet launch date will be determined.
+:spiral_calendar: Celo L2 Mainnet Date: March 26, 2025, 3:00 AM UTC
+
+:chains: Hardfork Block Height: 31056500
 
 ### When is the Baklava testnet becoming an L2?
 
-The Bakalava testnet is scheduled to upgrade to L2 on February 20th, 2025.
+The Bakalava testnet migrated to an L2 on February 20th, 2025
 
 ### When is Alfajores testnet becoming an L2?
 
