@@ -41,7 +41,7 @@ module.exports = {
           },
           {
             from: "/cel2/operators/rpc-provider",
-            to: "/cel2/validators/community-rpc-node",
+            to: "/cel2/operators/community-rpc-node",
           },
         ],
       },
