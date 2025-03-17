@@ -121,21 +121,27 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
+            //{
+            //  to: "protocol/",
+            //  label: "Protocol",
+            //},
+            //{
+            //  to: "validator/",
+            //  label: "Validators",
+            //},
             {
-              to: "https://celo.org/ecosystem",
-              label: "Celo Ecosystem",
-              target: "_blank",
+              to: "holder/",
+              label: "Holder",
             },
             {
-              to: "https://celo.org",
-              label: "Celo Website",
-              target: "_blank",
+              to: "cli/",
+              label: "CLI",
             },
             {
-              to: "https://discord.com/invite/celo",
-              label: "Celo Discord",
+              to: "https://www.celopg.eco/ecosystem",
+              label: "dApps",
               target: "_blank",
-            },            
+            },
           ],
         },
         {
