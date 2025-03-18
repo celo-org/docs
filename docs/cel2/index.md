@@ -1,5 +1,22 @@
 # Overview
 
+## Celo L2 Mainnet 
+
+:spiral_calendar: Celo L2 Mainnet Date: March 26, 2025, 3:00 AM UTC
+
+:chains: Hardfork Block Height: 31056500
+
+**Node Operators:** Please refer to the mainnet releases below and [Node Operator Guide](./operators/overview.md) for additional migration instructions. 
+
+* Minimum `celo-blockchain` version: [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9)
+* `op-geth`: [celo-v2.0.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0)
+* `op-node`: [celo-v2.0.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0)
+
+Celo is currently operating two Layer 2 testnets, Alfajores and Baklava, both of which have been successfully migrated from Layer 1.
+
+
+## Celo’s Transition to Ethereum Layer 2
+
 Celo is transitioning from a standalone EVM-compatible Layer 1 blockchain to an Ethereum Layer 2.
 This shift, [proposed by cLabs in July
 2023](https://forum.celo.org/t/clabs-proposal-for-celo-to-transition-to-an-ethereum-l2/6109), aims
