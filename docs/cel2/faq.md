@@ -15,7 +15,7 @@ See the guides for [running a node](./operators/run-node.md) or the guide on [ho
 
 ### Will the migration happen immediately, or will there be a grace period for projects to transition to the new version?
 
-There should be no grace period needed, as nothing should change for common users. Expect a stall of at least 20 minutes during the transition.
+There should be no grace period needed, as nothing should change for common users. Expect a period with no block production of at least 20 minutes during the transition.
 
 ### Will it be necessary to withdraw funds from Celo L1 in advance or will they be transferred to L2? 
 
