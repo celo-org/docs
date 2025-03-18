@@ -3,23 +3,44 @@ title: Cel2 FAQ
 description: Frequently Asked Questions about Cel2
 ---
 
-### When is the Celo mainnet becoming an L2?
+### When is Celo mainnet becoming an L2?
 
 :spiral_calendar: Celo L2 Mainnet Date: March 26, 2025, 3:00 AM UTC
 
 :chains: Hardfork Block Height: 31056500
 
-### When is the Baklava testnet becoming an L2?
-
-The Bakalava testnet migrated to an L2 on February 20th, 2025
-
-### When is Alfajores testnet becoming an L2?
-
-The Alfajores testnet has already been migrated to an L2.
-
 ### How do I run a node or upgrade an existing node?
 
 See the guides for [running a node](./operators/run-node.md) or the guide on [how to migrate a L1 node](./operators/migrate-node.md).
+
+### Will the migration happen immediately, or will there be a grace period for projects to transition to the new version?
+
+There should be no grace period needed, as nothing should change for common users. Expect a stall of at least 20 minutes during the transition.
+
+### Will it be necessary to withdraw funds from Celo L1 in advance or will they be transferred to L2? 
+
+No. All balances will carry over to the L2 unchanged.
+
+### Will there be multiple RPC node providers? 
+
+There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](https://docs.celo.org/cel2/notices/day-1-partners)
+for a list of RPC providers comfirmed for Day 1. 
+
+### How will ERC-20 tokens and the native CELO token work after the migration?
+
+There will be no change and it will continue to work as it does now.
+
+### Will already deployed smart contracts need to be redeployed?
+
+No, they will not.
+
+### Will Celo be able to support solidity versions above 0.8.19?
+
+Yes. This will work the same as with Ethereum
+
+### What data model changes will happen in the RPC specs (esp. which gas tokens)?
+
+We are going to have the same RPC specs as Optimism (e.g. we won't have block receipts)
 
 ### What RPC endpoints are available for the Alfajores testnet?
 
