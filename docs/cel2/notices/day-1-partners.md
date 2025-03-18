@@ -21,6 +21,7 @@ Below is the list of confirmed Day 1 partners:
 - Hyperlane
 - Superbridge
 - LayerZero
+- Wormhole
 
 ### Exchanges  
 - Coinbase  
