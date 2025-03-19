@@ -1788,6 +1788,11 @@ const sidebars = {
           label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
         },
+	{
+          type: "doc",
+          label: "Community RPC Provider FAQ",
+          id: "cel2/operators/validator-rpc-faq",
+        },
       ],
     },
     { 
