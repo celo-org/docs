@@ -111,8 +111,8 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    --outfile.rollup-config <path-to-output-rollup-config.json> \
    --outfile.genesis <path-to-output-genesis.json> \
    --migration-block-number <MIGRATION_BLOCK_NUMBER> \
-   --old-db <path-to-your-L1-datadir> \
-   --new-db <path-to-your-L2-destination-datadir>
+   --old-db <path-to-your-L1-datadir>/celo/chaindata \
+   --new-db <path-to-your-L2-destination-datadir>/geth/chaindata
    ```
 
    You can find the required input artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) section once they're available.

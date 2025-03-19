@@ -742,12 +742,17 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "Fund your Project",
+      id: "build/fund-your-project",
+    },    
+    {
+      type: "doc",
       label: "Launch Checklist",
       id: "developer/launch-checklist",
     },
     {
       type: "doc",
-      label: "Support",
+      label: "Get Support",
       id: "build/support",
     },
   ],
@@ -1808,6 +1813,11 @@ const sidebars = {
           type: "doc",
           label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
+        },
+	{
+          type: "doc",
+          label: "Community RPC Provider FAQ",
+          id: "cel2/operators/validator-rpc-faq",
         },
       ],
     },
