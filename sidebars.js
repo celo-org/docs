@@ -721,6 +721,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "Fund your Project",
+      id: "build/fund-your-project",
+    },    
+    {
+      type: "doc",
       label: "Launch Checklist",
       id: "developer/launch-checklist",
     },
