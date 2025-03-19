@@ -1,6 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  
+  /* Restore list styling that Tailwind v4 removes by default */
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  /* Ensure nested lists have proper styling */
+  ul ul {
+    list-style-type: circle;
+  }
+  
+  ul ul ul {
+    list-style-type: square;
+  }
+  
+  ol ol {
+    list-style-type: lower-alpha;
+  }
+  
+  ol ol ol {
+    list-style-type: lower-roman;
+  }
+}
 
 /* stylelint-disable docusaurus/copyright-header */
 /**
