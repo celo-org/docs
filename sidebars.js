@@ -726,7 +726,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Support",
+      label: "Get ",
       id: "build/support",
     },
   ],
