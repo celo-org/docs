@@ -19,4 +19,4 @@ Help us improve by sharing your feedback on missing tools, unclear sections, or 
 
 - For advanced questions, create issues and participate in <ColoredText>[GitHub Discussions](https://github.com/orgs/celo-org/discussions)</ColoredText>.
 
-For the latest updates, sign up for the <ColoredText>[DevDesk Mailing List](https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2)</ColoredText> and follow CeloDevs on <ColoredText>[X](https://x.com/CeloDevs)</ColoredText>.
+For the latest updates, sign up for the <ColoredText>[DevDesk Mailing List](https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2)</ColoredText> and follow <ColoredText>[CeloDevs on X](https://x.com/CeloDevs)</ColoredText>.
