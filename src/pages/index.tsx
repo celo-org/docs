@@ -96,19 +96,11 @@ export default function HomePage(): JSX.Element {
         </section>
         
         <section className="mt-12">
-          <div className="text-4xl font-bold px-2 w-full">
+          <div className="text-3xl font-semibold px-2 w-full">
             <Translate id="home2.section1.title">
               Celo is Scaling Ethereum With Real World Use Cases
             </Translate>
           </div>
-          <br/>
-          {/*
-          <div className="text-2xl font-bold px-2 w-full">
-            <Translate id="home2.section1.title">
-              Celo was created to enable real-world use cases on Ethereum
-            </Translate>
-          </div>
-          */}          
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8">
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
@@ -117,7 +109,7 @@ export default function HomePage(): JSX.Element {
                     Learn about Celo
                   </Translate>
                 </span>
-                {buildKnowMoreButton("/developer/deploy")}
+                {buildKnowMoreButton("/build", "Explore Docs")}
               </div>
               <div className="w-1/3">
                 <img src="/img/homepage/illustration-1.png" />
@@ -130,7 +122,7 @@ export default function HomePage(): JSX.Element {
                     Fund your Project
                   </Translate>
                 </span>
-                {buildKnowMoreButton("/developer/build-on-minipay/overview")}
+                {buildKnowMoreButton("/build/fund-your-project")}
               </div>
               <div className="w-1/3">
                 {/* biome-ignore lint/a11y/useAltText: <explanation> */}
@@ -654,14 +646,14 @@ export default function HomePage(): JSX.Element {
                 translate({ id: "home.section4.growYourProject.funding.title" }),
                 translate({ id: "home.section4.growYourProject.funding.description" }),
                 "img/homepage/icons/Validator_White.svg",
-                "/validator",
+                "/build/fund-your-project",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section4.growYourProject.distribution.title" }),
                 translate({ id: "home.section4.growYourProject.distribution.description" }),
                 "img/homepage/icons/Node_White.svg",
-                "/validator/security",
+                "/developer/launch-checklist",
               )}
             </div>
           </div>
@@ -682,23 +674,15 @@ export default function HomePage(): JSX.Element {
               Discover the many ways to connect with our growing community of developers
             </Translate>
           </div>
-                  
-          {/* <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
-              <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold pb-7">
-                  Sign Up for Developer Updates
-                </span>
-                {buildKnowMoreButton(
-                  "https://events.celo.org/builders"
-                )}
-              </div>
-            </div>
-          </div> */}
-
           
           <div>
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-2">
+              {sectionFourCard(
+                "Join the Newsletter",
+                "Stay updated on the latest news, grants, and opportunities.",
+                "img/homepage/ambassador.svg",
+                "https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2"
+              )}
               {sectionFourCard(
                 "Connect with the Community",
                 "Join our Discord",
@@ -706,37 +690,28 @@ export default function HomePage(): JSX.Element {
                 "https://discord.com/invite/celo"
               )}
               {sectionFourCard(
-                "Get Technical Support",
-                "Join our Telegram",
-                "img/homepage/connect.svg",
-                "https://t.me/buildwithcelo"
-              )}
-
-              {sectionFourCard(
-                "Get Daily Updates",
-                "Follow our CeloDev on X",
-                "img/homepage/ambassador.svg",
-                "https://x.com/CeloDevs"
-              )}
-              {sectionFourCard(
                 "Bring Your Ideas to Life",
                 "Sign up for upcoming hackathons and workshops",
                 "img/homepage/contribute.svg",
                 "https://celo.lemonade.social/"
               )}
-
-              {sectionFourCard(
-                "Apply for Grants",
-                "Explore opportunities to fund your project",
-                "img/homepage/ambassador.svg",
-                "https://www.celopg.eco/programs"
-              )}
-
               {sectionFourCard(
                 "Join Proof of Ship",
                 "Build your onchain reputation to unlock exclusive rewards",
                 "img/homepage/connect.svg",
-                "https://forms.gle/yDQUYGZS3BYR8WFZA"
+                "https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8"
+              )}
+              {sectionFourCard(
+                "Make your Voice Heard",
+                "Vote on Governance Proposals",
+                "img/homepage/connect.svg",
+                "https://docs.celo.org/general/using-celo/voting#celo-mondo"
+              )}
+              {sectionFourCard(
+                "Get Daily Updates",
+                "Follow our CeloDev on X",
+                "img/homepage/ambassador.svg",
+                "https://x.com/CeloDevs"
               )}
             </div>
           </div>
@@ -799,10 +774,10 @@ export default function HomePage(): JSX.Element {
     </Layout>
   );
 
-  function buildKnowMoreButton(url: string) {
+  function buildKnowMoreButton(url: string, buttonText: string = "Learn more") {
     return (
       <Link href={url} target="_blank" className="flex space-x-2 items-center">
-        <span className="text-lg font-semibold">Learn more</span>
+        <span className="text-lg font-semibold">{buttonText}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

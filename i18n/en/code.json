@@ -1069,13 +1069,13 @@
     "message": "Get Funding"
   },
   "home.section4.growYourProject.funding.description": {
-    "message": ""
+    "message": "Discover grant opportunities in the Celo ecosystem."
   },
    "home.section4.growYourProject.distribution.title": {
     "message": "Distribution"
   },
   "home.section4.growYourProject.distribution.description": {
-    "message": ""
+    "message": "Get more awareness about your project."
   }, 
   
   
@@ -1083,7 +1083,7 @@
     "message": "Grow Your Project"
   },
   "home.section4.validators.run.title": {
-    "message": "Get Funding"
+    "message": "Grant Opportunities"
   },
   "home.section4.validators.run.description": {
     "message": "Secure the network by running a validator"
