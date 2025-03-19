@@ -25,7 +25,8 @@ Below is the list of confirmed Day 1 partners:
 
 ### Exchanges  
 - Coinbase  
-- Binance  
+- Binance
+- Kraken 
 - Bitfinex 
 - Anchorage
 - Ubeswap
