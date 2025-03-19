@@ -74,8 +74,8 @@ If you'd like to run the pre-migration manually without Docker, you can do so by
 
     ```bash
     go run ./cmd/celo-migrate pre \
-    --old-db <path-to-your-L1-datadir> \
-    --new-db <path-to-your-L2-destination-datadir>
+    --old-db <path-to-your-L1-datadir>/celo/chaindata \
+    --new-db <path-to-your-L2-destination-datadir>/geth/chaindata
     ```
 
 Once the pre-migration is complete, you can start your L1 node again. The pre-migration may take several hours to complete.
