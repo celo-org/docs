@@ -10,7 +10,7 @@ Publish your locally computed DKG results to the blockchain
 * [`celocli dkg:register`](#celocli-dkgregister)
 * [`celocli dkg:start`](#celocli-dkgstart)
 
-## `celocli dkg:allowlist`
+## `celocli dkg:allowlist` {#celocli-dkgallowlist}
 
 Allowlist an address in the DKG
 
@@ -20,7 +20,7 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -46,6 +46,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --participantAddress=<value>
       (required) Address of the participant to allowlist
 
@@ -68,7 +73,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/allowlist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/allowlist.ts)_
 
-## `celocli dkg:deploy`
+## `celocli dkg:deploy` {#celocli-dkgdeploy}
 
 Deploys the DKG smart contract
 
@@ -77,7 +82,7 @@ USAGE
   $ celocli dkg:deploy --phaseDuration <value> --threshold <value> --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -99,6 +104,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --phaseDuration=<value>
       (required) Duration of each DKG phase in blocks
@@ -125,7 +135,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/deploy.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/deploy.ts)_
 
-## `celocli dkg:get`
+## `celocli dkg:get` {#celocli-dkgget}
 
 Gets data from the contract to run the next phase
 
@@ -135,7 +145,7 @@ USAGE
     shares|responses|justifications|participants|phase|group --address
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -157,6 +167,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --method=<option>
       (required) Getter method to call
@@ -181,7 +196,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/get.ts)_
 
-## `celocli dkg:publish`
+## `celocli dkg:publish` {#celocli-dkgpublish}
 
 Publishes data for each phase of the DKG
 
@@ -191,7 +206,7 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -220,6 +235,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -239,7 +259,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/publish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/publish.ts)_
 
-## `celocli dkg:register`
+## `celocli dkg:register` {#celocli-dkgregister}
 
 Register a public key in the DKG
 
@@ -249,7 +269,7 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -278,6 +298,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -297,7 +322,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/register.ts)_
 
-## `celocli dkg:start`
+## `celocli dkg:start` {#celocli-dkgstart}
 
 Starts the DKG
 
@@ -306,7 +331,7 @@ USAGE
   $ celocli dkg:start --address 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -331,6 +356,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

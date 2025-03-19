@@ -33,7 +33,7 @@ Set up your Linux distro by setting a username and password then update and upgr
 sudo apt update && sudo apt upgrade
 ```
 
-You can view the source documentation for setting up the Linux distro [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).
+You can view the source documentation for setting up the Linux distro [here](https://learn.microsoft.com/en-us/windows/wsl/) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).
 
 ### Set up the Linux Environment
 

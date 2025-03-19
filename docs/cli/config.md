@@ -6,7 +6,7 @@ Configure CLI options which persist across commands
 * [`celocli config:get`](#celocli-configget)
 * [`celocli config:set`](#celocli-configset)
 
-## `celocli config:get`
+## `celocli config:get` {#celocli-configget}
 
 Output network node configuration
 
@@ -34,17 +34,23 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/config/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/get.ts)_
 
-## `celocli config:set`
+## `celocli config:set` {#celocli-configset}
 
 Configure running node information for propagating transactions to network
 
 ```
 USAGE
-  $ celocli config:set [-n <value>] [--globalHelp]
+  $ celocli config:set [-n <value>] [--globalHelp] [--derivationPath <value>]
+    [--telemetry 1|0]
 
 FLAGS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-      --globalHelp    View all available global flags
+  -n, --node=<value>            URL of the node to run commands against or an alias
+      --derivationPath=<value>  Set the default derivation path used by account:new and
+                                when using --useLedger flag. Options: 'eth',
+                                'celoLegacy', or a custom derivation path
+      --globalHelp              View all available global flags
+      --telemetry=<option>      Whether to enable or disable telemetry
+                                <options: 1|0>
 
 DESCRIPTION
   Configure running node information for propagating transactions to network
@@ -65,6 +71,16 @@ EXAMPLES
   set --node ws://localhost:2500
 
   set --node <geth-location>/geth.ipc
+
+  set --derivationPath "m/44'/52752'/0'/0"
+
+  set --derivationPath eth
+
+  set --derivationPath celoLegacy
+
+  set --telemetry 0 # disable telemetry
+
+  set --telemetry 1 # enable telemetry
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias

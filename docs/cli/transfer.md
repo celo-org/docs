@@ -10,7 +10,7 @@ Transfer CELO and Celo Dollars
 * [`celocli transfer:reals`](#celocli-transferreals)
 * [`celocli transfer:stable`](#celocli-transferstable)
 
-## `celocli transfer:celo`
+## `celocli transfer:celo` {#celocli-transfercelo}
 
 Transfer CELO to a specified address. (Note: this is the equivalent of the old transfer:gold)
 
@@ -19,7 +19,7 @@ USAGE
   $ celocli transfer:celo --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--comment <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -44,6 +44,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the receiver
@@ -74,7 +79,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/celo.ts)_
 
-## `celocli transfer:dollars`
+## `celocli transfer:dollars` {#celocli-transferdollars}
 
 Transfer Celo Dollars (cUSD) to a specified address.
 
@@ -83,7 +88,7 @@ USAGE
   $ celocli transfer:dollars --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--comment <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -108,6 +113,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the receiver
@@ -137,7 +147,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/dollars.ts)_
 
-## `celocli transfer:erc20`
+## `celocli transfer:erc20` {#celocli-transfererc20}
 
 Transfer ERC20 to a specified address
 
@@ -147,7 +157,7 @@ USAGE
     --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -172,6 +182,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the receiver
@@ -201,7 +216,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/erc20.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/erc20.ts)_
 
-## `celocli transfer:euros`
+## `celocli transfer:euros` {#celocli-transfereuros}
 
 Transfer Celo Euros (cEUR) to a specified address.
 
@@ -210,7 +225,7 @@ USAGE
   $ celocli transfer:euros --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--comment <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -235,6 +250,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the receiver
@@ -264,7 +284,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/euros.ts)_
 
-## `celocli transfer:reals`
+## `celocli transfer:reals` {#celocli-transferreals}
 
 Transfer Celo Brazilian Real (cREAL) to a specified address.
 
@@ -273,7 +293,7 @@ USAGE
   $ celocli transfer:reals --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--comment <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -298,6 +318,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the receiver
@@ -327,7 +352,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/reals.ts)_
 
-## `celocli transfer:stable`
+## `celocli transfer:stable` {#celocli-transferstable}
 
 Transfer a stable token to a specified address.
 
@@ -336,8 +361,8 @@ USAGE
   $ celocli transfer:stable --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--comment <value>] [--stableToken
-    cUSD|cusd|cEUR|ceur|cREAL|creal]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
+    [--stableToken cUSD|cusd|cEUR|ceur|cREAL|creal]
 
 FLAGS
   -k, --privateKey=<value>
@@ -362,6 +387,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --stableToken=<option>
       Name of the stable to be transferred

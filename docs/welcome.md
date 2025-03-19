@@ -72,8 +72,8 @@ Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 
 Connect with the community to stay up to date on the latest news, events, and updates.
 
-- [@CeloDevs](https://twitter.com/CeloDevs)
-- [@CeloOrg](https://twitter.com/CeloOrg)
+- [@CeloDevs](https://x.com/CeloDevs)
+- [@CeloOrg](https://x.com/CeloOrg)
 - [GitHub](https://github.com/celo-org/celo-monorepo)
 
 :::tip Get Support 💬

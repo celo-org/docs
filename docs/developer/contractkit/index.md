@@ -9,6 +9,14 @@ import PageRef from '@components/PageRef'
 
 Overview of ContractKit, its features, purpose, and resources to help you get started.
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ---
 
 ## What is ContractKit?
@@ -34,4 +42,4 @@ Contractkit includes common functionality to make it easier to get started build
 
 - [Setup](contractkit/setup)
 - [Using the kit](contractkit/usage)
-- [SDK Reference Docs](https://docs.celo.org/learn/developer-tools#celo-sdk-reference-docs)
+

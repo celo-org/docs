@@ -13,7 +13,7 @@ How to recover ETH or ERC-20 tokens if you accidentally transferred them to a CE
 
 This guide assumes that you have access to the following:
 
-- The [24-word recovery phrase](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) of your Celo address
+- The [24-word recovery phrase](https://help.myetherwallet.com/en/?q=mnemonic) of your Celo address
 - An Ethereum wallet manager such as MyEtherWallet or MyCrypto. It is recommended to use the Desktop or offline version over a webapp version.
 
 :::danger
@@ -28,7 +28,7 @@ Please follow the instructions below closely because missteps can lead to errors
 
 ### MyEtherWallet
 
-1. [Download and run MEW Offline](https://kb.myetherwallet.com/en/offline/using-mew-offline/) (scroll down until you see the download instructions)
+1. [Download and run MEW Offline](https://help.myetherwallet.com/en/articles/6512619-using-mew-offline) (scroll down until you see the download instructions)
 2. Open MEW and click on **Access My Wallet > Software > Mnemonic Phrase > Continue**
 3. Change to a 24 Value mnemonic and enter in the words from your Recovery Phrase. Then click **Continue**
 4. Change the HD Derivation Path to **Add Custom path**

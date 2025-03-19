@@ -19,7 +19,7 @@ View and manage ReleaseGold contracts
 * [`celocli releasecelo:transfer-dollars`](#celocli-releasecelotransfer-dollars)
 * [`celocli releasecelo:withdraw`](#celocli-releasecelowithdraw)
 
-## `celocli releasecelo:authorize`
+## `celocli releasecelo:authorize` {#celocli-releaseceloauthorize}
 
 Authorize an alternative key to be used for a given action (Vote, Validate, Attest) on behalf of the ReleaseGold instance contract.
 
@@ -29,7 +29,8 @@ USAGE
     --role vote|validator|attestation --signer
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --signature 0x [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--blsKey 0x --blsPop 0x]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--blsKey 0x
+    --blsPop 0x]
 
 FLAGS
   -k, --privateKey=<value>
@@ -59,6 +60,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --role=<option>
       (required)
@@ -98,7 +104,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/authorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/authorize.ts)_
 
-## `celocli releasecelo:create-account`
+## `celocli releasecelo:create-account` {#celocli-releasecelocreate-account}
 
 Creates a new account for the ReleaseGold instance
 
@@ -107,7 +113,7 @@ USAGE
   $ celocli releasecelo:create-account --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -129,6 +135,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -152,7 +163,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/create-account.ts)_
 
-## `celocli releasecelo:locked-gold`
+## `celocli releasecelo:locked-gold` {#celocli-releasecelolocked-gold}
 
 Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
 
@@ -161,7 +172,7 @@ USAGE
   $ celocli releasecelo:locked-gold --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -a
     lock|unlock|withdraw --value 10000000000000000000000 [-k <value> | --useLedger | ]
     [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--yes]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yes]
 
 FLAGS
   -a, --action=<option>
@@ -187,6 +198,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -221,7 +237,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/locked-gold.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/locked-gold.ts)_
 
-## `celocli releasecelo:refund-and-finalize`
+## `celocli releasecelo:refund-and-finalize` {#celocli-releasecelorefund-and-finalize}
 
 Refund the given contract's balance to the appropriate parties and destroy the contact. Can only be called by the release owner of revocable ReleaseGold instances.
 
@@ -230,7 +246,7 @@ USAGE
   $ celocli releasecelo:refund-and-finalize --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -252,6 +268,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -276,7 +297,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/refund-and-finalize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/refund-and-finalize.ts)_
 
-## `celocli releasecelo:revoke`
+## `celocli releasecelo:revoke` {#celocli-releasecelorevoke}
 
 Revoke the given contract instance. Once revoked, any Locked Gold can be unlocked by the release owner. The beneficiary will then be able to withdraw any released Gold that had yet to be withdrawn, and the remainder can be transferred by the release owner to the refund address. Note that not all ReleaseGold instances are revokable.
 
@@ -285,7 +306,7 @@ USAGE
   $ celocli releasecelo:revoke --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yesreally]
+    [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -307,6 +328,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -336,7 +362,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke.ts)_
 
-## `celocli releasecelo:revoke-votes`
+## `celocli releasecelo:revoke-votes` {#celocli-releasecelorevoke-votes}
 
 Revokes `votes` for the given contract's account from the given group's account
 
@@ -345,8 +371,9 @@ USAGE
   $ celocli releasecelo:revoke-votes --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--group 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --allGroups]
-    [--votes <value> | --allVotes | ]
+    [--ledgerLiveMode ] [--globalHelp] [--group
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --allGroups] [--votes <value> |
+    --allVotes | ]
 
 FLAGS
   -k, --privateKey=<value>
@@ -378,6 +405,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -405,7 +437,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/revoke-votes.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke-votes.ts)_
 
-## `celocli releasecelo:set-account`
+## `celocli releasecelo:set-account` {#celocli-releaseceloset-account}
 
 Set account properties of the ReleaseGold instance account such as name, data encryption key, and the metadata URL
 
@@ -414,7 +446,7 @@ USAGE
   $ celocli releasecelo:set-account --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -p
     name|dataEncryptionKey|metaURL -v <value> [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -444,6 +476,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -471,7 +508,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account.ts)_
 
-## `celocli releasecelo:set-account-wallet-address`
+## `celocli releasecelo:set-account-wallet-address` {#celocli-releaseceloset-account-wallet-address}
 
 Set the ReleaseGold contract account's wallet address
 
@@ -480,7 +517,7 @@ USAGE
   $ celocli releasecelo:set-account-wallet-address --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --walletAddress 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--pop <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--pop <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -502,6 +539,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --pop=<value>
       ECDSA PoP for signer over contract's account
@@ -532,7 +574,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-account-wallet-address.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account-wallet-address.ts)_
 
-## `celocli releasecelo:set-beneficiary`
+## `celocli releasecelo:set-beneficiary` {#celocli-releaseceloset-beneficiary}
 
 Set the beneficiary of the ReleaseGold contract. This command is gated via a multi-sig, so this is expected to be called twice: once by the contract's beneficiary and once by the contract's releaseOwner. Once both addresses call this command with the same parameters, the tx will execute.
 
@@ -542,7 +584,7 @@ USAGE
     --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --beneficiary
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--yesreally]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -570,6 +612,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -599,7 +646,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-beneficiary.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-beneficiary.ts)_
 
-## `celocli releasecelo:set-can-expire`
+## `celocli releasecelo:set-can-expire` {#celocli-releaseceloset-can-expire}
 
 Set the canExpire flag for the given ReleaseGold contract
 
@@ -608,7 +655,7 @@ USAGE
   $ celocli releasecelo:set-can-expire --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --value true|false|True|False [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp] [--yesreally]
+    <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -630,6 +677,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -660,7 +712,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-can-expire.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-can-expire.ts)_
 
-## `celocli releasecelo:set-liquidity-provision`
+## `celocli releasecelo:set-liquidity-provision` {#celocli-releaseceloset-liquidity-provision}
 
 Set the liquidity provision to true, allowing the beneficiary to withdraw released gold.
 
@@ -669,7 +721,7 @@ USAGE
   $ celocli releasecelo:set-liquidity-provision --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yesreally]
+    [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -691,6 +743,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -718,7 +775,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-liquidity-provision.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-liquidity-provision.ts)_
 
-## `celocli releasecelo:set-max-distribution`
+## `celocli releasecelo:set-max-distribution` {#celocli-releaseceloset-max-distribution}
 
 Set the maximum distribution of celo for the given contract
 
@@ -727,7 +784,7 @@ USAGE
   $ celocli releasecelo:set-max-distribution --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --distributionRatio <value> [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp] [--yesreally]
+    <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -754,6 +811,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -779,7 +841,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/set-max-distribution.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-max-distribution.ts)_
 
-## `celocli releasecelo:show`
+## `celocli releasecelo:show` {#celocli-releaseceloshow}
 
 Show info on a ReleaseGold instance contract.
 
@@ -816,7 +878,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/show.ts)_
 
-## `celocli releasecelo:transfer-dollars`
+## `celocli releasecelo:transfer-dollars` {#celocli-releasecelotransfer-dollars}
 
 Transfer Celo Dollars from the given contract address. Dollars may be accrued to the ReleaseGold contract via validator epoch rewards.
 
@@ -826,7 +888,7 @@ USAGE
     --to 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -848,6 +910,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the recipient of Celo Dollars transfer
@@ -878,7 +945,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/releasecelo/transfer-dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/transfer-dollars.ts)_
 
-## `celocli releasecelo:withdraw`
+## `celocli releasecelo:withdraw` {#celocli-releasecelowithdraw}
 
 Withdraws `value` released celo to the beneficiary address. Fails if `value` worth of celo has not been released yet.
 
@@ -887,7 +954,7 @@ USAGE
   $ celocli releasecelo:withdraw --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --value 10000000000000000000000 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -909,6 +976,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

@@ -7,7 +7,7 @@ Approves an existing transaction on a multi-sig contract
 * [`celocli multisig:show ARG1`](#celocli-multisigshow-arg1)
 * [`celocli multisig:transfer ARG1`](#celocli-multisigtransfer-arg1)
 
-## `celocli multisig:approve`
+## `celocli multisig:approve` {#celocli-multisigapprove}
 
 Approves an existing transaction on a multi-sig contract
 
@@ -16,7 +16,7 @@ USAGE
   $ celocli multisig:approve --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --tx <value> [-k <value> | --useLedger |
     ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -41,6 +41,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --tx=<value>
       (required) Transaction to approve
@@ -67,7 +72,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/multisig/approve.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/multisig/approve.ts)_
 
-## `celocli multisig:show ARG1`
+## `celocli multisig:show ARG1` {#celocli-multisigshow-arg1}
 
 Shows information about multi-sig contract
 
@@ -106,7 +111,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/multisig/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/multisig/show.ts)_
 
-## `celocli multisig:transfer ARG1`
+## `celocli multisig:transfer ARG1` {#celocli-multisigtransfer-arg1}
 
 Ability to approve CELO transfers to and from multisig. Submit transaction or approve a matching existing transaction
 
@@ -116,7 +121,7 @@ USAGE
     --amount <value> --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--transferFrom] [--sender
+    [--ledgerLiveMode ] [--globalHelp] [--transferFrom] [--sender
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
 
 FLAGS
@@ -142,6 +147,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --sender=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       Identify sender if performing transferFrom

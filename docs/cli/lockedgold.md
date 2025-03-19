@@ -13,7 +13,7 @@ View and manage locked CELO
 * [`celocli lockedgold:update-delegated-amount`](#celocli-lockedgoldupdate-delegated-amount)
 * [`celocli lockedgold:withdraw`](#celocli-lockedgoldwithdraw)
 
-## `celocli lockedgold:delegate`
+## `celocli lockedgold:delegate` {#celocli-lockedgolddelegate}
 
 Delegate locked celo.
 
@@ -23,7 +23,7 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -45,6 +45,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --percent=<value>
       (required) 1-100% of locked celo to be delegated
@@ -74,7 +79,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/delegate.ts)_
 
-## `celocli lockedgold:delegate-info`
+## `celocli lockedgold:delegate-info` {#celocli-lockedgolddelegate-info}
 
 Delegate info about account.
 
@@ -83,7 +88,7 @@ USAGE
   $ celocli lockedgold:delegate-info --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -105,6 +110,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -128,7 +138,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/delegate-info.ts)_
 
-## `celocli lockedgold:lock`
+## `celocli lockedgold:lock` {#celocli-lockedgoldlock}
 
 Locks CELO to be used in governance and validator elections.
 
@@ -137,7 +147,7 @@ USAGE
   $ celocli lockedgold:lock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -159,6 +169,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -185,7 +200,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/lock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/lock.ts)_
 
-## `celocli lockedgold:max-delegatees-count`
+## `celocli lockedgold:max-delegatees-count` {#celocli-lockedgoldmax-delegatees-count}
 
 Returns the maximum number of delegates allowed per account.
 
@@ -193,7 +208,7 @@ Returns the maximum number of delegates allowed per account.
 USAGE
   $ celocli lockedgold:max-delegatees-count [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -212,6 +227,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -235,7 +255,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/max-delegatees-count.ts)_
 
-## `celocli lockedgold:revoke-delegate`
+## `celocli lockedgold:revoke-delegate` {#celocli-lockedgoldrevoke-delegate}
 
 Revoke delegated locked celo.
 
@@ -245,7 +265,7 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -267,6 +287,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --percent=<value>
       (required) 1-100% of locked celo to be revoked from currently delegated amount
@@ -296,7 +321,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/revoke-delegate.ts)_
 
-## `celocli lockedgold:show ARG1`
+## `celocli lockedgold:show ARG1` {#celocli-lockedgoldshow-arg1}
 
 Show Locked Gold information for a given account. This includes the total amount of locked celo, the amount being used for voting in Validator Elections, the Locked Gold balance this account is required to maintain due to a registered Validator or Validator Group, and any pending withdrawals that have been initiated via "lockedgold:unlock".
 
@@ -331,7 +356,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/show.ts)_
 
-## `celocli lockedgold:unlock`
+## `celocli lockedgold:unlock` {#celocli-lockedgoldunlock}
 
 Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "lockedgold:withdraw".
 
@@ -340,7 +365,7 @@ USAGE
   $ celocli lockedgold:unlock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -362,6 +387,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -390,7 +420,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/unlock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/unlock.ts)_
 
-## `celocli lockedgold:update-delegated-amount`
+## `celocli lockedgold:update-delegated-amount` {#celocli-lockedgoldupdate-delegated-amount}
 
 Updates the amount of delegated locked celo. There might be discrepancy between the amount of locked celo and the amount of delegated locked celo because of received rewards.
 
@@ -399,7 +429,7 @@ USAGE
   $ celocli lockedgold:update-delegated-amount --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -421,6 +451,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Account Address
@@ -449,7 +484,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedgold/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedgold/update-delegated-amount.ts)_
 
-## `celocli lockedgold:withdraw`
+## `celocli lockedgold:withdraw` {#celocli-lockedgoldwithdraw}
 
 Withdraw any pending withdrawals created via "lockedgold:unlock" that have become available.
 
@@ -458,7 +493,7 @@ USAGE
   $ celocli lockedgold:withdraw --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -480,6 +515,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

@@ -34,7 +34,7 @@ ContractKit currently supports the following types of claim:
 
 In the future ContractKit may support other types of claim, including:
 
-- **Twitter User Claim** - Accounts can make claims on [Twitter](https://twitter.com/) usernames. This claim is verifiable by signing a message with the account and posting it as a tweet. Any client can verify the claim with a reference to the tweet in the claim.
+- **X User Claim** - Accounts can make claims on [X](https://x.com/) usernames. This claim is verifiable by signing a message with the account and posting it as a tweet. Any client can verify the claim with a reference to the tweet in the claim.
 
 ## Handling Metadata
 
@@ -58,7 +58,7 @@ You can display the claims in your file and their status with:
 celocli account:show-metadata ./metadata.json
 ```
 
-Once you are satisfied with your claims, you can upload your file to your own web site or a site that will host the file (for example, [https://gist.github.com](https://gist.github.com)) and then register it with the `Accounts` smart contract by running:
+Once you are satisfied with your claims, you can upload your file to your own web site or a site that will host the file (for example, [https://gist.github.com](https://gist.github.com) and then register it with the `Accounts` smart contract by running:
 
 ```bash
 celocli account:register-metadata --url $METADATA_URL --from $ACCOUNT_ADDRESS

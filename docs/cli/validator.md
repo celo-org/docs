@@ -4,19 +4,22 @@
 View and manage Validators
 
 * [`celocli validator:affiliate ARG1`](#celocli-validatoraffiliate-arg1)
+* [`celocli validator:community-rpc-nodes`](#celocli-validatorcommunity-rpc-nodes)
 * [`celocli validator:deaffiliate`](#celocli-validatordeaffiliate)
 * [`celocli validator:deregister`](#celocli-validatorderegister)
 * [`celocli validator:downtime-slash`](#celocli-validatordowntime-slash)
 * [`celocli validator:list`](#celocli-validatorlist)
 * [`celocli validator:register`](#celocli-validatorregister)
 * [`celocli validator:requirements`](#celocli-validatorrequirements)
+* [`celocli validator:rpc-urls`](#celocli-validatorrpc-urls)
+* [`celocli validator:send-payment`](#celocli-validatorsend-payment)
 * [`celocli validator:set-bitmaps`](#celocli-validatorset-bitmaps)
 * [`celocli validator:show ARG1`](#celocli-validatorshow-arg1)
 * [`celocli validator:signed-blocks`](#celocli-validatorsigned-blocks)
 * [`celocli validator:status`](#celocli-validatorstatus)
 * [`celocli validator:update-bls-public-key`](#celocli-validatorupdate-bls-public-key)
 
-## `celocli validator:affiliate ARG1`
+## `celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}
 
 Affiliate a Validator with a Validator Group. This allows the Validator Group to add that Validator as a member. If the Validator is already a member of a Validator Group, affiliating with a different Group will remove the Validator from the first group's members.
 
@@ -25,7 +28,7 @@ USAGE
   $ celocli validator:affiliate ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yes]
+    [--ledgerLiveMode ] [--globalHelp] [--yes]
 
 ARGUMENTS
   ARG1  ValidatorGroup's address
@@ -50,6 +53,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -79,7 +87,54 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/affiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/affiliate.ts)_
 
-## `celocli validator:deaffiliate`
+## `celocli validator:community-rpc-nodes` {#celocli-validatorcommunity-rpc-nodes}
+
+Displays a list of community RPC nodes for the currently elected validator groups
+
+```
+USAGE
+  $ celocli validator:community-rpc-nodes [-n <value>] [--globalHelp] [--columns <value> | -x]
+    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
+    | ] [--sort <value>] [--all]
+
+FLAGS
+  -n, --node=<value>     URL of the node to run commands against or an alias
+  -x, --extended         show extra columns
+      --all              Display all community RPC nodes, not just the ones from
+                         currently elected validator groups
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --globalHelp       View all available global flags
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
+
+DESCRIPTION
+  Displays a list of community RPC nodes for the currently elected validator groups
+
+ALIASES
+  $ celocli network:community-rpc-nodes
+  $ celocli network:rpc-urls
+  $ celocli node:list
+  $ celocli validator:community-rpc-nodes
+  $ celocli validator:rpc-urls
+  $ celocli validatorgroup:community-rpc-nodes
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+## `celocli validator:deaffiliate` {#celocli-validatordeaffiliate}
 
 Deaffiliate a Validator from a Validator Group, and remove it from the Group if it is also a member.
 
@@ -88,7 +143,7 @@ USAGE
   $ celocli validator:deaffiliate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -110,6 +165,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -134,7 +194,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/deaffiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deaffiliate.ts)_
 
-## `celocli validator:deregister`
+## `celocli validator:deregister` {#celocli-validatorderegister}
 
 Deregister a Validator. Wait the require lock period after the validator is no longer part of any group, then it will be possible to deregister the validator and start unlocking the CELO. If you wish to deregister your validator, you must first remove it from it's group, such as by deaffiliating it, then wait the required days before running this command.
 
@@ -143,7 +203,7 @@ USAGE
   $ celocli validator:deregister --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -165,6 +225,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -192,7 +257,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/deregister.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deregister.ts)_
 
-## `celocli validator:downtime-slash`
+## `celocli validator:downtime-slash` {#celocli-validatordowntime-slash}
 
 Downtime slash a validator
 
@@ -201,8 +266,9 @@ USAGE
   $ celocli validator:downtime-slash --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--validator 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d |
-    --validators '["0xb7ef0985bdb4f19460A29d9829aA1514B181C4CD",
+    [--ledgerLiveMode ] [--globalHelp] [--validator
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --validators
+    '["0xb7ef0985bdb4f19460A29d9829aA1514B181C4CD",
     "0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95"]'] [--intervals '[0:1], [1:2]' |
     --beforeBlock <value>]
 
@@ -232,6 +298,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -264,7 +335,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/downtime-slash.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/downtime-slash.ts)_
 
-## `celocli validator:list`
+## `celocli validator:list` {#celocli-validatorlist}
 
 List registered Validators, their name (if provided), affiliation, uptime score, and public keys used for validating.
 
@@ -307,7 +378,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/list.ts)_
 
-## `celocli validator:register`
+## `celocli validator:register` {#celocli-validatorregister}
 
 Register a new Validator
 
@@ -316,7 +387,7 @@ USAGE
   $ celocli validator:register --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --ecdsaKey 0x [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--blsKey 0x] [--blsSignature 0x] [--yes]
+    [--ledgerLiveMode ] [--globalHelp] [--blsKey 0x] [--blsSignature 0x] [--yes]
 
 FLAGS
   -k, --privateKey=<value>
@@ -348,6 +419,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -373,7 +449,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/register.ts)_
 
-## `celocli validator:requirements`
+## `celocli validator:requirements` {#celocli-validatorrequirements}
 
 List the Locked Gold requirements for registering a Validator. This consists of a value, which is the amount of CELO that needs to be locked in order to register, and a duration, which is the amount of time that CELO must stay locked following the deregistration of the Validator.
 
@@ -381,7 +457,7 @@ List the Locked Gold requirements for registering a Validator. This consists of 
 USAGE
   $ celocli validator:requirements [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -400,6 +476,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -426,7 +507,118 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/requirements.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/requirements.ts)_
 
-## `celocli validator:set-bitmaps`
+## `celocli validator:rpc-urls` {#celocli-validatorrpc-urls}
+
+Displays a list of community RPC nodes for the currently elected validator groups
+
+```
+USAGE
+  $ celocli validator:rpc-urls [-n <value>] [--globalHelp] [--columns <value> | -x]
+    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
+    | ] [--sort <value>] [--all]
+
+FLAGS
+  -n, --node=<value>     URL of the node to run commands against or an alias
+  -x, --extended         show extra columns
+      --all              Display all community RPC nodes, not just the ones from
+                         currently elected validator groups
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --globalHelp       View all available global flags
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
+
+DESCRIPTION
+  Displays a list of community RPC nodes for the currently elected validator groups
+
+ALIASES
+  $ celocli network:community-rpc-nodes
+  $ celocli network:rpc-urls
+  $ celocli node:list
+  $ celocli validator:community-rpc-nodes
+  $ celocli validator:rpc-urls
+  $ celocli validatorgroup:community-rpc-nodes
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+## `celocli validator:send-payment` {#celocli-validatorsend-payment}
+
+Sends the allocated epoch payment to a validator, their group, and delegation beneficiary.
+
+```
+USAGE
+  $ celocli validator:send-payment --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the validator to send the payment to
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Sends the allocated epoch payment to a validator, their group, and delegation
+  beneficiary.
+
+ALIASES
+  $ celocli validator:send-payment
+
+EXAMPLES
+  send-validator-payment --for 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+## `celocli validator:set-bitmaps` {#celocli-validatorset-bitmaps}
 
 Set validator signature bitmaps for provided intervals
 
@@ -435,8 +627,8 @@ USAGE
   $ celocli validator:set-bitmaps --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--slashableDowntimeBeforeBlock <value> | --intervals '[0:1], [1:2]'
-    | --slashableDowntimeBeforeLatest]
+    [--ledgerLiveMode ] [--globalHelp] [--slashableDowntimeBeforeBlock <value> |
+    --intervals '[0:1], [1:2]' | --slashableDowntimeBeforeLatest]
 
 FLAGS
   -k, --privateKey=<value>
@@ -461,6 +653,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --slashableDowntimeBeforeBlock=<value>
       Set all bitmaps for slashable downtime window before provided block
@@ -492,7 +689,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/set-bitmaps.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/set-bitmaps.ts)_
 
-## `celocli validator:show ARG1`
+## `celocli validator:show ARG1` {#celocli-validatorshow-arg1}
 
 Show information about a registered Validator.
 
@@ -526,7 +723,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/show.ts)_
 
-## `celocli validator:signed-blocks`
+## `celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}
 
 Display a graph of blocks and whether the given signer's signature is included in each. A green '.' indicates the signature is present in that block, a red '✘' indicates the signature is not present. A yellow '~' indicates the signer is not elected for that block.
 
@@ -534,7 +731,8 @@ Display a graph of blocks and whether the given signer's signature is included i
 USAGE
   $ celocli validator:signed-blocks [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --signers
+    [--ledgerLiveMode ] [--globalHelp] [--signer
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --signers
     '["0xb7ef0985bdb4f19460A29d9829aA1514B181C4CD",
     "0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95"]'] [--wasDownWhileElected] [--at-block
     <value> | ] [--slashableDowntimeLookback | [--lookback <value> | ]] [--width
@@ -560,6 +758,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --lookback=<value>
       [default: 120] how many blocks to look back for signer activity
@@ -613,7 +816,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/signed-blocks.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/signed-blocks.ts)_
 
-## `celocli validator:status`
+## `celocli validator:status` {#celocli-validatorstatus}
 
 Shows the consensus status of a validator. This command will show whether a validator is currently elected, would be elected if an election were to be run right now, and the percentage of blocks signed and number of blocks successfully proposed within a given window.
 
@@ -621,10 +824,11 @@ Shows the consensus status of a validator. This command will show whether a vali
 USAGE
   $ celocli validator:status [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--validator 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --all |
-    --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--start <value>] [--end
-    <value>] [--columns <value> | -x] [--filter <value>] [--no-header | [--csv |
-    --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--validator
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --all | --signer
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--start <value>] [--end <value>]
+    [--columns <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]]
+    [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -662,6 +866,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --no-header
       hide table header from output
@@ -715,7 +924,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/status.ts)_
 
-## `celocli validator:update-bls-public-key`
+## `celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}
 
 Update the BLS public key for a Validator to be used in consensus.
 
@@ -724,7 +933,7 @@ USAGE
   $ celocli validator:update-bls-public-key --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --blsKey 0x --blsPop 0x [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -752,6 +961,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
