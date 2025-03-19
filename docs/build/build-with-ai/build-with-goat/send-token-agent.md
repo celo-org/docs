@@ -120,7 +120,7 @@ Follow these steps to set up the AI-powered token sending agent on Celo:
 
 **1. Clone Repository and Navigate to Example Directory:**
 
-Follow steps 1-5 from the NFT minting tutorial (or previous tutorials) to clone the GOAT repository, navigate to the `typescript` directory, install dependencies, build the project, and go to the example directory: `examples/by-use-case/evm-mint-nft`. You can reuse this directory or create a new one if you prefer.
+Follow steps 1-5 from the [NFT minting tutorial](./mint-nft-agent.md) (or previous tutorials) to clone the GOAT repository, navigate to the `typescript` directory, install dependencies, build the project, and go to the example directory: `examples/by-use-case/evm-mint-nft`. You can reuse this directory or create a new one if you prefer.
 
 **2. Configure Environment Variables:**
 
@@ -220,9 +220,5 @@ Enter your prompt (or "exit" to quit): exit
 
 ### Conclusion
 
-This tutorial has guided you through building an AI-powered agent capable of sending tokens on the Celo blockchain. By adapting the provided code, configuring for Celo, and utilizing the `@goat-sdk/wallet-evm` and `@goat-sdk/plugin-erc20` tools, you can create an interactive agent that can understand natural language prompts to send both native CELO and ERC20 tokens. Remember to test thoroughly on the Celo Alfajores Testnet before using on Mainnet and always handle private keys securely. Explore the `@goat-sdk` documentation to understand more advanced configurations and error handling for your token sending agent on Celo\!
+This tutorial has guided you through building an AI-powered agent capable of sending tokens on the Celo blockchain. By adapting the provided code, configuring for Celo, and utilizing the `@goat-sdk/wallet-evm` and `@goat-sdk/plugin-erc20` tools, you can create an interactive agent that can understand natural language prompts to send both native CELO and ERC20 tokens. Remember to test thoroughly on the Celo Alfajores Testnet before using on Mainnet and always handle private keys securely. Explore the `@goat-sdk` documentation to understand more advanced configurations and error handling for your token sending agent on Celo!
 
-```
-
-Let me know if you have any more questions or require further assistance!
-```

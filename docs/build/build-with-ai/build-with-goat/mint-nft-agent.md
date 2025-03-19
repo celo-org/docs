@@ -1,6 +1,6 @@
 # Tutorial: Build an AI-Powered NFT Minting Agent on Celo
 
-This tutorial guides you through building an AI-powered agent capable of minting NFTs on the Celo blockchain. We will adapt the structure from the previous token swapping tutorial to create an agent that can mint NFTs based on natural language prompts.
+This tutorial guides you through building an AI-powered agent capable of minting NFTs on the Celo blockchain. We will adapt the structure from the previous [token swapping tutorial](./token-swap-agent.md) to create an agent that can mint NFTs based on natural language prompts.
 
 This approach provides direct control over the minting process and utilizes core blockchain interaction libraries. We will use `@ai-sdk/openai` for AI capabilities, `viem` for direct blockchain interaction, and `@goat-sdk` for agent framework components.
 
@@ -138,7 +138,7 @@ Follow these steps to set up the AI-powered NFT minting agent on Celo:
 
 #### 1. Clone Repository and Navigate to Example Directory:
 
-Follow steps 1-5 from the previous tutorial to clone the GOAT repository, navigate to the typescript directory, install dependencies, build the project, and go to the example directory: examples/by-use-case/evm-mint-nft.
+Follow steps 1-5 from the [previous tutorial](./token-swap-agent.md) to clone the GOAT repository, navigate to the typescript directory, install dependencies, build the project, and go to the example directory: examples/by-use-case/evm-mint-nft.
 
 #### 2. Configure Environment Variables:
 
@@ -277,7 +277,3 @@ This tutorial has provided a guide to building an AI-powered NFT minting agent o
 Remember that the provided mintNFT tool's execute function is a placeholder. You MUST implement the actual NFT minting logic using viem and your deployed NFT smart contract on Celo as described in the "Implementing the mintNFT Tool" section.
 
 Thoroughly test your agent and smart contract in a test environment before deploying to the Celo mainnet. Explore the viem documentation and experiment with different prompts and metadata handling to create a powerful and user-friendly AI-driven NFT minting experience on Celo!
-
-```
-
-```

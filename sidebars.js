@@ -630,7 +630,7 @@ const sidebars = {
           items: [
             {
               type: "doc",
-              label: "Build with GOAT",
+              label: "Build a TokenSwap Agent",
               id: "build/build-with-ai/build-with-goat/token-swap-agent",
             },
             {

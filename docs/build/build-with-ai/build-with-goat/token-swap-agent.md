@@ -1,6 +1,6 @@
 # Building an AI-Powered Token Swap Agent on Celo Using GOAT SDK
 
-This article provides a detailed guide on how to build an AI-powered token swap agent on the Celo blockchain using GOAT SDK. You'll learn how to create an interactive agent capable of performing token swaps through natural language prompts. While the original example uses Base, we'll adapt it specifically for the Celo ecosystem.
+This article provides a detailed guide on how to build an AI-powered token swap agent on the Celo blockchain using GOAT SDK. You'll learn how to create an interactive agent capable of performing token swaps through natural language prompts.
 
 ## Understanding GOAT SDK for Token Swapping
 
@@ -223,7 +223,7 @@ When deploying token swap agents in production environments, consider using smar
 When implementing token swap functionality on Celo, keep these additional considerations in mind:
 
 - **Gas Fees**: Celo uses CELO as gas for transactions, so ensure your wallet has sufficient CELO.
-- **Liquidity Sources**: Consider using Celo-specific DEXes like Ubeswap or Mobius in addition to Uniswap.
+- **Liquidity Sources**: Consider using Celo-specific DEXes like Ubeswap or Uniswap.
 - **Stable Tokens**: Celo offers several stable tokens (cUSD, cEUR, cREAL) that might be useful for your swap use cases.
 
 ## Conclusion
