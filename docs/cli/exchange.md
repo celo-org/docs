@@ -10,7 +10,7 @@ Exchange Celo Dollars and CELO via Mento
 * [`celocli exchange:show`](#celocli-exchangeshow)
 * [`celocli exchange:stable`](#celocli-exchangestable)
 
-## `celocli exchange:celo`
+## `celocli exchange:celo` {#celocli-exchangecelo}
 
 Exchange CELO for StableTokens via Mento. (Note: this is the equivalent of the old exchange:gold)
 
@@ -83,7 +83,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/exchange/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/celo.ts)_
 
-## `celocli exchange:dollars`
+## `celocli exchange:dollars` {#celocli-exchangedollars}
 
 Exchange Celo Dollars for CELO via Mento
 
@@ -150,7 +150,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/exchange/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/dollars.ts)_
 
-## `celocli exchange:euros`
+## `celocli exchange:euros` {#celocli-exchangeeuros}
 
 Exchange Celo Euros for CELO via Mento
 
@@ -217,7 +217,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/euros.ts)_
 
-## `celocli exchange:reals`
+## `celocli exchange:reals` {#celocli-exchangereals}
 
 Exchange Celo Brazilian Real (cREAL) for CELO via Mento
 
@@ -284,7 +284,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/exchange/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/reals.ts)_
 
-## `celocli exchange:show`
+## `celocli exchange:show` {#celocli-exchangeshow}
 
 Show the current exchange rates offered by the Broker
 
@@ -343,7 +343,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/exchange/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/show.ts)_
 
-## `celocli exchange:stable`
+## `celocli exchange:stable` {#celocli-exchangestable}
 
 Exchange Stable Token for CELO via Mento
 
