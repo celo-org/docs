@@ -18,8 +18,7 @@ The two main steps to prepare for the hardfork are
 
 ## Upgrade L1 nodes
 
-Prior to the L2 hardfork, all node operators must upgrade their existing L1 (`celo-blockchain`) nodes to the appropriate release version. You can find the hardfork release versions for each network listed in the Key Information section below.
-These releases each define hardfork block numbers such that nodes will stop producing or accepting blocks immediately before the hardfork.
+Prior to the L2 hardfork, all node operators must upgrade their existing L1 (`celo-blockchain`) nodes to version [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9). This release defines hardfork block numbers such that nodes will stop producing or accepting blocks immediately before the hardfork.
 
 ## Run a pre-migration
 
@@ -75,8 +74,8 @@ If you'd like to run the pre-migration manually without Docker, you can do so by
 
     ```bash
     go run ./cmd/celo-migrate pre \
-    --old-db <path-to-your-L1-datadir> \
-    --new-db <path-to-your-L2-destination-datadir>
+    --old-db <path-to-your-L1-datadir>/celo/chaindata \
+    --new-db <path-to-your-L2-destination-datadir>/geth/chaindata
     ```
 
 Once the pre-migration is complete, you can start your L1 node again. The pre-migration may take several hours to complete.
