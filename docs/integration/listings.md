@@ -5,21 +5,23 @@ description: Support for digital asset exchanges or ranking sites that would lik
 
 # Listings
 
-Support for digital asset exchanges or ranking sites that would like to run a Celo node and audit your setup.
+Guidance for digital asset exchanges or ranking sites on running a Celo node and auditing your setup.
 
 ---
 
 ## Support
 
-If you have any questions or need assistance with these instructions, please contact cLabs or ask in the #exchanges channel on [Celo’s Discord server](https://chat.celo.org/). Remember that Discord is a public channel: never disclose recovery phrases (also known as backup keys, or mnemonics), private keys, unsanitized log output, or personal information.
+For any questions or assistance with these instructions, please contact cLabs or inquire in [Celo's Discord server](https://chat.celo.org/). Note that Discord is a public channel: never disclose recovery phrases (also known as backup keys or mnemonics), private keys, unsanitized log output, or personal information.
 
-This guide will also help you find all the necessary information about brand assets, how to integrate with Celo and what useful listing information are made available to you as well as any information about looking for support.
+This guide provides comprehensive information on brand assets, integration with Celo, and useful listing information, as well as support resources.
+
+
 
 ## Celo Brand Assets for Listing
 
-If you are listing Celo on your exchange, you will probably need access to the Celo Platform brand assets. They can be found [here](https://celo.org/brand-kit).
+If you are listing Celo on your exchange, you will probably need access to the Celo Platform brand assets. Available [here](https://celo.org/brand-kit).
 
-Please ensure your use of the Celo Platform assets provided follows the brand policy found [here](https://celo.org/brand-kit-policy).
+Ensure that your use of the Celo Platform assets complies with the brand policy found [here](https://celo.org/brand-kit-policy).
 
 ## How To's
 
@@ -27,15 +29,15 @@ Please ensure your use of the Celo Platform assets provided follows the brand po
 
 There are several ways to integrate the Celo Platform with your infrastructure.
 
-A general overview of integrations that would be relevant to you listing Celo Platform are shown [here](/integration/general).
+A general overview of relevant integrations for listing Celo Platform is available [here](/integration/general).
 
-For more specific use-cases for exchanges, please checkout the [Custody and Exchange Integration Guide](/integration/custody) as well.
+For specific use-cases for exchanges, please refer to the [Custody and Exchange Integration Guide](/integration/custody).
 
 ## Important Information
 
 ### Celo Native Asset and Stable Value Currencies
 
-There are key assets on the Celo network, the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/developer/migrate/from-ethereum#the-celo-native-asset-and-the-celo-dollar) section of the docs.
+The Celo network features key assets, including the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly known as Celo Gold (cGLD) when the contract was deployed, so references to Celo Gold and CGLD may still appear in the codebase. For more information, please read [this](/developer/migrate/from-ethereum#the-celo-native-asset-and-the-celo-dollar) section of the documentation.
 
 You can also view the forum post about the name change [here](https://forum.celo.org/t/proposal-to-rename-celo-gold-to-celo-native-asset/528).
 
@@ -50,13 +52,13 @@ You can also view the forum post about the name change [here](https://forum.celo
 
 ### Useful API endpoints
 
-The following are useful API endpoints available to you that would help you in your listings of the CELO and cUSD digital assets.
+The following API endpoints are useful for listing CELO and cUSD digital assets.
 
 #### CELO and Stable Value Currencies
 
 ##### Total CELO supply
 
-For querying the API on total coins in circulation in CELO, which are the total amount of coins in existence right now, the following endpoint will provide you with that:
+To query the API for the total coins in circulation in CELO, use the following endpoint:
 
 ```sh
 $ curl https://thecelo.com/api/v0.1.js?method=ex_totalcoins
@@ -80,7 +82,7 @@ This endpoint is not yet available.
 
 #### CP-DOTO (Stability Algorithm)
 
-CP-DOTO information can be found [here](/protocol/stability/doto).
+Information on CP-DOTO can be found [here](/protocol/stability/doto).
 
 For API endpoints useful for listing that follow [CMC requirements](https://docs.google.com/document/d/1S4urpzUnO2t7DmS_1dc4EL4tgnnbTObPYXvDeBnukCg/edit#)
 
@@ -122,7 +124,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_ticker
 
 ##### Orderbook
 
-Market depth of a trading pair. One array containing a list of ask prices and another array containing bid prices.
+Market depth of a trading pair. One array contains a list of ask prices and another array contains bid prices.
 
 ```sh
 $ curl https://thecelo.com/api/v0.1.js?method=ex_orderbook
@@ -144,16 +146,16 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 
 To learn about the Celo Protocol, please refer to the [whitepaper](/general/whitepapers).
 
-If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](/general/) page.
+For more information on other aspects of the Celo Protocol, visit the [useful links](/general/) page.
 
 To learn more about the Stability Mechanism, you can find it over [here](/protocol/stability/doto).
 The [Stability Analysis Whitepaper](https://celo.org/papers/Celo_Stability_Analysis.pdf) and [blog post](https://medium.com/celohq/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5) will provide a lot more information on the stability algorithm.
 
-If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://reserve.mento.org/](https://reserve.mento.org/).
+If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://celoreserve.org/](https://celoreserve.org/).
 
 ### Github
 
-The Celo Protocol GitHub is located [here.](https://github.com/celo-org/)
+The Celo Protocol GitHub repository is located [here.](https://github.com/celo-org/)
 
 ### Audits
 

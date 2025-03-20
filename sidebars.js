@@ -725,19 +725,9 @@ const sidebars = {
       label: "Integrate with Celo",
       items: [
         { type: "doc", label: "Overview", id: "integration/index" },
-        { type: "doc", label: "General", id: "integration/general" },
-        {
-          type: "doc",
-          label: "Checklist",
-          id: "integration/checklist",
-        },
         { type: "doc", label: "Custody", id: "integration/custody" },
+        { type: "doc", label: "Guide", id: "integration/guide" },
         { type: "doc", label: "Listings", id: "integration/listings" },
-        {
-          type: "doc",
-          label: "Cloud HSM",
-          id: "integration/cloud-hsm",
-        },
       ],
     },
     {

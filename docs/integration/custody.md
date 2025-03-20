@@ -15,7 +15,7 @@ Generally speaking, custodying CELO, the native token on the Celo network, requi
 
 ## Balance Model
 
-As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [`LockedGold`](/protocol/pos/locked-gold) smart contract that holds the "locked portion of a user's `CELO` balance". Another one is the [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds `CELO` that is being released to a beneficiary address over time according to some schedule.
+As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [LockedGold](https://docs-cel2.netlify.app/protocol/pos/locked-gold) smart contract that holds the "locked portion of a user's CELO balance". Another one is the [ReleaseGold](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds CELO that is being released to a beneficiary address over time according to some schedule.
 
 :::warning
 
@@ -31,7 +31,7 @@ CELO and Celo Dollars implement the ERC20 interface, as will any future core sta
 
 ## CELO State Machine
 
-CELO as described previously can also exist in various states that represent a specific user behavior. For example, if a user wants to lock CELO to either participate in consensus directly or vote, that CELO will be sent to the `LockedGold` smart contract. To understand the high level flow, please read [this description of the various states CELO can exist in](/protocol/pos/locked-gold#locking-and-voting-flow).
+CELO as described previously can also exist in various states that represent a specific user behavior. For example, if a user wants to lock CELO to either participate in consensus directly or vote, that CELO will be sent to the LockedGold smart contract. To understand the high level flow, please read [this description of the various states CELO can exist in](https://docs-cel2.netlify.app/protocol/pos/locked-gold#locking-and-voting-flow).
 
 ## Smart Contracts
 
