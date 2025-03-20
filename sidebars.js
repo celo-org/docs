@@ -1245,9 +1245,10 @@ const sidebars = {
       items: [
         { type: "doc", label: "Running Oracles", id: "protocol/oracle/run" },
         { type: "doc", label: "Overview", id: "protocol/oracle/index" },
-        { type: "doc", label: "Band Protocol", id: "protocol/oracle/band-protocol" },
-        { type: "doc", label: "RedStone", id: "protocol/oracle/redstone" },
-        { type: "doc", label: "Supra", id: "protocol/oracle/supra" },
+        { type: "doc", label: "Using Band Protocol", id: "protocol/oracle/band-protocol" },
+        { type: "doc", label: "Using Chainlink Oracles", id: "protocol/oracle/chainlink-oracles" },
+        { type: "doc", label: "Using RedStone", id: "protocol/oracle/redstone" },
+        { type: "doc", label: "Using Supra", id: "protocol/oracle/supra" },
       ],
     },
     

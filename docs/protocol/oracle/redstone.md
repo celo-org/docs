@@ -1,5 +1,5 @@
 ---
-title: Using RedStone oracles
+title: Using RedStone Oracles
 description: Tutorial on how to use the RedStone oracles on Celo
 ---
 
