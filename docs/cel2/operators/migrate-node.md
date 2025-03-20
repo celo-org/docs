@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Migrating a Celo L1 node
 
 This guide is designed to help Celo L1 node operators migrate their nodes to the Celo L2. Specifically, it describes how to run the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) in order to transform a pre-hardfork db snapshot into a format from which a Celo L2 node can `full` sync.
@@ -101,6 +104,15 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    ```
 
 4. Run the full migration
+
+<Tabs>
+  <TabItem value="mainnet" label="Mainnet" default>
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="testnets" label="Testnets">
+    This is an orange 🍊
+  </TabItem>
+</Tabs>
 
    ```bash
    go run ./cmd/celo-migrate full \
