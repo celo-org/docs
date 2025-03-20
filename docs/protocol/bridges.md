@@ -27,7 +27,6 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 **Supported chains**
 
-- Celo Alfajores
 - Celo Mainnet
 
 ## Squid Router
