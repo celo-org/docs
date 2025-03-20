@@ -107,13 +107,28 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
 
 <Tabs>
   <TabItem value="mainnet" label="Mainnet" default>
-    This is an apple 🍎
+   ```bash
+   go run ./cmd/celo-migrate full \
+   --deploy-config <path-to-deploy-config.json> \
+   --l1-deployments <path-to-l1-deployments.json> \
+   --l1-rpc <L1-RPC-URL> \
+   --l2-allocs <path-to-l2-allocs.json> \
+   --outfile.rollup-config <path-to-output-rollup-config.json> \
+   --outfile.genesis <path-to-output-genesis.json> \
+   --migration-block-number <MIGRATION_BLOCK_NUMBER> \
+   --old-db <path-to-your-L1-datadir>/celo/chaindata \
+   --new-db <path-to-your-L2-destination-datadir>/geth/chaindata \
+   --l1-beacon-rpc=<L1-beacon-RPC-URL>
+   ```
+ 
+   Note the L1-beacon-RPC-URL must support querying historical `finality_checkpoints`. We are using https://ethereum-beacon-api.publicnode.com in [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose).
+   
+   You can check support for historical `finality_checkpoints` by retrieving some suitably old finality_checkpoints, for example slot 5000000.
+   ```
+   curl https://ethereum-beacon-api.publicnode.com/eth/v1/beacon/states/5000000/finality_checkpoints | jq
+   ```
   </TabItem>
   <TabItem value="testnets" label="Testnets">
-    This is an orange 🍊
-  </TabItem>
-</Tabs>
-
    ```bash
    go run ./cmd/celo-migrate full \
    --deploy-config <path-to-deploy-config.json> \
@@ -126,6 +141,8 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    --old-db <path-to-your-L1-datadir>/celo/chaindata \
    --new-db <path-to-your-L2-destination-datadir>/geth/chaindata
    ```
+  </TabItem>
+</Tabs>
 
    You can find the required input artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) section once they're available.
 
