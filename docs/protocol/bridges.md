@@ -21,6 +21,15 @@ Be sure you understand and review the risks pages when bridging assets between c
 - Celo Alfajores
 - Celo Mainnet
 
+## Layerswap
+
+[Layerswap](https://layerswap.io/app) is a cost-efficient and secure solution for transferring assets across EVM and non-EVM blockchain networks. The app supports fast cross-chain transfers between 60+ chains as well as direct transfers between networks and 15+ Centralized Exchanges.
+
+**Supported chains**
+
+- Celo Alfajores
+- Celo Mainnet
+
 ## Squid Router
 
 [Squid Router](https://v2.app.squidrouter.com/) is a cross-chain liquidity routing protocol that enables seamless token swaps and transfers across multiple blockchain networks. It leverages the Axelar network for secure cross-chain communication, allowing users to swap tokens between blockchains without relying on centralized intermediaries. The protocol aggregates liquidity from various decentralized exchanges (DEXs) to provide optimal rates for users.
