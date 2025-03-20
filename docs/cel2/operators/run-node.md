@@ -353,6 +353,7 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 If your node is synced but transactions submitted to it are not executed, make sure the `--rollup.sequencerhttp` flag is correctly set.
 
+- Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
 - Alfajores: `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org`
 - Baklava: `--rollup.sequencerhttp=https://sequencer.baklava.celo-testnet.org`
 

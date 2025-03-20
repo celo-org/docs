@@ -1758,19 +1758,24 @@ const sidebars = {
       collapsed: false,
       items: [
         {
-          type : "doc",
+          type: "category",
           label: "Celo L2 Migration",
-          id: "cel2/notices/l2-migration",
+          link: {
+            type: "doc",
+            id: "cel2/notices/l2-migration",
+          },
+          collapsed: false,
+          items: [
+            {
+              type: "doc",
+              label: "Day 1 Partners",
+              id: "cel2/notices/day-1-partners",
+            },]
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
-		 },
-        {
-          type : "doc",
-          label: "Day 1 Partners",
-          id: "cel2/notices/day-1-partners",
         },
       ]
     },
@@ -1815,14 +1820,14 @@ const sidebars = {
           label: "Running a Community RPC Node",
           id: "cel2/operators/community-rpc-node",
         },
-	{
+        {
           type: "doc",
           label: "Community RPC Provider FAQ",
           id: "cel2/operators/validator-rpc-faq",
         },
       ],
     },
-    { 
+    {
       type: "category",
       label: "What's Changed?",
       link: { type: "doc", id: "cel2/whats-changed/overview" },
@@ -1839,17 +1844,17 @@ const sidebars = {
       collapsed: true,
       items: [
         {
-          type : "doc",
+          type: "doc",
           label: "Bridging CELO from L1 to L2",
           id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Withdrawing CELO from L2 to L1",
           id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Fee Abstraction on Celo L2",
           id: "cel2/guides/fee-abstraction",
         },
