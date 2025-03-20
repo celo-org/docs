@@ -808,10 +808,11 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Addresses",
+          label: "Contracts",
           items: [
-            { type: "doc", label: "Contracts", id: "contract-addresses" },
-            { type: "doc", label: "Tokens", id: "token-addresses" },
+            { type: "doc", label: "Core Contracts", id: "contracts/core-contracts" },
+            { type: "doc", label: "Token Contracts", id: "contracts/token-contracts" },
+            { type: "doc", label: "Uniswap Contracts", id: "contracts/uniswap-contracts" },
           ],
         },
     {
