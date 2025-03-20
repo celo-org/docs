@@ -120,7 +120,7 @@ Transactions are interactions that occur between user addresses and Celo (e.g., 
 **Circulating Supply**
 
 - **CELO:** Metric updated in real-time, please visit [coinmarketcap.com/currencies/celo](https://coinmarketcap.com/currencies/celo/)
-- **cUSD + cEUR + cREAL:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/)
+- **cUSD + cEUR + cREAL:** Metrics updated in real-time, please visit [celoreserve.org](https://reserve.mento.org/)
 
 :::tip
 

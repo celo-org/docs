@@ -32,5 +32,6 @@ Native Bridging is only possible once Celo has become an L2. For now you can tes
 
 - Superbridge Celo Mainnet - **not released**
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
+- [Superbridge Baklava Testnet](https://testnets.superbridge.app/celo-baklava)
 
 

@@ -5,9 +5,17 @@ description: Build web3 applications that can interact with your smart contracts
 
 # thirdweb SDK
 
+## Install thirdweb
+
+Thirdweb is a CLI tool that you need to install to create and manage your Web3 applications.
+
+```bash
+npx thirdweb install
+```
+
 ## Create Application
 
-thirdweb offers SDKs for a range of programming languages, such as React, React Native, TypeScript, Python, Go, and Unity.
+thirdweb offers SDKs for various programming languages, such as React, React Native, TypeScript, Python, Go, and Unity.
 
 1. In your CLI run the following command:
 
@@ -16,11 +24,29 @@ thirdweb offers SDKs for a range of programming languages, such as React, React 
    ```
 
 2. Input your preferences for the command line prompts:
-   1. Give your project a name
-   2. Choose your network: We will choose EVM for Moonbeam
-   3. Choose your preferred framework: Next.js, CRA, Vite, React Native, Node.js, or Express
-   4. Choose your preferred language: JavaScript or TypeScript
-3. Use the React or TypeScript SDK to interact with your application’s functions. See section on “interact with your contract”
+   1. Give your **`project`** a name
+   2. Choose your **`network`**: We will choose EVM for Moonbeam
+   3. Choose your preferred **`framework`**: Next.js, CRA, Vite, React Native, Node.js, or Express
+   4. Choose your preferred **`language`**: JavaScript or TypeScript
+   5. We are choosing **Vite** and **TypeScript** for this particular example.
+3. Use the React or TypeScript SDK to interact with your application’s functions. See the section on “interact with your contract”
+
+## Get a Thirdweb Client ID  
+
+1. Open the **Thirdweb Dashboard** and click **`Add New`** in the **Projects** section.  
+2. Select **`Project`** from the dropdown menu.  
+3. Enter a **project name** and add **`localhost:5173`** under **`Allowed Domains`**. Click **`Create`**.  
+4. A **`Client ID`** and **`Secret ID`** will be generated. Copy both to a secure location—we’ll only need the **`Client ID`**.
+
+## Create an .env file
+
+1. Create an **`.env`** file on your root folder.
+2. Add the following:
+
+```bash
+VITE_TEMPLATE_CLIENT_ID=YOUR_THIRDWEB_CLIENT_ID
+VITE_TEMPLATE_CONTRACT_ID=YOUR_CONTRACT_ID
+```
 
 ## Interact With a Contract
 
@@ -28,148 +54,229 @@ thirdweb offers SDKs for a range of programming languages, such as React, React 
 
 Wrap your application in the `ThirdwebProvider` component and change the `activeChain` to Celo
 
-```jsx
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { Celo } from "@thirdweb-dev/chains";
+```tsx
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
+import { ThirdwebProvider } from "thirdweb/react";
 
-const App = () => {
-  return (
-    <ThirdwebProvider activeChain={Celo}>
-      <YourApp />
+createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ThirdwebProvider>
+      <App />
     </ThirdwebProvider>
-  );
-};
+  </React.StrictMode>
+);
 ```
 
 ### Get Contract
 
-To connect to your contract, use the SDK’s `[getContract](https://portal.thirdweb.com/typescript/sdk.thirdwebsdk.getcontract)`method.
+To connect to your contract, use the SDK’s `getContract` method.
 
-```jsx
-import { useContract } from "@thirdweb-dev/react";
+```tsx
+import { client } from "./client";
+import { getContract, createThirdwebClient } from 'thirdweb';
+import { celo } from "thirdweb/chains";
 
-function App() {
-  const { contract, isLoading, error } = useContract("{{contract_address}}");
+export function App() {
+  
+  const contract = getContract({
+    client,
+    address: import.meta.env.VITE_CONTRACT_ADDRESS,
+    chain: celo,
+  });
+	
+  return (
+	<div>
+	  <h2>{contract.contract}</h2>
+	</div>
+  );
 }
 ```
 
+Full reference: [getContract](https://portal.thirdweb.com/references/typescript/v5/getContract)
+
 ### Calling Contract Functions
 
-- For extension based functions, use the built-in supported hooks. The following is an example using the NFTs extension to access a list of NFTs owned by an address- `useOwnedNFTs`
+- For extension-based functions, use the built-in supported hooks. The following is an example using the NFTs extension to access a list of NFTs owned by an address- `useOwnedNFTs`
 
-  ```jsx
-  import { useOwnedNFTs, useContract, useAddress } from "@thirdweb-dev/react";
+  ```tsx
+  import React, { useState } from 'react';
+  import { client } from "./client";
+  import { getContract, createThirdwebClient } from 'thirdweb';
+  import { celo } from "thirdweb/chains";
+  import { getOwnedNFTs } from "thirdweb/extensions/erc721";
 
-  // Your smart contract address
-  const contractAddress = "{{contract_address}}";
-
-  function App() {
-    const address = useAddress();
-    const { contract } = useContract(contractAddress);
-    const { data, isLoading, error } = useOwnedNFTs(contract, address);
+  export function App() {
+    const [nftData, setNftData] = useState(null);
+  
+    const contract = getContract({
+      client,
+      address: import.meta.env.VITE_CONTRACT_ADDRESS,
+      chain: celo,
+    });
+  
+    const loadNFTs = async (contractId) => {
+      try {
+        const nft = await getOwnedNFTs({
+          contract,
+          start: 0,
+          count: 10,
+          address: contractId,
+        });
+        setNftData(nft);
+      } catch (error) {
+        console.error('Error loading NFT:', error);
+      }
+    };
+  	
+    React.useEffect(() => {
+      loadNFTs(import.meta.env.VITE_CONTRACT_ADDRESS);
+    }, []);  	
+  	
+	  return (
+       <div>
+		  <h2>{nftData[0].metadata.name}</h2>
+       </div>
+	  );
   }
   ```
 
-  Full reference: https://portal.thirdweb.com/react/react.usenft
+  Full reference: [https://portal.thirdweb.com/references/typescript/v5/erc721/getOwnedNFTs](https://portal.thirdweb.com/references/typescript/v5/erc721/getOwnedNFTs)
 
-- Use the `useContractRead` hook to call any read functions on your contract by passing in the name of the function you want to use.
+- Use the `useReadContract` hook to call any read functions on your contract by passing in the name of the function you want to use.
 
-  ```jsx
-  import { useContractRead, useContract } from "@thirdweb-dev/react";
+  ```tsx
+  import React, { useState } from 'react';
+  import { client } from "./client";
+  import { getContract, createThirdwebClient } from 'thirdweb';
+  import { celo } from "thirdweb/chains";
+  import { getOwnedNFTs } from "thirdweb/extensions/erc721";
+  import { useReadContract } from "thirdweb/react";
 
-  // Your smart contract address
-  const contractAddress = "{{contract_address}}";
-
-  function App() {
-    const { contract } = useContract(contractAddress);
-    const { data, isLoading, error } = useContractRead(contract, "getName");
+  export function App() {
+    const [nftData, setNftData] = useState(null);
+  
+    const contract = getContract({
+      client,
+      address: import.meta.env.VITE_CONTRACT_ADDRESS,
+      chain: celo,
+    });
+  
+  const { data, isPending } = useReadContract({
+    contract,
+    method: "function name() view returns (string)",
+    params: [],
+  }); 
+    	  	
+  return (
+    <div>
+	   <h2>{data}</h2>
+	 </div>
+  );
   }
   ```
 
-  Full reference: https://portal.thirdweb.com/react/react.usecontractread
+  Full reference: [https://portal.thirdweb.com/references/typescript/v5/useReadContract](https://portal.thirdweb.com/references/typescript/v5/useReadContract)
 
-- Use the `useContractWrite` hook to call any writefunctions on your contract by passing in the name of the function you want to use.
+- Use the `updatemetadata` function to update the **`metadata`** on your contract by passing in the information you want to update.
 
-  ```jsx
-  import {
-    useContractWrite,
-    useContract,
-    Web3Button,
-  } from "@thirdweb-dev/react";
+  ```tsx
+  import React, { useState } from 'react';
+  import { getContract, createThirdwebClient } from 'thirdweb';
+  import { celo } from "thirdweb/chains";
+  import { updateMetadata } from "thirdweb/extensions/erc721";
 
-  // Your smart contract address
-  const contractAddress = "{{contract_address}}";
+  export function App() {
+    const [newName, setNewName] = useState('');
+    const [isUpdating, setIsUpdating] = useState(false);
 
-  function App() {
-    const { contract } = useContract(contractAddress);
-    const { mutateAsync, isLoading, error } = useContractWrite(
-      contract,
-      "setName"
-    );
+    const client = createThirdwebClient({ 
+      clientId: import.meta.env.VITE_TEMPLATE_CLIENT_ID
+    });
+
+    const contract = getContract({
+      client,
+      address: import.meta.env.VITE_CONTRACT_ADDRESS,
+      chain: celo,
+    });
+
+    const updateContractName = async () => {
+      if (!newName) {
+        alert("Please enter a new name");
+        return;
+      }
+
+      setIsUpdating(true);
+
+      try {
+        console.log("Updating contract metadata name to:", newName);
+
+        const transaction = await updateMetadata({
+          contract,
+          metadata: {
+            name: newName,
+          },
+        });
+
+        console.log("Transaction sent:", transaction);
+        console.log("Contract metadata updated successfully!");
+
+        alert("Contract metadata updated successfully!");
+      } catch (error) {
+        console.error('Error updating contract metadata:', error);
+        alert("Failed to update contract metadata. Check the console for details.");
+      } finally {
+        setIsUpdating(false);
+      }
+    };
 
     return (
-      <Web3Button
-        contractAddress={contractAddress}
-        // Calls the "setName" function on your smart contract with "My Name" as the first argument
-        action={() => mutateAsync({ args: ["My Name"] })}
-      >
-        Send Transaction
-      </Web3Button>
-    );
-  }
+      <div>
+        <h2>Update Contract Metadata Name</h2>
+        <input
+          type="text"
+          placeholder="Enter new name"
+          value={newName}
+          onChange={(e) => setNewName(e.target.value)}
+        />
+        <button onClick={updateContractName} disabled={isUpdating}>
+          {isUpdating ? "Updating..." : "Update Name"}
+        </button>
+      </div>
+  );
   ```
 
-  Full reference: [https://portal.thirdweb.com/react/react.usecontractwrite](https://portal.thirdweb.com/react/react.usecontractwrite)
+  Full reference: [https://portal.thirdweb.com/references/typescript/v5/erc721/updateMetadata](https://portal.thirdweb.com/references/typescript/v5/erc721/updateMetadata)
 
 ### Connect Wallet
 
 Create a custom connect wallet experience by declaring supported wallets passed to your provider.
 
-```jsx
-import {
-  ThirdwebProvider,
-  metamaskWallet,
-  coinbaseWallet,
-  walletConnectV1,
-  walletConnect,
-  safeWallet,
-  paperWallet,
-} from "@thirdweb-dev/react";
+```tsx
+import React, { useState } from 'react';
+import { client } from "./client";
+import { ConnectButton } from "thirdweb/react";
+import { createWallet, inAppWallet } from "thirdweb/wallets";
 
-function MyApp() {
+const wallets = [
+  inAppWallet(),
+  createWallet("io.metamask"),
+  createWallet("com.coinbase.wallet"),
+  createWallet("me.rainbow"),
+];
+
+export function App() {
+ 
   return (
-    <ThirdwebProvider
-      supportedWallets={[
-        metamaskWallet(),
-        coinbaseWallet(),
-        walletConnect({
-          projectId: "YOUR_PROJECT_ID", // optional
-        }),
-        walletConnectV1(),
-        safeWallet(),
-        paperWallet({
-          clientId: "YOUR_CLIENT_ID", // required
-        }),
-      ]}
-      activeChain={Celo}
-    >
-      <App />
-    </ThirdwebProvider>
+    <div>
+      <ConnectButton client={client} wallets={wallets} />    
+    </div>
   );
 }
 ```
 
-Add in a connect wallet button to prompt end-users to login with any of the above supported wallets.
-
-```jsx
-import { ConnectWallet } from "@thirdweb-dev/react";
-
-function App() {
-  return <ConnectWallet />;
-}
-```
-
-Full reference: https://portal.thirdweb.com/react/connecting-wallets
+Full reference: [https://portal.thirdweb.com/references/typescript/v5/ConnectButton](https://portal.thirdweb.com/references/typescript/v5/ConnectButton)
 
 ## Deploy Application
 

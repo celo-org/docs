@@ -18,10 +18,6 @@ View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/
 
 ## Celo Mainnet
 
-```jsx
-celocli network:contracts --node https://forno.celo.org
-```
-
 | Contract                | Proxy                                      |
 | ----------------------- | ------------------------------------------ |
 | Accounts                | 0x7d21685C17607338b313a7174bAb6620baD0aaB7 |
@@ -40,10 +36,10 @@ celocli network:contracts --node https://forno.celo.org
 | Freezer                 | 0x47a472F45057A9d79d62C6427367016409f4fF5A |
 | FeeHandler              | 0xcD437749E43A154C07F3553504c68fBfD56B8778 |
 | GasPriceMinimum         | 0xDfca3a8d7699D8bAfe656823AD60C17cb8270ECC |
-| GoldToken               | 0x471EcE3750Da237f93B8E339c536989b8978a438 |
+| GoldToken (Celo Token)  | 0x471EcE3750Da237f93B8E339c536989b8978a438 |
 | Governance              | 0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972 |
 | GrandaMento             | 0x03f6842B82DD2C9276931A17dd23D73C16454a49 |
-| LockedGold              | 0x6cC083Aed9e3ebe302A6336dBC7c921C9f03349E |
+| LockedGold (LockedCelo) | 0x6cC083Aed9e3ebe302A6336dBC7c921C9f03349E |
 | MentoFeeHandlerSeller   | 0x4eFa274B7e33476C961065000D58ee09F7921A74 |
 | Random                  | 0x22a4aAF42A50bFA7238182460E32f15859c93dfe |
 | Registry                | 0x000000000000000000000000000000000000ce10 |
@@ -55,11 +51,13 @@ celocli network:contracts --node https://forno.celo.org
 | UniswapFeeHandlerSeller | 0xD3aeE28548Dbb65DF03981f0dC0713BfCBd10a97 |
 | Validators              | 0xaEb865bCa93DdC8F47b8e29F40C5399cE34d0C58 |
 
-## Alfajores Testnet
+Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
 
-```jsx
-celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+```bash
+$ celocli network:contracts --node https://forno.celo.org
 ```
+
+## Alfajores Testnet
 
 | Contract                 | Proxy                                      |
 | ------------------------ | ------------------------------------------ |
@@ -82,10 +80,10 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | Freezer                  | 0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1 |
 | FeeHandler               | 0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38 |
 | GasPriceMinimum          | 0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e |
-| GoldToken                | 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 |
+| GoldToken (Celo Token)   | 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 |
 | Governance               | 0xAA963FC97281d9632d96700aB62A4D1340F9a28a |
 | GrandaMento              | 0xEcf09FCD57b0C8b1FD3DE92D59E234b88938485B |
-| LockedGold               | 0x6a4CC5693DC5BFA3799C699F3B941bA2Cb00c341 |
+| LockedGold (LockedCelo)  | 0x6a4CC5693DC5BFA3799C699F3B941bA2Cb00c341 |
 | MentoFeeHandlerSeller    | 0xae83C63B5FB50C353c8d23397bcC9dBf3a9837Ac |
 | Random                   | 0xdd318EEF001BB0867Cd5c134496D6cF5Aa32311F |
 | Registry                 | 0x000000000000000000000000000000000000ce10 |
@@ -97,3 +95,9 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | TransferWhitelist        | 0x52449A99e3455acB831C0D580dCDAc8B290d5182 |
 | UniswapFeeHandlerSeller  | 0xc7b6E77C3702666DDa8EB5b7F30234B020788b21 |
 | Validators               | 0x9acF2A99914E083aD0d610672E93d14b0736BBCc |
+
+Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
+
+```bash
+$ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+```

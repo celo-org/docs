@@ -53,4 +53,4 @@ We went through the same process and minted all 14 NFTs from this contract.
 
 That’s it! You now know how to create your own NFT contract with corresponding metadata!
 
-Let me know what you end up building and reach out if you have any questions, [@critesjosh\_](https://twitter.com/critesjosh_) on Twitter or joshc#0001 on Discord. Join the Celo discord at [https://chat.celo.org](https://chat.celo.org).
+Let me know what you end up building and reach out if you have any questions, [@critesjosh\_](https://x.com/critesjosh_) on Twitter or joshc#0001 on Discord. Join the Celo discord at [https://chat.celo.org](https://chat.celo.org).
