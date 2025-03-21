@@ -11,6 +11,13 @@ import TabItem from '@theme/TabItem';
 
 Start sending, spending, and earning crypto from your mobile phone.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 Celo Owners can start transacting with 6 billion other smartphone users around the world from your phone and on the go. Transact in seconds — at a fraction of the cost of other crypto platforms. Anyone who holds any amount of CELO is empowered to vote on governance proposals that direct how the core technology operates today and in the future.

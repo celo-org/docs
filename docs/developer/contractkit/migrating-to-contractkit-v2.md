@@ -5,6 +5,14 @@ description: How to migrate from v1 to v2 ContractKit suite of packages and make
 
 How to migrate from v1 to v2 of the Celo SDK suite of packages and make use of their latest features.
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ---
 
 ## Why v2?

@@ -5,6 +5,13 @@ description: How the Celo Foundation anticipates allocating its votes to validat
 
 How the Celo Foundation anticipates allocating its votes to validator groups, with special attention to the first allocated groups at the Celo Mainnet release and the months thereafter.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 :::info

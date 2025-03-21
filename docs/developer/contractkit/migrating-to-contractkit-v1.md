@@ -7,6 +7,14 @@ description: How to migrate to the newest version of ContractKit and make use of
 
 How to migrate to from prerelease of ContractKit to v1 and make use of its features.
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ---
 
 ## What is ContractKit version v1.0?

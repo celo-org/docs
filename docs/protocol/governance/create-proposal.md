@@ -3,12 +3,19 @@ title: Create Proposal for Governance
 description: How to Create a Proposal in Celo Governance- A Detailed Guide
 ---
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ## Prerequisites
 
 Before diving into the Celo governance process and creating a proposal, there are several prerequisites that need to be met:
 
 1. **Celo CLI Knowledge:** Familiarity with the Celo Command Line Interface (CLI) is crucial. The CLI is the primary tool for interacting with the Celo network, including proposal submission.
-2. **Minimum Amount of CELO Needed:** Proposers must have at least 100 CELO tokens. A token requirement ensures that proposers have a stake in the network and helps to prevent spam proposals. The staked CELO will be refunded to the proposer if the proposal reaches the Approval stage. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
+2. **Minimum Amount of CELO Needed:** Proposers must have at least 10,000 CELO tokens. A token requirement ensures that proposers have a stake in the network and helps to prevent spam proposals. The staked CELO will be refunded to the proposer if the proposal reaches the Approval stage. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
 3. **Multi-Signature Wallet:** If the proposal requests funds from the treasury, receipt of the funds into a multisig wallet is advisable. Multisig signers are also advised to self-identify on the corresponding Forum post. Multisig wallets add a layer of security and trust, as multiple parties must agree to execute transactions. Multiple parties self-identifying their involvement in a wallet also demonstrates more oversight over the usage of any requested funds.
 
 ## Life Cycle of a Proposal on Celo

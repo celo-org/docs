@@ -257,7 +257,7 @@ const Users: User[] = [
     title: 'Contract Addresses',
     description: 'Core contract address proxies and implementations for the Celo network.',
     preview: require('./showcase/integrations/contract-addresses.webp'),
-    website: '/contract-addresses',
+    website: '/contracts/core-contracts',
     tags: ['integrations'],
   },
   

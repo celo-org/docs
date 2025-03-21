@@ -7,6 +7,13 @@ description: Introduction to locked CELO and how to use validator elections to p
 
 Introduction to Celo locked gold (CELO) and how to use validator elections to participate in voting.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 :::note
 
 This page references "Locked Gold". The native asset of Celo was called Celo Gold (cGLD), but is now called CELO. Many references have been updated, but code and smart contract references may still mention Gold as it is more difficult to reliably and securely update the protocol code.

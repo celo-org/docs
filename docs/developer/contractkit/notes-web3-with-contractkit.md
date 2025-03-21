@@ -9,6 +9,13 @@ How to use Web3 from ContractKit to read data from the Celo blockchain.
 
 ---
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 :::tip
 
 Although the [Web3 library](https://web3js.readthedocs.io/) was intended to be used only with `Ethereum`, due to the nature of `Celo`, we can still use the majority of its features.
