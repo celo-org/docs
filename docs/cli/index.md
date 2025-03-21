@@ -17,7 +17,7 @@ It’s a command-line interface around the ContractKit. It allows you to interac
 ## Installation {#installation}
 
 
-## Homebrew {#brew-tap}
+### Homebrew {#brew-tap}
 
 IF you're on macOS or Linux celocli is available as a *tap* on HomeBrew. 
 
