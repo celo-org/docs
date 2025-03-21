@@ -86,7 +86,7 @@ await window.ethereum.request({
 
 :::tip
 
-View available token addresses for Celo assets to add to MetaMask [here](/token-addresses).
+View available token addresses for Celo assets to add to MetaMask [here](/contracts/token-contracts).
 
 :::
 

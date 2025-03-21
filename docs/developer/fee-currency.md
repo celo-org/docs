@@ -10,7 +10,7 @@ Some documentation may be outdated as updates are in progress. If you encounter 
 For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
 :::
 
-Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyWhitelist.sol**](../contract-addresses.md).
+Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyWhitelist.sol**](/contracts/core-contracts).
 
 Alternate fee currency works with EOAs and no paymaster is required!
 

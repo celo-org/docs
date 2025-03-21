@@ -1,5 +1,5 @@
 ---
-title: Supra Oracle
+title: Using Supra Oracle
 description: Supra is a novel, high-throughput Oracle & IntraLayer. A vertically integrated toolkit of cross-chain solutions (data oracles, asset bridges, automation network, and more) that interlink all blockchains, public (L1s and L2s) or private (enterprises).
 ---
 

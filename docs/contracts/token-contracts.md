@@ -1,6 +1,6 @@
 ---
-title: Token Addresses
-id: token-addresses
+title: Token Contracts
+id: token-contracts
 ---
 
 import YouTube from '@components/YouTube';
@@ -10,7 +10,7 @@ Token addresses for Celo assets on Mainnet, Alfajores Testnet, and Baklava Testn
 
 ---
 
-## Mainnet
+## Celo Mainnet
 
 - **CELO**: `0x471EcE3750Da237f93B8E339c536989b8978a438`
 - **cUSD**: `0x765de816845861e75a25fca122bb6898b8b1282a`
