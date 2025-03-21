@@ -7,120 +7,63 @@ const sidebars = {
   // ######################################
 
   generalSidebar: [
-    { type: "doc", label: "Overview", id: "general/index" },
+    { type: "doc", label: "Overview", id: "what-is-celo/index" },
     {
       type: "doc",
       label: "Our History",
-      id: "general/history",
+      id: "what-is-celo/history",
     },
-    //{
-    //  type: "doc",
-    //  label: "L1 Architecture",
-    //  id: "general/architecture",
-    //},
     {
       type: "category",
       label: "Using Celo",
       items: [
+        { type: "doc", label: "Overview", id: "what-is-celo/using-celo/index" },
         {
           type: "category",
-          label: "Holder",
+          label: "Manage",
           items: [
-            { type: "doc", label: "Overview", id: "holder/index" },
             {
-              type: "category",
-              label: "Manage",
-              items: [
-                {
-                  type: "doc",
-                  label: "Self-Custody",
-                  id: "holder/manage/self-custody",
-                },
-                {
-                  type: "doc",
-                  label: "Release Gold",
-                  id: "holder/manage/release-gold",
-                },
-                {
-                  type: "doc",
-                  label: "Exchange Assets",
-                  id: "holder/manage/exchange",
-                },
-                {
-                  type: "doc",
-                  label: "Asset Management",
-                  id: "holder/manage/asset",
-                },
-              ],
+              type: "doc",
+              label: "Self-Custody",
+              id: "what-is-celo/using-celo/manage/self-custody",
             },
             {
-              type: "category",
-              label: "Voting",
-              items: [
-                {
-                  type: "doc",
-                  label: "Validator Elections",
-                  id: "holder/vote/validator",
-                },
-                {
-                  type: "doc",
-                  label: "Voting on Governance",
-                  id: "holder/vote/governance",
-                },
-                {
-                  type: "doc",
-                  label: "Governable Parameters",
-                  id: "holder/vote/governance-parameters",
-                },
-              ],
+              type: "doc",
+              label: "Release Gold",
+              id: "what-is-celo/using-celo/manage/release-gold",
             },
             {
-              type: "category",
-              label: "Recovery",
-              items: [
-                {
-                  type: "doc",
-                  label: "Recover from ETH Address",
-                  id: "holder/recover/from-eth-address",
-                },
-                {
-                  type: "doc",
-                  label: "Recover from Celo Address",
-                  id: "holder/recover/from-celo-address",
-                },
-              ],
+              type: "doc",
+              label: "Exchange Assets",
+              id: "what-is-celo/using-celo/manage/exchange",
             },
+
             {
-              type: "link",
-              label: "Exchanges",
-              href: "https://coinmarketcap.com/currencies/celo/markets/",
+              type: "doc",
+              label: "Asset Management",
+              id: "what-is-celo/using-celo/manage/asset",
             },
           ],
         },
         {
           type: "doc",
-          label: "Wallets",
-          id: "general/using-celo/wallets",
-        },
-        {
-          type: "doc",
           label: "Gas Fees",
-          id: "general/using-celo/gas-fees",
+          id: "what-is-celo/using-celo/gas-fees",
         },
         {
           type: "doc",
-          label: "Bridging",
-          id: "general/using-celo/bridging",
+          label: "Bridges",
+          id: "what-is-celo/using-celo/bridges",
         },
         {
           type: "doc",
-          label: "DEXs",
-          id: "general/using-celo/dexes",
+          label: "Exchanges",
+          id: "what-is-celo/using-celo/exchanges",
         },
         {
           type: "doc",
-          label: "Voting",
-          id: "general/using-celo/voting",
+          label: "Glossary",
+          id: "what-is-celo/using-celo/glossary",
         },
       ],
     },
@@ -131,27 +74,48 @@ const sidebars = {
         {
           type: "doc",
           label: "Celo Ecosystem",
-          id: "general/ecosystem/overview",
+          id: "what-is-celo/joining-celo/overview",
         },
         {
           type: "doc",
           label: "Builders",
-          id: "general/ecosystem/builders",
+          id: "what-is-celo/joining-celo/builders",
         },
         {
           type: "doc",
           label: "Open Source Contributors",
-          id: "general/ecosystem/contributors",
+          id: "what-is-celo/joining-celo/contributors",
         },
         {
           type: "doc",
           label: "Regional DAOs",
-          id: "general/ecosystem/daos",
+          id: "what-is-celo/joining-celo/daos",
         },
         {
-          type: "doc",
+          type: "category",
           label: "Governance",
-          id: "general/ecosystem/governance",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "what-is-celo/joining-celo/governance/overview",
+            },
+            {
+              type: "doc",
+              label: "Voting in Governance",
+              id: "what-is-celo/joining-celo/governance/voting-in-governance",
+            },
+            {
+              type: "doc",
+              label: "Voting with Celo Mondo",
+              id: "what-is-celo/joining-celo/governance/voting-in-governance-using-mondo",
+            },
+            {
+              type: "doc",
+              label: "Governable Parameters",
+              id: "what-is-celo/joining-celo/governance/governable-parameters",
+            },
+          ],
         },
         {
           type: "category",
@@ -160,22 +124,22 @@ const sidebars = {
             {
               type: "doc",
               label: "Create a Governance Proposal",
-              id: "general/ecosystem/guides/create-proposal",
+              id: "what-is-celo/joining-celo/guides/create-proposal",
             },
             {
               type: "doc",
               label: "Fundraising",
-              id: "general/ecosystem/guides/fundraising",
+              id: "what-is-celo/joining-celo/guides/fundraising",
             },
             {
               type: "doc",
               label: "Guidelines",
-              id: "general/ecosystem/guides/guidelines",
+              id: "what-is-celo/joining-celo/guides/guidelines",
             },
             {
               type: "doc",
               label: "Grant Playbook",
-              id: "general/ecosystem/guides/grant-playbook",
+              id: "what-is-celo/joining-celo/guides/grant-playbook",
             },
             {
               type: "link",
@@ -193,12 +157,17 @@ const sidebars = {
         {
           type: "doc",
           label: "Overview",
-          id: "general/celo_l1_index",
+          id: "what-is-celo/about-celo-l1/celo_l1_index",
         },
         {
           type: "doc",
           label: "L1 Architecture",
-          id: "general/architecture",
+          id: "what-is-celo/about-celo-l1/architecture",
+        },
+        {
+          type: "doc",
+          label: "Whitepapers",
+          id: "what-is-celo/about-celo-l1/whitepapers",
         },
         {
           type: "category",
@@ -464,6 +433,11 @@ const sidebars = {
               id: "validator/index",
             },
             {
+              type: "doc",
+              label: "Voting for Validator Groups",
+              id: "validator/voting",
+            },
+            {
               type: "category",
               label: "Run a Validator",
               items: [
@@ -569,19 +543,6 @@ const sidebars = {
       label: "Celo Website",
       href: "https://celo.org",
     },
-    // {
-    //   type: "doc",
-    //   label: "Web2 to Web3",
-    //   id: "general/web2-to-web3",
-    // },
-    // {
-    //   type: "doc",
-    //   label: "Whitepapers",
-    //   id: "general/whitepapers",
-    // },
-    // { type: "doc", label: "Glossary", id: "general/glossary" },
-    // { type: "doc", label: "Gallery", id: "general/gallery" },
-    // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
 
   // ######################################

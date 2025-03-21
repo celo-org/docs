@@ -1,6 +1,8 @@
 ---
-title: DEXs on Celo
+title: Exchanges on Celo
 ---
+
+# Exchanges on Celo
 
 Swapping assets on Celo allows users to easily exchange tokens within the Celo ecosystem.
 
@@ -16,7 +18,7 @@ Be sure you understand and review the risks when swapping assets.
 
 - [Uniswap](https://app.uniswap.org/)
 - [Ubeswap](https://app.ubeswap.org/#/swap)
-- [Other DEXes](https://coinmarketcap.com/currencies/celo/)
+- [Other Exchanges](https://coinmarketcap.com/currencies/celo/)
 
 #### Stablecoin Swaps
 

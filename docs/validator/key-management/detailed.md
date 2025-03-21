@@ -35,7 +35,7 @@ celocli account:register --from $ADDRESS_TO_DESIGNATE --useLedger
 celocli account:show $ADDRESS_TO_DESIGNATE
 ```
 
-Note that [ReleaseGold](/holder/manage/release-gold.md) beneficiary keys are considered vanilla Celo accounts with respect to proof-of-stake, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked CELO Account.
+Note that [ReleaseGold](/what-is-celo/using-celo/manage/release-gold.md) beneficiary keys are considered vanilla Celo accounts with respect to proof-of-stake, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked CELO Account.
 
 ## Authorized Vote Signers
 

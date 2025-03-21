@@ -22,7 +22,7 @@ The change procedure happens in the following phases:
 4. Execution
 
 :::info
-Pleas follow this [guide to create a proposal](/general/ecosystem/guides/create-proposal), but make sure, to  go through this page, to fully understand the process before.
+Pleas follow this [guide to create a proposal](/what-is-celo/joining-celo/guides/create-proposal), but make sure, to  go through this page, to fully understand the process before.
 :::
 
 ## Overview of Phases
@@ -55,10 +55,10 @@ Proposals must be posted in the Celo Forum for review by the Celo community. It 
 A proposal needs to be up for discussion for at least **7 full days,** during which responsiveness from the author is mandatory.
 
 
-After a proposal has received feedback and has been presented on the governance call the proposal author shall update the proposal thread title from [Draft] to [Final]. Authors shall also include a summary of incorporated feedback as a comment on their proposal thread so future reviewers can understand the proposal’s progress. If feedback was gathered outside of the Forum (e.g., on Discord), proposal authors should include relevant links.
+After a proposal has received feedback and has been presented on the governance call the proposal author shall update the proposal thread title from [Draft] to [Final]. Authors shall also include a summary of incorporated feedback as a comment on their proposal thread so future reviewers can understand the proposal's progress. If feedback was gathered outside of the Forum (e.g., on Discord), proposal authors should include relevant links.
 
 ## Approval
-Every day the top three proposals at the head of the queue are pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked Celo deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Celo Foundation, and will move to a DAO in the future. The Approval phase lasts 1 day and if the proposal is not approved in this window, it is considered expired and does not move on to the “Referendum” phase.
+Every day the top three proposals at the head of the queue are pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked Celo deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Celo Foundation, and will move to a DAO in the future. The Approval phase lasts 1 day and if the proposal is not approved in this window, it is considered expired and does not move on to the "Referendum" phase.
 
 ## Referendum
 Once the Approval phase is over, approved proposals graduate to the referendum phase. Any user may vote yes, no, or abstain on these proposals. Their vote's weight is determined by the weight of their Locked Celo. After the Referendum phase is over, which lasts five days, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
@@ -106,7 +106,7 @@ Some changes cannot be made through the onchain governance process (via proposal
 
 ---
 
-# Governance Tooltik
+# Governance Toolkit
 
 ## Mechanisms for Main Onchain Celo Governance Proposals
 * [**Celo Governance Contract**](https://celoscan.io/address/0xd533ca259b330c7a88f74e000a3faea2d63b7972#code): The onchain voting contract for Celo Governance. This is also the address of the Celo Community Treasury.

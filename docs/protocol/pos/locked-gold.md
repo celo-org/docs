@@ -67,4 +67,4 @@ The governance participants who cannot actively participate to vote on governanc
 
 Currently, participants can only delegate to 10 other delegatees.
 
-Participants can follow the steps [here](/holder/vote/governance#vote-delegation) to perform delegation using CeloCLI.
+Participants can follow the steps [here](/what-is-celo/joining-celo/governance/voting-in-governance#vote-delegation) to perform delegation using CeloCLI.
