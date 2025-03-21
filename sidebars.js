@@ -22,6 +22,81 @@ const sidebars = {
       type: "category",
       label: "Using Celo",
       items: [
+      {
+	  type: "category",
+      label: "Holder",
+      items: [
+    { type: "doc", label: "Overview", id: "holder/index" },
+    {
+      type: "category",
+      label: "Manage",
+      items: [
+        {
+          type: "doc",
+          label: "Self-Custody",
+          id: "holder/manage/self-custody",
+        },
+        {
+          type: "doc",
+          label: "Release Gold",
+          id: "holder/manage/release-gold",
+        },
+        {
+          type: "doc",
+          label: "Exchange Assets",
+          id: "holder/manage/exchange",
+        },
+        {
+          type: "doc",
+          label: "Asset Management",
+          id: "holder/manage/asset",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Voting",
+      items: [
+        {
+          type: "doc",
+          label: "Validator Elections",
+          id: "holder/vote/validator",
+        },
+        {
+          type: "doc",
+          label: "Voting on Governance",
+          id: "holder/vote/governance",
+        },
+        {
+          type: "doc",
+          label: "Governable Parameters",
+          id: "holder/vote/governance-parameters",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Recovery",
+      items: [
+        {
+          type: "doc",
+          label: "Recover from ETH Address",
+          id: "holder/recover/from-eth-address",
+        },
+        {
+          type: "doc",
+          label: "Recover from Celo Address",
+          id: "holder/recover/from-celo-address",
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Exchanges",
+      href: "https://coinmarketcap.com/currencies/celo/markets/",
+    },      
+      ],
+	  },      
         {
           type: "doc",
           label: "Wallets",
@@ -475,6 +550,16 @@ const sidebars = {
       label: "Validator FAQ",
       id: "validator/troubleshooting-faq",
     },
+    {
+      type: "link",
+      label: "Celo Website",
+      href: "https://celo.org",
+    },
+    {
+      type: "link",
+      label: "Celo Discord",
+      href: "https://discord.com/invite/celo",
+    },        
     ],			
 		}
       ],
@@ -509,10 +594,26 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+    {
+      type: "category",
+      label: "Build with Thirdweb",
+      items: [
      {
       type: "doc",
-      label: "Building an App with Thirdweb",
-      id: "build/thirdweb-quickstart",
+      label: "Overview",
+      id: "build/build-with-thirdweb/overview",
+    },
+     {
+      type: "doc",
+      label: "One-click Quickstart",
+      id: "build/build-with-thirdweb/one-click quickstart",
+      },          
+     {
+      type: "doc",
+      label: "Celo NFT Drop Tutorial",
+      id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
+    },      
+    ]
     },   
     {
       type: "category",
@@ -522,6 +623,27 @@ const sidebars = {
           type: "doc",
           label: "Overview",
           id: "build/build-with-ai/overview",
+        },
+        {
+          type: "category",
+          label: "Build with GOAT",
+          items: [
+            {
+              type: "doc",
+              label: "Build a TokenSwap Agent",
+              id: "build/build-with-ai/build-with-goat/token-swap-agent",
+            },
+            {
+              type: "doc",
+              label: "Build an NFT Minting Agent",
+              id: "build/build-with-ai/build-with-goat/mint-nft-agent",
+            },
+            {
+              type: "doc",
+              label: "Build a Token Sending Agent",
+              id: "build/build-with-ai/build-with-goat/send-token-agent",
+            },
+          ],
         },
         {
           type: "doc",
@@ -600,8 +722,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
+      label: "Build with Self",
+      id: "build/build-with-self"
     },
     {
       type: "category",
@@ -625,12 +747,17 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "Fund your Project",
+      id: "build/fund-your-project",
+    },    
+    {
+      type: "doc",
       label: "Launch Checklist",
       id: "developer/launch-checklist",
     },
     {
       type: "doc",
-      label: "Support",
+      label: "Get Support",
       id: "build/support",
     },
   ],
@@ -686,11 +813,10 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Contracts",
+          label: "Addresses",
           items: [
-            { type: "doc", label: "Core Contracts", id: "contract-addresses" },
-            { type: "doc", label: "Tokens Addresses", id: "token-addresses" },
-            { type: "doc", label: "Uniswap Addresses", id: "uniswap-addresses" },
+            { type: "doc", label: "Contracts", id: "contract-addresses" },
+            { type: "doc", label: "Tokens", id: "token-addresses" },
           ],
         },
     {
@@ -930,6 +1056,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Using Foundry",
+          id: "developer/deploy/foundry",
+        },        
+        {
+          type: "doc",
           label: "Using thirdweb",
           id: "developer/deploy/thirdweb",
         },
@@ -954,6 +1085,48 @@ const sidebars = {
           label: "Overview",
           id: "developer/sdks/celo-sdks",
         },
+        
+
+    {
+      type: "category",
+      label: "CLI",
+      items: [
+         { type: "doc", label: "Account", id: "cli/account" },
+    { type: "doc", label: "Commands", id: "cli/commands" },
+    { type: "doc", label: "Config", id: "cli/config" },
+    { type: "doc", label: "DKG", id: "cli/dkg" },
+    { type: "doc", label: "Election", id: "cli/election" },
+    { type: "doc", label: "Exchange", id: "cli/exchange" },
+    {
+      type: "doc",
+      label: "Governance",
+      id: "cli/governance",
+    },
+    { type: "doc", label: "Help", id: "cli/help" },
+    { type: "doc", label: "Identity", id: "cli/identity" },
+    {
+      type: "doc",
+      label: "LockedGold",
+      id: "cli/lockedgold",
+    },
+    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+    { type: "doc", label: "Multisig", id: "cli/multisig" },
+    { type: "doc", label: "Network", id: "cli/network" },
+    { type: "doc", label: "Node", id: "cli/node" },
+    { type: "doc", label: "Oracle", id: "cli/oracle" },
+    { type: "doc", label: "Plugins", id: "cli/plugins" },
+    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
+    { type: "doc", label: "Rewards", id: "cli/rewards" },
+    { type: "doc", label: "Transfer", id: "cli/transfer" },
+    { type: "doc", label: "Validator", id: "cli/validator" },
+    { type: "doc", label: "Utilities", id: "cli/utils" },
+    {
+      type: "doc",
+      label: "ValidatorGroup",
+      id: "cli/validatorgroup",
+    },
+      ],
+    },  
         {
           type: "doc",
           label: "viem",
@@ -1533,125 +1706,49 @@ const sidebars = {
   //],
 
   // ######################################
-  // Holder
-  // ######################################
-  holderSiderbar: [
-    { type: "doc", label: "Overview", id: "holder/index" },
-    {
-      type: "category",
-      label: "Manage",
-      items: [
-        {
-          type: "doc",
-          label: "Self-Custody",
-          id: "holder/manage/self-custody",
-        },
-        {
-          type: "doc",
-          label: "Release Gold",
-          id: "holder/manage/release-gold",
-        },
-        {
-          type: "doc",
-          label: "Exchange Assets",
-          id: "holder/manage/exchange",
-        },
-        {
-          type: "doc",
-          label: "Asset Management",
-          id: "holder/manage/asset",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Voting",
-      items: [
-        {
-          type: "doc",
-          label: "Validator Elections",
-          id: "holder/vote/validator",
-        },
-        {
-          type: "doc",
-          label: "Voting on Governance",
-          id: "holder/vote/governance",
-        },
-        {
-          type: "doc",
-          label: "Governable Parameters",
-          id: "holder/vote/governance-parameters",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Recovery",
-      items: [
-        {
-          type: "doc",
-          label: "Recover from ETH Address",
-          id: "holder/recover/from-eth-address",
-        },
-        {
-          type: "doc",
-          label: "Recover from Celo Address",
-          id: "holder/recover/from-celo-address",
-        },
-      ],
-    },
-    {
-      type: "link",
-      label: "Exchanges",
-      href: "https://coinmarketcap.com/currencies/celo/markets/",
-    },
-  ],
-
-  // ######################################
   // CLI
   // ######################################
-
-  cli: [
-    {
-      type: "doc",
-      label: "Introduction",
-      id: "cli/index",
-    },
-    { type: "doc", label: "Account", id: "cli/account" },
-    { type: "doc", label: "Commands", id: "cli/commands" },
-    { type: "doc", label: "Config", id: "cli/config" },
-    { type: "doc", label: "DKG", id: "cli/dkg" },
-    { type: "doc", label: "Election", id: "cli/election" },
-    { type: "doc", label: "Exchange", id: "cli/exchange" },
-    {
-      type: "doc",
-      label: "Governance",
-      id: "cli/governance",
-    },
-    { type: "doc", label: "Help", id: "cli/help" },
-    { type: "doc", label: "Identity", id: "cli/identity" },
-    {
-      type: "doc",
-      label: "LockedGold",
-      id: "cli/lockedgold",
-    },
-    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
-    { type: "doc", label: "Multisig", id: "cli/multisig" },
-    { type: "doc", label: "Network", id: "cli/network" },
-    { type: "doc", label: "Node", id: "cli/node" },
-    { type: "doc", label: "Oracle", id: "cli/oracle" },
-    { type: "doc", label: "Plugins", id: "cli/plugins" },
-    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
-    { type: "doc", label: "Rewards", id: "cli/rewards" },
-    { type: "doc", label: "Transfer", id: "cli/transfer" },
-    { type: "doc", label: "Validator", id: "cli/validator" },
-    { type: "doc", label: "Utilities", id: "cli/utils" },
-    {
-      type: "doc",
-      label: "ValidatorGroup",
-      id: "cli/validatorgroup",
-    },
-  ],
+  //cli: [
+    //{
+      //type: "doc",
+      //label: "Introduction",
+      //id: "cli/index",
+    //},
+    //{ type: "doc", label: "Account", id: "cli/account" },
+    //{ type: "doc", label: "Commands", id: "cli/commands" },
+    //{ type: "doc", label: "Config", id: "cli/config" },
+    //{ type: "doc", label: "DKG", id: "cli/dkg" },
+    //{ type: "doc", label: "Election", id: "cli/election" },
+    //{ type: "doc", label: "Exchange", id: "cli/exchange" },
+    //{
+      //type: "doc",
+      //label: "Governance",
+      //id: "cli/governance",
+    //},
+    //{ type: "doc", label: "Help", id: "cli/help" },
+    //{ type: "doc", label: "Identity", id: "cli/identity" },
+    //{
+      //type: "doc",
+      //label: "LockedGold",
+      //id: "cli/lockedgold",
+    //},
+    //{ type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+    //{ type: "doc", label: "Multisig", id: "cli/multisig" },
+    //{ type: "doc", label: "Network", id: "cli/network" },
+    //{ type: "doc", label: "Node", id: "cli/node" },
+    //{ type: "doc", label: "Oracle", id: "cli/oracle" },
+    //{ type: "doc", label: "Plugins", id: "cli/plugins" },
+    ////{ type: "doc", label: "Reserve", id: "cli/reserve" },
+    //{ type: "doc", label: "Rewards", id: "cli/rewards" },
+    //{ type: "doc", label: "Transfer", id: "cli/transfer" },
+    //{ type: "doc", label: "Validator", id: "cli/validator" },
+    //{ type: "doc", label: "Utilities", id: "cli/utils" },
+    //{
+      //type: "doc",
+      //label: "ValidatorGroup",
+      //id: "cli/validatorgroup",
+    //},
+  //],
 
   cel2: [
     {
@@ -1665,12 +1762,22 @@ const sidebars = {
       collapsed: false,
       items: [
         {
-          type : "doc",
-          label: "Celo L2 migration",
-          id: "cel2/notices/l2-migration",
+          type: "category",
+          label: "Celo L2 Migration",
+          link: {
+            type: "doc",
+            id: "cel2/notices/l2-migration",
+          },
+          collapsed: false,
+          items: [
+            {
+              type: "doc",
+              label: "Day 1 Partners",
+              id: "cel2/notices/day-1-partners",
+            },]
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Pectra Upgrade",
           id: "cel2/notices/pectra-upgrade",
         },
@@ -1683,7 +1790,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node operators & Validators",
+      label: "Node operators",
       link: {
         type: "doc",
         id: "cel2/operators/overview"
@@ -1697,22 +1804,34 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a Celo node",
+          label: "Running a Celo Node",
           id: "cel2/operators/run-node",
         },
         {
           type: "doc",
-          label: "Migrating an L1 node",
+          label: "Migrating an L1 Node",
           id: "cel2/operators/migrate-node",
-        },
-        {
-          type: "doc",
-          label: "Running a community RPC node",
-          id: "cel2/operators/community-rpc-node",
         },
       ]
     },
-    { 
+    {
+      type: "category",
+      label: "Validators",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Running a Community RPC Node",
+          id: "cel2/operators/community-rpc-node",
+        },
+        {
+          type: "doc",
+          label: "Community RPC Provider FAQ",
+          id: "cel2/operators/validator-rpc-faq",
+        },
+      ],
+    },
+    {
       type: "category",
       label: "What's Changed?",
       link: { type: "doc", id: "cel2/whats-changed/overview" },
@@ -1729,17 +1848,17 @@ const sidebars = {
       collapsed: true,
       items: [
         {
-          type : "doc",
+          type: "doc",
           label: "Bridging CELO from L1 to L2",
           id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Withdrawing CELO from L2 to L1",
           id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
         },
         {
-          type : "doc",
+          type: "doc",
           label: "Fee Abstraction on Celo L2",
           id: "cel2/guides/fee-abstraction",
         },
