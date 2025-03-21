@@ -42,4 +42,4 @@ In exchange for sending a transaction which initiates a successful provable slas
 
 ### **Governed**
 
-For misbehavior which is harder to formally classify and requires some off-chain knowledge, slashing can be performed via [governance proposals](/what-is-celo/joining-celo/governance/overview/). These conditions are important for preventing nuanced validator attacks.
+For misbehavior which is harder to formally classify and requires some off-chain knowledge, slashing can be performed via [governance proposals](/what-is-celo/using-celo/protocol/governance/overview/). These conditions are important for preventing nuanced validator attacks.

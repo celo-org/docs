@@ -413,7 +413,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/what-is-celo/joining-celo/governance/overview">governance process.</a>
+          <a href="/what-is-celo/using-celo/protocol/governance/overview">governance process.</a>
           <ul>
             <li>
               Currently the governance process should take approximately 1 week:

@@ -721,7 +721,7 @@ export default function HomePage(): JSX.Element {
                 "Make your Voice Heard",
                 "Vote on Governance Proposals",
                 "img/homepage/connect.svg",
-                "/what-is-celo/joining-celo/governance/voting-in-governance",
+                "/what-is-celo/using-celo/protocol/governance/voting-in-governance",
               )}
               {sectionFourCard(
                 "Get Daily Updates",

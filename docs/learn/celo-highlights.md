@@ -101,7 +101,7 @@ Users have access to and fully control their funds and account keys, and don't n
 110 Globally
 ```
 
-Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](/what-is-celo/joining-celo/governance/overview) process.
+Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](/what-is-celo/using-celo/protocol/governance/overview) process.
 
 **Total Blocks**
 

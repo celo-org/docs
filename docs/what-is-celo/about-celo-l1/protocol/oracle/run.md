@@ -9,7 +9,7 @@ Oracles are a fundamental piece for Mento, the stability protocol behind Celo st
 
 # Getting started
 
-Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/community/release-process/smart-contracts).
+Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/joining-celo/release-process/smart-contracts).
 
 A [reference implementation](https://github.com/celo-org/celo-oracle) of such a client is written in TypeScript and would be used for this guide. Releases for this client can be found [here](https://github.com/celo-org/celo-oracle/releases).
 
@@ -128,7 +128,7 @@ As soon as governance enables it, the node should start reporting automatically.
 
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/what-is-celo/joining-celo/governance/overview/). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such a proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md).
+The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/what-is-celo/using-celo/protocol/governance/overview/). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such a proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md).
 
 ## Using kubernetes
 

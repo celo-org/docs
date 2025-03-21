@@ -114,7 +114,7 @@ You cannot test MiniPay using the Android Studio Emulator. Use an Android mobile
 ## Helpful Tips to Make Your Mini App MiniPay Compatible
 
 :::warning
-MiniPay uses Custom [Fee Abstraction](../fee-currency.md) based transactions, which is not supported by Ethers.js. Use viem or wagmi instead. If you are using Web3.js, use our [custom built plugin for fee abstraction](../web3/index.mdx).
+MiniPay uses Custom [Fee Abstraction](/developer/fee-abstraction) based transactions. We recommend using viem or wagmi as they provide native support for fee currency. 
 :::
 
 #### 1. Using Viem

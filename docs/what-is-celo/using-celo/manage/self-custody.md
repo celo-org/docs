@@ -370,9 +370,9 @@ You are now set up to participate in the Celo network!
 
 You might want to read more about [choosing a Validator Group](/what-is-celo/about-celo-l1/validator/voting) to vote for, and how [voter rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold) are calculated. You can vote for up to ten different Groups from a single account.
 
-Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](/what-is-celo/joining-celo/governance/voting-in-governance). You can do this without affecting any vote you have made for Validator Groups.
+Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](/what-is-celo/using-celo/protocol/governance/voting-in-governance). You can do this without affecting any vote you have made for Validator Groups.
 
-You can also read more about how Celo's [Proof of Stake](/what-is-celo/about-celo-l1/protocol/pos/) and on-chain [Governance](/what-is-celo/joining-celo/governance/overview) mechanisms work.
+You can also read more about how Celo's [Proof of Stake](/what-is-celo/about-celo-l1/protocol/pos/) and on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview) mechanisms work.
 
 ## Revoking Votes
 

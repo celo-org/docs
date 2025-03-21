@@ -11,7 +11,7 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 
 ### As a User
 
-- [**Explore Projects on Celo:**](https://www.celopg.eco/ecosystem) Start using and engaging with Celo apps.
+- [**Explore Projects on Celo:**](/showcase) Start using and engaging with Celo apps.
 
 ### As a Builder
 
@@ -20,7 +20,7 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 - [**Contribute to open source projects:**](/what-is-celo/joining-celo/contributors/code-contributors) Help grow Celo by contributing to key projects.
 - [**Get involved in a local chapter:**](/what-is-celo/joining-celo/daos) Attend in-person workshops for mentoring and support.
 - [**Participate in Celo Public Goods:**](https://www.celopg.eco/) Explore ongoing funding rounds.
-- [**Get your page added**](https://tally.so/r/w887RY) to our [**ecosystem page**](https://www.celopg.eco/ecosystem) managed by Celo Public Goods.
+- [**Get your page added**](https://github.com/celo-org/docs/blob/main/src/data/users.tsx) to our [**dApp showcase page**](/showcase).
 - [**Introduce your project**](https://forum.celo.org/) in the [**Celo Forum**](https://forum.celo.org/) in the founders' category.
 - [**Apply to Celo Camp:**](https://www.celocamp.com/) Join the accelerator focused on scaling apps on Opera MiniPay.
 - [**Engage with Celo DAOs:**](/what-is-celo/joining-celo/daos) Gain user feedback, access networking opportunities, and validate your project.
@@ -29,7 +29,7 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 
 ### As a Contributor
 
-- [**Participate in governance:**](/what-is-celo/joining-celo/governance/overview) Engage in current discussions and connect with the ecosystem.
+- [**Participate in governance:**](/what-is-celo/using-celo/protocol/governance/overview) Engage in current discussions and connect with the ecosystem.
 - [**Contribute to local chapters:**](/what-is-celo/joining-celo/daos) Connect with the community, offer support, and mentor others.
 
 ---

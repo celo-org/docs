@@ -22,7 +22,7 @@ In addition to the blockchain client, some core components of the Celo protocol 
 There are a number of substantial changes and additions have been made in service of Celo's product goals, including the following:
 
 - [Consensus](/what-is-celo/about-celo-l1/protocol/consensus)
-- [Governance](/what-is-celo/joining-celo/governance/overview/)
+- [Governance](/what-is-celo/using-celo/protocol/governance/overview/)
 - [Stability Mechanism](/what-is-celo/about-celo-l1/protocol/stability)
 - [Transactions](/what-is-celo/about-celo-l1/protocol/transaction)
 - [Identity](/what-is-celo/about-celo-l1/protocol/identity)

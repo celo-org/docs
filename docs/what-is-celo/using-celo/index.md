@@ -51,8 +51,8 @@ Swap and trade assets within the Celo ecosystem:
 
 As a Celo token holder, you can actively participate in the network's governance:
 
-- [Voting on Governance](/what-is-celo/joining-celo/governance/voting-in-governance) - Participate in Celo governance decisions
-- [Governance Parameters](/what-is-celo/joining-celo/governance/governable-parameters) - Reference all governable parameters
+- [Voting on Governance](/what-is-celo/using-celo/protocol/governance/voting-in-governance) - Participate in Celo governance decisions
+- [Governance Parameters](/what-is-celo/using-celo/protocol/governance/governable-parameters) - Reference all governable parameters
 
 ## Getting Support
 

@@ -22,7 +22,7 @@ The change procedure happens in the following phases:
 4. Execution
 
 :::info
-Pleas follow this [guide to create a proposal](/what-is-celo/joining-celo/governance/create-governance-proposal), but make sure, to  go through this page, to fully understand the process before.
+Pleas follow this [guide to create a proposal](/what-is-celo/using-celo/protocol/governance/create-governance-proposal), but make sure, to  go through this page, to fully understand the process before.
 :::
 
 ## Overview of Phases

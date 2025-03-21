@@ -33,7 +33,7 @@ The first set of active validators are determined in the genesis block. Thereaft
 
 In Celo's [Validator Elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
 
-Before they can vote, holders of CELO move balances into the [Locked Gold](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/what-is-celo/joining-celo/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
+Before they can vote, holders of CELO move balances into the [Locked Gold](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
 :::tip note
 
@@ -43,7 +43,7 @@ Unlike in other proof-of-stake systems, holding Locked Gold or voting for a grou
 
 ## Implementation
 
-Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](/what-is-celo/joining-celo/governance/overview/) process.
+Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) process.
 
 - [`Accounts.sol`](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol) manages key delegation and metadata for all accounts including Validators, Groups and Locked Gold holders.
 

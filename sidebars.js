@@ -23,6 +23,37 @@ const whatIsCeloSidebar = [
             id: "what-is-celo/using-celo/protocol/index",
           },
           {
+            type: "category",
+            label: "Governance",
+            items: [
+              {
+                type: "doc",
+                label: "Overview",
+                id: "what-is-celo/using-celo/protocol/governance/overview",
+              },
+              {
+                type: "doc",
+                label: "Create a Governance Proposal",
+                id: "what-is-celo/using-celo/protocol/governance/create-governance-proposal",
+              },
+              {
+                type: "doc",
+                label: "Voting in Governance",
+                id: "what-is-celo/using-celo/protocol/governance/voting-in-governance",
+              },
+              {
+                type: "doc",
+                label: "Voting with Celo Mondo",
+                id: "what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo",
+              },
+              {
+                type: "doc",
+                label: "Governable Parameters",
+                id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
+              },
+            ],
+          },
+          {
             type: "doc",
             label: "Penalties",
             id: "what-is-celo/using-celo/protocol/penalties",
@@ -31,6 +62,11 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Consensus",
             id: "what-is-celo/using-celo/protocol/consensus",
+          },
+          {
+            type: "doc",
+            label: "Celo Token",
+            id: "what-is-celo/using-celo/protocol/celo-token",
           },
           {
             type: "doc",
@@ -142,37 +178,6 @@ const whatIsCeloSidebar = [
         type: "doc",
         label: "Regional DAOs",
         id: "what-is-celo/joining-celo/daos",
-      },
-      {
-        type: "category",
-        label: "Governance",
-        items: [
-          {
-            type: "doc",
-            label: "Overview",
-            id: "what-is-celo/joining-celo/governance/overview",
-          },
-          {
-            type: "doc",
-            label: "Create a Governance Proposal",
-            id: "what-is-celo/joining-celo/governance/create-governance-proposal",
-          },
-          {
-            type: "doc",
-            label: "Voting in Governance",
-            id: "what-is-celo/joining-celo/governance/voting-in-governance",
-          },
-          {
-            type: "doc",
-            label: "Voting with Celo Mondo",
-            id: "what-is-celo/joining-celo/governance/voting-in-governance-using-mondo",
-          },
-          {
-            type: "doc",
-            label: "Governable Parameters",
-            id: "what-is-celo/joining-celo/governance/governable-parameters",
-          },
-        ],
       },
       {
         type: "category",
@@ -684,12 +689,12 @@ const buildOnCeloSidebar = [
       {
         type: "doc",
         label: "Overview",
-        id: "developer/build-on-minipay/overview",
+        id: "build/build-on-minipay/overview",
       },
       {
         type: "doc",
         label: "Getting Started",
-        id: "developer/build-on-minipay/quickstart",
+        id: "build/build-on-minipay/quickstart",
       },
       {
         type: "category",
@@ -698,19 +703,19 @@ const buildOnCeloSidebar = [
           {
             type: "doc",
             label: "Ngrok Setup",
-            id: "developer/build-on-minipay/prerequisites/ngrok-setup",
+            id: "build/build-on-minipay/prerequisites/ngrok-setup",
           },
         ],
       },
       {
         type: "doc",
         label: "Code Library",
-        id: "developer/build-on-minipay/code-library",
+        id: "build/build-on-minipay/code-library",
       },
       {
         type: "doc",
         label: "MiniPay Deeplinks",
-        id: "developer/build-on-minipay/deeplinks",
+        id: "build/build-on-minipay/deeplinks",
       },
     ],
   },
@@ -1173,7 +1178,7 @@ const toolingSidebar = [
   {
     type: "doc",
     label: "Fee Abstraction",
-    id: "developer/fee-currency",
+    id: "developer/fee-abstraction",
   },
   {
     type: "doc",

@@ -51,7 +51,7 @@ The flow is as follows:
 
 - This Locked CELO immediately becomes non-voting, receives no further Epoch Rewards, and can be re-used to vote for a different group.
 
-- The account may choose to `unlock` an amount of Locked CELO at any time, provided that it is inactive: this means it is non-voting in Validator Elections, the `deregistrationPeriod` has elapsed if the amount has been used as a validator or validator group stake, and not active in any [Governance proposals](/what-is-celo/joining-celo/governance/overview/). Once an unlocking period of 3 days has passed, the account can call `withdraw` to have the `LockedGold` contract transfer them that amount.
+- The account may choose to `unlock` an amount of Locked CELO at any time, provided that it is inactive: this means it is non-voting in Validator Elections, the `deregistrationPeriod` has elapsed if the amount has been used as a validator or validator group stake, and not active in any [Governance proposals](/what-is-celo/using-celo/protocol/governance/overview/). Once an unlocking period of 3 days has passed, the account can call `withdraw` to have the `LockedGold` contract transfer them that amount.
 
 Votes persist between epochs, and the same vote is applied to each election unless and until it is changed. Vote withdrawal, vote changes, and additional CELO being used to vote have no effect on the validator set until the election finalizes at the end of the epoch.
 
@@ -67,4 +67,4 @@ The governance participants who cannot actively participate to vote on governanc
 
 Currently, participants can only delegate to 10 other delegatees.
 
-Participants can follow the steps [here](/what-is-celo/joining-celo/governance/voting-in-governance#vote-delegation) to perform delegation using CeloCLI.
+Participants can follow the steps [here](/what-is-celo/using-celo/protocol/governance/voting-in-governance#vote-delegation) to perform delegation using CeloCLI.

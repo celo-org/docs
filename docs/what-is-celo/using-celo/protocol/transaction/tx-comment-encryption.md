@@ -5,7 +5,7 @@ description: Overview of encrypted payment comments and its technical details re
 
 # Encrypted Payment Comments
 
-Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
+In this section, you will find detailed information about the various transaction types supported on Celo, including encrypted payment comments and their technical details, as well as insights into gas pricing and fee abstraction.
 
 ---
 

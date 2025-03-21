@@ -161,13 +161,13 @@ The very first block in the blockchain, provided as configuration to Celo Blockc
 
 [go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software is forked.
 
-## [Governance](/what-is-celo/joining-celo/governance/overview)
+## [Governance](/what-is-celo/using-celo/protocol/governance/overview)
 
 A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [CELO](#celo-native-asset) holders vote for proposals submitted by the community.
 
 ## Governable
 
-A smart contract that is owned by the Celo [Governance](/what-is-celo/joining-celo/governance/overview) mechanism and so can be changed or updated by an on-chain governance proposal.
+A smart contract that is owned by the Celo [Governance](/what-is-celo/using-celo/protocol/governance/overview) mechanism and so can be changed or updated by an on-chain governance proposal.
 
 ## Group Share
 

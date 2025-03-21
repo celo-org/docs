@@ -52,7 +52,7 @@ Sorted Oracles was originally designed to support the [Mento protocol](https://w
 
 ## Governance Process
 
-To enable a token as gas currency, two [governance proposals](/what-is-celo/joining-celo/governance/overview) need to be passed.
+To enable a token as gas currency, two [governance proposals](/what-is-celo/using-celo/protocol/governance/overview) need to be passed.
 
 ### Enabling the Oracle
 
