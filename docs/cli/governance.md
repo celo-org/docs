@@ -4,6 +4,7 @@
 Interact with on-chain governance proposals and hotfixes
 
 * [`celocli governance:approve`](#celocli-governanceapprove)
+* [`celocli governance:approve`](#celocli-governanceapprove)
 * [`celocli governance:approvehotfix`](#celocli-governanceapprovehotfix)
 * [`celocli governance:build-proposal`](#celocli-governancebuild-proposal)
 * [`celocli governance:dequeue`](#celocli-governancedequeue)
@@ -26,7 +27,7 @@ Interact with on-chain governance proposals and hotfixes
 * [`celocli governance:whitelisthotfix`](#celocli-governancewhitelisthotfix)
 * [`celocli governance:withdraw`](#celocli-governancewithdraw)
 
-## `celocli governance:approve` {#celocli-governanceapprove}
+## `celocli governance:approve`
 
 Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
 
@@ -112,7 +113,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/approve.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/approve.ts)_
 
-## `celocli governance:approvehotfix` {#celocli-governanceapprovehotfix}
+## `celocli governance:approvehotfix`
 
 Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
 
@@ -172,6 +173,8 @@ FLAGS
 DESCRIPTION
   Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
   this command
+  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
+  this command
 
 ALIASES
   $ celocli governance:approvehotfix
@@ -196,7 +199,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:build-proposal` {#celocli-governancebuild-proposal}
+## `celocli governance:build-proposal`
 
 Interactively build a governance proposal
 
@@ -261,7 +264,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/build-proposal.ts)_
 
-## `celocli governance:dequeue` {#celocli-governancedequeue}
+## `celocli governance:dequeue`
 
 Try to dequeue governance proposal
 
@@ -320,7 +323,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/dequeue.ts)_
 
-## `celocli governance:execute` {#celocli-governanceexecute}
+## `celocli governance:execute`
 
 Execute a passing governance proposal
 
@@ -382,7 +385,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/execute.ts)_
 
-## `celocli governance:executehotfix` {#celocli-governanceexecutehotfix}
+## `celocli governance:executehotfix`
 
 Execute a governance hotfix prepared for the current epoch
 
@@ -447,7 +450,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/executehotfix.ts)_
 
-## `celocli governance:hashhotfix` {#celocli-governancehashhotfix}
+## `celocli governance:hashhotfix`
 
 Hash a governance hotfix specified by JSON and a salt
 
@@ -512,7 +515,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/hashhotfix.ts)_
 
-## `celocli governance:list` {#celocli-governancelist}
+## `celocli governance:list`
 
 List live governance proposals (queued and ongoing)
 
@@ -594,7 +597,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/list.ts)_
 
-## `celocli governance:preparehotfix` {#celocli-governancepreparehotfix}
+## `celocli governance:preparehotfix`
 
 Prepare a governance hotfix for execution in the current epoch
 
@@ -656,13 +659,15 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/preparehotfix.ts)_
 
-## `celocli governance:propose` {#celocli-governancepropose}
+## `celocli governance:propose`
 
 Submit a governance proposal
 
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -687,6 +692,9 @@ FLAGS
   --deposit=<value>
       (required) Amount of Celo to attach to proposal
 
+  --descriptionURL=<value>
+      (required) A URL where further information about the proposal can be viewed. This
+      needs to be a valid proposal URL on https://github.com/celo-org/governance
   --descriptionURL=<value>
       (required) A URL where further information about the proposal can be viewed. This
       needs to be a valid proposal URL on https://github.com/celo-org/governance
@@ -739,7 +747,9 @@ DESCRIPTION
 
 EXAMPLES
   propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
 
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
   propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
 
 FLAG DESCRIPTIONS
@@ -755,7 +765,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
 
-## `celocli governance:revokeupvote` {#celocli-governancerevokeupvote}
+## `celocli governance:revokeupvote`
 
 Revoke upvotes for queued governance proposals
 
@@ -814,7 +824,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/revokeupvote.ts)_
 
-## `celocli governance:show` {#celocli-governanceshow}
+## `celocli governance:show`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -885,7 +895,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/show.ts)_
 
-## `celocli governance:showaccount` {#celocli-governanceshowaccount}
+## `celocli governance:showaccount`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -954,7 +964,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:showhotfix` {#celocli-governanceshowhotfix}
+## `celocli governance:showhotfix`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1023,7 +1033,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:upvote` {#celocli-governanceupvote}
+## `celocli governance:upvote`
 
 Upvote a queued governance proposal
 
@@ -1085,7 +1095,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/upvote.ts)_
 
-## `celocli governance:view` {#celocli-governanceview}
+## `celocli governance:view`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1154,7 +1164,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:viewaccount` {#celocli-governanceviewaccount}
+## `celocli governance:viewaccount`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1223,7 +1233,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:viewhotfix` {#celocli-governanceviewhotfix}
+## `celocli governance:viewhotfix`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1292,7 +1302,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:vote` {#celocli-governancevote}
+## `celocli governance:vote`
 
 Vote on an approved governance proposal
 
@@ -1358,7 +1368,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/vote.ts)_
 
-## `celocli governance:votePartially` {#celocli-governancevotepartially}
+## `celocli governance:votePartially`
 
 Vote partially on an approved governance proposal
 
@@ -1430,7 +1440,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/votePartially.ts)_
 
-## `celocli governance:whitelisthotfix` {#celocli-governancewhitelisthotfix}
+## `celocli governance:whitelisthotfix`
 
 Whitelist a governance hotfix
 
@@ -1492,7 +1502,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/governance/whitelisthotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/whitelisthotfix.ts)_
 
-## `celocli governance:withdraw` {#celocli-governancewithdraw}
+## `celocli governance:withdraw`
 
 Withdraw refunded governance proposal deposits.
 
