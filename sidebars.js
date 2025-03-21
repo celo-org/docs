@@ -994,6 +994,7 @@ const sidebars = {
           type: "category",
           label: "CLI",
           items: [
+            { type: "doc", label: "Overview", id: "cli" },
             { type: "doc", label: "Account", id: "cli/account" },
             { type: "doc", label: "Commands", id: "cli/commands" },
             { type: "doc", label: "Config", id: "cli/config" },
