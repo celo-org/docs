@@ -13,9 +13,9 @@ A comprehensive guide to using the Celo platform, from acquiring assets to manag
 
 ## Introduction to Celo
 
-Celo makes it easy to transact with anyone around the world using just a smartphone. Whether you're sending, receiving, swapping, or bridging assets, Celo provides a user-friendly ecosystem with fast transactions at a fraction of the cost of other crypto platforms.
+Celo makes it easy to transact with anyone around the world. Whether you're sending, receiving, swapping, or bridging assets, Celo provides a user-friendly ecosystem with fast transactions at a fraction of the cost of other crypto platforms.
 
-Celo is built on a mobile-first approach, making global financial tools accessible to anyone with a smartphone. Holders of CELO tokens can also participate in network governance, helping shape the platform's future.
+Celo is designed for fast, low-cost payments worldwide, making global financial tools accessible to anyone. Holders of CELO tokens can also participate in network governance, helping shape the platform's future.
 
 ## Key Features
 
@@ -31,7 +31,7 @@ Celo offers flexible gas fees that can be paid in various tokens (CELO, cUSD, cE
 Move assets between Celo and other blockchain networks like Ethereum, Polygon, and Solana using bridges:
 
 - [View all available bridges](./bridges.md)
-- Popular options include [Wormhole](https://portalbridge.com/), [Squid Router](https://v2.app.squidrouter.com/), and [SmolRefuel](https://smolrefuel.com/?outboundChain=42220) (gas-free)
+- Popular options include [Squid Router](https://v2.app.squidrouter.com/), and [SmolRefuel](https://smolrefuel.com/?outboundChain=42220) (gas-free)
 
 ### Decentralized Exchanges
 
@@ -51,7 +51,6 @@ Swap and trade assets within the Celo ecosystem:
 
 As a Celo token holder, you can actively participate in the network's governance:
 
-- [Voting for Validators](/validator/voting) - Help secure the network by voting for validator groups
 - [Voting on Governance](/what-is-celo/joining-celo/governance/voting-in-governance) - Participate in Celo governance decisions
 - [Governance Parameters](/what-is-celo/joining-celo/governance/governable-parameters) - Reference all governable parameters
 

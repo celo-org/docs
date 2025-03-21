@@ -11,15 +11,15 @@ List of key terms related to the Celo platform, networks, tools, and blockchain 
 
 ## Account
 
-Identifies an account on Celo. There are two types of account. **Externally owned accounts** have an associated [CELO](#celo-native-asset) balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
+Identifies an account on Celo. There are two types of account. **Externally owned accounts** have an associated [CELO](#celo-natice-asset) balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
 
 ## Address
 
-A unique identifier for an account on the Celo blockchain.
+A unique identifier for an account on the any blockchain.
 
 ## Alfajores
 
-The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
+The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](../../network/alfajores/disclaimer).
 
 ## Attestation
 
@@ -31,7 +31,7 @@ Former name for what has become Social Connect.
 
 ## Baklava
 
-The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
+The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](../../network/baklava/disclaimer).
 
 ## Block
 
@@ -39,7 +39,7 @@ The unit of update to the blockchain. A block consists of a header identifying i
 
 ## Blockchain
 
-A database maintained by a distributed set of computers that do not share a trust relationship or common ownership. This arrangement is referred to as decentralized. The content of a blockchain's database, or ledger, is authenticated using cryptographic techniques, preventing its contents being added to, edited or removed except according to a protocol operated by the network as a whole.
+A **blockchain** or **cryptographic network** is a broad term used to describe a database maintained by a distributed set of computers that do not share a trust relationship or common ownership. This arrangement is referred to as decentralized. The content of a blockchain's database, or ledger, is authenticated using cryptographic techniques, preventing its contents being added to, edited or removed except according to a protocol operated by the network as a whole.
 
 ## Byzantine Fault Tolerant (BFT) Consensus
 
@@ -47,7 +47,7 @@ A form of consensus algorithm in which up to a third of participants can be faul
 
 ## cLabs, Celo Labs
 
-The team that, before Mainnet release, has worked closely to develop and shape the Celo protocol and Celo Wallet application with the input of the larger Celo Community.
+The team that is a core contributor to shape the Celo protocol with the input of the larger Celo Community.
 
 ## Carbon Offsetting Fund
 
@@ -67,7 +67,7 @@ A mission-driven foundation responsible for education, community engagement, and
 
 ## Celo Gold
 
-The deprecated name for the Celo native asset, which now is referred to simply as "Celo" or preferably "CELO".
+The deprecated name for the Celo native asset, which now is referred to simply as "Celo" or preferably ["CELO"](#celo-1).
 
 ## Celo Native Asset
 
@@ -87,7 +87,11 @@ An algorithm that enables multiple computers to reach a decision on a single val
 
 ## ContractKit
 
-A library to help developers and operators of Validator nodes interact with the Celo Blockchain and Celo Core Contracts.
+A library to help developers and operators of Validator nodes interact with the Celo Blockchain and Celo Core Contracts. For dApp developers we suggest using viem or wagmi.
+
+## Cryptocurrency
+
+Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to Ether on Ethereum. Since 26th of March 2025, when Celo became an L2, CELO has token duality, meaning it can be used as a native token adn an ERC20 token. Celo's ledger consists of **accounts**, identified by an **address**. There are two types of accounts. **Externally owned accounts** have an associated CELO balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
 
 ## DApp
 
@@ -104,6 +108,9 @@ A derivation path defines how private keys and addresses are derived from a mnem
 ## Double Signing
 
 When a validator signs two different blocks at the same height and with the same parent hash in the blockchain.
+
+## EOA or externally owned account
+Ethereum term to designate addresses operated by users, as opposed to contract addresses.
 
 ## Epoch
 
@@ -185,11 +192,17 @@ An account that supports the development and operational costs of the Celo proto
 
 Istanbul, or IBFT, is the original name of the implementation of the Byzantine Fault Tolerant consensus algorithm used by Celo. Istanbul is also the name of a hard fork of the Ethereum network.
 
+## Layer 1 (L1)
+Refers the Ethereum blockchain, used in contrast to layer 2, which refers to Celo.
+
+## Layer 2 (L2)
+Refers to the Celo blockchain and is used in contrast to layer 1, which refers to the Ethereum blockchain.
+
 ## Light Client
 
 A device or computer running the Celo Blockchain software that keeps typically only the most recent blockchain state, such that it can send transactions and identify what other data to request as necessary. Every Celo Wallet installation includes a Celo Blockchain light client.
 
-## [Locked Gold](/protocol/pos/epoch-rewards-locked-gold)
+## Locked Gold
 
 [CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in validator elections, governance proposals, and to meet staking requirements for registering a validator or validator group.
 
@@ -223,18 +236,6 @@ A common practice in societies without easy access to banking (source); a peer-t
 
 Should Be Able To (Acronym used in GitHub issue title)
 
-## SNBAT
-
-Should Not Be Able To (Acronym used in GitHub issue title)
-
-## Sync
-
-The process, when a node joins the network, of requesting and receiving block headers so that the node catches up to the network's latest state.
-
-## SDK
-
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
-
 ## Slashing
 
 The reduction in the stake of a validator, a validator group, or both, for a particular action not conducive to the health of the network.
@@ -249,7 +250,19 @@ The preferred language for writing Smart Contracts on the Celo platform.
 
 ## Smart Contracts
 
-Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/).
+Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment.
+
+## SNBAT
+
+Should Not Be Able To (Acronym used in GitHub issue title)
+
+## Sync
+
+The process, when a node joins the network, of requesting and receiving block headers so that the node catches up to the network's latest state.
+
+## SDK
+
+Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
 
 ## Stablecoin
 
@@ -266,6 +279,10 @@ A test network. Its tokens hold no real world economic value.
 ## Transaction
 
 Requests to make a change to the state of the blockchain. They can: transfer value between accounts; execute a function in a smart contract and pass in arguments \(perhaps causing other smart contracts to be called, update their storage, or transfer value\); or create a new smart contract.
+
+## Transaction Fees
+
+To avoid Denial-of-Service attacks and ensure termination of calls to smart contract code, the account sending a transaction pays **transaction fees** for its execution steps using its own balance. Transactions specify a **maximum gas** which bounds the steps of execution before a transaction is reverted. A **gas price** determines the unit price for each step, and is used to prioritize which transactions the network applies. \(In Celo transaction fees can be paid in ERC-20 currencies and gas pricing works differently from Ethereum\).
 
 ## Unlocking Period
 
