@@ -159,9 +159,9 @@ const whatIsCeloSidebar = [
         id: "what-is-celo/about-celo-l1/l1-architecture",
       },
       {
-        type: "doc",
+        type: "link",
         label: "Whitepapers",
-        id: "what-is-celo/about-celo-l1/whitepapers",
+        href: "https://celo.org/papers",
       },
       {
         type: "category",

@@ -24,5 +24,6 @@ Be sure to research which exchanges operate within your legal jurisdiction and s
 
 Bridge assets from other blockchains to CELO using:
 
+- [Squid Router V2](https://v2.app.squidrouter.com/?chains=10%2C42220&tokens=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee%2C0x471ece3750da237f93b8e339c536989b8978a438)
 - [SmolRefeul](https://smolrefuel.com/?outboundChain=42220) (Gas-free)
 - [Other Bridges](./bridges.md)

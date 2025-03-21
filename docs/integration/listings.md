@@ -142,7 +142,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 
 ### Whitepapers
 
-To learn about the Celo Protocol, please refer to the [whitepaper](/general/whitepapers).
+To learn about the Celo Protocol, please refer to the [whitepaper](https://celo.org/papers).
 
 If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](/general/) page.
 
