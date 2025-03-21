@@ -21,7 +21,7 @@ Artifacts produced by this build process (e.g. Docker images) will be signed by 
 
 ## Documentation
 
-The documentation for client features, such as APIs and commands, is maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](/protocol/).
+The documentation for client features, such as APIs and commands, is maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](/what-is-celo/about-celo-l1/protocol/).
 
 ## Identifying releases:
 

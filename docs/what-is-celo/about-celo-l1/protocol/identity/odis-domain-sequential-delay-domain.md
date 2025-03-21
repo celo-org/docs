@@ -4,8 +4,8 @@ title: Sequential Delay Domain
 
 import PageRef from '@components/PageRef'
 
-The Sequential Delay Domains is an [ODIS Domain](/protocol/identity/odis-domain) supporting signature-authenticated rate limits defined as a series of time-delayed stages.
-The motivating use case is allowing wallets to define how often users can attempt to recover their account via the scheme outlined in [Pin/Password Encrypted Account Recovery](/protocol/identity/encrypted-cloud-backup), but can be used in any other application that need an authenticated rate limit represented as a series of time delayed stages.
+The Sequential Delay Domains is an [ODIS Domain](/what-is-celo/about-celo-l1/protocol/identity/odis-domain) supporting signature-authenticated rate limits defined as a series of time-delayed stages.
+The motivating use case is allowing wallets to define how often users can attempt to recover their account via the scheme outlined in [Pin/Password Encrypted Account Recovery](/what-is-celo/about-celo-l1/protocol/identity/encrypted-cloud-backup), but can be used in any other application that need an authenticated rate limit represented as a series of time delayed stages.
 
 ## Specification
 

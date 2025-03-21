@@ -11,7 +11,7 @@ How the **SortedOracles** smart contract uses governance to collect reports and 
 
 ## SortedOracles Smart Contract
 
-As mentioned in the previous section, the stability mechanism needs to know the market price of CELO with respect to the US dollar. This value is made available on-chain in the [SortedOracles smart contract](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol).
+As mentioned in the previous section, the stability mechanism needs to know the market price of CELO with respect to the US dollar. This value is made available on-chain in the [SortedOracles smart contract](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/stability/SortedOracles.sol).
 
 ## Collecting Reports
 

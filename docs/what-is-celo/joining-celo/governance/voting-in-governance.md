@@ -11,7 +11,7 @@ How to use the [Celo CLI](/cli/) to participate in Goverance and create a Govern
 
 ## Governance
 
-Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol. More information about the Governance system can be found in the [Governance section of the protocol documentation](/protocol/governance).
+Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol. More information about the Governance system can be found in the [Governance overview](/what-is-celo/joining-celo/governance/overview).
 
 :::info
 
@@ -38,7 +38,7 @@ celocli governance:list
 Included will be three lists of proposals by status:
 
 - **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
-- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [protocol documentation](/protocol/governance).
+- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [Governance overview](/what-is-celo/joining-celo/governance/overview).
 - **Expired** proposals are no longer being considered.
 
 ## Understanding Proposal Details
@@ -111,7 +111,7 @@ celocli governance:upvote --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
 At a defined frequency, which can be checked with the `celocli network:parameters` command, proposals can be dequeued, with the highest upvoted proposals being dequeued first.
 
 After a proposal is dequeued, it will first enter the Approval phase.
-In this phase, the [Governance Approver](/protocol/governance#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
+In this phase, the [Governance Approver](/what-is-celo/joining-celo/governance/overview#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
 
 Once a proposal has reached the Referendum phase, it is open to community for voting.
 

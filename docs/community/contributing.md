@@ -28,7 +28,7 @@ Find your purpose and join a community focused on building the conditions of pro
 - [Developer Events](/community/developer-events)
 - [Contributors](/community/guidelines)
 - [Code of Conduct](/community/code-of-conduct)
-- [Grant Playbook](/community/grant-playbook)
+- [Grant Playbook](/what-is-celo/joining-celo/contributors/overview)
 - [Release Process](/community/release-process/)
 - [Join the Community](/community/join-the-community)
 

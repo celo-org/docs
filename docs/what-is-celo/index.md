@@ -31,12 +31,12 @@ Celo is designed with features that lower the entry barrier for those new to cry
 #### Optimized for Global Reach:
 
 - **Scalability**: Celo's focus on real-world use cases has already helped scale applications to over 250,000 daily active users (DAUs), proving its capability to support large-scale deployment.
-- **Community Engagement**: Celo boasts an active global community of users and builders. With over 4 years of experience in bringing blockchain to real-world users, Celo offers a supportive environment for developers to test, launch, and scale their applications. Community members are engaged and eager to provide feedback, helping builders refine their products for broad, practical use. If you are interested in contributing, make sure to [reach out](./joining-celo/overview).
+- **Community Engagement**: Celo boasts an active global community of users and builders. With over 4 years of experience in bringing blockchain to real-world users, Celo offers a supportive environment for developers to test, launch, and scale their applications. Community members are engaged and eager to provide feedback, helping builders refine their products for broad, practical use. If you are interested in contributing, make sure to [reach out](/what-is-celo/joining-celo).
 
 ## Get Started with Celo
 
 Whether you're an experienced developer or just starting out, Celo provides the essential tools and resources to turn your ideas into reality.
 
-<ColoredText>[Start building on Celo](/docs/build/index.md)</ColoredText> today and contribute to a growing ecosystem that supports a regenerative digital economy, fostering prosperity for all.
+<ColoredText>[Start building on Celo](/build)</ColoredText> today and contribute to a growing ecosystem that supports a regenerative digital economy, fostering prosperity for all.
 
-Connect with us on <ColoredText>[Discord](https://discord.com/invite/celo)</ColoredText> or on <ColoredText>[X](https://x.com/celo)</ColoredText>, and be sure to explore our <ColoredText>[ecosystem resources](./joining-celo/overview)</ColoredText>.
+Connect with us on <ColoredText>[Discord](https://discord.com/invite/celo)</ColoredText> or on <ColoredText>[X](https://x.com/celo)</ColoredText>, and be sure to explore our <ColoredText>[ecosystem resources](/what-is-celo/joining-celo)</ColoredText>.

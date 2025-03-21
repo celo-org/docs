@@ -62,5 +62,5 @@ For questions, comments, and discussions, connect with the Celo community:
 - [Discord](https://chat.celo.org/)
 
 :::tip
-New to Celo? Start with the [Celo Overview](/what-is-celo/index) for a complete introduction to the platform.
+New to Celo? Start with the [Celo Overview](/what-is-celo/) for a complete introduction to the platform.
 :::

@@ -17,7 +17,7 @@ Celo Accounts can be designated as Locked Gold Accounts or authorized as signer 
 
 ## Locked CELO Accounts
 
-[Locked CELO](/protocol/pos/locked-gold) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in proof-of-stake. Furthermore, Locked CELO Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked CELO Account.
+[Locked CELO](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in proof-of-stake. Furthermore, Locked CELO Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked CELO Account.
 
 In _most_ cases, the Locked CELO Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked CELO Account with both the authorized vote signer _and_ the Locked CELO Account.
 
@@ -132,7 +132,7 @@ celocli validator:show $AUTHORIZED_VALIDATOR_SIGNER
 
 ## Authorized Attestation Signers
 
-Any Locked CELO Account may optionally authorize a Celo account as an attestation signer. Authorized attestation signers can sign attestation messages on behalf of the Locked Gold Account in Celo's [lightweight identity protocol](/protocol/identity/).
+Any Locked CELO Account may optionally authorize a Celo account as an attestation signer. Authorized attestation signers can sign attestation messages on behalf of the Locked Gold Account in Celo's [lightweight identity protocol](/what-is-celo/about-celo-l1/protocol/identity/).
 
 Note that the Celo Ledger App does yet not support signing attestation messages and as such attestation signer keys **cannot be stored on a Ledger hardware wallet**.
 

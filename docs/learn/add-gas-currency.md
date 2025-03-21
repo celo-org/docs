@@ -3,18 +3,15 @@ title: Adding Gas Currencies to Celo
 description: Documentation relevant to how to add currencies on Celo
 ---
 
-
 # Adding Gas Currencies to Celo
 
-The Celo protocol [supports paying](/protocol/transaction/erc20-transaction-fees) gas in tokens other than the native one, Celo. This document outlines requirements and processes to add a new gas token.
-
+The Celo protocol [supports paying](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees) gas in tokens other than the native one, Celo. This document outlines requirements and processes to add a new gas token.
 
 ## Pre-requisites
 
 ### Token implementation
 
 A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with the following signatures:
-
 
 ```
 function debitGasFees(address from, uint256 value) external;
@@ -31,7 +28,7 @@ function creditGasFees(
     ) external;
 ```
 
-Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/protocol/contracts/common/CalledByVm.sol#L3).
+Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/what-is-celo/about-celo-l1/protocol/contracts/common/CalledByVm.sol#L3).
 
 `debitGasFees` is called by the VM before the body of the tx is executed while assembling a block. It removes from the caller's balance the maximum amount of tokens the transaction will take. This is done to make sure the user has enough to pay for gas.
 
@@ -43,10 +40,9 @@ If any of these two functions reverts, the transaction will not be included in a
 
 Example implementations of `debitGasFees` and `creditGasFees` can be found in [Mento's StableCoins contracts codebase](https://github.com/mento-protocol/mento-core/blob/develop/contracts/tokens/StableTokenV2.sol#L264).
 
-
 ### Oracle
 
-Celo blockchains uses the core contract SortedOracle as a the source of the rate the tokens should be priced at the moment a validator is attempting to include the transaction in a block. The address of the token and the address of the oracle has to be added to SortedOracle using the function `addOracle(address token, address oracleAddress)`. 
+Celo blockchains uses the core contract SortedOracle as a the source of the rate the tokens should be priced at the moment a validator is attempting to include the transaction in a block. The address of the token and the address of the oracle has to be added to SortedOracle using the function `addOracle(address token, address oracleAddress)`.
 
 Then, at least one rate should have been submitted using `report(address token, uint256 value, address lesserKey, address greaterKey)`. The price reported is the price of Celo in units of the token to be added.
 
@@ -54,10 +50,9 @@ An reference implementation of oracle provider client can be [found here](https:
 
 Sorted Oracles was originally designed to support the [Mento protocol](https://www.mento.org/). For this reason, the reference implementation of the oracle client supports reporting with a high frequency (in the context of a blockchain). If the goal of the oracle is solely to support a gas currency, reports could be significantly more spaced out, as gas pricing is not as sensible to manipulation as an arbitrage protocol.
 
-
 ## Governance Process
 
-To enable a token as gas currency, two [governance proposals](/protocol/governance) need to be passed.
+To enable a token as gas currency, two [governance proposals](/what-is-celo/joining-celo/governance/overview) need to be passed.
 
 ### Enabling the Oracle
 
@@ -76,7 +71,6 @@ The second proposal enables the gas token by calling `addToken(address tokenAddr
 An example of such proposal [can be found here](https://github.com/sirpy/governance/blob/1cee2314b357246385819e7e0713a272a55b0ec3/CGPs/cgp-0089.md).
 
 It would be a good consideration to update popular tooling (like contractkit) before this proposal passes so that most developers are ready to use the new gas as soon as it enabled.
-
 
 ### Enabling with just one proposal
 

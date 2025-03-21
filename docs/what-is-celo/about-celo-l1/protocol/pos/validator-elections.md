@@ -11,7 +11,7 @@ Introduction to Celo validator elections and management of groups and votes thro
 
 ## Updating the Active Validator Set
 
-The active validator set is updated by running an election in the final block of each epoch, after processing transactions and [Epoch Rewards](/protocol/pos/epoch-rewards).
+The active validator set is updated by running an election in the final block of each epoch, after processing transactions and [Epoch Rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards).
 
 ### Group Voting Caps
 

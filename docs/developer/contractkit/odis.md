@@ -26,7 +26,7 @@ There are two methods for ODIS:
 
 :::tip
 
-See [this overview document](/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS.
+See [this overview document](/what-is-celo/about-celo-l1/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS.
 
 :::
 

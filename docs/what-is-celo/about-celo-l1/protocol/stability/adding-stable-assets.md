@@ -11,7 +11,7 @@ Overview of the requirements and steps to add a new stable asset to the Celo pla
 
 :::tip Note
 
-This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/protocol/stability/doto).
+This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/what-is-celo/about-celo-l1/protocol/stability/doto).
 
 :::
 
@@ -51,7 +51,7 @@ As new contracts are added to the registry, new **constitution parameters** need
 
 ### Oracle activation
 
-A following governance proposal needs to be submitted to enable [oracles](/protocol/stability/oracles) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
+A following governance proposal needs to be submitted to enable [oracles](/what-is-celo/about-celo-l1/protocol/stability/oracles) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
 
 ### Full activation
 

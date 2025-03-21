@@ -50,7 +50,7 @@ Validators are becoming [Community RPC providers](./operators/community-rpc-node
 
 ### What happens to governance?
 
-[Governance](/general/ecosystem/governance) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes. 
+[Governance](/what-is-celo/joining-celo/governance/overview) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes. 
 
 ### What happened to these features?
 

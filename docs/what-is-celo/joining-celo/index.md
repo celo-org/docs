@@ -16,21 +16,21 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 ### As a Builder
 
 - [**Register as an active Celo builder:**](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) Access exclusive resources and support.
-- [**Join our builder community:**](./builders) Connect with other builders in the ecosystem.
-- [**Contribute to open source projects:**](./contributors/code-contributors) Help grow Celo by contributing to key projects.
-- [**Get involved in a local chapter:**](./daos) Attend in-person workshops for mentoring and support.
+- [**Join our builder community:**](/what-is-celo/joining-celo/builders) Connect with other builders in the ecosystem.
+- [**Contribute to open source projects:**](/what-is-celo/joining-celo/contributors/code-contributors) Help grow Celo by contributing to key projects.
+- [**Get involved in a local chapter:**](/what-is-celo/joining-celo/daos) Attend in-person workshops for mentoring and support.
 - [**Participate in Celo Public Goods:**](https://www.celopg.eco/) Explore ongoing funding rounds.
 - [**Get your page added**](https://tally.so/r/w887RY) to our [**ecosystem page**](https://www.celopg.eco/ecosystem) managed by Celo Public Goods.
 - [**Introduce your project**](https://forum.celo.org/) in the [**Celo Forum**](https://forum.celo.org/) in the founders' category.
 - [**Apply to Celo Camp:**](https://www.celocamp.com/) Join the accelerator focused on scaling apps on Opera MiniPay.
-- [**Engage with Celo DAOs:**](./daos) Gain user feedback, access networking opportunities, and validate your project.
+- [**Engage with Celo DAOs:**](/what-is-celo/joining-celo/daos) Gain user feedback, access networking opportunities, and validate your project.
 - [**Apply for Prezenti Grants:**](https://www.prezenti.xyz/) Explore grant opportunities.
 - Check out community resources for helpful tips to raise capital.
 
 ### As a Contributor
 
-- [**Participate in governance:**](./governance/overview) Engage in current discussions and connect with the ecosystem.
-- [**Contribute to local chapters:**](./daos) Connect with the community, offer support, and mentor others.
+- [**Participate in governance:**](/what-is-celo/joining-celo/governance/overview) Engage in current discussions and connect with the ecosystem.
+- [**Contribute to local chapters:**](/what-is-celo/joining-celo/daos) Connect with the community, offer support, and mentor others.
 
 ---
 

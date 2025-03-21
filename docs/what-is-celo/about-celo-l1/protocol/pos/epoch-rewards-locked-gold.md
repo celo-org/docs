@@ -11,7 +11,7 @@ How to earn locked CELO rewards and adjust the rate for voting participation, ta
 
 ## Introduction to Locked CELO Rewards
 
-Holders of Locked CELO that voted in the previous epoch for a group that elected one or more validators and have activated their votes are eligible for rewards. Rewards are added directly to the Locked CELO voting for that group, and re-applied as votes for that same group, so future rewards are compounded without the account holder needing to take any action. The voting process is described further [here](/protocol/pos/epoch-rewards-locked-gold).
+Holders of Locked CELO that voted in the previous epoch for a group that elected one or more validators and have activated their votes are eligible for rewards. Rewards are added directly to the Locked CELO voting for that group, and re-applied as votes for that same group, so future rewards are compounded without the account holder needing to take any action. The voting process is described further [here](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold).
 
 :::tip
 

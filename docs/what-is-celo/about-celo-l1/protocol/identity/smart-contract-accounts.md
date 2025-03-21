@@ -11,7 +11,7 @@ The account address is derived from the public key, and transactions are authori
 In most wallets, the EOA is generated and stored on the user's mobile device and backed up via a BIP-39 mnemonic phrase.
 
 A smart contract account on the other hand is a smart contract that can be used to interact with other smart contracts on behalf of the owner.
-Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
+Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
 In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions my signing a meta-transaction containing the details of the authorized transaction.
 This is how the meta-transaction wallet works.
 In this case you can think of the smart contract account as the primary account, and the EOA as the controller of this account.
@@ -21,7 +21,7 @@ In this case you can think of the smart contract account as the primary account,
 ### Separation of signer and payer
 
 When new users create a wallet, they start with an empty balance.
-This makes it difficult for the new users to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/protocol/identity/)).
+This makes it difficult for the new users to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/what-is-celo/about-celo-l1/protocol/identity/)).
 To make this experience more intuitive and frictionless for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user.
 It does this by first deploying a meta-transaction wallet contract and setting the wallet EOA address as the signer.
 At this point, the EOA can sign transactions and submit them to Komenci.
@@ -33,7 +33,7 @@ In general, smart contract accounts allow the someone other than the account own
 
 Smart contract accounts can also be useful if a user ever loses their phone and recovery phrase.
 Unlike EOAs, smart contract accounts can support account recovery methods that do not rely solely on recovering the underlying keys.
-The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
+The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
 This Guardian can be a simple backup key or a smart contract implementing social recovery, [KELP](https://eprint.iacr.org/2021/289), or another account recovery protocol.
 With the authorization of the Guardian, the meta-transaction wallet will update the owner of the account to replace the lost key.
 Any funds or privileges held by the meta-transaction wallet are then recovered to the user who can control the account using their new key.
@@ -66,7 +66,7 @@ To get the account address (step 3) you can use the [Attestation contract method
 
 To get the wallet address from the account (step 4) you can use the [Account contract method `getWalletAddress`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L318).
 
-It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/protocol/transaction/tx-comment-encryption)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
+It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
 
 You can view a working example of this all tied together in [the `celocli` command `identity:get-attestations`](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/identity/get-attestations.ts).
 
@@ -80,4 +80,4 @@ This data can't be signed by the `msg.sender` since it's originating from a cont
 
 ## Implementation
 
-The implementation of the meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol).
+The implementation of the meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol).

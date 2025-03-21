@@ -13,7 +13,7 @@ After the contract is created and it’s ready to be tested, run `yarn build` to
 
 ## Unit tests
 
-The test directory is organized the same way as the contracts directory so feel free to navigate to the parent folder of your currently created contract and create a corresponding(.ts) file for it. For example: `celo-monorepo/packages/protocol/contracts/common/Accounts.sol → celo-monorepo/packages/protocol/test/common/accounts.ts`.
+The test directory is organized the same way as the contracts directory so feel free to navigate to the parent folder of your currently created contract and create a corresponding(.ts) file for it. For example: `celo-monorepo/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol → celo-monorepo/packages/what-is-celo/about-celo-l1/protocol/test/common/accounts.ts`.
 
 :::tip
 

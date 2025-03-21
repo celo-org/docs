@@ -16,7 +16,7 @@ A [reference implementation](https://github.com/celo-org/celo-oracle) of such a 
 ## Requirements
 
 - One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
-- A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/validator/run/mainnet).
+- A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/what-is-celo/about-celo-l1/validator/run/mainnet).
 - The private key of an address on Celo, which can be stored on a private key file, on a Hardware Security Module (HMS) or hosted in the full nodes itself. More information about each can be found below.
 
 It is not strictly required but it is recommended to have the [Celo CLI](/cli#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
@@ -67,7 +67,7 @@ The output field of `privateKey` should be stored in a file and its path should 
 
 ### Setting up your keys in the node
 
-Instructions to generate an account and store it in the node can be found [here](/validator/run/mainnet#key-management).
+Instructions to generate an account and store it in the node can be found [here](/what-is-celo/about-celo-l1/validator/run/mainnet#key-management).
 
 ### Recommended configuration
 
@@ -128,7 +128,7 @@ As soon as governance enables it, the node should start reporting automatically.
 
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/protocol/governance). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such a proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md).
+The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/what-is-celo/joining-celo/governance/overview/). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such a proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md).
 
 ## Using kubernetes
 

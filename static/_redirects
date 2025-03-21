@@ -405,7 +405,6 @@
 /celo-codebase/protocol/plumo /protocol/plumo
 /celo-codebase/protocol/optics /protocol/bridge/optics
 /celo-codebase/protocol/index /protocol
-/celo-codebase/protocol/governance /protocol/governance
 /celo-codebase/protocol/transactions/erc20-transaction-fees /protocol/transaction/erc20-transaction-fees
 /celo-codebase/protocol/transactions/escrow /protocol/transaction/escrow
 /celo-codebase/protocol/transactions/gas-pricing /protocol/transaction/gas-pricing

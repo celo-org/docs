@@ -32,8 +32,8 @@ More formally, the $$n * {th} $$ block proposed by a given validator contains va
 This randomness can be used by any smart contracts deployed to a Celo network using the Random core contract, e.g.:
 
 ```solidity
-import "celo-monorepo/packages/protocol/identity/interfaces/IRandom.sol";
-import "celo-monorepo/packages/protocol/common/interfaces/IRegistry.sol";
+import "celo-monorepo/packages/what-is-celo/about-celo-l1/protocol/identity/interfaces/IRandom.sol";
+import "celo-monorepo/packages/what-is-celo/about-celo-l1/protocol/common/interfaces/IRegistry.sol";
 
 contract Example {
     function test() external view returns (bytes32 randomness) {
@@ -45,10 +45,10 @@ contract Example {
 }
 ```
 
-Alternatively, through inheritance of [UsingRegistry](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/UsingRegistry.sol).
+Alternatively, through inheritance of [UsingRegistry](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/UsingRegistry.sol).
 
 ```solidity
-import "celo-monorepo/packages/protocol/common/UsingRegistryV2.sol";
+import "celo-monorepo/packages/what-is-celo/about-celo-l1/protocol/common/UsingRegistryV2.sol";
 
 contract Example is UsingRegistryV2 {
     function test() external view returns (bytes32 randomness) {

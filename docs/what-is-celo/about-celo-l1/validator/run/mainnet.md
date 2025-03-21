@@ -33,9 +33,9 @@ Because of the importance of Validator security and availability, Validators are
 
 ### Staking Requirements
 
-Celo uses a [proof-of-stake](/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
+Celo uses a [proof-of-stake](/what-is-celo/about-celo-l1/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/validator/run/baklava)
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/what-is-celo/about-celo-l1/validator/run/baklava)
 
 We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO.
 
@@ -127,7 +127,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of value.
 
-This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
+This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/what-is-celo/about-celo-l1/validator/key-management/summary)
 
 #### Unlocking
 
@@ -420,7 +420,7 @@ You can run multiple proxies by deploying additional proxies per the instruction
 
 ### Limiting block space for transactions paid in alternative ERC-20 gas currencies
 
-As described in the protocol documentation, Celo allows users to [pay for gas using tokens](/protocol/transaction/erc20-transaction-fees). There is a governable list of accepted tokens. However, the Celo blockchain client starting with version 1.8.1 implements a protective mechanism that allows validators to control the percentage of available block space used by transactions paid with an alternative fee currency (other than CELO) more precisely.
+As described in the protocol documentation, Celo allows users to [pay for gas using tokens](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees). There is a governable list of accepted tokens. However, the Celo blockchain client starting with version 1.8.1 implements a protective mechanism that allows validators to control the percentage of available block space used by transactions paid with an alternative fee currency (other than CELO) more precisely.
 
 There are two new flags that control this behavior:
 

@@ -11,7 +11,7 @@ List of key terms related to the Celo platform, networks, tools, and blockchain 
 
 ## Account
 
-Identifies an account on Celo. There are two types of account. **Externally owned accounts** have an associated [CELO](#celo-natice-asset) balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
+Identifies an account on Celo. There are two types of account. **Externally owned accounts** have an associated CELO balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
 
 ## Address
 
@@ -27,7 +27,7 @@ Generally, support for an entity having an associated identity. In Celo, each at
 
 ## Attestation Service
 
-Former name for what has become Social Connect. 
+Former name for what has become Social Connect.
 
 ## Baklava
 
@@ -110,6 +110,7 @@ A derivation path defines how private keys and addresses are derived from a mnem
 When a validator signs two different blocks at the same height and with the same parent hash in the blockchain.
 
 ## EOA or externally owned account
+
 Ethereum term to designate addresses operated by users, as opposed to contract addresses.
 
 ## Epoch
@@ -160,13 +161,13 @@ The very first block in the blockchain, provided as configuration to Celo Blockc
 
 [go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software is forked.
 
-## [Governance](/protocol/governance)
+## [Governance](/what-is-celo/joining-celo/governance/overview)
 
 A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [CELO](#celo-native-asset) holders vote for proposals submitted by the community.
 
 ## Governable
 
-A smart contract that is owned by the Celo [Governance](/protocol/governance) mechanism and so can be changed or updated by an on-chain governance proposal.
+A smart contract that is owned by the Celo [Governance](/what-is-celo/joining-celo/governance/overview) mechanism and so can be changed or updated by an on-chain governance proposal.
 
 ## Group Share
 
@@ -184,7 +185,7 @@ Hardware Security Module. A hardware device that hosts one or more private keys 
 
 The creation of a new cryptographic key to replace an existing key in active use.
 
-## [Community Fund](/protocol/pos/epoch-rewards-community-fund)
+## [Community Fund](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund)
 
 An account that supports the development and operational costs of the Celo protocol. The Community Fund is maintained by a transfer made as part of Epoch Rewards, and is intended to cover costs beyond the other specific incentives provided to validators and validator groups. Awards can be made through an on-chain governance proposal.
 
@@ -193,9 +194,11 @@ An account that supports the development and operational costs of the Celo proto
 Istanbul, or IBFT, is the original name of the implementation of the Byzantine Fault Tolerant consensus algorithm used by Celo. Istanbul is also the name of a hard fork of the Ethereum network.
 
 ## Layer 1 (L1)
+
 Refers the Ethereum blockchain, used in contrast to layer 2, which refers to Celo.
 
 ## Layer 2 (L2)
+
 Refers to the Celo blockchain and is used in contrast to layer 1, which refers to the Ethereum blockchain.
 
 ## Light Client

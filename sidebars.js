@@ -257,22 +257,6 @@ const whatIsCeloSidebar = [
           },
           {
             type: "category",
-            label: "Governance",
-            items: [
-              {
-                type: "doc",
-                label: "Overview",
-                id: "what-is-celo/about-celo-l1/protocol/governance/index",
-              },
-              {
-                type: "doc",
-                label: "Create Proposal",
-                id: "what-is-celo/about-celo-l1/protocol/governance/create-proposal",
-              },
-            ],
-          },
-          {
-            type: "category",
             label: "Transactions",
             items: [
               {

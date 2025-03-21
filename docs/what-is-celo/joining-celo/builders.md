@@ -18,7 +18,7 @@ There are several ways to get started as a builder on Celo:
 
 2. **Participate in Hackathons**: Hackathons are an excellent way to challenge your skills, collaborate with other developers, and potentially win rewards for innovative solutions. Find ecosystem events on our community [event platform](https://celo.stand.lemonade.social/events).
 
-3. **Contribute to Open Source Projects**: You can [contribute](/what-is-celo/joining-celo/contributors) directly to Celo’s open-source codebase or build complementary projects.
+3. **Contribute to Open Source Projects**: You can [contribute](/what-is-celo/joining-celo/contributors/overview) directly to Celo’s open-source codebase or build complementary projects.
 
 4. **Apply for Grants**: Celo has grants programs, like [Prezenti](https://www.prezenti.xyz/) and [Celo Public Goods](https://www.celopg.eco/) which supports projects that align with its mission to provide financial services to the next billion people.
 

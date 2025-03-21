@@ -23,27 +23,27 @@ Not ready to become a Celo Validator? [Learn more about Celo](/).
 
 ## Run a Validator
 
-- [Run a Baklava Testnet Validator](/validator/run/baklava)
-- [Run a Mainnet Validator](/validator/run/mainnet)
+- [Run a Baklava Testnet Validator](/what-is-celo/about-celo-l1/validator/run/baklava)
+- [Run a Mainnet Validator](/what-is-celo/about-celo-l1/validator/run/mainnet)
 
 ## Important Information
 
-- [Key Management](/validator/key-management/summary)
+- [Key Management](/what-is-celo/about-celo-l1/validator/key-management/summary)
 
 ## Nodes and Services
 
-- [Securing Celo Nodes and Services](/validator/security)
-- [Upgrading a Node](/validator/node-upgrade)
-- [Monitoring](/validator/monitoring)
-- [Running Proxies](/validator/proxy)
+- [Securing Celo Nodes and Services](/what-is-celo/about-celo-l1/validator/security)
+- [Upgrading a Node](/what-is-celo/about-celo-l1/validator/node-upgrade)
+- [Monitoring](/what-is-celo/about-celo-l1/validator/monitoring)
+- [Running Proxies](/what-is-celo/about-celo-l1/validator/proxy)
 
 ## Validator Tools
 
-- [Validator Explorer](/validator/validator-explorer)
+- [Validator Explorer](/what-is-celo/about-celo-l1/validator/validator-explorer)
 
 ## Voting Policy
 
-- [Celo Foundation Voting Policy](/validator/celo-foundation-voting-policy)
+- [Celo Foundation Voting Policy](/what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy)
 
 :::tip
 

@@ -4,7 +4,7 @@ title: Oblivious Decentralized Identifier Service (ODIS)
 
 import PageRef from '@components/PageRef'
 
-The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/protocol/identity/odis-use-case-phone-number-privacy), [password hardening](/protocol/identity/odis-use-case-key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
+The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/what-is-celo/about-celo-l1/protocol/identity/odis-use-case-phone-number-privacy), [password hardening](/what-is-celo/about-celo-l1/protocol/identity/odis-use-case-key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
 Essentially, it is a service that allows users to compute a limited number of hashes (i.e. PRF evaluations), without letting the service see the data being hashed.
 Many useful applications are built on top of this primitive, such as privacy protected phone number mappings, password hardening, and [captchas for bot detection](https://privacypass.github.io/).
 
@@ -89,8 +89,8 @@ When ODIS nodes receive the request, it authenticates the user by recovering the
 In the newer domain separated API, the rate limit can depend on a variety of factors configured to each domain type.
 More information about the domains API and the implemented domain types can be found in the respective pages.
 
-- [Domains](/protocol/identity/odis-domain)
-- [Sequential Delay Domain](/protocol/identity/odis-domain-sequential-delay-domain)
+- [Domains](/what-is-celo/about-celo-l1/protocol/identity/odis-domain)
+- [Sequential Delay Domain](/what-is-celo/about-celo-l1/protocol/identity/odis-domain-sequential-delay-domain)
 
 A full specification of the Domains API can be found in CIP-40.
 

@@ -13,15 +13,15 @@ The protocol maintains a governable allowlist of smart contract addresses which 
 
 ## Allowlisted Gas Fee Addresses
 
-To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/what-is-celo/joining-celo/governance/overview/), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
 
 ### Tokens with Adapters
 
-After Contract Release 11, addresses in the allowlist are no longer guaranteed to be full ERC20 tokens and can now also be [adapters](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/11/packages/protocol/contracts-0.8/stability/FeeCurrencyAdapter.sol). Adapters are allowlisted in-lieu of tokens in the scenario that a ERC20 token has decimals other than 18 (e.g. USDT and USDC).
+After Contract Release 11, addresses in the allowlist are no longer guaranteed to be full ERC20 tokens and can now also be [adapters](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/11/packages/what-is-celo/about-celo-l1/protocol/contracts-0.8/stability/FeeCurrencyAdapter.sol). Adapters are allowlisted in-lieu of tokens in the scenario that a ERC20 token has decimals other than 18 (e.g. USDT and USDC).
 
 The Celo Blockchain natively works with 18 decimals when calculating gas pricing, so adapters are needed to normalize the decimals for tokens that use a different one. Some stablecoins use 6 decimals as a standard.
 
-Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with those ERC20 tokens, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/protocol/transaction/gas-pricing).
+Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with those ERC20 tokens, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/what-is-celo/about-celo-l1/protocol/transaction/gas-pricing).
 
 Adapters can also be used to query `balanceOf(address)` of an account, but it will return the balance as if the token had 18 decimals and not the native ones. This is useful to calculate if an account has enough balance to cover gas after multiplying `gasPrice * estimatedGas` without having to convert back to the token's native decimals.
 
@@ -60,7 +60,7 @@ The Gas Price Minimum value returned from the RPC has to be interpreted in 18 de
 
 When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
 
-The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/protocol/transaction/transaction-types).
+The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/what-is-celo/about-celo-l1/protocol/transaction/transaction-types).
 
 Here is how a transaction would look like when using USDC as a medium to pay for gas fees.
 

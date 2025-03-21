@@ -26,7 +26,7 @@ ContractKit currently supports the following types of claim:
 
 - **Name Claim** - An account can claim a human-readable name. This claim is not verifiable.
 
-- **Attestation Service URL Claim** - For the [lightweight identity layer](/protocol/identity), validators can make a claim under which their Attestation Service is reachable to provide attestations. This claim is not verifiable.
+- **Attestation Service URL Claim** - For the [lightweight identity layer](/what-is-celo/about-celo-l1/protocol/identity), validators can make a claim under which their Attestation Service is reachable to provide attestations. This claim is not verifiable.
 
 - **Keybase User Claim** - Accounts can make claims on [Keybase](https://keybase.io) usernames. This claim is verifiable by signing a message with the account and hosting it on the publicly accessible path of the Keybase file system.
 

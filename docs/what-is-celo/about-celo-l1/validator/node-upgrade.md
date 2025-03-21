@@ -43,15 +43,15 @@ docker rm celo-fullnode
 
 Start the new node using `docker run` as detailed in the appropriate section of the getting started guide. Remember to recover any environment variables, if using a new terminal, before running the documented commands.
 
-- [Full node](/validator/run/mainnet#validator-node-setup)
-- [Accounts node](/validator/run/mainnet#start-your-accounts-node)
-- [Proxy node](/validator/run/mainnet#deploy-a-proxy)
+- [Full node](/what-is-celo/about-celo-l1/validator/run/mainnet#validator-node-setup)
+- [Accounts node](/what-is-celo/about-celo-l1/validator/run/mainnet#start-your-accounts-node)
+- [Proxy node](/what-is-celo/about-celo-l1/validator/run/mainnet#deploy-a-proxy)
 
 ## Upgrading a Validating Node
 
 Upgrading a validating node is much the same, but requires extra care to be taken to prevent validator downtime.
 
-One option to complete a validating node upgrade is to perform a key rotation onto a new node. Pull the latest Docker image, as mentioned above, then execute a Validator signing key rotation, using the latest image as the new Validator signing node. A recommended procedure for key rotation is documented in the [Key Management](/validator/key-management/key-rotation) guide.
+One option to complete a validating node upgrade is to perform a key rotation onto a new node. Pull the latest Docker image, as mentioned above, then execute a Validator signing key rotation, using the latest image as the new Validator signing node. A recommended procedure for key rotation is documented in the [Key Management](/what-is-celo/about-celo-l1/validator/key-management/key-rotation) guide.
 
 A second option is to perform a hot-swap to switch over to a new validator node. The new validator node **must** be configured with the same set of proxies as the existing validator node.
 
