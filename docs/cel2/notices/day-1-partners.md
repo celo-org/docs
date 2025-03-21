@@ -6,12 +6,16 @@ These partners ensure network stability and seamless user experience from the mo
 Below is the list of confirmed Day 1 partners:  
 
 ### Node and RPC Providers  
-- Forno  
+- Forno
+- Quicknode  
 - Ankr  
 - Infura
 - The Graph
 - Tatum
 - Thirdweb
+- DRPC
+- Nirvana Labs
+- Pokt 
 
 ### Indexers  
 - Blockscout 
@@ -30,6 +34,7 @@ Below is the list of confirmed Day 1 partners:
 - Bitfinex 
 - Anchorage
 - Ubeswap
+- Upbit
 
 We appreciate the commitment of these partners in supporting a seamless and successful launch! 
 
