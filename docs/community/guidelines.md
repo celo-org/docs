@@ -7,19 +7,18 @@ description: Join a community of developers, designers, dreamers, and doers buil
 
 Guidelines for submitting contributions to the Celo community.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-For the most up-to-date information, refer to our Celo L2 documentation.
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
 
 Celo is open source and we welcome open participation. We strive to fulfill our [Community Tenets](https://celo.org/community) by being an open and inclusive community where everyone feels welcome and empowered to contribute. This also means following some ground rules and abiding by Celo’s [Code of Conduct](https://celo.org/code-of-conduct).
 
