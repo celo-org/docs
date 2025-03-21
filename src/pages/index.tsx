@@ -539,7 +539,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.whitepapers.description",
                 }),
                 "img/homepage/icons/WhitePapers_white.svg",
-                "/general/whitepapers",
+                "https://celo.org/papers",
               )}
 
               {sectionFourCard(
