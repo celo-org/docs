@@ -39,6 +39,14 @@ We encourage you to PR \(pull request\) your work regularly and often to solicit
 
 ## 🖥️ Code
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+For the most up-to-date information, refer to our Celo L2 documentation.
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 Code Contributors are developers in the Celo community that contribute to the [Celo monorepo](https://github.com/celo-org/celo-monorepo) or the [core protocol code](https://github.com/celo-org/celo-blockchain). They help improve the protocol and infrastructure by fixing bugs and designing new features that help improve the Celo platform.
 
 #### How to Get Started
