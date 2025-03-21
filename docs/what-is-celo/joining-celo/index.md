@@ -17,7 +17,7 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 
 - [**Register as an active Celo builder:**](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) Access exclusive resources and support.
 - [**Join our builder community:**](./builders) Connect with other builders in the ecosystem.
-- [**Contribute to open source projects:**](./os-code-contributors) Help grow Celo by contributing to key projects.
+- [**Contribute to open source projects:**](./contributors/code-contributors) Help grow Celo by contributing to key projects.
 - [**Get involved in a local chapter:**](./daos) Attend in-person workshops for mentoring and support.
 - [**Participate in Celo Public Goods:**](https://www.celopg.eco/) Explore ongoing funding rounds.
 - [**Get your page added**](https://tally.so/r/w887RY) to our [**ecosystem page**](https://www.celopg.eco/ecosystem) managed by Celo Public Goods.
@@ -25,7 +25,7 @@ Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or con
 - [**Apply to Celo Camp:**](https://www.celocamp.com/) Join the accelerator focused on scaling apps on Opera MiniPay.
 - [**Engage with Celo DAOs:**](./daos) Gain user feedback, access networking opportunities, and validate your project.
 - [**Apply for Prezenti Grants:**](https://www.prezenti.xyz/) Explore grant opportunities.
-- Check out the [**Grant Playbook**](./guides/grant-playbook.md) and [**Fundraising Guide**](./guides/grant-playbook.md) for helpful tips to raise capital.
+- Check out community resources for helpful tips to raise capital.
 
 ### As a Contributor
 

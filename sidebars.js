@@ -77,11 +77,6 @@ const whatIsCeloSidebar = [
       },
       {
         type: "doc",
-        label: "Open Source Contributors",
-        id: "what-is-celo/joining-celo/os-code-contributors",
-      },
-      {
-        type: "doc",
         label: "Regional DAOs",
         id: "what-is-celo/joining-celo/daos",
       },
@@ -93,6 +88,11 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Overview",
             id: "what-is-celo/joining-celo/governance/overview",
+          },
+          {
+            type: "doc",
+            label: "Create a Governance Proposal",
+            id: "what-is-celo/joining-celo/governance/create-governance-proposal",
           },
           {
             type: "doc",
@@ -113,34 +113,34 @@ const whatIsCeloSidebar = [
       },
       {
         type: "category",
-        label: "Guides",
+        label: "Contributors",
         items: [
           {
             type: "doc",
-            label: "Create a Governance Proposal",
-            id: "what-is-celo/joining-celo/guides/create-proposal",
+            label: "Overview",
+            id: "what-is-celo/joining-celo/contributors/overview",
           },
           {
             type: "doc",
-            label: "Fundraising",
-            id: "what-is-celo/joining-celo/guides/fundraising",
+            label: "Code Contributors",
+            id: "what-is-celo/joining-celo/contributors/code-contributors",
           },
           {
             type: "doc",
-            label: "Guidelines",
-            id: "what-is-celo/joining-celo/guides/guidelines",
+            label: "CIP Contributors",
+            id: "what-is-celo/joining-celo/contributors/cip-contributors",
           },
           {
             type: "doc",
-            label: "Grant Playbook",
-            id: "what-is-celo/joining-celo/guides/grant-playbook",
-          },
-          {
-            type: "link",
-            label: "Code of Conduct",
-            href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+            label: "Documentation Contributors",
+            id: "what-is-celo/joining-celo/contributors/documentation-contributors",
           },
         ],
+      },
+      {
+        type: "link",
+        label: "Code of Conduct",
+        href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
       },
     ],
   },
@@ -1258,29 +1258,6 @@ const toolingSidebar = [
   },
 ];
 
-const communitySidebar = [
-  {
-    type: "doc",
-    label: "Contributors",
-    id: "community/guidelines",
-  },
-  {
-    type: "doc",
-    label: "Fundraising",
-    id: "community/fundraising",
-  },
-  {
-    type: "doc",
-    label: "Grant Playbook",
-    id: "community/grant-playbook",
-  },
-  {
-    type: "link",
-    label: "Code of Conduct",
-    href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
-  },
-];
-
 const celoL2Sidebar = [
   {
     type: "doc",
@@ -1404,7 +1381,6 @@ const sidebars = {
   whatisCeloSidebar: whatIsCeloSidebar,
   buildOnCeloSidebar: buildOnCeloSidebar,
   toolingSidebar: toolingSidebar,
-  communitySidebar: communitySidebar,
   celoL2Sidebar: celoL2Sidebar,
 };
 

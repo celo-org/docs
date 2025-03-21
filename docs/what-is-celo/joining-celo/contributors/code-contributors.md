@@ -56,7 +56,7 @@ Tasks range from minor to major improvements. Based on your interests, skillset,
 
 Celo uses a standard "contributor workflow" where changes are made through pull requests (PRs). This workflow enables peer review, easy testing, and social collaboration.
 
-Following these guidelines will help ensure that your pull request (PR) gets approved. Each protocol may have its own specific guidelines, so review them before contributing. Celo-specific contribution guidelines can be found <ColoredText>[here](./guides//guidelines.md)</ColoredText>. 
+Following these guidelines will help ensure that your pull request (PR) gets approved. Each protocol may have its own specific guidelines, so review them before contributing. Celo-specific contribution guidelines can be found <ColoredText>[here](./overview.md)</ColoredText>. 
 
 #### To contribute:
 
