@@ -5,6 +5,13 @@ title: Wallets
 Celo is designed to work seamlessly with a range of wallets, each offering features to meet different user needs. This section provides an overview on how you can use Celo with various types of wallets.
 For a more comprehensive list, have a look at [Celo Wallets](docs/wallet/index.md).
 
+::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Celo Native Wallets
