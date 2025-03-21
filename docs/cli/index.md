@@ -12,7 +12,7 @@ Introduction to the Celo Command Line Interface and installation instructions.
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
-It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+It’s a command-line interface for interacting with the Celo Protocol and core contracts. Some common features you may want try include transferring tokens, viewing account balances, participating in elections or in on-chain governance, voting for validators,  or helping users interact with multi-sig contracts.
 
 ## Installation {#installation}
 
