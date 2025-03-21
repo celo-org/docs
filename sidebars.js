@@ -44,12 +44,12 @@ const whatIsCeloSidebar = [
               {
                 type: "doc",
                 label: "Community Fund",
-                id: "what-is-celo/using-celo/protocol/epoch-rewards/epoch-rewards-community-fund",
+                id: "what-is-celo/using-celo/protocol/epoch-rewards/community-fund",
               },
               {
                 type: "doc",
                 label: "Carbon Offsetting Fund",
-                id: "what-is-celo/using-celo/protocol/epoch-rewards/epoch-rewards-carbon-offsetting-fund",
+                id: "what-is-celo/using-celo/protocol/epoch-rewards/carbon-offsetting-fund",
               },
             ],
           },

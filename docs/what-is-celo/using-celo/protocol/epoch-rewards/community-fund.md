@@ -9,6 +9,10 @@ Introduction to the community fund, its assets, and its relationship to the on-c
 
 ---
 
+:::info
+Check out the [State of Celo Community Treasury | Q1 2025](https://forum.celo.org/t/state-of-celo-community-treasury-q1-2025/10573)
+:::
+
 ## What is the Community Fund?
 
 The Community Fund provides for the general upkeep of the Celo platform. CELO holders decide how to allocate these funds through governance proposals in the [governance forum](https://forum.celo.org/). Funds might be used to pay bounties for bugs or vulnerabilities, security audits, or grants for protocol development.

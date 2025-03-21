@@ -1,45 +1,68 @@
 ---
-title: Celo Validator Penalties
+title: Community RPC Provider Penalties
 description: Introduction to validator penalties, enforcement mechanisms, and conditions.
 ---
 
-# Validator Penalties
+# Community RPC Provider Penalties
 
-Introduction to validator penalties, enforcement mechanisms, and conditions.
+Introduction to community RPC provider penalties, enforcement mechanisms, and conditions.
 
 ---
 
-## What is Slashing?
+:::info
+This page is a work in progress based on the [proposal for validator engagement during the transition to L2](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700). For updates make sure to refer to the [Celo Forum](https://forum.celo.org). 
+:::
 
-Slashing accomplishes punishment of misbehaving validators by seizing a portion of their stake. Without these punishments, for example, the Celo Protocol would be subject to the [nothing at stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed) problem. Validator misbehavior is classified as a set of slashing conditions below.
+## Validator Operations
 
-## Enforcement Mechanisms
+### 1. How It Works
 
-The protocol has three means of recourse for validator misbehavior. Each slashing condition applies a combination of these, as described below.
+Validators who register an RPC will be allocated 82.19178082 cUSD per day at a perfect score (1). These allocations can later be claimed by each validator (link). Scores are monitored off-chain by an independent working group of validators (the Score Management Committee) running custom software based on the Community RPCs page at Vido by Atalma. This committee will create a Safe Multisig which itself has permissions to manage the on-chain `ScoreManager.sol` smart contract.
 
-- **Slashing of validator and group stake -** Some slashing conditions take a fixed amount of the Locked Gold stake put up by a validator. In these cases, the group through which that validator was elected for the epoch in which the slashing condition was proven is also slashed the same fixed amount. A validator or group's stake may be forfeit while it is registered or, after being deregistered, during the notice period (60 days for validators, 180 days for groups) and before the amount is withdrawn from the `LockedGold` contract.
+Every week, the Score Management Committee will collate their measurements, aggregate, and average their scores for each validator for the week prior. If the score is 1 (100%), no adjustments need to be made for that validator. If a validator’s score is less than 1, their score will be updated by the committee and will apply to their payments for the following week, at which time the score will be adjusted again.
 
-- **Suppression of future rewards -** Every validator group has a **slashing penalty**, initially `1.0`. All rewards to the group and to voters for the group are weighted by this factor. If a validator is slashed, the group through which that validator was elected for the epoch in which it misbehaved has the value of its slashing penalty halved. So long as no further slashing occurs, the slashing penalty is reset to `1.0` after `slashing_penalty_reset_epochs` epochs.
+Registering a validator RPC is not optional. If you do not have a configured RPC with sufficient uptime, you will be slashed. The Score Management Committee’s multisig will also be given permissions to slash validators.
 
-- **Ejection -** When a validator is slashed, it is immediately removed from the group of which it is currently a member (even if this group is not the group that elected the validator at the point the misbehavior was recorded). Since no changes in the active validator set are made during an epoch, this means an elected validator continues participate in consensus until the end of the epoch. The group can choose to re-add the validator at any point, provided the usual conditions are met (including that the validator has sufficient Locked Gold as stake).
+### 2. The Score Management Committee
 
-## Slashing Conditions
+The Score Management Committee will control a multisig which has the power given by Governance to call functions on the `ScoreManager` and `GovernanceSlasher` contract.
 
-There are three categories of slashing conditions:
 
-- Provable \(initiated off-chain, verifiable on-chain\)
-- Governed \(verified only by off-chain knowledge\)
+**Responsibilities:**
 
-### Provable
+- Running and maintaining additional infrastructure including DB and indexer for uptime tracking. The stack utilized will be open-sourced for anyone to verify.
+- Dedicated time for performance evaluation, collaboration, multisig operations, and transparent communication.
+- To cover operational expenses for monitoring uptime, maintaining additional infrastructure, and managing Scoring and Slashing, each committee member will receive $2k cUSD per month.
 
-Provable slashing conditions cannot be initiated automatically on chain but information provided from an external source can be definitively verified on-chain.
+### 3. Metrics
 
-In exchange for sending a transaction which initiates a successful provable slashing condition on-chain, the reporter receives a "reward", a portion of the slashed amount (which will always be greater than the gas costs of the proof). The reward is added to the reporter's balance of non-voting LockedGold. The remainder of the slashed amount is sent to the [Community Fund](/what-is-celo/using-celo/protocol/epoch-rewards/epoch-rewards-community-fund).
+Validator rewards will be allocated automatically after each epoch based on the score defined by the `ScoreManager` contract and can afterwards be claimed manually by the validator.
 
-- **Persistent downtime -** A validator which can be shown to be absent from 8640 consecutive BLS signatures will be slashed 100 CELO, have future rewards suppressed, and (most importantly in this case) will be ejected from its current group.
+The committee is proposing the following weekly score breakdown:
 
-- **Double Signing -** A validator which can be shown to have produced BLS signatures for 2 distinct blocks at the same height and in the same consensus round but with different hashes will be slashed 9000 CELO, have future rewards suppressed, and will be ejected from its current group. Note that unlike some proof-of-stake networks, Celo does not penalize validators for double signing regular consensus messages. In particular, one side-effect of how Celo provides liveness can result in cases where honest validators may legitimately double sign blocks across different rounds at the same height (Cosmos terms this [amnesia](https://github.com/tendermint/spec/blob/fa3430ad163a2a0ed77aa3f624a70cd9b8b84b78/spec/consensus/signing.md#other-rules) and also specifically excludes it from slashing).
+| RPC Uptime | Score |
+|------------|-------|
+| 100% - 80% | 1.00  |
+| 79% - 60%  | 0.80  |
+| 59% - 40%  | 0.60  |
+| 39% - 20%  | 0.40  |
+| 19% - 0%   | 0 and Slash |
 
-### **Governed**
+Validators with uptime below 20% for 7 days will be slashed. Running a community RPC node is mandatory for elected validators. If an elected validator does not run a properly configured RPC node, they will be slashed, and a portion of their locked Celo will be forfeited.
 
-For misbehavior which is harder to formally classify and requires some off-chain knowledge, slashing can be performed via [governance proposals](/what-is-celo/joining-celo/governance/overview/). These conditions are important for preventing nuanced validator attacks.
+Additionally, after the transition to Layer 2, we propose a 1-week grace period for validators to configure their RPC nodes. After that, the performance scoring system will be fully enforced.
+
+### 4. Other Considerations
+
+- We opted for a weekly cadence as daily updates and multi-sig coordination is outside the scope of a single small team.
+- We opted for only 5 sets of scores in a range, to avoid the transaction and workload of precisely updating validators every week.
+- Validator slashing remains part of the process. The idea behind this process is to maintain a competent and secure set of technical contributors for potential future operations. If a validator cannot continuously maintain this load, then they need to be ejected from the elected set and be replaced with someone who can.
+- This process will run for 6 months, or until decentralized sequencing has been introduced, to allow us to learn and adapt, and potentially change the management structure.
+- Future technical solutions that could be explored include: updating the Celo stats websocket push from full nodes and manage performance through that site (which would require work to update the code), or even integrating natively with Lavanet - a decentralized RPC management protocol that allows custom incentives for RPC providers.
+- RPC requests to community nodes will eventually be semi-random and include state queries etc., so that bad faith validators cannot simply proxy `eth_blockNumber` from another node - even Forno itself.
+
+### 5. References
+
+- [Overview of rewards and epochs in L2](https://specs.celo.org/smart_contract_updates_from_l1.html#overview-of-rewards-and-epochs-in-l2)
+- [Scoring](https://specs.celo.org/smart_contract_updates_from_l1.html#scoring)
+- [Slashing](https://specs.celo.org/smart_contract_updates_from_l1.html#slashing)
