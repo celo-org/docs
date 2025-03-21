@@ -19,7 +19,7 @@ Celo is open source and we welcome open participation. We strive to fulfill our 
 
 Our community includes a group of contributors who help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.
 
-- [Code](../contributors.md)
+- [Code Contributors](/what-is-celo/joining-celo/contributors)
 - [CIPs](/community/guidelines#-cips)
 
 ## Contributor Guidelines

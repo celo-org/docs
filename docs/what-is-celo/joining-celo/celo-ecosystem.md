@@ -7,8 +7,8 @@ Explore the many ways to engage with the Celo ecosystem and contribute to its gr
 ---
 
 ### As a User
-- [**Explore Projects on Celo:**](https://www.celopg.eco/ecosystem) Start using and engaging with Celo apps.
 
+- [**Explore Projects on Celo:**](https://www.celopg.eco/ecosystem) Start using and engaging with Celo apps.
 
 ### As a Developer
 
@@ -17,8 +17,8 @@ Explore the many ways to engage with the Celo ecosystem and contribute to its gr
 - [**Get involved in a local chapter:**](/general/ecosystem/daos) Attend in-person workshops for mentoring and support.
 - [**Paticipate in Celo Public Goods:**](https://www.celopg.eco/) Explore ongoing funding rounds.
 
-
 ### As a Founder
+
 - [**Register as an active Celo builder:**](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) Access exclusive resources and support.
 - [**Get your page added**](https://tally.so/r/w887RY) to our [**ecosystem page**](https://www.celopg.eco/ecosystem) managed by Celo Public Goods.
 - [**Introduce your project**](https://forum.celo.org/) in the [**Celo Forum**](https://forum.celo.org/) in the founders' category.
@@ -28,6 +28,7 @@ Explore the many ways to engage with the Celo ecosystem and contribute to its gr
 - Check out the [**Grant Playbook**](./guides/grant-playbook.md) and [**Fundraising Guide**](./guides/grant-playbook.md) for helpful tips to raise capital.
 
 ### As a Contributor
+
 - [**Participate in governance:**](/general/ecosystem/governance) Engage in current discussions and connect with the ecosystem.
 - [**Contribute to local chapters:**](/general/ecosystem/daos) Connect with the community, offer support, and mentor others.
 
@@ -59,5 +60,3 @@ Ask questions, find answers, and connect with the community.
 - [Celo Subreddit](https://www.reddit.com/r/celo/)
 - [Celo Website](https://celo.org/developers)
 - [Host a Meetup](https://airtable.com/shrTCM7LddTxOm3r6)
-
-

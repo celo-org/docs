@@ -165,7 +165,6 @@ There are a number of environment variables in this guide, and you may use this 
 | PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
 | DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
 
-
 ## Validator Node Setup
 
 This section outlines the steps needed to configure your Proxy and Validator nodes so that they are ready to sign blocks once elected.
@@ -198,11 +197,11 @@ Please complete this section if you are new to validating on Celo.
 
 Running a Celo Validator node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for signing blocks) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
 
-| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
-| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
+| Name of the key      | Purpose                                                                                                                                                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account key          | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
+| Validator signer key | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                       |
+| Vote signer key      | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                       |
 
 Note that Account and all the signer keys must be unique and may not be reused.
 
@@ -499,7 +498,7 @@ celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
 
 ### Run for election
 
-In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/protocol/pos/validator-groups.md#group-share), which is the fraction of epoch rewards paid to the group by its members.
+In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/what-is-celo/about-celo-l1/protocol/pos/validator-groups.md#group-share), which is the fraction of epoch rewards paid to the group by its members.
 We don't want to use our account key for validating, so first let's authorize the validator signing key:
 
 ```bash
