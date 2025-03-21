@@ -7,6 +7,13 @@ description: How to recover CELO (previously Celo Gold) if you accidentally tran
 
 How to recover [CELO (previously Celo Gold)](/general/) if you accidentally transferred them to an account generated using an Ethereum wallet.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 :::note
 
 You only need to go through this process when going from mnemonic (secret phrase) to account because of the different account derivation paths between Celo and Ethereum. This is only relevant if you're using a wallet that can’t connect to both the Ethereum and Celo networks or you can’t export the private key. Private key--account pairs are the same for both Celo and Ethereum, it's just menemonic (secret phrase) to private keys that are different.
