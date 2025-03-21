@@ -1,6 +1,6 @@
 ---
-title: Contract Addresses
-id: contract-addresses
+title: Core Contracts
+id: core-contracts
 ---
 
 import YouTube from '@components/YouTube';
