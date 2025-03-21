@@ -669,6 +669,11 @@ const sidebars = {
               label: "Launch AI Agent Memecoins",
               id: "build/build-with-ai/examples/ai-memecoins",
             },
+            {
+              type: "doc",
+              label: "Using GOAT Framework",
+              id: "build/build-with-ai/examples/building_with_goat",
+            }
           ]
         },
       ]
@@ -806,6 +811,241 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: "category",
+          label: "Contracts",
+          items: [
+            { type: "doc", label: "Core Contracts", id: "contracts/core-contracts" },
+            { type: "doc", label: "Token Contracts", id: "contracts/token-contracts" },
+            { type: "doc", label: "Uniswap Contracts", id: "contracts/uniswap-contracts" },
+          ],
+        },
+    {
+      type: "category",
+      label: "Wallets",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "wallet/index",
+        },
+        {
+          type: "category",
+          label: "MetaMask",
+          items: [
+            {
+              type: "doc",
+              label: "Add Celo to MetaMask",
+              id: "wallet/metamask/add-celo-testnet-to-metamask",
+            },
+            {
+              type: "doc",
+              label: "Programmatic Setup",
+              id: "wallet/metamask/setup",
+            },
+            {
+              type: "doc",
+              label: "Metmask and Celo",
+              id: "wallet/metamask/use",
+            },
+            {
+              type: "doc",
+              label: "MetaMask and Valora",
+              id: "wallet/metamask/import",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Ledger Wallet",
+          items: [
+            {
+              type: "doc",
+              label: "Ledger Wallet Setup",
+              id: "wallet/ledger/setup",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Terminal",
+              id: "wallet/ledger/to-celo-terminal",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Web Wallet",
+              id: "wallet/ledger/to-celo-web",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo CLI",
+              id: "wallet/ledger/to-celo-cli",
+            },
+          ],
+        },
+        {
+          type: "link",
+          label: "Staking",
+          href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Bridges",
+      id: "protocol/bridges"
+    },
+    {
+      type: "doc",
+      label: "Cross Chain Messaging",
+      id: "protocol/cross-chain-messaging"
+    },
+    {
+      type: "category",
+      label: "Explorers",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/explorers/overview",
+        },
+        {
+          type: "doc",
+          label: "Block Explorers",
+          id: "developer/explorers/block-explorers",
+        },
+        {
+          type: "doc",
+          label: "Analytics",
+          id: "developer/explorers/analytics",
+        },
+        {
+          type: "link",
+          label: "Blockscout",
+          href: "https://explorer.celo.org/",
+        },
+        {
+          type: "link",
+          label: "Celoscan",
+          href: "https://celoscan.io/",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Indexers",
+      items: [
+        { type: "doc", label: "Overview", id: "developer/indexer/overview" },
+        { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+        { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
+      ],
+    },
+    // {
+    //   type: "category",
+    //   label: "Networks",
+    //   items: [
+        // { type: "doc", label: "Overview", id: "network/index" },
+        // Nodes
+        // {
+        //   type: "category",
+        //   label: "Nodes",
+        //   items: [
+        //     {
+        //       type: "doc",
+        //       label: "Overview",
+        //       id: "network/node/overview",
+        //     },
+        //     {
+        //       type: "doc",
+        //       label: "Forno",
+        //       id: "network/node/forno",
+        //     },
+        //     {
+        //       type: "category",
+        //       label: "Run a Node",
+        //       items: [
+        //         {
+        //           type: "doc",
+        //           label: "Mainnet Full Node",
+        //           id: "network/node/run-mainnet",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Alfajores Full Node",
+        //           id: "network/node/run-alfajores",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Baklava Full Node",
+        //           id: "network/node/run-baklava",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Hosted Nodes",
+        //           id: "network/node/run-hosted",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        
+    //     {
+    //       type: "category",
+    //       label: "Disclaimers",
+    //       items: [
+    //         {
+    //           type: "doc",
+    //           label: "Mainnet",
+    //           id: "network/mainnet/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Alfajores Testnet",
+    //           id: "network/alfajores/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Baklava Testnet",
+    //           id: "network/baklava/disclaimer",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+    // {
+    //   type: "category",
+    //   label: "Setup",
+    //   items: [
+    //     {
+    //       type: "doc",
+    //       label: "Overview",
+    //       id: "developer/setup/overview",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Mac",
+    //       id: "developer/setup/mac",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Windows",
+    //       id: "developer/setup/windows",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Replit",
+    //       id: "developer/setup/replit",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Testnet Wallet",
+    //       id: "developer/setup/wallet",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Local Chain",
+    //       id: "developer/setup/development-chain",
+    //     },
+    //   ],
+    // },
     {
       type: "category",
       label: "Dev Environments",
@@ -1116,9 +1356,10 @@ const sidebars = {
       items: [
         { type: "doc", label: "Running Oracles", id: "protocol/oracle/run" },
         { type: "doc", label: "Overview", id: "protocol/oracle/index" },
-        { type: "doc", label: "Band Protocol", id: "protocol/oracle/band-protocol" },
-        { type: "doc", label: "RedStone", id: "protocol/oracle/redstone" },
-        { type: "doc", label: "Supra", id: "protocol/oracle/supra" },
+        { type: "doc", label: "Using Band Protocol", id: "protocol/oracle/band-protocol" },
+        { type: "doc", label: "Using Chainlink Oracles", id: "protocol/oracle/chainlink-oracles" },
+        { type: "doc", label: "Using RedStone", id: "protocol/oracle/redstone" },
+        { type: "doc", label: "Using Supra", id: "protocol/oracle/supra" },
       ],
     },    
     {
