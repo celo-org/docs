@@ -67,8 +67,8 @@ const whatIsCeloSidebar = [
     items: [
       {
         type: "doc",
-        label: "Celo Ecosystem",
-        id: "what-is-celo/joining-celo/celo-ecosystem",
+        label: "Overview",
+        id: "what-is-celo/joining-celo/index",
       },
       {
         type: "doc",

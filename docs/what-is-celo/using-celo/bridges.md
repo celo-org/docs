@@ -19,10 +19,10 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 ### Popular Bridges
 
-- [Portal Bridge (Wormhole)](https://portalbridge.com/)
 - [Squid Router V2](https://v2.app.squidrouter.com/?chains=10%2C42220&tokens=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee%2C0x471ece3750da237f93b8e339c536989b8978a438)
 - [LayerZero](https://layerzero.network/)
 - [Jumper Exchange](https://jumper.exchange/?fromChain=10&fromToken=0x0000000000000000000000000000000000000000&toChain=42220&toToken=0x471EcE3750Da237f93B8E339c536989b8978a438)
+- [Portal Bridge (Wormhole)](https://portalbridge.com/)
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
 - [Satellite (Axelar)](https://satellite.money/)
 - [Transporter (Chainlink CCIP)](https://www.transporter.io/)
@@ -37,6 +37,9 @@ Be sure you understand and review the risks when bridging assets between chains.
 :::info
 Native Bridging is only possible once Celo has become an L2. For now you can test it on the Alfajores L2 testnet.
 :::
+
+Native bridging refers to the process of transferring assets directly between Layer 2 (L2) networks without the need for intermediary networks or tokens. This method is designed to be more secure, efficient and cost-effective, leveraging the security and scalability of L2 solutions.
+
 
 - Superbridge Celo Mainnet - **not released**
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
