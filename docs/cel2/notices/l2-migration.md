@@ -109,7 +109,7 @@ Once the pre-migration is complete, you can start your L1 node again. The pre-mi
 ### Mainnet
 
 * Block number: `31056500`
-* Date: March 25, 2025
+* Date: March 26, 2025 (3:00 AM UTC)
 * Minimum `celo-blockchain` version: [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9)
 * `op-geth`: [celo-v2.0.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0)
 * `op-node`: [celo-v2.0.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0)
