@@ -1105,37 +1105,6 @@ const toolingSidebar = [
   },
   {
     type: "category",
-    label: "Explorers",
-    items: [
-      {
-        type: "doc",
-        label: "Overview",
-        id: "developer/explorers/overview",
-      },
-      {
-        type: "doc",
-        label: "Block Explorers",
-        id: "developer/explorers/block-explorers",
-      },
-      {
-        type: "doc",
-        label: "Analytics",
-        id: "developer/explorers/analytics",
-      },
-      {
-        type: "link",
-        label: "Blockscout",
-        href: "https://explorer.celo.org/",
-      },
-      {
-        type: "link",
-        label: "Celoscan",
-        href: "https://celoscan.io/",
-      },
-    ],
-  },
-  {
-    type: "category",
     label: "Verification",
     items: [
       {
@@ -1164,84 +1133,6 @@ const toolingSidebar = [
         id: "developer/verify/hardhat",
       },
     ],
-  },
-  {
-    type: "category",
-    label: "Wallets",
-    items: [
-      {
-        type: "doc",
-        label: "Overview",
-        id: "wallet/index",
-      },
-      {
-        type: "category",
-        label: "MetaMask",
-        items: [
-          {
-            type: "doc",
-            label: "Add Celo to MetaMask",
-            id: "wallet/metamask/add-celo-testnet-to-metamask",
-          },
-          {
-            type: "doc",
-            label: "Programmatic Setup",
-            id: "wallet/metamask/setup",
-          },
-          {
-            type: "doc",
-            label: "Metmask and Celo",
-            id: "wallet/metamask/use",
-          },
-          {
-            type: "doc",
-            label: "MetaMask and Valora",
-            id: "wallet/metamask/import",
-          },
-        ],
-      },
-      {
-        type: "category",
-        label: "Ledger Wallet",
-        items: [
-          {
-            type: "doc",
-            label: "Ledger Wallet Setup",
-            id: "wallet/ledger/setup",
-          },
-          {
-            type: "doc",
-            label: "Connect to Celo Terminal",
-            id: "wallet/ledger/to-celo-terminal",
-          },
-          {
-            type: "doc",
-            label: "Connect to Celo Web Wallet",
-            id: "wallet/ledger/to-celo-web",
-          },
-          {
-            type: "doc",
-            label: "Connect to Celo CLI",
-            id: "wallet/ledger/to-celo-cli",
-          },
-        ],
-      },
-      {
-        type: "link",
-        label: "Staking",
-        href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
-      },
-    ],
-  },
-  {
-    type: "doc",
-    label: "Bridges",
-    id: "what-is-celo/about-celo-l1/protocol/bridges",
-  },
-  {
-    type: "doc",
-    label: "Cross Chain Messaging",
-    id: "what-is-celo/about-celo-l1/protocol/cross-chain-messaging",
   },
   {
     type: "category",
@@ -1283,15 +1174,6 @@ const toolingSidebar = [
     type: "doc",
     label: "Fee Abstraction",
     id: "developer/fee-currency",
-  },
-  {
-    type: "category",
-    label: "Indexers",
-    items: [
-      { type: "doc", label: "Overview", id: "developer/indexer/overview" },
-      { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
-      { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
-    ],
   },
   {
     type: "doc",
