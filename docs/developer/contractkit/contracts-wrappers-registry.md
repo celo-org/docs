@@ -7,6 +7,14 @@ description: How to interact with CELO assets using the wrapper and registry Cel
 
 How to interact with CELO assets using the wrapper and registry Celo Core Contracts.
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ---
 
 ## Interacting with CELO & cUSD
