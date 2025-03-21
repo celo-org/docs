@@ -232,11 +232,6 @@ const whatIsCeloSidebar = [
                 label: "Attestation Service",
                 id: "what-is-celo/joining-celo/contributors/release-process/attestation-service",
               },
-              {
-                type: "doc",
-                label: "Celo Oracles",
-                id: "what-is-celo/joining-celo/contributors/release-process/celo-oracles",
-              },
             ],
           },
         ],

@@ -19,4 +19,3 @@ It is critical that updates to the Celo platform can be released on a regular ba
 - [Blockchain Client](/what-is-celo/joining-celo/contributors/release-process/blockchain-client)
 - [CeloCLI and ContractKit](/what-is-celo/joining-celo/contributors/release-process/base-cli-contractkit-dappkit-utils)
 - [Attestation Service](/what-is-celo/joining-celo/contributors/release-process/attestation-service)
-- [Celo Oracles](/what-is-celo/joining-celo/contributors/release-process/celo-oracles)

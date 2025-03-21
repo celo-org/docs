@@ -10,6 +10,13 @@ Whether you're just starting or are an experienced developer, Celo offers a vari
 
 The Celo Builder Community is a global network of developers, entrepreneurs, and enthusiasts dedicated to building a regenerative digital economy that promotes prosperity for all. By joining, you'll have the opportunity to create onchain apps and tools that drive financial inclusion and support sustainable development on a global scale.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ## How to Get Involved:
 
 There are several ways to get started as a builder on Celo:

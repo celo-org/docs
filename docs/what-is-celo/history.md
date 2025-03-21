@@ -7,6 +7,13 @@ import ReactYouTube from "react-youtube";
 
 Celo launched on Earth Day 2020 as an energy-efficient and low-cost Layer 1 blockchain. Since its inception, Celo has continually evolved to adapt to the changing landscape of blockchain technology and needs of its users in the broader crypto ecosystem.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## The Evolution of Celo: From Layer 1 to Layer 2

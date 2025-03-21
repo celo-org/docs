@@ -7,14 +7,19 @@ description: Introduction to transactions on Celo.
 
 Introduction to transactions on Celo, gas fees 
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
-
-
-
 
 ## Gas Pricing
 
 :::info
+
 This section is a work in progress and based on the ["The Great Celo Halvening - Proposed Tokenomics in the Era of Celo L2"](https://forum.celo.org/t/the-great-celo-halvening-proposed-tokenomics-in-the-era-of-celo-l2/9701/1). Please check the [forum](https://forum.celo.org/) for the latest information.
 :::
 

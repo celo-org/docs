@@ -1,11 +1,18 @@
 ---
-title: Governance
+title: Celo Governance
+description: Overview of Celo governance and how the network is managed using the stakeholder proposal process.
 ---
-
 
 This is an overview of Celo governance and how the network is managed using the stakeholder proposal process. Celo ecosystem is evolving and this guide includes Celo network management as well as community funding proposals.
 
-*** 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
+---
 
 ## What is Celo Governance?
 Celo uses a formal onchain governance mechanism to manage and upgrade the protocol such as for upgrading smart contracts, adding new stable currencies, or modifying the reserve target asset allocation. All changes must be agreed upon by CELO holders. A quorum threshold model is used to determine the number of votes needed for a proposal to pass.

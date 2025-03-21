@@ -8,6 +8,13 @@ import ColoredText from '/src/components/ColoredText';
 
 How to contribute to open source projects and further the growth of the Celo ecosystem.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## How to Contribute
@@ -26,6 +33,13 @@ To contribute to Celo, the following accounts are necessary:
 - <ColoredText>[Discord:](https://discord.com/invite/celo)</ColoredText> Required for engaging with the Celo community.
 
 ## Repositories to Get Started
+
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
 
 Browse the code, raise an issue, or contribute a pull request.
 
