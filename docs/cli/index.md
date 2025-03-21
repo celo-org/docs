@@ -19,7 +19,7 @@ It’s a command-line interface around the ContractKit. It allows you to interac
 
 ### Homebrew {#brew-tap}
 
-IF you're on macOS or Linux celocli is available as a *tap* on HomeBrew. 
+If you're on macOS or Linux, celocli is available as a *tap* on Homebrew. 
 
 ```bash
 brew tap celo-org/brew
