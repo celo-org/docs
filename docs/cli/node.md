@@ -7,7 +7,7 @@ Manage your Celo node
 * [`celocli node:list`](#celocli-nodelist)
 * [`celocli node:synced`](#celocli-nodesynced)
 
-## `celocli node:accounts` {#celocli-nodeaccounts}
+## `celocli node:accounts`
 
 List the addresses that this node has the private keys for.
 
@@ -59,7 +59,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/node/accounts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/node/accounts.ts)_
 
-## `celocli node:list` {#celocli-nodelist}
+## `celocli node:list`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -106,7 +106,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli node:synced` {#celocli-nodesynced}
+## `celocli node:synced`
 
 Check if the node is synced
 
