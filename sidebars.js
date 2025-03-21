@@ -15,6 +15,69 @@ const whatIsCeloSidebar = [
       { type: "doc", label: "Overview", id: "what-is-celo/using-celo/index" },
       {
         type: "category",
+        label: "Protocol",
+        items: [
+          {
+            type: "doc",
+            label: "Overview",
+            id: "what-is-celo/using-celo/protocol/index",
+          },
+          {
+            type: "doc",
+            label: "Penalties",
+            id: "what-is-celo/using-celo/protocol/penalties",
+          },
+          {
+            type: "doc",
+            label: "Consensus",
+            id: "what-is-celo/using-celo/protocol/consensus",
+          },
+          {
+            type: "doc",
+            label: "Escrow",
+            id: "what-is-celo/using-celo/protocol/escrow",
+          },
+          {
+            type: "category",
+            label: "Epoch Rewards",
+            items: [
+              {
+                type: "doc",
+                label: "Community Fund",
+                id: "what-is-celo/using-celo/protocol/epoch-rewards/epoch-rewards-community-fund",
+              },
+              {
+                type: "doc",
+                label: "Carbon Offsetting Fund",
+                id: "what-is-celo/using-celo/protocol/epoch-rewards/epoch-rewards-carbon-offsetting-fund",
+              },
+            ],
+          },
+          {
+            type: "category",
+            label: "Transactions",
+            items: [
+              {
+                type: "doc",
+                label: "Overview",
+                id: "what-is-celo/using-celo/protocol/transaction/overview",
+              },
+              {
+                type: "doc",
+                label: "TX Comment Encryption",
+                id: "what-is-celo/using-celo/protocol/transaction/tx-comment-encryption",
+              },
+              {
+                type: "doc",
+                label: "Transaction Types",
+                id: "what-is-celo/using-celo/protocol/transaction/transaction-types",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "category",
         label: "Manage",
         items: [
           {
@@ -134,6 +197,42 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Documentation Contributors",
             id: "what-is-celo/joining-celo/contributors/documentation-contributors",
+          },
+          {
+            type: "category",
+            label: "Release Process",
+            items: [
+              {
+                type: "doc",
+                label: "Overview",
+                id: "what-is-celo/joining-celo/contributors/release-process/index",
+              },
+              {
+                type: "doc",
+                label: "Smart Contracts",
+                id: "what-is-celo/joining-celo/contributors/release-process/smart-contracts",
+              },
+              {
+                type: "doc",
+                label: "Blockchain Client",
+                id: "what-is-celo/joining-celo/contributors/release-process/blockchain-client",
+              },
+              {
+                type: "doc",
+                label: "CeloCLI and ContractKit",
+                id: "what-is-celo/joining-celo/contributors/release-process/base-cli-contractkit-dappkit-utils",
+              },
+              {
+                type: "doc",
+                label: "Attestation Service",
+                id: "what-is-celo/joining-celo/contributors/release-process/attestation-service",
+              },
+              {
+                type: "doc",
+                label: "Celo Oracles",
+                id: "what-is-celo/joining-celo/contributors/release-process/celo-oracles",
+              },
+            ],
           },
         ],
       },
@@ -297,11 +396,6 @@ const whatIsCeloSidebar = [
                 label: "Overview",
                 id: "what-is-celo/about-celo-l1/protocol/identity/index",
               },
-              {
-                type: "link",
-                label: "Social Connect",
-                href: "https://github.com/celo-org/Social-Connect",
-              },
               "what-is-celo/about-celo-l1/protocol/identity/metadata",
               "what-is-celo/about-celo-l1/protocol/identity/smart-contract-accounts",
               "what-is-celo/about-celo-l1/protocol/identity/encrypted-cloud-backup",
@@ -360,42 +454,6 @@ const whatIsCeloSidebar = [
                 type: "doc",
                 label: "Add A Contract",
                 id: "what-is-celo/about-celo-l1/protocol/contracts/add-contract",
-              },
-            ],
-          },
-          {
-            type: "category",
-            label: " Release Process",
-            items: [
-              {
-                type: "doc",
-                label: "Overview",
-                id: "community/release-process/index",
-              },
-              {
-                type: "doc",
-                label: "Smart Contracts",
-                id: "community/release-process/smart-contracts",
-              },
-              {
-                type: "doc",
-                label: "Blockchain Client",
-                id: "community/release-process/blockchain-client",
-              },
-              {
-                type: "doc",
-                label: "CeloCLI and ContractKit",
-                id: "community/release-process/base-cli-contractkit-dappkit-utils",
-              },
-              {
-                type: "doc",
-                label: "Attestation Service",
-                id: "community/release-process/attestation-service",
-              },
-              {
-                type: "doc",
-                label: "Celo Oracles",
-                id: "community/release-process/celo-oracles",
               },
             ],
           },
