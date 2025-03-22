@@ -13,6 +13,10 @@ Celo is an emerging Ethereum Layer 2 built for the real world and designed for f
 
 Celo is an emerging Ethereum Layer-2 designed to make blockchain technology accessible to all. With its focus on scalability, low fees, and ease of use, Celo is ideal for building blockchain products that reach millions of users around the globe.
 
+Rene Reinsberg speaks about Celo as the chain for Real-World Adoption.
+
+<YouTube videoId="PvZw4NxnKr8"/>
+
 ## Why Build on Celo?
 
 Celo is fully EVM-compatible, offering the same development experience as Ethereum with improved scalability and lower costs.
