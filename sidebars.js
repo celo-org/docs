@@ -325,22 +325,22 @@ const sidebars = {
                 "protocol/transaction/transaction-types",
               ],
             },
-            {
-              type: "category",
-              label: "Stability",
-              items: [
-                {
-                  type: "doc",
-                  label: "Overview",
-                  id: "protocol/stability/index",
-                },
-                "protocol/stability/doto",
-                "protocol/stability/granda-mento",
-                "protocol/stability/oracles",
-                "protocol/stability/stability-fees",
-                "protocol/stability/adding-stable-assets",
-              ],
-            },
+//            {
+//              type: "category",
+//              label: "Stability",
+//              items: [
+//                {
+//                  type: "doc",
+//                  label: "Overview",
+//                  id: "protocol/stability/index",
+//                },
+//                "protocol/stability/doto",
+//                "protocol/stability/granda-mento",
+//                "protocol/stability/oracles",
+//                "protocol/stability/stability-fees",
+//                "protocol/stability/adding-stable-assets",
+//              ],
+//            },
             {
               type: "category",
               label: "Identity",
@@ -999,6 +999,7 @@ const sidebars = {
           type: "category",
           label: "CLI",
           items: [
+            { type: "doc", label: "Overview", id: "cli/index" },
             { type: "doc", label: "Account", id: "cli/account" },
             { type: "doc", label: "Commands", id: "cli/commands" },
             { type: "doc", label: "Config", id: "cli/config" },
