@@ -784,6 +784,11 @@ const sidebars = {
           id: "network/node/forno",
         },
         {
+          type: "doc",
+          label: "Alchemy",
+          id: "network/node/alchemy",
+        },
+        {
           type: "category",
           label: "Run a Node",
           items: [
