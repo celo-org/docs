@@ -12,16 +12,16 @@ import TabItem from "@theme/TabItem";
 
 Web3.js has been deprecated. If you are using web3.js in your project, we suggest migrating to viem. For the meantime, we suggest you use the Web3.js Celo plugin. Learn more below.
 
-[Fee Abstraction](../fee-currency.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
+[Fee Abstraction](../fee-abstraction.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
 :::
 
-Web3.js was established in 2014, making it the oldest web3 library. With extensive documentation, an active community and modular design, Web3.js is powerful and easy-to-use. It has _support for Celo features (specifically **[Fee Abstraction](../fee-currency.md)** via plugins since version 4.13.1_.
+Web3.js was established in 2014, making it the oldest web3 library. With extensive documentation, an active community and modular design, Web3.js is powerful and easy-to-use. It has _support for Celo features (specifically **[Fee Abstraction](../fee-abstraction.md)** via plugins since version 4.13.1_.
 
 To learn more about building with Web3.js, check out their [docs](https://docs.web3js.org/) as they have excellent examples of how to use it in your project.
 
 ### Fee Abstraction with Web3.js
 
-[Fee Abstraction](../fee-currency.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
+[Fee Abstraction](../fee-abstraction.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
 
 #### Requirements
 
@@ -29,7 +29,7 @@ To learn more about building with Web3.js, check out their [docs](https://docs.w
 
 #### Install the Celo Web3.js Plugin
 
-For Celo' specific features like [Fee Abstraction](../fee-currency.md) transactions you need to install `@celo/web3-plugin-transaction-types` as well as `web3@4.13.1` or higher. This also adds utils like `getCoreContractAddress` for fetching core contract address from onchain registry. This is useful to get the stablecoin addresses you are planning to use programmatically. Make sure they are listed in the [**FeeCurrencyWhitelist.sol**](/contracts/core-contracts).
+For Celo' specific features like [Fee Abstraction](../fee-abstraction.md) transactions you need to install `@celo/web3-plugin-transaction-types` as well as `web3@4.13.1` or higher. This also adds utils like `getCoreContractAddress` for fetching core contract address from onchain registry. This is useful to get the stablecoin addresses you are planning to use programmatically. Make sure they are listed in the [**FeeCurrencyWhitelist.sol**](/contracts/core-contracts).
 
 {/* prettier-ignore-start */}
 

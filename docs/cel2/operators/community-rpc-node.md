@@ -4,7 +4,7 @@ After Celo Mainnet transitions to L2, validators that are eligible, registered a
 
 ## Registering
 
-To register as a validator, follow [the instructions](/validator/run/mainnet#registering-as-a-validator). The only difference is that BLS signatures are not required.
+To register as a validator, follow [the instructions](/what-is-celo/about-celo-l1/validator/run/mainnet#registering-as-a-validator). The only difference is that BLS signatures are not required.
 
 ## Run a node
 
@@ -43,7 +43,7 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
     :::info
 
-    If your account is a [ReleaseGold contract](/holder/manage/release-gold), you should use the command `$ celocli releasecelo:set-account`. Docs can be found [here](/cli/releasecelo#celocli-releaseceloset-account).
+    If your account is a [ReleaseGold contract](/what-is-celo/using-celo/manage/release-gold), you should use the command `$ celocli releasecelo:set-account`. Docs can be found [here](/cli/releasecelo#celocli-releaseceloset-account).
 
     :::
 

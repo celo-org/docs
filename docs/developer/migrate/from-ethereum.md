@@ -17,7 +17,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 :::tip
 
-For a general overview of the Celo network and architecture, see [the Celo Overview page](/general/).
+For a general overview of the Celo network and architecture, see [the Celo Overview page](/what-is-celo/using-celo/).
 
 :::
 
@@ -95,11 +95,11 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 2.  Celo transaction objects are slightly different from transaction objects on Ethereum.
     Ethereum transaction objects include fields to, value, gas, gasPrice, data, nonce, signature (v,r,s).
     Celo transaction objects include the same fields as Ethereum transaction objects, plus the feeCurrency field.
-    This additional field is included to allow users to [pay transaction fees in different currencies.](/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
+    This additional field is included to allow users to [pay transaction fees in different currencies.](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
 
 1)  When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
 
-2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/protocol/identity/smart-contract-accounts).
+2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/what-is-celo/about-celo-l1/protocol/identity/smart-contract-accounts).
 
 ## Deploying Ethereum Contracts to Celo
 
@@ -117,11 +117,11 @@ Celo includes all of the precompiled contracts in Ethereum, but also adds additi
 
 ### Core Contract Calls
 
-The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/protocol/pos/epoch-rewards), [validator elections](/protocol/pos/validator-elections), etc.), but not all. For example, the [gas price minimum](/protocol/transaction/gas-pricing) update can happen on any block.
+The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards), [validator elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections), etc.), but not all. For example, the [gas price minimum](/what-is-celo/about-celo-l1/protocol/transaction/gas-pricing) update can happen on any block.
 Logs created by these contract changes are included in a single additional receipt in that block, which references the block hash as its transaction hash, even though there is no transaction with this hash. If no logs were created by such calls in that block, no receipt is added.
 
 ### Node management APIs
 
-Celo nodes have a slightly different RPC interface than geth nodes. There are some additional RPC endpoints to help validators manage their nodes, they can be found [here](/validator/proxy#rpc-api) and [here](/validator/node-upgrade#hotswapping-validator-nodes).
+Celo nodes have a slightly different RPC interface than geth nodes. There are some additional RPC endpoints to help validators manage their nodes, they can be found [here](/what-is-celo/about-celo-l1/validator/proxy#rpc-api) and [here](/what-is-celo/about-celo-l1/validator/node-upgrade#hotswapping-validator-nodes).
 
 You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/celo-blockchain/blob/master/internal/web3ext/web3ext.go).

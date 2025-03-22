@@ -46,7 +46,7 @@ ContractKit is now a [suite of packages](https://github.com/celo-org/celo-monore
 
 - `Explorer` depends on `contractkit` and `connect`. It provides some utility functions that make it easy to listen for new block and log information.
 - `Governance` depends on `contractkit` and `explorer`. It provides functions to read and interact with Celo Governance Proposals (CGPs).
-- `Identity` simplifies interacting with [ODIS](/protocol/identity/odis), Celo’s lightweight identity layer based on phone numbers.
+- `Identity` simplifies interacting with [ODIS](/what-is-celo/about-celo-l1/protocol/identity/odis), Celo’s lightweight identity layer based on phone numbers.
 - `Network-utils` provides utilities for getting genesis block and static node information.
 - `Transactions-uri` makes it easy to generate Celo transaction URIs and QR codes.
 

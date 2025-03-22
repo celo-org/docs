@@ -21,7 +21,7 @@ The [Baklava Testnet](/network/baklava/) is focused on building operational expe
 
 :::tip
 
-Please refer to [Key Concepts](/overview#blockchain) for background on blockchains and an explanation of terms used in the section.
+Please refer to [Key Concepts](/what-is-celo/using-celo/glossary#blockchain) for background on blockchains and an explanation of terms used in the section.
 
 :::
 

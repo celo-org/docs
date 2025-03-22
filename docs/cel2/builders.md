@@ -34,7 +34,7 @@ You can get funds from the [Alfajores Faucet](https://faucet.celo.org/alfajores)
 - [@viem >=2](https://www.npmjs.com/package/viem)
 
 Additionally, have a look at the [ContractKit Celo L2 Guide](https://docs.google.com/document/d/1F-9OtZeFOhB7SbgWyUHjOgxBwF-749URZDK0OpgtAqE/edit)
-  
+
 ## Getting help
 
 Reach out to us!
@@ -43,9 +43,8 @@ Reach out to us!
 - Any type of question? Reach out on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel.
 
 Also check out these resources:
-  
-- [Celo Docs](../welcome.md)
+
+- [Celo Docs](https://docs.celo.org/)
 - [Celo L2 Specifications](https://specs.celo.org/)
 - [Transaction types on Celo](https://github.com/celo-org/txtypes)
 - [Celo Forum](https://forum.celo.org/)
-  

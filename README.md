@@ -29,7 +29,7 @@ The .md files in the docs directory are the docs. See the [Docusaurus website](h
 
 ## Contributing
 
-We welcome contributions from the community. Please review our [contribution guidelines](docs/community/contributing.md) for more information.
+We welcome contributions from the community. Please review our [contribution guidelines](docs/what-is-celo/joining-celo/contributors/documentation-contributors.md) for more information.
 
 You can find many of the other main Celo project repositories at https://github.com/celo-org.
 
@@ -51,4 +51,4 @@ Join us on [Discord](https://chat.celo.org) or file an issue.
 
 ## Code of Conduct
 
-Please review the [code of conduct](/docs/community/code-of-conduct.md) before contributing.
+Please review the [code of conduct](/docs/what-is-celo/joining-celo/contributors/code-of-conduct.md) before contributing.

@@ -20,7 +20,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 Celo is designed to work seamlessly with a range of wallets, each offering features to meet different user needs. 
 
-The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](https://docs.celo.org/protocol/identity) and [fee abstraction](https://docs.celo.org/developer/fee-currency).
+The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](https://docs.celo.org/what-is-celo/about-celo-l1/protocol/identity) and [fee abstraction](https://docs.celo.org/developer/fee-abstraction).
 
 The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets wallets that support the Celo network.
 
