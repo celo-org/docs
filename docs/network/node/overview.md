@@ -99,7 +99,11 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 
 ### [All that node](https://www.allthatnode.com/celo.dsrv)
 
-All That Node supports public and private RPC nodes for Mainnet, Alfajores and Baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
+All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded.
+You can also claim Alfajores funds from the faucet in the site without signing up.
+
+#### **Supported Networks**
+- Celo Mainnet
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 
