@@ -1,5 +1,5 @@
 ---
-title: One-Click Quickstart
+title: One-Click Deploy
 ---
 
 Create and deploy Web3 apps effortlessly with Thirdweb and Celo. 
@@ -10,8 +10,9 @@ Create and deploy Web3 apps effortlessly with Thirdweb and Celo.
 
 By the end of this tutorial, you will:
 
-* Be able to transfer Celo to another address
-* Have a mintable **NFT Drop**.
+- Be able to transfer Celo to another address
+- Have a mintable **NFT Drop**.
+- Build an **NFT gallery**
 
 ## Prerequisites
 
@@ -20,8 +21,8 @@ By the end of this tutorial, you will:
 
 ## Fund Your Wallet  
 
-1. Ensure you have sufficient funds to cover the transaction fees.  
-2. Visit the [Alfajores Faucet](https://faucet.celo.org/alfajores) to claim test tokens using a wallet address. ***Remember to claim only what you need.***
+1. Ensure there are sufficient funds to cover the transaction fees.  
+2. Visit the [Alfajores Faucet](https://faucet.celo.org/alfajores) to claim test tokens using a wallet address. ***Remember to claim only what is needed.***
 
 ## Create a Contract on Thirdweb
 
@@ -34,8 +35,10 @@ By the end of this tutorial, you will:
 7. Click **`Deploy Now`** to finalize the process.  
 8. After deployment, well’ll be redirected to the dashboard to upload your NFTs.  
 9. Provide a **name**, upload an **image**, add a **description**, and define **traits** for the NFT.  
-10. **Lazy Mint** the NFT.  
-11. Copy the **`contract address`** from the NFT dashboard.  
+10. **Lazy Mint** the NFT.
+11. Repeat steps 9 and 10 a few times—we need at least **3 NFTs**.  
+12. Copy your **`contract address`** from the NFT dashboard.
+13. Copy the **`contract address`** from the NFT dashboard.  
 
 ## Make the NFT Mintable
 
@@ -56,37 +59,40 @@ By the end of this tutorial, you will:
 1. Clone the repository: 
  
    ```sh
-   git clone https://github.com/celo-org/one-click-quickstart
-   cd one-click-quickstart
+   git https://github.com/atejada/celo-one-click-deploy
+   cd celo-one-click-deploy
    ```
-   
+  
 2. Install dependencies:
 
 
-	```sh
-	npm install
-	```
+   ```sh
+   npm install
+   ```
 	
 3. Create a .env file with the following content:
 
 
-	```sh
-	VITE_CLIENTID=your_thirdweb_client_id
-	VITE_ADDRESS=your_nft_contract_address
-	VITE_ADRESS_TO=your_wallet_address
-	```	
+   ```sh
+   VITE_CLIENTID = THIRD_WEB_CLIENT_ID
+   VITE_ADDRESS = MINTABLE_NFT_CONTRACT
+   VITE_GALLERY_ADDRESS = NFT_GALLERY_CONTRACT
+   VITE_ADDRESS_TO = ACCOUNT_TO_SEND_CELO_TO
+   ```	
 	
 4. Run the project:
 
 
-	```sh
+   ```sh
    npm run dev
-	```
+   ```
 	
-Once the project is running, there will be two links, the first named **Send Celo** and the second named **Mint NFT**. 
+Once the project is running, there will be three links, the first named **Send Celo**, the second **NFT Gallery** and the third 
+named **Mint NFT**.
+
 The first one will be displayed by default. Click on the **Connect** button to connect the wallet. Enter an 
-address and an amount of Celo to transfer. The second link will display an NFT along with its description and by pressing
-the mint button, 0.1 Celo will be paid.
+address and an amount of Celo to transfer. The second link will display an NTF with a combo box at the top, to choose between 3 different
+NFTs. The third and last link will display an NFT along with its description and by pressing the mint button, 0.1 Celo will be paid.
 
 ## Join Build with Celo - Proof of Ship
 

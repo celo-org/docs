@@ -594,27 +594,27 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
-    {
-      type: "category",
-      label: "Build with Thirdweb",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "build/build-with-thirdweb/overview",
-        },
-        {
-          type: "doc",
-          label: "One-click Quickstart",
-          id: "build/build-with-thirdweb/one-click quickstart",
-        },
-        {
-          type: "doc",
-          label: "Celo NFT Drop Tutorial",
-          id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
-        },
-      ],
-    },
+    //{
+      //type: "category",
+      //label: "Build with Thirdweb",
+      //items: [
+        //{
+          //type: "doc",
+          //label: "Overview",
+          //id: "build/build-with-thirdweb/overview",
+        //},
+        //{
+          //type: "doc",
+          //label: "One-click Quickstart",
+          //id: "build/build-with-thirdweb/one-click quickstart",
+        //},
+        //{
+          //type: "doc",
+          //label: "Celo NFT Drop Tutorial",
+          //id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
+        //},
+      //],
+    //},
     {
       type: "category",
       label: "Build with AI",
@@ -969,11 +969,24 @@ const sidebars = {
           label: "Using Foundry",
           id: "developer/deploy/foundry",
         },
-        {
-          type: "doc",
-          label: "Using thirdweb",
-          id: "developer/deploy/thirdweb",
-        },
+        
+    {
+      type: "category",
+      label: "Using thirdweb",
+      items: [
+        { type: "doc", label: "Overview", id: "developer/deploy/thirdweb/overview" },
+        { type: "doc", label: "Deploy with Thirdweb CLI", id: "developer/deploy/thirdweb/thirdweb" },
+        { type: "doc", label: "One-Click Deploy", id: "developer/deploy/thirdweb/one-click-deploy" },
+      ],
+    },        
+        
+        
+        //{
+        //  type: "doc",
+        //  label: "Using thirdweb",
+        //  id: "developer/deploy/thirdweb",
+        //},
+        
         {
           type: "doc",
           label: "Using Remix",
