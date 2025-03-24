@@ -13,7 +13,7 @@ Delegate locked celo.
 * [`celocli lockedcelo:update-delegated-amount`](#celocli-lockedceloupdate-delegated-amount)
 * [`celocli lockedcelo:withdraw`](#celocli-lockedcelowithdraw)
 
-## `celocli lockedcelo:delegate`
+## `celocli lockedcelo:delegate` {#celocli-lockedcelodelegate}
 
 Delegate locked celo.
 
@@ -82,7 +82,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate.ts)_
 
-## `celocli lockedcelo:delegate-info`
+## `celocli lockedcelo:delegate-info` {#celocli-lockedcelodelegate-info}
 
 Delegate info about account.
 
@@ -144,7 +144,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate-info.ts)_
 
-## `celocli lockedcelo:lock`
+## `celocli lockedcelo:lock` {#celocli-lockedcelolock}
 
 Locks CELO to be used in governance and validator elections.
 
@@ -209,7 +209,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/lock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/lock.ts)_
 
-## `celocli lockedcelo:max-delegatees-count`
+## `celocli lockedcelo:max-delegatees-count` {#celocli-lockedcelomax-delegatees-count}
 
 Returns the maximum number of delegates allowed per account.
 
@@ -267,7 +267,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/max-delegatees-count.ts)_
 
-## `celocli lockedcelo:revoke-delegate`
+## `celocli lockedcelo:revoke-delegate` {#celocli-lockedcelorevoke-delegate}
 
 Revoke delegated locked celo.
 
@@ -336,7 +336,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/revoke-delegate.ts)_
 
-## `celocli lockedcelo:show ARG1`
+## `celocli lockedcelo:show ARG1` {#celocli-lockedceloshow-arg1}
 
 Show Locked Celo information for a given account. This includes the total amount of locked celo, the amount being used for voting in Validator Elections, the Locked Celo balance this account is required to maintain due to a registered Validator or Validator Group, and any pending withdrawals that have been initiated via "lockedcelo:unlock".
 
@@ -374,7 +374,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/show.ts)_
 
-## `celocli lockedcelo:unlock`
+## `celocli lockedcelo:unlock` {#celocli-lockedcelounlock}
 
 Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "lockedgold:withdraw".
 
@@ -441,7 +441,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/unlock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/unlock.ts)_
 
-## `celocli lockedcelo:update-delegated-amount`
+## `celocli lockedcelo:update-delegated-amount` {#celocli-lockedceloupdate-delegated-amount}
 
 Updates the amount of delegated locked celo. There might be discrepancy between the amount of locked celo and the amount of delegated locked celo because of received rewards.
 
@@ -508,7 +508,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/lockedcelo/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/update-delegated-amount.ts)_
 
-## `celocli lockedcelo:withdraw`
+## `celocli lockedcelo:withdraw` {#celocli-lockedcelowithdraw}
 
 Withdraw any pending withdrawals created via "lockedgold:unlock" that have become available.
 

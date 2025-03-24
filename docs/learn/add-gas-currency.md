@@ -3,10 +3,9 @@ title: Adding Gas Currencies to Celo
 description: Documentation relevant to how to add currencies on Celo
 ---
 
-
 # Adding Gas Currencies to Celo
 
-The Celo protocol [supports paying](/protocol/transaction/erc20-transaction-fees) gas in tokens other than the native one, Celo. This document outlines requirements and processes to add a new gas token.
+The Celo protocol [supports paying](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees) gas in tokens other than the native one, Celo. This document outlines requirements and processes to add a new gas token.
 
 :::warning
 As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
@@ -20,7 +19,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 ### Token implementation
 
 A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with the following signatures:
-
 
 ```
 function debitGasFees(address from, uint256 value) external;
@@ -49,10 +47,9 @@ If any of these two functions reverts, the transaction will not be included in a
 
 Example implementations of `debitGasFees` and `creditGasFees` can be found in [Mento's StableCoins contracts codebase](https://github.com/mento-protocol/mento-core/blob/develop/contracts/tokens/StableTokenV2.sol#L264).
 
-
 ### Oracle
 
-Celo blockchains uses the core contract SortedOracle as a the source of the rate the tokens should be priced at the moment a validator is attempting to include the transaction in a block. The address of the token and the address of the oracle has to be added to SortedOracle using the function `addOracle(address token, address oracleAddress)`. 
+Celo blockchains uses the core contract SortedOracle as a the source of the rate the tokens should be priced at the moment a validator is attempting to include the transaction in a block. The address of the token and the address of the oracle has to be added to SortedOracle using the function `addOracle(address token, address oracleAddress)`.
 
 Then, at least one rate should have been submitted using `report(address token, uint256 value, address lesserKey, address greaterKey)`. The price reported is the price of Celo in units of the token to be added.
 
@@ -60,10 +57,9 @@ An reference implementation of oracle provider client can be [found here](https:
 
 Sorted Oracles was originally designed to support the [Mento protocol](https://www.mento.org/). For this reason, the reference implementation of the oracle client supports reporting with a high frequency (in the context of a blockchain). If the goal of the oracle is solely to support a gas currency, reports could be significantly more spaced out, as gas pricing is not as sensible to manipulation as an arbitrage protocol.
 
-
 ## Governance Process
 
-To enable a token as gas currency, two [governance proposals](/protocol/governance) need to be passed.
+To enable a token as gas currency, two [governance proposals](/what-is-celo/using-celo/protocol/governance/overview) need to be passed.
 
 ### Enabling the Oracle
 
@@ -82,7 +78,6 @@ The second proposal enables the gas token by calling `addToken(address tokenAddr
 An example of such proposal [can be found here](https://github.com/sirpy/governance/blob/1cee2314b357246385819e7e0713a272a55b0ec3/CGPs/cgp-0089.md).
 
 It would be a good consideration to update popular tooling (like contractkit) before this proposal passes so that most developers are ready to use the new gas as soon as it enabled.
-
 
 ### Enabling with just one proposal
 

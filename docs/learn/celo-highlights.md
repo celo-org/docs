@@ -20,7 +20,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
-The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/).
+The Celo protocol also includes mechanisms for [lightweight identity](/what-is-celo/about-celo-l1/protocol/identity/).
 
 **Innovative tools to build native mobile dApps:**
 
@@ -76,15 +76,15 @@ Celo includes native support for multiple [ERC20-like stable currencies](learn/c
 
 **Accounts Linked to Phone Numbers **
 
-Celo maintains a secure [decentralized mapping of phone numbers](/protocol/identity/) that allow wallet users to send and receive payments with their existing contacts simply and with confidence that the payment will reach the intended recipient.
+Celo maintains a secure [decentralized mapping of phone numbers](/what-is-celo/about-celo-l1/protocol/identity/) that allow wallet users to send and receive payments with their existing contacts simply and with confidence that the payment will reach the intended recipient.
 
 **Transaction Fees in Any Currency **
 
-Users can [pay transaction fees](/protocol/transaction/erc20-transaction-fees) in stable currencies so that they do not need to manage the balances of different currencies.
+Users can [pay transaction fees](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees) in stable currencies so that they do not need to manage the balances of different currencies.
 
 **Proof-of-Stake**
 
-Celo uses a [Proof-of-Stake (PoS)](/protocol/pos/) consensus algorithm. In comparison to Proof-of-Work (PoW) systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and where the outcome cannot be changed once complete.
+Celo uses a [Proof-of-Stake (PoS)](/what-is-celo/about-celo-l1/protocol/pos/) consensus algorithm. In comparison to Proof-of-Work (PoW) systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and where the outcome cannot be changed once complete.
 
 **On-chain Governance **
 
@@ -108,7 +108,7 @@ Users have access to and fully control their funds and account keys, and don't n
 110 Globally
 ```
 
-Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](/protocol/governance) process.
+Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](/what-is-celo/using-celo/protocol/governance/overview) process.
 
 **Total Blocks**
 

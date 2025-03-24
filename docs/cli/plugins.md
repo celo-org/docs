@@ -14,7 +14,7 @@ List installed plugins.
 * [`celocli plugins:unlink [PLUGIN]`](#celocli-pluginsunlink-plugin)
 * [`celocli plugins:update`](#celocli-pluginsupdate)
 
-## `celocli plugins`
+## `celocli plugins` {#celocli-plugins}
 
 List installed plugins.
 
@@ -37,7 +37,7 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/index.ts)_
 
-## `celocli plugins:add PLUGIN`
+## `celocli plugins:add PLUGIN` {#celocli-pluginsadd-plugin}
 
 Installs a plugin into celocli.
 
@@ -85,7 +85,7 @@ EXAMPLES
     $ celocli plugins:add someuser/someplugin
 ```
 
-## `celocli plugins:inspect PLUGIN...`
+## `celocli plugins:inspect PLUGIN...` {#celocli-pluginsinspect-plugin}
 
 Displays installation properties of a plugin.
 
@@ -112,7 +112,7 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/inspect.ts)_
 
-## `celocli plugins:install PLUGIN`
+## `celocli plugins:install PLUGIN` {#celocli-pluginsinstall-plugin}
 
 Installs a plugin into celocli.
 
@@ -162,7 +162,7 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/install.ts)_
 
-## `celocli plugins:link PATH`
+## `celocli plugins:link PATH` {#celocli-pluginslink-path}
 
 Links a plugin into the CLI for development.
 
@@ -194,7 +194,7 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/link.ts)_
 
-## `celocli plugins:remove [PLUGIN]`
+## `celocli plugins:remove [PLUGIN]` {#celocli-pluginsremove-plugin}
 
 Removes a plugin from the CLI.
 
@@ -220,7 +220,7 @@ EXAMPLES
   $ celocli plugins:remove myplugin
 ```
 
-## `celocli plugins:reset`
+## `celocli plugins:reset` {#celocli-pluginsreset}
 
 Remove all user-installed and linked plugins.
 
@@ -236,7 +236,7 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/reset.ts)_
 
-## `celocli plugins:uninstall [PLUGIN]`
+## `celocli plugins:uninstall [PLUGIN]` {#celocli-pluginsuninstall-plugin}
 
 Removes a plugin from the CLI.
 
@@ -264,7 +264,7 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/uninstall.ts)_
 
-## `celocli plugins:unlink [PLUGIN]`
+## `celocli plugins:unlink [PLUGIN]` {#celocli-pluginsunlink-plugin}
 
 Removes a plugin from the CLI.
 
@@ -290,7 +290,7 @@ EXAMPLES
   $ celocli plugins:unlink myplugin
 ```
 
-## `celocli plugins:update`
+## `celocli plugins:update` {#celocli-pluginsupdate}
 
 Update installed plugins.
 
