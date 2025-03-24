@@ -5,7 +5,7 @@ description: Overview of the Celo protocol's Stability Mechanisms.
 
 :::info
 
-Find updated information on the Celo's Stability Protocol at [mento.org](https://mento.org).
+Find updated information on Celo's Stability Protocol at [mento.org](https://mento.org).
 
 :::
 

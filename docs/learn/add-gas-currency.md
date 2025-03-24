@@ -35,7 +35,7 @@ function creditGasFees(
     ) external;
 ```
 
-Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/what-is-celo/about-celo-l1/protocol/contracts/common/CalledByVm.sol#L3).
+Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/protocol/contracts/common/CalledByVm.sol#L3).
 
 `debitGasFees` is called by the VM before the body of the tx is executed while assembling a block. It removes from the caller's balance the maximum amount of tokens the transaction will take. This is done to make sure the user has enough to pay for gas.
 

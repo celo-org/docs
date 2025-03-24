@@ -11,7 +11,7 @@ The account address is derived from the public key, and transactions are authori
 In most wallets, the EOA is generated and stored on the user's mobile device and backed up via a BIP-39 mnemonic phrase.
 
 A smart contract account on the other hand is a smart contract that can be used to interact with other smart contracts on behalf of the owner.
-Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
+Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
 In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions my signing a meta-transaction containing the details of the authorized transaction.
 This is how the meta-transaction wallet works.
 In this case you can think of the smart contract account as the primary account, and the EOA as the controller of this account.
@@ -33,7 +33,7 @@ In general, smart contract accounts allow the someone other than the account own
 
 Smart contract accounts can also be useful if a user ever loses their phone and recovery phrase.
 Unlike EOAs, smart contract accounts can support account recovery methods that do not rely solely on recovering the underlying keys.
-The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
+The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
 This Guardian can be a simple backup key or a smart contract implementing social recovery, [KELP](https://eprint.iacr.org/2021/289), or another account recovery protocol.
 With the authorization of the Guardian, the meta-transaction wallet will update the owner of the account to replace the lost key.
 Any funds or privileges held by the meta-transaction wallet are then recovered to the user who can control the account using their new key.
@@ -80,4 +80,4 @@ This data can't be signed by the `msg.sender` since it's originating from a cont
 
 ## Implementation
 
-The implementation of the meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/MetaTransactionWallet.sol).
+The implementation of the meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol).

@@ -24,7 +24,7 @@ To obtain a list of the gas fee addresses that have been allowlisted using [Celo
 
 ### Tokens with Adapters
 
-After Contract Release 11, addresses in the allowlist are no longer guaranteed to be full ERC20 tokens and can now also be [adapters](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/11/packages/what-is-celo/about-celo-l1/protocol/contracts-0.8/stability/FeeCurrencyAdapter.sol). Adapters are allowlisted in-lieu of tokens in the scenario that a ERC20 token has decimals other than 18 (e.g. USDT and USDC).
+After Contract Release 11, addresses in the allowlist are no longer guaranteed to be full ERC20 tokens and can now also be [adapters](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/11/packages/protocol/contracts-0.8/stability/FeeCurrencyAdapter.sol). Adapters are allowlisted in-lieu of tokens in the scenario that a ERC20 token has decimals other than 18 (e.g. USDT and USDC).
 
 The Celo Blockchain natively works with 18 decimals when calculating gas pricing, so adapters are needed to normalize the decimals for tokens that use a different one. Some stablecoins use 6 decimals as a standard.
 

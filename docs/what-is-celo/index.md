@@ -29,7 +29,7 @@ Celo is designed with features that lower the entry barrier for those new to cry
 - **Sub-Cent Fees**: Celo maintains low gas fees, often below a cent, keeping transactions affordable.
 - **Fast Transactions**: Celo achieves 1 second block finality, enabling near-instant transaction confirmations.
 - **Native Stablecoins**: Celo provides native stablecoins like cUSD, cEUR, cREAL, eXOF, cKES, PUSO, and cCOP, offering a stable way to send and receive money. Check out [Mento](https://www.mento.org/) to learn more.
-- **Token Duality**: CELO token is now both the native currency of the Celo blockchain as well as an ERC20 compatible token. This means CELO tokens can be moved both by doing a native transfer as well as ERC20 transfers and will show up in both in the native account balance and the ERC20 balance, no matter how they were transferred. In contrast to ETH/WETH, no token wrapping or unwrapping is necessary.
+- **Token Duality**: CELO token is both the native currency of the Celo blockchain as well as an ERC20 compatible token. This means CELO tokens can be moved both by doing a native transfer as well as ERC20 transfers and will show up in both in the native account balance and the ERC20 balance, no matter how they were transferred. In contrast to ETH/WETH, no token wrapping or unwrapping is necessary.
 - **Mobile-Focused Approach**: Celo is optimized for mobile devices, making blockchain accessible to billions of smartphone users worldwide.
 
 #### Optimized for Global Reach:
