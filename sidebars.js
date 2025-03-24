@@ -784,6 +784,11 @@ const sidebars = {
           id: "network/node/forno",
         },
         {
+          type: "doc",
+          label: "Alchemy",
+          id: "network/node/alchemy",
+        },
+        {
           type: "category",
           label: "Run a Node",
           items: [
@@ -1034,6 +1039,11 @@ const sidebars = {
           type: "doc",
           label: "viem",
           id: "developer/viem/index",
+        },
+        {
+          type: "doc",
+          label: "Reown",
+          id: "developer/reown/index",
         },
         {
           type: "doc",
