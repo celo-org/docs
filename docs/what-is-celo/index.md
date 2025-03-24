@@ -2,7 +2,7 @@
 title: Discover Celo
 ---
 
-import ReactYouTube from "react-youtube";
+import YouTube from '@components/YouTube';
 import ColoredText from '/src/components/ColoredText';
 
 Celo is an emerging Ethereum Layer 2 built for the real world and designed for fast, low-cost payments worldwide.
