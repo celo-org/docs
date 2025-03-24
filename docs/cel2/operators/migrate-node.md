@@ -70,7 +70,7 @@ CRIT [03-19|10:38:17.229] error in celo-migrate err="failed to run full migratio
 
 :::
 
-The full migration process constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
+The full migration process consists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
 
 Once the hardfork block number is reached, we recommend node operators migrate using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). Alternatively, the migration tool can be [run from source](#run-migration-from-source).
 
