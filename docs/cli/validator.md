@@ -721,7 +721,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/what-is-celo/about-celo-l1/validator/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/what-is-celo/about-celo-l1/validator/show.ts)_
+_See code: [src/commands/validator/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/show.ts)_
 
 ## `celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}
 
