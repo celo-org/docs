@@ -67,7 +67,7 @@ There are two ways in which users can vote:
 
 Once CELO has been locked via `LockedGold`, it can then be used to vote for validator groups. [Election.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Election.sol) is the contract that manages this functionality.
 
-The `votes` in this contract are tracked by a [Votes type](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/Election.sol#L87) which has `pending`, `active`, and `total` votes. Pending votes are those that have been cast for a validator group, and active votes are those that have been activated after an epoch, meaning that these votes generate voter rewards.
+The `votes` in this contract are tracked by a [Votes type](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Election.sol#L87) which has `pending`, `active`, and `total` votes. Pending votes are those that have been cast for a validator group, and active votes are those that have been activated after an epoch, meaning that these votes generate voter rewards.
 
 Votes are cast for a validator group using the [`vote` function](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/Election.sol#L229). This increments the `pending` and `total` votes in the `Election` contract, and decrements the equivalent amount of CELO from the `nonvoting` balance in the `LockedGold` contract, for the associated account.
 
