@@ -48,6 +48,28 @@ __It is not recommended to migrate from an L1 archive datadir.__
 If you only have an L1 archive node, we recommend syncing an L1 full node in preparation for the Mainnet migration. You can still run an L2 archive node after migrating from an L1 full node datadir. See [Running a Celo archive node](run-node.md#running-an-archive-node) for more.
 :::
 
+:::warning
+__We have sometimes encountered the following problem when migrating an L1 datadir.__
+
+We were able to resolve it by starting up the celo-blockchain client with the
+same datadir, waiting for the node to fully start, and then shutting it down
+again.
+
+Alternatively you can open a local console with the celo-blockchain client
+(`geth console --datadir <datadir>`), wait for the console to load, and then
+exit the console. This ensures that all components have loaded before
+shutdown is attempted.
+
+It seems that this issue is caused by the celo-blockchain client sometimes
+shutting down in an inconsistent state, which is repaired upon the next
+startup.
+
+```
+CRIT [03-19|10:38:17.229] error in celo-migrate err="failed to run full migration: failed to get head header: failed to open database at \"/datadir/celo/chaindata\" err: failed to open leveldb: EOF"
+```
+
+:::
+
 The full migration process constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
 
 Once the hardfork block number is reached, we recommend node operators migrate using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). Alternatively, the migration tool can be [run from source](#run-migration-from-source).
