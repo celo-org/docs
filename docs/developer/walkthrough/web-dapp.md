@@ -18,7 +18,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ## Getting Started
 
-This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](/what-is-celo/using-celo/protocol/governance/voting-in-governance).
+This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](/what-is-celo/using-celo/protocol/governance/voting-in-governance).
 
 ## Foreword
 
