@@ -13,7 +13,7 @@ View and manage locked CELO
 * [`celocli lockedgold:update-delegated-amount`](#celocli-lockedgoldupdate-delegated-amount)
 * [`celocli lockedgold:withdraw`](#celocli-lockedgoldwithdraw)
 
-## `celocli lockedgold:delegate`
+## `celocli lockedgold:delegate` {#celocli-lockedgolddelegate}
 
 Delegate locked celo.
 
@@ -80,7 +80,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:delegate-info`
+## `celocli lockedgold:delegate-info` {#celocli-lockedgolddelegate-info}
 
 Delegate info about account.
 
@@ -140,7 +140,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:lock`
+## `celocli lockedgold:lock` {#celocli-lockedgoldlock}
 
 Locks CELO to be used in governance and validator elections.
 
@@ -203,7 +203,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:max-delegatees-count`
+## `celocli lockedgold:max-delegatees-count` {#celocli-lockedgoldmax-delegatees-count}
 
 Returns the maximum number of delegates allowed per account.
 
@@ -259,7 +259,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:revoke-delegate`
+## `celocli lockedgold:revoke-delegate` {#celocli-lockedgoldrevoke-delegate}
 
 Revoke delegated locked celo.
 
@@ -326,7 +326,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:show ARG1`
+## `celocli lockedgold:show ARG1` {#celocli-lockedgoldshow-arg1}
 
 Show Locked Celo information for a given account. This includes the total amount of locked celo, the amount being used for voting in Validator Elections, the Locked Celo balance this account is required to maintain due to a registered Validator or Validator Group, and any pending withdrawals that have been initiated via "lockedcelo:unlock".
 
@@ -362,7 +362,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:unlock`
+## `celocli lockedgold:unlock` {#celocli-lockedgoldunlock}
 
 Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "lockedgold:withdraw".
 
@@ -427,7 +427,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:update-delegated-amount`
+## `celocli lockedgold:update-delegated-amount` {#celocli-lockedgoldupdate-delegated-amount}
 
 Updates the amount of delegated locked celo. There might be discrepancy between the amount of locked celo and the amount of delegated locked celo because of received rewards.
 
@@ -492,7 +492,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:withdraw`
+## `celocli lockedgold:withdraw` {#celocli-lockedgoldwithdraw}
 
 Withdraw any pending withdrawals created via "lockedgold:unlock" that have become available.
 
