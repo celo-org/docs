@@ -922,7 +922,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/what-is-celo/about-celo-l1/validator/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/what-is-celo/about-celo-l1/validator/status.ts)_
+_See code: [src/commands/validator/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/status.ts)_
 
 ## `celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}
 
