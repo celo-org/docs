@@ -18,7 +18,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ## What is ReleaseGold?
 
-[`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/ReleaseGold.sol) is a smart contract that enables CELO to be released programmatically to a beneficiary over a period of time. In a deployed `ReleaseGold` smart contract, only the CELO balance that has been released according to the release schedule can be withdrawn by the contract’s beneficiary. The unreleased CELO cannot be withdrawn, but can be used for specific functions in Celo’s Proof of Stake protocol, namely voting and validating.
+[`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) is a smart contract that enables CELO to be released programmatically to a beneficiary over a period of time. In a deployed `ReleaseGold` smart contract, only the CELO balance that has been released according to the release schedule can be withdrawn by the contract’s beneficiary. The unreleased CELO cannot be withdrawn, but can be used for specific functions in Celo’s Proof of Stake protocol, namely voting and validating.
 
 The intent of the `ReleaseGold` contract is to allow beneficiaries to participate in Celo’s Proof of Stake protocol with CELO that has not yet been fully released to them. Beneficiaries are able to lock CELO for voting and validating with the full `ReleaseGold` balance, including both released and unreleased CELO.
 

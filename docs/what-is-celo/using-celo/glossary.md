@@ -22,7 +22,7 @@ Identifies an account on Celo. There are two types of account. **Externally owne
 
 ## Address
 
-A unique identifier for an account on the any blockchain.
+A unique identifier for an account on any blockchain.
 
 ## Alfajores
 
@@ -98,7 +98,7 @@ A library to help developers and operators of Validator nodes interact with the 
 
 ## Cryptocurrency
 
-Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to Ether on Ethereum. Since 26th of March 2025, when Celo became an L2, CELO has token duality, meaning it can be used as a native token adn an ERC20 token. Celo's ledger consists of **accounts**, identified by an **address**. There are two types of accounts. **Externally owned accounts** have an associated CELO balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
+Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to Ether on Ethereum. CELO has token duality, meaning it can be used as a native token and an ERC20 token. Celo's ledger consists of **accounts**, identified by an **address**. There are two types of accounts. **Externally owned accounts** have an associated CELO balance and are controlled by a user holding the associated public-private keypair. **Contract accounts** contain the code and data of a single smart contract which can be called and manipulate its own stored data.
 
 ## DApp
 
