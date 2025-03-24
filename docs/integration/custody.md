@@ -22,7 +22,7 @@ Generally speaking, custodying CELO, the native token on the Celo network, requi
 
 ## Balance Model
 
-As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [`LockedGold`](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract that holds the "locked portion of a user's `CELO` balance". Another one is the [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds `CELO` that is being released to a beneficiary address over time according to some schedule.
+As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [`LockedGold`](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract that holds the "locked portion of a user's `CELO` balance". Another one is the [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds `CELO` that is being released to a beneficiary address over time according to some schedule.
 
 :::warning
 
