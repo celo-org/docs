@@ -27,11 +27,13 @@ In Celo's transition to a Layer 2 (L2) solution, several key changes have been p
 
 ## Gas Pricing Mechanism
 
-Celo employs a gas pricing model based on **EIP-1559**, which dynamically adjusts the base fee to manage network demand. This mechanism ensures that gas prices respond to network congestion, increasing during high demand periods and decreasing when demand is low. The protocol sets a **base fee floor** to prevent the base fee from falling below a certain threshold, safeguarding the network against spam transactions and uncontrolled state growth. citeturn0search2
+Celo employs a gas pricing model based on **EIP-1559**, which dynamically adjusts the base fee to manage network demand. This mechanism ensures that gas prices respond to network congestion, increasing during high demand periods and decreasing when demand is low. The protocol sets a **base fee floor** to prevent the base fee from falling below a certain threshold, safeguarding the network against spam transactions and uncontrolled state growth. 
 
 ## Fee Abstraction
 
-A notable feature of Celo's network is **fee abstraction**, allowing users to pay transaction fees using approved ERC-20 tokens such as USDT, USDC, cUSD, and others, in addition to the native CELO token. This flexibility simplifies the user experience by eliminating the need to hold a separate CELO balance for gas fees. To utilize this feature, transactions include a `feeCurrency` field specifying the token for gas payment. It's important to note that transactions specifying non-CELO gas currencies incur approximately 50,000 additional gas units. citeturn0search3
+A notable feature of Celo's network is **fee abstraction**, allowing users to pay transaction fees using approved ERC-20 tokens such as USDT, USDC, cUSD, and others, in addition to the native CELO token. This flexibility simplifies the user experience by eliminating the need to hold a separate CELO balance for gas fees. To utilize this feature, transactions include a `feeCurrency` field specifying the token for gas payment. It's important to note that transactions specifying non-CELO gas currencies incur approximately 50,000 additional gas units.
+
+Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in FeeCurrencyWhitelist.sol. Fee abstraction on Celo works with EOAs. No paymaster required! Learn all about [fee abstraction](/cel2guides/fee-abstraction).
 
 ## Transaction Fee Allocation Post-L2 Transition
 
@@ -47,17 +49,10 @@ With the shift to L2, the allocation of transaction fees has been restructured t
 
   - **Sequencer and Batcher Operations**: Supporting the infrastructure that orders and batches transactions on the network.
 
-  - **Revenue Sharing with the OP-Stack**: Complying with the Superchain Ecosystem requirements, which involve sharing revenue with the OP-Stack. citeturn0search1
+  - **Revenue Sharing with the OP-Stack**: Complying with the Superchain Ecosystem requirements, which involve sharing revenue with the OP-Stack. 
 
 This reallocation ensures that transaction fees are utilized effectively to maintain network sustainability and operational efficiency in the L2 environment.
 
 ## Conclusion
 
 Celo's transition to L2 introduces significant changes to gas pricing and transaction fee allocation, aligning with the network's goals of sustainability, user accessibility, and robust operational support. These adjustments are designed to enhance the overall efficiency and resilience of the Celo ecosystem. 
-
-
-### Fee Abstraction
-
-Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in FeeCurrencyWhitelist.sol.
-
-Fee abstraction on Celo works with EOAs. No paymaster required! Learn all about [fee abstraction](/cel2/guides/fee-abstraction).
