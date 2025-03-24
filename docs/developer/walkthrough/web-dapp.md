@@ -314,7 +314,7 @@ It's also possible that users of your DApp already have locked CELO, so you migh
 
 ### Voting on a proposal
 
-To actually vote on a proposal we need to again interact with the [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/Governance.sol) smart contract. Our logic for handling a vote looks as follows:
+To actually vote on a proposal we need to again interact with the [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol) smart contract. Our logic for handling a vote looks as follows:
 
 ```typescript title="pages/index.js"
 const vote = useCallback(
