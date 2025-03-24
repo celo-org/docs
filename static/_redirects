@@ -681,3 +681,7 @@
 /blog/tutorials/devrel@celo.org /blog
 /developer/walletconnect /wallet
 /protocol/socialconnect https://github.com/celo-org/SocialConnect
+/contract-addresses /contracts/core-contracts
+/token-addresses /contracts/token-contracts
+/cel2/l2-operator-guide /cel2/operators/overview
+/cel2/operators/rpc-provider /cel2/operators/community-rpc-node

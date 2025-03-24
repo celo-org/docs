@@ -7,13 +7,6 @@ description: Nodes as a Service
 
 Connect to nodes and services in the Celo Ecosystem.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 import PageRef from '@components/PageRef'
@@ -43,46 +36,75 @@ Running your own RPC endpoint.
 
 Paid RPC endpoint hosting.
 
+### Alchemy
+
+[Alchemy](https://docs.alchemy.com/reference/celo-api-quickstart) is a popular API provider and developer platform. Its robust, free tier offers access to enhanced features like SDKs and enhanced APIs and hosted OP Mainnet and testnet nodes.
+
+#### **Supported Networks**
+- Celo Mainnet
+- Celo Alfajores (Testnet)
+
+<PageRef url="https://docs.alchemy.com/reference/celo-api-quickstart" pageName="Alchemy" />
+
 ### [Ankr](https://www.ankr.com/rpc/celo/)
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
+
+#### **Supported Networks**
+- Celo Mainnet
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
 ### [Infura](https://www.infura.io/)
 
+Infura is L2 ready.
+
 RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
 
-<PageRef url="https://docs.infura.io/networks/celo" pageName="Infura" />
+#### **Supported Networks**
+- Celo Mainnet
+- Celo Alfajores (Testnet)
 
-Infura is L2 ready.
+<PageRef url="https://docs.metamask.io/services/get-started/endpoints/#celo" pageName="Infura" />
 
 ### [Quicknode](https://www.quicknode.com/chains/celo)
 
+Quicknode is L2 ready.
 
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
 
-Quicknode is L2 ready.
+#### **Supported Networks**
+- Celo Mainnet
 
-<PageRef url="https://www.quicknode.com/chains/celo" pageName="Quicknode" />
-
-### [All that node](https://www.allthatnode.com/celo.dsrv)
-
-All That Node supports public and private RPC nodes for Mainnet, Alfajores and Baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
-
-<PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
-
+<PageRef url="https://www.quicknode.com/docs/celo" pageName="Quicknode" />
 
 ### [dRPC](https://drpc.org/chainlist/celo)
 
 All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pay only for what you use, scale resources effortlessly, and enjoy clear, predictable pricing. Our model eliminates large upfront costs, encourages innovation and simplifies budgeting. With dRPC, you can manage your Web3 infrastructure efficiently and cost-effectively.
 
+#### **Supported Networks**
+- Celo Mainnet
+- Celo Alfajores (Testnet)
+
 <PageRef url="https://drpc.org/chainlist/celo" pageName="DRPC" />
 
-### [Lava](https://docs.lavanet.xyz/celo-dev)
+### [Lava](https://docs.lavanet.xyz/celo-dev/)
 
 Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
-<PageRef url="https://lavanet.xyz" pageName="Lava" />
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://docs.lavanet.xyz/celo-dev/" pageName="Lava" />
+
+### [All that node](https://www.allthatnode.com/celo.dsrv)
+
+All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded.
+You can also claim Alfajores funds from the faucet in the site without signing up.
+
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 
 
