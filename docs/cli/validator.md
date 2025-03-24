@@ -376,7 +376,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/what-is-celo/about-celo-l1/validator/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/what-is-celo/about-celo-l1/validator/list.ts)_
+_See code: [src/commands/validator/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/list.ts)_
 
 ## `celocli validator:register` {#celocli-validatorregister}
 
