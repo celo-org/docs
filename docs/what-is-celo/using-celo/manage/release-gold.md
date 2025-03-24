@@ -22,7 +22,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 The intent of the `ReleaseGold` contract is to allow beneficiaries to participate in Celo’s Proof of Stake protocol with CELO that has not yet been fully released to them. Beneficiaries are able to lock CELO for voting and validating with the full `ReleaseGold` balance, including both released and unreleased CELO.
 
-Increasing the volume of CELO that can be used in Celo’s Proof of Stake consensus promotes network security and even greater decentralization. See below for details on specific features of the `ReleaseGold` contract, as well as how they are implemented. The [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/ReleaseGold.sol) includes documentation, and technical readers are encouraged to find further details there.
+Increasing the volume of CELO that can be used in Celo’s Proof of Stake consensus promotes network security and even greater decentralization. See below for details on specific features of the `ReleaseGold` contract, as well as how they are implemented. The [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) includes documentation, and technical readers are encouraged to find further details there.
 
 ### Example
 
