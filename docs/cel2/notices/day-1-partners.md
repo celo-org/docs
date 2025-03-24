@@ -35,6 +35,7 @@ Below is the list of confirmed Day 1 partners:
 - Anchorage
 - Ubeswap
 - Upbit
+- Gate.io
 
 We appreciate the commitment of these partners in supporting a seamless and successful launch! 
 
