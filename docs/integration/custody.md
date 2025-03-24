@@ -48,7 +48,7 @@ The following smart contracts are helpful to understand in order to map the conc
 
 [Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) allows the mapping of an address to an account in storage, after which all further functionality (locking, voting, etc.) can be accessed.
 
-The [`createAccount`](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol#L103) function indexes the address as an account in storage, and is required to differentiate an arbitrary key-pair from a user-owned account in the Celo network.
+The [`createAccount`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol#L103) function indexes the address as an account in storage, and is required to differentiate an arbitrary key-pair from a user-owned account in the Celo network.
 
 The `Accounts` contract also allows for the authorization of various signer keys, such as a [vote signer key](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol#L175). This allows for the user who owns the primary account key to authorize a separate key that can only vote on behalf of the account. This allows for the ability to custody keys in a manner corresponding to their exposure or "warmth". Eg. the primary account private key can be kept in cold storage after authorizing the signer keys, which can be in warmer environments, and potentially more exposed to the network. See the [key management guide](/what-is-celo/about-celo-l1/validator/key-management/detailed) for more details.
 
