@@ -31,21 +31,6 @@ module.exports = {
     // },
   ],
   plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          {
-            from: "/cel2/l2-operator-guide",
-            to: "/cel2/operators/overview",
-          },
-          {
-            from: "/cel2/operators/rpc-provider",
-            to: "/cel2/operators/community-rpc-node",
-          },
-        ],
-      },
-    ],
     require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
