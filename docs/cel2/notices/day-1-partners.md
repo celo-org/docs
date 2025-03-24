@@ -7,6 +7,7 @@ Below is the list of confirmed Day 1 partners:
 
 ### Node and RPC Providers
 
+- Alchemy
 - Ankr  
 - DRPC
 - Forno

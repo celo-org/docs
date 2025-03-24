@@ -1,25 +1,25 @@
-`celocli lockedgold`
+`celocli lockedcelo`
 ====================
 
-View and manage locked CELO
+Delegate locked celo.
 
-* [`celocli lockedgold:delegate`](#celocli-lockedgolddelegate)
-* [`celocli lockedgold:delegate-info`](#celocli-lockedgolddelegate-info)
-* [`celocli lockedgold:lock`](#celocli-lockedgoldlock)
-* [`celocli lockedgold:max-delegatees-count`](#celocli-lockedgoldmax-delegatees-count)
-* [`celocli lockedgold:revoke-delegate`](#celocli-lockedgoldrevoke-delegate)
-* [`celocli lockedgold:show ARG1`](#celocli-lockedgoldshow-arg1)
-* [`celocli lockedgold:unlock`](#celocli-lockedgoldunlock)
-* [`celocli lockedgold:update-delegated-amount`](#celocli-lockedgoldupdate-delegated-amount)
-* [`celocli lockedgold:withdraw`](#celocli-lockedgoldwithdraw)
+* [`celocli lockedcelo:delegate`](#celocli-lockedcelodelegate)
+* [`celocli lockedcelo:delegate-info`](#celocli-lockedcelodelegate-info)
+* [`celocli lockedcelo:lock`](#celocli-lockedcelolock)
+* [`celocli lockedcelo:max-delegatees-count`](#celocli-lockedcelomax-delegatees-count)
+* [`celocli lockedcelo:revoke-delegate`](#celocli-lockedcelorevoke-delegate)
+* [`celocli lockedcelo:show ARG1`](#celocli-lockedceloshow-arg1)
+* [`celocli lockedcelo:unlock`](#celocli-lockedcelounlock)
+* [`celocli lockedcelo:update-delegated-amount`](#celocli-lockedceloupdate-delegated-amount)
+* [`celocli lockedcelo:withdraw`](#celocli-lockedcelowithdraw)
 
-## `celocli lockedgold:delegate`
+## `celocli lockedcelo:delegate`
 
 Delegate locked celo.
 
 ```
 USAGE
-  $ celocli lockedgold:delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
+  $ celocli lockedcelo:delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -80,13 +80,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:delegate-info`
+_See code: [src/commands/lockedcelo/delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate.ts)_
+
+## `celocli lockedcelo:delegate-info`
 
 Delegate info about account.
 
 ```
 USAGE
-  $ celocli lockedgold:delegate-info --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+  $ celocli lockedcelo:delegate-info --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp]
@@ -140,13 +142,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:lock`
+_See code: [src/commands/lockedcelo/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate-info.ts)_
+
+## `celocli lockedcelo:lock`
 
 Locks CELO to be used in governance and validator elections.
 
 ```
 USAGE
-  $ celocli lockedgold:lock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
+  $ celocli lockedcelo:lock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp]
@@ -203,13 +207,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:max-delegatees-count`
+_See code: [src/commands/lockedcelo/lock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/lock.ts)_
+
+## `celocli lockedcelo:max-delegatees-count`
 
 Returns the maximum number of delegates allowed per account.
 
 ```
 USAGE
-  $ celocli lockedgold:max-delegatees-count [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+  $ celocli lockedcelo:max-delegatees-count [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp]
 
@@ -259,13 +265,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:revoke-delegate`
+_See code: [src/commands/lockedcelo/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/max-delegatees-count.ts)_
+
+## `celocli lockedcelo:revoke-delegate`
 
 Revoke delegated locked celo.
 
 ```
 USAGE
-  $ celocli lockedgold:revoke-delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
+  $ celocli lockedcelo:revoke-delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -326,13 +334,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:show ARG1`
+_See code: [src/commands/lockedcelo/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/revoke-delegate.ts)_
+
+## `celocli lockedcelo:show ARG1`
 
 Show Locked Celo information for a given account. This includes the total amount of locked celo, the amount being used for voting in Validator Elections, the Locked Celo balance this account is required to maintain due to a registered Validator or Validator Group, and any pending withdrawals that have been initiated via "lockedcelo:unlock".
 
 ```
 USAGE
-  $ celocli lockedgold:show ARG1 [-n <value>] [--globalHelp]
+  $ celocli lockedcelo:show ARG1 [-n <value>] [--globalHelp]
 
 FLAGS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -362,13 +372,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:unlock`
+_See code: [src/commands/lockedcelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/show.ts)_
+
+## `celocli lockedcelo:unlock`
 
 Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "lockedgold:withdraw".
 
 ```
 USAGE
-  $ celocli lockedgold:unlock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
+  $ celocli lockedcelo:unlock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp]
@@ -427,13 +439,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:update-delegated-amount`
+_See code: [src/commands/lockedcelo/unlock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/unlock.ts)_
+
+## `celocli lockedcelo:update-delegated-amount`
 
 Updates the amount of delegated locked celo. There might be discrepancy between the amount of locked celo and the amount of delegated locked celo because of received rewards.
 
 ```
 USAGE
-  $ celocli lockedgold:update-delegated-amount --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
+  $ celocli lockedcelo:update-delegated-amount --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
     [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
@@ -492,13 +506,15 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli lockedgold:withdraw`
+_See code: [src/commands/lockedcelo/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/update-delegated-amount.ts)_
+
+## `celocli lockedcelo:withdraw`
 
 Withdraw any pending withdrawals created via "lockedgold:unlock" that have become available.
 
 ```
 USAGE
-  $ celocli lockedgold:withdraw --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+  $ celocli lockedcelo:withdraw --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp]
@@ -552,3 +568,5 @@ FLAG DESCRIPTIONS
     alfajores => Celo Alfajores Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
+
+_See code: [src/commands/lockedcelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/withdraw.ts)_
