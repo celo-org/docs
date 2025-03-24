@@ -42,7 +42,7 @@ The `beneficiary` address is the recipient of the CELO in the `ReleaseGold` cont
 
 _Release Owner_
 
-The `releaseOwner` is the address involved in administering the `ReleaseGold` contract. The release owner may be able to perform actions including [setting the liquidity provision](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/ReleaseGold.sol#L268) for the contract, setting the maximum withdrawal amount, or [revoking](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/governance/ReleaseGold.sol#L362) the contract, depending on the ReleaseGold configuration.
+The `releaseOwner` is the address involved in administering the `ReleaseGold` contract. The release owner may be able to perform actions including [setting the liquidity provision](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L268) for the contract, setting the maximum withdrawal amount, or [revoking](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L362) the contract, depending on the ReleaseGold configuration.
 
 _Refund Address_
 
