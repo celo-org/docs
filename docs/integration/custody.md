@@ -46,7 +46,7 @@ The following smart contracts are helpful to understand in order to map the conc
 
 ### Accounts
 
-[Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol) allows the mapping of an address to an account in storage, after which all further functionality (locking, voting, etc.) can be accessed.
+[Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) allows the mapping of an address to an account in storage, after which all further functionality (locking, voting, etc.) can be accessed.
 
 The [`createAccount`](https://github.com/celo-org/celo-monorepo/blob/master/packages/what-is-celo/about-celo-l1/protocol/contracts/common/Accounts.sol#L103) function indexes the address as an account in storage, and is required to differentiate an arbitrary key-pair from a user-owned account in the Celo network.
 
