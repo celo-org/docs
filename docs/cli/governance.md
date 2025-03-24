@@ -4,7 +4,6 @@
 Interact with on-chain governance proposals and hotfixes
 
 * [`celocli governance:approve`](#celocli-governanceapprove)
-* [`celocli governance:approve`](#celocli-governanceapprove)
 * [`celocli governance:approvehotfix`](#celocli-governanceapprovehotfix)
 * [`celocli governance:build-proposal`](#celocli-governancebuild-proposal)
 * [`celocli governance:dequeue`](#celocli-governancedequeue)
@@ -171,8 +170,6 @@ FLAGS
       True means the request will be sent through SAFE (http://safe.global)
 
 DESCRIPTION
-  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
-  this command
   Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
   this command
 
@@ -668,8 +665,6 @@ USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
-    --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [--useMultiSig | --useSafe]] [--safeAddress
@@ -692,9 +687,6 @@ FLAGS
   --deposit=<value>
       (required) Amount of Celo to attach to proposal
 
-  --descriptionURL=<value>
-      (required) A URL where further information about the proposal can be viewed. This
-      needs to be a valid proposal URL on https://github.com/celo-org/governance
   --descriptionURL=<value>
       (required) A URL where further information about the proposal can be viewed. This
       needs to be a valid proposal URL on https://github.com/celo-org/governance
@@ -747,9 +739,7 @@ DESCRIPTION
 
 EXAMPLES
   propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
 
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
   propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
 
 FLAG DESCRIPTIONS

@@ -66,9 +66,6 @@ DESCRIPTION
 ALIASES
   $ celocli lockedgold:delegate
 
-ALIASES
-  $ celocli lockedgold:delegate
-
 EXAMPLES
   delegate --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --to 0xc0ffee254729296a45a3885639AC7E10F9d54979 --percent 100
 
@@ -125,9 +122,6 @@ FLAGS
 
 DESCRIPTION
   Delegate info about account.
-
-ALIASES
-  $ celocli lockedgold:delegate-info
 
 ALIASES
   $ celocli lockedgold:delegate-info
@@ -195,9 +189,6 @@ DESCRIPTION
 ALIASES
   $ celocli lockedgold:lock
 
-ALIASES
-  $ celocli lockedgold:lock
-
 EXAMPLES
   lock --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --value 10000000000000000000000
 
@@ -250,9 +241,6 @@ FLAGS
 
 DESCRIPTION
   Returns the maximum number of delegates allowed per account.
-
-ALIASES
-  $ celocli lockedgold:max-delegatees-count
 
 ALIASES
   $ celocli lockedgold:max-delegatees-count
@@ -324,9 +312,6 @@ DESCRIPTION
 ALIASES
   $ celocli lockedgold:revoke-delegate
 
-ALIASES
-  $ celocli lockedgold:revoke-delegate
-
 EXAMPLES
   revoke-delegate --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --to 0xc0ffee254729296a45a3885639AC7E10F9d54979 --percent 100
 
@@ -356,14 +341,8 @@ FLAGS
 DESCRIPTION
   Show Locked Celo information for a given account. This includes the total amount of
   locked celo, the amount being used for voting in Validator Elections, the Locked Celo
-  Show Locked Celo information for a given account. This includes the total amount of
-  locked celo, the amount being used for voting in Validator Elections, the Locked Celo
   balance this account is required to maintain due to a registered Validator or
   Validator Group, and any pending withdrawals that have been initiated via
-  "lockedcelo:unlock".
-
-ALIASES
-  $ celocli lockedgold:show
   "lockedcelo:unlock".
 
 ALIASES
@@ -434,9 +413,6 @@ DESCRIPTION
 ALIASES
   $ celocli lockedgold:unlock
 
-ALIASES
-  $ celocli lockedgold:unlock
-
 EXAMPLES
   unlock --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --value 500000000
 
@@ -502,9 +478,6 @@ DESCRIPTION
 ALIASES
   $ celocli lockedgold:update-delegated-amount
 
-ALIASES
-  $ celocli lockedgold:update-delegated-amount
-
 EXAMPLES
   update-delegated-amount --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --to 0xc0ffee254729296a45a3885639AC7E10F9d54979
 
@@ -562,9 +535,6 @@ FLAGS
 DESCRIPTION
   Withdraw any pending withdrawals created via "lockedgold:unlock" that have become
   available.
-
-ALIASES
-  $ celocli lockedgold:withdraw
 
 ALIASES
   $ celocli lockedgold:withdraw
