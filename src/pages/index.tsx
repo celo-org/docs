@@ -762,7 +762,7 @@ export default function HomePage(): JSX.Element {
                 translate({ id: "home.section6.contribute.title" }),
                 translate({ id: "home.section6.contribute.description" }),
                 "img/doc-images/logos/contribute.svg",
-                "/community/guidelines",
+                "/what-is-celo/joining-celo",
               )}
 
               {sectionFourCard(

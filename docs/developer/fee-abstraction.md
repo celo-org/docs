@@ -32,9 +32,11 @@ After Contract Release 11, addresses in the allowlist are no longer guaranteed t
 
 The Celo Blockchain natively works with 18 decimals when calculating gas pricing, so adapters are needed to normalize the decimals for tokens that use a different one. Some stablecoins use 6 decimals as a standard.
 
-Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with those ERC20 tokens, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/protocol/transaction/gas-pricing).
+Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with those ERC20 tokens, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/what-is-celo/about-celo-l1/protocol/transaction/gas-pricing).
 
 Adapters can also be used to query `balanceOf(address)` of an account, but it will return the balance as if the token had 18 decimals and not the native ones. This is useful to calculate if an account has enough balance to cover gas after multiplying `gasPrice * estimatedGas` without having to convert back to the token's native decimals.
+
+To learn more about gas pricing, see [Gas Pricing](/what-is-celo/about-celo-l1/protocol/transaction/gas-pricing).
 
 #### Adapters by network
 
@@ -71,7 +73,7 @@ The Gas Price Minimum value returned from the RPC has to be interpreted in 18 de
 
 When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
 
-The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/protocol/transaction/transaction-types).
+The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/what-is-celo/about-celo-l1/protocol/transaction/transaction-types).
 
 Here is how a transaction would look like when using USDC as a medium to pay for gas fees.
 

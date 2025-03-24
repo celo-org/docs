@@ -60,4 +60,4 @@ Celo's transition to L2 introduces significant changes to gas pricing and transa
 
 Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in FeeCurrencyWhitelist.sol.
 
-Fee abstraction on Celo works with EOAs. No paymaster required! Learn all about [fee abstraction](/cel2guides/fee-abstraction).
+Fee abstraction on Celo works with EOAs. No paymaster required! Learn all about [fee abstraction](/cel2/guides/fee-abstraction).

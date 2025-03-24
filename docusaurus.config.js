@@ -218,7 +218,7 @@ module.exports = {
           title: "Community",
           items: [
             {
-              href: "/community/guidelines",
+              href: "/what-is-celo/joining-celo",
               label: "Contributors",
             },
             {
