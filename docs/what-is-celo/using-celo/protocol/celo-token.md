@@ -21,7 +21,7 @@ Here’s an improved and clearer version of your text that aligns with the Celo 
 
 # CELO Token Duality
 
-Since Celo's transition to an Ethereum Layer 2 (L2), we have introduced **token duality** for the CELO token.
+The CELO token is unique in its ability to function as both a native token and an ERC-20 compatible token.
 
 ## What is Token Duality?
 

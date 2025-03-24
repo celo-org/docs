@@ -17,14 +17,14 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 ---
 
 :::info
-This page is a work in progress based on the [proposal for validator engagement during the transition to L2](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700). For updates make sure to refer to the [Celo Forum](https://forum.celo.org). 
+This page is a work in progress based on the [proposal for validator engagement during the transition to L2](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700) and [Set The Great Celo Halvening Parameters](https://forum.celo.org/t/set-the-great-celo-halvening-parameters/10455/3). For updates make sure to refer to the [Celo Forum](https://forum.celo.org). 
 :::
 
 ## Validator Operations
 
 ### 1. How It Works
 
-Validators who register an RPC will be allocated 82.19178082 cUSD per day at a perfect score (1). These allocations can later be claimed by each validator (link). Scores are monitored off-chain by an independent working group of validators (the Score Management Committee) running custom software based on the Community RPCs page at Vido by Atalma. This committee will create a Safe Multisig which itself has permissions to manage the on-chain `ScoreManager.sol` smart contract.
+Validators who register an RPC will be allocated 82.19178082 cUSD per day at a perfect score (1). These allocations can later be claimed by each validator ([link](https://specs.celo.org/smart_contract_updates_from_l1.html#overview-of-rewards-and-epochs-in-l2)). Scores are monitored off-chain by an independent working group of validators (the Score Management Committee) running custom software based on the Community RPCs page at [Vido by Atalma](https://dev.vido.atalma.io/celo/rpc). This committee will create a Safe Multisig which itself has permissions to manage the on-chain `ScoreManager.sol` smart contract.
 
 Every week, the Score Management Committee will collate their measurements, aggregate, and average their scores for each validator for the week prior. If the score is 1 (100%), no adjustments need to be made for that validator. If a validator’s score is less than 1, their score will be updated by the committee and will apply to their payments for the following week, at which time the score will be adjusted again.
 
