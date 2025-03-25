@@ -3,10 +3,8 @@ title: Our History
 ---
 import ColoredText from '/src/components/ColoredText';
 
-
 Celo launched on Earth Day 2020 as an energy-efficient and low-cost Layer 1 blockchain. Since its inception, Celo has continually evolved to adapt to the changing landscape of blockchain technology and needs of its users in the broader crypto ecosystem.
 
----
 
 ## The Evolution of Celo: From Layer 1 to Layer 2
 

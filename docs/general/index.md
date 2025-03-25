@@ -7,7 +7,6 @@ import ColoredText from '/src/components/ColoredText';
 
 Celo is a blockchain network designed for the real world, with a mission to build a regenerative digital economy that fosters prosperity for all.
 
----
 
 # What is Celo?
 

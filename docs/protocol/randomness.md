@@ -7,7 +7,6 @@ description: How unpredictable pseudo-randomness is achieved on the Celo blockch
 
 How unpredictable pseudo-randomness is achieved on the Celo blockchain and offered as a service for dapp developers.
 
----
 
 ## Producing Pseudo-randomness
 

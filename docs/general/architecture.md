@@ -7,7 +7,6 @@ description: Overview of the Celo Stack including it's blockchain, core contract
 
 Overview of the Celo Stack including it's blockchain, core contracts, and applications.
 
----
 
 ## Introduction to the Celo Stack
 
