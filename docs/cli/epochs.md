@@ -5,7 +5,6 @@ Finishes next epoch process.
 
 * [`celocli epochs:finish`](#celocli-epochsfinish)
 * [`celocli epochs:process-groups`](#celocli-epochsprocess-groups)
-* [`celocli epochs:process-groups`](#celocli-epochsprocess-groups)
 * [`celocli epochs:send-validator-payment`](#celocli-epochssend-validator-payment)
 * [`celocli epochs:start`](#celocli-epochsstart)
 * [`celocli epochs:switch`](#celocli-epochsswitch)

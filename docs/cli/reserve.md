@@ -6,7 +6,7 @@ Shows information about reserve
 * [`celocli reserve:status`](#celocli-reservestatus)
 * [`celocli reserve:transfergold`](#celocli-reservetransfergold)
 
-## `celocli reserve:status`
+## `celocli reserve:status` {#celocli-reservestatus}
 
 Shows information about reserve
 
@@ -32,7 +32,7 @@ EXAMPLES
 
 _See code: [src/commands/reserve/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/reserve/status.ts)_
 
-## `celocli reserve:transfergold`
+## `celocli reserve:transfergold` {#celocli-reservetransfergold}
 
 Transfers reserve celo to other reserve address
 
