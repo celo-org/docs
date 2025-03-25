@@ -16,10 +16,9 @@ It’s a command-line interface for interacting with the Celo Protocol and core 
 
 ## Installation {#installation}
 
-
 ### Homebrew {#brew-tap}
 
-If you're on macOS or Linux, celocli is available as a *tap* on Homebrew. 
+If you're on macOS or Linux, celocli is available as a *tap* on Homebrew.
 
 ```bash
 brew tap celo-org/brew
@@ -109,4 +108,3 @@ For example:
 ```shell
 celocli transfer:celo --to <addressOfChoice> --value 1000000 --from <accountAddress> --useLedger
 ```
-
