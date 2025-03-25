@@ -33,6 +33,7 @@ View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/
 | Exchange                | [0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275](https://celoscan.io/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275) |
 | ExchangeEUR             | [0xE383394B913d7302c49F794C7d3243c429d53D1d](https://celoscan.io/address/0xE383394B913d7302c49F794C7d3243c429d53D1d) |
 | FeeCurrencyWhitelist    | [0xBB024E9cdCB2f9E34d893630D19611B8A5381b3c](https://celoscan.io/address/0xBB024E9cdCB2f9E34d893630D19611B8A5381b3c) |
+| FeeCurrencyDirectory    | [0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276](https://celoscan.io/address/0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276) |
 | Freezer                 | [0x47a472F45057A9d79d62C6427367016409f4fF5A](https://celoscan.io/address/0x47a472F45057A9d79d62C6427367016409f4fF5A) |
 | FeeHandler              | [0xcD437749E43A154C07F3553504c68fBfD56B8778](https://celoscan.io/address/0xcD437749E43A154C07F3553504c68fBfD56B8778) |
 | GasPriceMinimum         | [0xDfca3a8d7699D8bAfe656823AD60C17cb8270ECC](https://celoscan.io/address/0xDfca3a8d7699D8bAfe656823AD60C17cb8270ECC) |
@@ -76,7 +77,7 @@ $ celocli network:contracts --node https://forno.celo.org
 | ExchangeBRL              | [0xf391DcaF77360d39e566b93c8c0ceb7128fa1A08](https://alfajores.celoscan.io/address/0xf391DcaF77360d39e566b93c8c0ceb7128fa1A08) |
 | ExchangeEUR              | [0x997B494F17D3c49E66Fafb50F37A972d8Db9325B](https://alfajores.celoscan.io/address/0x997B494F17D3c49E66Fafb50F37A972d8Db9325B) |
 | FeeCurrencyWhitelist     | [0xB8641365dBe943Bc2fb6977e6FBc1630EF47dB5a](https://alfajores.celoscan.io/address/0xB8641365dBe943Bc2fb6977e6FBc1630EF47dB5a) |
-| FeeCurrencyDirectory     | [0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685](https://alfajores.celoscan.io/address/0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685) |
+| FeeCurrencyDirectory     | [0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF](https://alfajores.celoscan.io/address/0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF) |
 | Freezer                  | [0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1](https://alfajores.celoscan.io/address/0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1) |
 | FeeHandler               | [0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38](https://alfajores.celoscan.io/address/0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38) |
 | GasPriceMinimum          | [0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e](https://alfajores.celoscan.io/address/0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e) |
