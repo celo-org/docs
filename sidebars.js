@@ -1008,7 +1008,6 @@ const toolingSidebar = [
           { type: "doc", label: "Epochs", id: "cli/epochs" },
           { type: "doc", label: "Exchange", id: "cli/exchange" },
           { type: "doc", label: "Governance", id: "cli/governance" },
-          { type: "doc", label: "Granda Mento", id: "cli/grandamento" },
           { type: "doc", label: "Identity", id: "cli/identity" },
           { type: "doc", label: "LockedCelo", id: "cli/lockedcelo", },
           { type: "doc", label: "LockedGold", id: "cli/lockedgold", },
