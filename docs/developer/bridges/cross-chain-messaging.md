@@ -31,10 +31,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 <PageRef url="https://chain.link/cross-chain" pageName="Chainlink CCIP" />
 
-
-
 ## Hyperlane
-
 
 [Hyperlane (formerly known as Abacus)](https://www.hyperlane.xyz/) is a permissionless cross-chain messaging protocol that enables decentralized applications (dApps) to communicate and share data across multiple blockchain networks. It provides developers with the tools to build interoperable smart contracts that can send and receive messages between chains, facilitating cross-chain DeFi, governance, and other multi-chain use cases.
 

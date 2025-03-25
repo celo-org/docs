@@ -35,7 +35,6 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 - [Bridges](/developer/bridges)
 - [Testnet Faucet](https://faucet.celo.org)
 
-
 ## Developer Environments
 
 - [Using thirdweb](/developer/deploy/thirdweb)

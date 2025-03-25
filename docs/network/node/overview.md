@@ -41,6 +41,7 @@ Paid RPC endpoint hosting.
 [Alchemy](https://docs.alchemy.com/reference/alchemy-sdk-quickstart) is a popular API provider and developer platform. Its robust, free tier offers access to enhanced features like SDKs and enhanced APIs and hosted OP Mainnet and testnet nodes.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
@@ -51,6 +52,7 @@ Paid RPC endpoint hosting.
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
@@ -62,6 +64,7 @@ Infura is L2 ready.
 RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
@@ -74,6 +77,7 @@ Quicknode is L2 ready.
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://www.quicknode.com/docs/celo" pageName="Quicknode" />
@@ -83,6 +87,7 @@ Quicknode is L2 ready.
 All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pay only for what you use, scale resources effortlessly, and enjoy clear, predictable pricing. Our model eliminates large upfront costs, encourages innovation and simplifies budgeting. With dRPC, you can manage your Web3 infrastructure efficiently and cost-effectively.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
@@ -93,6 +98,7 @@ All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pa
 Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://docs.lavanet.xyz/celo-dev/" pageName="Lava" />
@@ -102,6 +108,7 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
@@ -112,6 +119,7 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 Pocket Network is compatible with any network/blockchain (RelayChain) that uses the RPC standard.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://docs.pokt.network/reference/supported-chains#pokt-mainnet" pageName="POKT" />
@@ -121,6 +129,7 @@ Pocket Network is compatible with any network/blockchain (RelayChain) that uses 
 Tatum provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole lot more.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://tatum.io/chain/celo" pageName="Tatum" />
@@ -130,6 +139,7 @@ Tatum provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole 
 Nirvana Cloud removes the complexity and costs around procuring, deploying, and networking bare metal servers desperately needed by blockchain companies, reducing opex for staking/validator firms, dApps, RPC providers, blockchain foundations, web3 data firms (indexers), and HFTs active-on chain.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://nirvanalabs.io/nirvana-nodes" pageName="Nirvana Labs" />
@@ -139,6 +149,7 @@ Nirvana Cloud removes the complexity and costs around procuring, deploying, and 
 Chainstack provides global load-balanced nodes for Celo. A free developer plan is available with an easy social login (e.g. GitHub). You can also top up your balance with crypto.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://chainstack.com/build-better-with-celo/" pageName="Chainstack" />
@@ -149,8 +160,7 @@ All That Node supports public and private RPC nodes. They offer free private RPC
 You can also claim Alfajores funds from the faucet in the site without signing up.
 
 #### **Supported Networks**
+
 - Celo Mainnet
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
-
-

@@ -5,7 +5,7 @@ description: A beginner's guide to building DeFi applications on Celo
 
 # Build with DeFi
 
-In this guide you can explore tooling and infrastructure for building DeFi on Celo. 
+In this guide you can explore tooling and infrastructure for building DeFi on Celo.
 
 ## Overview  
 
@@ -21,15 +21,15 @@ Stablecoins are digital assets pegged to a stable reserve, such as fiat currency
 - **Programmability** – Stablecoins can be used in smart contracts to enable lending, savings, and remittances.  
 - **Financial Inclusion** – Stablecoins empower unbanked and underbanked populations with access to digital financial services.  
 
-
 ### Examples of DeFi Applications on Celo  
 
 Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:  
 
 #### Lending & Borrowing  
+
 - **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.  
 
-#### Decentralized Exchanges (DEX) 
+#### Decentralized Exchanges (DEX)
 
 Find all Exchanges and Bridges in the [tooling section](/developer/bridges).
 
@@ -37,9 +37,9 @@ Find all Exchanges and Bridges in the [tooling section](/developer/bridges).
 - **[Ubeswap](https://ubeswap.org/)** – A Celo-native DEX optimized for mobile users.  
 
 #### Liquidity Incentives  
+
 - **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
-- **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives. 
- 
+- **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
 
 ## Celo Stablecoin Ecosystem  
 

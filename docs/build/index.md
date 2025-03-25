@@ -17,7 +17,6 @@ Whether you're building your first dApp or looking to integrate an existing prot
 - **Easy, Low-Cost Payments:** Celo's seamless payment infrastructure, including [Fee Abstraction](/developer/fee-abstraction), **sub-cent fees**, and **native stablecoins**, enables simple and affordable transactions.
 - **Global Reach:** Celo provides access to more than **5 million real-world users** with some dApps having more than **200.000 DAUs**.
 
-
 <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
     <span className="text-3xl font-bold">
         <p id="home2.section3.title">
@@ -151,4 +150,3 @@ Whether you're building your first dApp or looking to integrate an existing prot
         </a>
     </div>
 </section>
-

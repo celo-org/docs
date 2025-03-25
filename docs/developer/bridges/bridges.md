@@ -98,7 +98,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 [Satellite by Axelar](https://satellite.money/) is a cross-chain bridge and interoperability platform that enables seamless transfer of assets and data between different blockchain networks. Built on the Axelar network, Satellite provides a secure and decentralized way to connect various blockchains, allowing users to move tokens and interact with decentralized applications (dApps) across multiple ecosystems. It emphasizes ease of use, security, and broad blockchain compatibility.
 
-
 **Supported chains**
 
 - Celo Mainnet
