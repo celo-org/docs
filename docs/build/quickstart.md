@@ -50,8 +50,6 @@ If you chose to use a template, you will be prompted to select a template from t
 - MiniPay
 # template built for easy Valora connectivity
 - Valora
-# example project for matching your social Identifier to your wallet address, using GitHub
-- Social Connect
 ```
 
 ### Provide the Project Owner's Name:
@@ -116,13 +114,6 @@ Checkout [minipay docs](https://docs.celo.org/developer/build-on-minipay/overvie
 - Facilitates easy wallet connectivity and transaction management.
 
 Checkout [valora docs](https://docs.valora.xyz/) to learn more about it.
-
-### Social Connect
-
-- Template for building applications with social connectivity features.
-- Supports various social login methods and user interactions.
-
-Checkout [social connect docs](https://github.com/celo-org/social-connect) to learn more about it.
 
 ## Support
 

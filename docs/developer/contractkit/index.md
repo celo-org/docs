@@ -27,7 +27,7 @@ Contractkit includes common functionality to make it easier to get started build
 
 **What you can do?**
 
-[ContractKit](../community/release-process/base-cli-contractkit-dappkit-utils) supports the following functionality:
+[ContractKit](/community/release-process/base-cli-contractkit-dappkit-utils) supports the following functionality:
 
 - Connect to a node
 - Access Web3 object to interact with node's JSON RPC API

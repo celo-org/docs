@@ -63,12 +63,13 @@ export default function HomePage(): JSX.Element {
             <span className="text-5xl font-bold text-center space-x-5">
               Build for the Real World on Celo
             </span>
-            <br/><br/>
+            <br />
+            <br />
             {/*
             <span className="text-2xl font-bold text-center space-x-5">
               Celo is an emerging mobile-first Ethereum L2 optimized for fast, low-cost transactions worldwide
             </span>
-            */}            
+            */}
             <Link
               href={"https://docs.celo.org/build"}
               className="flex space-x-2 items-center mt-2"
@@ -94,7 +95,7 @@ export default function HomePage(): JSX.Element {
             <HeroImage />
           </div>
         </section>
-        
+
         <section className="mt-12">
           <div className="text-3xl font-semibold px-2 w-full">
             <Translate id="home2.section1.title">
@@ -146,7 +147,9 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.faucet.title">Build on MiniPay</Translate>
+                <Translate id="home2.section3.faucet.title">
+                  Build on MiniPay
+                </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home2.section3.faucet.description">
@@ -200,7 +203,7 @@ export default function HomePage(): JSX.Element {
                 />
               </svg>
             </a>
-            
+
             <a
               href="/build/build-with-ai/overview"
               target="_blank"
@@ -238,7 +241,9 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.wallets.title">Build with Celo Composer</Translate>
+                <Translate id="home2.section3.wallets.title">
+                  Build with Celo Composer
+                </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home2.section3.wallets.description">
@@ -292,14 +297,47 @@ export default function HomePage(): JSX.Element {
               </svg>
             </a>
 
-            
+
+            <a
+              href="/build/build-with-defi"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoLibraries.title">
+                  Build with DeFi
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoLibraries.description">
+                  Build with DeFi protocols, stablecoins and for FX
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+
             <a
               href="https://www.mento.org/"
               target="_blank"
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.deploy.title">Build with Mento</Translate>
+                <Translate id="home2.section3.deploy.title">
+                  Build with Mento
+                </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home2.section3.deploy.description">
@@ -321,7 +359,39 @@ export default function HomePage(): JSX.Element {
                 />
               </svg>
             </a>
-            
+
+            <a
+              href="/build/fund-your-project"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoLibraries.title">
+                  Get Funding
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoLibraries.description">
+                  Get funding for your project
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+
+              </svg>
+            </a>
+
           </div>
         </section>
 
@@ -517,7 +587,7 @@ export default function HomePage(): JSX.Element {
                   id: "Discover how Celo L2 is scaling real world use cases on Ethereum",
                 }),
                 "img/homepage/icons/WhatIsCelo_White.svg",
-                "/general",
+                "/what-is-celo",
               )}
 
               {sectionFourCard(
@@ -528,7 +598,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.architecture.description",
                 }),
                 "img/homepage/icons/Architechture_White.svg",
-                "/general/architecture",
+                "/what-is-celo/about-celo-l1/l1-architecture",
               )}
 
               {sectionFourCard(
@@ -539,7 +609,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.whitepapers.description",
                 }),
                 "img/homepage/icons/WhitePapers_white.svg",
-                "/general/whitepapers",
+                "https://celo.org/papers",
               )}
 
               {sectionFourCard(
@@ -548,7 +618,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.protocol.description",
                 }),
                 "img/homepage/icons/Protocol_White.svg",
-                "/protocol",
+                "/what-is-celo/about-celo-l1/protocol",
               )}
             </div>
 
@@ -625,9 +695,9 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.bridge.description",
                 }),
                 "img/homepage/icons/Rainbow_White.svg",
-                "/protocol/bridges",
+                "/developer/bridges",
               )}
-              
+
               {sectionFourCard(
                 translate({ id: "home.section4.developer.deploy.title" }),
                 translate({
@@ -635,23 +705,33 @@ export default function HomePage(): JSX.Element {
                 }),
                 "img/homepage/icons/Migration_White.svg",
                 "/developer/deploy",
-              )}              
+              )}
             </div>
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                <Translate id="home.section4.validators">Grow your Project</Translate>
+                <Translate id="home.section4.validators">
+                  Grow your Project
+                </Translate>
               </div>
               {sectionFourCard(
-                translate({ id: "home.section4.growYourProject.funding.title" }),
-                translate({ id: "home.section4.growYourProject.funding.description" }),
+                translate({
+                  id: "home.section4.growYourProject.funding.title",
+                }),
+                translate({
+                  id: "home.section4.growYourProject.funding.description",
+                }),
                 "img/homepage/icons/Validator_White.svg",
                 "/build/fund-your-project",
               )}
 
               {sectionFourCard(
-                translate({ id: "home.section4.growYourProject.distribution.title" }),
-                translate({ id: "home.section4.growYourProject.distribution.description" }),
+                translate({
+                  id: "home.section4.growYourProject.distribution.title",
+                }),
+                translate({
+                  id: "home.section4.growYourProject.distribution.description",
+                }),
                 "img/homepage/icons/Node_White.svg",
                 "/developer/launch-checklist",
               )}
@@ -671,54 +751,52 @@ export default function HomePage(): JSX.Element {
           </div>
           <div className="text-xl font-medium px-2 w-full mt-2">
             <Translate id="home2.section5.subheader">
-              Discover the many ways to connect with our growing community of developers
+              Discover the many ways to connect with our growing community of
+              developers
             </Translate>
           </div>
-          
+
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-2">
               {sectionFourCard(
                 "Join the Newsletter",
                 "Stay updated on the latest news, grants, and opportunities.",
                 "img/homepage/ambassador.svg",
-                "https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2"
+                "https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2",
               )}
               {sectionFourCard(
                 "Connect with the Community",
                 "Join our Discord",
                 "img/homepage/connect.svg",
-                "https://discord.com/invite/celo"
+                "https://discord.com/invite/celo",
               )}
               {sectionFourCard(
                 "Bring Your Ideas to Life",
                 "Sign up for upcoming hackathons and workshops",
                 "img/homepage/contribute.svg",
-                "https://celo.lemonade.social/"
+                "https://celo.lemonade.social/",
               )}
               {sectionFourCard(
                 "Join Proof of Ship",
                 "Build your onchain reputation to unlock exclusive rewards",
                 "img/homepage/connect.svg",
-                "https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8"
+                "https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8",
               )}
               {sectionFourCard(
                 "Make your Voice Heard",
                 "Vote on Governance Proposals",
                 "img/homepage/connect.svg",
-                "https://docs.celo.org/general/using-celo/voting#celo-mondo"
+                "/what-is-celo/using-celo/protocol/governance/voting-in-governance",
               )}
               {sectionFourCard(
                 "Get Daily Updates",
                 "Follow our CeloDev on X",
                 "img/homepage/ambassador.svg",
-                "https://x.com/CeloDevs"
+                "https://x.com/CeloDevs",
               )}
             </div>
           </div>
         </section>
-
-
-
 
         {/* <section className="mt-12">
           <div className="text-4xl font-semibold px-2 w-full">
@@ -749,7 +827,7 @@ export default function HomePage(): JSX.Element {
                 translate({ id: "home.section6.contribute.title" }),
                 translate({ id: "home.section6.contribute.description" }),
                 "img/doc-images/logos/contribute.svg",
-                "/community/guidelines",
+                "/what-is-celo/joining-celo",
               )}
 
               {sectionFourCard(
