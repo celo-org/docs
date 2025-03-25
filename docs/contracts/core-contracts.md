@@ -33,6 +33,7 @@ View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/
 | Exchange                | [0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275](https://celoscan.io/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275) |
 | ExchangeEUR             | [0xE383394B913d7302c49F794C7d3243c429d53D1d](https://celoscan.io/address/0xE383394B913d7302c49F794C7d3243c429d53D1d) |
 | FeeCurrencyWhitelist    | [0xBB024E9cdCB2f9E34d893630D19611B8A5381b3c](https://celoscan.io/address/0xBB024E9cdCB2f9E34d893630D19611B8A5381b3c) |
+| FeeCurrencyDirectory    | [0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276](https://celoscan.io/address/0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276) |
 | Freezer                 | [0x47a472F45057A9d79d62C6427367016409f4fF5A](https://celoscan.io/address/0x47a472F45057A9d79d62C6427367016409f4fF5A) |
 | FeeHandler              | [0xcD437749E43A154C07F3553504c68fBfD56B8778](https://celoscan.io/address/0xcD437749E43A154C07F3553504c68fBfD56B8778) |
 | GasPriceMinimum         | [0xDfca3a8d7699D8bAfe656823AD60C17cb8270ECC](https://celoscan.io/address/0xDfca3a8d7699D8bAfe656823AD60C17cb8270ECC) |
