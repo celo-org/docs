@@ -1016,7 +1016,6 @@ const toolingSidebar = [
           { type: "doc", label: "Node", id: "cli/node" },
           { type: "doc", label: "Oracle", id: "cli/oracle" },
           { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
-          { type: "doc", label: "Reserve", id: "cli/reserve" },
           { type: "doc", label: "Rewards", id: "cli/rewards" },
           { type: "doc", label: "Transfer", id: "cli/transfer" },
           { type: "doc", label: "Validator", id: "cli/validator" },
