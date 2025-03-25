@@ -77,7 +77,7 @@ $ celocli network:contracts --node https://forno.celo.org
 | ExchangeBRL              | [0xf391DcaF77360d39e566b93c8c0ceb7128fa1A08](https://alfajores.celoscan.io/address/0xf391DcaF77360d39e566b93c8c0ceb7128fa1A08) |
 | ExchangeEUR              | [0x997B494F17D3c49E66Fafb50F37A972d8Db9325B](https://alfajores.celoscan.io/address/0x997B494F17D3c49E66Fafb50F37A972d8Db9325B) |
 | FeeCurrencyWhitelist     | [0xB8641365dBe943Bc2fb6977e6FBc1630EF47dB5a](https://alfajores.celoscan.io/address/0xB8641365dBe943Bc2fb6977e6FBc1630EF47dB5a) |
-| FeeCurrencyDirectory     | [0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685](https://alfajores.celoscan.io/address/0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685) |
+| FeeCurrencyDirectory     | [0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF](https://alfajores.celoscan.io/address/0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF) |
 | Freezer                  | [0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1](https://alfajores.celoscan.io/address/0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1) |
 | FeeHandler               | [0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38](https://alfajores.celoscan.io/address/0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38) |
 | GasPriceMinimum          | [0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e](https://alfajores.celoscan.io/address/0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e) |
