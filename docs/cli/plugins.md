@@ -77,20 +77,11 @@ EXAMPLES
     $ celocli plugins:add myplugin
 
   Install a plugin from a github url.
-  Install a plugin from npm registry.
-
-    $ celocli plugins:add myplugin
-
-  Install a plugin from a github url.
 
     $ celocli plugins:add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
-    $ celocli plugins:add https://github.com/someuser/someplugin
 
-  Install a plugin from a github slug.
-
-    $ celocli plugins:add someuser/someplugin
     $ celocli plugins:add someuser/someplugin
 ```
 
@@ -161,20 +152,11 @@ EXAMPLES
     $ celocli plugins:install myplugin
 
   Install a plugin from a github url.
-  Install a plugin from npm registry.
-
-    $ celocli plugins:install myplugin
-
-  Install a plugin from a github url.
 
     $ celocli plugins:install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
-    $ celocli plugins:install https://github.com/someuser/someplugin
 
-  Install a plugin from a github slug.
-
-    $ celocli plugins:install someuser/someplugin
     $ celocli plugins:install someuser/someplugin
 ```
 
