@@ -634,15 +634,6 @@ const Users: User[] = [
     tags: ['apps', 'wallets', 'defi'],
   },
   {
-    title: 'Paysail',
-    description: 'Paysail leverages asset-backed stablecoins to offer an innovative global B2B invoicing solution with immediate access to incoming funds.',
-    preview: require('./showcase/pay-sail.png'),
-    website: 'https://paysail.us/',
-    source: 'https://paysail.us/',
-    tags: ['apps', 'earn'],
-  },
-
-  {
     title: 'Mento',
     description: 'Make exchanges between Celo native currencies using the Mento on-chain exchange mechanism.',
     preview: require('./showcase/mento-fi.png'),
