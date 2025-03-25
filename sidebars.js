@@ -779,19 +779,19 @@ const toolingSidebar = [
         id: "network/node/overview",
       },
       {
-        type: "doc",
-        label: "Forno",
-        id: "network/node/forno",
-      },
-      {
-        type: "doc",
+        type: "link",
         label: "Run a Celo Node",
-        id: "network/node/run-node",
+        href: "https://docs.celo.org/cel2/operators/run-node",
       },
       {
         type: "doc",
         label: "Hosted Nodes",
         id: "network/node/run-hosted",
+      },
+      {
+        type: "doc",
+        label: "Forno",
+        id: "network/node/forno",
       },
       // {
       //   type: "category",
