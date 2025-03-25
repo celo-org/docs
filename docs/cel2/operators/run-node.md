@@ -11,12 +11,14 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
 ### Testnets (Alfajores and Baklava)
 
 - 16GB+ RAM
+- Minimum 4 CPU, recommended 8 CPU
 - 500GB SSD (NVME Recommended)
 - 100mb/s+ Download
 
 ### Mainnet
 
 - 16GB+ RAM
+- Minimum 4 CPU, recommended 8 CPU
 - 1TB+ SSD (NVME Recommended)
 - 100mb/s+ Download
 

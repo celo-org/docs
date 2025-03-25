@@ -151,11 +151,11 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 
 ### Whitepapers
 
-To learn about the Celo Protocol, please refer to the [whitepaper](/general/whitepapers).
+To learn about the Celo Protocol, please refer to the [whitepaper](https://celo.org/papers).
 
 For more information on other aspects of the Celo Protocol, visit the [useful links](/general/) page.
 
-To learn more about the Stability Mechanism, you can find it over [here](/protocol/stability/doto).
+To learn more about the Stability Mechanism, you can find it over [here](/what-is-celo/about-celo-l1/protocol/stability/doto).
 The [Stability Analysis Whitepaper](https://celo.org/papers/Celo_Stability_Analysis.pdf) and [blog post](https://medium.com/celohq/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5) will provide a lot more information on the stability algorithm.
 
 If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://celoreserve.org/](https://celoreserve.org/).

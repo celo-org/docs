@@ -38,7 +38,7 @@ const DESCRIPTION = translate({
   message:
     "Build decentralized applications that create the conditions for prosperity — for everyone.",
 });
-const EDIT_URL = "general";
+const EDIT_URL = "/what-is-celo";
 
 type UserState = {
   scrollTopPosition: number;

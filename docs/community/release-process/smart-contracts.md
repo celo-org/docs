@@ -238,11 +238,10 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 ### Verify smart contracts
 
-Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
+Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/.
 
 1. [Update your Smart Contract on celoscan](/developer/verify/celoscan)
 2. [Update your Smart Contract on Blockscout](/developer/verify/blockscout)
-
 
 ### Performance
 
@@ -415,7 +414,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/protocol/governance">governance process.</a>
+          <a href="/what-is-celo/using-celo/protocol/governance/overview">governance process.</a>
           <ul>
             <li>
               Currently the governance process should take approximately 1 week:

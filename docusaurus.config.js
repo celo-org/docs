@@ -31,21 +31,6 @@ module.exports = {
     // },
   ],
   plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          {
-            from: "/cel2/l2-operator-guide",
-            to: "/cel2/operators/overview",
-          },
-          {
-            from: "/cel2/operators/rpc-provider",
-            to: "/cel2/operators/community-rpc-node",
-          },
-        ],
-      },
-    ],
     require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
@@ -97,7 +82,7 @@ module.exports = {
       },
       items: [
         {
-          to: "/general",
+          to: "/what-is-celo",
           label: "What is Celo",
           position: "left",
         },
@@ -135,7 +120,7 @@ module.exports = {
               to: "https://discord.com/invite/celo",
               label: "Celo Discord",
               target: "_blank",
-            },            
+            },
           ],
         },
         {
@@ -233,7 +218,7 @@ module.exports = {
           title: "Community",
           items: [
             {
-              href: "/community/guidelines",
+              href: "/what-is-celo/joining-celo",
               label: "Contributors",
             },
             {

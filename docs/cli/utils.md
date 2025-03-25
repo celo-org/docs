@@ -5,7 +5,7 @@ List the whitelisted fee currencies
 
 * [`celocli utils:whitelist`](#celocli-utilswhitelist)
 
-## `celocli utils:whitelist` {#celocli-utilswhitelist}
+## `celocli utils:whitelist`
 
 List the whitelisted fee currencies
 
