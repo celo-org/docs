@@ -3,6 +3,9 @@ title: Token Bridges
 description: Token bridges enable cross-chain asset transfers between blockchains.
 ---
 
+
+import PageRef from '@components/PageRef'
+
 Blockchain bridges are protocols that facilitate the transfer of assets and data between different blockchains.
 <br/>
 
@@ -25,8 +28,10 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 **Supported chains**
 
-- Celo Alfajores
 - Celo Mainnet
+- Celo Alfajores
+
+<PageRef url="https://testnets.superbridge.app/" pageName="Superbridge" />
 
 ## Layerswap
 
@@ -36,6 +41,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 
+<PageRef url="https://layerswap.io/app" pageName="Layerswap" />
+
 ## Squid Router
 
 [Squid Router](https://v2.app.squidrouter.com/) is a cross-chain liquidity routing protocol that enables seamless token swaps and transfers across multiple blockchain networks. It leverages the Axelar network for secure cross-chain communication, allowing users to swap tokens between blockchains without relying on centralized intermediaries. The protocol aggregates liquidity from various decentralized exchanges (DEXs) to provide optimal rates for users.
@@ -44,6 +51,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 
+<PageRef url="https://v2.app.squidrouter.com/" pageName="Squid Router" />
+
 ## Jumper Exchange
 
 [Jumper Exchange](https://jumper.exchange/) is a cross-chain decentralized exchange (DEX) platform that enables seamless swapping of assets across multiple blockchain networks. It focuses on user-friendly, low-cost, and efficient transactions, supporting interoperability and liquidity across ecosystems like Ethereum, Polygon, and Celo.
@@ -51,6 +60,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 **Supported chains**
 
 - Celo Mainnet
+
+<PageRef url="https://jumper.exchange/" pageName="Jumper Exchange" />
 
 ## Hyperlane Nexus
 
@@ -61,6 +72,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 - Celo Mainnet
 - Celo Alfajores
 
+<PageRef url="https://www.usenexus.org/" pageName="Hyperlane Nexus" />
+
 ## Portal (Wormhole)
 
 [Portal (formerly known as Wormhole)](https://portalbridge.com/) is a cross-chain messaging and token bridge protocol that enables the transfer of assets and data between different blockchain networks. It acts as a decentralized interoperability layer, allowing users to move tokens and interact with applications across multiple blockchains seamlessly. Portal leverages a secure, and decentralized network of validators to ensure trustless cross-chain communication.
@@ -68,6 +81,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 **Supported chains**
 
 - Celo Mainnet
+
+<PageRef url="https://portalbridge.com/" pageName="Portal (Wormhole)" />
 
 ## AllBridge
 
@@ -77,13 +92,18 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 
+<PageRef url="https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR" pageName="AllBridge" />
+
 ## Satellite (Axelar)
 
 [Satellite by Axelar](https://satellite.money/) is a cross-chain bridge and interoperability platform that enables seamless transfer of assets and data between different blockchain networks. Built on the Axelar network, Satellite provides a secure and decentralized way to connect various blockchains, allowing users to move tokens and interact with decentralized applications (dApps) across multiple ecosystems. It emphasizes ease of use, security, and broad blockchain compatibility.
 
+
 **Supported chains**
 
 - Celo Mainnet
+
+<PageRef url="https://satellite.money/" pageName="Satellite (Axelar)" />
 
 ## Transporter (Chainlink CCIP)
 
@@ -93,6 +113,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 
+<PageRef url="https://www.transporter.io/" pageName="Transporter (Chainlink CCIP)" />
+
 ## Galaxy
 
 [Galaxy](https://galaxy.exchange/swap) is a decentralized exchange (DEX) built on the Celo blockchain, designed for fast, low-cost, and user-friendly trading of digital assets. It supports a wide range of tokens, including Celo-native assets and stablecoins, while prioritizing accessibility and financial inclusion.
@@ -100,6 +122,14 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 **Supported chains**
 
 - Celo Mainnet
+
+<PageRef url="https://galaxy.exchange/swap" pageName="Galaxy" />
+
+## Mach Exchange 
+
+[Mach](https://app.mach.exchange/swap) is our solution for securing stablecoin markets across every blockchain, providing cross-chain swaps that are incredibly fast, cheap, and direct. By enabling instant (single block) swaps, the protocol can go at Mach speed - drastically reducing both the time and expenses typically involved in these transactions, with instant settlement.
+
+<PageRef url="https://app.mach.exchange/swap" pageName="Mach Exchange" />
 
 ## Rubic Exchange
 
@@ -109,6 +139,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 
+<PageRef url="https://app.rubic.exchange/" pageName="Rubic Exchange" />
+
 ## SmolRefuel
 
 [SmolRefuel (Gassless Bridging)](https://smolrefuel.com/?outboundChain=42220) SmolRefuel is a tool that automates small gas top-ups for blockchain transactions, ensuring seamless interactions with dApps by keeping wallets funded and reducing interruptions. It simplifies gas management for users.
@@ -116,3 +148,5 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 **Supported chains**
 
 - Celo Mainnet
+
+<PageRef url="https://smolrefuel.com/?outboundChain=42220" pageName="SmolRefuel" />

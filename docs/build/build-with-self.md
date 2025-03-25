@@ -13,11 +13,23 @@ This document will cover:
 
 ## What is Self?
 
-Self is a privacy-first, open-source identity protocol that uses zero-knowledge proofs for secure identity verification. 
+[Self](https://self.xyz/) is a privacy-first, open-source identity protocol that uses zero-knowledge proofs for secure identity verification. 
 
-Verify your digital identity seamlessly and securely.
 
-Prove who you are. Prove where you’re from. All without sharing any private information with third party applications.
+It enables Sybil resistance and selective disclosure using real-world attestations like passports. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
+
+Access the [Self developer docs](https://docs.self.xyz/), explore APIs, and start building today.
+
+## Verify Your Digital Identity
+
+Seamlessly and securely verify your digital identity with Self. It allows you to:
+
+- **Prove Your Humanity:** Confirm you are human without revealing personal information.
+- **Proof your identity, age, nationality or :** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
+- **Privacy-preserving technology:** Protect your users private information. They will only disclose credentials and information that they allow. 
+- **Streamline Verification:** Enjoy a smooth and efficient identity verification process.
+- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps
+
 
 ## Technical Resources
 
@@ -26,7 +38,14 @@ Prove who you are. Prove where you’re from. All without sharing any private in
 - [Self Playground](https://playground.self.xyz/)
 - [Self Quickstart](https://docs.self.xyz/use-self/quickstart)
 
-## Opportunities for Builders 
+## What to build?
 
-- [ETHSF 2025](https://ethsf2025.devfolio.co/prizes?partner=Self+Protocol+by+Celo)
-- [Build with Celo - Proof of Ship](https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8)
+- Airdrop Protection
+- Quadratic Funding
+- Wallet Recovery
+- Social Media & Marketplaces
+- Country-Specific Functionality
+- AI Protection for Smart Contracts
+- Sanction List Checking
+- Age Verification
+- Sybil-Resistant Polling

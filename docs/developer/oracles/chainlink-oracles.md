@@ -1,6 +1,6 @@
 ---
 title: Using Chainlink Oracles
-description: Tutorial on how to use the Band Protocol on Celo
+description: Tutorial on how to use the Chainlink Oracles on Celo
 ---
 
 By the conclusion of this tutorial, you will have a thorough understanding of how to integrate your decentralized application (dApp) with Chainlink oracles.

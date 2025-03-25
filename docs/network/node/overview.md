@@ -97,6 +97,52 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 
 <PageRef url="https://docs.lavanet.xyz/celo-dev/" pageName="Lava" />
 
+### [thirdweb](https://thirdweb.com/celo)
+
+Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
+
+#### **Supported Networks**
+- Celo Mainnet
+- Celo Alfajores (Testnet)
+
+<PageRef url="https://thirdweb.com/celo" pageName="thirdweb" />
+
+### [POKT](https://docs.lavanet.xyz/celo-dev/)
+
+Pocket Network is compatible with any network/blockchain (RelayChain) that uses the RPC standard.
+
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://docs.pokt.network/reference/supported-chains#pokt-mainnet" pageName="POKT" />
+
+### [Tatum](https://tatum.io/chain/celo)
+
+Tatum provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole lot more.
+
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://tatum.io/chain/celo" pageName="Tatum" />
+
+### [Nirvana Labs](https://nirvanalabs.io/nirvana-nodes)
+
+Nirvana Cloud removes the complexity and costs around procuring, deploying, and networking bare metal servers desperately needed by blockchain companies, reducing opex for staking/validator firms, dApps, RPC providers, blockchain foundations, web3 data firms (indexers), and HFTs active-on chain.
+
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://nirvanalabs.io/nirvana-nodes" pageName="Nirvana Labs" />
+
+### [Chainstack](https://chainstack.com/build-better-with-celo/)
+
+Chainstack provides global load-balanced nodes for Celo. A free developer plan is available with an easy social login (e.g. GitHub). You can also top up your balance with crypto.
+
+#### **Supported Networks**
+- Celo Mainnet
+
+<PageRef url="https://chainstack.com/build-better-with-celo/" pageName="Chainstack" />
+
 ### [All that node](https://www.allthatnode.com/celo.dsrv)
 
 All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded.

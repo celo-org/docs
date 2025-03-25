@@ -528,6 +528,7 @@
 /developer-guide/contractkit/setup /developer/contractkit/setup
 /developer-resources/contractkit/usage /developer/contractkit/setup
 /developer-guide/contractkit/usage /developer/contractkit/setup
+/developer/evm-tools /developer/
 /getting-started/validator-troubleshooting-faq /validator/troubleshooting-faq
 /getting-started/running-oracles /protocol/oracle/run
 /getting-started/hosted-nodes /network/node/run-hosted
@@ -633,7 +634,7 @@
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund#bolstering-the-reserve /protocol/pos/epoch-rewards-community-fund
 /celo-codebase/protocol/consensus /protocol/consensus
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards#introduction-to-locked-celo-rewards /protocol/pos/epoch-rewards-locked-gold
-/es/learn/evm-compatible-tooling /developer/evm-tools
+/es/learn/evm-compatible-tooling /developer
 /v/master/getting-started/baklava-testnet /network
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards /protocol/pos/epoch-rewards-validator
 /developer-resources/use-contractkit /developer/react-celo
