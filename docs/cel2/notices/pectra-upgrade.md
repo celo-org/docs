@@ -1,5 +1,9 @@
 # Preparing for Pectra L1 hardfork
 
+:::info
+This page is not relevant for Celo Mainnet, only for the testnets Alfajores and Baklava.
+:::
+
 This page outlines breaking changes related to the Ethereum Pectra (Prague-Electra) L1 hard fork for node operators on the Celo Alfajores & Baklava L2 Testnets. Please also have a look at the [Optimism Pectra update information](https://docs.optimism.io/notices/pectra-changes).
 
 The Pectra upgrade for Holesky L1 was activated on slot: 3710976 (Mon, Feb 24 at 21:55:12 UTC).
