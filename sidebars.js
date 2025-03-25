@@ -1183,6 +1183,11 @@ const toolingSidebar = [
         label: "Using Supra",
         id: "developer/oracles/supra",
       },
+      {
+        type: "doc",
+        label: "Using Quex oracles",
+        id: "developer/oracles/quex-oracles",
+      },
     ],
   },
   {

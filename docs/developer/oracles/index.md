@@ -25,3 +25,4 @@ Here are lists of all on-chain Oracles:
 - [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
 - [Pyth Network](https://pyth.network/)
 - [Witnet](https://witnet.io/)
+- [Quex Oracles](/developer/oracles/quex-oracles)
