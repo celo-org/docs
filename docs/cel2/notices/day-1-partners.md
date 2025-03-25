@@ -8,13 +8,19 @@ Below is the list of confirmed Day 1 partners:
 ### Node and RPC Providers
 
 - Alchemy
-- Ankr  
+- All that Node
+- Ankr
+- Blockjoy
 - DRPC
+- Dwellir
 - Forno
 - Infura
+- Lava Network
 - Nirvana Labs
 - Pokt
-- Quicknode  
+- Pokt Network
+- Quicknode
+- RPC
 - Tatum
 - The Graph
 - Thirdweb
@@ -22,12 +28,16 @@ Below is the list of confirmed Day 1 partners:
 ### Indexers
 
 - Blockscout
-- Celoscan  
+- Celoscan
+- Envio
+- Goldsky 
 
 ### Bridges
 
+- Axelar
 - Hyperlane
 - LayerZero
+- Squid Router
 - Superbridge
 - Wormhole
 
@@ -36,11 +46,15 @@ Below is the list of confirmed Day 1 partners:
 - Anchorage
 - Binance
 - Bitfinex
+- Bitkub Thailand
 - Coinbase
 - Gate.io
 - Kraken
+- PDAX Philippines
 - Ubeswap
+- Uniswap
 - Upbit
+- Yellowcard
 
 We appreciate the commitment of these partners in supporting a seamless and successful launch!
 
