@@ -14,7 +14,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their purpose is to forward to the blockchain the price of CELO/USD, CELO/EUR, and CELO/BRL.
 
-# Getting started
+## Getting started
 
 Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/community/release-process/smart-contracts).
 

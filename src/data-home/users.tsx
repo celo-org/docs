@@ -236,14 +236,14 @@ const Users: User[] = [
     title: 'Bridges',
     description: 'Bridge assets from other chains to and from Celo.',
     preview: require('./showcase/integrations/bridges.webp'),
-    website: '/what-is-celo/about-celo-l1/protocol/bridges',
+    website: '/developer/bridges',
     tags: ['integrations'],
   },
   {
     title: 'Oracles',
     description: 'Connect Celo to outside sources with an oracle.',
     preview: require('./showcase/integrations/oracles.webp'),
-    website: '/what-is-celo/about-celo-l1/protocol/oracle',
+    website: '/developer/oracles',
     tags: ['integrations'],
   },
   {
