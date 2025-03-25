@@ -681,6 +681,7 @@
 /blog/tutorials/docs.celo.org /blog
 /blog/tutorials/devrel@celo.org /blog
 /developer/walletconnect /wallet
+/developer/indexer /developer/indexers
 /protocol/socialconnect https://github.com/celo-org/SocialConnect
 /contract-addresses /contracts/core-contracts
 /token-addresses /contracts/token-contracts

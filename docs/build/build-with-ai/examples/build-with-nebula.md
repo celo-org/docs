@@ -16,4 +16,4 @@ Watch this workshop to learn more about Nebula and how to create a Telegram bot 
 
 ## Get started building
 
-Follow this [guide](https://github.com/thirdweb-example/erc20-token-deployer) to test out Nebular and build your own token deployer.
+Follow this [guide](https://github.com/thirdweb-example/erc20-token-deployer) to test out Nebula and build your own token deployer.

@@ -668,6 +668,11 @@ const buildOnCeloSidebar = [
             label: "Using GOAT Framework",
             id: "build/build-with-ai/examples/building_with_goat",
           },
+          {
+            type: "doc",
+            label: "ERC-20 Token Deployer with Nebula",
+            id: "build/build-with-ai/examples/build-with-nebula",
+          },
         ],
       },
     ],
@@ -945,9 +950,9 @@ const toolingSidebar = [
     type: "category",
     label: "Indexers",
     items: [
-      { type: "doc", label: "Overview", id: "developer/indexer/overview" },
-      { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
-      { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
+      { type: "doc", label: "Overview", id: "developer/indexers/overview" },
+      { type: "doc", label: "The Graph", id: "developer/indexers/the-graph" },
+      { type: "doc", label: "SubQuery", id: "developer/indexers/subquery" },
     ],
   },
   {

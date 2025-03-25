@@ -243,7 +243,7 @@ const Users: User[] = [
     title: 'Oracles',
     description: 'Connect Celo to outside sources with an oracle.',
     preview: require('./showcase/integrations/oracles.webp'),
-    website: '/developer/oracle',
+    website: '/developer/oracles',
     tags: ['integrations'],
   },
   {

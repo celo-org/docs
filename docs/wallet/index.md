@@ -198,7 +198,7 @@ Cobru is a wallet available in Columbia.
 
 Kotani Pay is a wallet available in Kenya.
 
-- Homepage: [kotanipay.com]<https://kotanipay.com/>
+- Homepage: [kotanipay.com](https://kotanipay.com)
 - [Source Code](https://github.com/Kotani-Pay)
 
 ---
