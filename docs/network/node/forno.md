@@ -39,6 +39,7 @@ const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
 Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno.
+Forno is rate limited, as your usage increases, consider options that can provide the desired level of support (SLA): [list of RPC providers](./overview#as-a-service).
 
 ## Forno networks
 
@@ -68,6 +69,20 @@ Websocket support:
 wss://alfajores-forno.celo-testnet.org/ws
 ```
 
+### Baklava Testnet
+
+```bash
+https://baklava-forno.celo-testnet.org
+```
+
+Websocket support:
+
+```bash
+wss://baklava-forno.celo-testnet.org/ws
+```
+
 ### Websocket connections & Event listeners
 
-Websocket connections are useful for listening to logs (aka events) emitted by a smart contract, but Forno only allows a websocket connection for 20 minutes before disconnecting. On disconnect, you can reconnect to the websocket endpoint to keep listening. [Here](https://gist.github.com/critesjosh/a230e7b2eb54c8d330ca57db1f6239db) is an example script of how to set up an event listener that reconnects when the connection is broken.
+Websocket connections are useful for listening to logs (aka events) emitted by a smart contract, but Forno only allows a websocket connection for 20 minutes before disconnecting.
+On disconnect, you can reconnect to the websocket endpoint to keep listening.
+[Here](https://gist.github.com/critesjosh/a230e7b2eb54c8d330ca57db1f6239db) is an example script of how to set up an event listener that reconnects when the connection is broken.
