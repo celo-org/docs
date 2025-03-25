@@ -82,7 +82,7 @@ module.exports = {
       },
       items: [
         {
-          to: "/general",
+          to: "/what-is-celo",
           label: "What is Celo",
           position: "left",
         },
@@ -120,7 +120,7 @@ module.exports = {
               to: "https://discord.com/invite/celo",
               label: "Celo Discord",
               target: "_blank",
-            },            
+            },
           ],
         },
         {
@@ -218,7 +218,7 @@ module.exports = {
           title: "Community",
           items: [
             {
-              href: "/community/guidelines",
+              href: "/what-is-celo/joining-celo",
               label: "Contributors",
             },
             {

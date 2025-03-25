@@ -58,7 +58,6 @@ For major releases:
 - Mailing list: cLabs’ Tech Sync
 - [Celo Forum](https://forum.celo.org/)
 
-
 ## Testing
 
 All builds of these packages are automatically tested for performance and backwards compatibility in CI. Any regressions in these tests should be considered a blocker for a release.

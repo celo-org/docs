@@ -30,10 +30,10 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 ## Developer Tools
 
 - [Nodes](/network/node/overview)
-- [Block Explorer](https://explorer.celo.org/)
+- [Explorers](/developer/explorers/overview)
+- [Indexers](/developer/indexers/overview)
+- [Bridges](/developer/bridges)
 - [Testnet Faucet](https://faucet.celo.org)
-- [EVM Compatible Tooling](/developer/evm-tools)
-
 
 ## Developer Environments
 
@@ -41,6 +41,6 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 - [Using Remix](/developer/deploy/remix)
 - [Using Hardhat](/developer/deploy/hardhat)
 
-## Code Examples
+## Code Courses
 
 - [Dacade](https://dacade.org/communities/celo)
