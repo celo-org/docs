@@ -30,8 +30,8 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 ## Developer Tools
 
 - [Nodes](/network/node/overview)
-- [Explorers](/developer/explorers)
-- [Indexers](/developer/indexers)
+- [Explorers](/developer/explorers/overview)
+- [Indexers](/developer/indexers/overview)
 - [Bridges](/developer/bridges)
 - [Testnet Faucet](https://faucet.celo.org)
 
