@@ -38,7 +38,6 @@ By the end of this tutorial, you will:
 10. **Lazy Mint** the NFT.
 11. Repeat steps 9 and 10 a few times—we need at least **3 NFTs**.  
 12. Copy your **`contract address`** from the NFT dashboard.
-13. Copy the **`contract address`** from the NFT dashboard.  
 
 ## Make the NFT Mintable
 
@@ -59,7 +58,7 @@ By the end of this tutorial, you will:
 1. Clone the repository: 
  
    ```sh
-   git https://github.com/atejada/celo-one-click-deploy
+   git clone https://github.com/atejada/celo-one-click-deploy
    cd celo-one-click-deploy
    ```
   
@@ -90,9 +89,7 @@ By the end of this tutorial, you will:
 Once the project is running, there will be three links, the first named **Send Celo**, the second **NFT Gallery** and the third 
 named **Mint NFT**.
 
-The first one will be displayed by default. Click on the **Connect** button to connect the wallet. Enter an 
-address and an amount of Celo to transfer. The second link will display an NTF with a combo box at the top, to choose between 3 different
-NFTs. The third and last link will display an NFT along with its description and by pressing the mint button, 0.1 Celo will be paid.
+[celo-one-click-deploy](https://github.com/atejada/celo-one-click-deploy)
 
 ## Join Build with Celo - Proof of Ship
 

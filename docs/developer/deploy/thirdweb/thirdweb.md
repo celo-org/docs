@@ -1,12 +1,5 @@
 # Using thirdweb
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ## Create Contract
 
 To create a new smart contract using thirdweb CLI, follow these steps:
@@ -80,7 +73,7 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 
 Deploy allows you to deploy a smart contract to any EVM compatible network without configuring RPC URLs, exposing your private keys, writing scripts, and other additional setup such as verifying your contract.
 
-1. Get a [Thirdweb Secret Key](https://thirdweb.com/team/~/~/) if you don't have one already.
+1. Sign up to Thirdweb to get a key [Thirdweb Secret Key](https://thirdweb.com/team/~/~/).
 
 2. To deploy your smart contract using deploy, navigate to the root directory of your project and execute the following command:
 

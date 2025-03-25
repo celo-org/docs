@@ -13,11 +13,6 @@ const sidebars = {
       label: "Our History",
       id: "general/history",
     },
-    //{
-    //  type: "doc",
-    //  label: "L1 Architecture",
-    //  id: "general/architecture",
-    //},
     {
       type: "category",
       label: "Using Celo",
@@ -325,22 +320,6 @@ const sidebars = {
                 "protocol/transaction/transaction-types",
               ],
             },
-//            {
-//              type: "category",
-//              label: "Stability",
-//              items: [
-//                {
-//                  type: "doc",
-//                  label: "Overview",
-//                  id: "protocol/stability/index",
-//                },
-//                "protocol/stability/doto",
-//                "protocol/stability/granda-mento",
-//                "protocol/stability/oracles",
-//                "protocol/stability/stability-fees",
-//                "protocol/stability/adding-stable-assets",
-//              ],
-//            },
             {
               type: "category",
               label: "Identity",
@@ -479,11 +458,6 @@ const sidebars = {
                 },
               ],
             },
-            // {
-            //   type: "doc",
-            //   label: "Attestation Service",
-            //   id: "validator/attestation",
-            // },
             {
               type: "category",
               label: "Key Management",
@@ -569,19 +543,6 @@ const sidebars = {
       label: "Celo Website",
       href: "https://celo.org",
     },
-    // {
-    //   type: "doc",
-    //   label: "Web2 to Web3",
-    //   id: "general/web2-to-web3",
-    // },
-    // {
-    //   type: "doc",
-    //   label: "Whitepapers",
-    //   id: "general/whitepapers",
-    // },
-    // { type: "doc", label: "Glossary", id: "general/glossary" },
-    // { type: "doc", label: "Gallery", id: "general/gallery" },
-    // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
 
   // ######################################
@@ -594,27 +555,6 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
-    //{
-      //type: "category",
-      //label: "Build with Thirdweb",
-      //items: [
-        //{
-          //type: "doc",
-          //label: "Overview",
-          //id: "build/build-with-thirdweb/overview",
-        //},
-        //{
-          //type: "doc",
-          //label: "One-click Quickstart",
-          //id: "build/build-with-thirdweb/one-click quickstart",
-        //},
-        //{
-          //type: "doc",
-          //label: "Celo NFT Drop Tutorial",
-          //id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
-        //},
-      //],
-    //},
     {
       type: "category",
       label: "Build with AI",
@@ -678,11 +618,6 @@ const sidebars = {
         },
       ],
     },
-    // {
-    //   type: "doc",
-    //   label: "Build with AI",
-    //   id: "developer/build-with-ai/overview",
-    // },
     {
       type: "category",
       label: "Build on MiniPay",
@@ -978,27 +913,19 @@ const sidebars = {
         { type: "doc", label: "Deploy with Thirdweb CLI", id: "developer/deploy/thirdweb/thirdweb" },
         { type: "doc", label: "One-Click Deploy", id: "developer/deploy/thirdweb/one-click-deploy" },
       ],
-    },        
-        
-        
-        //{
-        //  type: "doc",
-        //  label: "Using thirdweb",
-        //  id: "developer/deploy/thirdweb",
-        //},
-        
-        {
-          type: "doc",
-          label: "Using Remix",
-          id: "developer/deploy/remix",
-        },
-        {
-          type: "doc",
-          label: "Using Hardhat",
-          id: "developer/deploy/hardhat",
-        },
-      ],
     },
+    {
+       type: "doc",
+       label: "Using Remix",
+       id: "developer/deploy/remix",
+    },
+    {
+       type: "doc",
+       label: "Using Hardhat",
+       id: "developer/deploy/hardhat",
+    },
+    ],
+   },
     {
       type: "category",
       label: "Libraries & SDKs",
@@ -1322,121 +1249,6 @@ const sidebars = {
     },
   ],
 
-  // ######################################
-  // Integrations
-  // ######################################
-
-  // integrationsSidebar: [
-  //   { type: "doc", label: "Overview", id: "integration/index" },
-  //   { type: "doc", label: "General", id: "integration/general" },
-  //   {
-  //     type: "doc",
-  //     label: "Checklist",
-  //     id: "integration/checklist",
-  //   },
-  //   { type: "doc", label: "Custody", id: "integration/custody" },
-  //   { type: "doc", label: "Listings", id: "integration/listings" },
-  //   {
-  //     type: "doc",
-  //     label: "Cloud HSM",
-  //     id: "integration/cloud-hsm",
-  //   },
-  // ],
-
-  //// ######################################
-  //// Validators
-  //// ######################################
-
-  //validatorsSidebar: [
-  //{ type: "doc", label: "Overview", id: "validator/index" },
-  //{
-  //type: "category",
-  //label: "Run a Validator",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Mainnet Validator",
-  //id: "validator/run/mainnet",
-  //},
-  //{
-  //type: "doc",
-  //label: "Baklava Validator",
-  //id: "validator/run/baklava",
-  //},
-  //],
-  //},
-  //// {
-  ////   type: "doc",
-  ////   label: "Attestation Service",
-  ////   id: "validator/attestation",
-  //// },
-  //{
-  //type: "category",
-  //label: "Key Management",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Summary",
-  //id: "validator/key-management/summary",
-  //},
-  //{
-  //type: "doc",
-  //label: "Key Management",
-  //id: "validator/key-management/detailed",
-  //},
-  //{
-  //type: "doc",
-  //label: "Key Rotation",
-  //id: "validator/key-management/key-rotation",
-  //},
-  //],
-  //},
-  //{
-  //type: "doc",
-  //label: "Nodes and Services",
-  //id: "validator/security",
-  //},
-  //{
-  //type: "doc",
-  //label: "Monitoring",
-  //id: "validator/monitoring",
-  //},
-  //{
-  //type: "doc",
-  //label: "DevOps Best Practices",
-  //id: "validator/devops-best-practices",
-  //},
-  //{
-  //type: "doc",
-  //label: "Node Upgrades",
-  //id: "validator/node-upgrade",
-  //},
-  //{
-  //type: "doc",
-  //label: "Running Proxies",
-  //id: "validator/proxy",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator Explorer",
-  //id: "validator/validator-explorer",
-  //},
-  //{
-  //type: "doc",
-  //label: "Voting Policy",
-  //id: "validator/celo-foundation-voting-policy",
-  //},
-  //{
-  //type: "doc",
-  //label: "Celo Signal",
-  //id: "validator/celo-signal",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator FAQ",
-  //id: "validator/troubleshooting-faq",
-  //},
-  //],
 
   // ######################################
   // Community
@@ -1464,302 +1276,6 @@ const sidebars = {
       href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
     },
   ],
-
-  //// ######################################
-  //// Protocol
-  //// ######################################
-
-  //protocolSidebar: [
-  //{ type: "doc", label: "Overview", id: "protocol/index" },
-  //{
-  //type: "category",
-  //label: "Proof-of-Stake",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/pos/index",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator Groups",
-  //id: "protocol/pos/validator-groups",
-  //},
-  //{
-  //type: "doc",
-  //label: "Locked CELO",
-  //id: "protocol/pos/locked-gold",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator Elections",
-  //id: "protocol/pos/validator-elections",
-  //},
-  //{
-  //type: "category",
-  //label: "Epoch Rewards",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/pos/epoch-rewards",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator Rewards",
-  //id: "protocol/pos/epoch-rewards-validator",
-  //},
-  //{
-  //type: "doc",
-  //label: "Locked CELO Rewards",
-  //id: "protocol/pos/epoch-rewards-locked-gold",
-  //},
-  //{
-  //type: "doc",
-  //label: "Community Fund",
-  //id: "protocol/pos/epoch-rewards-community-fund",
-  //},
-  //{
-  //type: "doc",
-  //label: "Carbon Offsetting Fund",
-  //id: "protocol/pos/epoch-rewards-carbon-offsetting-fund",
-  //},
-  //],
-  //},
-  //{
-  //type: "doc",
-  //label: "Penalties",
-  //id: "protocol/pos/penalties",
-  //},
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Consensus",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/consensus/index",
-  //},
-  //{
-  //type: "doc",
-  //label: "Validator Set Differences",
-  //id: "protocol/consensus/validator-set-differences",
-  //},
-  //{
-  //type: "doc",
-  //label: "Locating Nodes",
-  //id: "protocol/consensus/locating-nodes",
-  //},
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Governance",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/governance/index",
-  //},
-  //{
-  //type: "doc",
-  //label: "Create Proposal",
-  //id: "protocol/governance/create-proposal",
-  //},
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Transactions",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/transaction/index",
-  //},
-  //"protocol/transaction/native-currency",
-  //"protocol/transaction/erc20-transaction-fees",
-  //"protocol/transaction/gas-pricing",
-  //"protocol/transaction/escrow",
-  //"protocol/transaction/tx-comment-encryption",
-  //"protocol/transaction/transaction-types",
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Stability",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/stability/index",
-  //},
-  //"protocol/stability/doto",
-  //"protocol/stability/granda-mento",
-  //"protocol/stability/oracles",
-  //"protocol/stability/stability-fees",
-  //"protocol/stability/adding-stable-assets",
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Identity",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/identity/index",
-  //},
-  //{
-  //type: "link",
-  //label: "Social Connect",
-  //href: "https://github.com/celo-org/Social-Connect",
-  //},
-  //"protocol/identity/metadata",
-  //"protocol/identity/smart-contract-accounts",
-  //"protocol/identity/encrypted-cloud-backup",
-  //{
-  //type: "doc",
-  //label: "Privacy Research",
-  //id: "protocol/identity/privacy-research",
-  //},
-  //{
-  //type: "category",
-  //label: "ODIS",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/identity/odis",
-  //},
-  //{
-  //type: "category",
-  //label: "Use Cases",
-  //items: [
-  //"protocol/identity/odis-use-case-phone-number-privacy",
-  //"protocol/identity/odis-use-case-key-hardening",
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: "Domains",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "protocol/identity/odis-domain",
-  //},
-  //{
-  //type: "doc",
-  //label: "Sequential Delay Domain",
-  //id: "protocol/identity/odis-domain-sequential-delay-domain",
-  //},
-  //],
-  //},
-  //],
-  //},
-  //],
-  //},
-  //{
-  //type: "doc",
-  //label: "Celo Randomness",
-  //id: "protocol/randomness",
-  //},
-  //{
-  //type: "category",
-  //label: "Contracts",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Add A Contract",
-  //id: "protocol/contracts/add-contract",
-  //},
-  //],
-  //},
-  //{
-  //type: "category",
-  //label: " Release Process",
-  //items: [
-  //{
-  //type: "doc",
-  //label: "Overview",
-  //id: "community/release-process/index",
-  //},
-  //{
-  //type: "doc",
-  //label: "Smart Contracts",
-  //id: "community/release-process/smart-contracts",
-  //},
-  //{
-  //type: "doc",
-  //label: "Blockchain Client",
-  //id: "community/release-process/blockchain-client",
-  //},
-  //{
-  //type: "doc",
-  //label: "CeloCLI and ContractKit",
-  //id: "community/release-process/base-cli-contractkit-dappkit-utils",
-  //},
-  //{
-  //type: "doc",
-  //label: "Attestation Service",
-  //id: "community/release-process/attestation-service",
-  //},
-  //{
-  //type: "doc",
-  //label: "Celo Oracles",
-  //id: "community/release-process/celo-oracles",
-  //},
-  //],
-  //},
-  //],
-
-  // ######################################
-  // CLI
-  // ######################################
-  //cli: [
-  //{
-  //type: "doc",
-  //label: "Introduction",
-  //id: "cli/index",
-  //},
-  //{ type: "doc", label: "Account", id: "cli/account" },
-  //{ type: "doc", label: "Commands", id: "cli/commands" },
-  //{ type: "doc", label: "Config", id: "cli/config" },
-  //{ type: "doc", label: "DKG", id: "cli/dkg" },
-  //{ type: "doc", label: "Election", id: "cli/election" },
-  //{ type: "doc", label: "Exchange", id: "cli/exchange" },
-  //{
-  //type: "doc",
-  //label: "Governance",
-  //id: "cli/governance",
-  //},
-  //{ type: "doc", label: "Help", id: "cli/help" },
-  //{ type: "doc", label: "Identity", id: "cli/identity" },
-  //{
-  //type: "doc",
-  //label: "LockedGold",
-  //id: "cli/lockedgold",
-  //},
-  //{ type: "doc", label: "Release CELO", id: "cli/releasecelo" },
-  //{ type: "doc", label: "Multisig", id: "cli/multisig" },
-  //{ type: "doc", label: "Network", id: "cli/network" },
-  //{ type: "doc", label: "Node", id: "cli/node" },
-  //{ type: "doc", label: "Oracle", id: "cli/oracle" },
-  //{ type: "doc", label: "Plugins", id: "cli/plugins" },
-  ////{ type: "doc", label: "Reserve", id: "cli/reserve" },
-  //{ type: "doc", label: "Rewards", id: "cli/rewards" },
-  //{ type: "doc", label: "Transfer", id: "cli/transfer" },
-  //{ type: "doc", label: "Validator", id: "cli/validator" },
-  //{ type: "doc", label: "Utilities", id: "cli/utils" },
-  //{
-  //type: "doc",
-  //label: "ValidatorGroup",
-  //id: "cli/validatorgroup",
-  //},
-  //],
 
   cel2: [
     {
