@@ -26,7 +26,7 @@ You can explore more about Quex on the [official documentation page](https://doc
 
 ## 📈 What data is available?
 
-Unlike traditional oracles, Quex allows you to securely make verifiable API calls to virtually any off-chain data source, including private APIs protected by credentials. This means you can literally access the entire internet without
+Unlike traditional oracles, Quex allows you to securely make verifiable API calls to virtually any off-chain data source, including private APIs protected by credentials. This means you can literally access the entire internet with no limitations!
 
 ## 🔥 How to use Quex oracles?
 
