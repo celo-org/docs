@@ -18,7 +18,7 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava L2 Testnet.
 | RPC Nodes                  | <ul><li>[List of RPC providers](node/overview.md#as-a-service)</li><li>[Celo L2 Mainnet Day 1 Node and RPC providers](https://docs.celo.org/cel2/notices/day-1-partners#node-and-rpc-providers)</li></ul> |
 | RPC Endpoint (best effort) | [Forno for Mainnet](node/forno.md#celo-mainnet) <br/> Note: Forno is rate limited, as your usage increases consider options that can provide the desired level of support (SLA).                          |
 | Block Explorers            | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>                                                                               |
-| Bridge Link                | [List of bridges](/developer/bridges/bridges)                                                                                                                                                             |
+| Bridge Link                | [List of bridges](/developer/bridges/bridges.md)                                                                                                                                                             |
 
 ## Celo Alfajores L2 Testnet
 
