@@ -668,6 +668,11 @@ const buildOnCeloSidebar = [
             label: "Using GOAT Framework",
             id: "build/build-with-ai/examples/building_with_goat",
           },
+          {
+            type: "doc",
+            label: "ERC-20 Token Deployer with Nebula",
+            id: "build/build-with-ai/examples/build-with-nebula",
+          },
         ],
       },
     ],
@@ -720,6 +725,11 @@ const buildOnCeloSidebar = [
     id: "build/build-with-self",
   },
   {
+    type: "doc",
+    label: "Build with DeFi",
+    id: "build/build-with-defi",
+  },
+  {
     type: "category",
     label: "Integrate with Celo",
     items: [
@@ -769,36 +779,41 @@ const toolingSidebar = [
         id: "network/node/overview",
       },
       {
+        type: "link",
+        label: "Run a Celo Node",
+        href: "https://docs.celo.org/cel2/operators/run-node",
+      },
+      {
+        type: "doc",
+        label: "Hosted Nodes",
+        id: "network/node/run-hosted",
+      },
+      {
         type: "doc",
         label: "Forno",
         id: "network/node/forno",
       },
-      {
-        type: "category",
-        label: "Run a Node",
-        items: [
-          {
-            type: "doc",
-            label: "Mainnet Full Node",
-            id: "network/node/run-mainnet",
-          },
-          {
-            type: "doc",
-            label: "Alfajores Full Node",
-            id: "network/node/run-alfajores",
-          },
-          {
-            type: "doc",
-            label: "Baklava Full Node",
-            id: "network/node/run-baklava",
-          },
-          {
-            type: "doc",
-            label: "Hosted Nodes",
-            id: "network/node/run-hosted",
-          },
-        ],
-      },
+      // {
+      //   type: "category",
+      //   label: "Run a Node",
+      //   items: [
+        // {
+        //   type: "doc",
+        //   label: "Mainnet Full Node",
+        //   id: "network/node/run-mainnet",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Alfajores Full Node",
+        //   id: "network/node/run-alfajores",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Baklava Full Node",
+        //   id: "network/node/run-baklava",
+        // },
+      //   ],
+      // },
     ],
   },
   {
@@ -893,12 +908,12 @@ const toolingSidebar = [
   {
     type: "doc",
     label: "Bridges",
-    id: "what-is-celo/about-celo-l1/protocol/bridges",
+    id: "developer/bridges/bridges",
   },
   {
     type: "doc",
     label: "Cross Chain Messaging",
-    id: "what-is-celo/about-celo-l1/protocol/cross-chain-messaging",
+    id: "developer/bridges/cross-chain-messaging",
   },
   {
     type: "category",
@@ -935,9 +950,9 @@ const toolingSidebar = [
     type: "category",
     label: "Indexers",
     items: [
-      { type: "doc", label: "Overview", id: "developer/indexer/overview" },
-      { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
-      { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
+      { type: "doc", label: "Overview", id: "developer/indexers/overview" },
+      { type: "doc", label: "The Graph", id: "developer/indexers/the-graph" },
+      { type: "doc", label: "SubQuery", id: "developer/indexers/subquery" },
     ],
   },
   {
@@ -984,39 +999,32 @@ const toolingSidebar = [
         type: "category",
         label: "CLI",
         items: [
+          { type: "doc", label: "Introduction", id: "cli/index", },
+          // TOPICS
           { type: "doc", label: "Account", id: "cli/account" },
-          { type: "doc", label: "Commands", id: "cli/commands" },
           { type: "doc", label: "Config", id: "cli/config" },
           { type: "doc", label: "DKG", id: "cli/dkg" },
           { type: "doc", label: "Election", id: "cli/election" },
+          { type: "doc", label: "Epochs", id: "cli/epochs" },
           { type: "doc", label: "Exchange", id: "cli/exchange" },
-          {
-            type: "doc",
-            label: "Governance",
-            id: "cli/governance",
-          },
-          { type: "doc", label: "Help", id: "cli/help" },
+          { type: "doc", label: "Governance", id: "cli/governance" },
           { type: "doc", label: "Identity", id: "cli/identity" },
-          {
-            type: "doc",
-            label: "LockedGold",
-            id: "cli/lockedgold",
-          },
-          { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
+          { type: "doc", label: "LockedCelo", id: "cli/lockedcelo", },
+          { type: "doc", label: "LockedGold", id: "cli/lockedgold", },
           { type: "doc", label: "Multisig", id: "cli/multisig" },
           { type: "doc", label: "Network", id: "cli/network" },
           { type: "doc", label: "Node", id: "cli/node" },
           { type: "doc", label: "Oracle", id: "cli/oracle" },
-          { type: "doc", label: "Plugins", id: "cli/plugins" },
+          { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
           { type: "doc", label: "Rewards", id: "cli/rewards" },
           { type: "doc", label: "Transfer", id: "cli/transfer" },
           { type: "doc", label: "Validator", id: "cli/validator" },
-          { type: "doc", label: "Utilities", id: "cli/utils" },
-          {
-            type: "doc",
-            label: "ValidatorGroup",
-            id: "cli/validatorgroup",
-          },
+          { type: "doc", label: "Validator Group", id: "cli/validatorgroup" },
+          // COMMANDS
+          { type: "doc", label: "Autocomplete", id: "cli/autocomplete" },
+          { type: "doc", label: "Commands", id: "cli/commands" },
+          { type: "doc", label: "Help", id: "cli/help" },   
+          { type: "doc", label: "Plugins", id: "cli/plugins" },
         ],
       },
       {
@@ -1141,32 +1149,32 @@ const toolingSidebar = [
       {
         type: "doc",
         label: "Running Oracles",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/run",
+        id: "developer/oracles/run",
       },
       {
         type: "doc",
         label: "Overview",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/index",
+        id: "developer/oracles/index",
       },
       {
         type: "doc",
         label: "Using Band Protocol",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/band-protocol",
+        id: "developer/oracles/band-protocol",
       },
       {
         type: "doc",
         label: "Using Chainlink Oracles",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/chainlink-oracles",
+        id: "developer/oracles/chainlink-oracles",
       },
       {
         type: "doc",
         label: "Using RedStone",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/redstone",
+        id: "developer/oracles/redstone",
       },
       {
         type: "doc",
         label: "Using Supra",
-        id: "what-is-celo/about-celo-l1/protocol/oracle/supra",
+        id: "developer/oracles/supra",
       },
     ],
   },
@@ -1174,11 +1182,6 @@ const toolingSidebar = [
     type: "doc",
     label: "Fee Abstraction",
     id: "developer/fee-abstraction",
-  },
-  {
-    type: "doc",
-    label: "EVM Tools",
-    id: "developer/evm-tools",
   },
 ];
 

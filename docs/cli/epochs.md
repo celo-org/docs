@@ -9,7 +9,7 @@ Finishes next epoch process.
 * [`celocli epochs:start`](#celocli-epochsstart)
 * [`celocli epochs:switch`](#celocli-epochsswitch)
 
-## `celocli epochs:finish` {#celocli-epochsfinish}
+## `celocli epochs:finish`
 
 Finishes next epoch process.
 
@@ -68,7 +68,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/finish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/finish.ts)_
 
-## `celocli epochs:process-groups` {#celocli-epochsprocess-groups}
+## `celocli epochs:process-groups`
 
 Processes validator groups for the next epoch.
 
@@ -127,7 +127,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/process-groups.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/process-groups.ts)_
 
-## `celocli epochs:send-validator-payment` {#celocli-epochssend-validator-payment}
+## `celocli epochs:send-validator-payment`
 
 Sends the allocated epoch payment to a validator, their group, and delegation beneficiary.
 
@@ -193,7 +193,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/send-validator-payment.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/send-validator-payment.ts)_
 
-## `celocli epochs:start` {#celocli-epochsstart}
+## `celocli epochs:start`
 
 Starts next epoch process.
 
@@ -252,7 +252,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/start.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/start.ts)_
 
-## `celocli epochs:switch` {#celocli-epochsswitch}
+## `celocli epochs:switch`
 
 Finishes current epoch and starts a new one.
 

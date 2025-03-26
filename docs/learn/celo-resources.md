@@ -51,7 +51,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 - [Interview with Polkadot](https://youtu.be/oMSWODQQuxU)
 - [Interview with Skale](https://youtu.be/HWYRWuO48bA)
 - [Interview with Aurora](https://youtu.be/jFudk4Hr5IQ)
-- [Interview with Optics Team](https://youtu.be/mr-YyCtur8E)
 
 ## Cross-Chain Salon Workshops
 
@@ -59,7 +58,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 - [Celo Wallet Connect Workshop](https://youtu.be/QMI4Z9hH2Ew)
 - [How to build xApps Workshop](https://youtu.be/E_zhTRsxWtw)
 - [Skynet Workshop](https://youtu.be/szpFf8_ZHHU)
-- [Observing Optics Workshop](https://youtu.be/Dq4RO9kod-4)
 - [GoodDollar Workshop](https://youtu.be/Dh3RkNAEdcM)
 - [Building a Subgraph on Celo Workshop](https://youtu.be/v5zkjJ_S2j4)
 - [Optics and the Journey of the Cross-Chain Message Workshop](https://youtu.be/BUzbfebb1xU)

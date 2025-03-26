@@ -297,6 +297,38 @@ export default function HomePage(): JSX.Element {
               </svg>
             </a>
 
+
+            <a
+              href="/build/build-with-defi"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoLibraries.title">
+                  Build with DeFi
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoLibraries.description">
+                  Build with DeFi protocols, stablecoins and for FX
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+
             <a
               href="https://www.mento.org/"
               target="_blank"
@@ -327,6 +359,39 @@ export default function HomePage(): JSX.Element {
                 />
               </svg>
             </a>
+
+            <a
+              href="/build/fund-your-project"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoLibraries.title">
+                  Get Funding
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoLibraries.description">
+                  Get funding for your project
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+
+              </svg>
+            </a>
+
           </div>
         </section>
 
@@ -630,7 +695,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.bridge.description",
                 }),
                 "img/homepage/icons/Rainbow_White.svg",
-                "/what-is-celo/using-celo/bridges",
+                "/developer/bridges",
               )}
 
               {sectionFourCard(

@@ -8,12 +8,14 @@ This guide is designed to help node operators run a Celo L2 node, and assumes yo
 
 - 16GB+ RAM
 - 1TB+ SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
 ### Testnets (Alfajores and Baklava)
 
 - 16GB+ RAM
 - 500GB SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
 :::warning
