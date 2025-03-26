@@ -11,18 +11,6 @@ Connect to nodes and services in the Celo Ecosystem.
 
 import PageRef from '@components/PageRef'
 
-### Forno
-
-[Forno](./forno.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
-
-Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
-
-Forno can be used as an HTTP Provider with ContractKit.
-
-## cLabs Hosted Node
-
-- [Forno](forno)
-
 ## Run a Node
 
 Running your own RPC endpoint.
@@ -31,6 +19,22 @@ Running your own RPC endpoint.
 - [Alfajores Full Node](./run-alfajores.md)
 - [Baklava Full Node](./run-baklava.md)
 - [Hosted Nodes](./run-hosted.md)
+
+## Use a Community RPC Node
+
+As part of the migration from L1 to L2, Celo Validators have become [Community RPC providers](/cel2/operators/community-rpc-node.md).
+They are discoverable through the following:
+
+- Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
+- [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
+- [Celo Community RPC Gateway](https://celo-community.org/)
+
+## Forno
+
+[Forno](./forno.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+
+Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
+
 
 ## As a Service
 
