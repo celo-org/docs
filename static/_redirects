@@ -333,3 +333,7 @@
 /blog/tutorials/understanding-celos-approach-to-layer2-scaling https://celo.academy/t/understanding-celos-approach-to-layer-2-scaling/186 301
 /blog/tutorials/deploying-a-celo-node-using-typescript https://celo.academy/t/deploying-a-celo-node-using-typescript/958 301
 /protocol/bridge /what-is-celo/using-celo/bridges 301
+/developer/walletconnect /wallet
+/protocol/socialconnect https://self.xyz/
+/contract-addresses /contracts/core-contracts
+/token-addresses /contracts/token-contracts
