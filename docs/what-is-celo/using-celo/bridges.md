@@ -44,7 +44,7 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 Native bridging refers to the process of transferring assets directly between Layer 2 (L2) networks without the need for intermediary networks or tokens. This method is designed to be more secure, efficient and cost-effective, leveraging the security and scalability of L2 solutions.
 
-- [Superbridge Celo Mainnet](https://testnets.superbridge.app/celo)
+- [Superbridge Celo Mainnet](https://superbridge.app/celo)
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
 - [Superbridge Baklava Testnet](https://testnets.superbridge.app/celo-baklava)
 
