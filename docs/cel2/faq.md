@@ -19,14 +19,14 @@ See the guides for [running a node](./operators/run-node.md) or the guide on [ho
 
 There should be no grace period needed, as nothing should change for common users. Expect a period with no block production of at least 20 minutes during the transition.
 
-### Will it be necessary to withdraw funds from Celo L1 in advance or will they be transferred to L2? 
+### Will it be necessary to withdraw funds from Celo L1 in advance or will they be transferred to L2?
 
 No. All balances will carry over to the L2 unchanged.
 
-### Will there be multiple RPC node providers? 
+### Will there be multiple RPC node providers?
 
 There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](https://docs.celo.org/cel2/notices/day-1-partners)
-for a list of RPC providers comfirmed for Day 1. 
+for a list of RPC providers comfirmed for Day 1.
 
 ### How will ERC-20 tokens and the native CELO token work after the migration?
 
@@ -50,7 +50,7 @@ Validators are becoming [Community RPC providers](./operators/community-rpc-node
 
 ### What happens to governance?
 
-[Governance](/what-is-celo/using-celo/protocol/governance/overview) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes. 
+[Governance](/what-is-celo/using-celo/protocol/governance/overview) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes.
 
 ### What happened to these features?
 
