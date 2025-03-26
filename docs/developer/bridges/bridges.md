@@ -24,14 +24,14 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ## Superbridge
 
-[Superbridge](https://superbridge.app/) is a cross-chain interoperability platform that enables seamless asset transfers and communication between different blockchain networks. It simplifies bridging tokens, data, and liquidity across ecosystems, enhancing connectivity and usability in decentralized finance (DeFi).
+[Superbridge](https://superbridge.app/celo) is a cross-chain interoperability platform that enables seamless asset transfers and communication between different blockchain networks. It simplifies bridging tokens, data, and liquidity across ecosystems, enhancing connectivity and usability in decentralized finance (DeFi).
 
 **Supported chains**
 
 - Celo Mainnet
 - Celo Alfajores
 
-<PageRef url="https://superbridge.app/" pageName="Superbridge" />
+<PageRef url="https://superbridge.app/celo" pageName="Superbridge" />
 
 ## Layerswap
 
