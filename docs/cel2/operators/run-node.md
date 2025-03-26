@@ -2,24 +2,20 @@
 
 This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
-:::note
-This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
-:::
-
 ## Recommended Hardware
-
-### Testnets (Alfajores and Baklava)
-
-- 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
-- 500GB SSD (NVME Recommended)
-- 100mb/s+ Download
 
 ### Mainnet
 
 - 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
 - 1TB+ SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
+- 100mb/s+ Download
+
+### Testnets (Alfajores and Baklava)
+
+- 16GB+ RAM
+- 500GB SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
 :::warning
@@ -228,13 +224,11 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ### Mainnet
 
-:::note
-The `rollup.json` and `genesis.json` files are created during the migration and will be listed here once the migration has been finished.
-:::
-
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json) used for snap syncing
 - P2P peers
   - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
