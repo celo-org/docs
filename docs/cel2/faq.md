@@ -57,7 +57,7 @@ Validators are becoming [Community RPC providers](./operators/community-rpc-node
 
 - Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
 - [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
-- [Celo Community RPC Gateway][https://celo-community.org/]
+- [Celo Community RPC Gateway](https://celo-community.org/)
 
 ### What happens to governance?
 
