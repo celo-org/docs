@@ -42,14 +42,14 @@ Paid RPC endpoint hosting.
 
 ### Alchemy
 
-[Alchemy](https://docs.alchemy.com/reference/api-overview) is a popular API provider and developer platform. Its robust, free tier offers access to enhanced features like SDKs and enhanced APIs and hosted OP Mainnet and testnet nodes.
+[Alchemy](https://docs.alchemy.com/reference/celo-chain-api-quickstart) is a popular API provider and developer platform. Its robust, free tier offers access to enhanced features like SDKs and enhanced APIs and hosted OP Mainnet and testnet nodes.
 
 #### **Supported Networks**
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
-<PageRef url="https://docs.alchemy.com/reference/api-overview" pageName="Alchemy" />
+<PageRef url="https://docs.alchemy.com/reference/celo-chain-api-quickstart" pageName="Alchemy" />
 
 ### [Ankr](https://www.ankr.com/rpc/celo/)
 
