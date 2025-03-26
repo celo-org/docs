@@ -27,7 +27,7 @@ Below is the list of confirmed Day 1 partners:
 
 ### Indexers
 
-- Blockscout
+- [Blockscout](https://celo.blockscout.com/)
 - Celoscan
 - Envio
 - Goldsky 
@@ -38,7 +38,7 @@ Below is the list of confirmed Day 1 partners:
 - Hyperlane
 - LayerZero
 - Squid Router
-- Superbridge
+- [Superbridge](https://superbridge.app/celo)
 - Wormhole
 
 ### Exchanges
