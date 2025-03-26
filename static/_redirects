@@ -689,5 +689,5 @@
 /protocol/bridge /what-is-celo/using-celo/bridges 301
 /developer/walletconnect /wallet
 /protocol/socialconnect https://self.xyz/
-/contract-addresses /contracts/core-contracts
-/token-addresses /contracts/token-contracts
+/contract-addresses /contracts/core-contracts 301
+/token-addresses /contracts/token-contracts 301
