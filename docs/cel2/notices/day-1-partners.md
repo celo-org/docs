@@ -9,7 +9,7 @@ Below is the list of confirmed Day 1 partners:
 
 - Alchemy
 - All that Node
-- Ankr
+- [Ankr](https://rpc.ankr.com/celo)
 - Blockjoy
 - DRPC
 - Dwellir
