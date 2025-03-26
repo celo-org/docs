@@ -53,6 +53,12 @@ We are going to have the same RPC specs as Optimism (e.g. we won't have block re
 
 Validators are becoming [Community RPC providers](./operators/community-rpc-node).
 
+### Where can I see those [Community RPC providers](./operators/community-rpc-node)?
+
+- Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
+- [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
+- [Celo Community RPC Gateway][https://celo-community.org/]
+
 ### What happens to governance?
 
 [Governance](/what-is-celo/using-celo/protocol/governance/overview) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes.
