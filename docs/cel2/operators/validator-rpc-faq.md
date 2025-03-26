@@ -7,7 +7,7 @@ description: Frequently Asked Questions about Community RPC Providers
 
 - Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
 - [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
-- [Celo Community RPC Gateway][https://celo-community.org/]
+- [Celo Community RPC Gateway](https://celo-community.org/)
 
 ### After the migration, validators will no longer validate any blocks, but they’ll still hold CELO, receive delegations, and vote on governance, is that correct?
 
