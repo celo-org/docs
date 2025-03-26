@@ -19,12 +19,13 @@ Below is the list of confirmed Day 1 partners:
 - Nirvana Labs
 - Pokt
 - Pokt Network
-- [Quicknode](https://www.quicknode.com/chains/celo)
+- Quicknode
+  - [Get your Endpoint](https://www.quicknode.com/chains/celo)
   - [Docs](https://www.quicknode.com/docs/celo)
 - RPC
 - Tatum
 - The Graph
-- Thirdweb
+- thirdweb
 
 ### Indexers
 
