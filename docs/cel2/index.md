@@ -1,19 +1,18 @@
 # Overview
 
-## Celo L2 Mainnet 
+## Celo L2 Mainnet
 
 :spiral_calendar: Celo L2 Mainnet Date: March 26, 2025, 3:00 AM UTC
 
 :chains: Hardfork Block Height: 31056500
 
-**Node Operators:** Please refer to the mainnet releases below and [Node Operator Guide](./operators/overview.md) for additional migration instructions. 
+**Node Operators:** Please refer to the mainnet releases below and [Node Operator Guide](./operators/overview.md) for additional migration instructions.
 
 * Minimum `celo-blockchain` version: [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9)
 * `op-geth`: [celo-v2.0.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0)
 * `op-node`: [celo-v2.0.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0)
 
 Celo is currently operating two Layer 2 testnets, Alfajores and Baklava, both of which have been successfully migrated from Layer 1.
-
 
 ## Celo’s Transition to Ethereum Layer 2
 
@@ -65,27 +64,23 @@ For more detailed technical changes, see [Celo's L2 Migration Documentation](htt
 
 ## Important Dates
 
-:::note
-These dates are subject to change. This documentation will be continuously updated as new dates become available.
-:::
-
-#### Early July, 2024: Dango L2 Testnet Launch
+### Early July, 2024: Dango L2 Testnet Launch
 
 The Dango Testnet announced on the 7th of July 2024, Celo’s first L2 public test network, went live. Dango allowed developers and infrastructure providers to familiarize themselves with the L2 environment. It was shut down on the 9th of October 2024.
 
-#### 26th September, 2024: Alfajores L2 Testnet Launch
+### 26th September, 2024: Alfajores L2 Testnet Launch
 
 The Celo L2 testnet, Alfajores, went live! This provides a testing environment for node operators and developers to ensure compatibility before the Mainnet launch.
 
-#### October 2024: Code Freeze and Audits
+### October 2024: Code Freeze and Audits
 
 The core dev team froze all feature development by mid-October and underwent a thorough external audit. The result is available at https://celo.org/audits.
 
-#### 20th February, 2025: Baklava L2 Testnet Launch
+### 20th February, 2025: Baklava L2 Testnet Launch
 
 Using the final audited release, the Celo validator community will perform a dry run of the L2 upgrade on the Baklava network.
 
-#### 26th March, 2025 (3:00 AM UTC): Celo L2 Mainnet Launch
+### 26th March, 2025 (3:00 AM UTC): Celo L2 Mainnet Launch
 
 Following a successful Baklava upgrade, the Celo L2 Mainnet will officially go live. All nodes must be updated by this time to avoid disruption.
 
