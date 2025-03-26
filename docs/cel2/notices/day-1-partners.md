@@ -7,7 +7,7 @@ Below is the list of confirmed Day 1 partners:
 
 ### Node and RPC Providers
 
-- Alchemy
+- [Alchemy](https://docs.alchemy.com/reference/celo-chain-api-quickstart)
 - All that Node
 - [Ankr](https://rpc.ankr.com/celo)
 - Blockjoy
@@ -19,7 +19,8 @@ Below is the list of confirmed Day 1 partners:
 - Nirvana Labs
 - Pokt
 - Pokt Network
-- Quicknode
+- [Quicknode](https://www.quicknode.com/chains/celo)
+  - [Docs](https://www.quicknode.com/docs/celo)
 - RPC
 - Tatum
 - The Graph
