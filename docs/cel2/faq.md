@@ -15,6 +15,11 @@ description: Frequently Asked Questions about Cel2
 
 See the guides for [running a node](./operators/run-node.md) or the guide on [how to migrate an L1 node](./operators/migrate-node.md).
 
+### Do I need to run my own EigenDA proxy?
+
+Yes. This is part of [running a node](./operators/run-node.md).
+If you're using the [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), it's included.
+
 ### Will the migration happen immediately, or will there be a grace period for projects to transition to the new version?
 
 There should be no grace period needed, as nothing should change for common users. Expect a period with no block production of at least 20 minutes during the transition.
