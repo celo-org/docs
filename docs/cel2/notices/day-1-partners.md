@@ -23,6 +23,7 @@ Below is the list of confirmed Day 1 partners:
   - [Get your Endpoint](https://www.quicknode.com/chains/celo)
   - [Docs](https://www.quicknode.com/docs/celo)
 - RPC
+- Stake Capital
 - Tatum
 - The Graph
 - thirdweb
