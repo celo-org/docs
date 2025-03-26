@@ -30,6 +30,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Celo Mainnet
 - Celo Alfajores
+- Celo Baklava
 
 <PageRef url="https://superbridge.app/celo" pageName="Superbridge" />
 
