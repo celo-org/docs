@@ -222,12 +222,11 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ### Mainnet
 
-- [Full migrated chaindata](TODO)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
-- [rollup.json](TODO)
-- [Genesis](TODO) used for snap syncing
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json) used for snap syncing
 - P2P peers
   - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
