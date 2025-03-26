@@ -12,7 +12,7 @@ Below is the list of confirmed Day 1 partners:
 - [Ankr](https://rpc.ankr.com/celo)
 - Blockjoy
 - DRPC
-- Dwellir
+- [Dwellir](https://dashboard.dwellir.com/register)
 - Forno
 - Infura
 - Lava Network
