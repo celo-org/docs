@@ -1,12 +1,5 @@
 # Using thirdweb
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ## Create Contract
 
 To create a new smart contract using thirdweb CLI, follow these steps:
@@ -19,7 +12,7 @@ To create a new smart contract using thirdweb CLI, follow these steps:
 
 2. Input your preferences for the command line prompts:
    1. Give your project a name
-   2. Choose your preferred framework: Hardhat or Foundry
+   2. Choose your preferred framework: Hardhat or Forge
    3. Name your smart contract
    4. Choose the type of base contract: Empty, [ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base), [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base), or [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base)
    5. Add any desired [extensions](https://portal.thirdweb.com/solidity/extensions)
@@ -34,14 +27,25 @@ To create a new smart contract using thirdweb CLI, follow these steps:
 
    import "@thirdweb-dev/contracts/base/ERC721Base.sol";
 
-   contract Contract is ERC721Base {
-       constructor(
+   contract MyContract is ERC721Base {
+
+         constructor(
+           address _defaultAdmin,
            string memory _name,
            string memory _symbol,
            address _royaltyRecipient,
            uint128 _royaltyBps
-       ) ERC721Base(_name, _symbol, _royaltyRecipient, _royaltyBps) {}
-   }
+      )
+        ERC721Base(
+            _defaultAdmin,
+            _name,
+            _symbol,
+            _royaltyRecipient,
+            _royaltyBps
+        )
+    {}
+    
+   }    
    ```
 
    This contract inherits the functionality of ERC721Base through the following steps:
@@ -69,10 +73,12 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 
 Deploy allows you to deploy a smart contract to any EVM compatible network without configuring RPC URLs, exposing your private keys, writing scripts, and other additional setup such as verifying your contract.
 
-1. To deploy your smart contract using deploy, navigate to the root directory of your project and execute the following command:
+1. Sign up to Thirdweb to get a key [Thirdweb Secret Key](https://thirdweb.com/team/~/~/).
+
+2. To deploy your smart contract using deploy, navigate to the root directory of your project and execute the following command:
 
    ```bash
-   npx thirdweb deploy
+   npx thirdweb deploy -k [SecretKey]
    ```
 
    Executing this command will trigger the following actions:
@@ -81,13 +87,14 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
    - Providing the option to select which contract(s) you wish to deploy.
    - Uploading your contract source code (ABI) to IPFS.
 
-2. When it is completed, it will open a dashboard interface to finish filling out the parameters.
+3. When it is completed, it will open a dashboard interface to finish filling out the parameters.
    - `_name`: contract name
    - `_symbol`: symbol or "ticker"
    - `_royaltyRecipient`: wallet address to receive royalties from secondary sales
    - `_royaltyBps`: basis points (bps) that will be given to the royalty recipient for each secondary sale, e.g. 500 = 5%
-3. Select Celo as the network
-4. Manage additional settings on your contract’s dashboard as needed such as uploading NFTs, configuring permissions, and more.
+4. Select Celo as the network
+
+5. Manage additional settings on your contract’s dashboard as needed such as uploading NFTs, configuring permissions, and more.
 
 For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
 
