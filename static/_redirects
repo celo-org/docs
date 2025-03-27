@@ -332,7 +332,6 @@
 /blog/tutorials/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain https://celo.academy/t/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain/251 301
 /blog/tutorials/understanding-celos-approach-to-layer2-scaling https://celo.academy/t/understanding-celos-approach-to-layer-2-scaling/186 301
 /blog/tutorials/deploying-a-celo-node-using-typescript https://celo.academy/t/deploying-a-celo-node-using-typescript/958 301
-
 /blog/2022/03/06/6%20Steps%20to%20Quickly%20Build%20Smart%20Contracts%20on%20Celo%20with%20Remix /blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix
 /blog/2022/05/10/A%20Boilerplate%20guide%20to%20Airdropping%20on%20Celo /blog/tutorials/a-boilerplate-guide-to-airdropping-on-celo
 /blog/2022/06/14/How%20to%20quickly%20build%20an%20NFT%20collection%20on%20Celo /blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo
@@ -687,3 +686,8 @@
 /token-addresses /contracts/token-contracts
 /cel2/l2-operator-guide /cel2/operators/overview
 /cel2/operators/rpc-provider /cel2/operators/community-rpc-node
+/protocol/bridge /what-is-celo/using-celo/bridges 301
+/developer/walletconnect /wallet
+/protocol/socialconnect https://self.xyz/
+/contract-addresses /contracts/core-contracts 301
+/token-addresses /contracts/token-contracts 301

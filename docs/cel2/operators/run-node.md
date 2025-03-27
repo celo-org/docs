@@ -2,24 +2,20 @@
 
 This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
-:::note
-This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
-:::
-
 ## Recommended Hardware
-
-### Testnets (Alfajores and Baklava)
-
-- 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
-- 500GB SSD (NVME Recommended)
-- 100mb/s+ Download
 
 ### Mainnet
 
 - 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
 - 1TB+ SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
+- 100mb/s+ Download
+
+### Testnets (Alfajores and Baklava)
+
+- 16GB+ RAM
+- 500GB SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
 :::warning
@@ -228,13 +224,12 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ### Mainnet
 
-:::note
-The `rollup.json` and `genesis.json` files are created during the migration and will be listed here once the migration has been finished.
-:::
-
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/celo/celo-mainnet-migrated-chaindata.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json) used for snap syncing
 - P2P peers
   - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
@@ -253,21 +248,21 @@ The `rollup.json` and `genesis.json` files are created during the migration and 
     enode://1decf3b8b9a0d0b8332d15218f3bf0ceb9606b0efe18f352c51effc14bbf1f4f3f46711e1d460230cb361302ceaad2be48b5b187ad946e50d729b34e463268d2@35.240.26.148:30303
     ```
 
-  - op-node static peers, to be used with op-node `--p2p.static` flag:
+  - op-node bootnodes, to be used with op-node `--p2p.bootnodes` flag:
 
     ```text
-    /ip4/34.83.180.111/tcp/9222/p2p/16Uiu2HAkxBYxPd4eDFJzwm84XPzymkXud847vu65eju4UCDRpDSM
-    /ip4/34.169.135.64/tcp/9222/p2p/16Uiu2HAm6oVW1YeKheAuhnJSySnVvbXZ5gXL4g36XrWb1imF9K3m
-    /ip4/34.169.201.36/tcp/9222/p2p/16Uiu2HAmCqAFUoq72tjGJfCkkzHoNbjTjshjEED4kWtRKMSxcMgb
-    /ip4/34.83.127.51/tcp/9222/p2p/16Uiu2HAmBqKBoxkk95CsZiXQmQHv9WMiHXU4Di6wzFuYEKo1i7dg
-    /ip4/35.227.175.30/tcp/9222/p2p/16Uiu2HAmTNVkin4vogHsqwJwShUkHtx48aDoxygGwgp9Tv5zQWTM
-    /ip4/34.82.198.98/tcp/9222/p2p/16Uiu2HAmS6CeFPUXMztLf4VDh9NLbauuXLSYx9YkXfyiscqoxsKt
-    /ip4/34.38.181.223/tcp/9222/p2p/16Uiu2HAmH3xfYGjaJDw6sxa8ds3bVwMYLZRpPzpTtTrYq7G4nZs3
-    /ip4/34.76.38.6/tcp/9222/p2p/16Uiu2HAm6yXZ9oRTSJfZzXe8wXJ165X3pfzAKdLB9sa27eRZgTwD
-    /ip4/35.187.106.54/tcp/9222/p2p/16Uiu2HAmPFucuARxzAqtXcD3evFoutKh7tSmfQCxwPKUXfkoyaqY
-    /ip4/34.76.16.183/tcp/9222/p2p/16Uiu2HAmS8NybNYedzHf4nuFfqyCDH9xiMpgMWxctMtau8dTUxeP
-    /ip4/104.199.39.59/tcp/9222/p2p/16Uiu2HAmGfwjf1XPikWYDN4NFpTBuuvs6C7eF2iyyKvvjK2MGrVM
-    /ip4/34.140.117.79/tcp/9222/p2p/16Uiu2HAkwSVN7WHohhoE1sh932y2q3Pv7AFiSugM8K6iFZLALq66
+    enr:-J64QJipvmFhMq6DVh6RR4HvIiiBtyy1NUg_QlnAAbf18SMqCxCPZtLgUiWED5p0HRVPv69Wth4YPsvdKXSUyh57mWuGAZXRp6HjgmlkgnY0gmlwhCJTtG-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECKPT8t_OMGwEgh_eu8l3LChJXzPHNxMqohYTcJUFhKQaDdGNwgiQGg3VkcIIkBg
+    enr:-J64QCxBGS49IQbkbwsUuVWt9CkMctMCRe0b-4dqRsLr4QJ1S52urWPUk2uhBU5uerRGpxWTZZW5FtJC-9gSBHN3cSiGAZXRp4rbgmlkgnY0gmlwhCKph0CHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECqQd8PgMCBpVMXH8izBajLLUBMRKqiYXjV1-t2niEpQiDdGNwgiQGg3VkcIIkBg
+    enr:-J64QLG71bmmljNbLFx3qim6zXohKA3jbK_4C4d1cwixI-7VMoBIlnM6kWZVvvdWcbjTQ6QXB1LAO39eZWC4Heztj1-GAZXRpzUGgmlkgnY0gmlwhCKpySSHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDApsAenpWrLqo6lDsYs2ieUhL84Q_rhZG9pBWb3hKylCDdGNwgiQGg3VkcIIkBg
+    enr:-J64QKFU-u1x1gt3WmNP88EDUMQ316ymbzdGy83QjkBDqVSsJBn6-nipuqYQDeHYoLBLVJUMdyAiwxVbbDm14qQSf5qGAZXRppmIgmlkgnY0gmlwhCJTfzOHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEC88lrc6V3LF77SNWjO_GT5YCA2Ca6fwPp1b3vIMBjSk-DdGNwgiQGg3VkcIIkBg
+    enr:-J64QIXTVl0Opbdn20TSrkzpIZ4xQ54bERRlTmSeZ05dFLdlSbuRY7yn5tJeTPzsSldTw5V5E0qjEQcsfr20vMjTUDyGAZXRpiWygmlkgnY0gmlwhCPjrx6Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaED2qWtZdFrywlnz0eNnyBUS_G23mF2NORS3_e5RyefQfSDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFAsbeR4xRSyVyQOk7bILUCoMjI2EnbZvo4UAK3842HMYw41-UZXdnQJH8lwvzWn7qsY3Vu73NuxzxWKn4XB5wiGAZXRpYPAgmlkgnY0gmlwhCJSxmKHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDx51ZbXcmg4flmWldI-lBwUwiB0UFLqZkKnHvffMaE4eDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFQSrL3mfG-i64T-5DgVE5V9dGKC5A0JrEvD6CRpZvuLK3feg4bPaqFWfqXyNN_6IgY2z1Jkr4Mf2Zx-GdWlWquGAZXQkMdSgmlkgnY0gmlwhCImtd-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDQVEzYHXdCOtsdb_WOFXopL1v0Pka5KgbFJMPJnHhau6DdGNwgiQGg3VkcIIkBg
+    enr:-J64QAp3g1m-5uX-_mBXWyo6ZQqAlnRcAt11Xwy0-ZzqaSrDSlg4adyOz6v9flzLgxYkVvXI50nJGs8GjLgT5bwDLtyGAZXQrD69gmlkgnY0gmlwhCJMJgaHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECq5mdt1EmXHFLFxNE3hly7XQ0gWLeRloERPVuULjP0EiDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFCZs1ePThNEsRxIIzbfDxYfap1nEyuPPpSUeeWOoPFWOp0zSEPwLEtXhG1eH-ipsB5CgtaVzcXOyT9hKeAeVVaGAZXQkaZ3gmlkgnY0gmlwhCO7ajaHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDnYbZL7OKQpMwVG_hrvziZOH1XF1AJJtjFT5990QAX6ODdGNwgiQGg3VkcIIkBg
+    enr:-J64QJ9LY8m9AjNgujuVT0juX8T6PHKojZEIqd-7_vhBasfiT2xUUJoUfWga_xVJGFECFcN6hPKB4TjihmYFxHXelwOGAZXQkclrgmlkgnY0gmlwhCJMELeHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDyCwx8h3Vu7jcNWhv9npDUzgrQBfJ7HZgo4PMtbjjsEyDdGNwgiQGg3VkcIIkBg
+    enr:-J64QGJFPZzLj2GLFgB4JhTde7rXChMNFERNbzrwYYTG7CY2SCSggFrU3VXczzWBvOoJWdbOMOzPuCI2klknGjruUxeGAZXQkf1LgmlkgnY0gmlwhGjHJzuHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDO61fV62N5lQfAuNtgGuH5-nKbVM8lW6JpWswVK6F1giDdGNwgiQGg3VkcIIkBg
+    enr:-J64QEXleDl25w0qEG__wmDgwnzB0F5zapu00D_jM4qkCbA3WIcLC8rXPm8dcrKdZNBuNXJOtNE6c2_ZDkuQMvIuhjCGAZXQwDjFgmlkgnY0gmlwhCKMdU-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECHezzuLmg0LgzLRUhjzvwzrlgaw7-GPNSxR7_wUu_H0-DdGNwgiQGg3VkcIIkBg
     ```
 
 - Container images:
