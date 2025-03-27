@@ -54,7 +54,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Celo L2 migration is happening <a target="_blank" rel="noopener noreferrer" href="https://celo.blockscout.com/block/countdown/31056500"> soon</a>. Make sure to <a target="_blank" rel="noopener noreferrer" href="/cel2">upgrade your nodes</a>.',
+        'Celo has become an L2. Learn how to <a target="_blank" rel="noopener noreferrer" href="/cel2">run a node</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,

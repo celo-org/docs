@@ -7,28 +7,41 @@ Below is the list of confirmed Day 1 partners:
 
 ### Node and RPC Providers
 
-- Alchemy
-- Ankr  
+- [Alchemy](https://docs.alchemy.com/reference/celo-chain-api-quickstart)
+- All that Node
+- [Ankr](https://rpc.ankr.com/celo)
+- Blockjoy
 - DRPC
+- [Dwellir](https://dashboard.dwellir.com/register)
 - Forno
 - Infura
+- Lava Network
 - Nirvana Labs
 - Pokt
-- Quicknode  
+- Pokt Network
+- Quicknode
+  - [Get your Endpoint](https://www.quicknode.com/chains/celo)
+  - [Docs](https://www.quicknode.com/docs/celo)
+- RPC
+- Stake Capital
 - Tatum
 - The Graph
-- Thirdweb
+- thirdweb
 
 ### Indexers
 
-- Blockscout
-- Celoscan  
+- [Blockscout](https://celo.blockscout.com/)
+- Celoscan
+- Envio
+- Goldsky 
 
 ### Bridges
 
+- Axelar
 - Hyperlane
 - LayerZero
-- Superbridge
+- Squid Router
+- [Superbridge](https://superbridge.app/celo)
 - Wormhole
 
 ### Exchanges
@@ -36,11 +49,15 @@ Below is the list of confirmed Day 1 partners:
 - Anchorage
 - Binance
 - Bitfinex
+- Bitkub Thailand
 - Coinbase
 - Gate.io
 - Kraken
+- PDAX Philippines
 - Ubeswap
+- Uniswap
 - Upbit
+- Yellowcard
 
 We appreciate the commitment of these partners in supporting a seamless and successful launch!
 
