@@ -691,6 +691,6 @@
 /protocol/socialconnect https://self.xyz/
 /contract-addresses /contracts/core-contracts 301
 /token-addresses /contracts/token-contracts 301
-/developer/build-on-minipay /developer/build/build-on-minipay/overview
-/developer/build/build-on-minipay /developer/build/build-on-minipay/overview
+/build-on-minipay build/build-on-minipay/overview
+/build/build-on-minipay /build/build-on-minipay/overview
 /protocol/governance /using-celo/protocol/governance/overview
