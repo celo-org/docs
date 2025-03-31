@@ -681,16 +681,13 @@
 /blog/tutorials/devrel@celo.org /blog
 /developer/walletconnect /wallet
 /developer/indexer /developer/indexers
-/protocol/socialconnect https://github.com/celo-org/SocialConnect
 /contract-addresses /contracts/core-contracts
 /token-addresses /contracts/token-contracts
 /cel2/l2-operator-guide /cel2/operators/overview
 /cel2/operators/rpc-provider /cel2/operators/community-rpc-node
 /protocol/bridge /what-is-celo/using-celo/bridges 301
-/developer/walletconnect /wallet
 /protocol/socialconnect https://self.xyz/
 /contract-addresses /contracts/core-contracts 301
 /token-addresses /contracts/token-contracts 301
-/build-on-minipay build/build-on-minipay/overview
-/build/build-on-minipay /build/build-on-minipay/overview
-/protocol/governance /using-celo/protocol/governance/overview
+/developer/build-on-minipay /build/build-on-minipay/overview
+/protocol/governance /what-is-celo/using-celo/protocol/governance/overview
