@@ -585,7 +585,6 @@
 /command-line-interface/transfer /cli/transfer
 /command-line-interface/validator /cli/validator
 /command-line-interface/validatorgroup /cli/validatorgroup
-
 /celo-codebase/protocol/stability /protocol/stability
 /celo-codebase/protocol/identity /protocol/identity
 /getting-started/wallets/using-metamask-with-celo/manual-setup /wallet/metamask/setup
