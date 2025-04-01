@@ -3,9 +3,9 @@ title: Transactions on Celo
 description: Introduction to transactions on Celo.
 ---
 
-# Celo Token
+# Transactions on Celo
 
-Introduction to transactions on Celo, gas fees 
+Introduction to transactions on Celo.
 
 :::warning
 As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
