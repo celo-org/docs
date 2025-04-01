@@ -694,7 +694,9 @@
 /protocol/stability /what-is-celo/about-celo-l1/protocol/stability
 /contract-addresses /contracts/core-contracts 301
 /token-addresses /contracts/token-contracts 301
-/developer/build-on-minipay /build/build-on-minipay/overview
+/developer/build-on-minipay /build/build-on-minipay/
+/developer/build-on-minipay/overview /build/build-on-minipay/overview
+/developer/build-on-minipay/quickstart /build/build-on-minipay/quickstart
 /developer/build-on-minipay/prerequisites/ngrok-setup /build/build-on-minipay/prerequisites/ngrok-setup
 /developer/build-on-minipay/code-library /build/build-on-minipay/code-library
 /developer/build-on-minipay/deeplinks /build/build-on-minipay/deeplinks
@@ -727,15 +729,24 @@
 /protocol/pos/epoch-rewards /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards
 /protocol/pos/epoch-rewards-validator /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-validator
 /protocol/pos/epoch-rewards-locked-gold /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold
-/protocol/pos/epoch-rewards-community-fund /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund
-/protocol/pos/epoch-rewards-carbon-offsetting-fund /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund
-/protocol/consensus/index /what-is-celo/about-celo-l1/protocol/consensus
+/protocol/pos/epoch-rewards-community-fund /what-is-celo/using-celo/protocol/epoch-rewards/community-fund
+/protocol/pos/epoch-rewards-carbon-offsetting-fund /what-is-celo/using-celo/protocol/epoch-rewards/carbon-offsetting-fund
+/protocol/consensus/index /what-is-celo/using-celo/protocol/consensus
 /protocol/consensus/validator-set-differences /what-is-celo/about-celo-l1/protocol/consensus/validator-set-differences
 /protocol/consensus/locating-nodes /what-is-celo/about-celo-l1/protocol/consensus/locating-nodes
-/protocol/consensus/ultralight-sync /what-is-celo/about-celo-l1/protocol/consensus/ultralight-sync
+/protocol/consensus/ultralight-sync /what-is-celo/using-celo/protocol/consensus
 /protocol/identity/index https://self.xyz/
 /protocol/randomness /what-is-celo/about-celo-l1/protocol/randomness
 /protocol/contracts/add-contract /what-is-celo/about-celo-l1/protocol/contracts/add-contract
+/protocol/transaction/erc20-transaction-fees /what-is-celo/using-celo/protocol/transaction
+/protocol/transaction/escrow /what-is-celo/using-celo/protocol/escrow
+/protocol/transaction/native-currency /what-is-celo/using-celo/protocol/celo-token
+/protocol/transaction/overview /what-is-celo/using-celo/protocol/transaction/overview
+/protocol/transaction/tx-comment-encryption /what-is-celo/using-celo/protocol/transaction/tx-comment-encryption
+/protocol/transaction/transaction-types /what-is-celo/using-celo/protocol/transaction/transaction-types
+/protocol/transaction/tx-comment-encryption /what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption
+/protocol/transaction/erc20-transaction-fees /developer/fee-abstraction
+/protocol/transaction/gas-pricing /developer/fee-abstraction
 /community/release-process/index /what-is-celo/joining-celo/contributors/release-process/index
 /community/release-process/smart-contracts /what-is-celo/joining-celo/contributors/release-process/smart-contracts
 /community/release-process/blockchain-client /what-is-celo/joining-celo/contributors/release-process/blockchain-client
