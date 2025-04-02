@@ -23,6 +23,4 @@ dAppLooker provides comprehensive analytics and visualization tools for decentra
 ## Additional Resources
 
 For more detailed analytics and insights, consider exploring the following resources:
-
-- <ColoredText>[Celo Explorer](https://explorer.celo.org)</ColoredText>: A block explorer for the Celo blockchain.
 - <ColoredText>[Messari](https://messari.io/asset/celo)</ColoredText>: In-depth research and analytics on Celo.
