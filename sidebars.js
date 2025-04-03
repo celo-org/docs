@@ -1178,7 +1178,7 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "Using Quex oracles",
+        label: "Using Quex",
         id: "developer/oracles/quex-oracles",
       },
     ],
