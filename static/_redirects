@@ -412,11 +412,7 @@
 /celo-codebase/protocol/proof-of-stake/validator-groups /protocol/pos/validator-groups
 /celo-codebase/protocol/proof-of-stake/validator-rewards /protocol/pos/epoch-rewards-validator
 /celo-codebase/protocol/release-gold /holder/manage/release-gold
-/celo-codebase/protocol/release-gold /holder/manage/release-gold
 /celo-codebase/protocol/stability /protocol/identity
-/celo-codebase/protocol/stability /protocol/stability
-/celo-codebase/protocol/stability /protocol/stability
-/celo-codebase/protocol/stability?lang=en /protocol/stability
 /celo-codebase/protocol/stability/adding_stable_assets /protocol/stability/adding-stable-assets
 /celo-codebase/protocol/stability/doto /protocol/stability/doto
 /celo-codebase/protocol/stability/granda-mento /protocol/stability/granda-mento
@@ -452,15 +448,12 @@
 /celo-holder-guide/governance-cheat-sheet /holder/vote/governance-parameters
 /celo-holder-guide/ledger /wallet/ledger/setup
 /celo-holder-guide/owners /holder
-/celo-holder-guide/owners /holder
-/celo-holder-guide/owners /holder
 /celo-holder-guide/quick-start /holder
 /celo-holder-guide/release-gold /holder/manage/release-gold
 /celo-holder-guide/voting-governance /holder/vote/governance
 /celo-holder-guide/voting-validators /holder/vote/validator
 /celo-owner-guide/celo-exchange-bot /holder/manage/exchange
 /celo-owner-guide/celo-recovery /holder/recover/from-celo-address
-/celo-owner-guide/eth-recovery /holder/recover/from-eth-address
 /celo-owner-guide/eth-recovery /holder/recover/from-eth-address
 /celo-owner-guide/governance-cheat-sheet /holder/vote/governance-parameters
 /celo-owner-guide/ledger /wallet/ledger/setup
@@ -534,8 +527,7 @@
 /contract-addresses /contracts/core-contracts
 /contract-addresses /contracts/core-contracts 301
 /developer-guide /developer
-/developer-guide/celo-dapp-galler /showcase
-/developer-guide/celo-dapp-gallery /general/gallery
+/developer-guide/celo-dapp-gallery /showcase
 /developer-guide/celo-for-eth-devs /developer/migrate/from-ethereum
 /developer-guide/contractkit /developer/contractkit/
 /developer-guide/contractkit/contracts-wrappers-registry /developer/contractkit/contracts-wrappers-registry
@@ -563,11 +555,10 @@
 /developer-guide/sdk-code-reference/summary-2/classes/_wrappers_reserve_.reservewrapper /developer/contractkit/contracts-wrappers-registry
 /developer-guide/start /developer
 /developer-guide/start/develop-on-windows /developer/setup/windows
-/developer-guide/start/development-chain /developer-guide/overview/introduction
 /developer-guide/start/development-chain /developer/setup/development-chain
 /developer-guide/start/wallet-connect https://github.com/WalletConnect
 /developer-guide/start/web-dapp /developer
-/developer-resources/celo-dapp-gallery /general/gallery
+/developer-resources/celo-dapp-gallery /showcase
 /developer-resources/celo-for-eth-devs /developer/migrate/from-ethereum
 /developer-resources/contractkit/contracts-wrappers-registry /developer/contractkit/contracts-wrappers-registry",
 /developer-resources/contractkit/data-encryption-key /developer/contractkit/data-encryption-key",
@@ -629,7 +620,6 @@
 /general/ecosystem/contributors /what-is-celo/joining-celo/contributors/overview
 /general/ecosystem/governance /what-is-celo/using-celo/protocol/governance
 /general/ecosystem/overview /what-is-celo/joining-celo/index
-/general/ecosystem/overview /what-is-celo/joining-celo/index
 /getting-started /developer
 /getting-started... /general
 /getting-started/alfajores-testnet /network
@@ -662,9 +652,6 @@
 /getting-started/using-the-cli /cli
 /getting-started/using-the-mobile-wallet /wallet/mobile-wallet/setup
 /getting-started/validator-troubleshooting-faq /validator/troubleshooting-faq
-/getting-started/wallets /developer
-/getting-started/wallets /wallet
-/getting-started/wallets /wallet
 /getting-started/wallets /wallet
 /getting-started/wallets/index /wallet
 /getting-started/wallets/using-metamask-with-celo /wallet/metamask/setup
@@ -695,7 +682,6 @@
 /protocol/consensus/validator-set-differences /what-is-celo/about-celo-l1/protocol/consensus/validator-set-differences
 /protocol/contracts/add-contract /what-is-celo/about-celo-l1/protocol/contracts/add-contract
 /protocol/cross-chain-messaging /developer/bridges/cross-chain-messaging
-/protocol/governance /what-is-celo/about-celo-l1/protocol/governance
 /protocol/governance /what-is-celo/using-celo/protocol/governance
 /protocol/identity/index https://self.xyz/
 /protocol/index /what-is-celo/about-celo-l1/protocol
@@ -703,7 +689,6 @@
 /protocol/oracle/chainlink-oracles /developer/oracles/chainlink-oracles
 /protocol/oracle/index /developer/oracles/
 /protocol/oracle/redstone /developer/oracles/redstone
-/protocol/oracle/run /developer/oracles/run
 /protocol/oracle/run /developer/oracles/run
 /protocol/oracle/supra /developer/oracles/supra
 /protocol/pos/epoch-rewards /what-is-celo/about-celo-l1/protocol/pos/epoch-rewards
@@ -721,16 +706,13 @@
 /protocol/randomness /what-is-celo/about-celo-l1/protocol/randomness
 /protocol/socialconnect https://self.xyz/
 /protocol/stability /what-is-celo/about-celo-l1/protocol/stability
-/protocol/stability /what-is-celo/about-celo-l1/protocol/stability
 /protocol/transaction/erc20-transaction-fees /developer/fee-abstraction
 /protocol/transaction/escrow /what-is-celo/using-celo/protocol/escrow
 /protocol/transaction/gas-pricing /developer/fee-abstraction
 /protocol/transaction/native-currency /what-is-celo/using-celo/protocol/celo-token
 /protocol/transaction/overview /what-is-celo/using-celo/protocol/transaction/overview
 /protocol/transaction/transaction-types /what-is-celo/using-celo/protocol/transaction/transaction-types
-/protocol/transaction/tx-comment-encryption /what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption
 /protocol/transaction/tx-comment-encryption /what-is-celo/using-celo/protocol/transaction/tx-comment-encryption
-/token-addresses /contracts/token-contracts
 /token-addresses /contracts/token-contracts 301
 /v/master/developer-guide/overview /developer
 /v/master/developer-guide/overview/introduction /developer
@@ -756,20 +738,17 @@
 /validator-guide/validator-explorer /validator/validator-explorer
 /validator/attestation /what-is-celo/about-celo-l1/validator/attestation
 /validator/celo-foundation-voting-policy /what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy
-/validator/celo-foundation-voting-policy /what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy
 /validator/celo-signal /what-is-celo/about-celo-l1/validator/celo-signal
 /validator/devops-best-practices /what-is-celo/about-celo-l1/validator/devops-best-practices
 /validator/key-management/detailed /what-is-celo/about-celo-l1/validator/key-management/detailed
 /validator/key-management/key-rotation /what-is-celo/about-celo-l1/validator/key-management/key-rotation
 /validator/key-management/summary /what-is-celo/about-celo-l1/validator/key-management/summary
 /validator/monitoring /what-is-celo/about-celo-l1/validator/monitoring
-/validator/monitoring /what-is-celo/about-celo-l1/validator/monitoring
 /validator/node-upgrade /what-is-celo/about-celo-l1/validator/node-upgrade
 /validator/proxy /what-is-celo/about-celo-l1/validator/proxy
 /validator/run/alfajores /what-is-celo/about-celo-l1/validator/run/alfajores
 /validator/run/baklava /what-is-celo/about-celo-l1/validator/run/baklava
 /validator/run/celo-devnet /what-is-celo/about-celo-l1/validator/run/celo-devnet
-/validator/run/celo-testnet /what-is-celo/about-celo-l1/validator/run/celo-testnet
 /validator/run/celo-testnet /what-is-celo/about-celo-l1/validator/run/celo-testnet
 /validator/run/mainnet /what-is-celo/about-celo-l1/validator/run/mainnet
 /validator/security /what-is-celo/about-celo-l1/validator/security
