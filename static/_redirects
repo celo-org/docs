@@ -738,7 +738,6 @@
 /protocol/identity/index https://self.xyz/
 /protocol/randomness /what-is-celo/about-celo-l1/protocol/randomness
 /protocol/contracts/add-contract /what-is-celo/about-celo-l1/protocol/contracts/add-contract
-/protocol/transaction/erc20-transaction-fees /what-is-celo/using-celo/protocol/transaction
 /protocol/transaction/escrow /what-is-celo/using-celo/protocol/escrow
 /protocol/transaction/native-currency /what-is-celo/using-celo/protocol/celo-token
 /protocol/transaction/overview /what-is-celo/using-celo/protocol/transaction/overview
@@ -777,3 +776,4 @@
 /holder/release-gold /what-is-celo/using-celo/manage/release-gold
 /holder/exchange /what-is-celo/using-celo/manage/exchange
 /holder/asset /what-is-celo/using-celo/manage/asset
+/developer/build-with-ai/overview /build/build-with-ai/overview
