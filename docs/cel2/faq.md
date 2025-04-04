@@ -11,6 +11,13 @@ description: Frequently Asked Questions about Cel2
 
 :chains: Hardfork Block Height: 31056500
 
+### My node/nodes are having trouble keeping up to date with the chain head / having trouble connecting to and finding peers
+
+A couple of issues could be causing this.
+
+* If you are running multiple instances of op-node, make sure to check that they each have a unique and persisted private key at `--p2p.priv.path`
+* Ensure that your node is accessible to other nodes, check the __Configure P2P for external network access__ section under [Running a full node](./operators/run-node.md#running-a-full-node)
+
 ### How do I run a node or upgrade an existing node?
 
 See the guides for [running a node](./operators/run-node.md) or the guide on [how to migrate an L1 node](./operators/migrate-node.md).

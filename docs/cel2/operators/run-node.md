@@ -75,6 +75,32 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See [Running an archive node](#running-an-archive-node) for more information.
 
+    __Configure P2P for external network access__
+
+    :::warning
+    If the following options are not configured correctly, your node will not be
+    discoverable or reachable to other nodes on the network. This is likely to
+    impair your node's ability to stay reliably connected to and synced with the
+    network.
+    :::
+
+    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
+    discovery so that other nodes can connect to your node. If unset op-node
+    other nodes on the network will not be able to discover and connect to your
+    node.
+    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 9222.
+
+    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
+    shared via the discovery mechanism. If the public IP is not correctly
+    configured then other nodes on the network will not be able to discover and
+    connect to your node. The default value of `any` will try to automatically
+    determine the public IP, but the most reliable approach is to explicitly set
+    the public IP using `extip:<your-public-ip>`. Other acceptable values are
+    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 30303.
+
 3. Start the node.
 
     ```bash
@@ -181,6 +207,32 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
       This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored, and the tool will not start a legacy archive node when it starts your L2 archive node.
       Note that if you choose to run your own legacy archive node, you should do so with different flags than before the hardfork as the node will no longer be syncing blocks or communicating with other nodes. To see how we recommend re-starting a legacy archive node as a Historical RPC Service, see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
+
+    __Configure P2P for external network access__
+
+    :::warning
+    If the following options are not configured correctly, your node will not be
+    discoverable or reachable to other nodes on the network. This is likely to
+    impair your node's ability to stay reliably connected to and synced with the
+    network.
+    :::
+
+    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
+    discovery so that other nodes can connect to your node. If unset op-node
+    other nodes on the network will not be able to discover and connect to your
+    node.
+    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 9222.
+
+    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
+    shared via the discovery mechanism. If the public IP is not correctly
+    configured then other nodes on the network will not be able to discover and
+    connect to your node. The default value of `any` will try to automatically
+    determine the public IP, but the most reliable approach is to explicitly set
+    the public IP using `extip:<your-public-ip>`. Other acceptable values are
+    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node(s).
 
