@@ -66,7 +66,7 @@ Whether you're an experienced developer or just starting out, Celo provides the 
 
 <ColoredText>[Start building on Celo](/developer)</ColoredText> today and contribute to a growing ecosystem that supports a regenerative digital economy, fostering prosperity for all.
 
-Connect with us on <ColoredText>[Discord](https://discord.com/invite/celo)</ColoredText> or on <ColoredText>[X](https://x.com/celo)</ColoredText>, and be sure to explore our <ColoredText>[ecosystem resources](/general/ecosystem/overview)</ColoredText>.
+Connect with us on <ColoredText>[Discord](https://discord.com/invite/celo)</ColoredText> or on <ColoredText>[X](https://x.com/celo)</ColoredText>, and be sure to explore our <ColoredText>[ecosystem resources](https://celo.org/ecosystem)</ColoredText>.
 
 
 <!-- ---
