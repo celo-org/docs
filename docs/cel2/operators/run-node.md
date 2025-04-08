@@ -2,24 +2,20 @@
 
 This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
-:::note
-This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
-:::
-
 ## Recommended Hardware
-
-### Testnets (Alfajores and Baklava)
-
-- 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
-- 500GB SSD (NVME Recommended)
-- 100mb/s+ Download
 
 ### Mainnet
 
 - 16GB+ RAM
-- Minimum 4 CPU, recommended 8 CPU
 - 1TB+ SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
+- 100mb/s+ Download
+
+### Testnets (Alfajores and Baklava)
+
+- 16GB+ RAM
+- 500GB SSD (NVME Recommended)
+- Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
 :::warning
@@ -78,6 +74,32 @@ Follow these steps to run a full node. If you would like to run an archive node,
     __Configure node type__
 
     Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See [Running an archive node](#running-an-archive-node) for more information.
+
+    __Configure P2P for external network access__
+
+    :::warning
+    If the following options are not configured correctly, your node will not be
+    discoverable or reachable to other nodes on the network. This is likely to
+    impair your node's ability to stay reliably connected to and synced with the
+    network.
+    :::
+
+    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
+    discovery so that other nodes can connect to your node. If unset op-node
+    other nodes on the network will not be able to discover and connect to your
+    node.
+    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 9222.
+
+    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
+    shared via the discovery mechanism. If the public IP is not correctly
+    configured then other nodes on the network will not be able to discover and
+    connect to your node. The default value of `any` will try to automatically
+    determine the public IP, but the most reliable approach is to explicitly set
+    the public IP using `extip:<your-public-ip>`. Other acceptable values are
+    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node.
 
@@ -186,6 +208,32 @@ Please ensure neither datadir is being used by a running node before proceeding.
       This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored, and the tool will not start a legacy archive node when it starts your L2 archive node.
       Note that if you choose to run your own legacy archive node, you should do so with different flags than before the hardfork as the node will no longer be syncing blocks or communicating with other nodes. To see how we recommend re-starting a legacy archive node as a Historical RPC Service, see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
 
+    __Configure P2P for external network access__
+
+    :::warning
+    If the following options are not configured correctly, your node will not be
+    discoverable or reachable to other nodes on the network. This is likely to
+    impair your node's ability to stay reliably connected to and synced with the
+    network.
+    :::
+
+    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
+    discovery so that other nodes can connect to your node. If unset op-node
+    other nodes on the network will not be able to discover and connect to your
+    node.
+    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 9222.
+
+    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
+    shared via the discovery mechanism. If the public IP is not correctly
+    configured then other nodes on the network will not be able to discover and
+    connect to your node. The default value of `any` will try to automatically
+    determine the public IP, but the most reliable approach is to explicitly set
+    the public IP using `extip:<your-public-ip>`. Other acceptable values are
+    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
+    other nodes can connect to your node. Defaults to 30303.
+
 3. Start the node(s).
 
     ```bash
@@ -228,13 +276,12 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ### Mainnet
 
-:::note
-The `rollup.json` and `genesis.json` files are created during the migration and will be listed here once the migration has been finished.
-:::
-
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/celo/celo-mainnet-migrated-chaindata.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json) used for snap syncing
 - P2P peers
   - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
@@ -253,21 +300,21 @@ The `rollup.json` and `genesis.json` files are created during the migration and 
     enode://1decf3b8b9a0d0b8332d15218f3bf0ceb9606b0efe18f352c51effc14bbf1f4f3f46711e1d460230cb361302ceaad2be48b5b187ad946e50d729b34e463268d2@35.240.26.148:30303
     ```
 
-  - op-node static peers, to be used with op-node `--p2p.static` flag:
+  - op-node bootnodes, to be used with op-node `--p2p.bootnodes` flag:
 
     ```text
-    /ip4/34.83.180.111/tcp/9222/p2p/16Uiu2HAkxBYxPd4eDFJzwm84XPzymkXud847vu65eju4UCDRpDSM
-    /ip4/34.169.135.64/tcp/9222/p2p/16Uiu2HAm6oVW1YeKheAuhnJSySnVvbXZ5gXL4g36XrWb1imF9K3m
-    /ip4/34.169.201.36/tcp/9222/p2p/16Uiu2HAmCqAFUoq72tjGJfCkkzHoNbjTjshjEED4kWtRKMSxcMgb
-    /ip4/34.83.127.51/tcp/9222/p2p/16Uiu2HAmBqKBoxkk95CsZiXQmQHv9WMiHXU4Di6wzFuYEKo1i7dg
-    /ip4/35.227.175.30/tcp/9222/p2p/16Uiu2HAmTNVkin4vogHsqwJwShUkHtx48aDoxygGwgp9Tv5zQWTM
-    /ip4/34.82.198.98/tcp/9222/p2p/16Uiu2HAmS6CeFPUXMztLf4VDh9NLbauuXLSYx9YkXfyiscqoxsKt
-    /ip4/34.38.181.223/tcp/9222/p2p/16Uiu2HAmH3xfYGjaJDw6sxa8ds3bVwMYLZRpPzpTtTrYq7G4nZs3
-    /ip4/34.76.38.6/tcp/9222/p2p/16Uiu2HAm6yXZ9oRTSJfZzXe8wXJ165X3pfzAKdLB9sa27eRZgTwD
-    /ip4/35.187.106.54/tcp/9222/p2p/16Uiu2HAmPFucuARxzAqtXcD3evFoutKh7tSmfQCxwPKUXfkoyaqY
-    /ip4/34.76.16.183/tcp/9222/p2p/16Uiu2HAmS8NybNYedzHf4nuFfqyCDH9xiMpgMWxctMtau8dTUxeP
-    /ip4/104.199.39.59/tcp/9222/p2p/16Uiu2HAmGfwjf1XPikWYDN4NFpTBuuvs6C7eF2iyyKvvjK2MGrVM
-    /ip4/34.140.117.79/tcp/9222/p2p/16Uiu2HAkwSVN7WHohhoE1sh932y2q3Pv7AFiSugM8K6iFZLALq66
+    enr:-J64QJipvmFhMq6DVh6RR4HvIiiBtyy1NUg_QlnAAbf18SMqCxCPZtLgUiWED5p0HRVPv69Wth4YPsvdKXSUyh57mWuGAZXRp6HjgmlkgnY0gmlwhCJTtG-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECKPT8t_OMGwEgh_eu8l3LChJXzPHNxMqohYTcJUFhKQaDdGNwgiQGg3VkcIIkBg
+    enr:-J64QCxBGS49IQbkbwsUuVWt9CkMctMCRe0b-4dqRsLr4QJ1S52urWPUk2uhBU5uerRGpxWTZZW5FtJC-9gSBHN3cSiGAZXRp4rbgmlkgnY0gmlwhCKph0CHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECqQd8PgMCBpVMXH8izBajLLUBMRKqiYXjV1-t2niEpQiDdGNwgiQGg3VkcIIkBg
+    enr:-J64QLG71bmmljNbLFx3qim6zXohKA3jbK_4C4d1cwixI-7VMoBIlnM6kWZVvvdWcbjTQ6QXB1LAO39eZWC4Heztj1-GAZXRpzUGgmlkgnY0gmlwhCKpySSHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDApsAenpWrLqo6lDsYs2ieUhL84Q_rhZG9pBWb3hKylCDdGNwgiQGg3VkcIIkBg
+    enr:-J64QKFU-u1x1gt3WmNP88EDUMQ316ymbzdGy83QjkBDqVSsJBn6-nipuqYQDeHYoLBLVJUMdyAiwxVbbDm14qQSf5qGAZXRppmIgmlkgnY0gmlwhCJTfzOHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEC88lrc6V3LF77SNWjO_GT5YCA2Ca6fwPp1b3vIMBjSk-DdGNwgiQGg3VkcIIkBg
+    enr:-J64QIXTVl0Opbdn20TSrkzpIZ4xQ54bERRlTmSeZ05dFLdlSbuRY7yn5tJeTPzsSldTw5V5E0qjEQcsfr20vMjTUDyGAZXRpiWygmlkgnY0gmlwhCPjrx6Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaED2qWtZdFrywlnz0eNnyBUS_G23mF2NORS3_e5RyefQfSDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFAsbeR4xRSyVyQOk7bILUCoMjI2EnbZvo4UAK3842HMYw41-UZXdnQJH8lwvzWn7qsY3Vu73NuxzxWKn4XB5wiGAZXRpYPAgmlkgnY0gmlwhCJSxmKHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDx51ZbXcmg4flmWldI-lBwUwiB0UFLqZkKnHvffMaE4eDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFQSrL3mfG-i64T-5DgVE5V9dGKC5A0JrEvD6CRpZvuLK3feg4bPaqFWfqXyNN_6IgY2z1Jkr4Mf2Zx-GdWlWquGAZXQkMdSgmlkgnY0gmlwhCImtd-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDQVEzYHXdCOtsdb_WOFXopL1v0Pka5KgbFJMPJnHhau6DdGNwgiQGg3VkcIIkBg
+    enr:-J64QAp3g1m-5uX-_mBXWyo6ZQqAlnRcAt11Xwy0-ZzqaSrDSlg4adyOz6v9flzLgxYkVvXI50nJGs8GjLgT5bwDLtyGAZXQrD69gmlkgnY0gmlwhCJMJgaHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECq5mdt1EmXHFLFxNE3hly7XQ0gWLeRloERPVuULjP0EiDdGNwgiQGg3VkcIIkBg
+    enr:-J64QFCZs1ePThNEsRxIIzbfDxYfap1nEyuPPpSUeeWOoPFWOp0zSEPwLEtXhG1eH-ipsB5CgtaVzcXOyT9hKeAeVVaGAZXQkaZ3gmlkgnY0gmlwhCO7ajaHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDnYbZL7OKQpMwVG_hrvziZOH1XF1AJJtjFT5990QAX6ODdGNwgiQGg3VkcIIkBg
+    enr:-J64QJ9LY8m9AjNgujuVT0juX8T6PHKojZEIqd-7_vhBasfiT2xUUJoUfWga_xVJGFECFcN6hPKB4TjihmYFxHXelwOGAZXQkclrgmlkgnY0gmlwhCJMELeHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDyCwx8h3Vu7jcNWhv9npDUzgrQBfJ7HZgo4PMtbjjsEyDdGNwgiQGg3VkcIIkBg
+    enr:-J64QGJFPZzLj2GLFgB4JhTde7rXChMNFERNbzrwYYTG7CY2SCSggFrU3VXczzWBvOoJWdbOMOzPuCI2klknGjruUxeGAZXQkf1LgmlkgnY0gmlwhGjHJzuHb3BzdGFja4TsyQIAiXNlY3AyNTZrMaEDO61fV62N5lQfAuNtgGuH5-nKbVM8lW6JpWswVK6F1giDdGNwgiQGg3VkcIIkBg
+    enr:-J64QEXleDl25w0qEG__wmDgwnzB0F5zapu00D_jM4qkCbA3WIcLC8rXPm8dcrKdZNBuNXJOtNE6c2_ZDkuQMvIuhjCGAZXQwDjFgmlkgnY0gmlwhCKMdU-Hb3BzdGFja4TsyQIAiXNlY3AyNTZrMaECHezzuLmg0LgzLRUhjzvwzrlgaw7-GPNSxR7_wUu_H0-DdGNwgiQGg3VkcIIkBg
     ```
 
 - Container images:
@@ -295,14 +342,14 @@ The `rollup.json` and `genesis.json` files are created during the migration and 
     enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
     ```
 
-  - op-node static peers, to be used with op-node `--p2p.static` flag:
+  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
 
     ```text
-    /ip4/35.197.25.52/tcp/9222/p2p/16Uiu2HAmQEdyLRSAVZDr5SqbJ1RnKmNDhtQJcEKmemrVxe4FxKwR
-    /ip4/34.105.22.4/tcp/9222/p2p/16Uiu2HAm1SZBDSugT5MMu7vBY8auDgfZFNhoDeXPLc9Me5FsAxwT
-    /ip4/34.83.209.168/tcp/9222/p2p/16Uiu2HAmGJAiUX6HLSo4nLh8T984qxzokwL23cVsYuNZy2SrK7C6
-    /ip4/34.83.214.149/tcp/9222/p2p/16Uiu2HAmAko2Kr3eAjM7tnshtEhYrxQYfKUvN2kwiygeFoBAoi8S
-    /ip4/34.169.5.52/tcp/9222/p2p/16Uiu2HAmKc6YKHzYgsjBDaj36uAufxpgZFgrzDqVBt6zTPwdhhJD
+    enr:-J64QOpbyT0wCfa37PO5qirwmbRsdHy_nMy8-Yam8-SaeK4oL6S-5Z0YKE6TphhZWjfux-EfjxedIbqdiXDEd2bRrNiGAZX2gzlHgmlkgnY0gmlwhCPFGTSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDrA9C-kb4zBC9AqEDiU1x1JVTdGUTPnxEK8Atx2chpfSDdGNwgiQGg3VkcIIkBg
+    enr:-J64QI8egoBPlV8cBO9xhBK1wg2ZJj3UH_nw9DjA_mfyYNY2ewDNJ88uCKXV5Kmlj15p3OpdbdUiyXBI9OuxU0LEBtmGAZX2gyNbgmlkgnY0gmlwhCJpFgSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaECWWAClpuLJppPo0tHCblgC2QgHn0C4vXxNQr_0CGwy9qDdGNwgiQGg3VkcIIkBg
+    enr:-J64QCnvpKsWBbrZEzJXQYraWh6XpAI4ygdtrjRPxBKsrdPwHOaN2OcN1w7eBdA2vyXEicxseNVpIFQfvB3nKKzSBo2GAZX2gtNGgmlkgnY0gmlwhCJT0aiHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDNhlFUGTvHOZnFxu6HfgM_UwJfwGM8CBaqtSW8NUJYRuDdGNwgiQGg3VkcIIkBg
+    enr:-J64QLMeHf5MBmx06LfYEVAB2-5BfvChT-uf3_cKiUFwoA8BI6yjQVSGQMe8F-Oqd662lPaa62Aikq-ra9a_J82852iGAZX2grXVgmlkgnY0gmlwhCJT1pWHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEC48VNtgBKktTuh1BPBz8yNKJXWbSFJ0zCJAN-Pl7nkvODdGNwgiQGg3VkcIIkBg
+    enr:-J64QH2pBtdN_th8TLGEEMjmz5lMsU7nxcY2hpRGUtbPb7McP4VD089C72g0Ms8eztJzf5u3S-3ooH9S3Q0Qj1BYnbKGAZX2gn8tgmlkgnY0gmlwhCKpBTSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDZ0QQs0_VTIQGpPlFKSuWERaI1Lq0muzcNLTxs0aJH0aDdGNwgiQGg3VkcIIkBg
     ```
 
 - Container images:
@@ -331,14 +378,14 @@ The `rollup.json` and `genesis.json` files are created during the migration and 
     enode://616429f584575f8da463c18e5e2d38ec028b95446bffd607ebf8ac3d2dd3bbe9b859c91efbbbea6cf51ad78fb0d5db178f66ca57e647bd46bfe6692cc06127e9@34.53.24.17:30303
     ```
 
-  - op-node static peers, to be used with op-node `--p2p.static` flag:
+  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
 
     ```text
-    /ip4/34.105.121.84/tcp/9222/p2p/16Uiu2HAmK86WJyCXu8j9vHa2AbEDRmJe8DfzAaHPVsVEhnPvq3cE
-    /ip4/35.199.167.200/tcp/9222/p2p/16Uiu2HAmAYgs8bWPgVoQmAR7jPDn1n2Gn83Y44LuBpkzJDPyVsqy
-    /ip4/34.145.111.30/tcp/9222/p2p/16Uiu2HAm7jL1h1hDUMAC4zpa6VwfVeF6ugF1BcaPMAHuAf176aGG
-    /ip4/35.233.246.129/tcp/9222/p2p/16Uiu2HAkxu7gWGs3ZGUpevwU74tuRvjoqAw2ZSEZNCvWaYrK6YkK
-    /ip4/34.127.45.21/tcp/9222/p2p/16Uiu2HAmKDAUxJftKBgi8sfD1kyVHHhqMy9Z6Ee4XYyQ7NhwmKgC
+    enr:-J64QKvLBbIvoGzKERuQQuFGDttUj_Yww7s0JBR6BGvI6utnGIHyUuHX87XEbHBDUk71XhkKb3N_kpFlrbOljK8yqO2GAZXyJxGRgmlkgnY0gmlwhCJpeVSHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEDYBfDc6QVElDhZu5yBbeM-EXK_2ogA7O-OK-KCaVp5BODdGNwgiQGg3VkcIIkBg
+    enr:-J64QJIRPy9nuK8uc1s3UnyimNCBp2neviwNseTF70lHBkRYMv6GaioffcV_0s5TRL6JoDdLehW4gtUuy5Y45gETTP-GAZXTuoo-gmlkgnY0gmlwhCPHp8iHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEC4Kte0gcbDqDVelLjzT2nyX2xoHVOAOkaMqHKnatr8ECDdGNwgiQGg3VkcIIkBg
+    enr:-J64QGsGoqQCyPbkzIUG-fxqC6uo1WE7akbchrMTNXVn1KPqUEwq03AlRYzmyyM22WAP69-vZfdMIx1J-A2OL-1t2R-GAZXTurk8gmlkgnY0gmlwhCKRbx6Hb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaECttIe3yUdoy_8FScJIEWtO-ukNfi6Jzc9uozjXz7lSkGDdGNwgiQGg3VkcIIkBg
+    enr:-J64QHJ0ygyqmw5Tvli7SzMujhP8GxhQ672vF_C-7hcRQudZe5J2SxAton0wMt3C47jyHq2fvaTEh029mzwYQ3jHhCGGAZXTuuivgmlkgnY0gmlwhCPp9oGHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaECM5rNy8OWGxH1RYurPJMeG7tBVI2c6naSMR2xVD3qwfSDdGNwgiQGg3VkcIIkBg
+    enr:-J64QPX27ur5gkXOhje9MU7p6AD_C26n-vcBiKq8adst3WkpAyVgo-sWCIAikqDyX-i94hoOYxOOAV1Mx5pIQ5xgHUmGAZXTuxj7gmlkgnY0gmlwhCJ_LRWHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEDYWQp9YRXX42kY8GOXi047AKLlURr_9YH6_isPS3Tu-mDdGNwgiQGg3VkcIIkBg
     ```
 
 - Container images:

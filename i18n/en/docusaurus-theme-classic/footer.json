@@ -33,7 +33,7 @@
   },
   "link.item.label.Twitter": {
     "message": "X",
-    "description": "The label of footer link with label=Twitter linking to https://twitter.com/CeloOrg"
+    "description": "The label of footer link with label=Twitter linking to https://x.com/CeloOrg"
   },
   "link.item.label.Reddit": {
     "message": "Reddit",
