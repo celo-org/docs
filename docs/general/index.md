@@ -37,7 +37,7 @@ Celo is optimized for mobile devices, making blockchain accessible to billions o
 #### Optimized for Global Reach:
 
 - **Scalability**: Celo’s focus on real-world use cases has already helped scale applications to over 100,000 daily active users (DAUs), proving its capability to support large-scale deployment.
-- **Community Engagement**: Celo boasts an active global community of users and builders. With over 4 years of experience in bringing blockchain to real-world users, Celo offers a supportive environment for developers to test, launch, and scale their applications. Community members are engaged and eager to provide feedback, helping builders refine their products for broad, practical use. If you are interested in contributing, make sure to [reach out](/general/ecosystem/overview).
+- **Community Engagement**: Celo boasts an active global community of users and builders. With over 4 years of experience in bringing blockchain to real-world users, Celo offers a supportive environment for developers to test, launch, and scale their applications. Community members are engaged and eager to provide feedback, helping builders refine their products for broad, practical use. If you are interested in contributing, make sure to [reach out](https://celo.org/ecosystem).
 
 #### Carbon Negative:
 
