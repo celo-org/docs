@@ -272,12 +272,12 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.celoLibraries.title">
+                <Translate id="home2.section3.farcaster.celoLibraries.title">
                   Build with Farcaster
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.celoLibraries.description">
+                <Translate id="home2.section3.farcaster.celoLibraries.description">
                   Create frames on Celo
                 </Translate>
               </span>
@@ -304,12 +304,12 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.celoLibraries.title">
+                <Translate id="home2.section3.celoLibraries.defi.title">
                   Build with DeFi
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.celoLibraries.description">
+                <Translate id="home2.section3.celoLibraries.defi.description">
                   Build with DeFi protocols, stablecoins and for FX
                 </Translate>
               </span>
