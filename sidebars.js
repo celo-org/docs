@@ -590,27 +590,6 @@ const buildOnCeloSidebar = [
   },
   {
     type: "category",
-    label: "Build with Thirdweb",
-    items: [
-      {
-        type: "doc",
-        label: "Overview",
-        id: "build/build-with-thirdweb/overview",
-      },
-      {
-        type: "doc",
-        label: "One-click Quickstart",
-        id: "build/build-with-thirdweb/one-click quickstart",
-      },
-      {
-        type: "doc",
-        label: "Celo NFT Drop Tutorial",
-        id: "build/build-with-thirdweb/celo-nft-drop-tutorial",
-      },
-    ],
-  },
-  {
-    type: "category",
     label: "Build with AI",
     items: [
       {
@@ -970,9 +949,13 @@ const toolingSidebar = [
         id: "developer/deploy/foundry",
       },
       {
-        type: "doc",
+        type: "category",
         label: "Using thirdweb",
-        id: "developer/deploy/thirdweb",
+        items: [
+          { type: "doc", label: "Overview", id: "developer/deploy/thirdweb/overview" },
+          { type: "doc", label: "Deploy with Thirdweb CLI", id: "developer/deploy/thirdweb/thirdweb" },
+          { type: "doc", label: "One-Click Deploy", id: "developer/deploy/thirdweb/one-click-deploy" },
+        ],
       },
       {
         type: "doc",
