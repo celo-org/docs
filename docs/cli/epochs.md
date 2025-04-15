@@ -261,7 +261,7 @@ USAGE
   $ celocli epochs:switch --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--ledgerLiveMode ] [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp] [--delay <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -269,6 +269,9 @@ FLAGS
 
   -n, --node=<value>
       URL of the node to run commands against or an alias
+
+  --delay=<value>
+      [default: 2000] Delay in milliseconds before finishing the epoch
 
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Account Address
