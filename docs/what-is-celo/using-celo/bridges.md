@@ -48,6 +48,13 @@ Native bridging refers to the process of transferring assets directly between La
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
 - [Superbridge Baklava Testnet](https://testnets.superbridge.app/celo-baklava)
 
+
+#### Natively Bridged Tokens on Mainnet
+
+import Tokens from "./bridged_tokens/tokens.md"
+
+<Tokens />
+
 ## Cross-Chain Messaging
 
 In addition to token bridges, there are also protocols that enable cross-chain messaging and interoperability:
