@@ -12,8 +12,8 @@ for token in tokenlist["tokens"]:
 
     output.append(
         [
-            token["name"],
             token["symbol"],
+            token["name"],
             f"[{token['address']}](https://celoscan.io/token/{token['address']})",
         ]
     )
