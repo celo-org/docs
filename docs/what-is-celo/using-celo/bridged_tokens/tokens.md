@@ -1,7 +1,7 @@
-| Symbol | Token Name | L2 Contract Address |
-| ------ | ---------- | ------------------- |
-| AAVE | Aave Token | [0xF6A54aff8c97f7AF3CC86dbaeE88aF6a7AaB6288](https://celoscan.io/token/0xF6A54aff8c97f7AF3CC86dbaeE88aF6a7AaB6288) |
-| CRV | Curve DAO Token | [0x75184c282e55a7393053f0b8F4F3E7BeAE067fdC](https://celoscan.io/token/0x75184c282e55a7393053f0b8F4F3E7BeAE067fdC) |
-| UNI | Uniswap | [0xeE571697998ec64e32B57D754D700c4dda2f2a0e](https://celoscan.io/token/0xeE571697998ec64e32B57D754D700c4dda2f2a0e) |
-| WBTC | Wrapped BTC | [0x8aC2901Dd8A1F17a1A4768A6bA4C3751e3995B2D](https://celoscan.io/token/0x8aC2901Dd8A1F17a1A4768A6bA4C3751e3995B2D) |
-| WETH | Wrapped Ether | [0xD221812de1BD094f35587EE8E174B07B6167D9Af](https://celoscan.io/token/0xD221812de1BD094f35587EE8E174B07B6167D9Af) |
+| Symbol | Token Name | Contract Addresses |
+| ------ | ---------- | ------------------ |
+| AAVE | Aave Token | L1: [0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9](https://etherscan.io/token/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9)<br />L2: [0xF6A54aff8c97f7AF3CC86dbaeE88aF6a7AaB6288](https://celoscan.io/token/0xF6A54aff8c97f7AF3CC86dbaeE88aF6a7AaB6288) |
+| CRV | Curve DAO Token | L1: [0xD533a949740bb3306d119CC777fa900bA034cd52](https://etherscan.io/token/0xD533a949740bb3306d119CC777fa900bA034cd52)<br />L2: [0x75184c282e55a7393053f0b8F4F3E7BeAE067fdC](https://celoscan.io/token/0x75184c282e55a7393053f0b8F4F3E7BeAE067fdC) |
+| UNI | Uniswap | L1: [0x1f9840a85d5af5bf1d1762f925bdaddc4201f984](https://etherscan.io/token/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)<br />L2: [0xeE571697998ec64e32B57D754D700c4dda2f2a0e](https://celoscan.io/token/0xeE571697998ec64e32B57D754D700c4dda2f2a0e) |
+| WBTC | Wrapped BTC | L1: [0x2260fac5e5542a773aa44fbcfedf7c193bc2c599](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)<br />L2: [0x8aC2901Dd8A1F17a1A4768A6bA4C3751e3995B2D](https://celoscan.io/token/0x8aC2901Dd8A1F17a1A4768A6bA4C3751e3995B2D) |
+| WETH | Wrapped Ether | L1: [0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)<br />L2: [0xD221812de1BD094f35587EE8E174B07B6167D9Af](https://celoscan.io/token/0xD221812de1BD094f35587EE8E174B07B6167D9Af) |
