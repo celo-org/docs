@@ -35,7 +35,7 @@ EXAMPLES
   $ celocli plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-autocomplete/blob/main/src/commands/autocomplete/index.ts)_
 
 ## `celocli plugins:add PLUGIN`
 
