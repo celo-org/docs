@@ -63,11 +63,7 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
 To receive validator rewards for running RPC nodes, the allocated epoch payment must be explicitly claimed using the CLI command below. Note that this command can be run by anyone, but rewards will be distributed according to the validator group's set commission rate.
 
-:::info
-Ensure you have [Celo CLI](/cli/index.md) version `6.1.0` or later.
-:::
-
-To claim validator rewards:
+To claim validator rewards use [celocli epochs:send-validator-payment](https://docs.celo.org/cli/epochs#celocli-epochssend-validator-payment):
 
 ```bash
 $ celocli epochs:send-validator-payment --from $YOUR_ADDRESS --for $VALIDATOR_ADDRESS
@@ -83,5 +79,5 @@ After claiming, you can verify that rewards were successfully distributed by che
 
 ### Group Commission Considerations
 
-Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations.
+Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations. Commision can be queried with [celocli validatorgroup:show](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupshow-arg1) and updated with [celocli validatorgroup:commission](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupcommission).
 
