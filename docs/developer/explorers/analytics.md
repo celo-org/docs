@@ -35,3 +35,4 @@ For more detailed analytics and insights, consider exploring the following resou
 - <ColoredText>[Messari](https://messari.io/asset/celo)</ColoredText>: In-depth market research and analytics on Celo.
 - <ColoredText>[L2BEAT](https://l2beat.com/scaling/projects/celo)</ColoredText>: L2 analytics and research on Celo.
 - <ColoredText>[growthepie](https://www.growthepie.xyz/chains/celo)</ColoredText>: Ethereum ecosystem analytics and research on Celo.
+- <ColoredText>[DefiLlama](https://defillama.com/chain/celo)</ColoredText>: Open and transparent DeFi analytics on Celo.
