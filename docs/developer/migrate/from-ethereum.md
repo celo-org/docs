@@ -17,7 +17,8 @@ For a general overview of the Celo network and architecture, see [the Celo Overv
 
 ## What is Celo's Relationship to Ethereum?
 
-While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), Celo is now an Ethereum Layer 2 solution.
+While the Celo client originated as a fork of the Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), Celo has since become an Ethereum Layer 2 solution.
+[Learn more about Celo's history.](/what-is-celo/history)
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
