@@ -7,6 +7,8 @@ description: Overview of the similarities and differences between the Celo and E
 
 Celo is an Ethereum Layer 2 solution.
 
+---
+
 :::tip
 
 For a general overview of the Celo network and architecture, see [the Celo Overview page](/what-is-celo/using-celo/).
