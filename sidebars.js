@@ -953,7 +953,6 @@ const toolingSidebar = [
       { type: "doc", label: "Overview", id: "developer/indexers/overview" },
       { type: "doc", label: "The Graph", id: "developer/indexers/the-graph" },
       { type: "doc", label: "SubQuery", id: "developer/indexers/subquery" },
-      { type: "doc", label: "Envio", id: "developer/indexer/envio" },
     ],
   },
   {
@@ -1045,6 +1044,32 @@ const toolingSidebar = [
       },
       {
         type: "category",
+        label: "Web3Modal SDK",
+        items: [
+          {
+            type: "doc",
+            label: "Overview",
+            id: "developer/web3modal/index",
+          },
+          {
+            type: "doc",
+            label: "Wagmi",
+            id: "developer/web3modal/wagmi",
+          },
+          {
+            type: "doc",
+            label: "Ethers",
+            id: "developer/web3modal/ethers",
+          },
+        ],
+      },
+      {
+        type: "doc",
+        label: "Particle Network",
+        id: "developer/particle-network/index",
+      },
+      {
+        type: "category",
         label: "ContractKit",
         items: [
           {
@@ -1075,34 +1100,13 @@ const toolingSidebar = [
         ],
       },
       {
-        type: "category",
-        label: "Web3Modal SDK",
-        items: [
-          {
-            type: "doc",
-            label: "Overview",
-            id: "developer/web3modal/index",
-          },
-          {
-            type: "doc",
-            label: "Wagmi",
-            id: "developer/web3modal/wagmi",
-          },
-          {
-            type: "doc",
-            label: "Ethers",
-            id: "developer/web3modal/ethers",
-          },
-        ],
-      },
-      {
         type: "doc",
         label: "rainbowkit-celo (deprectated)",
         id: "developer/rainbowkit-celo/index",
       },
       {
         type: "doc",
-        label: "Web3.js",
+        label: "Web3.js (deprecated)",
         id: "developer/web3/index",
       },
     ],
