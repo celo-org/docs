@@ -7,6 +7,13 @@ description: Checklist for applications building and integrating on Celo.
 
 Checklist for applications building and integrating on Celo.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## General
@@ -53,7 +60,7 @@ Celo wallets should follow the [BIP44](https://github.com/bitcoin/bips/blob/mast
 
 ### Identity Protocol
 
-Celo has a [lightweight identity protocol](/protocol/identity) that allows users to address each other via their phone number instead of addresses that Celo wallets should implement. Since user privacy is important, Celo wallets should leverage the built-in [Phone Number Privacy protocol](/protocol/identity/odis-use-case-phone-number-privacy) to protect against large-scale harvesting of user phone numbers.
+Celo has a [lightweight identity protocol](/what-is-celo/about-celo-l1/protocol/identity) that allows users to address each other via their phone number instead of addresses that Celo wallets should implement. Since user privacy is important, Celo wallets should leverage the built-in [Phone Number Privacy protocol](/what-is-celo/about-celo-l1/protocol/identity/odis-use-case-phone-number-privacy) to protect against large-scale harvesting of user phone numbers.
 
 ### Wallet Address
 
@@ -65,7 +72,7 @@ cUSD (aka StableToken) adds an additional method to the ERC20 interface called `
 
 ## Validator Group Explorers
 
-[Validator Group Explorers](/holder/vote/validator#validator-explorers) are critical to Celo's Proof of Stake system. Explorers will consider using the following standards to provide a minimum experience across all explorers.
+[Validator Group Explorers](/what-is-celo/about-celo-l1/validator/validator-explorer) are critical to Celo's Proof of Stake system. Explorers will consider using the following standards to provide a minimum experience across all explorers.
 
 ### Names
 
@@ -77,4 +84,4 @@ Celo accounts can make claims to existing identities, some of which are verifiab
 
 ### Performance indicators
 
-Validator Groups and their validators can perform their duties differently and explorers should reflect that to allow voters to ensure an optimal validator set. While uptime in the form of block signatures by the validators ultimately affect rewards, explorers should also consider displaying [other metrics](/holder/vote/validator#choosing-a-validator-group) that impact the success of the Celo ecosystem, such as validators' performance in the identity protocol.
+Validator Groups and their validators can perform their duties differently and explorers should reflect that to allow voters to ensure an optimal validator set. While uptime in the form of block signatures by the validators ultimately affect rewards, explorers should also consider displaying [other metrics](/what-is-celo/about-celo-l1/validator/voting#choosing-a-validator-group) that impact the success of the Celo ecosystem, such as validators' performance in the identity protocol.

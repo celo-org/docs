@@ -5,7 +5,14 @@ description: How to deploy a Smart Contract to Celo using remix.ethereum.org.
 
 # Deploy on Celo with Remix
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Remix](https://remix.ethereum.org/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Remix](https://remix.ethereum.org/).
+
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
 
 ---
 
@@ -60,8 +67,8 @@ To learn more about the features available to you as a smart contract developer 
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (44787) network** for Celo testnet
-  - **Custom (42220) network** for Celo mainnet
+  - **Custom (44787) network** for Celo Alfajores testnet
+  - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 
 ![github](/img/doc-images/deploy-remix/image3.png)
@@ -85,7 +92,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ## Verify Contracts on Celo
 
-- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)
 - [Using CeloScan](/developer/verify/celoscan)
 - [Using Hardhat](/developer/verify/hardhat)

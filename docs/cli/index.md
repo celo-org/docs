@@ -12,15 +12,31 @@ Introduction to the Celo Command Line Interface and installation instructions.
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
-It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+It’s a command-line interface for interacting with the Celo Protocol and core contracts. Some common features you may want try include transferring tokens, viewing account balances, participating in elections or in on-chain governance, voting for validators,  or helping users interact with multi-sig contracts.
 
-## NPM Package {#npm-package}
+## Installation {#installation}
+
+
+### Homebrew {#brew-tap}
+
+If you're on macOS or Linux, celocli is available as a *tap* on Homebrew. 
+
+```bash
+brew tap celo-org/brew
+brew install celocli
+
+celocli --version
+```
+
+### NPM Package {#npm-package}
 
 The Celo CLI is published as a node module on NPM. Assuming you have [npm](https://www.npmjs.com/get-npm) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) both installed, you can install the Celo CLI using the following command:
 
 ```bash
 npm install -g @celo/celocli
 ```
+
+If you want the cutting edge, @betas are distributed via npm. `npm install -g @celo/celocli@beta`
 
 :::info
 
@@ -94,20 +110,3 @@ For example:
 celocli transfer:celo --to <addressOfChoice> --value 1000000 --from <accountAddress> --useLedger
 ```
 
-## Plugins {#plugins}
-
-Additional plugins can be installed which make the CLI experience smoother. Currently, `celocli` only supports installing plugins published on NPM within the `@celo/*` and `@clabs/*` scopes.
-
-:::danger
-
-Installing a 3rd party plugin can be _dangerous_! Please always be sure that you trust the plugin provider.
-
-:::
-
-The autocomplete plugin adds an interactive autocomplete for `bash` and `zsh` shells. To enable the autocomplete plugin, follow the instructions provided at:
-
-```text
-celocli autocomplete
-```
-
-The update warning plugin notifies the user if they are using an oudated version of the CLI. This plugin is enabled by default.

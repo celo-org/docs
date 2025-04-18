@@ -2,6 +2,14 @@
 title: Using the Kit
 ---
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ## Setting Default Tx Options
 
 `kit` allows you to set default transaction options:
@@ -38,7 +46,7 @@ let totalBalance = await kit.getTotalBalance(myAddress);
 
 Deploying a contract with the default account already set. Simply send a transaction with no `to:` field. See more about sending custom transactions below.
 
-You can verify the deployment on the [Alfajores block explorer here](https://alfajores-blockscout.celo-testnet.org/). Wait for the receipt and log it to get the transaction details.
+You can verify the deployment on the [Alfajores block explorer here](https://celo-alfajores.blockscout.com/). Wait for the receipt and log it to get the transaction details.
 
 ```ts
 let bytecode = "0x608060405234..."; // compiled Solidity deployment bytecode

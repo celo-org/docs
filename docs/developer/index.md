@@ -14,9 +14,10 @@ Explore our comprehensive suite of tools, guides, and resources designed to help
 ---
 
 :::warning
-Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
 
-For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
 :::
 
 ## Quickstart
@@ -25,15 +26,14 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 
 - [Quickstart with Celo Composer](https://docs.celo.org/build/quickstart)
 - [Celo Composer GitHub](https://github.com/celo-org/celo-composer)
-- [Community Resources](https://celo.academy/tags/c/tutorials/4/composer)
 
 ## Developer Tools
 
 - [Nodes](/network/node/overview)
-- [Block Explorer](https://explorer.celo.org/)
+- [Explorers](/developer/explorers/overview)
+- [Indexers](/developer/indexers/overview)
+- [Bridges](/developer/bridges)
 - [Testnet Faucet](https://faucet.celo.org)
-- [EVM Compatible Tooling](/developer/evm-tools)
-
 
 ## Developer Environments
 
@@ -41,7 +41,6 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 - [Using Remix](/developer/deploy/remix)
 - [Using Hardhat](/developer/deploy/hardhat)
 
-## Code Examples
+## Code Courses
 
-- [Developer Tutorials](https://celo.academy/c/tutorials/4)
 - [Dacade](https://dacade.org/communities/celo)

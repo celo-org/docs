@@ -7,6 +7,13 @@ description: General information about integrations regardless of your service o
 
 General information about integrations regardless of your service or use case.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Accessing the chain
@@ -41,7 +48,7 @@ For Baklava:
 geth --baklava
 ```
 
-For more command line options, please see [https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
+For more command line options, please see [https://geth.ethereum.org/docs/fundamentals/command-line-options](https://geth.ethereum.org/docs/fundamentals/command-line-options)
 
 ### Forno
 
@@ -66,9 +73,9 @@ Mainnet = 'https://forno.celo.org'
 We also expose data on the cLabs run blockscout instance. Blockscout itself exposes an API.
 
 ```
-Alfajores = 'https://alfajores-blockscout.celo-testnet.org'
+Alfajores = 'https://celo-alfajores.blockscout.com/'
 
-Baklava = 'https://baklava-blockscout.celo-testnet.org'
+Baklava = 'https://celo-baklava.blockscout.com/'
 
 Mainnet = 'https://explorer.celo.org/'
 ```
@@ -80,10 +87,10 @@ Compared to Ethereum transactions, Celo transactions have an additional optional
 - `feeCurrency` - Specifies the address of the currency in which fees should be paid. If `null`, the native token `CELO` is assumed.
 
 <!-- TODO: Fix this link when this part of the docs is done
-[Read more about Celo Transactions](/celo-codebase/protocol/transactions)
+[Read more about Celo Transactions](/celo-codebase/what-is-celo/about-celo-l1/protocol/transactions)
 -->
 
 To sign transactions, you have the following options:
 
-- Use the JSON-RPC [`sendTransaction`](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) method to your node which would have the account in question unlocked. (Either manually or via a library such as `web3`)
+- Use the JSON-RPC [`sendTransaction`](https://github.com/ethereum/execution-apis/blob/c710097abda52b5a190d831eb8b1eddd3d28c603/tests/eth_sendRawTransaction/send-legacy-transaction.io) method to your node which would have the account in question unlocked. (Either manually or via a library such as `web3`)
 - Use [ContractKit's](/developer/contractkit/) local signing feature.

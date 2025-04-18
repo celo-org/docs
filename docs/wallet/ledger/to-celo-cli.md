@@ -7,6 +7,13 @@ description: How to connect a ledger wallet to the Celo CLI.
 
 How to connect a ledger wallet to the Celo CLI.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ### Install the Celo CLI
@@ -117,7 +124,7 @@ celocli transfer:gold --from=<your-address> --to=0x00000000000000000000000000000
 
 You'll need to then approve the transaction on the Ledger device. Toggle right on the device until you see `Approve` on screen. Press both buttons at the same time to confirm.
 
-Finally, you can see if your transaction was mined on the network by copying the transaction hash (txHash) outputted by the command, and searching for it on the [Alfajores Block Explorer](https://alfajores-blockscout.celo-testnet.org/).
+Finally, you can see if your transaction was mined on the network by copying the transaction hash (txHash) outputted by the command, and searching for it on the [Alfajores Block Explorer](https://celo-alfajores.blockscout.com/).
 
 ### Using `celocli`
 
@@ -132,7 +139,7 @@ Then, simply append the `--useLedger` flag to any `celocli` commands with which 
 In order to view your account Balance on your Ledger with `celocli`, you need to run the following command:
 
 ```sh
-# If you haven't set the node config to mainnet, do it first
+# If you haven't set the node config to Mainnet, do it first
 celocli config:set --node=https://forno.celo.org
 celocli account:balance <your-address>
 ```

@@ -7,6 +7,13 @@ description: Start your journey toward developing decentralized applications on 
 
 Start your journey toward developing decentralized applications on the Celo platform.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## What to expect
@@ -30,7 +37,7 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 - [Celo Decentralized Application Examples](https://celohub.org/)
 - [Celo Architecture](https://docs.celo.org/overview)
 - [Celo Tech Talks Simplifying blockchain development with the Celo SDK](https://www.youtube.com/watch?v=Rg33B0E2DTM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=2)
-- [Celo Developer Tools](./developer-tools.md)
+- [Celo Developer Tools](../developer/index.md)
 - [A Look at the Celo Stability Analysis White Paper](https://medium.com/celoorg/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5)
 - [Celo Whitepapers](https://celo.org/papers)
 

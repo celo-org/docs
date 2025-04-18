@@ -136,17 +136,10 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
-    title: 'Explore Tutorials',
-    description: 'Learn more about Celo from our curated list of community tutorials.',
-    preview: require('./showcase/favorites/tutorials.webp'),
-    website: 'https://celo.academy/c/tutorials/4',
-    tags: ['favorite'],
-  },
-  {
     title: ' Basic Concepts',
     description: "Get started with the basics of the Celo platform.",
     preview: require('./showcase/favorites/basic-concepts.webp'),
-    website: '/general',
+    website: '/what-is-celo',
     tags: ['favorite'],
   },
 
@@ -185,7 +178,7 @@ const Users: User[] = [
       title: 'Run a Validator',
       description: 'How to get a Validator node running on the Celo Mainnet.',
       preview: require('./showcase/validators/run-a-validator.webp'),
-      website: '/validator/run/mainnet',
+      website: '/what-is-celo/about-celo-l1/validator/run/mainnet',
       tags: ['validators'],
     },
     {
@@ -199,14 +192,14 @@ const Users: User[] = [
       title: 'Validator Tools',
       description: 'Recommendations for running secure Celo nodes and services.',
       preview: require('./showcase/validators/validator-tools.webp'),
-      website: '/validator/security',
+      website: '/what-is-celo/about-celo-l1/validator/security',
       tags: ['validators'],
     },
     {
       title: 'Voting Policy',
       description: 'How the Celo Foundation allocates its votes to validator groups.',
       preview: require('./showcase/validators/voting-policy.webp'),
-      website: '/validator/celo-foundation-voting-policy',
+      website: '/what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy',
       tags: ['validators'],
     },
 
@@ -243,14 +236,14 @@ const Users: User[] = [
     title: 'Bridges',
     description: 'Bridge assets from other chains to and from Celo.',
     preview: require('./showcase/integrations/bridges.webp'),
-    website: '/protocol/bridge',
+    website: '/developer/bridges',
     tags: ['integrations'],
   },
   {
     title: 'Oracles',
     description: 'Connect Celo to outside sources with an oracle.',
     preview: require('./showcase/integrations/oracles.webp'),
-    website: '/protocol/oracle',
+    website: '/developer/oracles',
     tags: ['integrations'],
   },
   {
@@ -264,7 +257,7 @@ const Users: User[] = [
     title: 'Contract Addresses',
     description: 'Core contract address proxies and implementations for the Celo network.',
     preview: require('./showcase/integrations/contract-addresses.webp'),
-    website: '/contract-addresses',
+    website: '/contracts/core-contracts',
     tags: ['integrations'],
   },
   

@@ -7,13 +7,20 @@ description: Summary of the Celo Protocol and the value it provides to the commu
 
 Summary of the Celo Protocol and the value it provides to the community.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## The Platform for Mobile DeFi
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals are Mento stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
-The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/) and [ultralight mobile](/protocol/consensus/ultralight-sync) clients.
+The Celo protocol also includes mechanisms for [lightweight identity](/what-is-celo/about-celo-l1/protocol/identity/).
 
 **Innovative tools to build native mobile dApps:**
 
@@ -24,7 +31,6 @@ The Celo protocol also includes mechanisms for [lightweight identity](/protocol/
 - Proof-of-Stake
 - Open-source
 - Permissionless
-- High Speed Sync for Ultra-light Clients
 - Gas Payable in Multiple Stablecoins
 - Programmable (full EVM Compatibility)
 

@@ -7,6 +7,13 @@ description: Support for digital asset exchanges or ranking sites that would lik
 
 Support for digital asset exchanges or ranking sites that would like to run a Celo node and audit your setup.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Support
@@ -80,7 +87,7 @@ This endpoint is not yet available.
 
 #### CP-DOTO (Stability Algorithm)
 
-CP-DOTO information can be found [here](/protocol/stability/doto).
+CP-DOTO information can be found [here](/what-is-celo/about-celo-l1/protocol/stability/doto).
 
 For API endpoints useful for listing that follow [CMC requirements](https://docs.google.com/document/d/1S4urpzUnO2t7DmS_1dc4EL4tgnnbTObPYXvDeBnukCg/edit#)
 
@@ -142,14 +149,14 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 
 ### Whitepapers
 
-To learn about the Celo Protocol, please refer to the [whitepaper](/general/whitepapers).
+To learn about the Celo Protocol, please refer to the [whitepaper](https://celo.org/papers).
 
-If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](/general/) page.
+If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](/what-is-celo/using-celo/) page.
 
-To learn more about the Stability Mechanism, you can find it over [here](/protocol/stability/doto).
+To learn more about the Stability Mechanism, you can find it over [here](/what-is-celo/about-celo-l1/protocol/stability/doto).
 The [Stability Analysis Whitepaper](https://celo.org/papers/Celo_Stability_Analysis.pdf) and [blog post](https://medium.com/celohq/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5) will provide a lot more information on the stability algorithm.
 
-If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://celoreserve.org](https://celoreserve.org).
+If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://reserve.mento.org/](https://reserve.mento.org/).
 
 ### Github
 

@@ -923,6 +923,21 @@
   "home.section2.title": {
     "message": "Explore Providers and Frameworks"
   },
+  "home2.section3.celoLibraries.farcaster.title": {
+    "message": "Build with Farcaster"
+  },
+  "home2.section3.celoLibraries.farcaster.description": {
+    "message": "Create frames on Celo"
+  },
+  "home2.section3.celoLibraries.defi.title": {
+    "message": "Build with DeFi"
+  },
+  "home2.section3.celoLibraries.defi.description": {
+    "message": "Build with DeFi protocols, stablecoins and for FX"
+  },  
+ 
+  
+  
   "home.section3.title": {
     "message": "Start Your Journey"
   },
@@ -963,7 +978,7 @@
     "message": "How to build and deploy a dApp."
   },
   "home.section4.title": {
-    "message": "Browse our Docs by Category"
+    "message": "Explore Developer Tools & Resources"
   },
   "home.section4.understanding": {
     "message": "Understanding Celo"
@@ -1001,6 +1016,24 @@
   "home.section4.developer.contractKit.description": {
     "message": "Explore Contractkit usage and features"
   },
+  "home.section4.developer.faucet.title": {
+    "message": "Faucet"
+  },
+  "home.section4.developer.faucet.description": {
+    "message": "Explore Contractkit usage and features"
+  },
+  "home.section4.developer.bridge.title": {
+    "message": "Bridge"
+  },
+  "home.section4.developer.bridge.description": {
+    "message": "Bridge Assets across chains"
+  },
+  "home.section4.developer.deploy.title": {
+    "message": "Deploy"
+  },
+  "home.section4.developer.deploy.description": {
+    "message": "Deploy your contract on Celo"
+  },  
   "home.section4.developer.reactCelo.title": {
     "message": "React-celo"
   },
@@ -1008,10 +1041,10 @@
     "message": "Access Contractkit in React applications"
   },
   "home.section4.developer.rainbowKitCelo.title": {
-    "message": "RainbowKit-celo"
+    "message": "Explorer"
   },
   "home.section4.developer.rainbowKitCelo.description": {
-    "message": "Add a wallet connection to dapps using Rainbowkit"
+    "message": "Explore transactions on Celo"
   },
   "home.section4.developer.celoCli.title": {
     "message": "Celo CLI"
@@ -1023,22 +1056,22 @@
     "message": "Build with Celo"
   },
   "home.section4.build.celoComposer.title": {
-    "message": "Celo composer"
+    "message": "Quickstart"
   },
   "home.section4.build.celoComposer.description": {
-    "message": "Build and deploy your dapp in under 5 minutes"
+    "message": "Build & Deploy your dApps in under 5 minutes"
   },
   "home.section4.build.migrate.title": {
-    "message": "Migrate to Celo"
+    "message": "Tutorials"
   },
   "home.section4.build.migrate.description": {
-    "message": "Review the compatibility of Celo and Ethereum"
+    "message": "Explore Celo Tutorials"
   },
   "home.section4.build.oracles.title": {
-    "message": "Oracles"
+    "message": "Integrate"
   },
   "home.section4.build.oracles.description": {
-    "message": "Check out our on-chain Oracles"
+    "message": "Connect Celo to your application"
   },
   "home.section4.build.architecture.title": {
     "message": "New to Web3?"
@@ -1046,11 +1079,26 @@
   "home.section4.build.architecture.description": {
     "message": "Start here! Understand the anatomy of a dApp (Web2 to Web3)"
   },
+  
+  "home.section4.growYourProject.funding.title": {
+    "message": "Get Funding"
+  },
+  "home.section4.growYourProject.funding.description": {
+    "message": "Discover grant opportunities in the Celo ecosystem."
+  },
+   "home.section4.growYourProject.distribution.title": {
+    "message": "Distribution"
+  },
+  "home.section4.growYourProject.distribution.description": {
+    "message": "Get more awareness about your project."
+  }, 
+  
+  
   "home.section4.validators": {
-    "message": "Validators"
+    "message": "Grow Your Project"
   },
   "home.section4.validators.run.title": {
-    "message": "Run a Validator"
+    "message": "Grant Opportunities"
   },
   "home.section4.validators.run.description": {
     "message": "Secure the network by running a validator"

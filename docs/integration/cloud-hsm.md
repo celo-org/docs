@@ -7,6 +7,13 @@ description: How to create a cloud HSM in Azure and connect it to celocli.
 
 How to create a cloud HSM in Azure and connect it to `celocli`.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Introduction to HSM
@@ -95,7 +102,7 @@ Now that your environment variables are set, we just need to let `celocli` know 
 celocli account:list --useAKV --azureVaultName $AZURE_VAULT_NAME
 ```
 
-Your Key Vault address will show up under "Local Addresses". If you'd like to use this key as your vote signer key, you can follow [this guide](/holder/vote/governance) and replace `--useLedger` with `--useAKV --azureVaultName $AZURE_VAULT_NAME`.
+Your Key Vault address will show up under "Local Addresses". If you'd like to use this key as your vote signer key, you can follow [this guide](/what-is-celo/using-celo/protocol/governance/voting-in-governance) and replace `--useLedger` with `--useAKV --azureVaultName $AZURE_VAULT_NAME`.
 
 ## Connecting ContractKit to KeyVault
 
