@@ -953,6 +953,7 @@ const toolingSidebar = [
       { type: "doc", label: "Overview", id: "developer/indexers/overview" },
       { type: "doc", label: "The Graph", id: "developer/indexers/the-graph" },
       { type: "doc", label: "SubQuery", id: "developer/indexers/subquery" },
+      { type: "doc", label: "Envio", id: "developer/indexer/envio" },
     ],
   },
   {
