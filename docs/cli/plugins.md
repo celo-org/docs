@@ -4,17 +4,17 @@
 List installed plugins.
 
 * [`celocli plugins`](#celocli-plugins)
-* [`celocli plugins:install PLUGIN...`](#celocli-pluginsinstall-plugin)
+* [`celocli plugins:add PLUGIN`](#celocli-pluginsadd-plugin)
 * [`celocli plugins:inspect PLUGIN...`](#celocli-pluginsinspect-plugin)
-* [`celocli plugins:install PLUGIN...`](#celocli-pluginsinstall-plugin-1)
-* [`celocli plugins:link PLUGIN`](#celocli-pluginslink-plugin)
-* [`celocli plugins:uninstall PLUGIN...`](#celocli-pluginsuninstall-plugin)
+* [`celocli plugins:install PLUGIN`](#celocli-pluginsinstall-plugin)
+* [`celocli plugins:link PATH`](#celocli-pluginslink-path)
+* [`celocli plugins:remove [PLUGIN]`](#celocli-pluginsremove-plugin)
 * [`celocli plugins:reset`](#celocli-pluginsreset)
-* [`celocli plugins:uninstall PLUGIN...`](#celocli-pluginsuninstall-plugin-1)
-* [`celocli plugins:uninstall PLUGIN...`](#celocli-pluginsuninstall-plugin-2)
+* [`celocli plugins:uninstall [PLUGIN]`](#celocli-pluginsuninstall-plugin)
+* [`celocli plugins:unlink [PLUGIN]`](#celocli-pluginsunlink-plugin)
 * [`celocli plugins:update`](#celocli-pluginsupdate)
 
-## `celocli plugins` {#celocli-plugins}
+## `celocli plugins`
 
 List installed plugins.
 
@@ -35,52 +35,57 @@ EXAMPLES
   $ celocli plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-autocomplete/blob/main/src/commands/autocomplete/index.ts)_
 
-## `celocli plugins:install PLUGIN...` {#celocli-pluginsinstall-plugin}
+## `celocli plugins:add PLUGIN`
 
-Installs a plugin into the CLI.
+Installs a plugin into celocli.
 
 ```
 USAGE
-  $ celocli plugins:add plugins:install PLUGIN...
+  $ celocli plugins:add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
-  PLUGIN  Plugin to install.
+  PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on
+                 disk.
   -h, --help     Show CLI help.
-  -s, --silent   Silences yarn output.
-  -v, --verbose  Show verbose yarn output.
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
+  Installs a plugin into celocli.
+
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed
-  plugin with a 'hello' command will override the core plugin implementation. This is
-  useful if a user needs to update core plugin functionality in the CLI without the need
-  to patch and update the whole CLI.
-
+  Use the CELOCLI_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the CELOCLI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ celocli plugins:add
 
 EXAMPLES
-  $ celocli plugins:add myplugin 
+  Install a plugin from npm registry.
 
-  $ celocli plugins:add https://github.com/someuser/someplugin
+    $ celocli plugins:add myplugin
 
-  $ celocli plugins:add someuser/someplugin
+  Install a plugin from a github url.
+
+    $ celocli plugins:add https://github.com/someuser/someplugin
+
+  Install a plugin from a github slug.
+
+    $ celocli plugins:add someuser/someplugin
 ```
 
-## `celocli plugins:inspect PLUGIN...` {#celocli-pluginsinspect-plugin}
+## `celocli plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
@@ -89,7 +94,7 @@ USAGE
   $ celocli plugins:inspect PLUGIN...
 
 ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
+  PLUGIN...  [default: .] Plugin to inspect.
 
 FLAGS
   -h, --help     Show CLI help.
@@ -105,60 +110,65 @@ EXAMPLES
   $ celocli plugins:inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/inspect.ts)_
 
-## `celocli plugins:install PLUGIN...` {#celocli-pluginsinstall-plugin-1}
+## `celocli plugins:install PLUGIN`
 
-Installs a plugin into the CLI.
+Installs a plugin into celocli.
 
 ```
 USAGE
-  $ celocli plugins:install PLUGIN...
+  $ celocli plugins:install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
-  PLUGIN  Plugin to install.
+  PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on
+                 disk.
   -h, --help     Show CLI help.
-  -s, --silent   Silences yarn output.
-  -v, --verbose  Show verbose yarn output.
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
+  Installs a plugin into celocli.
+
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed
-  plugin with a 'hello' command will override the core plugin implementation. This is
-  useful if a user needs to update core plugin functionality in the CLI without the need
-  to patch and update the whole CLI.
-
+  Use the CELOCLI_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the CELOCLI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ celocli plugins:add
 
 EXAMPLES
-  $ celocli plugins:install myplugin 
+  Install a plugin from npm registry.
 
-  $ celocli plugins:install https://github.com/someuser/someplugin
+    $ celocli plugins:install myplugin
 
-  $ celocli plugins:install someuser/someplugin
+  Install a plugin from a github url.
+
+    $ celocli plugins:install https://github.com/someuser/someplugin
+
+  Install a plugin from a github slug.
+
+    $ celocli plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/install.ts)_
 
-## `celocli plugins:link PLUGIN` {#celocli-pluginslink-plugin}
+## `celocli plugins:link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ celocli plugins:link PLUGIN
+  $ celocli plugins:link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -170,6 +180,7 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
+
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command,
@@ -181,18 +192,18 @@ EXAMPLES
   $ celocli plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/link.ts)_
 
-## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin}
+## `celocli plugins:remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ celocli plugins:remove plugins:uninstall PLUGIN...
+  $ celocli plugins:remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -209,27 +220,32 @@ EXAMPLES
   $ celocli plugins:remove myplugin
 ```
 
-## `celocli plugins:reset` {#celocli-pluginsreset}
+## `celocli plugins:reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ celocli plugins:reset
+  $ celocli plugins:reset [--hard] [--reinstall]
+
+FLAGS
+  --hard       Delete node_modules and package manager related files in addition to
+               uninstalling plugins.
+  --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/reset.ts)_
 
-## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin-1}
+## `celocli plugins:uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ celocli plugins:uninstall PLUGIN...
+  $ celocli plugins:uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -246,18 +262,18 @@ EXAMPLES
   $ celocli plugins:uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/uninstall.ts)_
 
-## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin-2}
+## `celocli plugins:unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ celocli plugins:unlink plugins:uninstall PLUGIN...
+  $ celocli plugins:unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -274,7 +290,7 @@ EXAMPLES
   $ celocli plugins:unlink myplugin
 ```
 
-## `celocli plugins:update` {#celocli-pluginsupdate}
+## `celocli plugins:update`
 
 Update installed plugins.
 
@@ -290,4 +306,4 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.17/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/update.ts)_

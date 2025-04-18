@@ -7,6 +7,14 @@ description: How to migrate to the newest version of ContractKit and make use of
 
 How to migrate to from prerelease of ContractKit to v1 and make use of its features.
 
+:::warning
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+
+Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+:::
+
 ---
 
 ## What is ContractKit version v1.0?
@@ -38,7 +46,7 @@ ContractKit is now a [suite of packages](https://github.com/celo-org/celo-monore
 
 - `Explorer` depends on `contractkit` and `connect`. It provides some utility functions that make it easy to listen for new block and log information.
 - `Governance` depends on `contractkit` and `explorer`. It provides functions to read and interact with Celo Governance Proposals (CGPs).
-- `Identity` simplifies interacting with [ODIS](/protocol/identity/odis), Celo’s lightweight identity layer based on phone numbers.
+- `Identity` simplifies interacting with [ODIS](/what-is-celo/about-celo-l1/protocol/identity/odis), Celo’s lightweight identity layer based on phone numbers.
 - `Network-utils` provides utilities for getting genesis block and static node information.
 - `Transactions-uri` makes it easy to generate Celo transaction URIs and QR codes.
 

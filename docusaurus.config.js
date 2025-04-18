@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require("path");
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require("remark-math").default;
+const katex = require("rehype-katex").default;
 const DefaultLocale = "en";
 
 module.exports = {
@@ -31,16 +31,11 @@ module.exports = {
     // },
   ],
   plugins: [
-    require.resolve("docusaurus-plugin-hubspot"),
+    require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    // [
-    //   "@docusaurus/plugin-client-redirects",
-    //   {
-    //     redirects: [],
-    //   },
-    // ],
+    "./src/plugins/tailwind-config.js",
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -52,17 +47,6 @@ module.exports = {
         disableInDev: true,
       },
     ],
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
   ],
   themeConfig: {
     twitterImage: "img/preview.png",
@@ -70,7 +54,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Alfajores L2 Testnet is live! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
+        'Celo has become an L2. Learn how to <a target="_blank" rel="noopener noreferrer" href="/cel2">run a node</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -98,7 +82,7 @@ module.exports = {
       },
       items: [
         {
-          to: "/general",
+          to: "/what-is-celo",
           label: "What is Celo",
           position: "left",
         },
@@ -109,7 +93,7 @@ module.exports = {
         },
         {
           to: "developer/",
-          label: "Developers",
+          label: "Tooling",
           position: "left",
         },
         {
@@ -123,30 +107,19 @@ module.exports = {
           position: "left",
           items: [
             {
-              to: "validator/",
-              label: "Validators",
-            },
-            {
-              to: "holder/",
-              label: "Holder",
-            },
-            {
-              to: "cli/",
-              label: "CLI",
-            },
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "https://celo.academy/c/tutorials/4",
-              label: "Tutorials",
+              to: "https://celo.org/ecosystem",
+              label: "Celo Ecosystem",
               target: "_blank",
             },
-            { to: "showcase", label: "DApps" },
             {
-              to: "community/guidelines",
-              label: "Community",
+              to: "https://celo.org",
+              label: "Celo Website",
+              target: "_blank",
+            },
+            {
+              to: "https://discord.com/invite/celo",
+              label: "Celo Discord",
+              target: "_blank",
             },
           ],
         },
@@ -221,7 +194,7 @@ module.exports = {
     },
     algolia: {
       appId: "55M4I38S60",
-      apiKey: "baed78b52be14ac907688f1dd70b41d5",
+      apiKey: "6945902648de2be7204ad4d973b1e594",
       indexName: "celo",
       contextualSearch: true,
       debug: false,
@@ -245,7 +218,7 @@ module.exports = {
           title: "Community",
           items: [
             {
-              href: "/community/guidelines",
+              href: "/what-is-celo/joining-celo",
               label: "Contributors",
             },
             {
@@ -304,7 +277,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
+      copyright: "Copyright © 2025 Celo Foundation, Inc.",
     },
     fathomAnalytics: {
       siteId: "AZMFWALB",
@@ -319,14 +292,10 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl: "https://github.com/celo-org/docs/edit/main/",
           editUrl: ({ locale, versionDocsDirPath, docPath }) => {
-            // Link to Crowdin for French docs
             if (locale !== DefaultLocale) {
               return `https://celo.crowdin.com/celo-docs/${locale}`;
             }
-            // Link to Github for English docs
             return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`;
           },
           routeBasePath: "/",

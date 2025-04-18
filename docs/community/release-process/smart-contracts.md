@@ -9,13 +9,14 @@ export const N = "N";
 
 Details of the release process for updating smart contracts on the Celo platform.
 
----
-
 :::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
 
-This release process is a work in progress. Many infrastructure components required to execute it are not in place, and the process itself is subject to change.
-
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
 :::
+
+---
 
 ## Versioning
 
@@ -237,11 +238,10 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 ### Verify smart contracts
 
-Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
+Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/.
 
 1. [Update your Smart Contract on celoscan](/developer/verify/celoscan)
-2. [Update your Smart Contract on the Celo Exploere](/developer/verify/celo-explorer)
-
+2. [Update your Smart Contract on Blockscout](/developer/verify/blockscout)
 
 ### Performance
 
@@ -414,7 +414,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/protocol/governance">governance process.</a>
+          <a href="/what-is-celo/using-celo/protocol/governance/overview">governance process.</a>
           <ul>
             <li>
               Currently the governance process should take approximately 1 week:

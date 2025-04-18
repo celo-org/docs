@@ -7,6 +7,13 @@ description: A comprehensive guide to assist you in launching dapps on Celo.
 
 A comprehensive guide to assist you in launching dapps on Celo.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ## Integration
 
 - [ ] **Wallet Connect**: Essential for Valora integration.
@@ -25,7 +32,7 @@ Make your dapp stand out by reporting it on these platforms:
 - [ ] [Electric Capital Reporting](https://github.com/electric-capital/crypto-ecosystems)
 - [ ] [Celo Dapp showcase](https://docs.celo.org/showcase?name=EthicHub)
 - [ ] [Celo Scan Contract Verification](https://celoscan.io/verifyContract)
-- [ ] [Celo Explorer Contract Verification](https://explorer.celo.org/mainnet/contract-verifications/new)
+- [ ] [Celo Explorer Contract Verification](https://celo.blockscout.com/contract-verification)
 - [ ] [Nansen Contract / Project Verification](https://form.typeform.com/to/B1c40shu)
 - [ ] [Dune](https://dune.com/contracts/new)
 
@@ -54,7 +61,7 @@ Provide resources for users:
 
 - [ ] Complete the [Marketing Intake Form](https://docs.google.com/forms/d/e/1FAIpQLSe0LMpEy2nicTcdoI5_LFhg3VZbpyhTymmSTzZ7HavdRiE4AQ/viewform) and share your marketing strategies.
 - [ ] Join the Celo Founders Telegram group.
-- [ ] Remember to tag [@celoorg](https://twitter.com/CeloOrg) in any launch announcements.
+- [ ] Remember to tag [@celoorg](https://x.com/CeloOrg) in any launch announcements.
 
 ## Legal
 

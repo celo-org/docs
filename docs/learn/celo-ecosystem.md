@@ -7,6 +7,13 @@ description: Celo tools, assets, and community are focused on creating a future 
 
 Celo tools, assets, and community are focused on creating a future where everyone can prosper.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Mainnet
@@ -47,11 +54,7 @@ By joining the Alliance for Prosperity, Alliance members are furthering the Celo
 
 ## The Celo Foundation Grants Program
 
-The Celo Foundation Grants Program is an open initiative supporting projects committed to the mission of building a financial system that creates the conditions for prosperity for all, focusing grants based on four key areas: (1) fostering innovation and development of the Celo Platform and[ Celo reference wallet](https://celo.org/developers/wallet)s, (2) lowering barriers to entry to encourage the accessibility of Celo to developers and end-users, (3) educating and expanding Celo’s global community, (4) expanding Celo’s access, opportunity, and impact.
-
-## Celo Ambassadors
-
-Celo Ambassadors are active Celo community members who are passionate about furthering Celo’s mission by driving the adoption of the Celo ecosystem. To become an ambassador, sign up [here](https://celocommunity.xyz/join-the-ambassador-program)
+The Celo Foundation Grants Program is an open initiative supporting projects committed to the mission of building a financial system that creates the conditions for prosperity for all, focusing grants based on four key areas: (1) fostering innovation and development of the Celo Platform and[ Celo reference wallet](https://docs.celo.org/wallet)s, (2) lowering barriers to entry to encourage the accessibility of Celo to developers and end-users, (3) educating and expanding Celo’s global community, (4) expanding Celo’s access, opportunity, and impact.
 
 ## Kuneco
 

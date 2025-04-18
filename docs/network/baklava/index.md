@@ -32,5 +32,4 @@ Please help the community to improve Celo by asking questions on [Discord](https
 ## Useful links
 
 - [Baklava Faucet Request Form](https://forms.gle/JTYkMAJWTAUQp1sv9) - to request faucetted funds to become a Validator on the Baklava network.
-- [Baklava Network Status](https://baklava-celostats.celo-testnet.org) - to check the current availability of the testnet
 - [Baklava Network Block Explorer](https://baklava-blockscout.celo-testnet.org) - explore the history of the blockchain and view transaction details

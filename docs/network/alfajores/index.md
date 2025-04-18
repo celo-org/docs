@@ -11,7 +11,7 @@ Collection of resources to get started with Celo Alfajores Testnet (Celo's Devel
 
 ## What is the Alfajores Testnet?
 
-The **Alfajores Testnet** is a Celo test network for developers building on the Celo platform. You can use it to try out the [Celo Wallet](https://celo.org/build/wallet) or the [Celo CLI](/cli) \(by sending transfers to yourself or other users of the testnet\). You can also assist in running the network by operating a [full node](/network/mainnet/run-full-node) on your machine \(or on a cloud or hosting provider\).
+The **Alfajores Testnet** is a Celo test network for developers building on the Celo platform. You can use it to try out the [Celo Wallet](https://docs.celo.org/wallet) or the [Celo CLI](/cli) \(by sending transfers to yourself or other users of the testnet\). You can also assist in running the network by operating a [full node](/network/mainnet/run-full-node) on your machine \(or on a cloud or hosting provider\).
 
 :::info
 
@@ -21,7 +21,7 @@ The [Baklava Testnet](/network/baklava/) is focused on building operational expe
 
 :::tip
 
-Please refer to [Key Concepts](/overview#blockchain) for background on blockchains and an explanation of terms used in the section.
+Please refer to [Key Concepts](/what-is-celo/using-celo/glossary#blockchain) for background on blockchains and an explanation of terms used in the section.
 
 :::
 

@@ -5,7 +5,14 @@ description: How to deploy a Smart Contract to Celo using Hardhat
 
 # Deploy on Celo with Hardhat
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Hardhat](https://hardhat.org/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Hardhat](https://hardhat.org/).
+
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
 
 ---
 
@@ -70,7 +77,7 @@ Celo uses a different account derivation path than Ethereum, so you have to spec
 
 ### Connect to Mainnet using Forno
 
-Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The Mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    celo: {
@@ -97,7 +104,7 @@ Run the following command from your root project directory to deploy to Celo Alf
 npx hardhat run scripts/sample-script.js --network alfajores
 ```
 
-...or run this command to deploy to Celo mainnet.
+...or run this command to deploy to Celo Mainnet.
 
 ```shell
 npx hardhat run scripts/sample-script.js --network celo
@@ -117,7 +124,7 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 ## Verify Contracts on Celo
 
-- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)
 - [Using CeloScan](/developer/verify/celoscan)
 - [Using Hardhat](/developer/verify/hardhat)

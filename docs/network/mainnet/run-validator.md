@@ -7,6 +7,13 @@ description: How to get a Validator node running on the Celo Mainnet.
 
 How to get a Validator node running on the Celo [Mainnet](/network/mainnet/).
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 :::info
@@ -33,9 +40,9 @@ Because of the importance of Validator security and availability, Validators are
 
 ### Staking Requirements
 
-Celo uses a [proof-of-stake](/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
+Celo uses a [proof-of-stake](/what-is-celo/about-celo-l1/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/validator/run/baklava)
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/what-is-celo/about-celo-l1/validator/run/baklava)
 
 We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO.
 
@@ -139,7 +146,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of value.
 
-This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
+This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/what-is-celo/about-celo-l1/validator/key-management/summary)
 
 #### Unlocking
 
@@ -184,7 +191,7 @@ There are a number of environment variables in this guide, and you may use this 
 
 ## Network Deployment Timeline
 
-The setup of mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
+The setup of Mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
 
 Done:
 
@@ -215,7 +222,7 @@ This section outlines the steps needed to configure your Proxy and Validator nod
 
 ### Environment Variables
 
-First we are going to set up the main environment variables related to the mainnet network. Run these on both your **Validator** and **Proxy** machines:
+First we are going to set up the main environment variables related to the Mainnet network. Run these on both your **Validator** and **Proxy** machines:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet
@@ -516,7 +523,7 @@ celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
 
 ### Run for election
 
-In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/protocol/pos/validator-groups#group-share), which is the fraction of epoch rewards paid to the group by its members.
+In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/what-is-celo/about-celo-l1/protocol/pos/validator-groups#group-share), which is the fraction of epoch rewards paid to the group by its members.
 We don't want to use our account key for validating, so first let's authorize the validator signing key:
 
 ```bash

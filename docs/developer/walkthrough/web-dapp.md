@@ -7,11 +7,18 @@ description: The basics of developing a decentralised application (DApp) on Celo
 
 The basics of developing a decentralised application (DApp) on Celo.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Getting Started
 
-This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](/holder/vote/governance).
+This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](/what-is-celo/using-celo/protocol/governance/voting-in-governance).
 
 ## Foreword
 
@@ -284,7 +291,7 @@ return (
 
 ### Locking Celo (optional)
 
-A prerequisite to [voting on Celo governance proposals](/holder/vote/governance) is having locked Celo to vote with. We won't cover the various flows for locking, unlocking and relocking Celo in this tutorial but you can check the implementation in [Celo Tools](https://github.com/alexbharley/celo-tools) or take inspiration from the following script:
+A prerequisite to [voting on Celo governance proposals](/what-is-celo/using-celo/protocol/governance/voting-in-governance) is having locked Celo to vote with. We won't cover the various flows for locking, unlocking and relocking Celo in this tutorial but you can check the implementation in [Celo Tools](https://github.com/alexbharley/celo-tools) or take inspiration from the following script:
 
 ```javascript
 const lockValue = new BigNumber(res.flags.value);

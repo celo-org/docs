@@ -523,17 +523,9 @@
     "message": "Locating Nodes",
     "description": "The label for the doc item Locating Nodes in sidebar docs, linking to the doc protocol/consensus/locating-nodes"
   },
-  "sidebar.docs.doc.Ultralight Sync": {
-    "message": "Ultralight Sync",
-    "description": "The label for the doc item Ultralight Sync in sidebar docs, linking to the doc protocol/consensus/ultralight-sync"
-  },
   "sidebar.docs.doc.Governance": {
     "message": "Governance",
     "description": "The label for the doc item Governance in sidebar docs, linking to the doc protocol/governance"
-  },
-  "sidebar.docs.doc.Ultralight Client": {
-    "message": "Ultralight Client",
-    "description": "The label for the doc item Ultralight Client in sidebar docs, linking to the doc protocol/plumo"
   },
   "sidebar.docs.doc.Smart Contracts": {
     "message": "Smart Contracts",

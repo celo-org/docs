@@ -3,79 +3,87 @@ title: Cel2 FAQ
 description: Frequently Asked Questions about Cel2
 ---
 
+## Mainnet
+
+### When is Celo mainnet becoming an L2?
+
+:spiral_calendar: Celo L2 Mainnet Date: March 26, 2025, 3:00 AM UTC
+
+:chains: Hardfork Block Height: 31056500
+
+### My node/nodes are having trouble keeping up to date with the chain head / having trouble connecting to and finding peers
+
+A couple of issues could be causing this.
+
+* If you are running multiple instances of op-node, make sure to check that they each have a unique and persisted private key at `--p2p.priv.path`
+* Ensure that your node is accessible to other nodes, check the __Configure P2P for external network access__ section under [Running a full node](./operators/run-node.md#running-a-full-node)
+
 ### How do I run a node or upgrade an existing node?
 
-See the [L2 Migration Guide](/docs/cel2/l2-operator-guide.md).
+See the guides for [running a node](./operators/run-node.md) or the guide on [how to migrate an L1 node](./operators/migrate-node.md).
 
-For Alfajores, here are the related assets:
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
-- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
-- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json)
-- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/alfajores/l2-allocs.json)
-- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json)
-- [Genesis](https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json) used for snap syncing
-- Container images:
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.1)
-- p2p peers:
-  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+### Do I need to run my own EigenDA proxy?
 
-    ```text
-    enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303
-    enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303
-    enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303
-    enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303
-    enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
-    ```
+Yes. This is part of [running a node](./operators/run-node.md).
+If you're using the [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), it's included.
 
-  - op-node static peers, to be used with op-node `--p2p.static` flag:
+### Will the migration happen immediately, or will there be a grace period for projects to transition to the new version?
 
-    ```text
-    /ip4/35.197.25.52/tcp/9222/p2p/16Uiu2HAmQEdyLRSAVZDr5SqbJ1RnKmNDhtQJcEKmemrVxe4FxKwR
-    /ip4/34.105.22.4/tcp/9222/p2p/16Uiu2HAm1SZBDSugT5MMu7vBY8auDgfZFNhoDeXPLc9Me5FsAxwT
-    /ip4/34.83.209.168/tcp/9222/p2p/16Uiu2HAmGJAiUX6HLSo4nLh8T984qxzokwL23cVsYuNZy2SrK7C6
-    /ip4/34.83.214.149/tcp/9222/p2p/16Uiu2HAmAko2Kr3eAjM7tnshtEhYrxQYfKUvN2kwiygeFoBAoi8S
-    /ip4/34.169.5.52/tcp/9222/p2p/16Uiu2HAmKc6YKHzYgsjBDaj36uAufxpgZFgrzDqVBt6zTPwdhhJD
-    ```
+There should be no grace period needed, as nothing should change for common users. Expect a period with no block production of at least 20 minutes during the transition.
 
-### Can I use an RPC endpoint with Alfajores?
+### Will it be necessary to withdraw funds from Celo L1 in advance or will they be transferred to L2?
 
-- Ethereum JSON-RPC endpoint: [https://forno.alfajores.celo-testnet.org/](https://alfajores-forno.celo-testnet.org) (op-geth kind)
-- OP RPC endpoint: [https://op.alfajores.celo-testnet.org/](https://op.alfajores.celo-testnet.org/) (op-node kind)
+No. All balances will carry over to the L2 unchanged.
 
-### Is there an Alfajores faucet? Where? How do I get funds?
+### Will there be multiple RPC node providers?
 
-Faucet: [https://faucet.celo.org/alfajores](https://faucet.celo.org/alfajores)
+There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](https://docs.celo.org/cel2/notices/day-1-partners)
+for a list of RPC providers comfirmed for Day 1.
 
-### Is there an Alfajores explorer?
+### How will ERC-20 tokens and the native CELO token work after the migration?
 
-Blockscout Explorer: [https://celo-alfajores.blockscout.com/](https://celo-alfajores.blockscout.com/)
+There will be no change and it will continue to work as it does now.
 
-### How can I use the native bridge with Alfajores?
+### Will already deployed smart contracts need to be redeployed?
 
-Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://superbridge.app/celo-testnet) or [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet).
+No, they will not.
 
-### What’s the difference between Dango and Alfajores?
+### Will Celo be able to support solidity versions above 0.8.19?
 
-Alfajores is the first testnet of the Celo L1 blockchain, [launched in July 2019](https://blog.celo.org/introducing-alfajores-1b162ebcb44d). It was upgraded to L2 in September 2024. For more details, refer to the [Alfajores Testnet documentation](https://docs.celo.org/network/alfajores).
+Yes. This will work the same as with Ethereum
 
-Dango was the first testnet of the Celo L2 blockchain, launched in July 2024 and shut down in October 2024. It served as a test run for the Alfajores migration to L2.
-Dango diverged from Alfajores L1 at block [24940100](https://celo-alfajores.blockscout.com/block/0xc0e521a7b7326064ec12f51449de16d3218de161335daaa4ae8bbed1790b4a6c).
+### What data model changes will happen in the RPC specs (esp. which gas tokens)?
 
-### Is there anything that used to work on Alfajores that doesn’t anymore?
+We are going to have the same RPC specs as Optimism (e.g. we won't have block receipts)
 
-See [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html).
+### What happens to Validators?
 
-## Celo L2 setup
+Validators are becoming [Community RPC providers](./operators/community-rpc-node).
+
+### Where can I see those [Community RPC providers](./operators/community-rpc-node)?
+
+- Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
+- [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
+- [Celo Community RPC Gateway](https://celo-community.org/)
+
+### What happens to governance?
+
+[Governance](/what-is-celo/using-celo/protocol/governance/overview) remains a pillar of the Celo blockchain. The Validator Hotfix process has been adapted, see [Updated Governance Hotfix](https://specs.celo.org/l2_migration.html#updated-governance-hotfix) for the changes.
+
+### What happened to these features?
+
+- CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html).
+- Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html).
+- Epoch rewards? No more epochs, but rewards stay, see [Epochs and Rewards](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ### How is the Celo L2 different to Optimism?
 
-See [Celo L2 Specification](https://specs.celo.org/root.html).
+See [What's Changed Optimism -> Celo L2](./whats-changed/op-l2).
+Also see [Celo L2 Specification](https://specs.celo.org/root.html) for greater detail.
 
 ### What are the costs for L1 data and how are they paid?
 
-For the testnet L1 data fees are covered by us.
+See [What's changed section covering L1 fees](./whats-changed/op-l2#l1-fees).
 
 ### I saw EigenDA mentioned, is it used?
 
@@ -87,15 +95,34 @@ The block period is 1 second.
 
 ### What's the throughput?
 
-The gas limit per block is 30 million. The Alfajores testnet has a throughput of 30M gas/s.
-For more details, see the [Alfajores specifications](https://specs.celo.org/root.html#alfajores).
+The gas limit per block is 30 million, so the maximum throughput is 30M gas/s.
 
-## What happened to these features?
+### Is there anything that used to work that doesn’t anymore?
 
-- CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
-- Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- Epoch rewards? Supported in Alfajores and Mainnet
+See [What's Changed Celo L1 -> L2](./whats-changed/l1-l2.md) and [L1 -> L2 Migration Changes](https://specs.celo.org/l2_migration.html) in the spec for greater detail.
 
-## Not sure what you need to do?
+## Alfajores
 
-Check out the [L2 Migration decision tree](/docs/cel2/decision-tree.md).
+### What RPC endpoints are available for the Alfajores testnet?
+
+See the Alfajores network info [here](/network#celo-alfajores-l2-testnet).
+
+### Is there an Alfajores faucet? Where? How do I get funds?
+
+See the Alfajores network info [here](/network#celo-alfajores-l2-testnet).
+
+### Is there an Alfajores explorer?
+
+See the Alfajores network info [here](/network#celo-alfajores-l2-testnet).
+
+### How can I use the native bridge with Alfajores?
+
+See the Alfajores network info [here](/network#celo-alfajores-l2-testnet).
+
+### What’s the difference between Dango and Alfajores?
+
+Dango was a short-lived testnet forked from Alfajores at block [24940100](https://celo-alfajores.blockscout.com/block/0xc0e521a7b7326064ec12f51449de16d3218de161335daaa4ae8bbed1790b4a6c) to test the migration to L2. It was shut down in October 2024.
+
+Alfajores is a long running Celo network testnet that was [launched in July 2019](https://blog.celo.org/introducing-alfajores-1b162ebcb44d) and  upgraded to L2 in September 2024.
+
+See the Alfajores network info [here](/network#celo-alfajores-l2-testnet).

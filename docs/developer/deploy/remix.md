@@ -5,7 +5,14 @@ description: How to deploy a Smart Contract to Celo using remix.ethereum.org.
 
 # Deploy on Celo with Remix
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Remix](https://remix.ethereum.org/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Remix](https://remix.ethereum.org/).
+
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
 
 ---
 
@@ -15,15 +22,29 @@ The [Remix IDE](https://remix-project.org/) is an open-source web and desktop ap
 
 In this guide, you will learn to deploy a smart contract on Celo using [remix.ethereum.org](http://remix.ethereum.org).
 
+:::warning
+For Celo L1 Remix does not support Solidity compiler version `0.8.20` and above for EVM versions above **Paris**. If you try to deploy a smart contract with a higher version, you will receive this error message:
+
+
+```bash
+Gas estimation errored with the following message (see below). The transaction execution will likely fail. Do you want to force sending?
+
+invalid opcode: opcode 0x5f not defined
+The EVM version used by the selected environment is not compatible with the compiler EVM version.
+```
+
+A **workaround** is to go into the advanced settings for the compiler in Remix and choose Paris as the EVM version.
+
+For Alfajores L2 everything should be working as on every other EVM compatible chain.
+:::
+
 :::tip
 
 To learn more about the features available to you as a smart contract developer with Remix, visit the [Remix documentation](https://remix-ide.readthedocs.io/en/latest/).
 
 :::
 
-:::warning
-Remix does not support Solidity compiler version `0.8.20` and above specifically for the Celo network. You can alternatively use [Atlas IDE](https://app.atlaszk.com/ide)
-:::
+
 
 ## Create a Smart Contract
 
@@ -46,8 +67,8 @@ Remix does not support Solidity compiler version `0.8.20` and above specifically
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (44787) network** for Celo testnet
-  - **Custom (42220) network** for Celo mainnet
+  - **Custom (44787) network** for Celo Alfajores testnet
+  - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 
 ![github](/img/doc-images/deploy-remix/image3.png)
@@ -71,7 +92,7 @@ Remix does not support Solidity compiler version `0.8.20` and above specifically
 
 ## Verify Contracts on Celo
 
-- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)
 - [Using CeloScan](/developer/verify/celoscan)
 - [Using Hardhat](/developer/verify/hardhat)

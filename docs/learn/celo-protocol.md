@@ -7,6 +7,13 @@ description: Introduction to the Celo Protocol's consensus, governance, incentiv
 
 Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## What is the Celo Protocol?
@@ -26,14 +33,6 @@ Celo uses a Proof-of-Stake mechanism for selecting the validator set for a fixed
 Celo uses an on-chain governance mechanism to manage and upgrade aspects of the protocol that reside in the Celo Core Contracts and for a number of parameters used by the Celo blockchain. This includes operations like upgrading smart contracts, adding new stable currencies, modifying the reserve target asset allocation, and changing how validator elections are decided.
 
 The Governance contract is set as “owner” for all of the Celo Core Contracts. This allows the protocol to carry out agreed governance proposals by executing code in the context of the Governance contract. Proposals are selected for consideration and voted on by CELO holders using a weighted vote based on the same Locked CELO commitment used to vote to elect validators.
-
-## Ultralight Synchronization
-
-Celo provides extremely fast, secure synchronization to enable light clients to begin to track the current state of the Celo blockchain ledger almost immediately. This means that even wallet users with high latency, low bandwidth, or high-cost data tariffs can use Celo.
-
-In Ethereum, verifying whether data received from an untrusted full node really does represent the current state of a blockchain requires fetching every block header ever produced to confirm they form a cryptographically secure chain. A consequence of Celo using a BFT consensus algorithm is that it can do that verification by building a chain only of changes in the validator set, not each individual block.
-
-Roadmap: Synchronization performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
 
 ## Incentives for Operating Full Nodes
 

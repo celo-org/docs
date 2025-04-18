@@ -1,6 +1,6 @@
 ---
 title: How To Build A Multi Signature Wallet Contract That Requires Multiple Approvals For Transactions On Celo
-description: In this tutorial, we will walk through the process of building a multi-signature wallet contract using Solidity and remix ide
+description: In this tutorial, we will walk through the process of building a multi-signature wallet contract using Solidity and Remix IDE
 authors:
   - name: ✍️ Jonathan Iheme
     url: https://github.com/4undRaiser

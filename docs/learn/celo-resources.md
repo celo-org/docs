@@ -7,6 +7,13 @@ description: Curated collection of Celo resources for developers, designers, dre
 
 Curated collection of Celo resources for developers, designers, dreamers, and doers.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## Developer Guide
@@ -19,7 +26,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Building a mobile-first blockchain platform](https://www.youtube.com/watch?v=bp2loYXPhbM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc)
 - [Simplifying blockchain development with the Celo SDK](https://www.youtube.com/watch?v=Rg33B0E2DTM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=2)
 - [Proof of Stake](https://www.youtube.com/watch?v=YU80SLdD17Q&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=4)
-- [Plumo Towards Scalable Interoperable Blockchains Using Ultra Light Validation Sys](https://www.youtube.com/watch?v=8KlysQOaowU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=5)
 - [Celo Stability Protocol Walkthrough](https://www.youtube.com/watch?v=nzAdXJq8HoU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=6)
 - [Price Oracles](https://www.youtube.com/watch?v=WLtFSJ1lPc4&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=7)
 - [Valora](https://www.youtube.com/watch?v=xJbEjD4iuTo&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=8)
@@ -29,7 +35,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Developing & deploying your first DApp on Celo](https://www.youtube.com/watch?v=kO6Wm8pgKXU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=12)
 - [Building your first DApps on Celo, Part 2](https://www.youtube.com/watch?v=KjaH8H9ssvk&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=13)
 - [Feeless Onboarding](https://www.youtube.com/watch?v=uX70_mXl7Zc&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=14)
-- [Plumo Ceremony](https://www.youtube.com/watch?v=0HTkND1Lf2A&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=15)
 - [Cross Chain Interoperability](https://www.youtube.com/watch?v=2uBvMhxBBeU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=16)
 - [Building your first DApps on Celo](https://www.youtube.com/watch?v=1E3j-fjZtKE&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=17)
 - [Porting existing Ethereum DApps onto Celo](https://www.youtube.com/watch?v=C6_8tze5Bw8&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=18)
@@ -46,7 +51,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Interview with Polkadot](https://youtu.be/oMSWODQQuxU)
 - [Interview with Skale](https://youtu.be/HWYRWuO48bA)
 - [Interview with Aurora](https://youtu.be/jFudk4Hr5IQ)
-- [Interview with Optics Team](https://youtu.be/mr-YyCtur8E)
 
 ## Cross-Chain Salon Workshops
 
@@ -54,7 +58,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Celo Wallet Connect Workshop](https://youtu.be/QMI4Z9hH2Ew)
 - [How to build xApps Workshop](https://youtu.be/E_zhTRsxWtw)
 - [Skynet Workshop](https://youtu.be/szpFf8_ZHHU)
-- [Observing Optics Workshop](https://youtu.be/Dq4RO9kod-4)
 - [GoodDollar Workshop](https://youtu.be/Dh3RkNAEdcM)
 - [Building a Subgraph on Celo Workshop](https://youtu.be/v5zkjJ_S2j4)
 - [Optics and the Journey of the Cross-Chain Message Workshop](https://youtu.be/BUzbfebb1xU)
@@ -145,7 +148,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Celo at #EthDenver](https://www.youtube.com/watch?v=wxxc1xH1jCc&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=4)
 - [You Had Me At Celo - Marek Olszewski / Toss a CELO To Your Prestwicher: - James Prestwich](https://www.youtube.com/watch?v=HYPyF8bcoMw&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=5)
 - [Make it Mobile or Else](https://www.youtube.com/watch?v=rRwQYY0da-U&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=6)
-- [Plumo Ceremony](https://www.youtube.com/watch?v=VsAH4N92Au0&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=7)
 - [Celo Bounties at #ETHDenver](https://www.youtube.com/watch?v=WhY0fKXgKsg&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=8)
 
 ## #MakeitMobile Hackathon

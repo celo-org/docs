@@ -7,6 +7,13 @@ description: How to set up a local development environment for Celo using Window
 
 How to set up a local development environment for Celo using Windows.
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 :::tip
@@ -33,7 +40,7 @@ Set up your Linux distro by setting a username and password then update and upgr
 sudo apt update && sudo apt upgrade
 ```
 
-You can view the source documentation for setting up the Linux distro [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).
+You can view the source documentation for setting up the Linux distro [here](https://learn.microsoft.com/en-us/windows/wsl/) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).
 
 ### Set up the Linux Environment
 

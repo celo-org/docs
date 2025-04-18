@@ -7,13 +7,13 @@
 
 import React from "react";
 
+import { ThemeClassNames } from "@docusaurus/theme-common";
+import Translate from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import BlogLayout from "@theme/BlogLayout";
-import BlogPostItem from "@theme/BlogPostItem";
-import Translate, { translate } from "@docusaurus/Translate";
-import BlogListPaginator from "@theme/BlogListPaginator";
 import type { Props } from "@theme/BlogListPage";
-import { ThemeClassNames } from "@docusaurus/theme-common";
+import BlogListPaginator from "@theme/BlogListPaginator";
+import BlogPostItem from "@theme/BlogPostItem";
 
 function BlogListPage(props: Props): JSX.Element {
   const { metadata, items, sidebar } = props;
@@ -41,7 +41,7 @@ function BlogListPage(props: Props): JSX.Element {
       {/* <p><a href="/blog/tags"> Filter posts by tag</a></p> */}
       <a
         className="button button--primary"
-        href="/community/guidelines"
+        href="/what-is-celo/joining-celo"
         // target="_blank"
         rel="noreferrer"
       >

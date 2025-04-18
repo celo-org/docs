@@ -8,6 +8,13 @@ description: Celo’s Pay is a standard protocol along with a few reference impl
 Summary of the Celo Payments Protocol and the value it provides to the community.
 [Read the specification.](https://github.com/celo-org/payments/blob/main/README.md)
 
+:::warning
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ---
 
 ## The Platform for Mobile Payments
@@ -20,7 +27,9 @@ Powered by a platform algorithmic native stable coins, Celo Dollars (cUSD), Celo
 
 ## Supporting Wallets
 
-- Valora [iOS](https://vlra.app/webappstore) [Android](https://vlra.app/webplaystore))
+- Valora 
+  - [iOS](https://vlra.app/webappstore) 
+  - [Android](https://vlra.app/webplaystore)
 
 ## Requirements
 
@@ -50,7 +59,7 @@ For one-off uses, simply use `celocli account:new`. To get the CELO CLI, follow 
 To make things a bit simpler, I recommend running that command to create a .env file for testing:
 
 ```
-# Make sure you're working on alfajores network
+# Make sure you're working on Alfajores network
 celocli config:set --node https://alfajores-forno.celo-testnet.org/
 
 If this is the first time you're running this command, the script will create a blockchain account/private-key for you and ask you to fund it using Celo faucet. Then this account will be used automatically to pay for the requested payment.
