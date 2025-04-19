@@ -37,7 +37,7 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 
 ## Developer Environments
 
-- [Using thirdweb](/developer/deploy/thirdweb)
+- [Using thirdweb](/developer/deploy/thirdweb/overview)
 - [Using Remix](/developer/deploy/remix)
 - [Using Hardhat](/developer/deploy/hardhat)
 
