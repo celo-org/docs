@@ -3,6 +3,16 @@
 
 List installed plugins.
 
+* [`celocli plugins`](#celocli-plugins)
+* [`celocli plugins:add PLUGIN`](#celocli-pluginsadd-plugin)
+* [`celocli plugins:inspect PLUGIN...`](#celocli-pluginsinspect-plugin)
+* [`celocli plugins:install PLUGIN`](#celocli-pluginsinstall-plugin)
+* [`celocli plugins:link PATH`](#celocli-pluginslink-path)
+* [`celocli plugins:remove [PLUGIN]`](#celocli-pluginsremove-plugin)
+* [`celocli plugins:reset`](#celocli-pluginsreset)
+* [`celocli plugins:uninstall [PLUGIN]`](#celocli-pluginsuninstall-plugin)
+* [`celocli plugins:unlink [PLUGIN]`](#celocli-pluginsunlink-plugin)
+* [`celocli plugins:update`](#celocli-pluginsupdate)
 
 ## `celocli plugins`
 
@@ -25,7 +35,7 @@ EXAMPLES
   $ celocli plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.34/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-autocomplete/blob/main/src/commands/autocomplete/index.ts)_
 
 ## `celocli plugins:add PLUGIN`
 
