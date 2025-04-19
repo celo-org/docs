@@ -160,7 +160,7 @@ Chainstack provides global load-balanced nodes for Celo. A free developer plan i
 
 ### [All that node](https://www.allthatnode.com/celo.dsrv)
 
-All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded.
+All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as needed.
 You can also claim Alfajores funds from the faucet in the site without signing up.
 
 #### **Supported Networks**
