@@ -23,12 +23,6 @@ Resources for learning how to craft intelligent, blockchain-powered agents on Ce
 - [How to get started with AI agents](https://x.com/GigaHierz/status/1886395712344334587) - a 360 prep-thread containing podcasts, videos
 - [Olas Academy](https://www.youtube.com/playlist?list=PLXztsZv11CTfXiQK9OJhMwBkfgf4ETZkl)
 
-### 🏆 Hackathons
-
-- [Safe Agentathon](https://safe.global/ai)
-- [ETH Global Agentic Hackathon](https://ethglobal.com/events/agents)
-- [Proof of Ship](https://celo.lemonade.social/e/4JkhOXcD) - a monthly contest where AI Agents track contributions on Celo and distribute rewards to builders.
-
 ### 🤖 Famous Agents
 
 - Luna - Virtuals
@@ -99,5 +93,10 @@ For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/G
     - [EP 124: Databricks CEO Ali Ghodsi Breaks Down the AI Hype-Cycle](https://www.notion.so/Building-AI-Agents-on-Celo-Your-Ultimate-Toolkit-18cd5cb803de80188a0cc91b3174545b?pvs=21)
 - Predictions for the industry
     - [AI + a16z](https://podcasts.apple.com/in/podcast/ai-a16z/id1740178076)
+ 
+
+### 🏆 Start Building Now
+
+- [Proof of Ship](https://celoplatform.notion.site/Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8) - a monthly contest where AI Agents track contributions on Celo and distribute rewards to builders.
 
 Have another resource you want to add? Click the ['Edit this page'](https://github.com/celo-org/docs/edit/main/docs/build/build-with-ai/usecases.md) button below to submit a PR.
