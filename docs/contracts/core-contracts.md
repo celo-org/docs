@@ -56,7 +56,7 @@ View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/
 | UniswapFeeHandlerSeller | [0xD3aeE28548Dbb65DF03981f0dC0713BfCBd10a97](https://celoscan.io/address/0xD3aeE28548Dbb65DF03981f0dC0713BfCBd10a97) |
 | Validators              | [0xaEb865bCa93DdC8F47b8e29F40C5399cE34d0C58](https://celoscan.io/address/0xaEb865bCa93DdC8F47b8e29F40C5399cE34d0C58) |
 
-Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
+Core contracts addresses can change over time, to keep up to date with the latest, it is recommended to use the Celo CLI:
 
 ```bash
 $ celocli network:contracts --node https://forno.celo.org
@@ -104,7 +104,7 @@ $ celocli network:contracts --node https://forno.celo.org
 | UniswapFeeHandlerSeller  | [0xc7b6E77C3702666DDa8EB5b7F30234B020788b21](https://alfajores.celoscan.io/address/0xc7b6E77C3702666DDa8EB5b7F30234B020788b21) |
 | Validators               | [0x9acF2A99914E083aD0d610672E93d14b0736BBCc](https://alfajores.celoscan.io/address/0x9acF2A99914E083aD0d610672E93d14b0736BBCc) |
 
-Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
+Core contracts addresses can change over time, to keep up to date with the latest, it is recommended to use the Celo CLI:
 
 ```bash
 $ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
