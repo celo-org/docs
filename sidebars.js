@@ -699,6 +699,22 @@ const buildOnCeloSidebar = [
     ],
   },
   {
+    type: "category",
+    label: "Build with Portal",
+    items: [
+      {
+        type: "doc",
+        label: "Overview",
+        id: "build/build-with-portal/overview",
+      },
+      {
+        type: "doc",
+        label: "Quickstart",
+        id: "build/build-with-portal/quickstart",
+      },
+    ],
+  },
+  {
     type: "doc",
     label: "Build with Self",
     id: "build/build-with-self",
@@ -776,21 +792,21 @@ const toolingSidebar = [
       //   type: "category",
       //   label: "Run a Node",
       //   items: [
-        // {
-        //   type: "doc",
-        //   label: "Mainnet Full Node",
-        //   id: "network/node/run-mainnet",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "Alfajores Full Node",
-        //   id: "network/node/run-alfajores",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "Baklava Full Node",
-        //   id: "network/node/run-baklava",
-        // },
+      // {
+      //   type: "doc",
+      //   label: "Mainnet Full Node",
+      //   id: "network/node/run-mainnet",
+      // },
+      // {
+      //   type: "doc",
+      //   label: "Alfajores Full Node",
+      //   id: "network/node/run-alfajores",
+      // },
+      // {
+      //   type: "doc",
+      //   label: "Baklava Full Node",
+      //   id: "network/node/run-baklava",
+      // },
       //   ],
       // },
     ],
@@ -983,7 +999,7 @@ const toolingSidebar = [
         type: "category",
         label: "CLI",
         items: [
-          { type: "doc", label: "Introduction", id: "cli/index", },
+          { type: "doc", label: "Introduction", id: "cli/index" },
           // TOPICS
           { type: "doc", label: "Account", id: "cli/account" },
           { type: "doc", label: "Config", id: "cli/config" },
@@ -993,8 +1009,8 @@ const toolingSidebar = [
           { type: "doc", label: "Exchange", id: "cli/exchange" },
           { type: "doc", label: "Governance", id: "cli/governance" },
           { type: "doc", label: "Identity", id: "cli/identity" },
-          { type: "doc", label: "LockedCelo", id: "cli/lockedcelo", },
-          { type: "doc", label: "LockedGold", id: "cli/lockedgold", },
+          { type: "doc", label: "LockedCelo", id: "cli/lockedcelo" },
+          { type: "doc", label: "LockedGold", id: "cli/lockedgold" },
           { type: "doc", label: "Multisig", id: "cli/multisig" },
           { type: "doc", label: "Network", id: "cli/network" },
           { type: "doc", label: "Node", id: "cli/node" },
@@ -1007,7 +1023,7 @@ const toolingSidebar = [
           // COMMANDS
           { type: "doc", label: "Autocomplete", id: "cli/autocomplete" },
           { type: "doc", label: "Commands", id: "cli/commands" },
-          { type: "doc", label: "Help", id: "cli/help" },   
+          { type: "doc", label: "Help", id: "cli/help" },
           { type: "doc", label: "Plugins", id: "cli/plugins" },
         ],
       },
