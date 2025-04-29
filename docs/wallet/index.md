@@ -302,3 +302,14 @@ With Zerion’s infrastructure you can build feature-rich real-time web3 apps, w
 - Homepage: [zerion.io](https://zerion.io/)
 - Platforms: Browser, iOS, Android
 - [Source Code](https://developers.zerion.io/reference/getting-started)
+
+---
+
+### [Portal](https://portalhq.io/)
+
+Portal is an MPC wallet provider and web3 developer platform. You can use Portal to create embedded MPC wallets for users and the Portal SDK to build out the web3 functionality for your application.
+
+- Homepage: [portalhq.io](https://portalhq.io/)
+- Platforms: [iOS](https://docs.portalhq.io/guides/ios), [Android](https://docs.portalhq.io/guides/android), [Browser](https://docs.portalhq.io/guides/web), [Flutter](https://docs.portalhq.io/resources/flutter), [API](https://docs.portalhq.io/guides/enclave-mpc-api), [React Native](https://docs.portalhq.io/guides/react-native)
+- Maintainers: [Portal](https://portalhq.io/)
+- [Documentation](https://docs.portalhq.io/)

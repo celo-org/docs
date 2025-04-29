@@ -115,6 +115,13 @@ Checkout [minipay docs](https://docs.celo.org/developer/build-on-minipay/overvie
 
 Checkout [valora docs](https://docs.valora.xyz/) to learn more about it.
 
+### Portal
+
+- Pre-built wallet applications designed for celo and mentos integration.
+- Platforms: iOS, Android, API, Browser
+
+Checkout [Portal's celo hackathon hub](https://docs.portalhq.io/support/celo-hackathon-hub) to learn more about it.
+
 ## Support
 
 Join the [Celo Discord server](https://chat.celo.org). Reach out in the #general-dev channel with your questions and feedback.
