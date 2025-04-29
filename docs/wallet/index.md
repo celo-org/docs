@@ -307,7 +307,7 @@ With Zerion’s infrastructure you can build feature-rich real-time web3 apps, w
 
 ### [OKX Web3 Wallet](https://web3.okx.com/)
 
-Suppots more than 130 blockchains including CELO L2, allows to store, trade, analyze, earn and connect to web3 sites. The mobile version has its own browser to connect easier to web3 sites and has a tab to switch to the OKX exchange (although it is not mandatory to have an account in the exchange to use the wallet). It is well supported by WalletConnect and many web3 sites. The browser extension makes easier the development of web3 applications.
+Supports over 130 blockchains, including CELO. Enables users to store, trade, analyze, earn, and connect to Web3 sites. The mobile app features a built-in browser for seamless Web3 access and includes a tab to switch to the OKX exchange (though creating an exchange account is not required to use the wallet). It’s fully compatible with WalletConnect and widely supported across Web3 platforms.
 
 - Homepage: [web3.okx.com](https://web3.okx.com/)
 - Platforms: [iOS](https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484), [Android](https://play.google.com/store/apps/details?id=com.okx.wallet), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge), [Telegram](https://web.telegram.org/k/#@OKX_WALLET_BOT)
