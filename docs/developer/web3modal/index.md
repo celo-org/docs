@@ -23,5 +23,5 @@ Web3Modal SDK supports [ethers v5](https://docs.ethers.org/v5/) and [Wagmi](http
 
 Start with:
 
-- [Web3Modal & Wagmi](./web3modal/wagmi)
-- [Web3Modal & Ethers v5](./web3modal/ethers)
+- [Web3Modal & Wagmi](/developer/web3modal/wagmi)
+- [Web3Modal & Ethers v5](/developer/web3modal/ethers)

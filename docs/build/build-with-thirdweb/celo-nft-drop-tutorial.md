@@ -80,6 +80,6 @@ Once the project is running, you’ll see the first NFT displayed along with a d
 
 1. Create your application using an audited contract on Thirdweb.
 2. Check the Github repo [Proof-of-Ship](https://github.com/celo-org/Proof-of-Ship?tab=readme-ov-file).
-3. Sign up to join [Build with Celo - Proof of Ship](https://celo.lemonade.social/e/4JkhOXcD).
+3. Sign up to join [Build with Celo - Proof of Ship](https://celo.lemonade.social/events).
 4. You can win up to **`5k cUSD`**.
 5. Build with **`Celo`**.

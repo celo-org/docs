@@ -32,7 +32,7 @@ With Celo Mondo, you can:
 
 - [Launch Celo Mondo](https://mondo.celo.org/)
 - [Celo Mondo GitHub](https://github.com/celo-org/celo-mondo)
-- [Become a Delegate](https://hub.celopg.eco/how-to-become-a-delegate-guide)
+- [Become a Delegate](https://mondo.celo.org/delegate)
 
 ## Staying Informed
 

@@ -35,7 +35,7 @@ If you are using a previous version of ContractKit (anything below 1.0.0), you c
 
 ## ContractKit packages
 
-ContractKit is now a [suite of packages](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk).
+ContractKit is a suite of packages.
 
 ### Main packages
 

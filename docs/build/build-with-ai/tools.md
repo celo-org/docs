@@ -19,8 +19,7 @@ Frameworks define how AI agents interact, collaborate, and execute tasks. For a 
  - [EternalAI](https://eternalai.org/): A Decentralized Autonomous Agent protocol running AI agents on Solidity smart contracts — exactly as programmed — without censorship, interference, or downtime.
  - [GT Protocol](https://www.gt-protocol.io/): AI Agents Builder, powered by GT Protocol AI Executive Technology, delivers customized AI agents tailored to enhance both business operations and personal daily tasks.
  - [**ElizaOS**](https://elizaos.github.io/eliza/): TypeScript-based framework with multi-agent simulation capabilities. 
-    - To build on Celo use the [EVM plugin](https://github.com/elizaOS/eliza/tree/main/packages/plugin-evm) 
-    - Tutorial [coming soon].
+
 
 **Other:**
 - [**LangChain**](https://www.langchain.com/): Framework for LLM-powered applications.
@@ -86,7 +85,6 @@ When scaling, consider:
 **Memory Systems:**
 - **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
 - **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
-- **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
 - **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
 - **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
 - **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.

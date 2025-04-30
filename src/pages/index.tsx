@@ -831,13 +831,6 @@ export default function HomePage(): JSX.Element {
               )}
 
               {sectionFourCard(
-                translate({ id: "home.section6.ambassadors.title" }),
-                translate({ id: "home.section6.ambassadors.description" }),
-                "img/doc-images/logos/ambassador.svg",
-                "https://celocommunity.xyz/join-the-ambassador-program",
-              )}
-
-              {sectionFourCard(
                 translate({ id: "home.section6.connect.title" }),
                 translate({ id: "home.section6.connect.description" }),
                 "img/doc-images/logos/connect.svg",
