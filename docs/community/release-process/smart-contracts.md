@@ -80,22 +80,22 @@ Typical script options:
 ### View the tagged releases for each network
 
 ```bash
-yarn view-tags
+yarn tags:view
 ```
 
 ### Verify the previous Release on the Network
 
-`verify-deployed` is a script that allows you to assess whether the bytecode on the given network matches the source code of a particular commit. It will run through the Celo Core Contracts and verify that the contracts' bytecodes as specified in the `Registry` match. Here, we will want to sanity-check that our network is running the previous release's audited commit.
+`release:verify-deployed` is a script that allows you to assess whether the bytecode on the given network matches the source code of a particular commit. It will run through the Celo Core Contracts and verify that the contracts' bytecodes as specified in the `Registry` match. Here, we will want to sanity-check that our network is running the previous release's audited commit.
 
 ```bash
 # Run from `packages/protocol` in the celo-monorepo
 PREVIOUS_RELEASE="core-contracts.v${N-1}"
 NETWORK=${"baklava"|"alfajores"|"mainnet"}
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
-yarn verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
+yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
 
-A `libraries.json` file is written to disk only necessary for `make-release` that describes linked library addresses.
+A `libraries.json` file is written to disk only necessary for `release:make-release` that describes linked library addresses.
 
 ### Check Backward Compatibility
 
@@ -125,10 +125,10 @@ The script generates a detailed report on version changes in JSON format.
 ```bash
 PREVIOUS_RELEASE="core-contracts.v${N-1}"
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn check-versions -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE -r "report.json"
+yarn release:check-versions -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE -r "report.json"
 ```
 
-This should be used in tandem with `verify-deployed -b $PREVIOUS_RELEASE -n $NETWORK` to ensure the compatibility checks compare the release candidate to what is actually active on the network.
+This should be used in tandem with `release:verify-deployed -b $PREVIOUS_RELEASE -n $NETWORK` to ensure the compatibility checks compare the release candidate to what is actually active on the network.
 
 ### Deploy the release candidate
 
@@ -138,7 +138,7 @@ STORAGE updates are adopted by deploying a new proxy/implementation pair. This s
 ```bash
 NETWORK=${"baklava"|"alfajores"|"mainnet"}
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn make-release -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
+yarn release:make-release -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
 ```
 
 The proposal encodes STORAGE updates by repointing the Registry to the new proxy. Storage compatible upgrades are encoded by repointing the existing proxy's implementation.
@@ -163,8 +163,8 @@ celocli governance:show --proposalID <proposalId> --jsonTransactions "upgrade_pr
 
 ### Verify Proposed Release Candidate
 
-This script serves the same purpose as `verify-deployed` but for a not-yet
-accepted contract upgrade (in the form of the proposal.json you fetched in the step prior). It gives you the confidence that the branch specified in the `-b` flag in (same as `check-versions`) will be the resulting network state of the proposal if executed. It does so by going over all Celo Core Contracts and determining updates to the Registry pointers, proxy or implementation contracts and verifying their implied bytecode against the compiled source code.
+This script serves the same purpose as `release:verify-deployed` but for a not-yet
+accepted contract upgrade (in the form of the proposal.json you fetched in the step prior). It gives you the confidence that the branch specified in the `-b` flag in (same as `release:check-versions`) will be the resulting network state of the proposal if executed. It does so by going over all Celo Core Contracts and determining updates to the Registry pointers, proxy or implementation contracts and verifying their implied bytecode against the compiled source code.
 
 Additionally, include `initialization_data.json` from the CGP if any of the contracts have to be initialized.
 
@@ -172,17 +172,17 @@ Additionally, include `initialization_data.json` from the CGP if any of the cont
 RELEASE_CANDIDATE="core-contracts.v${N}"
 NETWORK=${"baklava"|"alfajores"|"mainnet"}
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
-yarn verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
+yarn release:verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
 ```
 
 ### Verify Executed Release
 
-After a release executes via Governance, you can use `verify-deployed` again to check that the resulting network state does indeed reflect the tagged release candidate:
+After a release executes via Governance, you can use `release:verify-deployed` again to check that the resulting network state does indeed reflect the tagged release candidate:
 
 ```bash
 RELEASE="core-contracts.v${N}"
 NETWORK=${"baklava"|"alfajores"|"mainnet"}
-yarn verify-deployed -n $NETWORK -b $RELEASE -f
+yarn release:verify-deployed -n $NETWORK -b $RELEASE -f
 ```
 
 ## Testing
