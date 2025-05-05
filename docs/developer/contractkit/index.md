@@ -12,7 +12,7 @@ Overview of ContractKit, its features, purpose, and resources to help you get st
 :::warning
 [ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
 
-Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
+Check out the [migration guide](/developer/contractkit//migrating-to-viem.md) for updating your dapp from ContractKit to viem.
 
 To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
 :::
@@ -40,6 +40,6 @@ Contractkit includes common functionality to make it easier to get started build
 
 ## Use ContractKit
 
-- [Setup](contractkit/setup)
-- [Using the kit](contractkit/usage)
+- [Setup](/developer/contractkit/setup)
+- [Using the kit](/developer/contractkit/usage)
 

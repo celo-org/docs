@@ -40,7 +40,6 @@ Note: Chainlink is compatible with various blockchain platforms and libraries. F
 ## Code Examples
 
 - [Repository with examples](https://github.com/smartcontractkit/chainlink)
-- [Generating pseudo-random values](https://docs.chain.link/vrf/v2/examples/get-a-random-number)
 - [Example with multiple contracts](https://docs.chain.link/docs/example-walkthrough/)
 - [DeFi dApp using Chainlink](https://blog.chain.link/chainlink-price-feeds-secure-defi/)
 
@@ -60,4 +59,4 @@ For more detailed information about Chainlink CCIP, please refer to the [Chainli
 
 ## Need Assistance?
 
-For any questions, please feel free to contact the Chainlink team [on Discord](https://discord.gg/aSK4zew) or refer to the [Chainlink community forum](https://forum.chain.link/).
+For any questions, please feel free to contact the Chainlink team [on Discord](https://discord.gg/aSK4zew).

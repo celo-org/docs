@@ -592,9 +592,11 @@
 /developer-resources/use-contractkit /developer/react-celo
 /developer-resources/using-mac /developer/setup/mac
 /developer-resources/walkthroughs/development-chain /developer/setup/development-chain
-/developer-resources/walkthroughs/no-code-erc20 /developer/walkthrough/no-code-erc20
-/developer-resources/walkthroughs/no-code-erc721 /developer/walkthrough/no-code-erc721
-/developer-resources/walkthroughs/valora-wc-v1 /blog/tutorials/celo-valora-and-walletconnect-v1
+/developer-resources/walkthroughs/no-code-erc20 /developer/build
+/developer-resources/walkthroughs/no-code-erc721 /developer/build
+/developer-resources/walkthroughs/hello-celo /developer/build
+/developer-resources/walkthroughs/web-dapp /developer/build
+/developer-resources/walkthroughs/valora-wc-v1 /developer/build
 /developer/build-on-minipay /build/build-on-minipay/
 /developer/build-on-minipay/code-library /build/build-on-minipay/code-library
 /developer/build-on-minipay/deeplinks /build/build-on-minipay/deeplinks
@@ -628,14 +630,14 @@
 /getting-started/alfajores-testnet/index /network/alfajores
 /getting-started/alfajores-testnet/running-a-full-node-in-alfajores /network/alfajores/run-full-node
 /getting-started/alfajores-testnet/using-the-mobile-wallet /network/alfajores/use-mobile-wallet
-/getting-started/alfajores-testnet%5D /network
+/getting-started/alfajores-testnet /network
 /getting-started/baklava-testnet /network
 /getting-started/baklava-testnet/index /network/baklava
 /getting-started/baklava-testnet/running-a-full-node /validator/run/baklava
 /getting-started/baklava-testnet/running-a-full-node-in-baklava /network/baklava/run-full-node
 /getting-started/baklava-testnet/running-a-validator-in-baklava /network/baklava/run-validator
 /getting-started/choosing-a-network /network
-/getting-started/glossary /general/glossary
+/getting-started/glossary /what-is-celo/using-celo/glossary
 /getting-started/hosted-nodes /network/node/run-hosted
 /getting-started/mainnet /network
 /getting-started/mainnet/index /network/mainnet
@@ -760,3 +762,4 @@
 /why-celo#mobile /general
 /why-celo#open /general
 /why-celo#real /general
+/overview /what-is-celo

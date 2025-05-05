@@ -49,9 +49,6 @@ Please read this [short documentation](https://github.com/redstone-finance/redst
 
 ## 👨‍💻 Code examples
 
-- [Repo with examples](https://github.com/redstone-finance/redstone-evm-connector-examples)
-- [Generating pseudo-random values](https://github.com/redstone-finance/redstone-evm-connector-examples/blob/main/contracts/example-pseudo-random.sol)
-- [Example with multiple contracts](https://github.com/redstone-finance/redstone-evm-connector-examples/tree/main/contracts/example-proxy-calldata)
 - [Synthetic commodities dApp on Celo](https://github.com/redstone-finance/komodo-celo)
 
 ## 🙋‍♂️ Need help?
