@@ -18,7 +18,7 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ## What to expect
 
-At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](/cli/) and the [ContractKit](/developer/contractkit/).
+At the end of this tutorial, you will have a local Celo development blockchain running exposed at `http://localhost:7545` and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](/cli/) and the [ContractKit](/developer/contractkit/).
 
 Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with CELO and all transactions on the network are virtually instant.
 

@@ -79,7 +79,7 @@ Othello Wallet (formerly known as CeloWallet) is a lightweight, wallet for both 
 Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser extension for Chrome.
 
 - Platforms: Chrome Browser
-- Maintainers: [DSRV Labs](https://www.dsrvlabs.com/en/)
+- Maintainers: [DSRV Labs](https://dsrv.com/protocol)
 - Ledger support: Yes
 - [Source Code](https://github.com/dsrvlabs/celo-extension-wallet)
 
@@ -116,7 +116,7 @@ Here’s an overview of popular wallets compatible with the Celo network. Note t
 Uniswap Wallet is a self-custody wallet with support for Celo.
 
 - Homepage: [wallet.uniswap.org](https://wallet.uniswap.org/)
-- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobilee), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
 - Maintainers: [Uniswap](https://app.uniswap.org/)
 - [Source Code](https://github.com/Uniswap/wallet)
 

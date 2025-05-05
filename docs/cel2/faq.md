@@ -16,15 +16,15 @@ description: Frequently Asked Questions about Cel2
 A couple of issues could be causing this.
 
 * If you are running multiple instances of op-node, make sure to check that they each have a unique and persisted private key at `--p2p.priv.path`
-* Ensure that your node is accessible to other nodes, check the __Configure P2P for external network access__ section under [Running a full node](./operators/run-node.md#running-a-full-node)
+* Ensure that your node is accessible to other nodes, check the __Configure P2P for external network access__ section under [Running a full node](/cel2/operators/run-node.md#running-a-full-node)
 
 ### How do I run a node or upgrade an existing node?
 
-See the guides for [running a node](./operators/run-node.md) or the guide on [how to migrate an L1 node](./operators/migrate-node.md).
+See the guides for [running a node](/cel2/operators/run-node.md) or the guide on [how to migrate an L1 node](/cel2/operators/migrate-node.md).
 
 ### Do I need to run my own EigenDA proxy?
 
-Yes. This is part of [running a node](./operators/run-node.md).
+Yes. This is part of [running a node](/cel2/operators/run-node.md).
 If you're using the [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), it's included.
 
 ### Will the migration happen immediately, or will there be a grace period for projects to transition to the new version?
@@ -37,8 +37,8 @@ No. All balances will carry over to the L2 unchanged.
 
 ### Will there be multiple RPC node providers?
 
-There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](https://docs.celo.org/cel2/notices/day-1-partners)
-for a list of RPC providers comfirmed for Day 1.
+There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](/cel2/notices/day-1-partners)
+for a list of RPC providers confirmed for Day 1.
 
 ### How will ERC-20 tokens and the native CELO token work after the migration?
 
@@ -58,9 +58,9 @@ We are going to have the same RPC specs as Optimism (e.g. we won't have block re
 
 ### What happens to Validators?
 
-Validators are becoming [Community RPC providers](./operators/community-rpc-node).
+Validators are becoming [Community RPC providers](/cel2/operators/community-rpc-node).
 
-### Where can I see those [Community RPC providers](./operators/community-rpc-node)?
+### Where can I see those [Community RPC providers](/cel2/operators/community-rpc-node)?
 
 - Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
 - [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
@@ -83,7 +83,7 @@ Also see [Celo L2 Specification](https://specs.celo.org/root.html) for greater d
 
 ### What are the costs for L1 data and how are they paid?
 
-See [What's changed section covering L1 fees](./whats-changed/op-l2#l1-fees).
+See [What's changed section covering L1 fees](/cel2/whats-changed/op-l2#l1-fees).
 
 ### I saw EigenDA mentioned, is it used?
 
@@ -99,7 +99,7 @@ The gas limit per block is 30 million, so the maximum throughput is 30M gas/s.
 
 ### Is there anything that used to work that doesn’t anymore?
 
-See [What's Changed Celo L1 -> L2](./whats-changed/l1-l2.md) and [L1 -> L2 Migration Changes](https://specs.celo.org/l2_migration.html) in the spec for greater detail.
+See [What's Changed Celo L1 -> L2](/cel2/whats-changed/l1-l2.md) and [L1 -> L2 Migration Changes](https://specs.celo.org/l2_migration.html) in the spec for greater detail.
 
 ## Alfajores
 

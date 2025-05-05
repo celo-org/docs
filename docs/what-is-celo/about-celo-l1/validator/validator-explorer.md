@@ -16,10 +16,9 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ---
 
-## Introduction to the Explorer
+## Introduction to the Explorer - **Deprecated**
 
-You can interact with the Validator Explorer that allows you to have a complete view of how the different validators are performing. This is one resource voters may use to find validator groups to vote for. The Validator Explorer tool is available in the following address:
-https://celo.org/validators/explore/
+You can interact with the Validator Explorer that allows you to have a complete view of how the different validators are performing. This is one resource voters may use to find validator groups to vote for. 
 
 All of the existing validators and groups in the Celo network are included in this view. The default view shows all registered validator groups - if you click on any of the group names it will expand to show the validators affiliated with that group. You can also sort results by each column's value by clicking on the header field.
 
