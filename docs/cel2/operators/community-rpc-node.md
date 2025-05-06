@@ -59,7 +59,9 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
     $ celocli network:rpc-urls [--node $NETWORK]
     ```
 
-## Claiming Validator Rewards
+## Validator Rewards
+
+### Claiming Validator Rewards
 
 To receive validator rewards for running RPC nodes, the allocated epoch payment must be explicitly claimed using the CLI command below. Note that this command can be run by anyone, but rewards will be distributed according to the validator group's set commission rate.
 
