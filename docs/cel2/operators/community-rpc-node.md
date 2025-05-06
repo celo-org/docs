@@ -82,7 +82,7 @@ After claiming, you can verify that rewards were successfully distributed by che
 
 ### Tracking rewards distributions
 
-Some use cases may require validators to track their CELO reward distribution for accounting purposes. Since the reward block no longer exists, validators can query Celo nodes for `ValidatorEpochPaymentDistributed` events and query the [EpochManager contract](https://docs.celo.org/contracts/core-contracts) for `validatorPendingPayments` to get the total payments that have been allocated to their validators.
+Some use cases may require validators to track their CELO reward distribution for accounting purposes. Since the reward block no longer exists, validators can query Celo nodes for `ValidatorEpochPaymentDistributed` events and query the [EpochManager contract](/contracts/core-contracts) for `validatorPendingPayments` to get the total payments that have been allocated to their validators.
 
 ### Group Commission Considerations
 

@@ -9,15 +9,15 @@ Introduction to Celo epoch rewards on Celo as an L2.
 
 **Epoch Rewards** are similar to the familiar notion of block rewards in other blockchains, minting and distributing new units of CELO as blocks are produced, to create several kinds of incentives.
 
-In the L2 "epoch blocks” no longer exist. There are no transactions triggered by the blockchain itself. Precompiles that were used to query epoch state are also no longer available.
+In the L2 ["epoch blocks”](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards) no longer exist. There are no transactions triggered by the blockchain itself. Precompiles that were used to query epoch state are also no longer available.
 
 The concept for epochs still remains, but they are determined to be at least as long as "epoch duration” (targeted to be set as one day on mainnet), but there's no guaranteed limit of the maximal duration. The size of an epoch can no longer be deterministically calculated based on block numbers alone.
 
-The logic for processing epochs is now fully implemented in Solidity in the EpochManager contract introduced in Contract Release 12.
+The logic for processing epochs is now fully implemented in Solidity in the [EpochManager contract](/contracts/core-contracts) introduced in [Contract Release 12](https://github.com/celo-org/celo-monorepo/tree/core-contracts.v12).
 
 Epochs are now processed using multiple calls, as the gas consumption of the process involved uses is relatively high.
 
-Celo is no longer minted when processing the epoch, it is now transferred from the `CeloUnreleasedTreasury`. The contract `CeloUnreleasedTreasury` is allocated the full amount of unminted Celo at the time of the transition to L2.
+Celo is no longer minted when processing the epoch, it is now transferred from the `CeloUnreleasedTreasury`. The contract `CeloUnreleasedTreasury` was allocated the full amount of unminted Celo at the time of the transition to L2.
 
 When "epoch duration" has elapsed since the current epoch started, the function `startNextEpochProcess` can be called. This function:
 
