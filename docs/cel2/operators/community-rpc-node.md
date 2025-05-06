@@ -77,6 +77,10 @@ Replace:
 
 After claiming, you can verify that rewards were successfully distributed by checking for the `ValidatorEpochPaymentDistributed` event on a blockchain explorer like [CeloScan](https://celoscan.io/address/0xf424b5e85b290b66ac20f8a9eab75e25a526725e).
 
+### Tracking rewards distributions
+
+Some use cases may require validators to track their CELO reward distribution for accounting purposes. Since the reward block no longer exists, validators can query Celo nodes for `ValidatorEpochPaymentDistributed` events and query the EpochManager contract for `validatorPendingPayments` to get the total payments that have been allocated to their validators.
+
 ### Group Commission Considerations
 
 Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations. Commision can be queried with [celocli validatorgroup:show](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupshow-arg1) and updated with [celocli validatorgroup:commission](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupcommission).
