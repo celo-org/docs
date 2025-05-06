@@ -10,7 +10,7 @@ The `SuperBridgeETHWrapper.sol` contract allows users to bridge native ETH from 
 
 ### How it Works (Simplified):
 
-1.  User sends ETH to this contract on L1.
+1.  User sends ETH to this contract on L1 (calls `wrapAndBridge` function).
 2.  Contract wraps ETH into WETH on L1.
 3.  Contract uses the L1 Standard Bridge to send this WETH to Celo L2.
 4.  WETH arrives on Celo L2.
