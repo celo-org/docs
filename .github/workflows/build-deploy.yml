@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '>=18' # Update this to match your project's Node version
+        node-version: '18' # Update this to match your project's Node version
         cache: 'yarn'
 
     - name: Clean Yarn Cache
