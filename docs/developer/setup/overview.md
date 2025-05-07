@@ -13,7 +13,7 @@ Set up your Celo development environment.
 
 ---
 
-- [Using Mac](mac)
-- [Using Windows](windows)
-- [Using Replit](replit)
-- [Testnet Wallet](wallet)
+- [Using Mac](/developer/setup/mac)
+- [Using Windows](/developer/setup/windows)
+- [Using Replit](/developer/setup/replit)
+- [Testnet Wallet](/developer/setup/wallet)

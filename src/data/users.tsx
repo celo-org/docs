@@ -462,7 +462,7 @@ const Users: User[] = [
     description: 'The web3 professional community for high-potential builders.',
     preview: require('./showcase/talent-protocol.png'),
     website: 'https://www.talentprotocol.com/',
-    source: 'https://github.com/talentprotocol/web-dapp',
+    source: 'https://github.com/talentprotocol/',
     tags: ['apps', 'defi', 'popular'],
   },
   {

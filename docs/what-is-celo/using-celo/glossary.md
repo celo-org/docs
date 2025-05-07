@@ -26,7 +26,7 @@ A unique identifier for an account on any blockchain.
 
 ## Alfajores
 
-The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](../../network/alfajores/disclaimer).
+The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
 
 ## Attestation
 
@@ -38,7 +38,7 @@ Former name for what has become Social Connect.
 
 ## Baklava
 
-The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](../../network/baklava/disclaimer).
+The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
 ## Block
 

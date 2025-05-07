@@ -125,12 +125,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 <PageRef url="https://galaxy.exchange/swap" pageName="Galaxy" />
 
-## Mach Exchange 
-
-[Mach](https://app.mach.exchange/swap) is our solution for securing stablecoin markets across every blockchain, providing cross-chain swaps that are incredibly fast, cheap, and direct. By enabling instant (single block) swaps, the protocol can go at Mach speed - drastically reducing both the time and expenses typically involved in these transactions, with instant settlement.
-
-<PageRef url="https://app.mach.exchange/swap" pageName="Mach Exchange" />
-
 ## Rubic Exchange
 
 [Rubic Exchange](https://app.rubic.exchange/) Rubic Exchange is a multi-chain decentralized exchange (DEX) platform that enables seamless cross-chain swaps across over 90 blockchains. It offers a user-friendly interface, low fees, and supports a wide range of tokens, enhancing interoperability and accessibility in decentralized finance (DeFi).
