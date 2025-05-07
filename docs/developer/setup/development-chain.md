@@ -26,43 +26,27 @@ You can run the development Celo blockchain in several ways:
 
 ### Use the celo-devchain NPM package
 
-The easiest is to use a "pre-generated" devchain from the [celo-devchain](https://github.com/zviadm/celo-devchain) NPM package. For that all you have to do is:
+The easiest is to use a "pre-generated" devchain from the [celo-devchain](https://github.com/celo-org/celo-devchain) NPM package. For that all you have to do is:
 
 ```sh
-> npm install --save-dev @terminal-fi/celo-devchain
+> npm install --save-dev @celo/celo-devchain
 > npx celo-devchain --port 7545
 
 or
 
-> yarn add --dev @terminal-fi/celo-devchain
+> yarn add --dev @celo/celo-devchain
 > yarn run celo-devchain --port 7545
 ```
 
 ### Initialize your own devchain from the monorepo
 
-If you prefer, you can initialize your own devchain and build it from scratch. To start, download the Celo monorepo [here](https://github.com/celo-org/celo-monorepo) or with the following command.
+If you prefer, you can initialize your own devchain and build it from scratch by following the instructions on [how to generate new chain data](https://github.com/celo-org/celo-devchain/blob/main/README.md) and running the chain you generated.
 
-```text
-git clone https://github.com/celo-org/celo-monorepo.git
+Once you custom chain data is generated, you can run it locally with the following command:
+
+``` bash
+> npx celo-devchain --file <path to custom chain data>
 ```
-
-See [this page](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#building-celo-monorepo) for instructions on how to build the monorepo.
-
-Once the monorepo is built, move into the `contractkit` directory.
-
-```
-cd packages/sdk/contractkit
-```
-
-From the `contractkit` directory, run
-
-```
-yarn test:reset && yarn test:livechain
-```
-
-This will start the development Celo blockchain. It will take at least a few minutes to start. The contract migrations will be printed in the terminal as they are deployed.
-
-The process will finish and print `Ganache started`. Leave this terminal window open to leave the development chain running.
 
 ## Interacting with the chain
 
