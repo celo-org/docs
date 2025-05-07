@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # Update this to match your project's Node version
+        cache: 'yarn'
+
+    - name: Clean Yarn Cache
+      run: yarn cache clean
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build
+      run: yarn build
+
+    - name: Test
+      run: yarn test
+
+    # Optional: Add deployment steps if needed
+    # - name: Deploy
+    #   run: |
+    #     # Add your deployment commands here
