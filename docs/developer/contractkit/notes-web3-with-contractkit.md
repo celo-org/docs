@@ -16,12 +16,6 @@ Some documentation may be outdated as updates are in progress. If you encounter 
 For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
 :::
 
-:::tip
-
-Although the [Web3 library](https://web3js.readthedocs.io/) was intended to be used only with `Ethereum`, due to the nature of `Celo`, we can still use the majority of its features.
-
-:::
-
 The ContractKit, for every interaction with the node, uses internally a Web3 instance.
 
 Because of this, the `Ethereum` JSON-RPC calls done via the web3 (except some specific calls that we will explain in this page) are also supported
@@ -54,6 +48,4 @@ This let you use the Web3 instance to interact with node's Json RPC API in a tra
 
 This is also the reason that the `Kit` requires a valid provider from the beginning.
 
-## Local Signing
 
-As part of the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2) network upgrade that occurred on May 19th, 2021, the Celo network now accepts Ethereum-style transactions as well as Celo transactions. This means that you can use Ethereum transaction signing tools (like [Metamask](/wallet/metamask/use), Web3.js and ethers.js) to sign transactions for the Celo network. Remember that Celo is a separate layer 1 blockchain from Ethereum, so do not send Ethereum assets directly to your Celo account address on Ethereum.
