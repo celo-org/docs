@@ -150,7 +150,7 @@ const whatIsCeloSidebar = [
       },
       {
         type: "doc",
-        label: "Bridges",
+        label: "Bridging",
         id: "what-is-celo/using-celo/bridges",
       },
       {
@@ -891,7 +891,7 @@ const toolingSidebar = [
   },
   {
     type: "doc",
-    label: "Bridges",
+    label: "Bridging",
     id: "developer/bridges/bridges",
   },
   {

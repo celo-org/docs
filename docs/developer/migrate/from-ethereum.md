@@ -23,8 +23,7 @@ For a general overview of the Celo network and architecture, see [the Celo Overv
 
 ## What is Celo's Relationship to Ethereum?
 
-Celo is a layer 1 protocol and blockchain platform, and the Celo Mainnet is entirely separate from the Ethereum network.
-While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), it has several significant differences, including a proof-of-stake based PBFT consensus mechanism. All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
+Celo is an Ethereum Layer 2 solution. While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), it has several significant differences, including a proof-of-stake based PBFT consensus mechanism. All crypto assets on Celo have **ERC-20 compliant interfaces**, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
@@ -63,7 +62,7 @@ event Transfer(address indexed _from, address indexed _to, uint256 _value)
 event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ```
 
-An ERC20 compliant contract must include the required functions and events at _minimum_.
+An **ERC20 compliant contract** must include the required functions and events at _minimum_.
 It can include additional functions and events and still be ERC20 compliant.
 
 ## The Celo Native Asset and the Celo Dollar
@@ -86,7 +85,7 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 ### Features exclusive to Celo
 
 1.  Celo allows users to pay transaction fees in cryptoassets other than the native asset. On Ethereum, users must pay transaction fees in Ether. For example, users can send cUSD, and then pay any transaction fees in cUSD as well.
-2.  The Celo protocol uses BFT Proof-of-Stake for maintaining consensus. This allows blocks on Celo to be created in 5 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
+2.  The Celo protocol uses BFT Proof-of-Stake for maintaining consensus. This allows blocks on Celo to be created in 1 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
 
 ### Things to watch out for
 
@@ -109,7 +108,7 @@ Celo runs the EVM which means that smart contracts written for Ethereum can easi
 
 ### OPCODES & Block headers
 
-Celo does not support the `DIFFICULTY` or `GASLIMIT` opcodes. These fields are also absent from Celo block headers.
+With the move to an L2, Celo now supports the same OPCODES and Block headers as Ethereum.
 
 ### Precompiled Contracts
 
@@ -121,7 +120,5 @@ The blockchain client makes some core contract calls at the end of a block, outs
 Logs created by these contract changes are included in a single additional receipt in that block, which references the block hash as its transaction hash, even though there is no transaction with this hash. If no logs were created by such calls in that block, no receipt is added.
 
 ### Node management APIs
-
-Celo nodes have a slightly different RPC interface than geth nodes. There are some additional RPC endpoints to help validators manage their nodes, they can be found [here](/what-is-celo/about-celo-l1/validator/proxy#rpc-api) and [here](/what-is-celo/about-celo-l1/validator/node-upgrade#hotswapping-validator-nodes).
 
 You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/celo-blockchain/blob/master/internal/web3ext/web3ext.go).
