@@ -4,7 +4,7 @@ title: Fee Abstraction on Celo L2
 
 ## Fee Abstraction Addresses
 
-Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in `FeeCurrencyWhitelist.sol`.
+Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in `FeeCurrencyDirectory.sol`.
 
 Fee abstraction on Celo works with EOAs. No paymaster required!
 
@@ -19,20 +19,32 @@ celocli network:whitelist --node https://alfajores-forno.celo-testnet.org
 Transfer 1 USDC using USDC as fee currency, with the [`celocli`](https://docs.celo.org/cli) using the `--gasCurrency` flag
 
 ```bash
-celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 --value 1000000 --gasCurrency 0x4822e58de6f5e485eF90df51C41CE01721331dC0 --privateKey [PRIVATE_KEY]
+celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 --value 1000000 --gasCurrency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --privateKey [PRIVATE_KEY]
 ```
 
-| Symbol |                   Token                    |                  Adapter                   |
-| :----: | :----------------------------------------: | :----------------------------------------: |
-|  cUSD  | 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1 |                                            |
-|  cEUR  | 0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F |                                            |
-| cREAL  | 0xE4D517785D091D3c54818832dB6094bcc2744545 |                                            |
-|  cKES  | 0x1E0433C1769271ECcF4CFF9FDdD515eefE6CdF92 |                                            |
-|  USDC  | 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B | 0x4822e58de6f5e485eF90df51C41CE01721331dC0 |
-|  USD₮  | 0xC4f86E9B4A588D501c1c3e25628dFd50Bc8D615e |                                            |
-|   G$   | 0x03d3daB843e6c03b3d271eff9178e6A96c28D25f |                                            |
+| Symbol  | Token                                       | Adapter                                    |
+| :----:  | :----------------------------------------:  | :----------------------------------------: |
+| cAUD    | 0x7175504C455076F15c04A2F90a8e352281F492F9  |                                            |
+| cCAD    | 0xff4Ab19391af240c311c54200a492233052B6325  |                                            |
+| cCHF    | 0xb55a79F398E759E43C95b979163f30eC87Ee131D  |                                            |
+| cCOP    | 0x8A567e2aE79CA692Bd748aB832081C45de4041eA  |                                            |
+| cEUR    | 0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73  |                                            |
+| cGBP    | 0xCCF663b1fF11028f0b19058d0f7B674004a40746  |                                            |
+| cGHS    | 0xfAeA5F3404bbA20D3cc2f8C4B0A888F55a3c7313  |                                            |
+| cJPY    | 0xc45eCF20f3CD864B32D9794d6f76814aE8892e20  |                                            |
+| cKES    | 0x456a3D042C0DbD3db53D5489e98dFb038553B0d0  |                                            |
+| cNGN    | 0xE2702Bd97ee33c88c8f6f92DA3B733608aa76F71  |                                            |
+| cREAL   | 0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787  |                                            |
+| cUSD    | 0x765DE816845861e75A25fCA122bb6898B8B1282a  |                                            |
+| cZAR    | 0x4c35853A3B4e647fD266f4de678dCc8fEC410BF6  |                                            |
+| eXOF    | 0x73F93dcc49cB8A239e2032663e9475dd5ef29A08  |                                            |
+| PUSO    | 0x105d4A9306D2E55a71d2Eb95B81553AE1dC20d7B  |                                            |
+| USD₮    | 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72  |                                            |
+| USDC    | 0xcebA9300f2b948710d2653dD7B07f33A8B32118C  | 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B |
 
-### Using Fee Abstraction Programmatically
+When using USDC for fee abstraction, you have to use the adapter address instead of the USDC token address. This is necessary to avoid inaccuracies due to USDC's low number of decimals (6 compared to 18 for the other tokens).
+
+ ### Using Fee Abstraction Programmatically
 
 You can use Fee Abstraction by specifying a token/adapter address as a value for the `feeCurrency` property in the transaction object. The `feeCurrency` property in the transaction object is exclusive to Celo and allows paying gas fees using assets other than the native currency of the network.
 
