@@ -23,7 +23,7 @@ For a general overview of the Celo network and architecture, see [the Celo Overv
 
 ## What is Celo's Relationship to Ethereum?
 
-Celo is an Ethereum Layer 2 solution. While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), it has several significant differences, including a proof-of-stake based PBFT consensus mechanism. All crypto assets on Celo have **ERC-20 compliant interfaces**, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
+Celo is an Ethereum Layer 2 solution. Since the migration, Celo is an OP stack based L2 on top of Ethereum, extending it by adding fee abstraction, 1 second block finality and a variety of local stablecons. Ethereum’s L2 landscape is becoming a melting pot of philosophies and Celo adds a [values-driven, inclusivity-focused layer](https://app.t2.world/article/cm1eqxyh8151217321mcesuw528v) to that mix, enriching Ethereum's pluralistic fabric. 
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
@@ -85,7 +85,7 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 ### Features exclusive to Celo
 
 1.  Celo allows users to pay transaction fees in cryptoassets other than the native asset. On Ethereum, users must pay transaction fees in Ether. For example, users can send cUSD, and then pay any transaction fees in cUSD as well.
-2.  The Celo protocol uses BFT Proof-of-Stake for maintaining consensus. This allows blocks on Celo to be created in 1 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
+2.  The Celo protocol uses EigenLayer as the data settlement layer. This allows blocks on Celo to be created in 1 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
 
 ### Things to watch out for
 
