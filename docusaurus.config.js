@@ -304,6 +304,8 @@ module.exports = {
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
           rehypePlugins: [katex],
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
         },
         gtag: {
           // You can also use your "G-" Measurement ID here.
