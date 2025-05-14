@@ -58,17 +58,18 @@ Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:
 
 - **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.  
 
-#### Liquidity Incentives  
-
-- **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
-- **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
-
 #### Decentralized Exchanges (DEX)
 
 Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain exchanges check out the [bridges](/developer/bridges) and [cross-chain messaging](/developer/bridges/cross-chain-messaging) pages. 
 
+- **[Velodrome](https://velodrome.finance/)** – Velodrome is a decentralized exchange where you can execute low-fee swaps, deposit tokens to earn rewards, and actively participate in the onchain economy.
 - **[Uniswap](https://app.uniswap.org/)** – Swaps and liquidity pools for stablecoins.  
 - **[Ubeswap](https://ubeswap.org/)** – A Celo-native DEX optimized for mobile users.  
+
+#### Liquidity Incentives  
+
+- **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
+- **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
 
 ### Oracles
 
@@ -86,6 +87,6 @@ Oracles are a crucial part to get real time price information on tokens. Speed i
 
 ## Get Started  
 
-Developers and entrepreneurs can leverage Celo’s infrastructure to build next-generation stablecoin applications.  
+Developers and entrepreneurs can leverage Celo's infrastructure to build next-generation stablecoin applications.  
 
-By building on Celo, you’re not just creating DeFi applications—you’re enabling real-world financial inclusion and empowering users globally.  
+By building on Celo, you're not just creating DeFi applications—you're enabling real-world financial inclusion and empowering users globally.  
