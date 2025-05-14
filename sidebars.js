@@ -79,6 +79,11 @@ const whatIsCeloSidebar = [
             items: [
               {
                 type: "doc",
+                label: "Overview",
+                id: "what-is-celo/using-celo/protocol/epoch-rewards/index",
+              },
+              {
+                type: "doc",
                 label: "Community Fund",
                 id: "what-is-celo/using-celo/protocol/epoch-rewards/community-fund",
               },

@@ -20,7 +20,7 @@ Make sure to use [Celo CLI](/cli/index.md) at version `6.1.0` or later
 
 :::
 
-The `--from`  flag in the CLI can either be the validator account itself, or the validator signer. 
+The `--from`  flag in the CLI can either be the validator account itself, or the validator signer.
 
 1. Create a new metadata file. If, instead, you want to update an existing one, download it instead of creating it.
 
@@ -59,7 +59,9 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
     $ celocli network:rpc-urls [--node $NETWORK]
     ```
 
-## Claiming Validator Rewards
+## Validator Rewards
+
+### Claiming Validator Rewards
 
 To receive validator rewards for running RPC nodes, the allocated epoch payment must be explicitly claimed using the CLI command below. Note that this command can be run by anyone, but rewards will be distributed according to the validator group's set commission rate.
 
@@ -70,6 +72,7 @@ $ celocli epochs:send-validator-payment --from $YOUR_ADDRESS --for $VALIDATOR_AD
 ```
 
 Replace:
+
 - `$YOUR_ADDRESS` with your Celo account address from which the transaction is sent.
 - `$VALIDATOR_ADDRESS` with your validator's Celo account address.
 
@@ -77,7 +80,10 @@ Replace:
 
 After claiming, you can verify that rewards were successfully distributed by checking for the `ValidatorEpochPaymentDistributed` event on a blockchain explorer like [CeloScan](https://celoscan.io/address/0xf424b5e85b290b66ac20f8a9eab75e25a526725e).
 
+### Tracking rewards distributions
+
+Some use cases may require validators to track their CELO reward distribution for accounting purposes. Since the reward block no longer exists, validators can query Celo nodes for `ValidatorEpochPaymentDistributed` events and query the [EpochManager contract](/contracts/core-contracts) for `validatorPendingPayments` to get the total payments that have been allocated to their validators.
+
 ### Group Commission Considerations
 
 Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations. Commision can be queried with [celocli validatorgroup:show](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupshow-arg1) and updated with [celocli validatorgroup:commission](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupcommission).
-
