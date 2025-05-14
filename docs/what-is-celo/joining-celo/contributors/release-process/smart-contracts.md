@@ -101,7 +101,7 @@ NETWORK=${"baklava"|"alfajores"|"mainnet"}
 yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
 
-A `libraries.json` file is written to disk only necessary for `release:make-release` that describes linked library addresses.
+A `libraries.json` file is written to disk only necessary for `release:make` that describes linked library addresses.
 
 ### Check Backward Compatibility
 
@@ -144,7 +144,7 @@ STORAGE updates are adopted by deploying a new proxy/implementation pair. This s
 ```bash
 NETWORK=${"baklava"|"alfajores"|"mainnet"}
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn release:make-release -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
+yarn release:make -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
 ```
 
 The proposal encodes STORAGE updates by repointing the Registry to the new proxy. Storage compatible upgrades are encoded by repointing the existing proxy's implementation.
