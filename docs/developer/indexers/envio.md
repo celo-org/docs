@@ -1,3 +1,7 @@
+---
+title: The Graph
+---
+
 # Envio
 
 Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized
