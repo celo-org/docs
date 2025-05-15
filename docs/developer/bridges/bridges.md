@@ -1,6 +1,6 @@
 ---
-title: Token Bridges
-description: Token bridges enable cross-chain asset transfers between blockchains.
+title: Bridging
+description: Bridging enable cross-chain asset transfers between blockchains.
 ---
 
 

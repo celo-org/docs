@@ -1,11 +1,11 @@
 ---
-title: Bridges
+title: Bridging
 description: How to bridge assets between Celo and other blockchain networks such as Ethereum, Polygon, and Solana.
 ---
 
-# Bridges
+# Bridging
 
-Bridging allows users to transfer assets between the Celo network and other blockchain networks such as Ethereum, Polygon, and Solana. This section provides an overview of available bridging and swapping options.
+Bridging allows users to transfer assets between the Celo network and other blockchain networks. This section provides an overview of available bridging and swapping options.
 
 ---
 
@@ -15,7 +15,7 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 :::
 
-## Bridges To and From Celo
+## Bridging To and From Celo
 
 ### Popular Bridges
 
