@@ -115,16 +115,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 <PageRef url="https://www.transporter.io/" pageName="Transporter (Chainlink CCIP)" />
 
-## Galaxy
-
-[Galaxy](https://galaxy.exchange/swap) is a decentralized exchange (DEX) built on the Celo blockchain, designed for fast, low-cost, and user-friendly trading of digital assets. It supports a wide range of tokens, including Celo-native assets and stablecoins, while prioritizing accessibility and financial inclusion.
-
-**Supported chains**
-
-- Celo Mainnet
-
-<PageRef url="https://galaxy.exchange/swap" pageName="Galaxy" />
-
 ## Rubic Exchange
 
 [Rubic Exchange](https://app.rubic.exchange/) Rubic Exchange is a multi-chain decentralized exchange (DEX) platform that enables seamless cross-chain swaps across over 90 blockchains. It offers a user-friendly interface, low fees, and supports a wide range of tokens, enhancing interoperability and accessibility in decentralized finance (DeFi).
