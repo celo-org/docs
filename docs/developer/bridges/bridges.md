@@ -125,16 +125,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 <PageRef url="https://galaxy.exchange/swap" pageName="Galaxy" />
 
-## Rubic Exchange
-
-[Rubic Exchange](https://app.rubic.exchange/) Rubic Exchange is a multi-chain decentralized exchange (DEX) platform that enables seamless cross-chain swaps across over 90 blockchains. It offers a user-friendly interface, low fees, and supports a wide range of tokens, enhancing interoperability and accessibility in decentralized finance (DeFi).
-
-**Supported chains**
-
-- Celo Mainnet
-
-<PageRef url="https://app.rubic.exchange/" pageName="Rubic Exchange" />
-
 ## SmolRefuel
 
 [SmolRefuel (Gassless Bridging)](https://smolrefuel.com/?outboundChain=42220) SmolRefuel is a tool that automates small gas top-ups for blockchain transactions, ensuring seamless interactions with dApps by keeping wallets funded and reducing interruptions. It simplifies gas management for users.
