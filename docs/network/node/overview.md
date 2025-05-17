@@ -38,7 +38,7 @@ Forno has HTTP and WebSocket endpoints that you can use to query current Celo da
 
 ## As a Service
 
-Paid RPC endpoint hosting.
+Free and paid RPC endpoint hosting.
 
 ### Alchemy
 
@@ -51,7 +51,7 @@ Paid RPC endpoint hosting.
 
 <PageRef url="https://docs.alchemy.com/reference/celo-chain-api-quickstart" pageName="Alchemy" />
 
-### [Ankr](https://www.ankr.com/rpc/celo/)
+### Ankr
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
@@ -61,22 +61,18 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
-### [Infura](https://www.infura.io/)
+### Infura
 
-Infura is L2 ready.
-
-RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
+[Infura](https://docs.metamask.io/services/reference/celo/) (by MetaMask) is an RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
 
 #### **Supported Networks**
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
 
-<PageRef url="https://docs.metamask.io/services/get-started/endpoints/#celo" pageName="Infura" />
+<PageRef url="https://www.infura.io/networks/celo" pageName="Infura" />
 
-### [Quicknode](https://www.quicknode.com/chains/celo)
-
-Quicknode is L2 ready.
+### Quicknode
 
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
 
@@ -86,9 +82,9 @@ Quicknode is L2 ready.
 
 <PageRef url="https://www.quicknode.com/docs/celo" pageName="Quicknode" />
 
-### [dRPC](https://drpc.org/chainlist/celo)
+### dRPC
 
-All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pay only for what you use, scale resources effortlessly, and enjoy clear, predictable pricing. Our model eliminates large upfront costs, encourages innovation and simplifies budgeting. With dRPC, you can manage your Web3 infrastructure efficiently and cost-effectively.
+All data from any blockchain in one place. [dRPC](https://drpc.org/docs/celo-api) offers a pay-as-you-go model. Pay only for what you use, scale resources effortlessly, and enjoy clear, predictable pricing. Our model eliminates large upfront costs, encourages innovation and simplifies budgeting. With dRPC, you can manage your Web3 infrastructure efficiently and cost-effectively.
 
 #### **Supported Networks**
 
@@ -97,9 +93,9 @@ All data from any blockchain in one place. dRPC offers a pay-as-you-go model. Pa
 
 <PageRef url="https://drpc.org/chainlist/celo" pageName="DRPC" />
 
-### [Lava](https://docs.lavanet.xyz)
+### Lava
 
-Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
+[Lava](https://docs.lavanet.xyz) is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
 #### **Supported Networks**
 
@@ -108,9 +104,9 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 
 <PageRef url="https://docs.lavanet.xyz" pageName="Lava" />
 
-### [thirdweb](https://thirdweb.com/celo)
+### thirdweb
 
-Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
+thirdweb is a complete web3 development platform, allowing developers to build, manage, and analyze their web3 applications.
 
 #### **Supported Networks**
 
@@ -119,9 +115,9 @@ Lava is a multi-chain RPC provider. They also provide managed and decentralized 
 
 <PageRef url="https://thirdweb.com/celo" pageName="thirdweb" />
 
-### [POKT](https://docs.lavanet.xyz/celo-dev/)
+### Pocket
 
-Pocket Network is compatible with any network/blockchain (RelayChain) that uses the RPC standard.
+[Pocket Network](https://pocket.network/) is compatible with any network/blockchain (RelayChain) that uses the RPC standard.
 
 #### **Supported Networks**
 
@@ -129,9 +125,9 @@ Pocket Network is compatible with any network/blockchain (RelayChain) that uses 
 
 <PageRef url="https://docs.pokt.network/reference/supported-chains#pokt-mainnet" pageName="POKT" />
 
-### [Tatum](https://tatum.io/chain/celo)
+### Tatum
 
-Tatum provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole lot more.
+[Tatum](https://docs.tatum.io/reference/rpc-celo) provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole lot more.
 
 #### **Supported Networks**
 
@@ -139,19 +135,9 @@ Tatum provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole 
 
 <PageRef url="https://tatum.io/chain/celo" pageName="Tatum" />
 
-### [Nirvana Labs](https://nirvanalabs.io/nirvana-nodes)
+### Chainstack
 
-Nirvana Cloud removes the complexity and costs around procuring, deploying, and networking bare metal servers desperately needed by blockchain companies, reducing opex for staking/validator firms, dApps, RPC providers, blockchain foundations, web3 data firms (indexers), and HFTs active-on chain.
-
-#### **Supported Networks**
-
-- Celo Mainnet
-
-<PageRef url="https://nirvanalabs.io/nirvana-nodes" pageName="Nirvana Labs" />
-
-### [Chainstack](https://chainstack.com/build-better-with-celo/)
-
-Chainstack provides global load-balanced nodes for Celo. A free developer plan is available with an easy social login (e.g. GitHub). You can also top up your balance with crypto.
+[Chainstack](https://docs.chainstack.com/docs/celo-tooling) provides global load-balanced nodes for Celo. A free developer plan is available with an easy social login (e.g. GitHub). You can also top up your balance with crypto.
 
 #### **Supported Networks**
 
@@ -159,9 +145,9 @@ Chainstack provides global load-balanced nodes for Celo. A free developer plan i
 
 <PageRef url="https://chainstack.com/build-better-with-celo/" pageName="Chainstack" />
 
-### [All that node](https://www.allthatnode.com/celo.dsrv)
+### All That Node
 
-All That Node supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as needed.
+[All that node](https://docs.allthatnode.com/reference/quickstart-celo) supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as needed.
 You can also claim Alfajores funds from the faucet in the site without signing up.
 
 #### **Supported Networks**
@@ -169,3 +155,15 @@ You can also claim Alfajores funds from the faucet in the site without signing u
 - Celo Mainnet
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
+
+### Dwellir
+
+Dwellir provides scalable RPC nodes to power Web3 developers with high-speed, affordable infrastructure.
+
+#### **Supported Networks**
+
+- Celo Mainnet
+
+<PageRef url="https://www.dwellir.com/networks/celo" pageName="Dwellir" />
+
+
