@@ -1,4 +1,4 @@
-# L1 Pectra Upgrade
+# L1 Pectra Hardfork
 
 :::info
 
