@@ -28,6 +28,7 @@ They are discoverable through the following:
 - Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
 - [Vido Node Explorer](https://dev.vido.atalma.io/celo/rpc)
 - [Celo Community RPC Gateway](https://celo-community.org/)
+- [Stakely Celo RPC Load Balancer](https://celo-json-rpc.stakely.io)
 
 ## Forno
 
