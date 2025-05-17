@@ -1201,21 +1201,12 @@ const celoL2Sidebar = [
         id: "cel2/notices/isthmus-upgrade",
       },
       {
-        type: "category",
+        type: "doc",
         label: "Celo L2 Migration",
         link: {
           type: "doc",
           id: "cel2/notices/l2-migration",
         },
-        collapsed: false,
-        items: [
-          {
-            type: "doc",
-            label: "Day 1 Partners",
-            id: "cel2/notices/day-1-partners",
-          },
-        ],
-      },
       {
         type: "doc",
         label: "L1 Pectra Upgrade",
