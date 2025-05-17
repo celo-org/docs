@@ -1,4 +1,4 @@
-# Celo L2 migration
+# Celo L2 Migration
 
 :::info
 
