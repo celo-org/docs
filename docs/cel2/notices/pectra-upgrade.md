@@ -1,6 +1,6 @@
 # L1 Pectra Upgrade
 
-:::tip
+:::info
 
 The Pectra upgrade on L1 has been activated:
 
