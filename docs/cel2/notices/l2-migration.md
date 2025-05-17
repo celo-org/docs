@@ -1,11 +1,10 @@
-# Preparing for the L2 migration
+# Celo L2 Migration
 
 :::info
-This page will be kept updated with key information about the hardfork.
 
 * Mainnet has been migrated on block **31056500**, March 26, 2025, 3:00 AM UTC.
-* The Alfajores testnet has been migrated on block **26384000**, September 26, 2024.
 * The Baklava testnet has been migrated on block **28308600**, February 20, 2025.
+* The Alfajores testnet has been migrated on block **26384000**, September 26, 2024.
 
 :::
 
