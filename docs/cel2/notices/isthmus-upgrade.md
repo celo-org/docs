@@ -1,9 +1,16 @@
-# Isthmus hardfork
+# L2 Isthmus Hardfork
 
 This page outlines breaking changes related to the Isthmus network upgrade for chain operators and node operators.
 
 :::info
-The Isthmus hardfork activation has not been scheduled yet. This page will be updated accordingly.
+
+This page will be kept updated with key information about the hardfork.
+
+
+- Baklava testnet activativation planned on block TBD, May 28, 2025, 15:00 UTC.
+- Alfajores testnet activation planned on block TBD, June 11, 2025, 15:00 UTC. 
+- Mainnet activation planned on block **38963000**, June 25, 2025, 15:00 UTC.
+
 :::
 
 ## What's included in Isthmus
@@ -18,6 +25,6 @@ Isthmus contains these main changes:
   - [EIP-2935](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-2935.md): Block hashes contract predeploy
   - [EIP-7623](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7623.md): Increase calldata cost
 
-- **L2 Withdrawals Root in Block Header**: This lowers the lift for chain operators by allowing them to run a full node to operate op-dispute-mon making it easier to guarantee the security of the fault proofs for the chains in the Superchain as the number of chains scales. Learn more about this [here](https://gov.optimism.io/t/proposal-preview-l2-withdrawals-root-in-block-header/9730).
+- **L2 Withdrawals Root in Block Header**: This lowers the lift for chain operators by allowing them to run a full node to operate op-dispute-mon, making it easier to guarantee the security of the fault proofs for the chains in the Superchain as the number of chains scales. Learn more about this [here](https://gov.optimism.io/t/proposal-preview-l2-withdrawals-root-in-block-header/9730).
 
-For more information on the Isthmus implementation details, please review [Isthmus specification](https://specs.optimism.io/protocol/isthmus/overview.html).
+For more information on the Isthmus implementation details, please review [OP's Isthmus specification](https://specs.optimism.io/protocol/isthmus/overview.html).
