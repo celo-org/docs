@@ -118,4 +118,4 @@ Logs created by these contract changes are included in a single additional recei
 
 ### Node management APIs
 
-You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/celo-blockchain/blob/master/internal/web3ext/web3ext.go).
+You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/op-geth/blob/celo-rebase-12/internal/web3ext/web3ext.go).
