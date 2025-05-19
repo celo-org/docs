@@ -37,8 +37,7 @@ No. All balances will carry over to the L2 unchanged.
 
 ### Will there be multiple RPC node providers?
 
-There will be multiple RPC providers supporting Celo L2. Please see [Day 1 Partners](/cel2/notices/day-1-partners)
-for a list of RPC providers confirmed for Day 1.
+There will be multiple RPC providers supporting Celo L2. Please see [the list of RPC providers](network/node/overview.md).
 
 ### How will ERC-20 tokens and the native CELO token work after the migration?
 
