@@ -6,7 +6,7 @@ This document provides a minimal overview of the `SuperBridgeETHWrapper.sol` con
 
 The `SuperBridgeETHWrapper.sol` contract allows users to bridge native ETH from an L1 network (like Ethereum or Holesky) to the Celo L2 network, where it arrives as WETH.
 
-> **Disclaimer:** When using Superbridge, this entire process is abstracted away from the user.
+> **Note:** When using Superbridge, this entire process is abstracted away from the user.
 
 ### How it Works (Simplified):
 
