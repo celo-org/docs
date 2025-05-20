@@ -23,8 +23,7 @@ For a general overview of the Celo network and architecture, see [the Celo Overv
 
 ## What is Celo's Relationship to Ethereum?
 
-Celo is a layer 1 protocol and blockchain platform, and the Celo Mainnet is entirely separate from the Ethereum network.
-While the Celo client originated as a fork of Ethereum Go language client, [go-ethereum](https://github.com/ethereum/go-ethereum) (or geth), it has several significant differences, including a proof-of-stake based PBFT consensus mechanism. All the cryptoassets on Celo have ERC-20 compliant interfaces, meaning that while they are not ERC-20 tokens on the Ethereum Mainnet, all familiar tooling and code that support ERC-20 tokens can be easily adapted for Celo assets, including the Celo Native Asset (CELO) and the Celo Dollar (cUSD).
+Celo is an Ethereum Layer 2 solution. Since the migration, Celo is an OP stack based L2 on top of Ethereum, extending it by adding fee abstraction, 1 second block finality and a variety of local stablecons. Ethereum’s L2 landscape is becoming a melting pot of philosophies and Celo adds a [values-driven, inclusivity-focused layer](https://app.t2.world/article/cm1eqxyh8151217321mcesuw528v) to that mix, enriching Ethereum's pluralistic fabric. 
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
@@ -63,7 +62,7 @@ event Transfer(address indexed _from, address indexed _to, uint256 _value)
 event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ```
 
-An ERC20 compliant contract must include the required functions and events at _minimum_.
+An **ERC20 compliant contract** must include the required functions and events at _minimum_.
 It can include additional functions and events and still be ERC20 compliant.
 
 ## The Celo Native Asset and the Celo Dollar
@@ -86,18 +85,15 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 ### Features exclusive to Celo
 
 1.  Celo allows users to pay transaction fees in cryptoassets other than the native asset. On Ethereum, users must pay transaction fees in Ether. For example, users can send cUSD, and then pay any transaction fees in cUSD as well.
-2.  The Celo protocol uses BFT Proof-of-Stake for maintaining consensus. This allows blocks on Celo to be created in 5 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
+2.  The Celo protocol uses EigenLayer as the data settlement layer. This allows blocks on Celo to be created in 1 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
 
 ### Things to watch out for
 
 1.  As previously mentioned, CELO transfers are not required to happen via the ERC20 interface. A user's CELO balance may change without any interaction with the CELO contract, as they may transfer CELO natively.
 
-2.  Celo transaction objects are slightly different from transaction objects on Ethereum.
-    Ethereum transaction objects include fields to, value, gas, gasPrice, data, nonce, signature (v,r,s).
-    Celo transaction objects include the same fields as Ethereum transaction objects, plus the feeCurrency field.
-    This additional field is included to allow users to [pay transaction fees in different currencies.](/what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
+2.  Celo supports a broad range of Ethereum-compatible transaction types to ensure seamless integration with existing Ethereum tooling. In addition to standard Ethereum tx types like legacy (type 0), EIP-2930 (type 1), and EIP-1559 (type 2), Celo also supports OP Stack-specific deposited transactions (type 126) and introduces its own Celo-native tx type (type 123) to enable features like Fee Abstraction. While most Ethereum transactions work out of the box on Celo, developers can also take advantage of extended functionality such as paying gas fees in ERC-20 tokens.  For a more detailed overview, check out the full breakdown of supported (transaction types)[/what-is-celo/using-celo/protocol/transaction/transaction-types].
 
-1)  When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
+1)  Mnemonic seed phrases can derive different accounts depending on the key derivation path used. While Ethereum wallets typically use the path `m/44'/60'/0'/0`, Celo defines its own path as `m/44'/52752'/0'/0`. Despite this, **most Celo wallets—including Valora—default to the Ethereum derivation path**, except in the case of some legacy accounts. Ledger Live, when used with the **Celo Ledger app**, strictly uses the Celo path. Tools like the **Celo CLI and the Celo Ledger app**, however, offer flexibility and allow users to specify either path explicitly.
 
 2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/what-is-celo/about-celo-l1/protocol/identity/smart-contract-accounts).
 
@@ -109,7 +105,7 @@ Celo runs the EVM which means that smart contracts written for Ethereum can easi
 
 ### OPCODES & Block headers
 
-Celo does not support the `DIFFICULTY` or `GASLIMIT` opcodes. These fields are also absent from Celo block headers.
+With the move to an L2, Celo now supports the same OPCODES and Block headers as Ethereum.
 
 ### Precompiled Contracts
 
@@ -122,6 +118,4 @@ Logs created by these contract changes are included in a single additional recei
 
 ### Node management APIs
 
-Celo nodes have a slightly different RPC interface than geth nodes. There are some additional RPC endpoints to help validators manage their nodes, they can be found [here](/what-is-celo/about-celo-l1/validator/proxy#rpc-api) and [here](/what-is-celo/about-celo-l1/validator/node-upgrade#hotswapping-validator-nodes).
-
-You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/celo-blockchain/blob/master/internal/web3ext/web3ext.go).
+You can find the full list of RPC API endpoints in [this file](https://github.com/celo-org/op-geth/blob/celo-rebase-12/internal/web3ext/web3ext.go).
