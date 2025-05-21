@@ -156,7 +156,7 @@ const whatIsCeloSidebar = [
           {
             type: "doc",
             label: "Bridging Native ETH to Celo",
-            id: "what-is-celo/using-celo/native-ETH-bridging.md",
+            id: "what-is-celo/using-celo/native-ETH-bridging",
           },
         ],
       },
