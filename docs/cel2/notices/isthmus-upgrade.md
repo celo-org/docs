@@ -30,7 +30,7 @@ For more information on the Isthmus implementation details, please review [OP's 
 
 Isthmus additionally enables the [Holocene hardfork](https://docs.optimism.io/notices/holocene-changes) with the following changes:
 
-- **Holocene block derivation**: a set of changes that render the derivation pipeline stricter and simpler, improving worst-case scenarios for the Fault Proof System and Interoperability.
+- **Holocene block derivation**: A set of changes that render the derivation pipeline stricter and simpler, improving worst-case scenarios for the Fault Proof System and Interoperability.
 - **EIP-1559 configurability**: The elasticity and denominator EIP-1559 parameters become configurable via the SystemConfig L1 contract, allowing the gas target and gas limit to be configured independently.
 
 For more information on the Holocene details, please review [OP's Holocene specification](https://specs.optimism.io/protocol/holocene/overview.html).
