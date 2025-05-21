@@ -24,11 +24,12 @@ MiniPay is only available on Celo and Celo Alfajores Testnet. Other blockchain n
 
 #### How to Access MiniPay:
 - [**Opera Mini Browser**](https://www.opera.com/pl/products/minipay) (Android) 
-- [**Standalone App**](https://play.google.com/store/apps/details?id=com.opera.minipay) (Android, iOS coming soon)
+- [**Standalone App Android**](https://play.google.com/store/apps/details?id=com.opera.minipay)
+- [**Standalone App iOS**](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB)
 
 #### Set Up MiniPay:
 
-- **Install the MiniPay Standalone App:** [Download here.](https://play.google.com/store/apps/details?id=com.opera.minipay)
+- **Install the MiniPay Standalone App:** Download for [Android](https://play.google.com/store/apps/details?id=com.opera.minipay) and [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB)
 - **Create an Account:** Sign up using your Google account and phone number.
 
 ## 2. Build Your MiniPay Mini App
@@ -53,7 +54,7 @@ Request testnet tokens from the Celo [faucet](https://faucet.celo.org/) to test 
 ## 4. Test your Mini App inside MiniPay
 
 :::warning
-You cannot test MiniPay using the Android Studio Emulator. Use an Android mobile device.
+You cannot test MiniPay using the Android Studio Emulator. Use an Android or iOS mobile device.
 :::
 
 ### Enable Developer Mode:

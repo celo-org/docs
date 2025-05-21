@@ -43,7 +43,7 @@ Valora is a non-custodial multichain mobile wallet focused on helping users save
 MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers.
 
 - Homepage: [opera.com/products/minipay](https://www.opera.com/products/minipay)
-- Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay), iOS (testflight only), inside [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native) in Ghana, Nigeria, Kenya, South Africa, and Uganda
+- Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay), [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB), inside [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native) in Ghana, Nigeria, Kenya, South Africa, and Uganda
 - Maintainers: Opera
 - Ledger support: No
 - Supported tokens: cUSD, USDT, and USDC
