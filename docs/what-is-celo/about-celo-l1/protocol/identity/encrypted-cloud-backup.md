@@ -70,7 +70,7 @@ Once all attempts are exhausted, the backup will become unrecoverable and the us
 
 ## Implementation
 
-Client support for the encrypted backup protocol described here is implemented in the [`@celo/encrypted-backup` package](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/encrypted-backup).
+Client support for the encrypted backup protocol described here is implemented in the [`@social-connect/encrypted-backup` package](https://github.com/celo-org/social-connect/tree/main/packages/encrypted-backup).
 
 Creating a backup file consists of a number of steps to derive the encryption key, and assemble the backup file.
 
