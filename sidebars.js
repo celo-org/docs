@@ -149,9 +149,16 @@ const whatIsCeloSidebar = [
         id: "what-is-celo/using-celo/gas-fees",
       },
       {
-        type: "doc",
+        type: "category",
         label: "Bridging",
-        id: "what-is-celo/using-celo/bridges",
+        link: { type: "doc",  id: "what-is-celo/using-celo/bridges", },
+        items: [
+          {
+            type: "doc",
+            label: "Bridging Native ETH to Celo",
+            id: "what-is-celo/using-celo/native-ETH-bridging.md",
+          },
+        ],
       },
       {
         type: "doc",

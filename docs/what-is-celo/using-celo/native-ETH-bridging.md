@@ -1,6 +1,7 @@
-# SuperBridgeETHWrapper: Bridging Native ETH to Celo
-
-This document provides a minimal overview of the `SuperBridgeETHWrapper.sol` contract and its deployed addresses.
+---
+title: Bridging Native ETH to Celo
+description: This document provides a minimal overview of the `SuperBridgeETHWrapper.sol` contract and its deployed addresses.
+---
 
 ## Purpose
 
