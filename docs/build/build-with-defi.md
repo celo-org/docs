@@ -79,7 +79,7 @@ Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain e
 
 ### Oracles
 
-Oracles are a crucial part to get real time price information on tokens. Speed is crucail when it comes to building DeFi applicaations and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/developer/oracles/index).
+Oracles are a crucial part to get real time price information on tokens. Speed is crucail when it comes to building DeFi applicaations and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/developer/oracles).
 
 - [RedStone Oracles](/developer/oracles/redstone)
 - [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
