@@ -38,11 +38,14 @@ Celo offers multiple stablecoin options for different use cases:
 | **cKES**         | [Mento](https://www.mentolabs.xyz/products)        | Kenya Shilling-pegged stablecoin                  |
 | **PUSO**         | [Mento](https://www.mentolabs.xyz/products)        | Philippine Peso-pegged stablecoin                 |
 | **cCOP**         | [Mento](https://www.mentolabs.xyz/products)        | Colombia Peso-pegged stablecoin                   |
-| **cGBP**         | [Mento](https://www.mentolabs.xyz/products)        | Birtish Pound-pegged stablecoin                   |
+| **cGBP**         | [Mento](https://www.mentolabs.xyz/products)        | British Pound-pegged stablecoin                   |
 | **cCAD**         | [Mento](https://www.mentolabs.xyz/products)        | Canadian Dollar-pegged stablecoin                   |
 | **cAUD**         | [Mento](https://www.mentolabs.xyz/products)        | Australian Dollar-pegged stablecoin                   |
 | **cZAR**         | [Mento](https://www.mentolabs.xyz/products)        | South African Rand-pegged stablecoin                   |
 | **cGHS**         | [Mento](https://www.mentolabs.xyz/products)        | Ghanaian Cedi-pegged stablecoin                   |
+| **cNGN**         | [Mento](https://www.mentolabs.xyz/products)        | Nigerian Naira-pegged stablecoin                   |
+| **cJPY**         | [Mento](https://www.mentolabs.xyz/products)        | Japanese Yen-pegged stablecoin                   |
+| **cCHF**         | [Mento](https://www.mentolabs.xyz/products)        | Swiss Franc-pegged stablecoin                   |
 | **USDT**         | [Tether](https://tether.to/en/)                    | Popular stablecoin on multiple blockchains        |
 | **USDC**         | [Circle](https://www.circle.com/usdc)              | Widely used stablecoin with high liquidity        |
 | **Glo Dollar**   | [Glo Foundation](https://www.glodollar.org/)       | Impact-driven stablecoin supporting global causes |
@@ -65,11 +68,14 @@ Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain e
 - **[Velodrome](https://velodrome.finance/)** – Velodrome is a decentralized exchange where you can execute low-fee swaps, deposit tokens to earn rewards, and actively participate in the onchain economy.
 - **[Uniswap](https://app.uniswap.org/)** – Swaps and liquidity pools for stablecoins.  
 - **[Ubeswap](https://ubeswap.org/)** – A Celo-native DEX optimized for mobile users.  
+- **[Carbon DeFi by Bancor](https://www.carbondefi.xyz/)** – Empowering users with onchain automation and superior orderbook-like features. 
+- 
 
 #### Liquidity Incentives  
 
 - **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
 - **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
+- **[Icchi](https://www.ichi.org/)** – Automated Liquidity Strategies for DeFi Yield.
 
 ### Oracles
 
