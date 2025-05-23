@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Build an AI Agent to Send Tokens on Celo
+title: Build an AI Agent to Send Tokens on Celo
 ---
 
 # Tutorial: Build an AI Agent to Send Tokens on Celo

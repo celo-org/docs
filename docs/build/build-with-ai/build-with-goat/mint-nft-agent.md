@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Build an AI-Powered NFT Minting Agent on Celo
+title: Build an AI-Powered NFT Minting Agent on Celo
 ---
 
 # Tutorial: Build an AI-Powered NFT Minting Agent on Celo
