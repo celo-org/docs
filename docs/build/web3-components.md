@@ -104,7 +104,7 @@ The `Balance` component is designed to display and manage token balances seamles
 | children     | React.ReactNode                              | The content to be rendered inside the `Balance` component.                      |
 | precision    | number (optional)                            | The number of decimal places to display in the balance. Defaults to `18`.       |
 | tokens       | Token[]                                      | An array of `Token` objects to display as selectable options.                   |
-| ...          | React.HTMLAttributes<HTMLParagraphElement>    | Any additional HTML attributes for the `p` tag, like `className`, `style`, etc. |
+| ...          | `React.HTMLAttributes<HTMLParagraphElement>`  | Any additional HTML attributes for the `p` tag, like `className`, `style`, etc. |
 | name         | string                                       | The name of the token.                                                          |
 | symbol       | string                                       | The symbol of the token.                                                        |
 | address      | string                                       | The contract address of the token.                                              |
