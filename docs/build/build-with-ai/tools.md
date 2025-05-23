@@ -1,3 +1,8 @@
+---
+title: AI Agents Tools & Infrastructure
+description: This article provides an overview of essential tools for building AI agents.
+---
+
 # AI Agents Tools & Infrastructure
 
 This article provides an overview of essential tools for building AI agents. Given the rapid advancements in this space, this is not an exhaustive list but rather a snapshot of tools available on Celo.
@@ -93,7 +98,10 @@ When scaling, consider:
 - **[Predicate](https://x.com/0xPredicate)**: Define rules for onchain interactions
 - **[Functor Network](https://www.functor.sh/)**: Policy framework for autonomous agents
 - **Access Controls**: Environmental permissions
-- **Prompt Verification**: Input validation and control
+- **[Langfuse](https://langfuse.com/) - Prompt Verification**: Traces, evals, prompt management and metrics to debug and improve your LLM application.
+- **[LiteLLM](https://www.litellm.ai/#features) - LLM Access**: Manage LLM access for your developer
+
+
 
 **Data:**
 When working with AI agents, it's essential to train models and collect the right data. For unique character creation, ensure you have sufficient training data. Some useful tools include:

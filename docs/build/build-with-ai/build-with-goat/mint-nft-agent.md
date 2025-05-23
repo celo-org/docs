@@ -1,3 +1,7 @@
+---
+title: Tutorial: Build an AI-Powered NFT Minting Agent on Celo
+---
+
 # Tutorial: Build an AI-Powered NFT Minting Agent on Celo
 
 This tutorial guides you through building an AI-powered agent capable of minting NFTs on the Celo blockchain. We will adapt the structure from the previous [token swapping tutorial](./token-swap-agent.md) to create an agent that can mint NFTs based on natural language prompts.
