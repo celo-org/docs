@@ -601,6 +601,11 @@ const buildOnCeloSidebar = [
     id: "build/quickstart",
   },
   {
+    type: "doc",
+    label: "Composer Kit",
+    id: "build/web3-components",
+  },
+  {
     type: "category",
     label: "Build with AI",
     items: [
