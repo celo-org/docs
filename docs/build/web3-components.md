@@ -157,9 +157,9 @@ The `Identity` component displays user information such as address, name, balanc
 | isTruncated | boolean (optional)                              | Whether the name should be truncated.                     |
 | tag         | "github" | "twitter" | "url" | "farcaster"           | The social platform tag for the link.                     |
 | precison    | number (optional)                               | The precision for displaying the balance.                 |
-| ...         | React.HTMLAttributes<HTMLImageElement>          | Avatar: All standard image attributes.                    |
-| ...         | React.HTMLAttributes<HTMLDivElement>            | Avatar: All standard div attributes.                      |
-| ...         | React.HTMLAttributes<HTMLSpanElement>           | Name: All standard span attributes.                       |
+| ...         | `React.HTMLAttributes<HTMLImageElement>`      | Avatar: All standard image attributes.                    |
+| ...         | `React.HTMLAttributes<HTMLDivElement>`            | Avatar: All standard div attributes.                      |
+| ...         | `React.HTMLAttributes<HTMLSpanElement> `          | Name: All standard span attributes.                       |
 
 ---
 
@@ -205,11 +205,11 @@ The `NFTCard` and `NFTMint` components are designed to display NFT details and p
 | Prop         | Type                      | Description                                                        |
 |--------------|---------------------------|--------------------------------------------------------------------|
 | className    | string (optional)         | Custom CSS class for styling the NFT card or subcomponents.        |
-| style        | React.CSSProperties       | Inline styles for custom styling.                                  |
-| children     | React.ReactNode           | Additional elements inside the card.                               |
+| style        | `React.CSSProperties`       | Inline styles for custom styling.                                  |
+| children     | `React.ReactNode`           | Additional elements inside the card.                               |
 | tokenId      | bigint                    | The token ID of the NFT.                                           |
 | contractAddress | string                  | The contract address of the NFT.                                   |
-| ...          | React.HTMLAttributes<any> | Any additional HTML attributes for the elements.                   |
+| ...          | `React.HTMLAttributes<any>` | Any additional HTML attributes for the elements.                   |
 
 ---
 
@@ -286,7 +286,7 @@ The `Payment` component is designed to send payment to a recipient address with 
 | recipientAddress   | Address                    | The address of the recipient receiving the payment.            |
 | onSuccess          | (txHash: string) => void   | Callback function triggered upon successful payment. Optional. |
 | onError            | (error: Error) => void     | Callback function triggered when an error occurs. Optional.    |
-| children           | React.ReactNode            | The children nodes to render inside the provider.              |
+| children           | `React.ReactNode`            | The children nodes to render inside the provider.              |
 | chain              | Chain                      | The blockchain chain to use for the payment.                   |
 | open               | boolean                    | Determines whether the dialog is open or not.                  |
 | onOpenChange       | (open: boolean) => void    | Callback function triggered when the open state changes.       |
@@ -351,7 +351,7 @@ The `Swap` component allows users to exchange tokens seamlessly with a simple in
 
 | Prop           | Type               | Description                                                        |
 |----------------|--------------------|--------------------------------------------------------------------|
-| children       | React.ReactNode    | The child components of the Swap container.                        |
+| children       | `React.ReactNode`    | The child components of the Swap container.                        |
 | className      | string (optional)  | Optional additional class names.                                   |
 | swapableTokens | SwapableTokens[]   | List of tokens available for swapping.                             |
 | label          | string             | Label for the SwapToken (e.g., "Sell", "Buy").                  |
@@ -396,7 +396,7 @@ The `TokenSelect` component is designed to search in a list of tokens and select
 
 | Prop           | Type                     | Description                                                           |
 |----------------|--------------------------|-----------------------------------------------------------------------|
-| children       | React.ReactNode          | The children nodes to render inside the select.                       |
+| children       | `React.ReactNode`          | The children nodes to render inside the select.                       |
 | defaultToken   | Token                    | The default token to be selected. Optional.                           |
 | delayMs        | number                   | Delay time in milliseconds before updating the select. Optional.      |
 | onChange       | (token: Token) => void   | Callback function that is called when the token is changed. Optional. |
@@ -406,7 +406,7 @@ The `TokenSelect` component is designed to search in a list of tokens and select
 | emptyMessage   | string                   | The message to display when no tokens are available. Optional.        |
 | token          | Token                    | The token associated with the option.                                 |
 | onSelect       | (token: Token) => void   | Callback function triggered when the option is selected. Optional.    |
-| ...            | React.HTMLAttributes<any>| Any additional HTML attributes for the elements.                      |
+| ...            | `React.HTMLAttributes<any>`| Any additional HTML attributes for the elements.                      |
 
 ---
 
@@ -452,7 +452,7 @@ The `Transaction` component facilitates blockchain transactions with a simple in
 | transaction   | TransactionConfig       | Configuration object for the transaction (see below).              |
 | onSuccess     | (result: any) => void   | Callback function triggered upon successful transaction. Optional. |
 | onError       | (error: any) => void    | Callback function triggered when an error occurs. Optional.        |
-| children      | React.ReactNode         | The children nodes to render inside the transaction component.     |
+| children      | `React.ReactNode `        | The children nodes to render inside the transaction component.     |
 | className     | string                  | CSS class name for styling the button or status. Optional.         |
 | abi           | Array                   | The ABI (Application Binary Interface) for the smart contract.     |
 | address       | string                  | The address of the smart contract to interact with.                |
@@ -515,13 +515,13 @@ The `Wallet` component provides functionality for connecting wallets and display
 
 | Prop        | Type                                    | Description                                                                                   |
 |-------------|-----------------------------------------|-----------------------------------------------------------------------------------------------|
-| children    | React.ReactNode                         | The content inside the component, typically `Avatar` and `Name`.                              |
-| label       | React.ReactNode                         | The text or element to display on the connect button. Default is "Connect".                  |
+| children    | `React.ReactNode `                        | The content inside the component, typically `Avatar` and `Name`.                              |
+| label       | `React.ReactNode `                        | The text or element to display on the connect button. Default is "Connect".                  |
 | onConnect   | () => void (optional)                   | A callback function that is triggered when the connection is successful.                      |
 | isTruncated | boolean (optional)                      | Whether the name should be truncated (e.g., for display in small spaces). Default is `false`. |
 | className   | string (optional)                       | CSS class name for styling the button, avatar, or name. Optional.                             |
-| ...         | React.HTMLAttributes<HTMLDivElement>     | Avatar: All standard div attributes.                                                          |
-| ...         | React.HTMLAttributes<HTMLSpanElement>    | Name: All standard span attributes.                                                           |
+| ...         | `React.HTMLAttributes<HTMLDivElement> `    | Avatar: All standard div attributes.                                                          |
+| ...         | `React.HTMLAttributes<HTMLSpanElement>`    | Name: All standard span attributes.                                                           |
 
 ---
 
@@ -552,10 +552,6 @@ export const WalletBasic = () => {
 
 ## Examples
 
-Examples can be found in the [/docs](/apps/docs/examples/) folder. 
+Examples can be found in the [/docs](https://github.com/celo-org/composer-kit/tree/main/apps/docs/examples) folder. 
 
-
-## Links
-
-- [GitHub Repository](https://github.com/celo-org/composer-kit)
 
