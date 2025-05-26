@@ -149,9 +149,16 @@ const whatIsCeloSidebar = [
         id: "what-is-celo/using-celo/gas-fees",
       },
       {
-        type: "doc",
-        label: "Bridges",
-        id: "what-is-celo/using-celo/bridges",
+        type: "category",
+        label: "Bridging",
+        link: { type: "doc",  id: "what-is-celo/using-celo/bridges", },
+        items: [
+          {
+            type: "doc",
+            label: "Bridging Native ETH to Celo",
+            id: "what-is-celo/using-celo/native-ETH-bridging",
+          },
+        ],
       },
       {
         type: "doc",
@@ -891,7 +898,7 @@ const toolingSidebar = [
   },
   {
     type: "doc",
-    label: "Bridges",
+    label: "Bridging",
     id: "developer/bridges/bridges",
   },
   {
@@ -1201,20 +1208,9 @@ const celoL2Sidebar = [
         id: "cel2/notices/isthmus-upgrade",
       },
       {
-        type: "category",
+        type: "doc",
         label: "Celo L2 Migration",
-        link: {
-          type: "doc",
-          id: "cel2/notices/l2-migration",
-        },
-        collapsed: false,
-        items: [
-          {
-            type: "doc",
-            label: "Day 1 Partners",
-            id: "cel2/notices/day-1-partners",
-          },
-        ],
+        id: "cel2/notices/l2-migration",
       },
       {
         type: "doc",
