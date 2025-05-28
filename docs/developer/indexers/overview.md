@@ -29,5 +29,10 @@ Getting historical data on a smart contract can be frustrating when you’re bui
   - Bitquery offers comprehensive historical and real-time Celo blockchain data, including token transfers, address balances, DEX trades, and more. Their GraphQL APIs provide a unified way to access this data, making it easier to build reliable Celo products.
 - [Goldsky](https://goldsky.com/)
   - Goldsky provides live-streamed crypto data, enabling developers to build rich, instant, data-driven experiences. Their tools include Subgraphs for live data through custom endpoints and Mirror for syncing data to databases or warehouses.
+- [Chainbase](https://chainbase.com/)
+  - Chainbase's primary objective is to offer a unique and decentralized Layer 1 infrastructure that directly addresses the problem of interoperability across various blockchain networks. This architecture will facilitate the utilization of the full capabilities of blockchain data by eliminating any constraints.
+- [Envio](https://envio.dev/)
+  - Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized
+for querying real-time and historical data.
 
 
