@@ -1,5 +1,5 @@
 ---
-title: Building an AI-Powered Token Swap Agent on Celo Using GOAT SDK
+title: Build an AI-Powered Token Swap Agent on Celo Using GOAT SDK
 ---
 
 
