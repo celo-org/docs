@@ -1,3 +1,8 @@
+---
+title: AI Agents Examples
+description: Learn more about AI Agents by reviewing these 25 examples.
+---
+
 # AI Agents Examples
 
 ## Use Cases

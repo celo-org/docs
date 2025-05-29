@@ -610,6 +610,11 @@ const buildOnCeloSidebar = [
         id: "build/build-with-ai/overview",
       },
       {
+        type: "doc",
+        label: "Vibe Coding",
+        id: "build/build-with-ai/vibe-coding",
+      },
+      {
         type: "category",
         label: "Build with GOAT",
         items: [
@@ -642,6 +647,11 @@ const buildOnCeloSidebar = [
       },
       {
         type: "doc",
+        label: "MCP Servers",
+        id: "build/build-with-ai/mcp",
+      },
+      {
+        type: "doc",
         label: "Use Cases",
         id: "build/build-with-ai/usecases",
       },
@@ -668,11 +678,6 @@ const buildOnCeloSidebar = [
       },
     ],
   },
-  // {
-  //   type: "doc",
-  //   label: "Build with AI",
-  //   id: "developer/build-with-ai/overview",
-  // },
   {
     type: "category",
     label: "Build on MiniPay",
