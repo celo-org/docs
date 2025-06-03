@@ -530,18 +530,13 @@ const whatIsCeloSidebar = [
                 label: "Mainnet Validator",
                 id: "what-is-celo/about-celo-l1/validator/run/mainnet",
               },
-              {
-                type: "doc",
-                label: "Baklava Validator",
-                id: "what-is-celo/about-celo-l1/validator/run/baklava",
-              },
+              // {
+              //   type: "doc",
+              //   label: "Baklava Validator",
+              //   id: "what-is-celo/about-celo-l1/validator/run/baklava",
+              // },
             ],
           },
-          // {
-          //   type: "doc",
-          //   label: "Attestation Service",
-          //   id: "validator/attestation",
-          // },
           {
             type: "category",
             label: "Key Management",

@@ -1,36 +1,29 @@
 # Registering as RPC provider
 
+This documents gives step-by-step instructions about how to register a RPC node on chain to be eligible for rewards, for an overview of how elections work visit [How it works](how-it-works)
+
 ## Prerequisites
 
 ### Staking Requirements
 
-TODO delete: Celo uses a [proof-of-stake](/what-is-celo/about-celo-l1/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. 
-
-
 The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/what-is-celo/about-celo-l1/validator/run/baklava). TODO
-
-We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO. TODO link how to get Celo?
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava or Alfajores testnets. TODO link to testnets. TODO how to get testnet Celo.
 
 ### Software requirements
 
-#### On each machine
-
-- **You have Docker installed.**
-
-  If you don’t have it already, follow the instructions here: [Get Started with Docker](https://www.docker.com/get-started). It will involve creating or signing in with a Docker account, downloading a desktop app, and then launching the app to be able to use the Docker CLI. If you are running on a Linux server, follow the instructions for your distro [here](https://docs.docker.com/install/#server). You may be required to run Docker with `sudo` depending on your installation environment.
-  You can check you have Docker installed and running if the command `docker info` works properly.
-
-#### On your local machine
-
 - **You have celocli installed.**
 
-  See [Command Line Interface (CLI)](/cli/)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/) for instructions on how to get set up.
 
-- **You are using the latest Node 10.x LTS**
+  TODO set the node to community RPC nodes.
 
-  Some users have reported issues using the most recent version of node. Use the LTS for greater reliability.
+:::info
+
+Make sure to be in node version 18 or higher
+
+:::
+
 
 :::info
 
@@ -49,42 +42,72 @@ This guide contains a large number of keys, so it is important to understand the
 
 ### Summary of keys involved
 
-CELO_VALIDATOR_GROUP_ADDRESS address that's receiving votes, cold storage
-CELO_VALIDATOR_ADDRESS, address that represent the validators, cold storage
-CELO_VALIDATOR_SINGER, address that will be used to generate signatures or deregister members or a group, can be rotated. The name is legacy because this used to be the key validators used to use to sign blocks. cold storage
-Optional: voting signer
+| Account name           | Purpose                                                                                                | Owner entity  | Recommended storage |
+|------------------------|--------------------------------------------------------------------------------------------------------|---------------|---------------------|
+| CELO_GROUP_ADDRESS     | Accounts representing a group, with up to five nodes. It's the account that will receive votes.        | Group         | Cold                |
+| CELO_NODE_ADDRESS      | Account that represent a node.                                                                         | Node          | Cold                |
+| CELO_VALIDATOR_SINGER* | Account authorized to generate signers or deregister members or join/leave a group. It can be rotated. | Node operator | Hot                 |
 
-Groups and validators can be run by different entities. This guide assumes they are running by the same entity, but you can skip those if not relevant to your situation. TODO divide this guide into GROUP and Validator.
+\* The name "validator" is legacy as it was used for Celo Validators when Celo was an L1.
 
-
-#### Proof-of-Possession
-
-TODO is this still needed?
+Groups and validators may be run by different entities. This guide assumes they are running by the same entity, but you can skip those if not relevant to your specific setup.
 
 
-:::info
+### Set up the Group Account
 
-Please complete this step if you are running a RPC provider on Celo for the first time.
+#### Lock up CELO
 
-:::
-
-In order to authorize our Validator signer, we need to create a proof that we have possession of the Validator signer private key. We do so by signing a message that consists of the Validator account address. To generate the proof-of-possession, run the following command:
-
-```bash
-# On the validator machine
-# Note that you have to export CELO_VALIDATOR_ADDRESS on this machine
-export CELO_VALIDATOR_ADDRESS=<CELO-VALIDATOR-ADDRESS>
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account proof-of-possession $CELO_VALIDATOR_SIGNER_ADDRESS $CELO_VALIDATOR_ADDRESS
-```
-
-### Lock up CELO
-
-Lock up CELO for both accounts in order to secure the right to register a Validator and Validator Group. The current requirement is 10,000 CELO to register a validator, and 10,000 CELO _per member validator_ to register a Validator Group. For Validators, this gold remains locked for approximately 60 days following deregistration. For groups, this gold remains locked for approximately 60 days following the removal of the Nth validator from the group.
+Lock up CELO for both accounts in order to secure the right to register a Validator and Validator Group. The current requirement is 10,000 CELO to register a node. For nodes, this Celo remains locked for approximately 60 days following deregistration.
 
 ```bash
 # On your local machine
-celocli lockedgold:lock --from $CELO_VALIDATOR_GROUP_ADDRESS --value 10000e18
-celocli lockedgold:lock --from $CELO_VALIDATOR_ADDRESS --value 10000e18
+celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
+```
+
+### Set up the Node Account
+
+#### Lock up CELO
+
+Lock up CELO with the  Group account. The current requirement is 10,000 CELO _per member node_ to register a Validator Group. For groups, this Celo approximately 180 days following the removal of the Nth validator from the group.
+
+```bash
+# On your local machine
+celocli lockedcelo:lock --from $CELO_NODE_ADDRESS --value 10000e18
+```
+
+TODO ledger
+TODO foundry migration
+
+#### Create a Validator Signer
+
+To actually register as a node, we'll need to generate a validating signer key. This account can be created in many ways, by exporting a private key from a wallet (like metamask), a hardware wallet or by running the following command:
+
+```bash
+# On the validator machine
+$ celocli account:new
+```
+
+Make sure to store that key safetly.
+
+#### Creating Validator Signer Proof-of-Possession
+
+
+To actually register as a node, we need to create a proof that we have possession of the Validator signer private key. We do so by signing a message that consists of the Validator account address. 
+
+```bash
+# On your local machine
+$ celocli account:proof-of-possession --signer $CELO_VALIDATOR_SIGNER_ADDRESS --account $CELO_NODE_ADDRESS
+```
+
+TODO ledger or private key
+
+### Lock up CELO
+
+Lock up CELO for both accounts in order to secure the right to register a Node and  Group. The current requirement is 10,000 CELO to register a validator, and 10,000 CELO _per member validator_ to register a Validator Group. For Validators, this Celo remains locked for approximately 60 days following deregistration. For groups, this Celo remains locked for approximately 60 days following the removal of the Nth validator from the group.
+
+```bash
+# On your local machine
+celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
 ```
 
 :::info
@@ -98,8 +121,8 @@ Check that your CELO was successfully locked with the following commands:
 
 ```bash
 # On your local machine
-celocli lockedgold:show $CELO_VALIDATOR_GROUP_ADDRESS
-celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
+celocli lockedcelo:show $CELO_GROUP_ADDRESS
+celocli lockedcelo:show $CELO_NODE_ADDRESS
 ```
 
 ### Run for election
@@ -110,14 +133,14 @@ We don't want to use our account key for validating, so first let's authorize th
 #### Authorize signer
 ```bash
 # On your local machine
-celocli account:authorize --from $CELO_VALIDATOR_ADDRESS --role validator --signature 0x$CELO_VALIDATOR_SIGNER_SIGNATURE --signer 0x$CELO_VALIDATOR_SIGNER_ADDRESS
+celocli account:authorize --from $CELO_NODE_ADDRESS --role validator --signature 0x$CELO_VALIDATOR_SIGNER_SIGNATURE --signer 0x$CELO_VALIDATOR_SIGNER_ADDRESS
 ```
 
 Confirm by checking the authorized Validator signer for your Validator:
 
 ```bash
 # On your local machine
-celocli account:show $CELO_VALIDATOR_ADDRESS
+celocli account:show $CELO_NODE_ADDRESS
 ```
 
 #### Register group
@@ -126,14 +149,14 @@ Then, register your Group by running the following command. Note that because we
 
 ```bash
 # On your local machine
-celocli validatorgroup:register --from $CELO_VALIDATOR_GROUP_ADDRESS --commission 0.1
+celocli validatorgroup:register --from $CELO_GROUP_ADDRESS --commission 0.1
 ```
 
 You can view information about your Validator Group by running the following command:
 
 ```bash
 # On your local machine
-celocli validatorgroup:show $CELO_VALIDATOR_GROUP_ADDRESS
+celocli validatorgroup:show $CELO_GROUP_ADDRESS
 ```
 
 #### Register the node
@@ -142,7 +165,7 @@ Next, register your Validator by running the following command. Note that becaus
 
 ```bash
 # On your local machine
-celocli validator:register --from $CELO_VALIDATOR_ADDRESS --ecdsaKey $CELO_VALIDATOR_SIGNER_PUBLIC_KEY --blsKey $CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY --blsSignature $CELO_VALIDATOR_SIGNER_BLS_SIGNATURE
+celocli validator:register --from $CELO_NODE_ADDRESS --ecdsaKey $CELO_VALIDATOR_SIGNER_PUBLIC_KEY --blsKey $CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY --blsSignature $CELO_VALIDATOR_SIGNER_BLS_SIGNATURE
 ```
 
 #### Affiliate the node to the group
@@ -151,22 +174,22 @@ Affiliate your Validator with your Validator Group. Note that you will not be a 
 
 ```bash
 # On your local machine
-celocli validator:affiliate $CELO_VALIDATOR_GROUP_ADDRESS --from $CELO_VALIDATOR_ADDRESS
+celocli validator:affiliate $CELO_GROUP_ADDRESS --from $CELO_NODE_ADDRESS
 ```
 
 Accept the affiliation:
 
 ```bash
 # On your local machine
-celocli validatorgroup:member --accept $CELO_VALIDATOR_ADDRESS --from $CELO_VALIDATOR_GROUP_ADDRESS
+celocli validatorgroup:member --accept $CELO_NODE_ADDRESS --from $CELO_GROUP_ADDRESS
 ```
 
 Next, double check that your Validator is now a member of your Validator Group:
 
 ```bash
 # On your local machine
-celocli validator:show $CELO_VALIDATOR_ADDRESS
-celocli validatorgroup:show $CELO_VALIDATOR_GROUP_ADDRESS
+celocli validator:show $CELO_NODE_ADDRESS
+celocli validatorgroup:show $CELO_GROUP_ADDRESS
 ```
 
 #### Voting
@@ -175,17 +198,17 @@ As an optional step, you can use both accounts to vote for your Validator Group.
 
 ```bash
 # On your local machine
-celocli election:vote --from $CELO_VALIDATOR_ADDRESS --for $CELO_VALIDATOR_GROUP_ADDRESS --value 10000000000000000000000
-celocli election:vote --from $CELO_VALIDATOR_GROUP_ADDRESS --for $CELO_VALIDATOR_GROUP_ADDRESS --value 10000000000000000000000
+celocli election:vote --from $CELO_NODE_ADDRESS --for $CELO_GROUP_ADDRESS --value 10000000000000000000000
+celocli election:vote --from $CELO_GROUP_ADDRESS --for $CELO_GROUP_ADDRESS --value 10000000000000000000000
 ```
 
 Double check that your votes were cast successfully:
 
 ```bash
 # On your local machine
-celocli election:show $CELO_VALIDATOR_GROUP_ADDRESS --group
-celocli election:show $CELO_VALIDATOR_GROUP_ADDRESS --voter
-celocli election:show $CELO_VALIDATOR_ADDRESS --voter
+celocli election:show $CELO_GROUP_ADDRESS --group
+celocli election:show $CELO_GROUP_ADDRESS --voter
+celocli election:show $CELO_NODE_ADDRESS --voter
 ```
 
 ##### Activating the votes
@@ -195,15 +218,15 @@ Users voting in the Celo protocol receive epoch rewards for voting in Elections 
 ```bash
 # On your local machine
 # Note that this may take some time, as the epoch needs to end before votes can be activated
-celocli election:activate --from $CELO_VALIDATOR_ADDRESS --wait && celocli election:activate --from $CELO_VALIDATOR_GROUP_ADDRESS --wait
+celocli election:activate --from $CELO_NODE_ADDRESS --wait && celocli election:activate --from $CELO_GROUP_ADDRESS --wait
 ```
 
 Check that your votes were activated by re-running the following commands:
 
 ```bash
 # On your local machine
-celocli election:show $CELO_VALIDATOR_GROUP_ADDRESS --voter
-celocli election:show $CELO_VALIDATOR_ADDRESS --voter
+celocli election:show $CELO_GROUP_ADDRESS --voter
+celocli election:show $CELO_NODE_ADDRESS --voter
 ```
 
 #### Election
@@ -222,14 +245,14 @@ celocli election:list
 You can check the status of your validator, including whether it is elected and signing blocks, at [stats.celo.org](https://stats.celo.org/) or by running:
 
 ```bash
-celocli validator:status --validator $CELO_VALIDATOR_ADDRESS
+celocli validator:status --validator $CELO_NODE_ADDRESS
 ```
 
 You can see additional information about your validator, including uptime score, by running:
 
 ```bash
 # On your local machine
-celocli validator:show $CELO_VALIDATOR_ADDRESS
+celocli validator:show $CELO_NODE_ADDRESS
 ```
 
 #### Rewards
@@ -240,8 +263,8 @@ If your Validator Group elects validators, you will receive epoch rewards in the
 
 ```bash
 # On your local machine
-celocli lockedgold:show $CELO_VALIDATOR_GROUP_ADDRESS
-celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
+celocli lockedcelo:show $CELO_GROUP_ADDRESS
+celocli lockedcelo:show $CELO_NODE_ADDRESS
 ```
 
 ##### cUSD

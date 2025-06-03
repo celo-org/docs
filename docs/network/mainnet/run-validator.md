@@ -42,7 +42,7 @@ Because of the importance of Validator security and availability, Validators are
 
 Celo uses a [proof-of-stake](/what-is-celo/about-celo-l1/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/what-is-celo/about-celo-l1/validator/run/baklava)
+<!-- If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/what-is-celo/about-celo-l1/validator/run/baklava) -->
 
 We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO.
 
