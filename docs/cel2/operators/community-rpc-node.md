@@ -1,16 +1,8 @@
 # Running a Community RPC Node
 
-After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards.
+After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards. This guide assumes the node has ben properly [registered](/cel2/operators/registering-as-rpc-node).
 
-## Registering
-
-To register as an RPC provder, follow [the instructions](/cel2/operators/registering-as-rpc-node)
-
-## Run a node
-
-See the guides for [running a node](run-node.md) or the guide on [how to migrate a L1 node](migrate-node.md).
-
-## Register as RPC provider
+## Running the RPC node
 
 To register as a RPC provider, a public HTTPS URL needs to be registered on-chain, in a signed metadata file in the Celo Account.
 
@@ -110,71 +102,7 @@ Running a Celo Validator node requires the management of several different keys,
 
 Note that Account and all the signer keys must be unique and may not be reused.
 
-##### Generating Validator and Validator Group Keys
 
-First, you'll need to generate account keys for your Validator and Validator Group.
+## Starting the RPC node
 
-:::warning
-
-These keys will control your locked CELO, and thus should be handled with care.
-Store and back these keys up in a secure manner, as there will be no way to recover them if lost or stolen.
-
-:::
-
-```bash
-# On your local machine
-mkdir celo-accounts-node
-cd celo-accounts-node
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
-```
-
-This will create a new keystore in the current directory with two new accounts.
-Copy the addresses from the terminal and set the following environment variables:
-
-```bash
-# On your local machine
-export CELO_VALIDATOR_GROUP_ADDRESS=<YOUR-VALIDATOR-GROUP-ADDRESS>
-export CELO_VALIDATOR_ADDRESS=<YOUR-VALIDATOR-ADDRESS>
-```
-
-
-### Start your Accounts node
-
-Next, we'll run a node on your local machine so that we can use these accounts to lock CELO and authorize the keys needed to run your validator. To do this, we need to run the following command to run the node.
-
-```bash
-# On your local machine
-mkdir celo-accounts-node
-cd celo-accounts-node
-docker run --name celo-accounts -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --datadir /root/.celo
-```
-
-:::danger
-
-**Security**: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p 127.0.0.1:localport:containerport` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
-
-:::
-
-### Hardware requirements
-
-The recommended Celo Validator setup involves continually running three instances:
-
-- 1 **Validator node**: should be deployed to single-tenant hardware in a secure, high availability data center
-- 1 **Validator Proxy node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), but requires high availability
-<!-- - 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements -->
-
-Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
-
-#### Validator node
-
-- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
-- Memory: 32GB
-- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
-- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
-
-Some cloud instances that meet the above requirements are:
-
-- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
-- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
-- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
+To run the RPC endpoint required in this guide, refer to the  [Running a node guide](run-node.md).

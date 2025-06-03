@@ -4,12 +4,6 @@ This documents gives step-by-step instructions about how to register a RPC node 
 
 ## Prerequisites
 
-### Staking Requirements
-
-The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
-
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. TODO, how to get large requests?
-
 ### Software requirements
 
 - **You have celocli installed.**
@@ -24,6 +18,13 @@ Make sure to be in node version 18 or higher
 
 :::
 
+### Staking Requirements
+
+The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
+
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. TODO, how to get large requests?
+
+
 ### Key Management
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of assets.
@@ -32,13 +33,25 @@ This guide contains a large number of keys, so it is important to understand the
 
 ### Summary of keys involved
 
-| Account name           | Purpose                                                                                                | Owner entity  | Recommended storage |
-|------------------------|--------------------------------------------------------------------------------------------------------|---------------|---------------------|
-| CELO_GROUP_ADDRESS     | Accounts representing a group, with up to five nodes. It's the account that will receive votes.        | Group         | Cold                |
-| CELO_NODE_ADDRESS      | Account that represent a node.                                                                         | Node          | Cold                |
-| CELO_VALIDATOR_SINGER* | Account authorized to generate signers or deregister members or join/leave a group. It can be rotated. | Node operator | Hot                 |
+##### Account and Signer keys
 
-\* The name "validator" is legacy as it was used for Celo Validators when Celo was an L1.
+Running a RPC node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for changing URLs) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
+
+| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator, and attestation keys. Note that the account key also has all of the permissions of the other keys. |
+| Validator signer key*   | This is the key that has permission to register and manage a node or a Group.                                                                                                                                     |
+| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
+
+In this guide, the following addresses will be used:
+
+| Address name           | Purpose                                                                                                | Owner entity  | Recommended storage |
+|------------------------|--------------------------------------------------------------------------------------------------------|---------------|---------------------|
+| CELO_GROUP_ADDRESS     | Address representing a group, with up to five nodes. It's the account that will receive votes.         | Group         | Cold                |
+| CELO_NODE_ADDRESS      | Address that represent a node.                                                                         | Node          | Cold                |
+| CELO_VALIDATOR_SINGER* | Address authorized to generate signers or deregister members or join/leave a group. It can be rotated. | Node operator | Hot                 |
+
+\* The name "validator" is legacy, as it was used for Celo Validators when Celo was an L1. It is still used in this guide because the smart contracts still reference it.
 
 Groups and validators may be run by different entities. This guide assumes they are running by the same entity, but you can skip those if not relevant to your specific setup.
 
