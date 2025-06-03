@@ -1,8 +1,8 @@
-# Running a Community RPC Node
+# Operating a Community RPC Node
 
 After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards. This guide assumes the node has ben properly [registered](/cel2/operators/registering-as-rpc-node).
 
-## Running the RPC node
+## Registering the node url
 
 To register as a RPC provider, a public HTTPS URL needs to be registered on-chain, in a signed metadata file in the Celo Account.
 
@@ -81,28 +81,7 @@ Some use cases may require validators to track their CELO reward distribution fo
 Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations. Commision can be queried with [celocli validatorgroup:show](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupshow-arg1) and updated with [celocli validatorgroup:commission](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupcommission).
 
 
-#### Account Creation
 
-:::info
-
-Please complete this section if you are new to validating on Celo.
-
-:::
-
-##### Account and Signer keys
-
-Running a Celo Validator node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for signing blocks) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
-
-| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator, and attestation keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
-| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
-| Attestation signer key | This key is used to sign attestations in Celo's lightweight identity protocol.                                                                                                                                                                                   |
-
-Note that Account and all the signer keys must be unique and may not be reused.
-
-
-## Starting the RPC node
+## Starting the RPC node service
 
 To run the RPC endpoint required in this guide, refer to the  [Running a node guide](run-node.md).

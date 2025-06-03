@@ -270,7 +270,7 @@ const whatIsCeloSidebar = [
       },
       {
         type: "doc",
-        label: "Running a Community RPC Node",
+        label: "Operating a Community RPC Node",
         id: "cel2/operators/community-rpc-node",
       },
       {
