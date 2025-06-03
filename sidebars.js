@@ -257,6 +257,42 @@ const whatIsCeloSidebar = [
   },
   {
     type: "category",
+    label: "Community RPC Nodes",
+    collapsed: false,
+    items: [
+      // TODO add intro to RPC
+      // TODO también está https://docs.celo.org/cel2/operators/run-node?
+      // TODOs
+      {
+        type: "doc",
+        label: "Registering as a Community RPC Node",
+        id: "cel2/operators/registering-as-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Running a Community RPC Node",
+        id: "cel2/operators/community-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Community RPC Provider FAQ",
+        id: "cel2/operators/validator-rpc-faq",
+      },
+      {
+        type: "doc",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      // TODO
+      // {
+      //   type: "doc",
+      //   label: "Using public RPC nodes", 
+      //   id: "cel2/operators/community-rpc-node",
+      // },
+    ],
+  },
+  {
+    type: "category",
     label: "About Celo L1",
     items: [
       {
@@ -1247,23 +1283,6 @@ const celoL2Sidebar = [
         type: "doc",
         label: "Migrating an L1 Node",
         id: "cel2/operators/migrate-node",
-      },
-    ],
-  },
-  {
-    type: "category",
-    label: "Validators",
-    collapsed: false,
-    items: [
-      {
-        type: "doc",
-        label: "Running a Community RPC Node",
-        id: "cel2/operators/community-rpc-node",
-      },
-      {
-        type: "doc",
-        label: "Community RPC Provider FAQ",
-        id: "cel2/operators/validator-rpc-faq",
       },
     ],
   },
