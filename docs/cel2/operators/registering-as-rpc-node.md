@@ -8,7 +8,7 @@ This documents gives step-by-step instructions about how to register a RPC node 
 
 The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava or Alfajores testnets. TODO link to testnets. TODO how to get testnet Celo.
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. TODO, how to get large requests?
 
 ### Software requirements
 
@@ -21,16 +21,6 @@ If you do not have the required CELO to lock up, you can try out of the process 
 :::info
 
 Make sure to be in node version 18 or higher
-
-:::
-
-
-:::info
-
-A note about conventions:
-The code snippets you'll see on this page are bash commands and their output.
-
-When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
 
 :::
 
@@ -65,10 +55,24 @@ Check that your CELO was successfully locked with the following commands:
 
 Lock up CELO for both accounts in order to secure the right to register a Validator and Validator Group. The current requirement is 10,000 CELO to register a node. For nodes, this Celo remains locked for approximately 60 days following deregistration.
 
+
+:::info
+
+A note about conventions:
+The code snippets you'll see on this page are bash commands and their output.
+
+When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
+
+:::
+
 ```bash
 # On your local machine
 celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
 ```
+
+:::info
+The Celo CLI can be used with a ledger with the Celo Ledger app as shown in the [CLI docs](wallet/ledger/to-celo-cli#using-celocli). Alternatively, you can pass a private key directly with the `--privateKey` flag. Either of those can be used with any command that signs a transaction.
+:::
 
 #### Set up the Node Account
 
@@ -81,8 +85,6 @@ Lock up CELO with the  Group account. The current requirement is 10,000 CELO _pe
 celocli lockedcelo:lock --from $CELO_NODE_ADDRESS --value 10000e18
 ```
 
-TODO ledger
-TODO foundry migration
 
 ##### Create a Validator Signer
 
@@ -104,16 +106,6 @@ To actually register as a node, we need to create a proof that we have possessio
 # On your local machine
 celocli account:proof-of-possession --signer $CELO_VALIDATOR_SIGNER_ADDRESS --account $CELO_NODE_ADDRESS
 ```
-
-TODO ledger or private key
-
-:::info
-
-TODO to use a hardware wallet, please use the flags TODO
-
-:::
-
-
 
 ### Run for election
 
