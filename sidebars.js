@@ -602,6 +602,22 @@ const buildOnCeloSidebar = [
   },
   {
     type: "category",
+    label: "Celo MCPs",
+    items: [
+      {
+        type: "doc",
+        label: "Celo MCP Server",
+        id: "build/mcp/celo-mcp",
+      },
+      {
+        type: "doc",
+        label: "Composer MCP Server",
+        id: "build/mcp/composer-mcp",
+      },
+    ],
+  },
+  {
+    type: "category",
     label: "Build with AI",
     items: [
       {
