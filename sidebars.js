@@ -601,6 +601,11 @@ const buildOnCeloSidebar = [
     id: "build/quickstart",
   },
   {
+    type: "doc",
+    label: "Composer Kit UI",
+    id: "build/composer-kit",
+  },
+  {
     type: "category",
     label: "Celo MCPs",
     items: [
