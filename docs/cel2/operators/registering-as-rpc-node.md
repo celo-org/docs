@@ -83,7 +83,7 @@ The Celo CLI requires a RPC address to be used, you can specity the one run by C
 :::
 
 :::info
-The Celo CLI can be used with a ledger with the Celo Ledger app as shown in the [CLI docs](wallet/ledger/to-celo-cli#using-celocli). Alternatively, you can pass a private key directly with the `--privateKey` flag. Either of those can be used with any command that signs a transaction.
+The Celo CLI can be used with a ledger with the Celo Ledger app as shown in the [CLI docs](/wallet/ledger/to-celo-cli). Alternatively, you can pass a private key directly with the `--privateKey` flag. Either of those can be used with any command that signs a transaction.
 :::
 
 #### Set up the Node Account
