@@ -8,11 +8,9 @@ This documents gives step-by-step instructions about how to register a RPC node 
 
   Celo CLI needs to be installed in your local. See [Command Line Interface (CLI)](/cli/) for instructions on how to get set up.
 
-  TODO set the node to community RPC nodes.
-
 :::info
 
-Make sure to be in node version 18 or higher
+Make sure to be in node version 18 or higher.
 
 :::
 
@@ -20,7 +18,7 @@ Make sure to be in node version 18 or higher
 
 The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. TODO, how to get large requests?
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets.
 
 
 ### Key Management
@@ -81,8 +79,11 @@ $ celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
 ```
 
 :::info
-The Celo CLI can be used with a ledger with the Celo Ledger app as shown in the [CLI docs](wallet/ledger/to-celo-cli#using-
-$ celocli). Alternatively, you can pass a private key directly with the `--privateKey` flag. Either of those can be used with any command that signs a transaction.
+The Celo CLI requires a RPC address to be used, you can specity the one run by Celo Community RPC with `-n https://rpc.celo-community.org`
+:::
+
+:::info
+The Celo CLI can be used with a ledger with the Celo Ledger app as shown in the [CLI docs](wallet/ledger/to-celo-cli#using-celocli). Alternatively, you can pass a private key directly with the `--privateKey` flag. Either of those can be used with any command that signs a transaction.
 :::
 
 #### Set up the Node Account
