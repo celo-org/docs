@@ -5,7 +5,7 @@ description: Learn how to get started with MCP servers and implement the Model C
 
 # Model Context Protocol (MCP)
 
-[The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools.
+[The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed by Anthropic, the AI company behind Claude, to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools.
 
 ## Why MCP?
 
