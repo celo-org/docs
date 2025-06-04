@@ -1,6 +1,6 @@
 # Operating a Community RPC Node
 
-After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards. This guide assumes the node has ben properly [registered](/cel2/operators/registering-as-rpc-node).
+After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards. This guide assumes the node has been properly [registered](/cel2/operators/registering-as-rpc-node).
 
 ## Registering the node url
 
