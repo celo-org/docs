@@ -1,14 +1,12 @@
-## Active Validators
+# How it works
 
-The first set of active validators are determined in the genesis block. Thereafter at the end of every epoch, a fixed number of blocks fixed at network creation time, an election is run that may lead to validators being added or removed.
+The first set of active RPC providers were determined in the genesis block of Celo L2. Thereafter at the end of every epoch, approximately 24 hours, an election is run that may lead to nodes being added or removed from the elected set.
 
-![](https://storage.googleapis.com/celo-website/docs/concepts.jpg)
+## RPC Elections
 
-## Validator Elections
+In Celo's [RPC elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections) (formerly validator elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [Groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
 
-In Celo's [Validator Elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
-
-Before they can vote, holders of CELO move balances into the [Locked Gold](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
+Before they can vote, holders of CELO move balances into the [Locked Celo](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) (formerly "Celo Gold") smart contract. Locked Gold can be used concurrently for: placing votes in RPC nodes Elections, maintaining a stake to satisfy the requirements of registering as a node or group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
 :::tip note
 
