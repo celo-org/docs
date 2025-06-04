@@ -12,7 +12,6 @@ This page contains an explainer on transaction types supported on Celo and a dem
 > This repo is for educational purposes only. The information provided here may be inaccurate.
 > Please don't rely on it exclusively to implement low-level client libraries.
 
-
 :::warning
 As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
 Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
@@ -36,16 +35,16 @@ and a single Celo transaction type.
 
 ### Scheduled for support on Celo
 
-| Chain                                                                   | Transaction type        | #     | Specification                                       | Comment                                                                 |
-| ----------------------------------------------------------------------- | ----------------------- | ----- | --------------------------------------------------- | ----------------------------------------------------------------------- |
-| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Set code transaction    | `4`   | [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) | Available from the [Isthmus](/cel2/notices/isthmus-upgrade.md) hardfork |
+| Chain                                                                   | Transaction type     | #   | Specification                                       | Comment                                                                 |
+| ----------------------------------------------------------------------- | -------------------- | --- | --------------------------------------------------- | ----------------------------------------------------------------------- |
+| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Set code transaction | `4` | [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) | Available from the [Isthmus](/cel2/notices/isthmus-upgrade.md) hardfork |
 
-### Scheduled for deprecation on Celo
+### Deprecated on Celo
 
-| Chain                                                               | Transaction type        | #     | Specification                                                                                                  | Recommended | Support     | Comment                                                                                                                                                                                 |
-| ------------------------------------------------------------------- | ----------------------- | ----- | -------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Dynamic fee transaction | `124` | [CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md)                              | ❌          | Security 🟠 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) |
-| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Legacy transaction      | `0`   | Celo Mainnet launch ([Blockchain client v1.0.0](https://github.com/celo-org/celo-blockchain/tree/celo-v1.0.0)) | ❌          | Security 🟠 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) |
+| Chain                                                               | Transaction type        | #     | Specification                                                                                                  | 　 Support    | Comment                                                                                                                                                                                                                                             |
+| ------------------------------------------------------------------- | ----------------------- | ----- | -------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Dynamic fee transaction | `124` | [CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md)                              | Deprecated 🔴 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) and no longer supported following the transition to Celo L2 |
+| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Legacy transaction      | `0`   | Celo Mainnet launch ([Blockchain client v1.0.0](https://github.com/celo-org/celo-blockchain/tree/celo-v1.0.0)) | Deprecated 🔴 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) and no longer supported following the transition to Celo L2 |
 
 The stages of support are:
 
@@ -157,8 +156,9 @@ its transaction type and a relevant decoder.
 
 ### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Legacy transaction (`0`)
 
-> **NOTE**
-> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::note
+This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::
 
 Although legacy transactions are never formally prepended with the `0x00` transaction type,
 they are commonly referred to as "type 0" transactions.
@@ -179,8 +179,9 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Access list transaction (`1`)
 
-> **NOTE**
-> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::note
+This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::
 
 - This transaction is defined as follows:
 
@@ -199,8 +200,9 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Dynamic fee transaction (`2`)
 
-> **NOTE**
-> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::note
+This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::
 
 - This transaction is defined as follows:
 
@@ -219,8 +221,9 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Set code transaction (`4`)
 
-> **NOTE**
-> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::note
+This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+:::
 
 - This transaction is defined as follows:
 
@@ -237,14 +240,14 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Legacy transaction (`0`)
 
-> **NOTE**
-> This transaction is not compatible with Ethereum and has three Celo-specific
-> parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+:::danger
+This transaction type is no longer supported following the migration to Celo L2.
+:::
 
-> **Warning**
-> This transaction type is scheduled for deprecation. A deprecation warning was published in the
-> [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning)
-> on [Sep 26, 2023](https://forum.celo.org/t/mainnet-alfajores-gingerbread-hard-fork-release-sep-26-17-00-utc/6499).
+:::warning
+This transaction is not compatible with Ethereum and has three Celo-specific
+parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+:::
 
 - This transaction is defined as follows:
 
@@ -258,9 +261,14 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction (`124`)
 
-> **NOTE**
-> This transaction is not compatible with Ethereum and has three Celo-specific
-> parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+:::danger
+This transaction type is no longer supported following the migration to Celo L2.
+:::
+
+:::warning
+This transaction is not compatible with Ethereum and has three Celo-specific
+parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+:::
 
 > **Warning**
 > This transaction type is scheduled for deprecation. A deprecation warning was published in the
@@ -280,9 +288,10 @@ they are commonly referred to as "type 0" transactions.
 
 ### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction v2 (`123`)
 
-> **NOTE**
-> This transaction is not compatible with Ethereum and has one Celo-specific
-> parameter: `feecurrency`.
+:::warning
+This transaction is not compatible with Ethereum and has one Celo-specific
+parameter: `feecurrency`.
+:::
 
 - This transaction is defined as follows:
 
