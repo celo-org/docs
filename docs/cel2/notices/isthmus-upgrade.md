@@ -6,9 +6,9 @@ This page outlines breaking changes related to the Isthmus network upgrade for n
 
 This page will be kept updated with key information about the hardfork.
 
-- Baklava testnet activation is tentatively planned at `1749049861` on Wed, Jun 4, 2025, 15:11:01 UTC, around [37277000](https://celo-baklava.blockscout.com/block/countdown/37277000).
-- Alfajores testnet activation is tentatively planned at `1749654322` on Wed, Jun 11, 2025, 15:05:22 UTC, around block [48699000](https://celo-alfajores.blockscout.com/block/countdown/48699000). 
-- **Mainnet** activation is planned at **`1750863765`** on Wed, Jun 25, 2025, 15:02:45 UTC, around block [38963000](https://celo.blockscout.com/block/countdown/38963000).
+- Baklava testnet activation is tentatively planned at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
+- Alfajores testnet activation is tentatively planned at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
+- **Mainnet** activation is planned at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
 
 :::
 
