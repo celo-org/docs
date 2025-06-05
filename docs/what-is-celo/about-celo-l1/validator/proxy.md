@@ -30,9 +30,6 @@ The communication protocol between the validator and it's proxies implemented in
 
 There are two ways to specify the proxy information to a validator. It can be done on validator startup via the command line argument, or by the rpc api when the validator is running.
 
-## Command Line
-
-Instructions on how to add proxies via the command line is described in the [Getting Started guide for Mainnet](/what-is-celo/about-celo-l1/validator/run/mainnet#deploy-a-validator-machine).
 
 ## RPC API
 
