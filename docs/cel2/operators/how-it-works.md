@@ -1,6 +1,6 @@
 # How it works
 
-The first set of active RPC providers were determined in the genesis block of Celo L2. Thereafter at the end of every epoch, approximately 24 hours, an election is run that may lead to nodes being added or removed from the elected set.
+The first set of active RPC providers were determined in the genesis block of Celo L2. Thereafter at the end of every epoch, approximately 24 hours, an election is run that may lead to nodes being added or removed from the elected set. More info at [Epoch Rewards](/what-is-celo/using-celo/protocol/epoch-rewards).
 
 ## RPC Elections
 
