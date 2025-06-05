@@ -232,7 +232,8 @@ $ celocli election:list
 
 You can check the status of your node, including whether it is elected, by running:
 
-```bash$ celocli validator:status --validator $CELO_NODE_ADDRESS
+```bash
+$ celocli validator:status --validator $CELO_NODE_ADDRESS
 ```
 
 You can see additional information about your node, including uptime score, by running:
