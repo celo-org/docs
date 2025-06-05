@@ -57,7 +57,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/node/accounts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/node/accounts.ts)_
+_See docs: [celocli node:accounts](https://docs.celo.org/cli/node#celocli-nodeaccounts)_
 
 ## `celocli node:list`
 
