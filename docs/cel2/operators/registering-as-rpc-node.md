@@ -265,4 +265,6 @@ $ celocli lockedcelo:show $CELO_NODE_ADDRESS
 
 ##### cUSD
 
+This cUSD reward is for active validators and is based on their validator score, calculated as part of the L2 epoch rewards process (see `EpochRewards.calculateTargetEpochRewards()`). For more details, refer to the [L2 Epoch Rewards documentation](../../what-is-celo/using-celo/protocol/epoch-rewards/index.md).
+
 Instructions can be found [here](./community-rpc-node#claiming-rewards).
