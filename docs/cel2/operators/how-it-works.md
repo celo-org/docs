@@ -4,7 +4,7 @@ The first set of active RPC providers were determined in the genesis block of Ce
 
 ## RPC Elections
 
-In Celo's [RPC elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections) (formerly validator elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [Groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
+In Celo's [RPC elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections) (formerly validator elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not cast votes for validators directly, but instead vote for [Groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
 
 Before they can vote, holders of CELO move balances into the [Locked Celo](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) (formerly "Celo Gold") smart contract. Locked Gold can be used concurrently for: placing votes in RPC nodes Elections, maintaining a stake to satisfy the requirements of registering as a node or group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
