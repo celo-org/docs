@@ -2,6 +2,10 @@
 
 This documents gives step-by-step instructions about how to register a RPC node on chain to be eligible for rewards, for an overview of how elections work visit [How it works](how-it-works)
 
+:::info
+The name "validator" is legacy, as it was used for Celo Validators when Celo was an L1. It is still used in this guide because the smart contracts still reference it.
+:::
+
 ## Prerequisites
 
 ### Software requirements
@@ -22,8 +26,9 @@ If you do not have the required CELO to lock up, you can try out the process of 
 
 
 ### Key Management
-
+:::danger
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of assets.
+:::
 
 This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/what-is-celo/about-celo-l1/validator/key-management/summary)
 
@@ -36,7 +41,7 @@ Running a RPC node requires the management of several different keys, each with 
 | Name of the key        | Purpose                                                                                                                                                                                                                                                          |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator, and attestation keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key*   | This is the key that has permission to register and manage a node or a Group.                                                                                                                                     |
+| Validator signer key   | This is the key that has permission to register and manage a node or a Group.                                                                                                                                     |
 | Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
 
 In this guide, the following addresses will be used:
@@ -47,7 +52,6 @@ In this guide, the following addresses will be used:
 | CELO_NODE_ADDRESS      | Address that represent a node.                                                                         | Node          | Cold                |
 | CELO_VALIDATOR_SINGER* | Address authorized to generate signers or deregister members or join/leave a group. It can be rotated. | Node operator | Hot                 |
 
-\* The name "validator" is legacy, as it was used for Celo Validators when Celo was an L1. It is still used in this guide because the smart contracts still reference it.
 
 Groups and validators may be run by different entities. This guide assumes they are running by the same entity, but you can skip those if not relevant to your specific setup.
 
@@ -56,6 +60,11 @@ Groups and validators may be run by different entities. This guide assumes they 
 
 This amount (10,000 CELO) represents the minimum amount needed to be locked in order to register a Validator and Validator group. **Note that you will want to be sure to leave enough CELO unlocked to be able to continue to pay transaction fees for future transactions (such as those issued by running some CLI commands)**.
 Check that your CELO was successfully locked with the following commands:
+
+```bash
+$ celocli lockedcelo:show $CELO_GROUP_ADDRESS
+$ celocli lockedcelo:show $CELO_NODE_ADDRESS
+```
 
 
 #### Set up the Group Account
@@ -101,7 +110,8 @@ $ celocli lockedcelo:lock --from $CELO_NODE_ADDRESS --value 10000e18
 
 To actually register as a node, we'll need to generate a validating signer key. This account can be created in many ways, by exporting a private key from a wallet (like metamask), a hardware wallet or by running the following command:
 
-```bash# On the validator machine
+```bash
+# On the validator machine
 $ celocli account:new
 ```
 
