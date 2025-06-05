@@ -72,9 +72,6 @@ You can create a new private key with:
 
 The output field of `privateKey` should be stored in a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. Aditionally `WALLET_TYPE` should also be set to `PRIVATE_KEY`. This private key should have some CELO balance used for gas to sign the report transactions.
 
-### Setting up your keys in the node
-
-Instructions to generate an account and store it in the node can be found [here](/what-is-celo/about-celo-l1/validator/run/mainnet#key-management).
 
 ### Recommended configuration
 

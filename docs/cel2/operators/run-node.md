@@ -24,6 +24,27 @@ Storage size requirements will increase over time, especially for archive nodes.
 If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](#running-an-archive-node).
 :::
 
+### Networking requirements
+
+In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
+
+Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
+
+On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
+
+On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
+
+On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
+
+To illustrate this, you may refer to the following table:
+
+TODO table
+
+| Machine \\ IPs open to | 0\.0\.0\.0/0 \(all\) | your\-validator\-ip | your\-proxy\-ip |
+| ---------------------- | -------------------- | ------------------- | --------------- |
+| Validator              |                      |                     | tcp:30503       |
+| Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
+
 ## Run node with docker
 
 To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.

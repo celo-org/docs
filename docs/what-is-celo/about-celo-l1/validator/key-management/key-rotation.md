@@ -24,7 +24,7 @@ As detailed in [the Celo account roles description page](/what-is-celo/about-cel
 
 Because the Validator signer key is constantly in use to sign consensus messages, special care must be taken when authorizing a new Validator signer key. The following steps detail the recommended procedure for rotating the validator signer key of an active and elected validator:
 
-1. Create a new Validator instance as detailed in the [Deploy a Validator](/what-is-celo/about-celo-l1/validator/run/mainnet#deploy-a-validator-machine) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
+1. Create a new Validator instance as detailed in the [Deploy a Validator](/what-is-celo/about-celo-l1/validator/run/mainnet) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
 
 :::warning
 
