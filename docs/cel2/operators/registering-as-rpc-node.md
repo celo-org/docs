@@ -18,7 +18,7 @@ Make sure to be in node version 18 or higher.
 
 The current requirement is 10,000 CELO to register a RPC node, and 10,000 CELO _per member RPC_ to register a RPC Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. Theres a faucet for these [networks available](https://faucet.celo.org/alfajores), request for RPC providers should request it using the "Advanced Needs" form.
+If you do not have the required CELO to lock up, you can try out the process of creating a validator on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. There is a faucet for these [networks available](https://faucet.celo.org/alfajores). RPC providers should use the "Advanced Needs" form.
 
 
 ### Key Management
