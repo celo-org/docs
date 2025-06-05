@@ -6,7 +6,7 @@ This documents gives step-by-step instructions about how to register a RPC node 
 
 ### Software requirements
 
-  Celo CLI needs to be installed in your local. See [Command Line Interface (CLI)](/cli/) for instructions on how to get set up.
+Celo CLI needs to be installed in your local. See [Command Line Interface (CLI)](/cli/) for instructions on how to get set up.
 
 :::info
 
