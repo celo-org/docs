@@ -59,7 +59,8 @@ Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:
 
 #### Lending & Borrowing  
 
-- **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.  
+- **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.
+- **[PWN](https://pwn.xyz/)**  - Fixed rate lending
 
 #### Decentralized Exchanges (DEX)
 

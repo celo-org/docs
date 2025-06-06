@@ -24,5 +24,7 @@ Here are lists of all on-chain Oracles:
 - [Celo Reserve Oracles](/what-is-celo/about-celo-l1/protocol/stability/oracles)
 - [Supra](https://supraoracles.com/)
 - [Pyth Network](https://pyth.network/)
+  - Randomness
 - [Witnet](https://witnet.io/)
+  - Randomness
 - [Quex Oracles](/developer/oracles/quex-oracles)
