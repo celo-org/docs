@@ -31,7 +31,7 @@ Celo offers multiple stablecoin options for different use cases:
 
 | Stablecoin       | Issuer                                             | Use Case                                          |
 | ---------------- | -------------------------------------------------- | ------------------------------------------------- |
-| **cUSD**         | [Mento](https://www.mentolabs.xyz/products)        | Dollar-pegged digital cash                        |
+| **cUSD**         | [Mento](https://www.mentolabs.xyz/products)        | US Dollar-pegged digital cash                        |
 | **cEUR**         | [Mento](https://www.mentolabs.xyz/products)        | Euro-pegged stablecoin                            |
 | **cREAL**        | [Mento](https://www.mentolabs.xyz/products)        | Brazilian Real-pegged stablecoin                  |
 | **eXOF**         | [Mento](https://www.mentolabs.xyz/products)        | CFA Franc-pegged stablecoin                       |
