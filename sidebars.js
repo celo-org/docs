@@ -1264,11 +1264,6 @@ const celoL2Sidebar = [
         label: "Celo L2 Migration",
         id: "cel2/notices/l2-migration",
       },
-      {
-        type: "doc",
-        label: "L1 Pectra Upgrade",
-        id: "cel2/notices/pectra-upgrade",
-      },
     ],
   },
   {
