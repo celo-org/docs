@@ -57,16 +57,16 @@ Celo offers multiple stablecoin options for different use cases:
 | **COPM**         | [Minteo](https://minteo.com/)                                           | Fiat-backed Colombian Peso Stablecoin             |
 | **G$**           | [GoodDollar](https://www.gooddollar.org/)                               | UBI-focused stablecoin for financial inclusion    |
 
-### Examples of DeFi Applications on Celo  
+## Examples of DeFi Applications on Celo  
 
 Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:  
 
-#### Lending & Borrowing  
+### Lending & Borrowing  
 
 - **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.
 - **[PWN](https://pwn.xyz/)**  - Fixed rate lending
 
-#### Decentralized Exchanges (DEX)
+### Exchanges
 
 Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain exchanges check out the [bridges](/developer/bridges) and [cross-chain messaging](/developer/bridges/cross-chain-messaging) pages. 
 
@@ -76,7 +76,7 @@ Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain e
 - **[Carbon DeFi by Bancor](https://www.carbondefi.xyz/)** – Empowering users with onchain automation and superior orderbook-like features. 
 - 
 
-#### Liquidity Incentives  
+### Liquidity Incentives  
 
 - **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
 - **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
