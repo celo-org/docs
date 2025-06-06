@@ -49,7 +49,7 @@ Celo offers multiple stablecoin options for different use cases:
 | **USDT**         | [Tether](https://tether.to/en/)                    | Popular stablecoin on multiple blockchains        |
 | **USDC**         | [Circle](https://www.circle.com/usdc)              | Widely used stablecoin with high liquidity        |
 | **USDGLO**   | [Glo Foundation](https://www.glodollar.org/)       | Impact-driven stablecoin supporting global causes |
-| **Good Dollar**  | [GoodDollar](https://www.gooddollar.org/)          | UBI-focused stablecoin for financial inclusion    |
+| **G$**  | [GoodDollar](https://www.gooddollar.org/)          | UBI-focused stablecoin for financial inclusion    |
 | **USDM**         | [Mountain Protocol](https://mountainprotocol.com/) | Yield-bearing stablecoin                          |
 | **BRLA Digital** | [BRLA](https://brla.digital/)                      | Brazil-based stablecoin                           |
 
