@@ -29,29 +29,33 @@ The goal of Mento is simple: to provide a stable asset for every country in the 
 
 Celo offers multiple stablecoin options for different use cases:  
 
-| Stablecoin       | Issuer                                             | Use Case                                          |
-| ---------------- | -------------------------------------------------- | ------------------------------------------------- |
-| **cUSD**         | [Mento](https://www.mentolabs.xyz/products)        | US Dollar-pegged digital cash                        |
-| **cEUR**         | [Mento](https://www.mentolabs.xyz/products)        | Euro-pegged stablecoin                            |
-| **cREAL**        | [Mento](https://www.mentolabs.xyz/products)        | Brazilian Real-pegged stablecoin                  |
-| **eXOF**         | [Mento](https://www.mentolabs.xyz/products)        | CFA Franc-pegged stablecoin                       |
-| **cKES**         | [Mento](https://www.mentolabs.xyz/products)        | Kenya Shilling-pegged stablecoin                  |
-| **PUSO**         | [Mento](https://www.mentolabs.xyz/products)        | Philippine Peso-pegged stablecoin                 |
-| **cCOP**         | [Mento](https://www.mentolabs.xyz/products)        | Colombia Peso-pegged stablecoin                   |
-| **cGBP**         | [Mento](https://www.mentolabs.xyz/products)        | British Pound-pegged stablecoin                   |
-| **cCAD**         | [Mento](https://www.mentolabs.xyz/products)        | Canadian Dollar-pegged stablecoin                   |
-| **cAUD**         | [Mento](https://www.mentolabs.xyz/products)        | Australian Dollar-pegged stablecoin                   |
-| **cZAR**         | [Mento](https://www.mentolabs.xyz/products)        | South African Rand-pegged stablecoin                   |
-| **cGHS**         | [Mento](https://www.mentolabs.xyz/products)        | Ghanaian Cedi-pegged stablecoin                   |
-| **cNGN**         | [Mento](https://www.mentolabs.xyz/products)        | Nigerian Naira-pegged stablecoin                   |
-| **cJPY**         | [Mento](https://www.mentolabs.xyz/products)        | Japanese Yen-pegged stablecoin                   |
-| **cCHF**         | [Mento](https://www.mentolabs.xyz/products)        | Swiss Franc-pegged stablecoin                   |
-| **USDT**         | [Tether](https://tether.to/en/)                    | Popular stablecoin on multiple blockchains        |
-| **USDC**         | [Circle](https://www.circle.com/usdc)              | Widely used stablecoin with high liquidity        |
-| **USDGLO**   | [Glo Foundation](https://www.glodollar.org/)       | Impact-driven stablecoin supporting global causes |
-| **G$**  | [GoodDollar](https://www.gooddollar.org/)          | UBI-focused stablecoin for financial inclusion    |
-| **USDM**         | [Mountain Protocol](https://mountainprotocol.com/) | Yield-bearing stablecoin                          |
-| **BRLA Digital** | [BRLA](https://brla.digital/)                      | Brazil-based stablecoin                           |
+| Stablecoin       | Issuer                                                                  | Use Case                                          |
+| ---------------- | ----------------------------------------------------------------------- | ------------------------------------------------- |
+| **cUSD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | US Dollar-pegged digital cash                     |
+| **cEUR**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Euro-pegged stablecoin                            |
+| **cREAL**        | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Brazilian Real-pegged stablecoin                  |
+| **eXOF**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | CFA Franc-pegged stablecoin                       |
+| **cKES**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Kenya Shilling-pegged stablecoin                  |
+| **PUSO**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Philippine Peso-pegged stablecoin                 |
+| **cCOP**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Colombia Peso-pegged stablecoin                   |
+| **cGBP**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | British Pound-pegged stablecoin                   |
+| **cCAD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Canadian Dollar-pegged stablecoin                 |
+| **cAUD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Australian Dollar-pegged stablecoin               |
+| **cZAR**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | South African Rand-pegged stablecoin              |
+| **cGHS**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Ghanaian Cedi-pegged stablecoin                   |
+| **cNGN**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Nigerian Naira-pegged stablecoin                  |
+| **cJPY**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Japanese Yen-pegged stablecoin                    |
+| **cCHF**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Swiss Franc-pegged stablecoin                     |
+| **USDT**         | [Tether](https://tether.to/en/)                                         | Popular stablecoin on multiple blockchains        |
+| **USDC**         | [Circle](https://www.circle.com/usdc)                                   | Widely used stablecoin with high liquidity        |
+| **USDA**         | [Angle](https://www.angle.money/)                                       | Yield bearing USD stablecoin                      |
+| **USDM**         | [Mountain Protocol](https://mountainprotocol.com/)                      | Yield-bearing stablecoin                          |
+| **USDA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing USD stablecoin                      |
+| **EURA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing Euro stablecoin                     |
+| **USDGLO**       | [Glo Foundation](https://www.glodollar.org/)                            | Impact-driven stablecoin supporting global causes |
+| **BRLA Digital** | [BRLA](https://brla.digital/)                                           | Brazil-based stablecoin                           |
+| **COPM**         | [Minteo](https://minteo.com/)                                           | Fiat-backed Colombian Peso Stablecoin             |
+| **G$**           | [GoodDollar](https://www.gooddollar.org/)                               | UBI-focused stablecoin for financial inclusion    |
 
 ### Examples of DeFi Applications on Celo  
 
