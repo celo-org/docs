@@ -43,7 +43,7 @@ Node operators will need to upgrade to the respective Isthmus releases before th
 
 The releases contain the activation timestamps for Baklava and Alfajores.
 
-- `op-geth` at [v2.1.0-rc](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0-rc)
+- `op-geth` at [v2.1.0-rc2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0-rc2)
 - `op-node` at [v2.1.0-rc](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0-rc)
 
 #### Updating the EigenDA proxy
