@@ -6,8 +6,8 @@ This page outlines breaking changes related to the Isthmus network upgrade for n
 
 This page will be kept updated with key information about the hardfork.
 
-- Baklava testnet activation is tentatively planned at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
-- Alfajores testnet activation is tentatively planned at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
+- Baklava testnet activation was executed at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
+- Alfajores testnet activation is planned at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
 - **Mainnet** activation is planned at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
 
 :::
