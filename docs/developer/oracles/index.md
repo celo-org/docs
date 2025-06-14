@@ -18,11 +18,13 @@ Oracles are essential components in blockchain ecosystems, acting as bridges tha
 
 Here are lists of all on-chain Oracles:
 
-- [Band Protocol](/developer/oracles/band-protocol)
 - [RedStone Oracles](/developer/oracles/redstone)
+- [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
+- [Band Protocol](/developer/oracles/band-protocol)
 - [Celo Reserve Oracles](/what-is-celo/about-celo-l1/protocol/stability/oracles)
 - [Supra](https://supraoracles.com/)
-- [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
 - [Pyth Network](https://pyth.network/)
+  - Randomness
 - [Witnet](https://witnet.io/)
+  - Randomness
 - [Quex Oracles](/developer/oracles/quex-oracles)
