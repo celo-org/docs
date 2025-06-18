@@ -342,7 +342,7 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9)
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
 ### Alfajores
 
@@ -375,9 +375,9 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 - Container images:
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc3)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc3)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0-rc2)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
 ### Baklava
 
@@ -411,9 +411,9 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 - Container images:
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc4)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0-rc2)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
 ## Troubleshooting
 
