@@ -24,7 +24,7 @@ The protocol maintains a governable allowlist of smart contract addresses which 
 
 ## Allowlisted Gas Fee Addresses
 
-To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getCurrencies` method on the `FeeCurrencyDirectory` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
 
 ### Tokens with Adapters
 
@@ -150,7 +150,7 @@ async function main() {
 
   const estimatedGasPrice = await estimateGasInUSDC(transaction);
 
-  /* 
+  /*
     Transaction fee in USDC to perform the above transaction.
     This amount should not be transferrable in case the user tries to transfer the entire amount.
   */
@@ -220,7 +220,7 @@ async function send(amountInWei) {
 
   const tokenReceivedbyReceiver = parseEther("1") - transactionFee;
 
-  /* 
+  /*
     Now the data has to be encode again but with different transfer value because the receiver receives the amount minus the transaction fee.
   */
   const dataAfterFeeCalculation = encodeFunctionData({
