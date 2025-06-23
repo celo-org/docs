@@ -313,3 +313,13 @@ Supports over 130 blockchains, including CELO. Enables users to store, trade, an
 - Platforms: [iOS](https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484), [Android](https://play.google.com/store/apps/details?id=com.okx.wallet), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge), [Telegram](https://web.telegram.org/k/#@OKX_WALLET_BOT)
 - Maintainers: [OKX](https://okx.com/)
 - Source code is not available, although there are two repositories related and useful for developers: https://github.com/okx/go-wallet-sdk and https://github.com/okx/js-wallet-sdk
+
+---
+
+### [Gem Wallet](https://gemwallet.com/)
+
+Gem Wallet is a mobile wallet available on Android and iOS designed for DeFi. It is safe, user-friendly, self-custodial, open-source, and private. The wallet supports multiple blockchains including TON, Sui, Solana, Bitcoin, Ethereum, BNB, and more.
+
+- Homepage: [gemwallet.com](https://gemwallet.com/)
+- Platforms: iOS, Android
+- [Source Code](https://github.com/gemwalletcom)
