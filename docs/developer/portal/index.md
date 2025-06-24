@@ -3,9 +3,12 @@ title: Build with Portal
 description: A guide to embedding secure MPC wallets in your Celo application
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Build with Portal
 
-This guide covers how to use Portal to embed secure MPC wallets directly into your Celo applications, providing users with enhanced security and a seamless experience.
+This guide covers how to use Portal to embed secure MPC wallets in your Celo applications, providing users with enhanced security and a seamless experience.
 
 ## Overview
 
