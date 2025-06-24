@@ -3,9 +3,23 @@ title: MCP Server
 description: Learn how to get started with MCP servers and implement the Model Context Protocol
 ---
 
+import YouTube from '@components/YouTube';
+
 # Model Context Protocol (MCP)
 
 [The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed by Anthropic, the AI company behind Claude, to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools. This makes Claude natively compatible with all MPC servers. OpenAI has announced compatibility with the MCP standard, ensuring broad adoption across major AI platforms.
+
+## Celo specific MCPs:
+
+- [Celo MPC Server](./celo-mcp.md)
+  - Chain Info
+  - Governance Proposals
+- [Composer Kit MCP](./composer-mcp.md)
+  - starterkit
+  - components
+  - set up your project on Celo in minutes
+
+<YouTube videoId="7XInE4Ll0as"/>
 
 ## Why MCP?
 

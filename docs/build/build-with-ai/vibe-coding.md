@@ -13,28 +13,19 @@ Make sure you watch some tutorials and check out some X threads to understand ot
 
 ## Full Stack Development Tools
 
-These tools help you build complete applications with minimal setup and maximum efficiency.
+These tools help you build complete applications with minimal setup and maximum efficiency. We list here our favorite tools but this list will be updated continuously. Feel free to create a PR with your favorite tool and let us know why you think it's useful. 
 
 ### Application Generators
 
-#### [Tempo](https://www.tempo.new/)
-A powerful full-stack application generator with:
-- **Authentication**: Multiple authentication technology options
-- **Visual Planning**: Automatic user flow diagram generation
-- **Payment Integration**: Built-in support for Stripe and Polar
-- **Version Control**: Direct GitHub integration
-- **Limitations**: Currently no Next.js support
-
 #### [Bolt](https://bolt.new/)
-An IDE-integrated development tool featuring:
+
 - **Design Integration**: Native Figma support
 - **IDE Compatibility**: Runs directly in your development environment
 - **Backend Solutions**: Supabase integration for auth and database operations
 - **Version Control**: GitHub integration
-- **Note**: Requires separate payment integration setup
 
 #### [Lovable](https://lovable.dev/)
-Perfect for beginners with:
+
 - **Beginner-Friendly**: Simplified development process
 - **Backend Integration**: Supabase for authentication and database
 - **Version Control**: GitHub integration
@@ -43,7 +34,7 @@ Perfect for beginners with:
 ### Development Environments
 
 #### [Replit](https://replit.com/)
-A cloud-based development platform offering:
+
 - **Production-Ready**: Built-in production server
 - **Collaboration**: Real-time coding with team members
 - **Deployment**: One-click deployment options
@@ -78,7 +69,7 @@ A development environment with:
 
 Tools that help you gather and process information effectively.
 
-### AI-Powered Research
+### AI-Powered Research - HIGHLY Recommended
 - [Perplexity MCP](https://www.perplexity.ai/)
   - Web search capabilities
   - AI-powered reasoning
@@ -92,25 +83,6 @@ Tools that help you gather and process information effectively.
   - Automated data collection
   - Structured output
 
-## Getting Started
-
-1. **Choose Your Tools**
-   - Evaluate your project requirements
-   - Consider your experience level
-   - Check compatibility with your existing stack
-
-2. **Setup Process**
-   - Install necessary dependencies
-   - Configure your development environment
-   - Set up version control
-   - Initialize your project
-
-3. **Best Practices**
-   - Start with a clear project structure
-   - Implement version control from the beginning
-   - Document your setup process
-   - Regular backups and testing
-
 ## Additional Resources
 
-- [MCP Server Guide](/build/build-with-ai/mcp) - Learn more about MCP integration
+- [MCP Server Guide](/build/build-with-ai/mcp/mpc) - Learn more about MCP integration

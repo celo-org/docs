@@ -642,6 +642,11 @@ const buildOnCeloSidebar = [
     items: [
       {
         type: "doc",
+        label: "Intro to MCP Servers",
+        id: "build/mcp/mcp",
+      },
+      {
+        type: "doc",
         label: "Celo MCP Server",
         id: "build/mcp/celo-mcp",
       },
@@ -696,11 +701,6 @@ const buildOnCeloSidebar = [
         type: "doc",
         label: "Tools & Infra",
         id: "build/build-with-ai/tools",
-      },
-      {
-        type: "doc",
-        label: "MCP Servers",
-        id: "build/build-with-ai/mcp",
       },
       {
         type: "doc",
