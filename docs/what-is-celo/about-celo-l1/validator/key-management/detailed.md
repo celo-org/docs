@@ -28,7 +28,7 @@ Celo Accounts can be designated as Locked Gold Accounts or authorized as signer 
 
 In _most_ cases, the Locked CELO Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked CELO Account with both the authorized vote signer _and_ the Locked CELO Account.
 
-Because of the significant priveleges afforded to the Locked CELO Account, it is best to store this key securely and access it as infrequently as is possible. Authorizing other signers is one way to minimize how frequently you need to access your Locked CELO Account key. The Locked CELO Account key will only be used to send transactions and **can be stored on a Ledger hardware wallet.**
+Because of the significant privileges afforded to the Locked CELO Account, it is best to store this key securely and access it as infrequently as is possible. Authorizing other signers is one way to minimize how frequently you need to access your Locked CELO Account key. The Locked CELO Account key will only be used to send transactions and **can be stored on a Ledger hardware wallet.**
 
 ### Creating a Locked CELO Account
 

@@ -23,6 +23,7 @@ Be sure you understand and review the risks when swapping assets.
 
 - [Uniswap](https://app.uniswap.org/)
 - [Ubeswap](https://app.ubeswap.org/#/swap)
+- [Velodrome](https://velodrome.finance/) 
 - [Other Exchanges](https://coinmarketcap.com/currencies/celo/)
 
 #### Stablecoin Swaps
