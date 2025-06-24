@@ -1,16 +1,8 @@
-# Running a Community RPC Node
+# Operating a Community RPC Node
 
-After Celo Mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards.
+After Celo Mainnet transitions to L2, validators have transitioned to provide RPC nodes. Nodes that are eligible, registered and elected must run an independent RPC endpoints in order to be eligible for rewards. This guide assumes the node has been properly [registered](/cel2/operators/registering-as-rpc-node).
 
-## Registering
-
-To register as a validator, follow [the instructions](/what-is-celo/about-celo-l1/validator/run/mainnet#registering-as-a-validator). The only difference is that BLS signatures are not required.
-
-## Run a node
-
-See the guides for [running a node](run-node.md) or the guide on [how to migrate a L1 node](migrate-node.md).
-
-## Register as RPC provider
+## Registering the node url
 
 To register as a RPC provider, a public HTTPS URL needs to be registered on-chain, in a signed metadata file in the Celo Account.
 
@@ -59,9 +51,9 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
     $ celocli network:rpc-urls [--node $NETWORK]
     ```
 
-## Validator Rewards
+## Rewards
 
-### Claiming Validator Rewards
+### Claiming Rewards
 
 To receive validator rewards for running RPC nodes, the allocated epoch payment must be explicitly claimed using the CLI command below. Note that this command can be run by anyone, but rewards will be distributed according to the validator group's set commission rate.
 
@@ -87,3 +79,9 @@ Some use cases may require validators to track their CELO reward distribution fo
 ### Group Commission Considerations
 
 Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations. Commision can be queried with [celocli validatorgroup:show](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupshow-arg1) and updated with [celocli validatorgroup:commission](https://docs.celo.org/cli/validatorgroup#celocli-validatorgroupcommission).
+
+
+
+## Starting the RPC node service
+
+To run the RPC endpoint required in this guide, refer to the  [Running a node guide](run-node.md).

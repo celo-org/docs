@@ -46,13 +46,6 @@ docker stop -t 300 celo-fullnode
 docker rm celo-fullnode
 ```
 
-### Start the new node
-
-Start the new node using `docker run` as detailed in the appropriate section of the getting started guide. Remember to recover any environment variables, if using a new terminal, before running the documented commands.
-
-- [Full node](/what-is-celo/about-celo-l1/validator/run/mainnet#validator-node-setup)
-- [Accounts node](/what-is-celo/about-celo-l1/validator/run/mainnet#start-your-accounts-node)
-- [Proxy node](/what-is-celo/about-celo-l1/validator/run/mainnet#deploy-a-proxy)
 
 ## Upgrading a Validating Node
 

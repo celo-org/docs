@@ -21,7 +21,7 @@ for token in tokenlist["tokens"]:
     output.append(
         [
             token["symbol"],
-            token["name"],
+            token["name"].replace(" (Celo native bridge)", ""),
             f"L1: [{l1_address}](https://etherscan.io/token/{l1_address})"
             "<br />"
             f"L2: [{token['address']}](https://celoscan.io/token/{token['address']})"

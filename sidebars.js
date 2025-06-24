@@ -257,6 +257,42 @@ const whatIsCeloSidebar = [
   },
   {
     type: "category",
+    label: "Community RPC Nodes",
+    collapsed: false,
+    items: [
+      // TODO add intro to RPC
+      // TODO también está https://docs.celo.org/cel2/operators/run-node?
+      // TODOs
+      {
+        type: "doc",
+        label: "Registering as a Community RPC Node",
+        id: "cel2/operators/registering-as-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Operating a Community RPC Node",
+        id: "cel2/operators/community-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Community RPC Provider FAQ",
+        id: "cel2/operators/validator-rpc-faq",
+      },
+      {
+        type: "doc",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      // TODO
+      // {
+      //   type: "doc",
+      //   label: "Using public RPC nodes", 
+      //   id: "cel2/operators/community-rpc-node",
+      // },
+    ],
+  },
+  {
+    type: "category",
     label: "About Celo L1",
     items: [
       {
@@ -494,18 +530,13 @@ const whatIsCeloSidebar = [
                 label: "Mainnet Validator",
                 id: "what-is-celo/about-celo-l1/validator/run/mainnet",
               },
-              {
-                type: "doc",
-                label: "Baklava Validator",
-                id: "what-is-celo/about-celo-l1/validator/run/baklava",
-              },
+              // {
+              //   type: "doc",
+              //   label: "Baklava Validator",
+              //   id: "what-is-celo/about-celo-l1/validator/run/baklava",
+              // },
             ],
           },
-          // {
-          //   type: "doc",
-          //   label: "Attestation Service",
-          //   id: "validator/attestation",
-          // },
           {
             type: "category",
             label: "Key Management",
@@ -599,6 +630,27 @@ const buildOnCeloSidebar = [
     type: "doc",
     label: "Quickstart with Celo Composer",
     id: "build/quickstart",
+  },
+  {
+    type: "doc",
+    label: "Composer Kit UI",
+    id: "build/composer-kit",
+  },
+  {
+    type: "category",
+    label: "Celo MCPs",
+    items: [
+      {
+        type: "doc",
+        label: "Celo MCP Server",
+        id: "build/mcp/celo-mcp",
+      },
+      {
+        type: "doc",
+        label: "Composer MCP Server",
+        id: "build/mcp/composer-mcp",
+      },
+    ],
   },
   {
     type: "category",
@@ -1222,11 +1274,6 @@ const celoL2Sidebar = [
         label: "Celo L2 Migration",
         id: "cel2/notices/l2-migration",
       },
-      {
-        type: "doc",
-        label: "L1 Pectra Upgrade",
-        id: "cel2/notices/pectra-upgrade",
-      },
     ],
   },
   {
@@ -1257,23 +1304,6 @@ const celoL2Sidebar = [
         type: "doc",
         label: "Migrating an L1 Node",
         id: "cel2/operators/migrate-node",
-      },
-    ],
-  },
-  {
-    type: "category",
-    label: "Validators",
-    collapsed: false,
-    items: [
-      {
-        type: "doc",
-        label: "Running a Community RPC Node",
-        id: "cel2/operators/community-rpc-node",
-      },
-      {
-        type: "doc",
-        label: "Community RPC Provider FAQ",
-        id: "cel2/operators/validator-rpc-faq",
       },
     ],
   },

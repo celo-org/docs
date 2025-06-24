@@ -16,7 +16,7 @@ Oracles are a fundamental piece for Mento, the stability protocol behind Celo st
 
 ## Getting started
 
-Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/community/release-process/smart-contracts).
+Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/what-is-celo/joining-celo/contributors/release-process/smart-contracts).
 
 A [reference implementation](https://github.com/celo-org/celo-oracle) of such a client is written in TypeScript and would be used for this guide. Releases for this client can be found [here](https://github.com/celo-org/celo-oracle/releases).
 
@@ -72,9 +72,6 @@ You can create a new private key with:
 
 The output field of `privateKey` should be stored in a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. Aditionally `WALLET_TYPE` should also be set to `PRIVATE_KEY`. This private key should have some CELO balance used for gas to sign the report transactions.
 
-### Setting up your keys in the node
-
-Instructions to generate an account and store it in the node can be found [here](/what-is-celo/about-celo-l1/validator/run/mainnet#key-management).
 
 ### Recommended configuration
 
@@ -92,7 +89,7 @@ The only variable that is not set in the env file is `PRICE_SOURCES`. This sets 
 
 An example of such a file for CELO/USD is:
 
-```
+```js
 [
   [{ exchange: 'BITTREX', symbol: 'CELOUSD', toInvert: false }],
   [{ exchange: 'COINBASE', symbol: 'CELOUSD', toInvert: false }],

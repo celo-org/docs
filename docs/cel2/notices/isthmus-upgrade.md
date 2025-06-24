@@ -6,9 +6,9 @@ This page outlines breaking changes related to the Isthmus network upgrade for n
 
 This page will be kept updated with key information about the hardfork.
 
-- Baklava testnet activation tentatively planned on block [37277000](https://celo-baklava.blockscout.com/block/countdown/37277000), June 4, 2025, 15:00 UTC.
-- Alfajores testnet activation tentatively planned on block [48699000](https://celo-alfajores.blockscout.com/block/countdown/48699000), June 11, 2025, 15:00 UTC. 
-- **Mainnet** activation planned on block [**38963000**](https://celo.blockscout.com/block/countdown/38963000), June 25, 2025, 15:00 UTC.
+- Baklava testnet activation was executed at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
+- Alfajores testnet activation is planned at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
+- **Mainnet** activation is planned at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
 
 :::
 
@@ -34,3 +34,28 @@ Isthmus additionally enables the [Holocene hardfork](https://docs.optimism.io/no
 - **EIP-1559 configurability**: The elasticity and denominator EIP-1559 parameters become configurable via the SystemConfig L1 contract, allowing the gas target and gas limit to be configured independently.
 
 For more information on the Holocene details, please review [OP's Holocene specification](https://specs.optimism.io/protocol/holocene/overview.html).
+
+## For node operators
+
+Node operators will need to upgrade to the respective Isthmus releases before the activation dates.
+
+### Update to the latest release
+
+The releases contain the activation timestamps for Baklava and Alfajores.
+
+- `op-geth` at [v2.1.0-rc2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0-rc2)
+- `op-node` at [v2.1.0-rc](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0-rc)
+
+#### Updating the EigenDA proxy
+
+The Isthmus hardfork also prepares the Celo networks for the EigenDA v2 update.
+
+This means that operators need to make sure to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2).
+
+### Verify Your Configuration
+
+Make the following checks to verify that your node is properly configured.
+
+- op-node and op-geth will log their configurations at startup
+- Check that the Isthmus time is set to `activation-timestamp` in the `op-node` startup logs
+- Check that the Isthmus time is set to `activation-timestamp` in the `op-geth` startup logs
