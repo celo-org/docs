@@ -8,7 +8,7 @@ description: Learn how to set up your environment for Vibe Coding and discover t
 Vibe Coding refers to an approach to software development that combines AI-powered tools, streamlined workflows, and enhanced developer experience. This guide introduces you to a curated collection of tools that can significantly improve your development process, from full-stack application development to code editing and research.
 
 :::info
-Make sure you watch some tutorials and check out some X threads to understand other peoples setup. Being Successful with Vibe Coding relies on your preparation and setup. 
+Make sure you watch some tutorials and check out some X threads to understand other people's setup. Being successful with Vibe Coding relies on your preparation and setup. 
 :::
 
 ## Full Stack Development Tools
