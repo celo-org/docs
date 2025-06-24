@@ -1061,6 +1061,16 @@ const toolingSidebar = [
       },
       {
         type: "doc",
+        label: "Reown",
+        id: "developer/reown/index",
+      },
+      {
+        type: "doc",
+        label: "Portal",
+        id: "developer/portal/index",
+      },
+      {
+        type: "doc",
         label: "Particle Network",
         id: "developer/particle-network/index",
       },
@@ -1097,7 +1107,7 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "rainbowkit-celo (deprectated)",
+        label: "Rainbowkit",
         id: "developer/rainbowkit-celo/index",
       },
       {
