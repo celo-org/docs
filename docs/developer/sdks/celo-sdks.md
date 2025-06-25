@@ -25,5 +25,5 @@ Because Celo is compatible with Ethereum any ethereum package can be used with C
 ## Wallet Libraries
 
 - [Reown](../reown/index.md)
-- [Portal](../portal/index.mdx)
+- [Portal](../portal/index.md)
 - [Particle Network](../particle-network/index.md)
