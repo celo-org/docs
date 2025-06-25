@@ -48,7 +48,9 @@ Celo offers multiple stablecoin options for different use cases:
 | **cCHF**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Swiss Franc-pegged stablecoin                     |
 | **USDT**         | [Tether](https://tether.to/en/)                                         | Popular stablecoin on multiple blockchains        |
 | **USDC**         | [Circle](https://www.circle.com/usdc)                                   | Widely used stablecoin with high liquidity        |
-| **USDA**         | [Angle](https://www.angle.money/)                                       | Yield bearing USD stablecoin                      |
+| **vEUR**         | [VNX](https://vnx.li/)                                                  | Euro-pegged stablecoin                            |
+| **vGBP**         | [VNX](https://vnx.li/)                                                  | British Pound-pegged stablecoin                   |
+| **vCHF**         | [VNX](https://vnx.li/)                                                  | Swiss Franc-pegged stablecoin                     |
 | **USDM**         | [Mountain Protocol](https://mountainprotocol.com/)                      | Yield-bearing stablecoin                          |
 | **USDA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing USD stablecoin                      |
 | **EURA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing Euro stablecoin                     |
@@ -80,18 +82,18 @@ Find all Exchanges [here](/what-is-celo/using-celo/exchanges). For cross-chain e
 
 - **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
 - **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
-- **[Icchi](https://www.ichi.org/)** – Automated Liquidity Strategies for DeFi Yield.
+- **[Ichi](https://www.ichi.org/)** – Automated Liquidity Strategies for DeFi Yield.
 
 ### Oracles
 
-Oracles are a crucial part to get real time price information on tokens. Speed is crucail when it comes to building DeFi applicaations and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/developer/oracles).
+Oracles are a crucial part to get real time price information on tokens. Speed is crucial when it comes to building DeFi applications, and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/developer/oracles).
 
 - [RedStone Oracles](/developer/oracles/redstone)
 - [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
 
 ### Human-Centered Security Tools
 
-- **[Noves](https://docs.noves.fi/reference/api-overview)** - Deciphering on-chain activity and standardizing the results
+- **[Noves](https://docs.noves.fi/reference/api-overview)** - Deciphering onchain activity and standardizing the results
   - Human‑readable DeFi, ReFi & bridge txs
   - Pre‑sign safety simulations in any Celo wallet
   - Real‑time CELO / cUSD / stCELO pricing
@@ -100,4 +102,4 @@ Oracles are a crucial part to get real time price information on tokens. Speed i
 
 Developers and entrepreneurs can leverage Celo's infrastructure to build next-generation stablecoin applications.  
 
-By building on Celo, you're not just creating DeFi applications—you're enabling real-world financial inclusion and empowering users globally.  
+By building on Celo, you're not just creating DeFi applications, you're enabling real-world financial inclusion and empowering users globally.  
