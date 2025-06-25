@@ -2,10 +2,16 @@
 title: Vibe Coding
 description: Learn how to set up your environment for Vibe Coding and discover tools that enhance your development workflow
 ---
+import YouTube from '@components/YouTube';
+
 
 # Vibe Coding Tools
 
 Vibe Coding refers to an approach to software development where you use chat agents inside your IDE and build an application mainly by using prompts. This guide introduces you to a curated collection of tools that can significantly improve your development process, from full-stack application development to code editing and research.
+
+Watch a quick intro to Vibe Coding with the Celo MCP Servers. You can find out more about them in the [MCP section](../mcp/mcp.md). 
+
+<YouTube videoId="QOCO1G8cJyI"/>
 
 :::info
 Make sure you watch some tutorials and check out some X threads to understand other people's setup. Being successful with Vibe Coding relies on your preparation and setup. 
@@ -15,7 +21,7 @@ Make sure you watch some tutorials and check out some X threads to understand ot
 
 These tools help you build complete applications with minimal setup and maximum efficiency. We list here our favorite tools but this list will be updated continuously. Feel free to create a PR with your favorite tool and let us know why you think it's useful. 
 
-### Application Generators
+### Create a frontend with AI tools, no code
 
 #### [Bolt](https://bolt.new/)
 
@@ -65,9 +71,9 @@ A development environment with:
 - **Live Preview**: In-editor application preview
 - **Real-time Collaboration**: Team coding features
 
-## Research & Context Enhancement Tools
+## Research & Context Enhancement Tools - MCP Servers
 
-Tools that help you gather and process information effectively.
+Tools that help you gather and process information effectively, mainly MCPs. Add these to your Cursor!s
 
 ### AI-Powered Research - HIGHLY Recommended
 - [Perplexity MCP](https://www.perplexity.ai/)
