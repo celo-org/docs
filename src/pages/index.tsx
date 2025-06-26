@@ -71,7 +71,7 @@ export default function HomePage(): JSX.Element {
             </span>
             */}
             <Link
-              href={"https://docs.celo.org/build"}
+              href={"/build/mcp/celo-mcp"}
               className="flex space-x-2 items-center mt-2"
             >
               <span className="text-lg font-semibold">Start building</span>
@@ -94,26 +94,6 @@ export default function HomePage(): JSX.Element {
               Try Celo's new MCP Servers to iterate quickly using AI coding
               tools
             </p>
-            <Link
-              href={"/build/mcp/celo-mcp"}
-              className="flex space-x-2 items-center mt-2"
-            >
-              <span className="text-lg font-semibold">Celo MCP Guide</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg>
-            </Link>
           </div>
           <div className="flex justify-center md:w-1/2 w-full h-full ">
             <HeroImage />
@@ -165,6 +145,37 @@ export default function HomePage(): JSX.Element {
             </Translate>
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
+            <a
+              href="/developer/build/mcp/mcp"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.faucet.title">
+                  Build with Celo MCP Servers
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.faucet.description">
+                  Vibe Code your first Celo dApp with Celo MCP Servers
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+
             <a
               href="/developer/build-on-minipay/overview"
               target="_blank"
@@ -302,7 +313,7 @@ export default function HomePage(): JSX.Element {
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home2.section3.farcaster.celoLibraries.description">
-                  Create frames on Celo
+                  Create Farcaster MiniApps on Celo
                 </Translate>
               </span>
               <svg

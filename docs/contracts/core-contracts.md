@@ -3,7 +3,6 @@ title: Core Contracts
 id: core-contracts
 ---
 
-import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
 Core contract address proxies and implementations for the Celo network.
