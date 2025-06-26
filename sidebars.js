@@ -642,6 +642,11 @@ const buildOnCeloSidebar = [
     items: [
       {
         type: "doc",
+        label: "Intro to MCP Servers",
+        id: "build/mcp/mcp",
+      },
+      {
+        type: "doc",
         label: "Celo MCP Server",
         id: "build/mcp/celo-mcp",
       },
@@ -660,6 +665,11 @@ const buildOnCeloSidebar = [
         type: "doc",
         label: "Overview",
         id: "build/build-with-ai/overview",
+      },
+      {
+        type: "doc",
+        label: "Vibe Coding",
+        id: "build/build-with-ai/vibe-coding",
       },
       {
         type: "category",
@@ -720,11 +730,6 @@ const buildOnCeloSidebar = [
       },
     ],
   },
-  // {
-  //   type: "doc",
-  //   label: "Build with AI",
-  //   id: "developer/build-with-ai/overview",
-  // },
   {
     type: "category",
     label: "Build on MiniPay",

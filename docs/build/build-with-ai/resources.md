@@ -1,3 +1,9 @@
+---
+title: Resources for Building AI Agents on Celo
+description: Resources for learning how to craft intelligent, blockchain-powered agents on Celo.
+---
+
+
 # Resources for Building AI Agents on Celo
 
 Resources for learning how to craft intelligent, blockchain-powered agents on Celo.
@@ -58,19 +64,9 @@ For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/G
 - Most complete list of Frameworks and tools, created by [@chandan](https://x.com/chandan1_)
     - [AIAgentToolkit.xyz](http://aiagenttoolkit.xyz/)
 - Celo - [Getting Started with AI Agents](https://docs.celo.org/build/build-with-ai/overview)
-- Safe Agentathon Partners:
-    - [Brahma ConsoleKit: Safe Agentathon Guide](https://www.notion.so/18ea53ecb04c80649c4be0657c031959?pvs=21)
-    - Automating DeFi across chains: https://www.enso.build/
 - [Mode Network Hackathon Starter Kit](https://www.notion.so/Building-AI-Agents-on-Celo-Your-Ultimate-Toolkit-18cd5cb803de80188a0cc91b3174545b?pvs=21)
 - [The AI Model Layer of Crypto](https://cryptopond.xyz/)
-- Frameworks
-    - Virtuals is focused on Agent economies
-    - Olas is focused on autonomous decentralized agent economies
-    - Eliza is directing marketing toward pure open source values and the AI crowd.
-    - ZerePy is the most accessible framework for people looking to get started in Python
-- TEEs (trusted execution environments)
-- SDK & APIs
-    - GOAT
+- [12-Factor Agents - Principles for building reliable LLM applications](https://github.com/humanlayer/12-factor-agents)
 
 
 ### 📖 Articles
