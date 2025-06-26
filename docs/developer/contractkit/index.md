@@ -3,8 +3,6 @@ title: Celo ContractKit
 description: Overview of ContractKit, its features, purpose, and resources to help you get started.
 ---
 
-import PageRef from '@components/PageRef'
-
 # ContractKit
 
 Overview of ContractKit, its features, purpose, and resources to help you get started.
