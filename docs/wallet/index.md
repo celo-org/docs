@@ -313,3 +313,14 @@ Supports over 130 blockchains, including CELO. Enables users to store, trade, an
 - Platforms: [iOS](https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484), [Android](https://play.google.com/store/apps/details?id=com.okx.wallet), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge), [Telegram](https://web.telegram.org/k/#@OKX_WALLET_BOT)
 - Maintainers: [OKX](https://okx.com/)
 - Source code is not available, although there are two repositories related and useful for developers: https://github.com/okx/go-wallet-sdk and https://github.com/okx/js-wallet-sdk
+
+---
+
+### [Portal](https://portalhq.io/)
+
+Portal is an MPC wallet provider and web3 developer platform. You can use Portal to create embedded MPC wallets for users and the Portal SDK to build out the web3 functionality for your application.
+
+- Homepage: [portalhq.io](https://portalhq.io/)
+- Platforms: [iOS](https://docs.portalhq.io/guides/ios), [Android](https://docs.portalhq.io/guides/android), [Browser](https://docs.portalhq.io/guides/web), [Flutter](https://docs.portalhq.io/resources/flutter), [API](https://docs.portalhq.io/guides/enclave-mpc-api), [React Native](https://docs.portalhq.io/guides/react-native)
+- Maintainers: [Portal](https://portalhq.io/)
+- [Documentation](https://docs.portalhq.io/)
