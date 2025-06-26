@@ -167,6 +167,11 @@ const whatIsCeloSidebar = [
       },
       {
         type: "doc",
+        label: "Ramps",
+        id: "what-is-celo/using-celo/ramps",
+      },
+      {
+        type: "doc",
         label: "Glossary",
         id: "what-is-celo/using-celo/glossary",
       },
