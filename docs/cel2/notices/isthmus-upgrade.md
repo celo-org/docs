@@ -12,6 +12,10 @@ This page will be kept updated with key information about the hardfork.
 
 :::
 
+:::warning
+If you're encountering a stuck node after Alfajores hardfork block (49908280), see the [FAQ](../faq.md#my-alfajores-node-stalled-at-the-isthmus-hardfork-block-49908280).
+:::
+
 ## What's included in Isthmus
 
 Isthmus contains these main changes:
