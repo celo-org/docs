@@ -1,6 +1,3 @@
-const { link } = require("fs");
-const { type } = require("os");
-
 const whatIsCeloSidebar = [
   { type: "doc", label: "Overview", id: "what-is-celo/index" },
   {
