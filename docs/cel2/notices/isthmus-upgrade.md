@@ -10,21 +10,10 @@ This page will be kept updated with key information about the hardfork.
 - Alfajores testnet activation was executed at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
 - **Mainnet** activation is planned at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
 
-:::warning
-Some operators whose nodes reached the Alfajores hardfork (block 49908280)
-before upgrading to v2.1.0 have noticed that their nodes get stuck and remain
-stuck even after upgrading to v2.1.0.
-
-This can be resolved by upgrading both op-geth and op-node to v2.1.0, stopping
-op-node, rewinding the op-geth head to before the hardfork and starting
-op-node again.
-
-To rewind the head, you can use:
-
-```
-cast rpc -r <op-geth-node-address> debug_setHead 49908270
-```
 :::
+
+:::warning
+If you're encountering a stuck node after Alfajores hardfork block (49908280), see the [FAQ](../faq.md#my-alfajores-node-stalled-at-the-isthmus-hardfork-block-(49908280)).
 :::
 
 ## What's included in Isthmus
