@@ -1,3 +1,8 @@
+---
+title: Reown
+description: Overview of Reown
+---
+
 # Reown (prev. known as WalletConnect)
 
 **[Reown](https://reown.com/?utm_source=celo&utm_medium=docs&utm_campaign=backlinks)** gives developers the tools to build user experiences that make digital ownership effortless, intuitive, and secure.

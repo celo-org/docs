@@ -166,7 +166,7 @@ Next, register your Validator by running the following command. Note that becaus
 $ celocli`](https://docs.celo.org/cli) on the Validator machine.
 
 ```bash
-$ celocli validator:register --from $CELO_NODE_ADDRESS --ecdsaKey $CELO_VALIDATOR_SIGNER_PUBLIC_KEY --blsKey $CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY --blsSignature $CELO_VALIDATOR_SIGNER_BLS_SIGNATURE
+$ celocli validator:register --from $CELO_NODE_ADDRESS --ecdsaKey $CELO_VALIDATOR_SIGNER_PUBLIC_KEY
 ```
 
 #### Affiliate the node to the group

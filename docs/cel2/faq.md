@@ -3,6 +3,22 @@ title: Cel2 FAQ
 description: Frequently Asked Questions about Cel2
 ---
 
+## Isthmus
+
+### My Alfajores node stalled at the Isthmus hardfork block (49908280)
+
+If you reached the hardfork block before upgrading to v2.1.0 your node can get stuck.
+
+This can be resolved by upgrading both op-geth and op-node to v2.1.0, stopping
+op-node, rewinding the op-geth head to before the hardfork and starting
+op-node again.
+
+To rewind the head you can use:
+
+```
+cast rpc -r <op-geth-node-address> debug_setHead 49908270
+```
+
 ## Mainnet
 
 ### When is Celo mainnet becoming an L2?

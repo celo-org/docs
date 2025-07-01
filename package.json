@@ -39,8 +39,6 @@
     "clsx": "^2.1.1",
     "crypto-browserify": "^3.12.1",
     "docusaurus-plugin-fathom": "^1.2.0",
-    "fs": "^0.0.1-security",
-    "hast-util-is-element": "3.0.0",
     "https-browserify": "^1.0.0",
     "mermaid": "^11.5.0",
     "net": "^1.0.2",
@@ -61,7 +59,6 @@
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "tailwindcss": "^4.0.14",
-    "unist-util-visit": "^5.0.0",
     "url": "^0.11.4"
   },
   "browserslist": {

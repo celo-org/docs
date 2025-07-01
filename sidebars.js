@@ -1,6 +1,3 @@
-const { link } = require("fs");
-const { type } = require("os");
-
 const whatIsCeloSidebar = [
   { type: "doc", label: "Overview", id: "what-is-celo/index" },
   {
@@ -164,6 +161,11 @@ const whatIsCeloSidebar = [
         type: "doc",
         label: "Exchanges",
         id: "what-is-celo/using-celo/exchanges",
+      },
+      {
+        type: "doc",
+        label: "Ramps",
+        id: "what-is-celo/using-celo/ramps",
       },
       {
         type: "doc",
@@ -642,6 +644,11 @@ const buildOnCeloSidebar = [
     items: [
       {
         type: "doc",
+        label: "Intro to MCP Servers",
+        id: "build/mcp/mcp",
+      },
+      {
+        type: "doc",
         label: "Celo MCP Server",
         id: "build/mcp/celo-mcp",
       },
@@ -660,6 +667,11 @@ const buildOnCeloSidebar = [
         type: "doc",
         label: "Overview",
         id: "build/build-with-ai/overview",
+      },
+      {
+        type: "doc",
+        label: "Vibe Coding",
+        id: "build/build-with-ai/vibe-coding",
       },
       {
         type: "category",
@@ -720,11 +732,6 @@ const buildOnCeloSidebar = [
       },
     ],
   },
-  // {
-  //   type: "doc",
-  //   label: "Build with AI",
-  //   id: "developer/build-with-ai/overview",
-  // },
   {
     type: "category",
     label: "Build on MiniPay",
@@ -1113,6 +1120,16 @@ const toolingSidebar = [
       },
       {
         type: "doc",
+        label: "Reown",
+        id: "developer/reown/index",
+      },
+      {
+        type: "doc",
+        label: "Portal",
+        id: "developer/portal/index",
+      },
+      {
+        type: "doc",
         label: "Particle Network",
         id: "developer/particle-network/index",
       },
@@ -1149,7 +1166,7 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "rainbowkit-celo (deprectated)",
+        label: "Rainbowkit",
         id: "developer/rainbowkit-celo/index",
       },
       {

@@ -7,9 +7,13 @@ This page outlines breaking changes related to the Isthmus network upgrade for n
 This page will be kept updated with key information about the hardfork.
 
 - Baklava testnet activation was executed at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
-- Alfajores testnet activation is planned at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
+- Alfajores testnet activation was executed at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
 - **Mainnet** activation is planned at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
 
+:::
+
+:::warning
+If you're encountering a stuck node after Alfajores hardfork block (49908280), see the [FAQ](../faq.md#my-alfajores-node-stalled-at-the-isthmus-hardfork-block-49908280).
 :::
 
 ## What's included in Isthmus
@@ -41,10 +45,10 @@ Node operators will need to upgrade to the respective Isthmus releases before th
 
 ### Update to the latest release
 
-The releases contain the activation timestamps for Baklava and Alfajores.
+The release contains the activation timestamps for Celo Mainnet, Baklava and Alfajores.
 
-- `op-geth` at [v2.1.0-rc2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0-rc2)
-- `op-node` at [v2.1.0-rc](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0-rc)
+- `op-geth` at [v2.1.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0)
+- `op-node` at [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0)
 
 #### Updating the EigenDA proxy
 
