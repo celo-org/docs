@@ -54,7 +54,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'The Celo Isthmus hardfork is coming. <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/isthmus-upgrade">Learn more about the upgrade</a>.',
+        'The <a href="/cel2/eclair/index">Celo Eclair testnet is live</a> and the <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/isthmus-upgrade">Celo Isthmus hardfork is coming</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
