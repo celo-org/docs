@@ -1266,6 +1266,7 @@ const celoL2Sidebar = [
     label: "Overview",
     id: "cel2/index",
   },
+  { type: "doc", label: "Celo Eclair Testnet", id: "cel2/eclair/index" },
   {
     type: "category",
     label: "Notices",
