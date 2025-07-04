@@ -4,6 +4,8 @@ title: Composer Kit MCP Server
 
 The **Composer Kit MCP Server** is a Model Context Protocol (MCP) server that provides comprehensive access to Composer Kit UI components documentation, examples, and usage information. This powerful tool enables AI assistants and development environments to access the complete Composer Kit React component library designed for building web3 applications on the Celo blockchain.
 
+> Watch [this step-by-step vibe coding tutorial](https://www.youtube.com/watch?v=QOCO1G8cJyI) using the Celo Composer Kit MCP to create a token claim dApp in minutes!
+
 ## Key Features
 
 - 🧩 **Component Library Access**: Complete documentation for all Composer Kit UI components
