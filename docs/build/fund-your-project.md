@@ -22,29 +22,31 @@ Here’s how you can get started:
   
  1. **Create a project profile on [Karma GAP](https://docs.gap.karmahq.xyz/how-to-guides/integrations/celo-proof-of-ship)**: Build credibility by showcasing your contributions and activity.
 
- 1. **Apply for monthly rewards with [Proof of Ship](https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8)** Demonstrate consistent progress for automated retroactive rewards.
+ 1. **Apply for monthly rewards with [Proof of Ship](https://celo-devs.beehiiv.com/subscribe)** Demonstrate consistent progress for automated retroactive rewards.
 
 ## Apply for Grant Opportunities
 
 There are various grant opportunities for builders in the Celo ecosystem, with funding available at different stages of your project. To maximize your chances of receiving rewards, include your Karma GAP project profile when applying.
 
- 1. [Prezenti Grants](https://www.prezenti.xyz/)
+ 1. **[Prezenti Grants](https://www.prezenti.xyz/)**
 
- 2. [CPG Gitcoin Grants](https://www.celopg.eco/programs)
+ 2. **[Celo Support Streams](https://www.celopg.eco/programs)**: Submit your Support Stream application and earn bi-weekly CELO incentive budgets
 
- 3. [CPG Retroactive Funding](https://www.celopg.eco/programs)
+ 3. **[CPG Retroactive Funding](https://www.celopg.eco/programs)**
 
 ## Ecosystem-Led Funding Opportunities
 
 Expand your funding sources with ecosystem partner initiatives.
 
-   1. **[Divvi](https://www.divvi.xyz/)**: Automate gas fee revenue splits to fund your app.
+   1. **[Proof of Impact](https://www.divvi.xyz/)**: Automate gas fee revenue splits to fund your app.
 
-   2. **[Commons Builder Income](https://www.commonsprotocol.xyz/)**: Apply for CBI and earn daily rewards.
+   2.  [Builder Rewards - Celo PG x Talent Protocol](https://www.celopg.eco/programs) - 10.000 CELO/ month
 
-   3. **[GoodBuilders Program](https://gooddollar.notion.site/GoodBuilders-Program-1a6f258232f080fea8a6e3760bb8f53d)**: A year-long initiative offering \$220k in rewards for building with G$.
+   3. **[Commons Builder Income](https://www.commonsprotocol.xyz/)**: Apply for CBI and earn daily rewards
 
-   4. **[Glo Dollar Liquidity Flywheel](https://www.glodollar.org/articles/glo-dollar-and-celo-public-goods)**: Around $40,000 will be donated to Celo Public Goods, thanks to a $1M Glo Dollar (USDGLO) holding from Mento. Projects that increase Glo Dollar liquidity will receive more funding.
+   4. **[GoodBuilders Program](https://gooddollar.notion.site/GoodBuilders-Program-1a6f258232f080fea8a6e3760bb8f53d)**: A year-long initiative offering \$220k in rewards for building with G$.
+
+   5. **[Glo Dollar Liquidity Flywheel](https://www.glodollar.org/articles/glo-dollar-and-celo-public-goods)**: Around $40,000 will be donated to Celo Public Goods, thanks to a $1M Glo Dollar (USDGLO) holding from Mento. Projects that increase Glo Dollar liquidity will receive more funding.
 
 ## Accelerators/ Incubators
 
