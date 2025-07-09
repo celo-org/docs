@@ -78,8 +78,7 @@ Once the project is running, you’ll see the first NFT displayed along with a d
 
 ## Join Build with Celo - Proof of Ship
 
-1. Create your application using an audited contract on Thirdweb.
-2. Check the Github repo [Proof-of-Ship](https://github.com/celo-org/Proof-of-Ship?tab=readme-ov-file).
-3. Sign up to join [Build with Celo - Proof of Ship](https://celo.lemonade.social/events).
-4. You can win up to **`5k cUSD`**.
-5. Build with **`Celo`**.
+1. Create a project profile on [Karma GAP](https://docs.gap.karmahq.xyz/how-to-guides/integrations/celo-proof-of-ship)**.
+2. Sign up to join [Proof of Ship](https://celo-devs.beehiiv.com/subscribe).
+3. You can win up to **`5k cUSD`** + Track Bounties.
+4. Build with **`Celo`**.
