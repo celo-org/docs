@@ -1,7 +1,7 @@
 `celocli lockedcelo`
 ====================
 
-Delegate locked celo.
+View and manage locked CELO
 
 * [`celocli lockedcelo:delegate`](#celocli-lockedcelodelegate)
 * [`celocli lockedcelo:delegate-info`](#celocli-lockedcelodelegate-info)
@@ -80,7 +80,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate.ts)_
+_See code: [lib/commands/lockedcelo/delegate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/delegate.js)_
 
 ## `celocli lockedcelo:delegate-info`
 
@@ -142,7 +142,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/delegate-info.ts)_
+_See code: [lib/commands/lockedcelo/delegate-info.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/delegate-info.js)_
 
 ## `celocli lockedcelo:lock`
 
@@ -207,7 +207,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/lock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/lock.ts)_
+_See code: [lib/commands/lockedcelo/lock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/lock.js)_
 
 ## `celocli lockedcelo:max-delegatees-count`
 
@@ -265,7 +265,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/max-delegatees-count.ts)_
+_See code: [lib/commands/lockedcelo/max-delegatees-count.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/max-delegatees-count.js)_
 
 ## `celocli lockedcelo:revoke-delegate`
 
@@ -334,7 +334,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/revoke-delegate.ts)_
+_See code: [lib/commands/lockedcelo/revoke-delegate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/revoke-delegate.js)_
 
 ## `celocli lockedcelo:show ARG1`
 
@@ -372,7 +372,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/show.ts)_
+_See code: [lib/commands/lockedcelo/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/show.js)_
 
 ## `celocli lockedcelo:unlock`
 
@@ -439,7 +439,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/unlock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/unlock.ts)_
+_See code: [lib/commands/lockedcelo/unlock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/unlock.js)_
 
 ## `celocli lockedcelo:update-delegated-amount`
 
@@ -506,7 +506,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/update-delegated-amount.ts)_
+_See code: [lib/commands/lockedcelo/update-delegated-amount.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/update-delegated-amount.js)_
 
 ## `celocli lockedcelo:withdraw`
 
@@ -569,4 +569,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/lockedcelo/withdraw.ts)_
+_See code: [lib/commands/lockedcelo/withdraw.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/lockedcelo/withdraw.js)_

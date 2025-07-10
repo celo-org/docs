@@ -12,27 +12,13 @@ Output network node configuration
 
 ```
 USAGE
-  $ celocli config:get [-n <value>] [--globalHelp]
-
-FLAGS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-      --globalHelp    View all available global flags
+  $ celocli config:get
 
 DESCRIPTION
   Output network node configuration
-
-FLAG DESCRIPTIONS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-
-    Can be a full url like https://forno.celo.org or an alias. default:
-    http://localhost:8545
-    Alias options:
-    local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
-    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/config/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/get.ts)_
+_See code: [lib/commands/config/get.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/config/get.js)_
 
 ## `celocli config:set`
 
@@ -40,15 +26,13 @@ Configure running node information for propagating transactions to network
 
 ```
 USAGE
-  $ celocli config:set [-n <value>] [--globalHelp] [--derivationPath <value>]
-    [--telemetry 1|0]
+  $ celocli config:set [-n <value>] [--derivationPath <value>] [--telemetry 1|0]
 
 FLAGS
   -n, --node=<value>            URL of the node to run commands against or an alias
       --derivationPath=<value>  Set the default derivation path used by account:new and
                                 when using --useLedger flag. Options: 'eth',
                                 'celoLegacy', or a custom derivation path
-      --globalHelp              View all available global flags
       --telemetry=<option>      Whether to enable or disable telemetry
                                 <options: 1|0>
 
@@ -93,4 +77,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/config/set.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/set.ts)_
+_See code: [lib/commands/config/set.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/config/set.js)_
