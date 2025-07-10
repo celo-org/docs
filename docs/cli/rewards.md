@@ -14,9 +14,9 @@ USAGE
   $ celocli rewards:show [-n <value>] [--globalHelp] [--estimate] [--voter
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--validator
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--group
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--slashing] [--epochs <value>]
-    [--columns <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]]
-    [--output csv|json|yaml |  | ] [--sort <value>]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--epochs <value>] [--columns <value> |
+    -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
   -n, --node=<value>                                          URL of the node to run
@@ -45,8 +45,6 @@ FLAGS
       --output=<option>                                       output in a more machine
                                                               friendly format
                                                               <options: csv|json|yaml>
-      --slashing                                              Show rewards for slashing
-                                                              (will be removed in L2)
       --sort=<value>                                          property to sort by
                                                               (prepend '-' for
                                                               descending)
@@ -71,4 +69,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/rewards/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/rewards/show.ts)_
+_See code: [lib/commands/rewards/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/rewards/show.js)_

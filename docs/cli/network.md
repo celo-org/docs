@@ -94,7 +94,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/contracts.ts)_
+_See code: [lib/commands/network/contracts.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/network/contracts.js)_
 
 ## `celocli network:info`
 
@@ -123,7 +123,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/info.ts)_
+_See code: [lib/commands/network/info.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/network/info.js)_
 
 ## `celocli network:parameters`
 
@@ -153,7 +153,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/parameters.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/parameters.ts)_
+_See code: [lib/commands/network/parameters.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/network/parameters.js)_
 
 ## `celocli network:rpc-urls`
 
@@ -242,4 +242,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/whitelist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/whitelist.ts)_
+_See code: [lib/commands/network/whitelist.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/network/whitelist.js)_

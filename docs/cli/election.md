@@ -81,11 +81,11 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/activate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/activate.ts)_
+_See code: [lib/commands/election/activate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/activate.js)_
 
 ## `celocli election:current`
 
-Outputs the set of validators currently participating in BFT to create blocks. An election is run to select the validator set at the end of every epoch.
+Outputs the set of rpc nodes currently elected. An election is run to select the community rpc node set at the end of every epoch.
 
 ```
 USAGE
@@ -151,8 +151,8 @@ FLAGS
       are shown). Useful for checking if keys have been rotated.
 
 DESCRIPTION
-  Outputs the set of validators currently participating in BFT to create blocks. An
-  election is run to select the validator set at the end of every epoch.
+  Outputs the set of rpc nodes currently elected. An election is run to select the
+  community rpc node set at the end of every epoch.
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -165,7 +165,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/current.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/current.ts)_
+_See code: [lib/commands/election/current.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/current.js)_
 
 ## `celocli election:list`
 
@@ -209,7 +209,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/list.ts)_
+_See code: [lib/commands/election/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/list.js)_
 
 ## `celocli election:revoke`
 
@@ -274,7 +274,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/revoke.ts)_
+_See code: [lib/commands/election/revoke.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/revoke.js)_
 
 ## `celocli election:run`
 
@@ -314,7 +314,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/run.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/run.ts)_
+_See code: [lib/commands/election/run.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/run.js)_
 
 ## `celocli election:show ARG1`
 
@@ -352,18 +352,19 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/show.ts)_
+_See code: [lib/commands/election/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/show.js)_
 
 ## `celocli election:vote`
 
-Vote for a Validator Group in validator elections.
+Vote for a Validator Group in elections.
 
 ```
 USAGE
   $ celocli election:vote --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -397,11 +398,11 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
-      (required) Amount of Gold used to vote for group
+  --value=10000000000000000000000
+      (required) Amount of CELO used to vote for group
 
 DESCRIPTION
-  Vote for a Validator Group in validator elections.
+  Vote for a Validator Group in elections.
 
 EXAMPLES
   vote --from 0x4443d0349e8b3075cba511a0a87796597602a0f1 --for 0x932fee04521f5fcb21949041bf161917da3f588b, --value 1000000
@@ -417,4 +418,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/vote.ts)_
+_See code: [lib/commands/election/vote.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/election/vote.js)_

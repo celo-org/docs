@@ -110,7 +110,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/approve.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/approve.ts)_
+_See code: [lib/commands/governance/approve.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/approve.js)_
 
 ## `celocli governance:approvehotfix`
 
@@ -259,7 +259,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/build-proposal.ts)_
+_See code: [lib/commands/governance/build-proposal.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/build-proposal.js)_
 
 ## `celocli governance:dequeue`
 
@@ -318,7 +318,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/dequeue.ts)_
+_See code: [lib/commands/governance/dequeue.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/dequeue.js)_
 
 ## `celocli governance:execute`
 
@@ -380,7 +380,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/execute.ts)_
+_See code: [lib/commands/governance/execute.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/execute.js)_
 
 ## `celocli governance:executehotfix`
 
@@ -445,7 +445,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/executehotfix.ts)_
+_See code: [lib/commands/governance/executehotfix.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/executehotfix.js)_
 
 ## `celocli governance:hashhotfix`
 
@@ -510,7 +510,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/hashhotfix.ts)_
+_See code: [lib/commands/governance/hashhotfix.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/hashhotfix.js)_
 
 ## `celocli governance:list`
 
@@ -592,7 +592,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/list.ts)_
+_See code: [lib/commands/governance/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/list.js)_
 
 ## `celocli governance:preparehotfix`
 
@@ -654,7 +654,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/preparehotfix.ts)_
+_See code: [lib/commands/governance/preparehotfix.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/preparehotfix.js)_
 
 ## `celocli governance:propose`
 
@@ -753,7 +753,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
+_See code: [lib/commands/governance/propose.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/propose.js)_
 
 ## `celocli governance:revokeupvote`
 
@@ -812,7 +812,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/revokeupvote.ts)_
+_See code: [lib/commands/governance/revokeupvote.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/revokeupvote.js)_
 
 ## `celocli governance:show`
 
@@ -883,7 +883,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/show.ts)_
+_See code: [lib/commands/governance/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/show.js)_
 
 ## `celocli governance:showaccount`
 
@@ -1083,7 +1083,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/upvote.ts)_
+_See code: [lib/commands/governance/upvote.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/upvote.js)_
 
 ## `celocli governance:view`
 
@@ -1298,10 +1298,11 @@ Vote on an approved governance proposal
 
 ```
 USAGE
-  $ celocli governance:vote --proposalID <value> --value Abstain|No|Yes --from
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
-    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+  $ celocli governance:vote --proposalID 10000000000000000000000 --value
+    Abstain|No|Yes --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1329,7 +1330,7 @@ FLAGS
       the 5th. This is useful to use same address on you Ledger with celocli as you do on
       Ledger Live
 
-  --proposalID=<value>
+  --proposalID=10000000000000000000000
       (required) UUID of proposal to vote on
 
   --useLedger
@@ -1356,7 +1357,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/vote.ts)_
+_See code: [lib/commands/governance/vote.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/vote.js)_
 
 ## `celocli governance:votePartially`
 
@@ -1428,7 +1429,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/votePartially.ts)_
+_See code: [lib/commands/governance/votePartially.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/votePartially.js)_
 
 ## `celocli governance:whitelisthotfix`
 
@@ -1490,7 +1491,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/whitelisthotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/whitelisthotfix.ts)_
+_See code: [lib/commands/governance/whitelisthotfix.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/whitelisthotfix.js)_
 
 ## `celocli governance:withdraw`
 
@@ -1563,4 +1564,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/withdraw.ts)_
+_See code: [lib/commands/governance/withdraw.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/governance/withdraw.js)_
