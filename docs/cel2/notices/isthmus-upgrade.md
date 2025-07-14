@@ -6,9 +6,9 @@ This page outlines breaking changes related to the Isthmus network upgrade for n
 
 This page will be kept updated with key information about the hardfork.
 
-- Baklava testnet activation was executed at timestamp `1749654000` on Wed, Jun 11, 2025, 15:00:00 UTC.
-- Alfajores testnet activation was executed at timestamp `1750863600` on Wed, Jun 25, 2025, 15:00:00 UTC.
-- **Mainnet** activation was executed at timestamp **`1752073200`** on Wed, Jul 9, 2025, 15:00:00 UTC.
+- Baklava testnet activation was executed at timestamp `1749654000` ([block 37881140](https://celo-baklava.blockscout.com/block/0xec4a86ed28d74090b71cb59c34e4b31b8a49ef00b09880d67034dc56237e4b1d)) on Wed, Jun 11, 2025, 15:00:00 UTC.
+- Alfajores testnet activation was executed at timestamp `1750863600` ([block 49908280](https://celo-alfajores.blockscout.com/block/0x643b5ce0b59b83ffd8a9b9cfc13a91eeb1228094e0dbb3e1927ec2afc28dfbcb)) on Wed, Jun 25, 2025, 15:00:00 UTC.
+- **Mainnet** activation was executed at timestamp **`1752073200`** ([block 40172442](https://celo.blockscout.com/block/0xdef57aaf634a3de07e7763db9b21d5e192e784316b8c233a2a4cd1eea6bf4f41)) on Wed, Jul 9, 2025, 15:00:00 UTC.
 
 :::
 
