@@ -91,8 +91,7 @@ export default function HomePage(): JSX.Element {
               </svg>
             </Link>
             <p className="mt-6 max-w-md">
-              Try Celo's new MCP Servers to iterate quickly using AI coding
-              tools
+              Build your first app on Celo. No coding experience required.
             </p>
           </div>
           <div className="flex justify-center md:w-1/2 w-full h-full ">
