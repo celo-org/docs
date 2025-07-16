@@ -16,12 +16,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 ---
 
-## Quote
-
-> Crypto is a tool for turning a whole swathe of problems into key management problems. Key management problems are way harder than (virtually all) cryptographers think.
->
-> [@LeaKissner on X](https://x.com/LeaKissner/status/1198595109756887040)
-
 ## Philosophy
 
 The Celo protocol was designed with the understanding that there is often an inherent tradeoff between the convenience of accessing a private key and the security with which that private key can be custodied. In general Celo is unopinionated about how keys are custodied, but also allows users to authorize private keys with specific, limited privileges. This allows users to custody each private key according to its sensitivity (i.e. what is the impact of this key being lost or stolen?) and usage patterns (i.e. how often and under which circumstances will this key need to be accessed).

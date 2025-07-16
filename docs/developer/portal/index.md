@@ -63,7 +63,7 @@ Portal provides extensive wallet and web3 functionality for Celo developers:
 - [Portal Documentation](https://docs.portalhq.io/)
 - [Portal Website](https://portalhq.io/)
 - [SDK Quick Start Guide](https://docs.portalhq.io/getting-started/sdk-quick-start)
-- [API Reference](https://docs.portalhq.io/api-reference)
+- [API Reference](https://docs.portalhq.io/getting-started/api-quick-start)
 
 
 ## Portal SDK Quick Start

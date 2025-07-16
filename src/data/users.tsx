@@ -166,14 +166,6 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
-    title: 'Add3',
-    description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
-    preview: require('./showcase/add3.png'),
-    website: 'https://www.add3.io/',
-    source: 'https://github.com/Add3official',
-    tags: ['apps', 'defi'],
-  },
-  {
     title: 'EthicHub',
     description: translate({
       message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
@@ -181,7 +173,7 @@ const Users: User[] = [
     }),
     preview: require('./showcase/ethichub.png'),
     website: 'https://ethix.ethichub.com/',
-    source: 'https://docs-ethix.ethichub.com',
+    source: 'https://ethichub.gitbook.io/ethichub/en',
     tags: ['apps', 'refi', 'popular', 'earn', 'impact'],
   },
   {
@@ -680,14 +672,6 @@ const Users: User[] = [
     website: 'https://blockchainforsocialimpact.com/incubator-winners-2020/',
     source: 'https://blockchainforsocialimpact.com/incubator-winners-2020/',
     tags: ['defi', 'earn', 'not-maintained'],
-  },
-  {
-    title: 'Bloinx by BX Smart Labs',
-    description: 'A decentralized app that helps users to create reliable savings communities by using smart contracts, in a transparent, verifiable, and trustworthy environment. Bloinx is upgrading the way to manage TANDAS, which are rotating, saving, and credit associations, used in Latin American communities.',
-    preview: require('./showcase/bloinx.png'),
-    website: 'https://bloinx.io/',
-    source: 'https://github.com/Bloinx/bloinx-mobile',
-    tags: ['apps', 'earn', 'defi'],
   },
   {
     title: 'Wallet as a Service',

@@ -92,7 +92,7 @@ When scaling, consider:
 - **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
 - **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
 - **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
-- **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
+
 
 **Security and Policy:**
 - **[Predicate](https://x.com/0xPredicate)**: Define rules for onchain interactions

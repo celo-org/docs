@@ -59,7 +59,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 - [Reddit](https://www.reddit.com/r/celo/)
 - [Blog](https://medium.com/celoorg)
 - [GitHub](https://github.com/celo-org)
-- [Twitter](https://x.com/CeloOrg)
+- [Twitter](https://x.com/Celo)
 - [YouTube](https://www.youtube.com/channel/UCCZgos_YAJSXm5QX5D5Wkcw)
 - [Instagram](https://www.instagram.com/celoorg/)
 - [Defi Pulse](https://defipulse.com/)

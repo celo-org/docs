@@ -51,7 +51,6 @@ Explore existing MCP server implementations:
 ## Additional Resources
 
 - [Official MCP Documentation](https://modelcontextprotocol.io/introduction)
-- [MCP GitHub Repository](https://github.com/anthropics/model-context-protocol)
 - [MCP Community Forum](https://community.modelcontextprotocol.io)
 
 

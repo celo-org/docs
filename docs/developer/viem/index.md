@@ -59,4 +59,3 @@ async function getGasPrice(client, feeCurrencyAddress?: Address) {
 tx.maxFeePerGas = await getGasPrice(client, tx.feeCurrency);
 ```
 
-For an interactive example of using viem with Celo's Fee Abstraction feature [see our demo](https://rainbowkit-with-celo.vercel.app/fee-currency)

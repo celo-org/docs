@@ -130,7 +130,7 @@ A number of metrics are tracked for the parent of the last sealed block received
 
 ### Management APIs
 
-Celo blockchain inherits and extends go-ethereum's Javascript console, exposing [management APIs](https://geth.ethereum.org/docs/rpc/server) and [web3 DApp APIs](https://github.com/ethereum/wiki/wiki/JavaScript-API).
+Celo blockchain inherits and extends go-ethereum's Javascript console, exposing [management APIs](https://geth.ethereum.org/docs/rpc/server) and web3 DApp APIs.
 
 Connect a client using a variant of the `attach` command line option:
 
