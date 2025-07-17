@@ -15,9 +15,11 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 
 The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](https://docs.celo.org/what-is-celo/about-celo-l1/protocol/identity) and [fee abstraction](https://docs.celo.org/developer/fee-abstraction).
 
-The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets wallets that support the Celo network.
+The [Wallet Infrastructure](#wallet-infrastructure) section provides an overview of wallet infrastructure solutions you can integrate into your dapp to enable seamless web3 interactions for your users.
 
-## Celo Native Wallets - Build apps to be listed inside of these wallets and get access to more than 8 million wallets
+## Celo Native Wallets 
+
+Build apps to be listed inside of these wallets and get access to more than 8 million wallets.
 
 ---
 
