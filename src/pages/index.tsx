@@ -145,17 +145,17 @@ export default function HomePage(): JSX.Element {
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
-              href="/developer/build/mcp/mcp"
+              href="/developer/build/mcp"
               target="_blank"
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.faucet.title">
+                <Translate id="home2.section3.mcp.title">
                   Build with Celo MCP Servers
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.faucet.description">
+                <Translate id="home2.section3.mcp.description">
                   Vibe Code your first Celo dApp with Celo MCP Servers
                 </Translate>
               </span>
@@ -181,12 +181,12 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.faucet.title">
+                <Translate id="home2.section3.minipay.title">
                   Build on MiniPay
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.faucet.description">
+                <Translate id="home2.section3.minipay.description">
                   Create a mobile-first Mini App
                 </Translate>
               </span>
@@ -213,12 +213,12 @@ export default function HomePage(): JSX.Element {
               rel="noreferrer"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.celoScan.title">
+                <Translate id="home2.section3.self.title">
                   Build with Self
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.celoScan.description">
+                <Translate id="home2.section3.self.description">
                   Verify real users with ZK
                 </Translate>
               </span>
@@ -275,12 +275,12 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home2.section3.wallets.title">
+                <Translate id="home2.section3.composer.title">
                   Build with Celo Composer
                 </Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
-                <Translate id="home2.section3.wallets.description">
+                <Translate id="home2.section3.composer.description">
                   Quickstart your dApp
                 </Translate>
               </span>
