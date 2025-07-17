@@ -107,6 +107,15 @@ with non-custodial Crypto Wallet
 
 ---
 
+### [Rabby](https://rabby.io/)
+
+Your go-to wallet for Ethereum and EVM - Track portfolio across all EVM chains in one place - Discover popular Dapps for your needs.
+
+- Homepage: [imem.app](https://rabby.io/)
+- Platforms: Browser, iOS, Android
+
+---
+
 ### [OKX Web3 Wallet](https://web3.okx.com/)
 
 Supports over 130 blockchains, including CELO. Enables users to store, trade, analyze, earn, and connect to Web3 sites. The mobile app features a built-in browser for seamless Web3 access and includes a tab to switch to the OKX exchange (though creating an exchange account is not required to use the wallet). It’s fully compatible with WalletConnect and widely supported across Web3 platforms.
