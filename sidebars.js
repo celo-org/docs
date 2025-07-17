@@ -159,6 +159,11 @@ const whatIsCeloSidebar = [
       },
       {
         type: "doc",
+        label: "Wallets",
+        id: "what-is-celo/using-celo/wallets",
+      },
+      {
+        type: "doc",
         label: "Exchanges",
         id: "what-is-celo/using-celo/exchanges",
       },
