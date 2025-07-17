@@ -71,7 +71,6 @@ For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/G
 
 ### 📖 Articles
 
-- [AI x Crypto Models](https://doc.cryptopond.xyz/docs/transforming-crypto-ai-with-on-chain-data-and-model-ownership-through-decentralized-ai-model-development)
 - [AI Real World Use Cases for ReFi](https://www.daviddao.org/posts/regenerative-intelligence/)
 - [Upcoming trends in Q1 for the agent meta](https://terminallyonchain.xyz/q1trends)
 - [Allora Powers Virtuals](https://www.allora.network/blog/allora-powers-virtuals-protocol)

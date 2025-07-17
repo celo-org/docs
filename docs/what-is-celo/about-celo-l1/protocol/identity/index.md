@@ -11,7 +11,7 @@ How Celo maps wallet addresses to phone numbers to make financial tools more acc
 
 :::info
 
-Celo's Identity protocol has moved to [docs.self.xyz](https://docs.self.xyz/celo/identity).
+Celo's Identity protocol has moved to [docs.self.xyz](https://docs.self.xyz/).
 
 :::
 

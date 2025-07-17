@@ -52,7 +52,7 @@ As a CELO holder, you have the opportunity to impact the Celo network by voting 
 
 - **Will get elected**: CELO holders only receive voter rewards during an epoch if their CELO is used to vote for a Validator Group that elects at least one Validator during that epoch. Put another way, your vote does not contribute to securing the network or earning you rewards if your group does not receive enough other votes to elect at least one Validator.
 
-- **Secure**: The operational security of Validators is essential for everyone's use of the Celo network. You can see scores under the "Master Validator Challenge" column in the [Stake Off leaderboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQwk10o6YV0uriR8LuYfLqB1irjmOX_-L6Jljn3BtKlmz_R_TsUU8aI-pMqGVlu4HQKIQlQaFkUhsyl/pubhtml?gid=1970613133&single=true). Scores of 80% or greater were awarded the "Master Validator" badge, indicating a serious proven commitment to operational security.
+- **Secure**: The operational security of Validators is essential for everyone's use of the Celo network. You can see scores under the "Master Validator Challenge" column in the Stake Off leaderboard. Scores of 80% or greater were awarded the "Master Validator" badge, indicating a serious proven commitment to operational security.
 
 - **Reliable**: Celo's consensus protocol relies on two-thirds of elected Validators being available in order to produce blocks and process transactions. Voter rewards are directly tied to the [uptime score](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-validator#calculating-uptime-score) of all elected Validators in the group for which the vote was made. Any period of consecutive downtime greater than a minute reduces a Validator's uptime score.
 

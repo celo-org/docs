@@ -1,5 +1,8 @@
 # Reference: https://docs.netlify.com/site-deploys/overview/#deploy-contexts
 
+[build.environment]
+  NODE_VERSION = "18"
+
 # Production context:
 # All deploys from the main repository branch
 # will inherit these settings.

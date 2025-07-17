@@ -61,7 +61,7 @@ Provide resources for users:
 
 - [ ] Complete the [Marketing Intake Form](https://docs.google.com/forms/d/e/1FAIpQLSe0LMpEy2nicTcdoI5_LFhg3VZbpyhTymmSTzZ7HavdRiE4AQ/viewform) and share your marketing strategies.
 - [ ] Join the Celo Founders Telegram group.
-- [ ] Remember to tag [@celoorg](https://x.com/CeloOrg) in any launch announcements.
+- [ ] Remember to tag [@celoorg](https://x.com/Celo) in any launch announcements.
 
 ## Legal
 
