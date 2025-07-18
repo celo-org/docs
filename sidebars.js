@@ -824,6 +824,12 @@ const buildOnCeloSidebar = [
 const toolingSidebar = [
   { type: "doc", label: "Overview", id: "developer/index" },
   { type: "doc", label: "Network Information", id: "network/index" },
+  { type: "category", label: "Testnets", items: [
+    { type: "doc", label: "Overview", id: "network/testnets/index" },
+    { type: "doc", label: "Alfajores", id: "network/alfajores" },
+    { type: "doc", label: "Baklava", id: "network/baklava" },
+    { type: "doc", label: "Eclair", id: "network/eclair" },
+  ] },
   {
     type: "category",
     label: "Nodes",
