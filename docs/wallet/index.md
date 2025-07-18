@@ -7,13 +7,6 @@ description: Overview of digital wallets available to send, spend, and earn Celo
 
 Overview of digital wallets available to send, spend, and earn Celo assets.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## Choosing a Wallet
@@ -22,19 +15,11 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 
 The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](https://docs.celo.org/what-is-celo/about-celo-l1/protocol/identity) and [fee abstraction](https://docs.celo.org/developer/fee-abstraction).
 
-The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets wallets that support the Celo network.
+The [Wallet Infrastructure](#wallet-infrastructure) section provides an overview of wallet infrastructure solutions you can integrate into your dapp to enable seamless web3 interactions for your users.
 
-## Celo Native Wallets
+## Celo Native Wallets 
 
-### [Valora](https://valora.xyz/)
-
-Valora is a non-custodial multichain mobile wallet focused on helping users save, earn, and send their crypto. It supports Celo's ability to pay for transactions with stablecoins, supports Wallet Connect, and has a built in swap experience that works across chains. It also lets users verify their phone number and send payments to their contacts.
-
-- Homepage: [valora.xyz](https://valora.xyz/)
-- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://play.google.com/store/apps/details?id=co.clabs.valora)
-- Maintainers: [Valora](https://valora.xyz/)
-- Ledger support: No
-- [Source Code](https://github.com/valora-inc/wallet)
+Build apps to be listed inside of these wallets and get access to more than 8 million wallets.
 
 ---
 
@@ -47,6 +32,20 @@ MiniPay is a non-custodial lightweight mobile wallet that allows users to send a
 - Maintainers: Opera
 - Ledger support: No
 - Supported tokens: cUSD, USDT, and USDC
+- [Start building](/docs/build/build-on-minipay/quickstart.md)
+
+---
+
+### [Valora](https://valora.xyz/)
+
+Valora is a non-custodial multichain mobile wallet focused on helping users save, earn, and send their crypto. It supports Celo's ability to pay for transactions with stablecoins, supports Wallet Connect, and has a built in swap experience that works across chains. It also lets users verify their phone number and send payments to their contacts.
+
+- Homepage: [valora.xyz](https://valora.xyz/)
+- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://play.google.com/store/apps/details?id=co.clabs.valora)
+- Maintainers: [Valora](https://valora.xyz/)
+- Ledger support: No
+- [Source Code](https://github.com/valora-inc/wallet)
+
 
 ---
 
@@ -60,187 +59,38 @@ Celo Terminal is a wallet and dApp platform designed as a hub for managing and r
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
 
----
 
-### [Othello Wallet](https://celowallet.app/setup)
+## Wallet Infrastructure
 
-Othello Wallet (formerly known as CeloWallet) is a lightweight, wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, and governance.
-
-- Homepage: [celowallet.app](https://celowallet.app/setup)
-- Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://x.com/RossyWrote)
-- Ledger support: Yes
-- [Source Code](https://github.com/jmrossy/celo-web-wallet)
+Server wallets are a crucial part of building accessible applications. In the future of applications, you don't want to ask suers to login with a wallet but rather using their social logins like email account etc. 
 
 ---
 
-### [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
+### [privy](https://www.privy.io/)
 
-Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser extension for Chrome.
+Privy makes it easy to build on crypto rails. Securely spin up whitelabel wallets, sign transactions, and integrate onchain infrastructure—all through one simple API.
 
-- Platforms: Chrome Browser
-- Maintainers: [DSRV Labs](https://dsrv.com/protocol)
-- Ledger support: Yes
-- [Source Code](https://github.com/dsrvlabs/celo-extension-wallet)
+- Homepage: [privy.io](https://www.privy.io/)
+- [Source Code](https://github.com/privy-io)
 
 ---
 
-### [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
+### [Alchemy Smart Wallets](https://www.alchemy.com/smart-wallets)
 
-Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
+Onboard and activate users with secure, easy-to-use, enterprise-grade wallets. No seed phrase or gas required.
 
-- Homepage: [enkrypt.com](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
-- Platforms: Chrome, Brave, Firefox, Safari, Opera
-- Maintainers: [MyEtherWallet](https://www.myetherwallet.com/)
-- [Source Code](https://github.com/enkryptcom/enKrypt)
+- Homepage: [alchemy.com](https://www.alchemy.com)
+- [Docs](https://www.alchemy.com/smart-wallets)
 
 ---
 
-### [Omni](https://omni.app/)
+### [thirdweb](https://thirdweb.com/in-app-wallets)
 
-Omni (formerly known as Steakwallet) is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
+Scale your onboarding with a wallet as a service that works for secure, self-custodial and customizable embedded wallet infrastructure to onboard any user to your web3 app.
 
-- Homepage: [omni.app](https://omni.app/)
-- Platforms: Android, iOS
-- Maintainers: [Omni](https://omni.app/)
-- [Source Code](https://github.com/steakwallet)
+- Homepage: [thirdweb.com](https://thirdweb.com/)
+- [Docs](https://thirdweb.com/in-app-wallets)
 
----
-
-## Celo Compatible Wallets
-
-Here’s an overview of popular wallets compatible with the Celo network. Note that some wallets do not support fee abstraction for gas payments with different tokens.
-
-### [Uniswap Wallet](https://wallet.uniswap.org/)
-
-Uniswap Wallet is a self-custody wallet with support for Celo.
-
-- Homepage: [wallet.uniswap.org](https://wallet.uniswap.org/)
-- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
-- Maintainers: [Uniswap](https://app.uniswap.org/)
-- [Source Code](https://github.com/Uniswap/wallet)
-
----
-
-### [Trust Wallet](https://trustwallet.com/)
-
-Trust Wallet is a self-custody wallet with support for Celo available as a mobile app and extension on multiple browsers.
-
-- Homepage: [trustwallet.com](https://trustwallet.com/)
-- Platforms: [iOS](https://apps.apple.com/us/app/trust-crypto-bitcoin-wallet/id1288339409?mt=8), [Android](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph),
-- Maintainers: [Trust Wallet](https://trustwallet.com/)
-- [Source Code](https://github.com/trustwallet)
-
----
-
-### [MetaMask](https://metamask.io/)
-
-MetaMask is a self-custody wallet with support for Celo.
-
-You can learn more about connecting MetaMask to the Celo network [here](/wallet/metamask/use).
-
-- Homepage: [metamask.io](https://metamask.io/)
-- Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask)
-
----
-
-### [Dove Wallet](https://dovewallet.com)
-
-- Homepage: [dovewallet.com](https://dovewallet.com)
-- Platforms: Web
-
----
-
-### [Wigwam Wallet](https://wigwam.app)
-
-- Homepage: [wigwap.app](https://wigwam.app)
-- Platforms: Browser, Web
-- [Source Code](https://github.com/wigwamapp/wigwam)
-
----
-
-### [Pesabase](https://pesabase.com/)
-
-- Homepage: [pesabase.com](https://pesabase.com/)
-- Platforms: iOS, Android
-
----
-
-### [D’CENT](https://dcentwallet.com/)
-
-D'CENT is a hardware wallet.
-
-- Homepage: [dcentwallet.com](https://dcentwallet.com/)
-- Platforms: Browser, iOS, Android
-- [Source Code](https://github.com/DcentWallet)
-
----
-
-### [Bitfy](https://blockchainwebservices.com.br/bitfy-app)
-
-Bitfy is a wallet available in Brazil.
-
-- Homepage: [blockchainwebservices.com.br/bitfy-app](https://blockchainwebservices.com.br/bitfy-app)
-- Platforms: iOS, Android
-- Maintainer: [BWS](https://blockchainwebservices.com)
-
----
-
-### [Cobru](https://cobru.co/)
-
-Cobru is a wallet available in Columbia.
-
-- Homepage: [cobru.co](https://cobru.co/)
-
----
-
-### [Kotani Pay](https://kotanipay.com/)
-
-Kotani Pay is a wallet available in Kenya.
-
-- Homepage: [kotanipay.com](https://kotanipay.com)
-- [Source Code](https://github.com/Kotani-Pay)
-
----
-
-### [Coinprofile](https://coinprofile.co/)
-
-Coinprofile is a wallet available in Nigeria.
-
-- Homepage: [coinprofile.co](https://coinprofile.co/)
-
----
-
-### [Bitmama](https://bitmama.io/)
-
-Bitmama is a wallet available in Nigeria and Ghana.
-
-- Homepage: [bitmama.io](https://bitmama.io/)
-- [Source Code](https://github.com/Bitmama-Inc)
-
----
-
-### [BloomX](https://www.bloom.solutions/)
-
-BloomX is an exchange available in the Philippines.
-
-- Homepage: [bloom.solutions](https://www.bloom.solutions/)
-
----
-
-### [Frontier](https://www.frontier.xyz/)
-
-- Homepage: [frontier.xyz](https://www.frontier.xyz/)
-- [Source Code](https://github.com/frontierdotxyz)
-
----
-
-### [El Dorado](https://eldorado.io/)
-
-El Dorado is a wallet available in Argentina, Brazil, Colombia, Panama, Peru, and Venezuela.
-
-- Homepage: [eldorado.io](https://eldorado.io/)
-- Platforms: Android, iOS
 
 ---
 
@@ -249,26 +99,16 @@ El Dorado is a wallet available in Argentina, Brazil, Colombia, Panama, Peru, an
 Reown (previously WalletConnect Inc.) gives builders the tools to create user experiences that make digital ownership effortless, intuitive, and secure.
 
 - Homepage: [reown.com](https://reown.com/)
-- Platforms: Browser, iOS, Android
 - [Source Code](https://github.com/WalletConnect)
-
----
-
-### [iMe](https://www.imem.app/)
-
-Intelligent DeFi & AI Platform Powered by Telegram API
-with non-custodial Crypto Wallet
-
-- Homepage: [imem.app](https://www.imem.app/)
-- Platforms: Browser, iOS, Android
 
 ---
 
 ### [BlockRadar](https://www.blockradar.co/)
 
-Secure wallet infrastructure for Fintechs. They help fintechs deliver secure, scalable, and flexible enterprise-grade wallet solutions.
+Wallet as a Service product provides fintechs with secure, scalable wallet infrastructure to power stablecoin transactions. Whether abstracted or fully integrated, empower your customers while delivering enterprise-grade security and flexibility.
 
 - Homepage: [www.blockradar.co](https://www.blockradar.co/)
+- [Docs](https://docs.blockradar.co/introduction)
 - [Source Code](https://github.com/iamnotstatic/multichain-crypto-wallet)
 
 ---
@@ -278,7 +118,6 @@ Secure wallet infrastructure for Fintechs. They help fintechs deliver secure, sc
 Wallet and authentication suite for crypto applications.
 
 - Homepage: [getpara.com](https://www.getpara.com/)
-- Platforms: Browser, iOS, Android
 - [Docs](https://docs.getpara.com/welcome)
 - [Source Code](https://github.com/getpara)
 
@@ -289,7 +128,6 @@ Wallet and authentication suite for crypto applications.
 Decentralized custody protocol and collective asset management platform. Provide multisg wallet support, Account Abstraction and more.
 
 - Homepage: [app.safe.global](https://app.safe.global/welcome)
-- Platforms: Browser, iOS, Android
 - [Docs](https://docs.safe.global/home/what-is-safe)
 - [Source Code](https://github.com/safe-global/safe-wallet-monorepo)
 
@@ -300,29 +138,7 @@ Decentralized custody protocol and collective asset management platform. Provide
 With Zerion’s infrastructure you can build feature-rich real-time web3 apps, wallets, and protocols with ease — whether you’re publicly scaling your existing crypto product, building a new one over a weekend hackathon, or anything in between.
 
 - Homepage: [zerion.io](https://zerion.io/)
-- Platforms: Browser, iOS, Android
 - [Source Code](https://developers.zerion.io/reference/getting-started)
-
----
-
-### [OKX Web3 Wallet](https://web3.okx.com/)
-
-Supports over 130 blockchains, including CELO. Enables users to store, trade, analyze, earn, and connect to Web3 sites. The mobile app features a built-in browser for seamless Web3 access and includes a tab to switch to the OKX exchange (though creating an exchange account is not required to use the wallet). It’s fully compatible with WalletConnect and widely supported across Web3 platforms.
-
-- Homepage: [web3.okx.com](https://web3.okx.com/)
-- Platforms: [iOS](https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484), [Android](https://play.google.com/store/apps/details?id=com.okx.wallet), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge), [Telegram](https://web.telegram.org/k/#@OKX_WALLET_BOT)
-- Maintainers: [OKX](https://okx.com/)
-- Source code is not available, although there are two repositories related and useful for developers: https://github.com/okx/go-wallet-sdk and https://github.com/okx/js-wallet-sdk
-
----
-
-### [Gem Wallet](https://gemwallet.com/)
-
-Gem Wallet is a mobile wallet available on Android and iOS designed for DeFi. It is safe, user-friendly, self-custodial, open-source, and private. The wallet supports multiple blockchains including TON, Sui, Solana, Bitcoin, Ethereum, BNB, and more.
-
-- Homepage: [gemwallet.com](https://gemwallet.com/)
-- Platforms: iOS, Android
-- [Source Code](https://github.com/gemwalletcom)
 
 ---
 
