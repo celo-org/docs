@@ -65,5 +65,5 @@ To use the testnet you can use the following RPC endpoints:
 - L1: https://rpc.l1.eclair.celo-testnet.org
 - L2: https://rpc.l2.eclair.celo-testnet.org
 
-The L1 block explorer is hosted at <https://eclair.celo-testnet.org>.
+The L1 block explorer is hosted at https://eclair.celo-testnet.org.
 [Here is a completed dispute game](https://eclair.celo-testnet.org/address/0x8E9534e3aD167386Ea1A3aEc6E5E05394c10BDe8?tab=txs).
