@@ -3,7 +3,7 @@ title: Network Details
 description: How to choose a Celo network based on your needs and objectives.
 ---
 
-Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava L2 Testnet.
+Overview of Celo Mainnet and the Alfajores and Baklava Testnets.
 
 ---
 
@@ -20,7 +20,7 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava L2 Testnet.
 | Block Explorers            | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>                                                                               |
 | Bridge Link                | [List of bridges](/developer/bridges/bridges.md)                                                                                                                                                             |
 
-## Celo Alfajores L2 Testnet
+## Celo Alfajores Testnet
 
 | Name                       | Value                                                                                                                                                                                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -40,7 +40,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
-## Celo Baklava L2 Testnet
+## Celo Baklava Testnet
 
 | Name                       | Value                                                                                                                                                    |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -9,8 +9,10 @@ import ColoredText from '/src/components/ColoredText';
 
 This section explains how you can get support and stay up-to-date with Celo developer news.
 
+---
+
 :::tip
-Help us improve by sharing your feedback on missing tools, unclear sections, or any challenges you encounter by creating an issue or by clicking on "Edit Page" on the bottom of each page.
+Help us improve by sharing your feedback on missing tools, unclear sections, or any challenges you encounter by creating an [issue](https://github.com/celo-org/docs/issues/new) or by clicking on "Edit this page" on the bottom of each page.
 :::
 
 ## How to Get Support?
@@ -20,3 +22,9 @@ Help us improve by sharing your feedback on missing tools, unclear sections, or 
 - For advanced questions, create issues and participate in <ColoredText>[GitHub Discussions](https://github.com/orgs/celo-org/discussions)</ColoredText>.
 
 For the latest updates, sign up for the <ColoredText>[DevDesk Mailing List](https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2)</ColoredText> and follow <ColoredText>[CeloDevs on X](https://x.com/CeloDevs)</ColoredText>.
+
+## Additionnal Resources
+
+- [Celo specifications](https://specs.celo.org/)
+- [Transaction types on Celo](https://github.com/celo-org/txtypes)
+- [Celo Forum](https://forum.celo.org/)
