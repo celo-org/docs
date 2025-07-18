@@ -3,19 +3,7 @@
 ## Celo L2 Mainnet
 
 Celo has transitioned from a standalone EVM-compatible Layer 1 blockchain to an Ethereum Layer 2.
-This shift, [proposed by cLabs in July
-2023](https://forum.celo.org/t/clabs-proposal-for-celo-to-transition-to-an-ethereum-l2/6109), aims
-to maintain the seamless user experience that Celo is known for—characterized by speed, low costs,
-and ease of use—while leveraging Ethereum’s security and ecosystem.
-
-:::info
-While most applications should remain unaffected, node operators, validators, and RPC providers must ensure their systems are prepared for the transition to maintain seamless operations.
-
-See the following document for more details:
-
-* [Celo L2 migration](notices/l2-migration.md)
-
-:::
+This shift, [proposed by cLabs in July 2023](https://forum.celo.org/t/clabs-proposal-for-celo-to-transition-to-an-ethereum-l2/6109), aims to maintain the seamless user experience that Celo is known for—characterized by speed, low costs, and ease of use—while leveraging Ethereum’s security and ecosystem.
 
 ## What does this mean for our ecosystem?
 
@@ -58,15 +46,15 @@ The Celo L2 testnet, Alfajores, went live! This provides a testing environment f
 
 ### October 2024: Code Freeze and Audits
 
-The core dev team froze all feature development by mid-October and underwent a thorough external audit. The result is available at https://celo.org/audits.
+The core dev team froze all feature development by mid-October and underwent a thorough external audit. The result is available at <https://celo.org/audits>.
 
 ### 20th February, 2025: Baklava L2 Testnet Launch
 
-Using the final audited release, the Celo validator community will perform a dry run of the L2 upgrade on the Baklava network.
+Using the final audited release, the Celo validator community performed a dry run of the L2 upgrade on the Baklava network.
 
-### 26th March, 2025 (3:00 AM UTC): Celo L2 Mainnet Launch
+### 26th March, 2025: Celo L2 Mainnet Launch
 
-Following a successful Baklava upgrade, the Celo L2 Mainnet will officially go live. All nodes must be updated by this time to avoid disruption.
+Following a successful Baklava upgrade, the Celo L2 Mainnet officially went live.
 
 ## Useful Links
 
