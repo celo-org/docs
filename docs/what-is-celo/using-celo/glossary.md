@@ -205,7 +205,7 @@ A device or computer running the Celo Blockchain software that keeps typically o
 
 ## Locked CELO
 
-[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering an RPC community node.
+[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
 
 ## Locked Gold
 
@@ -249,7 +249,7 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 
 ## Stake
 
-[Locked CELO](#locked-celo) that a RPC community node provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
+[Locked CELO](#locked-celo) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
 
 ## Testnet
 
