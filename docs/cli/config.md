@@ -18,7 +18,7 @@ DESCRIPTION
   Output network node configuration
 ```
 
-_See code: [lib/commands/config/get.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/config/get.js)_
+_See code: [lib/commands/config/get.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/config/get.js)_
 
 ## `celocli config:set`
 
@@ -77,4 +77,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/config/set.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/config/set.js)_
+_See code: [lib/commands/config/set.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/config/set.js)_
