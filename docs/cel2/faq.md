@@ -51,7 +51,7 @@ Yes, same as with Ethereum.
 
 ### What data model changes happened in the RPC specs (esp. which gas tokens) between Celo L1 and L2?
 
-Celo now has the same RPC specs as Optimism (e.g. we don't have block receipts).
+Have a look at the [changes from L1 to L2 in the specs](https://specs.celo.org/l2_migration.html#changes-for-json-rpc-users).
 
 ### What happens to Validators?
 
