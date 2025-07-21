@@ -258,7 +258,7 @@ const whatIsCeloSidebar = [
       {
         type: "link",
         label: "Code of Conduct",
-        href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+        href: "https://celo.org/code-of-conduct",
       },
     ],
   },
