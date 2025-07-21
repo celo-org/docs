@@ -63,25 +63,33 @@ To enable a token as gas currency, two [governance proposals](/what-is-celo/usin
 
 ### Enabling the Oracle
 
+#### Adding a new token to SortedOracles
+
 The first proposal is meant to enable the oracle, by calling `SortedOracle.addOracle(address token, address oracleAddress)`. Potentially, this proposal could also transfer some Celo from the Community Fund to the oracle addresses to pay for gas.
 
 An example of such proposal [can be found here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0085.md).
 
-### Reporting
+#### Creating an equivalent Oracle
+
+SortedOracles supports flagging two tokens as "equivalent". This is example do that no new oracle has to be deployed and useful for fiat-backed stablecoins. [Here is an exampl](https://github.com/celo-org/governance/pull/419/files#diff-ba5ba5397b269ceb4b93f3876bedabac605daeec083a364a270675242fe7c424)e of this approach.
+
+##### Reporting
 
 Before submitting the second proposal, at least one of the oracle addresses need to call `report(address token, uint256 value, address lesserKey, address greaterKey)`. This will make a price available to the protocol for gas pricing.
 
 ### Enabling as Gas Token
 
-The second proposal enables the gas token by calling `addToken(address tokenAddress)`. After this proposal passes, EOAs should be able to pay for gas in the enabled token.
+The second proposal enables the gas token by calling `FeeCurrencyDirectory.setCurrencyConfig(address token, address oracle, uint256 intrinsicGas)`. `intrinsicGas` is the estimated average amount of gas used by the functions `creditGasFees(...)`and `debitGasFees(...)`. A benchmark is recommended as an attachment to the governance proposal.
+
+After this proposal passes, EOAs should be able to pay for gas in the enabled token.
 
 An example of such proposal [can be found here](https://github.com/sirpy/governance/blob/1cee2314b357246385819e7e0713a272a55b0ec3/CGPs/cgp-0089.md).
 
-It would be a good consideration to update popular tooling (like contractkit) before this proposal passes so that most developers are ready to use the new gas as soon as it enabled.
+It would be a good consideration to update popular tooling (like [contractkit](https://docs.celo.org/developer/contractkit)) before this proposal passes, so that most developers are ready to use the new gas as soon as it is enabled.
 
 ### Enabling with just one proposal
 
-It is possible to simplify this process to one governance proposal. That'd proposal would have to enable the Governance contract as an oracle for the token to enable as gas token.
+It is possible to simplify this process to one governance proposal. That proposal would have to enable the Governance contract as an oracle for the token to enable as gas token.
 
 Then, the governance proposal itself should report a reference value within the same proposal. This is particularly safe to do with stablecoins.
 
