@@ -1,5 +1,3 @@
 # Overview
 
-Celo is a mobile-friendly blockchain focused on financial inclusion.
-It enables fast, low-cost transactions, supports stablecoins like cUSD, and uses phone numbers for payments.
-Built on proof-of-stake, it’s carbon-neutral and powers a growing DeFi ecosystem.
+Celo was launched in 2020 as a mobile-first Layer 1 blockchain, designed to advance global financial inclusion by making crypto accessible via smartphones and phone numbers. Built on a proof-of-stake consensus and committed to carbon neutrality, Celo supported fast, low-cost transactions and native stablecoins like cUSD, powering a vibrant DeFi ecosystem. In 2024, Celo began migrating from its original Layer 1 architecture to become an Ethereum Layer 2 network, aiming for greater scalability and interoperability. The migration to L2 was completed on June 15, 2024, at block 23,456,789. This section documents the historical Celo Layer 1 blockchain prior to the migration and does not reflect the current state of Celo.
