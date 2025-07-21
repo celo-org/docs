@@ -3,6 +3,8 @@
 
 List all celocli commands.
 
+* [`celocli commands`](#celocli-commands)
+
 ## `celocli commands`
 
 List all celocli commands.
