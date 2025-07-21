@@ -7,13 +7,6 @@ description: List of key terms related to the Celo platform, networks, tools, an
 
 List of key terms related to the Celo platform, networks, tools, and blockchain technology.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## Account
@@ -126,11 +119,13 @@ Ethereum term to designate addresses operated by users, as opposed to contract a
 
 ## Epoch
 
-A fixed number of blocks, configured in the network's genesis block, during which the same validator set is used for consensus. A validator election is carried out after the last block of an epoch, and any resulting changes to the validator set are written into that block's header.
+Since the Celo migration to L2, an epoch is a variable number of blocks set to be at least as long as a day's time. Epoch changes are triggered through a permissionless smart contract call.
+When Celo was an L1 blockchain, an epoch was a fixed number of blocks, configured in the network's genesis block, during which the same validator set was used for consensus. A validator election is was carried out after the last block of an epoch, and any resulting changes to the validator set were written into that block's header.
+Fore more details on the changes between L1 and L2, refer to the [specs](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ## Epoch Rewards
 
-Funds disbursed by the protocol at the end of every epoch as incentives for validators, validator groups, holders of [Locked Gold](#locked-gold) that voted for validator groups that elected one or more validators, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
+Funds disbursed by the protocol at the end of every epoch as incentives for validators, validator groups, holders of [Locked CELO](#locked-gold) that voted for validator groups that elected one or more validators, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
 
 ## ERC-20
 
@@ -138,7 +133,7 @@ A standard interface for implementing tokens as smart contracts. Balances associ
 
 ## Ethereum
 
-A project with which the code of the Celo Blockchain has shared ancestry. [Ethereum](https://www.ethereum.org) facilitates building general-purpose decentralized applications.
+The layer-1 blockchain that supports Celo Mainnet.
 
 ## EVM
 
@@ -150,7 +145,7 @@ An account owned by a private key which has full control to send transactions fr
 
 ## Full Node
 
-A computer running the Celo Blockchain software that maintains a full copy of the blockchain locally and, in Celo, receives transaction fees in exchange for servicing light clients.
+A computer running the Celo Blockchain software that maintains a full copy of the blockchain locally.
 
 ## Gas
 
@@ -168,17 +163,13 @@ The minimum unit price for gas that the Celo protocol will accept. This value ch
 
 The very first block in the blockchain, provided as configuration to Celo Blockchain nodes.
 
-## Geth
-
-[go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software is forked.
-
 ## Governable
 
 A smart contract that is owned by the Celo [Governance](/what-is-celo/using-celo/protocol/governance/overview) mechanism and so can be changed or updated by an on-chain governance proposal.
 
 ## Governance
 
-A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [CELO](#celo-native-asset) holders vote for proposals submitted by the community.
+A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [Locked CELO](#locked-celo) holders vote for proposals submitted by the community.
 
 ## Group Share
 
@@ -212,11 +203,13 @@ Refers to the Celo blockchain and is used in contrast to layer 1, which refers t
 
 A device or computer running the Celo Blockchain software that keeps typically only the most recent blockchain state, such that it can send transactions and identify what other data to request as necessary. Every Celo Wallet installation includes a Celo Blockchain light client.
 
+## Locked CELO
+
+[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering an RPC community node.
+
 ## Locked Gold
 
-[CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in validator elections, governance proposals, and to meet staking requirements for registering a validator or validator group.
-
-Locked Gold is in the process of being renamed along with other references to [Celo Gold](#celo-gold) (cGLD), which is now referred as [CELO](#celo-native-asset).
+Locked Gold is the old name for [Locked CELO](#locked-celo).
 
 ## Mainnet
 
@@ -224,15 +217,15 @@ The Celo production network.
 
 ## Node
 
-A running instance of the Celo Blockchain software. This could be configured to run as a Validator, Full Node, or Light Client. Used interchangeably with 'Client'.
+A running instance of the Celo Blockchain software. Used interchangeably with 'Client'.
 
 ## On-chain
 
-An interaction that takes place solely through a transaction being executed on the blockchain and updating the state of the ledger.
+An interaction that takes place solely through a transaction being executed on the blockchain and updating the state of the shared ledger.
 
 ## Proof-of-Stake
 
-The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
+The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. When Celo was an L1, the proof-of-stake mechanism allowed accounts to convert units of [CELO](#celo-native-asset) into [Locked CELO](#locked-celo) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
 
 ## RC1
 
@@ -242,29 +235,9 @@ RC1, which stands for Release Candidate 1, was the first network that had the po
 
 A common practice in societies without easy access to banking (source); a peer-to-peer savings and loan group.
 
-## SBAT
-
-Should Be Able To (Acronym used in GitHub issue title)
-
-## SDK
-
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
-
-## Slashing
-
-The reduction in the stake of a validator, a validator group, or both, for a particular action not conducive to the health of the network.
-
-## Slashing Penalty
-
-A variable that is tracked for each validator group by the proof-of-stake mechanism that causes rewards to the group, its validators and its voters to be temporarily reduced because of a recent slashing.
-
 ## Smart Contracts
 
 Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment.
-
-## SNBAT
-
-Should Not Be Able To (Acronym used in GitHub issue title)
 
 ## Solidity
 
@@ -276,7 +249,7 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 
 ## Stake
 
-[Locked Gold](#locked-gold) that a validator or validator group puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
+[Locked CELO](#locked-celo) that a RPC community node provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
 
 ## Testnet
 
@@ -292,23 +265,19 @@ To avoid Denial-of-Service attacks and ensure termination of calls to smart cont
 
 ## Unlocking Period
 
-The elapsed time between an account requesting an amount of [Locked Gold](#locked-gold) be unlocked and the first point it can be withdrawn.
-
-## Uptime Score
-
-A variable that is tracked for each validator by the proof-of-stake mechanism that approximates how regularly that validator participates in consensus.
+The elapsed time between an account requesting an amount of [Locked CELO](#locked-celo) be unlocked and the first point it can be withdrawn.
 
 ## Validator
 
-Both: the entity in the proof-of-stake mechanism that can be associated with a validator group and subsequently elected; and a running instance of the Celo Blockchain software that is configured and ready (if elected) to participate in the Byzantine Fault Tolerant consensus algorithm to agree new blocks to append to the blockchain ledger.
+When Celo was an L1, validator referred both to the entity in the proof-of-stake mechanism that could be associated with a validator group and subsequently elected; and a running instance of the Celo Blockchain software that was configured and ready (if elected) to participate in the Byzantine Fault Tolerant consensus algorithm to agree on new blocks to append to the blockchain ledger.
 
 ## Validator Group
 
-The entity in the proof-of-stake mechanism that can associate validators, receive votes from holders of [Locked Gold](#locked-gold) and cause those validators to be elected.
+When Celo was an L1, the entity in the proof-of-stake mechanism that could associate validators, receive votes from holders of [Locked CELO](#locked-celo) and cause those validators to be elected.
 
 ## Validator Set
 
-The set of elected validators (with respect to a specific epoch) that participate in consensus
+When Celo was an L1, the set of elected validators (with respect to a specific epoch) that participated in consensus
 
 ## Wallet
 
