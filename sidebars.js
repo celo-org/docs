@@ -418,17 +418,10 @@ const whatIsCeloSidebar = [
             type: "category",
             label: "Transactions",
             items: [
-              {
-                type: "doc",
-                label: "Overview",
-                id: "what-is-celo/about-celo-l1/protocol/transaction/index",
-              },
               "what-is-celo/about-celo-l1/protocol/transaction/native-currency",
               "what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees",
               "what-is-celo/about-celo-l1/protocol/transaction/gas-pricing",
-              "what-is-celo/about-celo-l1/protocol/transaction/escrow",
-              "what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption",
-              "what-is-celo/about-celo-l1/protocol/transaction/transaction-types",
+              "what-is-celo/about-celo-l1/protocol/transaction/escrow"
             ],
           },
           {
@@ -505,18 +498,7 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Celo Randomness",
             id: "what-is-celo/about-celo-l1/protocol/randomness",
-          },
-          {
-            type: "category",
-            label: "Contracts",
-            items: [
-              {
-                type: "doc",
-                label: "Add A Contract",
-                id: "what-is-celo/about-celo-l1/protocol/contracts/add-contract",
-              },
-            ],
-          },
+          }
         ],
       },
       {
