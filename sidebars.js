@@ -327,11 +327,6 @@ const whatIsCeloSidebar = [
         label: "Protocol",
         items: [
           {
-            type: "doc",
-            label: "Overview",
-            id: "what-is-celo/about-celo-l1/protocol/index",
-          },
-          {
             type: "category",
             label: "Proof-of-Stake",
             items: [
@@ -373,17 +368,7 @@ const whatIsCeloSidebar = [
                     type: "doc",
                     label: "Locked CELO Rewards",
                     id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold",
-                  },
-                  {
-                    type: "doc",
-                    label: "Community Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund",
-                  },
-                  {
-                    type: "doc",
-                    label: "Carbon Offsetting Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-                  },
+                  }
                 ],
               },
               {
