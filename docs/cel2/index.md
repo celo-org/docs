@@ -11,8 +11,6 @@ Celo's evolution from an L1 EVM-compatible chain to an L2 solution marks a signi
 
 ### Technical Changes
 
-This transition enables native bridging between Celo and Ethereum, enhancing security by reducing reliance on external bridges—a common vulnerability point. Native bridging provides users with more secure and streamlined transactions. The L2 also implements the [Cancun hardfork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md) for the EVM, enabling the latest opcodes for cheaper, more secure smart contracts and supporting new precompiles for additional use-cases.
-
 The table below summarizes the technical changes involved in transitioning from Celo's Layer 1 to Layer 2:
 
 | **Aspect**          | **Layer 1**                                                                                  | **Layer 2**                                                                                                   |
