@@ -108,7 +108,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/authorize.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/authorize.js)_
+_See code: [lib/commands/account/authorize.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/authorize.js)_
 
 ## `celocli account:balance ARG1`
 
@@ -148,7 +148,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/balance.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/balance.js)_
+_See code: [lib/commands/account/balance.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/balance.js)_
 
 ## `celocli account:claim-account ARG1`
 
@@ -218,7 +218,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-account.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-account.js)_
+_See code: [lib/commands/account/claim-account.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-account.js)_
 
 ## `celocli account:claim-domain ARG1`
 
@@ -284,7 +284,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-domain.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-domain.js)_
+_See code: [lib/commands/account/claim-domain.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-domain.js)_
 
 ## `celocli account:claim-keybase ARG1`
 
@@ -350,7 +350,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-keybase.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-keybase.js)_
+_See code: [lib/commands/account/claim-keybase.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-keybase.js)_
 
 ## `celocli account:claim-name ARG1`
 
@@ -416,7 +416,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-name.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-name.js)_
+_See code: [lib/commands/account/claim-name.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-name.js)_
 
 ## `celocli account:claim-rpc-url ARG1`
 
@@ -482,7 +482,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-rpc-url.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-rpc-url.js)_
+_See code: [lib/commands/account/claim-rpc-url.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-rpc-url.js)_
 
 ## `celocli account:claim-storage ARG1`
 
@@ -548,7 +548,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/claim-storage.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/claim-storage.js)_
+_See code: [lib/commands/account/claim-storage.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/claim-storage.js)_
 
 ## `celocli account:create-metadata ARG1`
 
@@ -613,7 +613,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/create-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/create-metadata.js)_
+_See code: [lib/commands/account/create-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/create-metadata.js)_
 
 ## `celocli account:deauthorize`
 
@@ -680,7 +680,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/deauthorize.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/deauthorize.js)_
+_See code: [lib/commands/account/deauthorize.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/deauthorize.js)_
 
 ## `celocli account:delete-payment-delegation`
 
@@ -739,7 +739,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/delete-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/delete-payment-delegation.js)_
+_See code: [lib/commands/account/delete-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/delete-payment-delegation.js)_
 
 ## `celocli account:get-metadata ARG1`
 
@@ -825,7 +825,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/get-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/get-metadata.js)_
+_See code: [lib/commands/account/get-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/get-metadata.js)_
 
 ## `celocli account:get-payment-delegation`
 
@@ -912,7 +912,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/get-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/get-payment-delegation.js)_
+_See code: [lib/commands/account/get-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/get-payment-delegation.js)_
 
 ## `celocli account:list`
 
@@ -968,7 +968,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/list.js)_
+_See code: [lib/commands/account/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/list.js)_
 
 ## `celocli account:lock ARG1`
 
@@ -1026,7 +1026,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/lock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/lock.js)_
+_See code: [lib/commands/account/lock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/lock.js)_
 
 ## `celocli account:new`
 
@@ -1117,7 +1117,7 @@ FLAG DESCRIPTIONS
     path. (use changeIndex, and addressIndex flags to change BIP44 positions 4 and 5)
 ```
 
-_See code: [lib/commands/account/new.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/new.js)_
+_See code: [lib/commands/account/new.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/new.js)_
 
 ## `celocli account:offchain-read ARG1`
 
@@ -1191,7 +1191,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/offchain-read.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/offchain-read.js)_
+_See code: [lib/commands/account/offchain-read.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/offchain-read.js)_
 
 ## `celocli account:offchain-write`
 
@@ -1267,7 +1267,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/offchain-write.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/offchain-write.js)_
+_See code: [lib/commands/account/offchain-write.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/offchain-write.js)_
 
 ## `celocli account:proof-of-possession`
 
@@ -1330,7 +1330,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/proof-of-possession.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/proof-of-possession.js)_
+_See code: [lib/commands/account/proof-of-possession.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/proof-of-possession.js)_
 
 ## `celocli account:register`
 
@@ -1395,7 +1395,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/register.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/register.js)_
+_See code: [lib/commands/account/register.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/register.js)_
 
 ## `celocli account:register-data-encryption-key`
 
@@ -1458,7 +1458,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/register-data-encryption-key.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/register-data-encryption-key.js)_
+_See code: [lib/commands/account/register-data-encryption-key.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/register-data-encryption-key.js)_
 
 ## `celocli account:register-metadata`
 
@@ -1551,7 +1551,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/register-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/register-metadata.js)_
+_See code: [lib/commands/account/register-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/register-metadata.js)_
 
 ## `celocli account:set-name`
 
@@ -1614,7 +1614,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/set-name.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/set-name.js)_
+_See code: [lib/commands/account/set-name.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/set-name.js)_
 
 ## `celocli account:set-payment-delegation`
 
@@ -1681,7 +1681,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/set-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/set-payment-delegation.js)_
+_See code: [lib/commands/account/set-payment-delegation.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/set-payment-delegation.js)_
 
 ## `celocli account:set-wallet`
 
@@ -1753,7 +1753,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/set-wallet.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/set-wallet.js)_
+_See code: [lib/commands/account/set-wallet.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/set-wallet.js)_
 
 ## `celocli account:show ARG1`
 
@@ -1787,7 +1787,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/show.js)_
+_See code: [lib/commands/account/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/show.js)_
 
 ## `celocli account:show-claimed-accounts ARG1`
 
@@ -1842,7 +1842,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/show-claimed-accounts.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/show-claimed-accounts.js)_
+_See code: [lib/commands/account/show-claimed-accounts.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/show-claimed-accounts.js)_
 
 ## `celocli account:show-metadata ARG1`
 
@@ -1887,7 +1887,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/show-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/show-metadata.js)_
+_See code: [lib/commands/account/show-metadata.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/show-metadata.js)_
 
 ## `celocli account:unlock ARG1`
 
@@ -1956,7 +1956,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/unlock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/unlock.js)_
+_See code: [lib/commands/account/unlock.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/unlock.js)_
 
 ## `celocli account:verify-proof-of-possession`
 
@@ -2023,4 +2023,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/account/verify-proof-of-possession.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/account/verify-proof-of-possession.js)_
+_See code: [lib/commands/account/verify-proof-of-possession.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/account/verify-proof-of-possession.js)_
