@@ -70,7 +70,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/multisig/approve.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/multisig/approve.js)_
+_See code: [lib/commands/multisig/approve.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/multisig/approve.js)_
 
 ## `celocli multisig:show ARG1`
 
@@ -109,7 +109,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/multisig/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/multisig/show.js)_
+_See code: [lib/commands/multisig/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/multisig/show.js)_
 
 ## `celocli multisig:transfer ARG1`
 
@@ -185,4 +185,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/multisig/transfer.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/multisig/transfer.js)_
+_See code: [lib/commands/multisig/transfer.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/multisig/transfer.js)_

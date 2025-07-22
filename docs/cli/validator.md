@@ -81,7 +81,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/affiliate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/affiliate.js)_
+_See code: [lib/commands/validator/affiliate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/affiliate.js)_
 
 ## `celocli validator:community-rpc-nodes`
 
@@ -188,7 +188,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/deaffiliate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/deaffiliate.js)_
+_See code: [lib/commands/validator/deaffiliate.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/deaffiliate.js)_
 
 ## `celocli validator:deregister`
 
@@ -251,7 +251,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/deregister.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/deregister.js)_
+_See code: [lib/commands/validator/deregister.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/deregister.js)_
 
 ## `celocli validator:list`
 
@@ -294,7 +294,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/list.js)_
+_See code: [lib/commands/validator/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/list.js)_
 
 ## `celocli validator:register`
 
@@ -359,7 +359,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/register.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/register.js)_
+_See code: [lib/commands/validator/register.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/register.js)_
 
 ## `celocli validator:requirements`
 
@@ -417,7 +417,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/requirements.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/requirements.js)_
+_See code: [lib/commands/validator/requirements.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/requirements.js)_
 
 ## `celocli validator:rpc-urls`
 
@@ -562,7 +562,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/show.js)_
+_See code: [lib/commands/validator/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/show.js)_
 
 ## `celocli validator:status`
 
@@ -670,4 +670,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validator/status.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.0/packages/cli/lib/commands/validator/status.js)_
+_See code: [lib/commands/validator/status.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validator/status.js)_
