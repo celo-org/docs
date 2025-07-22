@@ -37,7 +37,7 @@ See the guides for [running a node](/cel2/operators/run-node.md) or the guide on
 Yes. This is part of [running a node](/cel2/operators/run-node.md).
 If you're using the [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), it's included.
 
-### Will happened to funds on Celo L1 after the migration to L2?
+### What happened to funds on Celo L1 after the migration to L2?
 
 All balances have been carried over to the L2, unchanged.
 
