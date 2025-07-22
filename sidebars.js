@@ -63,11 +63,6 @@ const whatIsCeloSidebar = [
           },
           {
             type: "doc",
-            label: "Penalties",
-            id: "what-is-celo/using-celo/protocol/penalties",
-          },
-          {
-            type: "doc",
             label: "Consensus",
             id: "what-is-celo/using-celo/protocol/consensus",
           },
@@ -288,23 +283,28 @@ const whatIsCeloSidebar = [
       // TODOs
       {
         type: "doc",
-        label: "Registering as a Community RPC Node",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      {
+        type: "doc",
+        label: "Register a Community RPC Node",
         id: "cel2/operators/registering-as-rpc-node",
       },
       {
         type: "doc",
-        label: "Operating a Community RPC Node",
+        label: "Operate a Community RPC Node",
         id: "cel2/operators/community-rpc-node",
       },
       {
-        type: "doc",
-        label: "Community RPC Provider FAQ",
-        id: "cel2/operators/validator-rpc-faq",
+          type: "doc",
+          label: "Penalties",
+          id: "cel2/operators/penalties",
       },
       {
         type: "doc",
-        label: "How it works",
-        id: "cel2/operators/how-it-works",
+        label: "Community RPC Node FAQ",
+        id: "cel2/operators/validator-rpc-faq",
       },
       // TODO
       // {
