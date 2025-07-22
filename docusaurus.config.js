@@ -54,7 +54,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'The <a href="/cel2/eclair">Celo Eclair testnet is live</a>.',
+        'The <a href="/network/eclair/index">Celo Eclair testnet is live</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
