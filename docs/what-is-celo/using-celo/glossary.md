@@ -85,6 +85,10 @@ See [Node](#node).
 
 An account that supports the development and operational costs of the Celo protocol. The Community Fund is maintained by a transfer made as part of Epoch Rewards, and is intended to cover costs beyond the other specific incentives provided to validators and validator groups. Awards can be made through an on-chain governance proposal.
 
+### Community RPC node
+
+A node service that runs an RPC endpoint for the Celo network, allowing users and applications to access blockchain data and submit transactions. These nodes help decentralize infrastructure and require [Locked CELO](#locked-celo) as stake for registration.
+
 ## Consensus
 
 An algorithm that enables multiple computers to reach a decision on a single value proposed by one of them, despite network or computer failures.
