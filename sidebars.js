@@ -28,6 +28,22 @@ const whatIsCeloSidebar = [
                 label: "Overview",
                 id: "what-is-celo/using-celo/protocol/governance/overview",
               },
+              // TODO: clearly list governable parameters and smart contracts upgradeability
+              // {
+              //   type: "doc",
+              //   label: "Governable Parameters",
+              //   id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
+              // },
+              //{
+              //  type: "doc",
+              //  label: "Smart Contracts Upgrades",
+              //  id: "what-is-celo/using-celo/protocol/governance/smart-contracts-upgrades",
+              // },
+              {
+                type: "doc",
+                label: "Governance Toolkit",
+                id: "what-is-celo/using-celo/protocol/governance/governance-toolkit",
+              },
               {
                 type: "doc",
                 label: "Create a Governance Proposal",
@@ -35,19 +51,14 @@ const whatIsCeloSidebar = [
               },
               {
                 type: "doc",
-                label: "Voting in Governance",
+                label: "CeloCLI for Governance",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance",
               },
               {
                 type: "doc",
-                label: "Voting with Celo Mondo",
+                label: "Vote with Celo Mondo",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo",
-              },
-              {
-                type: "doc",
-                label: "Governable Parameters",
-                id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
-              },
+              }
             ],
           },
           {
@@ -318,13 +329,8 @@ const whatIsCeloSidebar = [
         id: "what-is-celo/about-celo-l1/l1-architecture",
       },
       {
-        type: "link",
-        label: "Whitepapers",
-        href: "https://celo.org/papers",
-      },
-      {
         type: "category",
-        label: "Protocol",
+        label: "L1 Protocol",
         items: [
           {
             type: "category",
@@ -577,18 +583,13 @@ const whatIsCeloSidebar = [
             label: "Validator FAQ",
             id: "what-is-celo/about-celo-l1/validator/troubleshooting-faq",
           },
-          {
-            type: "link",
-            label: "Celo Website",
-            href: "https://celo.org",
-          },
-          {
-            type: "link",
-            label: "Celo Discord",
-            href: "https://discord.com/invite/celo",
-          },
         ],
       },
+      {
+        type: "link",
+        label: "Whitepapers",
+        href: "https://celo.org/papers",
+      }
     ],
   },
   {
