@@ -127,7 +127,7 @@ Fore more details on the changes between L1 and L2, refer to the [specs](https:/
 
 ## Epoch Rewards
 
-Funds disbursed by the protocol at the end of every epoch as incentives for community RPC node providers, holders of [Locked Gold](#locked-gold) that participated in elections, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
+Funds disbursed by the protocol at the end of every epoch as incentives for community RPC node providers, holders of [Locked CELO](#locked-celo) that participated in elections, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
 
 ## ERC-20
 
@@ -201,11 +201,13 @@ Refers the Ethereum blockchain, used in contrast to layer 2, which refers to Cel
 
 Refers to the Celo blockchain and is used in contrast to layer 1, which refers to the Ethereum blockchain.
 
+## Locked CELO
+
+[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
+
 ## Locked Gold
 
-[CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
-
-Locked Gold is in the process of being renamed along with other references to [Celo Gold](#celo-gold) (cGLD), which is now referred as [CELO](#celo-native-asset).
+Locked Gold is the old name for [Locked CELO](#locked-celo).
 
 ## Mainnet
 
@@ -221,7 +223,7 @@ An interaction that takes place solely through a transaction being executed on t
 
 ## Proof-of-Stake
 
-When Celo was an L1, the system that determined the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permitted accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selected a new set of validators for the following epoch.
+When Celo was an L1, the system that determined the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permitted accounts to convert units of [CELO](#celo-native-asset) into [Locked CELO](#locked-celo) then vote for Validator Groups, such that an election held at the end of every epoch selected a new set of validators for the following epoch.
 
 ## RC1
 
@@ -249,7 +251,7 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 
 ## Stake
 
-[Locked Gold](#locked-gold) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
+[Locked CELO](#locked-celo) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
 
 ## Testnet
 
@@ -265,7 +267,7 @@ To avoid Denial-of-Service attacks and ensure termination of calls to smart cont
 
 ## Unlocking Period
 
-The elapsed time between an account requesting an amount of [Locked Gold](#locked-gold) be unlocked and the first point it can be withdrawn.
+The elapsed time between an account requesting an amount of [Locked CELO](#locked-celo) be unlocked and the first point it can be withdrawn.
 
 ## Validator
 
@@ -275,7 +277,7 @@ For historical reasons, the term validator is still present in the codebase and 
 
 ## Validator Group
 
-When Celo was an L1, the entity in the proof-of-stake mechanism that could associate validators, receive votes from holders of [Locked Gold](#locked-gold) and cause those validators to be elected.
+When Celo was an L1, the entity in the proof-of-stake mechanism that could associate validators, receive votes from holders of [Locked CELO](#locked-celo) and cause those validators to be elected.
 
 For historical reasons, the term validator group is still present in the codebase and documentation, but it is now used to refer to [community RPC nodes](#community-rpc-node).
 
