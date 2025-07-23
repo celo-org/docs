@@ -25,5 +25,5 @@ Please help the community to improve Celo by asking questions on the [Forum](htt
 
 ## Useful links
 
-- [Alajores Self-Serve Faucet](https://faucet.celo.org/alfajores)
+- [Alfajores Self-Serve Faucet](https://faucet.celo.org/alfajores)
 - [Alfajores Network Block Explorer](https://celo-alfajores.blockscout.com/)
