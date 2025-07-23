@@ -33,6 +33,10 @@ Former name for what has become Social Connect.
 
 The second public Celo test network, intended for use as a testing ground for protocol changes and node operator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
+## Batcher
+
+A component in the OP-Stack architecture responsible for collecting Layer 2 transactions and submitting them to the Layer 1 in batches. The batcher helps optimize costs and efficiency by grouping multiple transactions together.
+
 ## Block
 
 The unit of update to the blockchain. A block consists of a header identifying its position in the chain and other metadata, and a body that contains a list of transactions, and data structures that describe the new state after executing those transactions.
@@ -40,6 +44,10 @@ The unit of update to the blockchain. A block consists of a header identifying i
 ## Blockchain
 
 A **blockchain** or **cryptographic network** is a broad term used to describe a database maintained by a distributed set of computers that do not share a trust relationship or common ownership. This arrangement is referred to as decentralized. The content of a blockchain's database, or ledger, is authenticated using cryptographic techniques, preventing its contents being added to, edited or removed except according to a protocol operated by the network as a whole.
+
+## Bridge
+
+A protocol or system that enables the transfer of assets and data between different blockchains. Celo supports both native bridging to Ethereum and third-party bridges to other networks.
 
 ## Byzantine Fault Tolerant (BFT) Consensus
 
@@ -105,6 +113,10 @@ Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to
 
 Short for Decentralized Application. An application, usually a mobile application, which to deliver its functionality connects to a decentralized network like Celo, rather than to centralized services in a single organization's data centers.
 
+## Dango
+
+Celo's first Layer 2 public testnet that launched in July 2024. Dango allowed developers and infrastructure providers to familiarize themselves with the L2 environment before the mainnet migration. The testnet was shut down in October 2024 after serving its purpose as a testing ground for the L2 transition.
+
 ## DeFi
 
 Decentralized Finance; open source software and networks without intermediaries in the financial space.
@@ -112,6 +124,14 @@ Decentralized Finance; open source software and networks without intermediaries 
 ## Derivation Path
 
 A derivation path defines how private keys and addresses are derived from a mnemonic. The Bitcoin community defined the standards for derivation paths in BIP39 and BIP42 and BIP44. A [registry of coins/chains and their paths](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) is maintained and includes Celo and Ethereum paths.
+
+## Eclair
+
+A specialized Celo testnet designed to showcase the integration of EigenDA v2 and Succinct Lite. Eclair serves as a testing environment for advanced data availability solutions and zero-knowledge proof systems, allowing developers to experiment with cutting-edge infrastructure before deployment to mainnet.
+
+## EigenDA
+
+A high-throughput, decentralized data availability (DA) service built on EigenLayer that Celo uses for storing transaction data. EigenDA provides scalable and secure data availability for Layer 2 networks like Celo.
 
 ## EOA or externally owned account
 
@@ -140,6 +160,18 @@ The Ethereum Virtual Machine. A runtime environment used by smart contracts on E
 ## Externally Owned Account (EOA)
 
 An account owned by a private key which has full control to send transactions from the account by signing and submitting the transaction to the blockchain. All transaction on Celo must originate from an EOA, which pays for the transaction fees.
+
+## Fee Abstraction
+
+A unique feature of Celo that allows users to pay transaction fees in various ERC-20 tokens, not just the native CELO token. This enables users to transact without needing to hold CELO for gas, making the platform more accessible.
+
+## Finality
+
+The state when a transaction or block is considered permanently settled and cannot be reversed. On Celo L2, finality depends on the sequencer, batcher, proposer, and ultimately on Ethereum's finality.
+
+## Forno
+
+Celo's hosted node service that provides JSON-RPC endpoints on a best-effort basos for developers to connect to the Celo network without running their own node infrastructure.
 
 ## Full Node
 
@@ -213,6 +245,16 @@ Locked Gold is the old name for [Locked CELO](#locked-celo).
 
 The Celo production network.
 
+## Mento
+
+The decentralized stability protocol that maintains Celo's family of stablecoins. Mento uses algorithmic monetary policy and over-collateralization to ensure price stability.
+
+Originally part of the Celo protocol, [Mento](https://www.mento.org/) has evolved into its own independent protocol.
+
+## MiniPay
+
+A mobile wallet and payments app by Opera built on Celo, designed to make cryptocurrency and DeFi accessible to users through a simple, user-friendly interface. MiniPay supports features like peer-to-peer payments and DApp integration.
+
 ## Node
 
 A running instance of the Celo Blockchain software. Used interchangeably with 'Client'.
@@ -220,6 +262,22 @@ A running instance of the Celo Blockchain software. Used interchangeably with 'C
 ## On-chain
 
 An interaction that takes place solely through a transaction being executed on the blockchain and updating the state of the ledger.
+
+## OP-Stack
+
+A modular blockchain development framework created by Optimism that serves as the foundation for Celo's Layer 2 implementation. The OP-Stack provides standardized components for building Ethereum Layer 2 networks.
+
+## Optimism
+
+The Ethereum Layer 2 network that developed the OP-Stack framework. Celo's L2 is built using Optimism's proven infrastructure and shares revenue with the OP-Stack ecosystem.
+
+## Oracle
+
+External data sources that provide real-world information to smart contracts on the blockchain. Oracles enable smart contracts to access off-chain data such as price feeds, weather data, or other external information needed for decentralized applications and protocols like Mento.
+
+## Proposer
+
+A component in the OP-Stack architecture responsible for submitting Layer 2 state commitments to the Layer 1. The proposer ensures that L2 transactions are properly recorded and finalized on L1.
 
 ## Proof-of-Stake
 
@@ -253,6 +311,20 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 
 [Locked CELO](#locked-celo) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
 
+## Sequencer
+
+A component in the OP-Stack architecture responsible for ordering and executing Layer 2 transactions. The sequencer processes transactions in real-time and provides fast transaction confirmation before they are batch-submitted to the Layer 1.
+
+## Self
+
+A decentralized identity protocol that enables users to manage their digital identity across applications and services. Self provides privacy-preserving identity verification. Learn more at [self.xyz](https://self.xyz/).
+
+## Social Connect
+
+Celo's decentralized identity protocol that enables users to connect their phone numbers and other identifiers to their blockchain addresses while preserving privacy.
+
+Formerly known as the Attestation Service and now a part of Self.
+
 ## Testnet
 
 A test network. Its tokens hold no real world economic value.
@@ -265,9 +337,17 @@ Requests to make a change to the state of the blockchain. They can: transfer val
 
 To avoid Denial-of-Service attacks and ensure termination of calls to smart contract code, the account sending a transaction pays **transaction fees** for its execution steps using its own balance. Transactions specify a **maximum gas** which bounds the steps of execution before a transaction is reverted. A **gas price** determines the unit price for each step, and is used to prioritize which transactions the network applies. In Celo, transaction fees can be paid in ERC-20 currencies and gas pricing works differently from Ethereum.
 
+## Token Duality
+
+A unique feature of CELO that allows it to function both as the native gas token for the Celo network and as an ERC-20 token that can be transferred and used in smart contracts.
+
 ## Unlocking Period
 
 The elapsed time between an account requesting an amount of [Locked CELO](#locked-celo) be unlocked and the first point it can be withdrawn.
+
+## Valora
+
+Celo's flagship mobile wallet application that provides easy access to DeFi, payments, and cryptocurrency management. Valora offers features like peer-to-peer payments, savings, and DApp integration, making Web3 accessible through a user-friendly mobile interface.
 
 ## Validator
 
