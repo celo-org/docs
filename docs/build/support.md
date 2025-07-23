@@ -23,7 +23,7 @@ Help us improve by sharing your feedback on missing tools, unclear sections, or 
 
 For the latest updates, sign up for the <ColoredText>[DevDesk Mailing List](https://embeds.beehiiv.com/eeadfef4-2f0c-45ce-801c-b920827d5cd2)</ColoredText> and follow <ColoredText>[CeloDevs on X](https://x.com/CeloDevs)</ColoredText>.
 
-## Additionnal Resources
+## Additional Resources
 
 - [Celo specifications](https://specs.celo.org/)
 - [Transaction types on Celo](https://github.com/celo-org/txtypes)
