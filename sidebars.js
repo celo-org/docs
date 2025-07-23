@@ -171,7 +171,7 @@ const whatIsCeloSidebar = [
         type: "doc",
         label: "Ramps",
         id: "what-is-celo/using-celo/ramps",
-      }
+      },
     ],
   },
   {
@@ -606,11 +606,6 @@ const whatIsCeloSidebar = [
             id: "what-is-celo/about-celo-l1/validator/troubleshooting-faq",
           },
           {
-            type: "doc",
-            label: "Glossary",
-            id: "glossary",
-          },
-          {
             type: "link",
             label: "Celo Website",
             href: "https://celo.org",
@@ -623,6 +618,11 @@ const whatIsCeloSidebar = [
         ],
       },
     ],
+  },
+  {
+    type: "doc",
+    label: "Glossary",
+    id: "glossary",
   },
   {
     type: "link",
