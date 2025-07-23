@@ -359,3 +359,4 @@ When Celo was an L1, the set of elected validators (with respect to a specific e
 
 ## Wallet
 
+A DApp that allows a user to manage an account, and usually stores the associated private key.
