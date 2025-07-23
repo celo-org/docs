@@ -25,6 +25,6 @@ For the latest updates, sign up for the <ColoredText>[DevDesk Mailing List](http
 
 ## Additional Resources
 
-- [Celo specifications](https://specs.celo.org/)
+- [Celo specification](https://specs.celo.org/)
 - [Transaction types on Celo](https://github.com/celo-org/txtypes)
 - [Celo Forum](https://forum.celo.org/)
