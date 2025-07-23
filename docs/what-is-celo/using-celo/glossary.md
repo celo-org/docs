@@ -133,10 +133,6 @@ Funds disbursed by the protocol at the end of every epoch as incentives for comm
 
 A standard interface for implementing tokens as smart contracts. Balances associated with addresses are typically maintained inside the contract's storage. Both [CELO](#celo-native-asset) and Celo Dollars implement the ERC-20 interface.
 
-## Ethereum
-
-A project with which the code of the Celo Blockchain has shared ancestry. [Ethereum](https://www.ethereum.org) facilitates building general-purpose decentralized applications.
-
 ## EVM
 
 The Ethereum Virtual Machine. A runtime environment used by smart contracts on Ethereum and Celo.
@@ -167,7 +163,7 @@ The very first block in the blockchain, provided as configuration to Celo Blockc
 
 ## Geth
 
-[go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software is forked.
+[go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software was forked when it was an L1.
 
 ## Governable
 
@@ -191,7 +187,7 @@ Hardware Security Module. A hardware device that hosts one or more private keys 
 
 ## Istanbul
 
-Istanbul, or IBFT, is the original name of the implementation of the Byzantine Fault Tolerant consensus algorithm used by Celo. Istanbul is also the name of a hard fork of the Ethereum network.
+Istanbul, or IBFT, is the original name of the implementation of the Byzantine Fault Tolerant consensus algorithm used by Celo, when it was an L1. Istanbul is also the name of a hard fork of the Ethereum network.
 
 ## Key Rotation
 
@@ -235,10 +231,6 @@ RC1, which stands for Release Candidate 1, was the first network that had the po
 
 A common practice in societies without easy access to banking (source); a peer-to-peer savings and loan group.
 
-## SDK
-
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
-
 ## Slashing
 
 The reduction in the stake of a community RPC node and group for a particular action not conducive to the health of the network.
@@ -269,7 +261,7 @@ Requests to make a change to the state of the blockchain. They can: transfer val
 
 ## Transaction Fees
 
-To avoid Denial-of-Service attacks and ensure termination of calls to smart contract code, the account sending a transaction pays **transaction fees** for its execution steps using its own balance. Transactions specify a **maximum gas** which bounds the steps of execution before a transaction is reverted. A **gas price** determines the unit price for each step, and is used to prioritize which transactions the network applies. \(In Celo transaction fees can be paid in ERC-20 currencies and gas pricing works differently from Ethereum\).
+To avoid Denial-of-Service attacks and ensure termination of calls to smart contract code, the account sending a transaction pays **transaction fees** for its execution steps using its own balance. Transactions specify a **maximum gas** which bounds the steps of execution before a transaction is reverted. A **gas price** determines the unit price for each step, and is used to prioritize which transactions the network applies. In Celo, transaction fees can be paid in ERC-20 currencies and gas pricing works differently from Ethereum.
 
 ## Unlocking Period
 
