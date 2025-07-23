@@ -235,10 +235,6 @@ RC1, which stands for Release Candidate 1, was the first network that had the po
 
 A common practice in societies without easy access to banking (source); a peer-to-peer savings and loan group.
 
-## SBAT
-
-Should Be Able To (Acronym used in GitHub issue title)
-
 ## SDK
 
 Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
@@ -250,10 +246,6 @@ The reduction in the stake of a community RPC node and group for a particular ac
 ## Smart Contracts
 
 Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment.
-
-## SNBAT
-
-Should Not Be Able To (Acronym used in GitHub issue title)
 
 ## Solidity
 
