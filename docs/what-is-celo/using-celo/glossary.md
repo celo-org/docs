@@ -147,7 +147,7 @@ An account owned by a private key which has full control to send transactions fr
 
 ## Full Node
 
-A computer running the Celo Blockchain software that maintains a full copy of the blockchain locally and, in Celo, receives transaction fees in exchange for servicing light clients.
+A computer running the Celo Blockchain software that maintains a full copy of the blockchain locally.
 
 ## Gas
 
@@ -204,10 +204,6 @@ Refers the Ethereum blockchain, used in contrast to layer 2, which refers to Cel
 ## Layer 2 (L2)
 
 Refers to the Celo blockchain and is used in contrast to layer 1, which refers to the Ethereum blockchain.
-
-## Light Client
-
-A device or computer running the Celo Blockchain software that keeps typically only the most recent blockchain state, such that it can send transactions and identify what other data to request as necessary. Every Celo Wallet installation includes a Celo Blockchain light client.
 
 ## Locked Gold
 
