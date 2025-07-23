@@ -145,7 +145,7 @@ export default function HomePage(): JSX.Element {
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
-              href="/developer/build/mcp"
+              href="/build/mcp"
               target="_blank"
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
