@@ -151,7 +151,7 @@ Funds disbursed by the protocol at the end of every epoch as incentives for comm
 
 ## ERC-20
 
-A standard interface for implementing tokens as smart contracts. Balances associated with addresses are typically maintained inside the contract's storage. Both [CELO](#celo-native-asset) and Celo Dollars implement the ERC-20 interface.
+A standard interface for implementing tokens as smart contracts. Balances associated with addresses are typically maintained inside the contract's storage. Both [CELO](#celo-native-asset), Celo Dollars and other Celo stablecoins implement the ERC-20 interface.
 
 ## EVM
 
@@ -171,7 +171,7 @@ The state when a transaction or block is considered permanently settled and cann
 
 ## Forno
 
-Celo's hosted node service that provides JSON-RPC endpoints on a best-effort basos for developers to connect to the Celo network without running their own node infrastructure.
+Celo's hosted node service that provides JSON-RPC endpoints on a best-effort basis for developers to connect to the Celo network without running their own node infrastructure.
 
 ## Full Node
 
@@ -193,10 +193,6 @@ The minimum unit price for gas that the Celo protocol will accept. This value ch
 
 The very first block in the blockchain, provided as configuration to Celo Blockchain nodes.
 
-## Geth
-
-[go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software was forked when it was an L1.
-
 ## Governable
 
 A smart contract that is owned by the Celo [Governance](/what-is-celo/using-celo/protocol/governance/overview) mechanism and so can be changed or updated by an on-chain governance proposal.
@@ -216,10 +212,6 @@ See [Block](#block).
 ## HSM
 
 Hardware Security Module. A hardware device that hosts one or more private keys and signs data without passing the key off the device.
-
-## Istanbul
-
-Istanbul, or IBFT, is the original name of the implementation of the Byzantine Fault Tolerant consensus algorithm used by Celo, when it was an L1. Istanbul is also the name of a hard fork of the Ethereum network.
 
 ## Key Rotation
 
@@ -368,4 +360,3 @@ When Celo was an L1, the set of elected validators (with respect to a specific e
 ## Wallet
 
 A DApp that allows a user to manage an account, and usually stores the associated private key.
-DApp that allows a user to manage an account, and usually stores the associated private key.
