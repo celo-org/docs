@@ -31,7 +31,7 @@ Former name for what has become Social Connect.
 
 ## Baklava
 
-The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
+The second public Celo test network, intended for use as a testing ground for protocol changes and node operator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
 ## Block
 
@@ -83,7 +83,11 @@ See [Node](#node).
 
 ## Community Fund
 
-An account that supports the development and operational costs of the Celo protocol. The Community Fund is maintained by a transfer made as part of Epoch Rewards, and is intended to cover costs beyond the other specific incentives provided to validators and validator groups. Awards can be made through an on-chain governance proposal.
+An account that supports the development and operational costs of the Celo protocol. The Community Fund is maintained by a transfer made as part of Epoch Rewards, and is intended to cover costs beyond the other specific incentives provided to community RPC nodes and groups. Awards can be made through an on-chain governance proposal.
+
+## Community RPC node
+
+A node service that runs an RPC endpoint for the Celo network, allowing users and applications to access blockchain data and submit transactions. These nodes help decentralize infrastructure and require [Locked CELO](#locked-celo) as stake for registration.
 
 ## Consensus
 
@@ -91,7 +95,7 @@ An algorithm that enables multiple computers to reach a decision on a single val
 
 ## ContractKit
 
-A library to help developers and operators of Validator nodes interact with the Celo Blockchain and Celo Core Contracts. For dApp developers we suggest using viem or wagmi.
+A library to help developers and operators of nodes to interact with the Celo Blockchain and Celo Core Contracts. For dApp developers we suggest using viem or wagmi.
 
 ## Cryptocurrency
 
@@ -109,21 +113,21 @@ Decentralized Finance; open source software and networks without intermediaries 
 
 A derivation path defines how private keys and addresses are derived from a mnemonic. The Bitcoin community defined the standards for derivation paths in BIP39 and BIP42 and BIP44. A [registry of coins/chains and their paths](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) is maintained and includes Celo and Ethereum paths.
 
-## Double Signing
-
-When a validator signs two different blocks at the same height and with the same parent hash in the blockchain.
-
 ## EOA or externally owned account
 
 Ethereum term to designate addresses operated by users, as opposed to contract addresses.
 
 ## Epoch
 
-A fixed number of blocks, configured in the network's genesis block, during which the same validator set is used for consensus. A validator election is carried out after the last block of an epoch, and any resulting changes to the validator set are written into that block's header.
+Since the Celo migration to L2, an epoch is a variable number of blocks set to be at least as long as a day's time. Epoch changes are triggered through a permissionless smart contract call.
+
+When Celo was an L1 blockchain, an epoch was a fixed number of blocks, configured in the network's genesis block, during which the same validator set was used for consensus. A validator election was carried out after the last block of an epoch, and any resulting changes to the validator set were written into that block's header.
+
+Fore more details on the changes between L1 and L2, refer to the [specs](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ## Epoch Rewards
 
-Funds disbursed by the protocol at the end of every epoch as incentives for validators, validator groups, holders of [Locked Gold](#locked-gold) that voted for validator groups that elected one or more validators, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
+Funds disbursed by the protocol at the end of every epoch as incentives for community RPC node providers, holders of [Locked Gold](#locked-gold) that participated in elections, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
 
 ## ERC-20
 
@@ -175,7 +179,7 @@ A part of Celo that allow the protocol to be upgraded, and other actions to be t
 
 ## Group Share
 
-The proportion of epoch rewards for an elected validator that is passed to the validator group that caused it to be elected. This is a property that can be configured by each group.
+The proportion of epoch rewards for an elected community RPC node that is passed to the group that caused it to be elected. This is a property that can be configured by each group.
 
 ## Header
 
@@ -207,7 +211,7 @@ A device or computer running the Celo Blockchain software that keeps typically o
 
 ## Locked Gold
 
-[CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in validator elections, governance proposals, and to meet staking requirements for registering a validator or validator group.
+[CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
 
 Locked Gold is in the process of being renamed along with other references to [Celo Gold](#celo-gold) (cGLD), which is now referred as [CELO](#celo-native-asset).
 
@@ -217,7 +221,7 @@ The Celo production network.
 
 ## Node
 
-A running instance of the Celo Blockchain software. This could be configured to run as a Validator, Full Node, or Light Client. Used interchangeably with 'Client'.
+A running instance of the Celo Blockchain software. Used interchangeably with 'Client'.
 
 ## On-chain
 
@@ -225,7 +229,7 @@ An interaction that takes place solely through a transaction being executed on t
 
 ## Proof-of-Stake
 
-The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
+When Celo was an L1, the system that determined the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permitted accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selected a new set of validators for the following epoch.
 
 ## RC1
 
@@ -245,11 +249,7 @@ Software Development Kit. Generally, a suite of developer tools that enable appl
 
 ## Slashing
 
-The reduction in the stake of a validator, a validator group, or both, for a particular action not conducive to the health of the network.
-
-## Slashing Penalty
-
-A variable that is tracked for each validator group by the proof-of-stake mechanism that causes rewards to the group, its validators and its voters to be temporarily reduced because of a recent slashing.
+The reduction in the stake of a community RPC node and group for a particular action not conducive to the health of the network.
 
 ## Smart Contracts
 
@@ -269,7 +269,7 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 
 ## Stake
 
-[Locked Gold](#locked-gold) that a validator or validator group puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
+[Locked Gold](#locked-gold) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
 
 ## Testnet
 
@@ -287,21 +287,21 @@ To avoid Denial-of-Service attacks and ensure termination of calls to smart cont
 
 The elapsed time between an account requesting an amount of [Locked Gold](#locked-gold) be unlocked and the first point it can be withdrawn.
 
-## Uptime Score
-
-A variable that is tracked for each validator by the proof-of-stake mechanism that approximates how regularly that validator participates in consensus.
-
 ## Validator
 
-Both: the entity in the proof-of-stake mechanism that can be associated with a validator group and subsequently elected; and a running instance of the Celo Blockchain software that is configured and ready (if elected) to participate in the Byzantine Fault Tolerant consensus algorithm to agree new blocks to append to the blockchain ledger.
+When Celo was an L1, validator referred both to the entity in the proof-of-stake mechanism that could be associated with a validator group and subsequently elected; and a running instance of the Celo Blockchain software that was configured and ready (if elected) to participate in the Byzantine Fault Tolerant consensus algorithm to agree on new blocks to append to the blockchain ledger.
+
+For historical reasons, the term validator is still present in the codebase and documentation, but it is now used to refer to [community RPC nodes](#community-rpc-node).
 
 ## Validator Group
 
-The entity in the proof-of-stake mechanism that can associate validators, receive votes from holders of [Locked Gold](#locked-gold) and cause those validators to be elected.
+When Celo was an L1, the entity in the proof-of-stake mechanism that could associate validators, receive votes from holders of [Locked Gold](#locked-gold) and cause those validators to be elected.
+
+For historical reasons, the term validator group is still present in the codebase and documentation, but it is now used to refer to [community RPC nodes](#community-rpc-node).
 
 ## Validator Set
 
-The set of elected validators (with respect to a specific epoch) that participate in consensus
+When Celo was an L1, the set of elected validators (with respect to a specific epoch) that participated in consensus.
 
 ## Wallet
 
