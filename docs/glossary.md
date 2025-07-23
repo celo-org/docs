@@ -143,7 +143,7 @@ Since the Celo migration to L2, an epoch is a variable number of blocks set to b
 
 When Celo was an L1 blockchain, an epoch was a fixed number of blocks, configured in the network's genesis block, during which the same validator set was used for consensus. A validator election was carried out after the last block of an epoch, and any resulting changes to the validator set were written into that block's header.
 
-Fore more details on the changes between L1 and L2, refer to the [specs](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
+For more details on the changes between L1 and L2, refer to the [specs](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ## Epoch Rewards
 
