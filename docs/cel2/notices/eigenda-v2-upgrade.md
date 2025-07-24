@@ -8,7 +8,7 @@ This page will be kept updated with key information about the upgrade. As this u
 
 - Baklava testnet activation is planned for Wed, Jul 30, 2025.
 - Alfajores testnet activation is tentative planned for Wed, Aug 20, 2025.
-- **Mainnet** activation is tentative planned for Wed, Sep 3, 2025.
+- **Mainnet** activation is tentatively planned for Wed, Sep 3, 2025.
 
 :::
 
