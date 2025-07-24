@@ -352,6 +352,8 @@
 /blog/tutorials/why-should-you-use-celo https://celo.academy/t/how-to-build-a-decentralized-event-invitation-system-on-the-celo-blockchain-using-solidity-and-javascript/296 301
 /blog/tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain https://celo.academy/t/why-you-should-build-your-next-project-on-the-celo-blockchain/139 301
 /blog/tutorials/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo https://celo.academy/t/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo/957 301
+/cel2/builders /build
+/cel2/eclair /network/eclair
 /cel2/l2-operator-guide /cel2/operators/overview
 /cel2/notices/day-1-partners /developer
 /cel2/operators/rpc-provider /cel2/operators/community-rpc-node
@@ -677,6 +679,9 @@
 /important-information/baklava-testnet-disclaimer /network/baklava/disclaimer
 /important-information/mainnet-testnet-disclaimer /network/mainnet/disclaimer
 /important-information/rc-network-disclaimer /network/mainnet/disclaimer
+/network#celo-alfajores-l2-testnet /network#celo-alfajores-testnet
+/network#celo-baklava-l2-testnet /network#celo-baklava-testnet
+
 /protocol/bridge /what-is-celo/using-celo/bridges 301
 /protocol/bridges /developer/bridges/
 /protocol/bridging /what-is-celo/about-celo-l1/protocol/bridge
