@@ -19,7 +19,7 @@ Celo is oriented around providing the simplest possible experience for end-users
 
 To achieve this, Celo takes a full-stack approach, where each layer of the stack is designed with the end-user in mind while considering other stakeholders (e.g. operators of nodes in the network) involved in enabling the end-user experience.
 
-![](https://storage.googleapis.com/celo-website/docs/full-stack-diagram.jpg)
+![Celo full-stack architecture diagram showing three layers: Applications layer at top with Celo Wallet and other dApps, Celo Protocol layer in middle containing Core Contracts and Blockchain, and underlying infrastructure with validators, full nodes, and light clients](https://storage.googleapis.com/celo-website/docs/full-stack-diagram.jpg)
 
 ## Celo Blockchain
 
@@ -39,7 +39,7 @@ The Celo blockchain and Celo Core Contracts together comprise the Celo Protocol.
 
 The topology of a Celo network consists of machines running the Celo blockchain software in several distinct configurations:
 
-![](https://storage.googleapis.com/celo-website/docs/network.png)
+![Network topology diagram showing three types of nodes: Light Clients (represented by mobile phone icons) connecting to Full Nodes (computer server icons), which in turn connect to Validators (secure server icons). Arrows indicate the flow of communication between different node types in the Celo network hierarchy.](https://storage.googleapis.com/celo-website/docs/network.png)
 
 ## Validators
 

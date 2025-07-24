@@ -16,7 +16,7 @@ This section is a work in progress and based on the ["The Great Celo Halvening -
 
 ## Gas Pricing Mechanism
 
-Celo employs a gas pricing model based on **EIP-1559**, which dynamically adjusts the base fee to manage network demand. This mechanism ensures that gas prices respond to network congestion, increasing during high demand periods and decreasing when demand is low. The protocol sets a **base fee floor** to prevent the base fee from falling below a certain threshold, safeguarding the network against spam transactions and uncontrolled state growth. 
+Celo employs a gas pricing model based on **EIP-1559**, which dynamically adjusts the base fee to manage network demand. This mechanism ensures that gas prices respond to network congestion, increasing during high demand periods and decreasing when demand is low. The protocol sets a **base fee floor** to prevent the base fee from falling below a certain threshold, safeguarding the network against spam transactions and uncontrolled state growth.
 
 ## Fee Abstraction
 
@@ -38,10 +38,10 @@ With the shift to L2, the allocation of transaction fees has been restructured t
 
   - **Sequencer and Batcher Operations**: Supporting the infrastructure that orders and batches transactions on the network.
 
-  - **Revenue Sharing with the OP-Stack**: Complying with the Superchain Ecosystem requirements, which involve sharing revenue with the OP-Stack. 
+  - **Revenue Sharing with the OP-Stack**: Complying with the Superchain Ecosystem requirements, which involve sharing revenue with the OP-Stack.
 
 This reallocation ensures that transaction fees are utilized effectively to maintain network sustainability and operational efficiency in the L2 environment.
 
 ## Conclusion
 
-Celo's transition to L2 introduces significant changes to gas pricing and transaction fee allocation, aligning with the network's goals of sustainability, user accessibility, and robust operational support. These adjustments are designed to enhance the overall efficiency and resilience of the Celo ecosystem. 
+Celo's transition to L2 introduces significant changes to gas pricing and transaction fee allocation, aligning with the network's goals of sustainability, user accessibility, and robust operational support. These adjustments are designed to enhance the overall efficiency and resilience of the Celo ecosystem.

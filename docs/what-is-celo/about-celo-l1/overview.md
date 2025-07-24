@@ -1,3 +1,10 @@
 # Overview
 
-Celo was launched in 2020 as a mobile-first Layer 1 blockchain, designed to advance global financial inclusion by making crypto payments accessible via smartphones and phone numbers. Built on a proof-of-stake consensus and committed to carbon neutrality, Celo supported fast, low-cost transactions and native stablecoins like cUSD, powering a vibrant DeFi ecosystem. In 2024, Celo began migrating from its original Layer 1 architecture to become an Ethereum Layer 2 network, aiming for greater scalability and interoperability. The migration to L2 was completed on in March 2025, at block 31,056,500. This section documents the historical Celo Layer 1 blockchain prior to the migration and does not reflect the current state of Celo.
+Celo was launched in 2020 as a mobile-first Layer 1 blockchain designed to advance global financial inclusion through smartphone-accessible crypto payments and phone number-based addressing. Built on proof-of-stake consensus with a commitment to carbon neutrality, Celo's L1 featured fast, low-cost transactions and native stablecoins like cUSD that powered a vibrant DeFi ecosystem.
+
+In 2024, Celo began migrating from its Layer 1 architecture to become an Ethereum Layer 2 network built on the OP-Stack. This migration aimed to achieve greater scalability and interoperability while preserving Celo's core mission and complete transaction history.
+The migration was completed in March 2025 at block 31,056,500.
+
+:::warning
+This section documents the historical Celo Layer 1 blockchain before its completed migration to Layer 2 and does not reflect Celo's current L2 architecture.
+:::
