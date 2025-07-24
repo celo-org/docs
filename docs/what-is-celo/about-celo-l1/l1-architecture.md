@@ -5,8 +5,6 @@ description: Overview of the Celo Stack including it's blockchain, core contract
 
 # Architecture
 
-Overview of the Celo Stack including it's blockchain, core contracts, and applications.
-
 :::warning
 This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::

@@ -32,9 +32,9 @@ Only full node or archive node.
 
 ### For those who do not migrate, do they continue operating as validators alongside RPC nodes, just without any validating responsibilities?
 
-No, there will no longer be any validator nodes on the L2. 
+No, there will no longer be any validator nodes on the L2.
 
-### How will rewards be distributed after the hard fork, will earnings be limited to delegators (stakers) and RPC node operators? 
+### How will rewards be distributed after the hard fork, will earnings be limited to delegators (stakers) and RPC node operators?
   
 Rewards are limited to validators who register as a community RPC provider. There is a proposal in draft that will outline all thhe details on the monitoring.
 

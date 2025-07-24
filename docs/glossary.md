@@ -97,6 +97,10 @@ An account that supports the development and operational costs of the Celo proto
 
 A node service that runs an RPC endpoint for the Celo network, allowing users and applications to access blockchain data and submit transactions. These nodes help decentralize infrastructure and require [Locked CELO](#locked-celo) as stake for registration.
 
+### Community RPC node
+
+A node service that runs an RPC endpoint for the Celo network, allowing users and applications to access blockchain data and submit transactions. These nodes help decentralize infrastructure and require [Locked CELO](#locked-celo) as stake for registration.
+
 ## Consensus
 
 An algorithm that enables multiple computers to reach a decision on a single value proposed by one of them, despite network or computer failures.
@@ -140,6 +144,22 @@ Ethereum term to designate addresses operated by users, as opposed to contract a
 ## Epoch
 
 Since the Celo migration to L2, an epoch is a variable number of blocks set to be at least as long as a day's time. Epoch changes are triggered through a permissionless smart contract call.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+When Celo was an L1 blockchain, an epoch was a fixed number of blocks, configured in the network's genesis block, during which the same validator set was used for consensus. A validator election is was carried out after the last block of an epoch, and any resulting changes to the validator set were written into that block's header.
+Fore more details on the changes between L1 and L2, refer to the [specs](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
+
+## Epoch Rewards
+
+Funds disbursed by the protocol at the end of every epoch as incentives for validators, validator groups, holders of [Locked CELO](#locked-gold) that voted for validator groups that elected one or more validators, the Reserve, the Community Fund, and the Carbon Offsetting Fund.
+
+## ERC-20
+
+A standard interface for implementing tokens as smart contracts. Balances associated with addresses are typically maintained inside the contract's storage. Both [CELO](#celo-native-asset) and Celo Dollars implement the ERC-20 interface.
+
+## Ethereum
+
+The layer-1 blockchain that supports Celo Mainnet.
+=======
 
 When Celo was an L1 blockchain, an epoch was a fixed number of blocks, configured in the network's genesis block, during which the same validator set was used for consensus. A validator election was carried out after the last block of an epoch, and any resulting changes to the validator set were written into that block's header.
 
@@ -152,6 +172,7 @@ Funds disbursed by the protocol at the end of every epoch as incentives for comm
 ## ERC-20
 
 A standard interface for implementing tokens as smart contracts. Balances associated with addresses are typically maintained inside the contract's storage. Both [CELO](#celo-native-asset), Celo Dollars and other Celo stablecoins implement the ERC-20 interface.
+>>>>>>> origin/main:docs/glossary.md
 
 ## EVM
 
@@ -199,7 +220,7 @@ A smart contract that is owned by the Celo [Governance](/what-is-celo/using-celo
 
 ## Governance
 
-A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [CELO](#celo-native-asset) holders vote for proposals submitted by the community.
+A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [Locked CELO](#locked-celo) holders vote for proposals submitted by the community.
 
 ## Group Share
 
@@ -229,6 +250,10 @@ Refers to the Celo blockchain and is used in contrast to layer 1, which refers t
 
 [CELO](#celo-native-asset) balances held in escrow at the `LockedGold` contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
 
+## Locked CELO
+
+[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
+
 ## Locked Gold
 
 Locked Gold is the old name for [Locked CELO](#locked-celo).
@@ -253,7 +278,7 @@ A running instance of the Celo Blockchain software. Used interchangeably with 'C
 
 ## On-chain
 
-An interaction that takes place solely through a transaction being executed on the blockchain and updating the state of the ledger.
+An interaction that takes place solely through a transaction being executed on the blockchain and updating the state of the shared ledger.
 
 ## OP-Stack
 
@@ -273,7 +298,11 @@ A component in the OP-Stack architecture responsible for submitting Layer 2 stat
 
 ## Proof-of-Stake
 
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. When Celo was an L1, the proof-of-stake mechanism allowed accounts to convert units of [CELO](#celo-native-asset) into [Locked CELO](#locked-celo) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
+=======
 When Celo was an L1, the system that determined the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permitted accounts to convert units of [CELO](#celo-native-asset) into [Locked CELO](#locked-celo) then vote for Validator Groups, such that an election held at the end of every epoch selected a new set of validators for the following epoch.
+>>>>>>> origin/main:docs/glossary.md
 
 ## RC1
 
@@ -283,10 +312,13 @@ RC1, which stands for Release Candidate 1, was the first network that had the po
 
 A common practice in societies without easy access to banking (source); a peer-to-peer savings and loan group.
 
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+=======
 ## Slashing
 
 The reduction in the stake of a community RPC node and group for a particular action not conducive to the health of the network.
 
+>>>>>>> origin/main:docs/glossary.md
 ## Smart Contracts
 
 Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment.
@@ -302,6 +334,8 @@ A stablecoin is a type of cryptocurrency whose price tracks an external currency
 ## Stake
 
 [Locked CELO](#locked-celo) that a community RPC provider puts at risk at the point of registration. A portion of a stake can be slashed for particular actions not conducive to the health of the network.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+=======
 
 ## Sequencer
 
@@ -316,6 +350,7 @@ A decentralized identity protocol that enables users to manage their digital ide
 Celo's decentralized identity protocol that enables users to connect their phone numbers and other identifiers to their blockchain addresses while preserving privacy.
 
 Formerly known as the Attestation Service and now a part of Self.
+>>>>>>> origin/main:docs/glossary.md
 
 ## Testnet
 
@@ -336,27 +371,44 @@ A unique feature of CELO that allows it to function both as the native gas token
 ## Unlocking Period
 
 The elapsed time between an account requesting an amount of [Locked CELO](#locked-celo) be unlocked and the first point it can be withdrawn.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+=======
 
 ## Valora
 
 Celo's flagship mobile wallet application that provides easy access to DeFi, payments, and cryptocurrency management. Valora offers features like peer-to-peer payments, savings, and DApp integration, making Web3 accessible through a user-friendly mobile interface.
+>>>>>>> origin/main:docs/glossary.md
 
 ## Validator
 
 When Celo was an L1, validator referred both to the entity in the proof-of-stake mechanism that could be associated with a validator group and subsequently elected; and a running instance of the Celo Blockchain software that was configured and ready (if elected) to participate in the Byzantine Fault Tolerant consensus algorithm to agree on new blocks to append to the blockchain ledger.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+=======
 
 For historical reasons, the term validator is still present in the codebase and documentation, but it is now used to refer to [community RPC nodes](#community-rpc-node).
+>>>>>>> origin/main:docs/glossary.md
 
 ## Validator Group
 
 When Celo was an L1, the entity in the proof-of-stake mechanism that could associate validators, receive votes from holders of [Locked CELO](#locked-celo) and cause those validators to be elected.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+
+## Validator Set
+
+When Celo was an L1, the set of elected validators (with respect to a specific epoch) that participated in consensus
+=======
 
 For historical reasons, the term validator group is still present in the codebase and documentation, but it is now used to refer to [community RPC nodes](#community-rpc-node).
 
 ## Validator Set
 
 When Celo was an L1, the set of elected validators (with respect to a specific epoch) that participated in consensus.
+>>>>>>> origin/main:docs/glossary.md
 
 ## Wallet
 
 A DApp that allows a user to manage an account, and usually stores the associated private key.
+<<<<<<< HEAD:docs/what-is-celo/using-celo/glossary.md
+DApp that allows a user to manage an account, and usually stores the associated private key.
+=======
+>>>>>>> origin/main:docs/glossary.md

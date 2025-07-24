@@ -1,32 +1,17 @@
 ---
-title: Celo Voting on Governance Proposals
+title: CeloCLO for Voting on and interacting with Governance Proposals
 description: How to use the Celo CLI to participate in Goverance and create a Governance proposal.
 ---
 
-# Voting on Governance Proposals
+# CeloCLI for Governance Proposals
 
 How to use the [Celo CLI](/cli/) to participate in Goverance and create a Governance proposal.
-
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
 
 ---
 
 ## Governance
 
 Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol. More information about the Governance system can be found in the [Governance overview](/what-is-celo/using-celo/protocol/governance/overview).
-
-:::info
-
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
-
-You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-
-:::
 
 :::info
 
@@ -138,10 +123,6 @@ celocli governance:execute --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS
 
 [Contract Release 10](https://github.com/celo-org/celo-monorepo/issues/10375) introduced vote delegation, which allows the governance participant to delgate their voting power.
 
-:::note
-Validators and Validator groups cannot delegate.
-:::
-
 ### Delegating Votes
 
 You can delegate votes using the following command:
@@ -193,3 +174,13 @@ You can use the following command to get the total delegated votes to an address
 ```bash
 celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
 ```
+
+## Staying Informed
+
+To stay up-to-date with all governance activities and proposals:
+
+- Sign up for the [Celo Signal mailing list](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j)
+- Add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) to track important dates and events
+- Follow discussions on the [Celo Forum](https://forum.celo.org/) in the Governance category
+
+For more comprehensive information about Celo's governance system, see the [Governance Overview](/what-is-celo/using-celo/protocol/governance/overview) and [Voting in Governance](/what-is-celo/using-celo/protocol/governance/voting-in-governance) guides.

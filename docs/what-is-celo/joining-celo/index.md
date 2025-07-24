@@ -8,7 +8,6 @@ Explore the many ways to engage with the Celo ecosystem and contribute to its gr
 
 Welcome to the Celo Ecosystem! Whether you're a user, developer, founder, or contributor, there are numerous ways to engage and make a meaningful impact. This guide will help you explore the various opportunities available within the Celo community, from using innovative applications to contributing to open-source projects, and participating in governance. Dive in to discover how you can be a part of Celo's mission to create a more inclusive financial system.
 
-
 ### As a User
 
 - [**Explore Projects on Celo:**](/showcase) Start using and engaging with Celo apps.
@@ -59,5 +58,3 @@ Ask questions, find answers, and connect with the community.
 - [Celo Builder Telegram](https://t.me/buildwithcelo)
 - [Celo Forum](https://forum.celo.org/)
 - [Celo Subreddit](https://www.reddit.com/r/celo/)
-
-

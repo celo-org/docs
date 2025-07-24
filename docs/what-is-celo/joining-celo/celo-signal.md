@@ -13,7 +13,7 @@ How to join the mailing list for everything involving the Celo core community an
 
 **If you are a:**
 
-- Validator
+- Community RPC Provider
 - Node Operator
 - Dapp Running Its Own Node
 - Exchange or Custodian

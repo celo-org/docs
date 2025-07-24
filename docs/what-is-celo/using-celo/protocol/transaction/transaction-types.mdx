@@ -1,5 +1,6 @@
 ---
 title: Transaction Types on Celo
+title: Transaction Types on Celo
 description: This page contains an explainer on transaction types supported on Celo and a demo to make specific transactions.
 ---
 
@@ -10,19 +11,23 @@ This page contains an explainer on transaction types supported on Celo and a dem
 
 ---
 
+
 ## Summary
 
+Celo has support for all Ethereum transaction types (i.e. "100% Ethereum compatibility") and a single Celo transaction type.
 Celo has support for all Ethereum transaction types (i.e. "100% Ethereum compatibility") and a single Celo transaction type.
 
 ### Actively Supported on Celo
 
 | Chain                                                                   | Transaction type           | #     | Specification                                                                                                                                                 | Recommended | Support   | Comment                                                  |
 | ----------------------------------------------------------------------- | -------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------- | -------------------------------------------------------- |
+| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Set code transaction | `4` | [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) | Available from the [Isthmus](/cel2/notices/isthmus-upgrade.md) hardfork |
 | <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" />     | Dynamic fee transaction v2 | `123` | [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md)                                                                             | ✅          | Active 🟢 | Supports paying gas in custom fee currencies             |
 | <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Set code transaction | `4` | [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) | Available since the Isthmus hardfork |
 | <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Dynamic fee transaction    | `2`   | [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) ([CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md))                       | ✅          | Active 🟢 | Typical Ethereum transaction                             |
 | <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Access list transaction    | `1`   | [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) ([CIP-35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md))                       | ❌          | Active 🟢 | Does not support dynamically changing _base fee_ per gas |
 | <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Legacy transaction         | `0`   | [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) ([CIP-35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md)) | ❌          | Active 🟢 | Does not support dynamically changing _base fee_ per gas |
+
 
 ### Deprecated on Celo
 

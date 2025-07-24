@@ -28,6 +28,22 @@ const whatIsCeloSidebar = [
                 label: "Overview",
                 id: "what-is-celo/using-celo/protocol/governance/overview",
               },
+              // TODO: clearly list governable parameters and smart contracts upgradeability
+              // {
+              //   type: "doc",
+              //   label: "Governable Parameters",
+              //   id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
+              // },
+              //{
+              //  type: "doc",
+              //  label: "Smart Contracts Upgrades",
+              //  id: "what-is-celo/using-celo/protocol/governance/smart-contracts-upgrades",
+              // },
+              {
+                type: "doc",
+                label: "Governance Toolkit",
+                id: "what-is-celo/using-celo/protocol/governance/governance-toolkit",
+              },
               {
                 type: "doc",
                 label: "Create a Governance Proposal",
@@ -35,25 +51,15 @@ const whatIsCeloSidebar = [
               },
               {
                 type: "doc",
-                label: "Voting in Governance",
+                label: "CeloCLI for Governance",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance",
               },
               {
                 type: "doc",
-                label: "Voting with Celo Mondo",
+                label: "Vote with Celo Mondo",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo",
-              },
-              {
-                type: "doc",
-                label: "Governable Parameters",
-                id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
-              },
+              }
             ],
-          },
-          {
-            type: "doc",
-            label: "Penalties",
-            id: "what-is-celo/using-celo/protocol/penalties",
           },
           {
             type: "doc",
@@ -251,9 +257,14 @@ const whatIsCeloSidebar = [
         ],
       },
       {
+        type: "doc",
+        label: "Celo Signal",
+        id: "what-is-celo/joining-celo/celo-signal",
+      },
+      {
         type: "link",
         label: "Code of Conduct",
-        href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+        href: "https://celo.org/code-of-conduct",
       },
     ],
   },
@@ -267,23 +278,28 @@ const whatIsCeloSidebar = [
       // TODOs
       {
         type: "doc",
-        label: "Registering as a Community RPC Node",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      {
+        type: "doc",
+        label: "Register a Community RPC Node",
         id: "cel2/operators/registering-as-rpc-node",
       },
       {
         type: "doc",
-        label: "Operating a Community RPC Node",
+        label: "Operate a Community RPC Node",
         id: "cel2/operators/community-rpc-node",
       },
       {
-        type: "doc",
-        label: "Community RPC Provider FAQ",
-        id: "cel2/operators/validator-rpc-faq",
+          type: "doc",
+          label: "Penalties",
+          id: "cel2/operators/penalties",
       },
       {
         type: "doc",
-        label: "How it works",
-        id: "cel2/operators/how-it-works",
+        label: "Community RPC Node FAQ",
+        id: "cel2/operators/validator-rpc-faq",
       },
       // TODO
       // {
@@ -308,19 +324,9 @@ const whatIsCeloSidebar = [
         id: "what-is-celo/about-celo-l1/l1-architecture",
       },
       {
-        type: "link",
-        label: "Whitepapers",
-        href: "https://celo.org/papers",
-      },
-      {
         type: "category",
-        label: "Protocol",
+        label: "L1 Protocol",
         items: [
-          {
-            type: "doc",
-            label: "Overview",
-            id: "what-is-celo/about-celo-l1/protocol/index",
-          },
           {
             type: "category",
             label: "Proof-of-Stake",
@@ -363,17 +369,7 @@ const whatIsCeloSidebar = [
                     type: "doc",
                     label: "Locked CELO Rewards",
                     id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold",
-                  },
-                  {
-                    type: "doc",
-                    label: "Community Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund",
-                  },
-                  {
-                    type: "doc",
-                    label: "Carbon Offsetting Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-                  },
+                  }
                 ],
               },
               {
@@ -408,17 +404,10 @@ const whatIsCeloSidebar = [
             type: "category",
             label: "Transactions",
             items: [
-              {
-                type: "doc",
-                label: "Overview",
-                id: "what-is-celo/about-celo-l1/protocol/transaction/index",
-              },
               "what-is-celo/about-celo-l1/protocol/transaction/native-currency",
               "what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees",
               "what-is-celo/about-celo-l1/protocol/transaction/gas-pricing",
-              "what-is-celo/about-celo-l1/protocol/transaction/escrow",
-              "what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption",
-              "what-is-celo/about-celo-l1/protocol/transaction/transaction-types",
+              "what-is-celo/about-celo-l1/protocol/transaction/escrow"
             ],
           },
           {
@@ -495,18 +484,7 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Celo Randomness",
             id: "what-is-celo/about-celo-l1/protocol/randomness",
-          },
-          {
-            type: "category",
-            label: "Contracts",
-            items: [
-              {
-                type: "doc",
-                label: "Add A Contract",
-                id: "what-is-celo/about-celo-l1/protocol/contracts/add-contract",
-              },
-            ],
-          },
+          }
         ],
       },
       {
@@ -597,26 +575,16 @@ const whatIsCeloSidebar = [
           },
           {
             type: "doc",
-            label: "Celo Signal",
-            id: "what-is-celo/about-celo-l1/validator/celo-signal",
-          },
-          {
-            type: "doc",
             label: "Validator FAQ",
             id: "what-is-celo/about-celo-l1/validator/troubleshooting-faq",
           },
-          {
-            type: "link",
-            label: "Celo Website",
-            href: "https://celo.org",
-          },
-          {
-            type: "link",
-            label: "Celo Discord",
-            href: "https://discord.com/invite/celo",
-          },
         ],
       },
+      {
+        type: "link",
+        label: "Whitepapers",
+        href: "https://celo.org/papers",
+      }
     ],
   },
   {
