@@ -7,13 +7,6 @@ description: How to use Celo Mondo to participate in governance voting on the Ce
 
 Celo uses a formal onchain governance mechanism to manage and upgrade the protocol. This guide explains how to participate in governance using Celo Mondo.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## What is Celo Mondo?
@@ -23,6 +16,7 @@ Celo Mondo is a decentralized application for staking and governance within the 
 ## Using Celo Mondo for Governance
 
 With Celo Mondo, you can:
+
 - View active and past governance proposals
 - Vote on proposals with your locked CELO
 - Delegate your voting power to another address
@@ -30,7 +24,7 @@ With Celo Mondo, you can:
 
 ## Getting Started
 
-- [Launch Celo Mondo](https://mondo.celo.org/)
+- [Launch Celo Mondo](https://mondo.celo.org/governance)
 - [Celo Mondo GitHub](https://github.com/celo-org/celo-mondo)
 - [Become a Delegate](https://mondo.celo.org/delegate)
 

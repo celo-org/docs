@@ -30,23 +30,33 @@ const whatIsCeloSidebar = [
               },
               {
                 type: "doc",
+                label: "Governance Toolkit",
+                id: "what-is-celo/using-celo/protocol/governance/governance-toolkit",
+              },
+              {
+                type: "doc",
                 label: "Create a Governance Proposal",
                 id: "what-is-celo/using-celo/protocol/governance/create-governance-proposal",
               },
               {
                 type: "doc",
-                label: "Voting in Governance",
+                label: "CeloCLI for Governance",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance",
               },
               {
                 type: "doc",
-                label: "Voting with Celo Mondo",
+                label: "Vote with Celo Mondo",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo",
               },
               {
                 type: "doc",
                 label: "Governable Parameters",
                 id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
+              },
+              {
+                type: "doc",
+                label: "Smart Contracts Upgrades",
+                id: "what-is-celo/using-celo/protocol/governance/smart-contracts-upgrades",
               },
             ],
           },
