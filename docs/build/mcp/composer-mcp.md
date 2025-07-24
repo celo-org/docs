@@ -23,6 +23,7 @@ The **Composer Kit MCP Server** is a Model Context Protocol (MCP) server that pr
 ## Prerequisites
 
 - Python 3.11 or higher
+- UV (Fast Python package and project manager)
 - An IDE that supports MCP (Cursor or Claude Desktop)
 - Basic knowledge of React and web3 development
 
@@ -50,6 +51,25 @@ pipx install composer-kit-mcp
 git clone https://github.com/celo-org/composer-kit-mcp
 cd composer-kit-mcp
 pip install -e .
+```
+
+### Requires UV (Fast Python package and project manager)
+
+If uv isn't installed.
+
+```
+# Using Homebrew on macOS
+brew install uv
+```
+
+or
+
+```
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 ## MCP Client Integration
