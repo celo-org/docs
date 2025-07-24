@@ -52,4 +52,4 @@ Check commission settings with:
 celocli validatorgroup:show $CELO_GROUP_ADDRESS
 ```
 
-Update commission settings with the [celocli validatorgroup:commission](/cli/validatorgroup#commission) command.
+Update commission settings with the [celocli validatorgroup:commission](/cli/validatorgroup) command.

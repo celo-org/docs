@@ -127,7 +127,7 @@ celocli account:proof-of-possession --signer $CELO_VALIDATOR_SIGNER_ADDRESS --ac
 
 Before proceeding with the election process, you need to register your node's metadata on-chain. This step is critical - nodes without proper metadata are at risk of being slashed.
 
-For detailed instructions on registering your node URL and metadata, see [Registering the Node URL](./community-rpc-node#registering-the-node-url).
+For detailed instructions on registering your node URL and metadata, see [Registering the Node URL](#registering-the-node-url).
 
 ## Register the Nodes and Group
 
