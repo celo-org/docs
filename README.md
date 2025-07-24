@@ -51,4 +51,4 @@ Join us on [Discord](https://chat.celo.org) or file an issue.
 
 ## Code of Conduct
 
-Please review the [code of conduct](https://github.com/celo-org/docs?tab=coc-ov-file) before contributing.
+Please review the [code of conduct](https://github.com/celo-org/docs?tab=coc-ov-file#celo-community-code-of-conduct) before contributing.
