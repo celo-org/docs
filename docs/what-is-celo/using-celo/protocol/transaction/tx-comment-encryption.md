@@ -30,10 +30,10 @@ A 128 bit randomly generated session key, sk, is generated and used to symmetric
 
 ### Asymmetric Encryption \(ECIES\)
 
-1. Takes data to encrypt, plaintext, and the public key of the recipient, pu eyTo
+1. Takes data to encrypt, plaintext, and the public key of the recipient, pubKeyTo
 2. Generate an ephemeral keypair, ephemPubKey and ephemPrivKey
-3. Derive 32 bytes of key material, k, from ECDH between ephemPrivKey and pu eyTousing ConcatKDF \(specified as NIST 800-56C Rev 1 One Step KDF\) wi  SHA-256 for H\(x\)
+3. Derive 32 bytes of key material, k, from ECDH between ephemPrivKey and pubKeyTousing ConcatKDF \(specified as NIST 800-56C Rev 1 One Step KDF\) with SHA-256 for H\(x\)
 4. The encryption key, ke, is the first 128 bits of k
 5. The MAC key, km, is SHA-256 of the second 128 bits of k
-6. Encrypt the plaintext symmetrically with AES-128-CTR using ke, km, and a  ndom iv
+6. Encrypt the plaintext symmetrically with AES-128-CTR using ke, km, and a random iv
 7. Return ephemPubKey \| AES-128-CTR-HMAC\(ke, km, plaintext\) where the public key needs to be uncompressed \(current limitation with decrypt\).
