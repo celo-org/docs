@@ -25,7 +25,7 @@ To contribute to Celo, the following accounts are necessary:
 - <ColoredText>[GitHub:](https://github.com/celo-org)</ColoredText> Required for raising issues, contributing code, or editing documentation.
 - <ColoredText>[Discord:](https://discord.com/invite/celo)</ColoredText> Required for engaging with the Celo community.
 
-### Geting Started
+### Getting Started
 
 Browse the [code](https://github.com/celo-org), raise an issue, or contribute a pull request.
 
@@ -58,17 +58,17 @@ Following these guidelines will help ensure that your pull request (PR) gets app
 1. <ColoredText>Fork the repository</ColoredText>. Make sure you also [add an upstream](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to be able to update your fork.
 2. <ColoredText>Clone your fork</ColoredText> to your computer.
 3. <ColoredText>Create a topic branch</ColoredText> and name it appropriately. Starting the branch name with the issue number is a good practice and a reminder to fix only one issue in a Pull-Request (PR).
-4. <ColoredText>Make your changes</ColoredText> adhering to the coding conventions described below. In general a commit serves a single purpose and diffs should be easily comprehensible. For this reason do not mix any formatting fixes or code moves with actual code changes.
+4. **Make your changes** adhering to the coding conventions described below. In general, a commit serves a single purpose and diffs should be easily comprehensible. For this reason do not mix any formatting fixes or code moves with actual code changes.
 5. <ColoredText>Commit your changes</ColoredText>. See [How to Write a Git Commit Message](https://cbea.ms/git-commit/) article by Chris Beams.
 6. <ColoredText>Test your changes locally</ColoredText> before pushing to ensure that what you are proposing is not breaking another part of the software. Check the repository for the needed tests. Your PR should contain unit and end-to-end tests and a description of how these were run.
 7. <ColoredText> Include changes to relevant documentation.</ColoredText>. You should update the documentation based on your changes. 
 8. <ColoredText>Push your changes</ColoredText> to your remote fork (usually labeled as origin).
 9. <ColoredText>Create a pull-request (PR)</ColoredText> on the repository. If it's not ready to review, make it a <ColoredText>`Draft` PR</ColoredText>. If the PR addresses an existing issue, include the issue number in the PR title in square brackets (for example, [#2374]).
-10. Provide a <ColoredText>comprehensive description </ColoredText> of the problem addressed and changes made. Explains dependencies and backwards incompatible changes.
+10. Provide a **comprehensive description** of the problem addressed and changes made. Explain dependencies and backwards incompatible changes.
 11. <ColoredText>Add labels</ColoredText> to identify the type of your PR. For example, if your PR fixes a bug, add the "bug" label.
 12. If the PR address an existing issue, comment in the issue with the PR number.
 13. <ColoredText>Ensure your changes are reviewed</ColoredText>. Request the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.Let the project you are contributing to know in the issue comments on GitHub or using the Discord sever chat channels that your PR is ready for review. If you are a maintainer, you can choose reviewers, otherwise this will be done by one of the maintainers.
-14. <ColoredText>Make any required changes</ColoredText> on your contribution from the reviewers feedback. Make the changes, commit to your branch, and push to your remote fork.
+14. **Make any required changes** on your contribution from the reviewers' feedback. Make the changes, commit to your branch, and push to your remote fork.
 15. <ColoredText>When your PR is approved, validated</ColoredText>, all tests pass and your branch has no conflicts, it can be merged. Again, this action needs to be done by a maintainer - usually the same person who approves will also merge it.
 
 You contributed to Celo! Congratulations and thanks!

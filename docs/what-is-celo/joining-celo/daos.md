@@ -26,7 +26,7 @@ Each regional DAO has a different focus which might change over time, but the ge
 
 ### Celo Africa DAO
 
-Celo Africa DAO, <ColoredText>[launched in April 2023](https://forum.celo.org/t/celo-africa-dao-report-may-june-july/6385) </ColoredText> has been building a hugh network of builders and founders on the ground in Africa and was able to maintain and grow it through showing up consistently. If you live in one of the listed countries below, make sure to connect and to try joining one of the IRL events. Read up on the reports and proposals in the<ColoredText>[Celo Forum](https://forum.celo.org/u/celoafricadao/summary)</ColoredText>.
+Celo Africa DAO, <ColoredText>[launched in April 2023](https://forum.celo.org/t/celo-africa-dao-report-may-june-july/6385) </ColoredText>, has been building a huge network of builders and founders on the ground in Africa and was able to maintain and grow it through showing up consistently. If you live in one of the listed countries below, make sure to connect and to try joining one of the IRL events. Read up on the reports and proposals in the [Celo Forum](https://forum.celo.org/u/celoafricadao/summary).
 
 Reach out to the main DAO or the chapters on <ColoredText>[Twitter](https://x.com/CeloAfricaDao)</ColoredText> or <ColoredText>[Telegram](https://t.me/CeloAfrica)</ColoredText>.
 
@@ -46,7 +46,7 @@ Celo Europe DAO launched in <ColoredText>[June 2023](https://forum.celo.org/t/ce
 
 ### Koh Celo (Celo Thailand DAO) DAO
 
-Koh Celo has been launched in the <ColoredText>[beginning of 2024](https://forum.celo.org/t/kohcelo-celo-thailand-dao-project-for-road-to-devcon-h1-2024-regional-dao-final/7402) </ColoredText>, starting off by proposing a program for the Road to DevCon 2024. Read up on the reports and proposals in the<ColoredText>[Celo Forum](https://forum.celo.org/search?q=KohCelo)</ColoredText>.
+Koh Celo has been launched in the <ColoredText>[beginning of 2024](https://forum.celo.org/t/kohcelo-celo-thailand-dao-project-for-road-to-devcon-h1-2024-regional-dao-final/7402) </ColoredText>, starting off by proposing a program for the Road to DevCon 2024. Read up on the reports and proposals in the [Celo Forum](https://forum.celo.org/search?q=KohCelo).
 
 - [Twitter](https://x.com/KohCelo)
 
