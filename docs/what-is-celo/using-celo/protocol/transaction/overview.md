@@ -5,18 +5,14 @@ description: Introduction to transactions on Celo.
 
 # Transactions on Celo
 
-Introduction to transactions on Celo.
+In Celo's transition to a Layer 2 (L2) solution, several key changes have been proposed to the network's tokenomics, particularly concerning gas pricing and transaction fee allocation.
 
 ---
-
-## Gas Pricing
 
 :::info
 
 This section is a work in progress and based on the ["The Great Celo Halvening - Proposed Tokenomics in the Era of Celo L2"](https://forum.celo.org/t/the-great-celo-halvening-proposed-tokenomics-in-the-era-of-celo-l2/9701/1). Please check the [forum](https://forum.celo.org/) for the latest information.
 :::
-
-In Celo's transition to a Layer 2 (L2) solution, several key changes have been proposed to the network's tokenomics, particularly concerning gas pricing and transaction fee allocation.
 
 ## Gas Pricing Mechanism
 
