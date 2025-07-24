@@ -824,6 +824,11 @@ const buildOnCeloSidebar = [
 const toolingSidebar = [
   { type: "doc", label: "Overview", id: "developer/index" },
   { type: "doc", label: "Network Information", id: "network/index" },
+  { type: "category", label: "Testnets", items: [
+    { type: "doc", label: "Alfajores", id: "network/alfajores/index" },
+    { type: "doc", label: "Baklava", id: "network/baklava/index" },
+    { type: "doc", label: "Eclair", id: "network/eclair/index" },
+  ] },
   {
     type: "category",
     label: "Nodes",
@@ -1283,7 +1288,6 @@ const celoL2Sidebar = [
     label: "Overview",
     id: "cel2/index",
   },
-  { type: "doc", label: "Celo Eclair Testnet", id: "cel2/eclair/index" },
   {
     type: "category",
     label: "Notices",
@@ -1300,11 +1304,6 @@ const celoL2Sidebar = [
         id: "cel2/notices/l2-migration",
       },
     ],
-  },
-  {
-    type: "doc",
-    label: "Builders",
-    id: "cel2/builders",
   },
   {
     type: "category",
