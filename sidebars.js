@@ -251,6 +251,11 @@ const whatIsCeloSidebar = [
         ],
       },
       {
+        type: "doc",
+        label: "Celo Signal",
+        id: "what-is-celo/joining-celo/celo-signal",
+      },
+      {
         type: "link",
         label: "Code of Conduct",
         href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
@@ -594,11 +599,6 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Voting Policy",
             id: "what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy",
-          },
-          {
-            type: "doc",
-            label: "Celo Signal",
-            id: "what-is-celo/about-celo-l1/validator/celo-signal",
           },
           {
             type: "doc",
