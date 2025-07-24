@@ -1,5 +1,5 @@
 ---
-title: CeloCLO for Voting on and interacting with Governance Proposals
+title: CeloCLI for Voting on and interacting with Governance Proposals
 description: How to use the Celo CLI to participate in Goverance and create a Governance proposal.
 ---
 
