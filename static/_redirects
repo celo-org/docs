@@ -693,7 +693,7 @@
 /protocol/cross-chain-messaging /developer/bridges/cross-chain-messaging
 /protocol/governance /what-is-celo/using-celo/protocol/governance
 /protocol/identity/index https://self.xyz/
-/protocol/index /what-is-celo/about-celo-l1/protocol
+/protocol/index /what-is-celo/using-celo/protocol
 /protocol/oracle/band-protocol /developer/oracles/band-protocol
 /protocol/oracle/chainlink-oracles /developer/oracles/chainlink-oracles
 /protocol/oracle/index /developer/oracles/
@@ -764,6 +764,7 @@
 /validator/troubleshooting-faq /what-is-celo/about-celo-l1/validator/troubleshooting-faq
 /what-is-celo/joining-celo/contributors/code-of-conduct https://celo.org/code-of-conduct
 /what-is-celo/using-celo/glossary /glossary
+/what-is-celo/about-celo-l1/protocol /what-is-celo/using-celo/protocol
 /what-is-celo/using-celo/protocol/governance /what-is-celo/using-celo/protocol/governance/overview
 /why-celo /general
 /why-celo#celo-is-mobile-open-and-real /general
