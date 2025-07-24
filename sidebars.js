@@ -1283,6 +1283,11 @@ const celoL2Sidebar = [
     items: [
       {
         type: "doc",
+        label: "EigenDA v2 Upgrade",
+        id: "cel2/notices/eigenda-v2-upgrade",
+      },
+      {
+        type: "doc",
         label: "Isthmus Upgrade",
         id: "cel2/notices/isthmus-upgrade",
       },
