@@ -14,7 +14,7 @@ This page will be kept updated with key information about the upgrade. As this u
 
 ## What is the EigenDA v2 upgrade about?
 
-As part of Celo’s continued growth as an Ethereum L2, the Celo is preparing to integrate [EigenDA v2](https://docs.eigencloud.xyz/products/eigenda/core-concepts/overview), also known as Blazar, to further innovate and strengthen the network’s data availability layer.
+As part of Celo’s continued growth as an Ethereum L2, Celo is integrating [EigenDA v2](https://docs.eigencloud.xyz/products/eigenda/core-concepts/overview), also known as Blazar, to further innovate and strengthen the network’s data availability layer.
 
 Blazar represents a major architectural upgrade to the EigenDA protocol, introducing improved system throughput and stability, alongside new capabilities like permissionless DA payments and enhanced resource throttling.
 
