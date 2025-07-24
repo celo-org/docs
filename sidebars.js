@@ -52,11 +52,6 @@ const whatIsCeloSidebar = [
           },
           {
             type: "doc",
-            label: "Penalties",
-            id: "what-is-celo/using-celo/protocol/penalties",
-          },
-          {
-            type: "doc",
             label: "Consensus",
             id: "what-is-celo/using-celo/protocol/consensus",
           },
@@ -267,28 +262,31 @@ const whatIsCeloSidebar = [
     label: "Community RPC Nodes",
     collapsed: false,
     items: [
-      // TODO add intro to RPC
       // TODO también está https://docs.celo.org/cel2/operators/run-node?
-      // TODOs
       {
         type: "doc",
-        label: "Registering as a Community RPC Node",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      {
+        type: "doc",
+        label: "Register as a Community RPC Node",
         id: "cel2/operators/registering-as-rpc-node",
       },
       {
         type: "doc",
-        label: "Operating a Community RPC Node",
+        label: "Operate a Community RPC Node",
         id: "cel2/operators/community-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Penalties",
+        id: "cel2/operators/penalties",
       },
       {
         type: "doc",
         label: "Community RPC Provider FAQ",
         id: "cel2/operators/validator-rpc-faq",
-      },
-      {
-        type: "doc",
-        label: "How it works",
-        id: "cel2/operators/how-it-works",
       },
       // TODO
       // {
@@ -824,11 +822,6 @@ const buildOnCeloSidebar = [
 const toolingSidebar = [
   { type: "doc", label: "Overview", id: "developer/index" },
   { type: "doc", label: "Network Information", id: "network/index" },
-  { type: "category", label: "Testnets", items: [
-    { type: "doc", label: "Alfajores", id: "network/alfajores/index" },
-    { type: "doc", label: "Baklava", id: "network/baklava/index" },
-    { type: "doc", label: "Eclair", id: "network/eclair/index" },
-  ] },
   {
     type: "category",
     label: "Nodes",
@@ -1276,16 +1269,12 @@ const celoL2Sidebar = [
     label: "Overview",
     id: "cel2/index",
   },
+  { type: "doc", label: "Celo Eclair Testnet", id: "cel2/eclair/index" },
   {
     type: "category",
     label: "Notices",
     collapsed: false,
     items: [
-      {
-        type: "doc",
-        label: "EigenDA v2 Upgrade",
-        id: "cel2/notices/eigenda-v2-upgrade",
-      },
       {
         type: "doc",
         label: "Isthmus Upgrade",
@@ -1297,6 +1286,11 @@ const celoL2Sidebar = [
         id: "cel2/notices/l2-migration",
       },
     ],
+  },
+  {
+    type: "doc",
+    label: "Builders",
+    id: "cel2/builders",
   },
   {
     type: "category",
