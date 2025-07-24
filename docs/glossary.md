@@ -227,7 +227,7 @@ Refers to the Celo blockchain and is used in contrast to layer 1, which refers t
 
 ## Locked CELO
 
-[CELO](#celo-native-asset) balances held in escrow at the LockedGold contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
+[CELO](#celo-native-asset) balances held in escrow at the `LockedGold` contract for the account that deposited it there. This permits that balance to be used for voting in elections, governance proposals, and to meet staking requirements for registering a community RPC node.
 
 ## Locked Gold
 
