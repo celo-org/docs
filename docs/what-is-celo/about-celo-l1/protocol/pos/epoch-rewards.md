@@ -21,8 +21,8 @@ This page describes the historical Celo Layer 1 blockchain. It is useful for und
 
 - Distributed [rewards for validators and validator groups](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-validator)
 - Distribute [rewards to holders of Locked CELO](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold) voting for groups that elected validators
-- Make payments into a [Community Fund](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund) for protocol infrastructure grants
-- Make payments into a [Carbon Offsetting Fund](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund).
+- Make payments into a [Community Fund](/what-is-celo/using-celo/protocol/epoch-rewards/community-fund) for protocol infrastructure grants
+- Make payments into a [Carbon Offsetting Fund](/what-is-celo/using-celo/protocol/epoch-rewards/carbon-offsetting-fund) for carbon offsetting projects
 
 A total of 400 million CELO will be released for epoch rewards over time. CELO is a utility and governance asset on Celo, and also the reserve collateral for Celo Dollar (and possibly in the future other whitelisted tokens). It has a fixed total supply and in the long term will exhibit deflationary characteristics similarly to Ethereum.
 
