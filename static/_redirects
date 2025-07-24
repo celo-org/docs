@@ -640,7 +640,7 @@
 /getting-started/baklava-testnet/running-a-full-node-in-baklava /network/baklava/run-full-node
 /getting-started/baklava-testnet/running-a-validator-in-baklava /network/baklava/run-validator
 /getting-started/choosing-a-network /network
-/getting-started/glossary /what-is-celo/using-celo/glossary
+/getting-started/glossary /glossary
 /getting-started/hosted-nodes /network/node/run-hosted
 /getting-started/mainnet /network
 /getting-started/mainnet/index /network/mainnet
@@ -763,6 +763,7 @@
 /validator/security /what-is-celo/about-celo-l1/validator/security
 /validator/troubleshooting-faq /what-is-celo/about-celo-l1/validator/troubleshooting-faq
 /what-is-celo/joining-celo/contributors/code-of-conduct https://celo.org/code-of-conduct
+/what-is-celo/using-celo/glossary /glossary
 /what-is-celo/using-celo/protocol/governance /what-is-celo/using-celo/protocol/governance/overview
 /why-celo /general
 /why-celo#celo-is-mobile-open-and-real /general
