@@ -19,12 +19,6 @@ The [Baklava Testnet](/network/baklava/) is focused on building operational expe
 
 :::
 
-:::tip
-
-Please refer to [Key Concepts](/what-is-celo/using-celo/glossary#blockchain) for background on blockchains and an explanation of terms used in the section.
-
-:::
-
 :::warning
 
 The Alfajores Testnet is designed for testing and experimentation by developers. Its tokens hold no real world economic value. The testnet software will be upgraded and the entirety of its data reset on a regular basis. This will erase your accounts, their balance and your transaction history. The testnet software will be upgraded on a regular basis. You may encounter bugs and limitations with the software and documentation.
