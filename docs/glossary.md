@@ -131,7 +131,7 @@ A specialized Celo testnet designed to showcase the integration of EigenDA v2 an
 
 ## EigenDA
 
-A high-throughput, decentralized data availability (DA) service built on EigenLayer that Celo uses for storing transaction data. EigenDA provides scalable and secure data availability for Layer 2 networks like Celo.
+A high-throughput, decentralized data availability (DA) service built on EigenLayer that Celo uses for publishing transaction data. EigenDA provides scalable and secure data availability for Layer 2 networks like Celo.
 
 ## EOA or externally owned account
 
