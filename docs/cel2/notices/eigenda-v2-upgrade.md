@@ -14,7 +14,7 @@ This page will be kept updated with key information about the upgrade. As this u
 
 ## What is the EigenDA v2 upgrade about?
 
-As part of Celo’s continued growth as an Ethereum L2, Celo is integrating [EigenDA v2](https://docs.eigencloud.xyz/products/eigenda/core-concepts/overview), also known as Blazar, to further innovate and strengthen the network’s data availability layer.
+As part of [Celo’s continued growth as an Ethereum L2](https://forum.celo.org/t/celo-as-an-ethereum-l2-a-frontier-chain-for-global-impact/11376), Celo is integrating [EigenDA v2](https://docs.eigencloud.xyz/products/eigenda/releases/blazar), also known as [Blazar](https://docs.eigencloud.xyz/products/eigenda/releases/blazar), to further innovate and strengthen the network’s data availability layer.
 
 Blazar represents a major architectural upgrade to the EigenDA protocol, introducing improved system throughput and stability, alongside new capabilities like permissionless DA payments and enhanced resource throttling.
 
@@ -26,4 +26,4 @@ Support for decentralized dispersal is unlocked by eliminating DDoS attack surfa
 
 ## For node operators
 
-Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2) before the activation dates.
+Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
