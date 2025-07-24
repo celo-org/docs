@@ -15,12 +15,6 @@ Celo Mainnet was previously known as the Release Candidate 1 network.
 
 :::
 
-:::tip
-
-Please refer to [Key Concepts](/what-is-celo/using-celo/glossary#blockchain) for background on blockchains and an explanation of terms used in the section.
-
-:::
-
 ## Useful links
 
 - [Mainnet Validator Explorer](https://validators.celo.org/) - to view the current status of Validator elections
