@@ -7,6 +7,10 @@ How to create a governance proposal and get it through the governance process.
 
 ---
 
+:::info
+For a detailed explanation of the entire governance process, and to view the latest proposals and discussions, make sure to check out the [Celo Governance GitHub repository](https://github.com/celo-org/governance).
+:::
+
 ## Prerequisites
 
 Before creating a Celo governance proposal, ensure you have:

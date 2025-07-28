@@ -11,6 +11,10 @@ This overview covers Celo governance and network management through the stakehol
 
 Celo uses a formal onchain governance mechanism to manage and upgrade the protocol such as for upgrading smart contracts, adding new stable currencies, or modifying the reserve target asset allocation. All changes must be agreed upon by CELO holders. A quorum threshold model is used to determine the number of votes needed for a proposal to pass.
 
+:::info
+For a detailed explanation of the entire governance process, and to view the latest proposals and discussions, make sure to check out the [Celo Governance GitHub repository](https://github.com/celo-org/governance).
+:::
+
 ## Stakeholder Proposal Process
 
 Changes are managed via the Celo `Governance` smart contract. This contract acts as an "owner" for making modifications to other protocol smart contracts. Such smart contracts are termed **governable**. The `Governance` contract itself is governable, and owned by itself.
