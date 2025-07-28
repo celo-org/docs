@@ -32,3 +32,5 @@ In April 2023, [CGP-79](https://mondo.celo.org/governance/cgp-79) was passed, en
 All Community Fund activities are transparent and verifiable on-chain: [0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972](https://celoscan.io/address/0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972).
 
 For deeper analysis of Community Fund activities, use the [Dune Analytics dashboard](https://dune.com/superchain_eco/celo-community-treasury).
+
+For a detailed view of the fund's assets, including both historical and current spending breakdowns, explore the [Celo Community Fund website](https://www.celocommunityfund.xyz/).
