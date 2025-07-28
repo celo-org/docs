@@ -12,7 +12,7 @@ How to create a governance proposal and get it through the governance process.
 Before creating a Celo governance proposal, ensure you have:
 
 1. **Celo CLI Knowledge:** Familiarity with the Celo Command Line Interface for network interaction and proposal submission.
-2. **100 CELO Tokens:** Required minimum for proposal submission. This deposit is refunded if the proposal reaches Approval stage, but forfeited if the proposal expires after 4 weeks in queue.
+2. **10,000 CELO:** Required minimum for proposal submission. This deposit is refunded if the proposal reaches Approval stage, but forfeited if the proposal expires after 4 weeks in queue.
 3. **Multi-Signature Wallet:** Required for treasury fund requests. Multisig signers should self-identify on the Forum post to demonstrate oversight and build community trust.
 
 ## Life Cycle of a Proposal on Celo
