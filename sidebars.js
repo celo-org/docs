@@ -327,11 +327,6 @@ const whatIsCeloSidebar = [
         label: "Protocol",
         items: [
           {
-            type: "doc",
-            label: "Overview",
-            id: "what-is-celo/about-celo-l1/protocol/index",
-          },
-          {
             type: "category",
             label: "Proof-of-Stake",
             items: [
