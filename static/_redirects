@@ -733,7 +733,7 @@
 /v/master/getting-started/baklava-testnet /network
 /validator-guide/attestation-service /validator/attestation
 /validator-guide/celo-foundation-voting-policy /validator/celo-foundation-voting-policy
-/validator-guide/celo-signal /what-is-celo/joining-celo/celo-signal
+/validator-guide/celo-signal /what-is-celo/joining-celo
 /validator-guide/devops-best-practices /validator/devops-best-practices
 /validator-guide/key-management/detailed /validator/key-management/detailed
 /validator-guide/key-management/key-rotation /validator/key-management/key-rotation
@@ -747,7 +747,7 @@
 /validator-guide/validator-explorer /validator/validator-explorer
 /validator/attestation /what-is-celo/about-celo-l1/validator/attestation
 /validator/celo-foundation-voting-policy /what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy
-/validator/celo-signal /what-is-celo/joining-celo/celo-signal
+/validator/celo-signal /what-is-celo/joining-celo
 /validator/devops-best-practices /what-is-celo/about-celo-l1/validator/devops-best-practices
 /validator/key-management/detailed /what-is-celo/about-celo-l1/validator/key-management/detailed
 /validator/key-management/key-rotation /what-is-celo/about-celo-l1/validator/key-management/key-rotation
@@ -762,7 +762,7 @@
 /validator/run/mainnet /what-is-celo/about-celo-l1/validator/run/mainnet
 /validator/security /what-is-celo/about-celo-l1/validator/security
 /validator/troubleshooting-faq /what-is-celo/about-celo-l1/validator/troubleshooting-faq
-/what-is-celo/about-celo-l1/validator/celo-signal /what-is-celo/joining-celo/celo-signal
+/what-is-celo/about-celo-l1/validator/celo-signal /what-is-celo/joining-celo
 /what-is-celo/joining-celo/contributors/code-of-conduct https://celo.org/code-of-conduct
 /what-is-celo/using-celo/glossary /glossary
 /what-is-celo/using-celo/protocol/governance /what-is-celo/using-celo/protocol/governance/overview
