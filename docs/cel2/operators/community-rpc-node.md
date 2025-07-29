@@ -18,7 +18,7 @@ To operate the required RPC endpoint, follow the [Running a node guide](run-node
 
 ### Claiming Rewards
 
-Validator rewards for RPC nodes must be explicitly claimed each epoch. Use the following CLI command to claim rewards:
+Validator rewards for RPC nodes must be claimed, which is possible anytime after allocation. Use this CLI command:
 
 ```bash
 celocli epochs:send-validator-payment --from $YOUR_ADDRESS --for $VALIDATOR_ADDRESS

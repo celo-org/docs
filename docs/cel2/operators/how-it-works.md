@@ -18,7 +18,7 @@ The election process follows these steps:
 
 1. **Lock CELO tokens**: Holders must first move their CELO balances into the [Locked Celo](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) (formerly "Celo Gold") smart contract before participating in elections.
 
-2. **Vote for Groups**: Rather than voting directly for individual node providers, accounts cast their votes for (formerly [validator groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups)) that manage collections of nodes.
+2. **Vote for Groups**: Rather than voting directly for individual node providers, accounts cast their votes for validator groups that manage collections of nodes.
 
 3. **Earn rewards**: Participants receive rewards for their involvement, and validators and groups can also vote and earn rewards using their own stake.
 
