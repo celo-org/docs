@@ -15,7 +15,7 @@ For a detailed explanation of the entire governance process, and to view the lat
 
 Before creating a Celo governance proposal, ensure you have:
 
-1. **Celo CLI Knowledge:** Familiarity with the Celo Command Line Interface for network interaction and proposal submission.
+1. **[Celo CLI](/cli) Knowledge:** Familiarity with the Celo Command Line Interface for network interaction and proposal submission.
 2. **10,000 CELO:** Required minimum for proposal submission. This deposit is refunded if the proposal reaches Approval stage, but forfeited if the proposal expires after 4 weeks in queue.
 3. **Multi-Signature Wallet:** Required for treasury fund requests. Multisig signers should self-identify on the Forum post to demonstrate oversight and build community trust.
 
@@ -83,6 +83,10 @@ After submission, your proposal enters the voting phase, which consists of:
 - **Referendum Voting**: Once a proposal is in Referendum stage, all CELO holders may vote on the proposal. They can vote YES to support the proposal, NO to reject the proposal, and ABSTAIN to acknowledge but defer the vote to the remaining community.
 - **Quorum**: For a proposal to pass successfully, the total number of CELO voted must meet or exceed Quorum. YES, NO, and ABSTAIN votes all count towards quorum. A successfully proposal must receive a 60% majority of votes above quorum. Quorum needed for proposals is dynamic and depends on previous number of votes on recent proposals.
 - **Conclusion**: Approvers have until the proposal’s deadline to approve any passing proposals. Once approved, YES votes exceed 60% of necessary quorum, then they may be Executed.
+
+:::info
+The **approval voting** and **referendum voting** phases run in parallel. This means that the community can vote before the proposal is approved—approval is still necessary.
+:::
 
 ### Step 7: Execution
 

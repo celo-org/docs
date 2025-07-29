@@ -27,15 +27,18 @@ Pleas follow [this guide to create a proposal](/what-is-celo/using-celo/protocol
 
 ### Overview
 
-The governance process follows four sequential phases, each with specific timing requirements:
+The governance process follows three sequential phases, each with specific timing requirements:
 
 1. **Proposal Phase** - **Up to 4 weeks**: Each proposal starts in the proposal queue where community members can upvote it to improve its position relative to other queued proposals. Proposal authors should actively seek community support for upvotes (proposers may upvote their own proposals). The top 3 proposals are automatically promoted to the approval stage daily. Proposals remaining in the queue for 4 weeks will expire.
 
-2. **Approval Phase** - **24 hours**: During this single day window, the proposal must receive approval from the designated Approvers. Successfully approved proposals advance to the referendum stage.
+2. **Approval and Referendum Phase** - in parallel:
+   - **Approval** - **24 hours**: During this single day window, the proposal must receive approval from the designated Approvers.
 
-3. **Referendum Phase** - **5 days**: Locked CELO holders vote YES or NO on the proposal during this period. Proposals that meet the required quorum threshold are promoted to the execution phase.
+   - **Referendum** - **5 days**: Locked CELO holders vote YES or NO on the proposal during this period.
 
-4. **Execution Phase** - **Up to 3 days**: Any community member may trigger the execution of the approved proposal during this window.
+   Proposals that both meet the required quorum threshold and are successfully approved are promoted to the execution phase.
+
+3. **Execution Phase** - **Up to 3 days**: Any community member may trigger the execution of the approved proposal during this window.
 
 ### Proposal
 

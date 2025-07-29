@@ -10,13 +10,14 @@ An overview of the tools, platforms, and resources available for participating i
 ## Mechanisms for Main Onchain Celo Governance Proposals
 
 * [**Celo Governance Contract**](https://celoscan.io/address/0xd533ca259b330c7a88f74e000a3faea2d63b7972#code): The onchain voting contract for Celo Governance. This is also the address of the Celo Community Treasury.
-* [**Celo Mondo**](https://mondo.celo.org/): The new UI friendly interface to Lock, Stake, Delegate and Vote.
+* [**Celo Mondo**](https://mondo.celo.org/): The UI friendly interface to Lock, Stake, Delegate and Vote.
+* [**CeloCLI**](/cli): The command line interface for interacting with the Celo network, including governance proposals and voting.
 * [**Celo Terminal**](https://celoterminal.com/): A desktop application allowing Celo chain interactions and governance participation.
 * [**StakedCelo dApp**](https://app.stcelo.xyz/connect): An application that allows for liquid staking of Celo and voting on Governance proposals.
 
 ### Mechanisms for Celo Public Goods Proposals
 
-* **[Celo Public Goods Snapshot](https://snapshot.org/#/celopg.eth):** A Locked CELO snapshot to allow votes to occur on Snapshot to decide about Celo Public Goods Proposals.
+* [**Celo Public Goods Snapshot**](https://snapshot.org/#/celopg.eth): A Locked CELO snapshot to allow votes to occur on Snapshot to decide about Celo Public Goods Proposals.
 
 ### Mechanisms for Discussions
 
