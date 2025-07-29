@@ -8,10 +8,7 @@ description: Introduction to Celo epoch rewards and the target reward release sc
 Introduction to Celo epoch rewards and the target reward release schedule.
 
 :::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2) or the new [epoch rewards page](/what-is-celo/using-celo/protocol/epoch-rewards).
+This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::
 
 ---
@@ -24,8 +21,8 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 
 - Distributed [rewards for validators and validator groups](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-validator)
 - Distribute [rewards to holders of Locked CELO](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold) voting for groups that elected validators
-- Make payments into a [Community Fund](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund) for protocol infrastructure grants
-- Make payments into a [Carbon Offsetting Fund](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund).
+- Make payments into a [Community Fund](/what-is-celo/using-celo/protocol/epoch-rewards/community-fund) for protocol infrastructure grants
+- Make payments into a [Carbon Offsetting Fund](/what-is-celo/using-celo/protocol/epoch-rewards/carbon-offsetting-fund) for carbon offsetting projects
 
 A total of 400 million CELO will be released for epoch rewards over time. CELO is a utility and governance asset on Celo, and also the reserve collateral for Celo Dollar (and possibly in the future other whitelisted tokens). It has a fixed total supply and in the long term will exhibit deflationary characteristics similarly to Ethereum.
 
@@ -45,7 +42,7 @@ In step two, these on-target rewards are adjusted to generate a drift towards a 
 
 There is a target schedule for the release of CELO epoch rewards. The proposed target curve \(subject to change\) of remaining epoch rewards declines linearly over 15 years to 50% of the initial 400 million CELO, then decays exponentially with half life of $$h = ln(2)\times15 =10.3$$ afterwards. The choice of $$h$$ guarantees a smooth transition from the linear to the exponential regime.
 
-![](https://storage.googleapis.com/celo-website/docs/epoch-rewards-schedule.png)
+![Chart showing CELO epoch rewards release schedule over time: starting at 400 million CELO, declining linearly over 15 years to 200 million CELO (50% of initial), then transitioning to exponential decay with half-life of 10.3 years](https://storage.googleapis.com/celo-website/docs/epoch-rewards-schedule.png)
 
 The total **actual rewards** paid out at the end of a given epoch result from multiplying the total on-target rewards with a `Rewards Multiplier`. This adjustment factor is a function of the percentage deviation of the remaining epoch rewards from the target epoch rewards remaining. It evaluates to `1` if the remaining epoch rewards are at the target and to smaller \(or larger\) than `1` if the remaining rewards are below \(or above, respectively\) the target. This creates a drag towards the target schedule.
 
