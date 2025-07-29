@@ -85,7 +85,7 @@ After the initial phase, anyone can call `finishNextEpochProcess()` to complete 
 
 **Actions performed:**
 
-1. **Distributes voter rewards** - Sends CELO to eligible voters
+1. **Allocates voter rewards** - Makes CELO available to eligible voters
 2. **Conducts validator elections** - Stores elected validator accounts and signers
 3. **Removes protection mode** - Re-enables previously blocked actions
 4. **Updates epoch state** - Advances to the next epoch
