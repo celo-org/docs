@@ -1130,6 +1130,11 @@ const toolingSidebar = [
       },
       {
         type: "doc",
+        label: "Dynamic",
+        id: "developer/dynamic/index",
+      },
+      {
+        type: "doc",
         label: "Portal",
         id: "developer/portal/index",
       },
