@@ -7,21 +7,10 @@ description: A comprehensive guide to assist you in launching dapps on Celo.
 
 A comprehensive guide to assist you in launching dapps on Celo.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ## Integration
 
 - [ ] **Wallet Connect**: Essential for Valora integration.
 - [ ] **Security Audit**: Have you finished this? Remember to publish the results and the auditor's details on your website.
-- [ ] **Due Diligence**: Ensure you share the following forms:
-  - [ ] [Entity Form](https://app.hummingbird.co/organizations/celo-foundation/tips/celo-foundation-entities-tip-intake)
-  - [ ] [Individual intake](https://app.hummingbird.co/organizations/celo-foundation/tips/celo-foundation-individuals-tip-intake)
-  - [ ] [Basic Intake Request](https://app.hummingbird.co/organizations/celo-foundation/tips/celo-foundation-basic-tip-intake)
 
 ## Reporting
 
@@ -30,15 +19,10 @@ Make your dapp stand out by reporting it on these platforms:
 - [ ] [Dapp Radar](https://dappradar.com)
 - [ ] [DeFi Llama (for DeFi & NFT Projects)](https://docs.llama.fi/list-your-project/submit-a-project)
 - [ ] [Electric Capital Reporting](https://github.com/electric-capital/crypto-ecosystems)
-- [ ] [Celo Dapp showcase](https://docs.celo.org/showcase?name=EthicHub)
 - [ ] [Celo Scan Contract Verification](https://celoscan.io/verifyContract)
 - [ ] [Celo Explorer Contract Verification](https://celo.blockscout.com/contract-verification)
-- [ ] [Nansen Contract / Project Verification](https://form.typeform.com/to/B1c40shu)
 - [ ] [Dune](https://dune.com/contracts/new)
 
-## Website & Documentation
-
-- [ ] Get your app featured on [docs.celo.org](https://github.com/celo-org/docs/blob/main/src/data/users.tsx)
 
 ### If your dapp has smart contracts
 
@@ -61,7 +45,7 @@ Provide resources for users:
 
 - [ ] Complete the [Marketing Intake Form](https://docs.google.com/forms/d/e/1FAIpQLSe0LMpEy2nicTcdoI5_LFhg3VZbpyhTymmSTzZ7HavdRiE4AQ/viewform) and share your marketing strategies.
 - [ ] Join the Celo Founders Telegram group.
-- [ ] Remember to tag [@celoorg](https://x.com/Celo) in any launch announcements.
+- [ ] Remember to tag [@Celo](https://x.com/Celo) in any launch announcements.
 
 ## Legal
 
