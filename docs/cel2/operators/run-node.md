@@ -31,7 +31,7 @@ To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](ht
 See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) for instructions on installing docker and docker compose if needed.
 
 :::note
-If using Docker Desktop on MacOS you will most likely need to increase the virtual disk limit in order to accomodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
+If using Docker Desktop on MacOS you will most likely need to increase the virtual disk limit in order to accommodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
 :::
 
 ### Running a Full Node
