@@ -807,6 +807,7 @@ const toolingSidebar = [
   { type: "category", label: "Testnets", items: [
     { type: "doc", label: "Alfajores", id: "network/alfajores/index" },
     { type: "doc", label: "Baklava", id: "network/baklava/index" },
+    { type: "doc", label: "Celo Sepolia", id: "network/celo-sepolia/index" },
     { type: "doc", label: "Eclair", id: "network/eclair/index" },
   ] },
   {
@@ -1278,6 +1279,11 @@ const celoL2Sidebar = [
     label: "Notices",
     collapsed: false,
     items: [
+      {
+        type: "doc",
+        label: "Celo Sepolia Testnet Launch",
+        id: "cel2/notices/celo-sepolia-launch",
+      },
       {
         type: "doc",
         label: "EigenDA v2 Upgrade",

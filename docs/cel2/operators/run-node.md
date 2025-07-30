@@ -11,7 +11,7 @@ This guide is designed to help node operators run a Celo L2 node, and assumes yo
 - Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
-### Testnets (Alfajores and Baklava)
+### Testnets (Alfajores, Baklava, and Celo Sepolia)
 
 - 16GB+ RAM
 - 500GB SSD (NVME Recommended)
@@ -24,30 +24,9 @@ Storage size requirements will increase over time, especially for archive nodes.
 If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](#running-an-archive-node).
 :::
 
-### Networking requirements
+## Run a Node With Docker
 
-In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
-
-Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
-
-On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
-
-On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
-
-On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-To illustrate this, you may refer to the following table:
-
-TODO table
-
-| Machine \\ IPs open to | 0\.0\.0\.0/0 \(all\) | your\-validator\-ip | your\-proxy\-ip |
-| ---------------------- | -------------------- | ------------------- | --------------- |
-| Validator              |                      |                     | tcp:30503       |
-| Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-
-## Run node with docker
-
-To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
+To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository with all the necessary configuration files and docker compose templates to make running a Celo L2 node easy.
 
 See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) for instructions on installing docker and docker compose if needed.
 
@@ -55,9 +34,7 @@ See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/ma
 If using Docker Desktop on MacOS you will most likely need to increase the virtual disk limit in order to accomodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
 :::
 
-For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
-
-### Running a full node
+### Running a Full Node
 
 Follow these steps to run a full node. If you would like to run an archive node, see [below](#running-an-archive-node).
 
@@ -72,10 +49,10 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     __Copy default configurations__
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, or mainnet>
+    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -99,28 +76,15 @@ Follow these steps to run a full node. If you would like to run an archive node,
     __Configure P2P for external network access__
 
     :::warning
-    If the following options are not configured correctly, your node will not be
-    discoverable or reachable to other nodes on the network. This is likely to
-    impair your node's ability to stay reliably connected to and synced with the
-    network.
+    If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network.
+    This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     :::
 
-    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
-    discovery so that other nodes can connect to your node. If unset op-node
-    other nodes on the network will not be able to discover and connect to your
-    node.
-    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 9222.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
 
-    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
-    shared via the discovery mechanism. If the public IP is not correctly
-    configured then other nodes on the network will not be able to discover and
-    connect to your node. The default value of `any` will try to automatically
-    determine the public IP, but the most reliable approach is to explicitly set
-    the public IP using `extip:<your-public-ip>`. Other acceptable values are
-    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 30303.
+    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node.
 
@@ -180,10 +144,10 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     __Copy default configurations__
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, or mainnet>
+    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -232,28 +196,15 @@ Please ensure neither datadir is being used by a running node before proceeding.
     __Configure P2P for external network access__
 
     :::warning
-    If the following options are not configured correctly, your node will not be
-    discoverable or reachable to other nodes on the network. This is likely to
-    impair your node's ability to stay reliably connected to and synced with the
-    network.
+    If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network.
+    This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     :::
 
-    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
-    discovery so that other nodes can connect to your node. If unset op-node
-    other nodes on the network will not be able to discover and connect to your
-    node.
-    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 9222.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
 
-    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
-    shared via the discovery mechanism. If the public IP is not correctly
-    configured then other nodes on the network will not be able to discover and
-    connect to your node. The default value of `any` will try to automatically
-    determine the public IP, but the most reliable approach is to explicitly set
-    the public IP using `extip:<your-public-ip>`. Other acceptable values are
-    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 30303.
+    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node(s).
 
@@ -415,6 +366,35 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
+### Celo Sepolia
+
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json) used for snap syncing
+- P2P peers: [TO BE PROVIDED]
+  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+
+    ```text
+    enode://7fd35dfea27042fe008c74ea97c7a41254b293152730419a6e9bcd84bb03c7ced418c1043e2ef6ad63d2facca6fbdacfbf7c4bfcf33ee7e9a0e6b7eb0617595d@34.169.104.197:30303
+    enode://151bcf170585971fc78129d9c16af355a1a53e1c825ce1ac20700ea754aa33eda60ca83de6f954bfed8d36c53f33295d93dbc3da9d549d6547d09467806b4b3d@104.199.124.11:30303
+    enode://aa5fb766438ac5a0354eb2eec1c0c002b56bb2ce7ed44f0e76e019cbb931222faa9ecfb0fa0055c0c62a2fcf04492d4129349a1045dfef140585250281885e4b@34.83.115.97:30303
+    enode://27c81ca466c99016d1595429afc68d66afb3ed9d5a2dd7f6a7797db23a4c826546a177b69b4932f3a75ce374b09d8ccc5b52dad615b3c47dbb8f6217d79ded22@35.247.1.226:30303
+    ```
+
+  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
+
+    ```text
+    enr:-J-4QF7_9Y18cQSQ2wXHD_e65Qy82L1DpfVK4TlOuTDC9oAxeFxmvAn877A2ZXXfc08eLFgZP1mrRjkF4Kts1eGPGbKGAZg2ao5CgmlkgnY0gmlwhCKRF6aHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhA3_TXf6icEL-AIx06pfHpBJUspMVJzBBmm6bzYS7A8fOg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QEbMTKrBfyAeq9hWlEchulzvt1gWA-wAGa_kUdWw1K-faR-AjFNzhcVGG7yDnRb1RptLDGWVpl-WXWhrgJ4TKEaGAZg2XFFugmlkgnY0gmlwhCKotN-Hb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhAxUbzxcFhZcfx4Ep2cFq81WhpT4cglzhrCBwDqdUqjPtg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QEawPak_hVU3h1wPZEGu7zLOv1C3k4WI8nHLUc83RqsRMauPtOPt8hYDFyxeJeaUyp0OUM0oyq-_9CEdshE1oWaGAZg2XLgDgmlkgnY0gmlwhCJSX5OHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhA6pft2ZDisWgNU6y7sHAwAK1a7LOftRPDnbgGcu5MSIvg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QCDpfivb0y0Sne1sZOqm1_WOKWWyJ6fo9j93jrxGVm0CcG6tScy3oQAaUuUbh-SmS_cQTO9ciw0_R3q1rpcjGLmGAZg2cWjGgmlkgnY0gmlwhCPFR5uHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhAifIHKRmyZAW0VlUKa_GjWavs-2dWi3X9qd5fbI6TIJlg3RjcIIkBoN1ZHCCJAY
+    ```
+
+- Container images:
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.1)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
+
 ## Troubleshooting
 
 Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if your problem is not answered below.
@@ -426,6 +406,7 @@ If your node is synced but transactions submitted to it are not executed, make s
 - Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
 - Alfajores: `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org`
 - Baklava: `--rollup.sequencerhttp=https://sequencer.baklava.celo-testnet.org`
+- Celo Sepolia: `--rollup.sequencerhttp=https://sequencer.celo-sepolia.celo-testnet.org`
 
 ### Self-hosted public RPC does not retrieve transactions by hash
 
