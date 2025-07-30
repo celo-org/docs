@@ -3,7 +3,7 @@ title: Network Information
 description: How to choose a Celo network based on your needs and objectives.
 ---
 
-Overview of Celo Mainnet and the Alfajores and Baklava Testnets.
+Overview of Celo Mainnet and the Alfajores, Baklava, and Celo Sepolia Testnets.
 
 ---
 
@@ -70,5 +70,44 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 :::info
 
 Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
+
+:::
+
+## Celo Sepolia Testnet
+
+| Name                       | Value                                                                                                                                                    |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name               | Celo Sepolia                                                                                                                                             |
+| Description                | The New Developer Testnet network (replacing Alfajores)                                                                                                  |
+| Chain ID                   | 11142220                                                                                                                                                 |
+| Currency Symbol            | CELO                                                                                                                                                     |
+| RPC Endpoint (best effort) | [https://forno.celo-sepolia.celo-testnet.org](https://forno.celo-sepolia.celo-testnet.org)                                                               |
+| Block Explorer             | [https://celo-sepolia.blockscout.com/](https://celo-sepolia.blockscout.com/)                                                                             |
+| Bridge Link                | [https://testnets.superbridge.app/celo-baklava](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220) <br/> Note: Ensure you enable Testnet in settings |
+| Faucet Link                | Coming soon                                                                                                                                              |
+
+The Celo Sepolia Testnet is Celo's new developer testnet built on Ethereum Sepolia, designed to replace Alfajores following the planned Holesky deprecation in September 2025.
+
+**Key Features:**
+
+- **Fresh State**: Starts with a clean slate, no state inheritance from Alfajores
+- **L1 Foundation**: Built on Ethereum Sepolia for enhanced stability
+- **Developer-Focused**: Provides the same developer experience as Alfajores
+
+:::info
+
+Celo Sepolia is currently in early access phase with internal transition and key partners. Public rollout is planned for the coming weeks. For the latest updates, see the [Celo Sepolia launch notice](/cel2/notices/celo-sepolia-launch).
+
+:::
+
+:::warning
+
+The Celo Sepolia Testnet is designed for testing and experimentation by developers. Its tokens hold no real world economic value. The testnet software will be upgraded on a regular basis. This will erase your accounts, their balance and your transaction history. You may encounter bugs and limitations with the software and documentation.
+
+:::
+
+:::info
+
+Your use of the Celo Sepolia Testnet is subject to the [Celo Sepolia Testnet Disclaimer](/network/celo-sepolia/disclaimer).
 
 :::
