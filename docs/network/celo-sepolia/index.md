@@ -38,7 +38,7 @@ Please help the community to improve Celo by asking questions on the [Forum](htt
 
 ## Useful links
 
-- Celo Sepolia Self-Serve Faucet - WIP, coming soon
+- [Celo Sepolia Self-Serve Faucet](https://faucet.celo.org/celo-sepolia)
 - [Celo Sepolia Network Block Explorer](https://celo-sepolia.blockscout.com/)
 - [Celo Sepolia Launch Notice](/cel2/notices/celo-sepolia-launch)
 - [Running a Node on Celo Sepolia](/cel2/operators/run-node)

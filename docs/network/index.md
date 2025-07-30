@@ -82,9 +82,9 @@ Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/
 | Chain ID                   | 11142220                                                                                                                                                 |
 | Currency Symbol            | CELO                                                                                                                                                     |
 | RPC Endpoint (best effort) | [https://forno.celo-sepolia.celo-testnet.org](https://forno.celo-sepolia.celo-testnet.org)                                                               |
-| Block Explorer             | [https://celo-sepolia.blockscout.com/](https://celo-sepolia.blockscout.com/)                                                                             |
-| Bridge Link                | [https://testnets.superbridge.app/celo-baklava](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220) <br/> Note: Ensure you enable Testnet in settings |
-| Faucet Link                | Coming soon                                                                                                                                              |
+| Block Explorer             | [https://celo-sepolia.blockscout.com](https://celo-sepolia.blockscout.com)                                                                             |
+| Bridge Link                | [https://testnets.superbridge.app](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220) <br/> Note: Ensure you enable Testnet in settings |
+| Faucet Link                | [https://faucet.celo.org/celo-sepolia](https://faucet.celo.org/celo-sepolia)                                                                                                                                              |
 
 The Celo Sepolia Testnet is Celo's new developer testnet built on Ethereum Sepolia, designed to replace Alfajores following the planned Holesky deprecation in September 2025.
 

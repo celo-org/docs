@@ -66,7 +66,7 @@ Developers should begin testing their applications on Celo Sepolia to familiariz
 - Contracts: [see the L1 and L2 contracts in the specification](https://specs.celo.org/core_contracts.html?#celo-sepolia-testnet)
 - RPC endpoint: [Celo Sepolia Forno](https://forno.celo-sepolia.celo-testnet.org)
 - Block explorer: [Blockscout](https://celo-sepolia.blockscout.com)
-- Faucet: WIP, reach out on Discord in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel for testnet CELO
+- Faucet: [Celo Sepolia Token Faucet](https://faucet.celo.org/celo-sepolia)
 - Bridge: [Superbrige Celo Sepolia Testnet](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220)
 
 ## Key Differences from Alfajores
