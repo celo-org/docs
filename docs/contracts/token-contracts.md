@@ -26,6 +26,7 @@ Token addresses for Celo assets on Mainnet, Alfajores Testnet, and Baklava Testn
 | USDT                               |  [0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e](https://celoscan.io/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) |
 | USDC                               | [0xcebA9300f2b948710d2653dD7B07f33A8B32118C](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) |
 | USDGLO                             | [0x4F604735c1cF31399C6E711D5962b2B3E0225AD3](https://celoscan.io/address/0x4F604735c1cF31399C6E711D5962b2B3E0225AD3) |
+| WETH                               | [0xD221812de1BD094f35587EE8E174B07B6167D9Af](https://celoscan.io/address/0xD221812de1BD094f35587EE8E174B07B6167D9Af)
 
 ## Alfajores Testnet
 
