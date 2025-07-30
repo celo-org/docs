@@ -54,7 +54,7 @@ The release contains the activation timestamps for Celo Mainnet, Baklava and Alf
 
 The Isthmus hardfork also prepares the Celo networks for the EigenDA v2 update.
 
-This means that operators need to make sure to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2).
+This means that operators need to make sure to upgrade the EigenDA proxy to version [v1.8.2](https://github.com/layr-labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2).
 
 ### Verify Your Configuration
 
