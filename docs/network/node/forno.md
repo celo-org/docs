@@ -7,22 +7,15 @@ description: How to connect to Celo without running a full node using Forno.
 
 How to connect to Celo without running a full node using Forno.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## What is Forno?
 
 Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
-:::tip
+:::tip Best-Effort Service
 
-Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using [Quicknode](./overview#quicknode).
+Forno is a free service with no terms of service or uptime guarantees. For production applications, use [professional RPC and node providers](/network/node/overview#as-a-service).
 
 :::
 
