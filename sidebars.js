@@ -825,11 +825,6 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "Hosted Nodes",
-        id: "network/node/run-hosted",
-      },
-      {
-        type: "doc",
         label: "Forno",
         id: "network/node/forno",
       },

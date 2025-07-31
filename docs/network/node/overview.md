@@ -18,7 +18,6 @@ Running your own RPC endpoint.
 - [Mainnet Full Node](./run-mainnet.md)
 - [Alfajores Full Node](./run-alfajores.md)
 - [Baklava Full Node](./run-baklava.md)
-- [Hosted Nodes](./run-hosted.md)
 
 ## Use a Community RPC Node
 
@@ -35,7 +34,6 @@ They are discoverable through the following:
 [Forno](./forno.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
-
 
 ## As a Service
 
