@@ -1,45 +1,21 @@
 ---
-title: Run a Baklava Full Node
-description: How to get a full node running on the Baklava Network using a prebuilt Docker image.
+title: Run an Alfajores Full Node on Celo
+description: How to run a full node on the Alfajores Network using a prebuilt Docker image.
 ---
 
-# Run a Baklava Full Node
+# Run an Alfajores Full Node
 
-How to get a full node running on the Baklava Network using a prebuilt Docker image.
+How to run a full node on the Alfajores Network using a prebuilt Docker image.
 
 :::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::
 
 ---
 
-## What is a Baklava Full Node?
+## What is a Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
-
-:::info
-
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
-
-You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-
-:::
-
-:::info
-
-If you are transitioning from the Baklava network prior to the June 24 reset, you will need to start with a fresh chain database. You can either shut down your existing node, delete the `celo` folder, and continue by following the guide below or create a new node following these directions.
-
-Key differences are:
-
-- New network ID is `62320`
-- A new image has been pushed to `us.gcr.io/celo-org/geth:baklava`
-- A new genesis block and bootnode enode are included in the Docker image
-- `ReleaseGold` contracts are available for all previously faucetted addresses [here](https://gist.github.com/nategraf/245232883a34cbb162eb599e34afd7c0)
-
-:::
 
 ## Prerequisites
 
@@ -47,7 +23,7 @@ Key differences are:
 
 :::info
 
-Code you'll see on this page is bash commands and their output.
+The code you'll see on this page is bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
 
@@ -55,10 +31,10 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 ## Celo Networks
 
-First, we are going to setup the environment variables required for `Baklava` network. Run:
+First, we are going to setup the environment variables required for `Alfajores` network. Run:
 
 ```bash
-export CELO_IMAGE=us.gcr.io/celo-org/geth:baklava
+export CELO_IMAGE=us.gcr.io/celo-org/geth:alfajores
 ```
 
 ## Pull the Celo Docker image
@@ -106,10 +82,10 @@ This environment variable will only persist while you have this terminal window 
 
 ## Start the node
 
-This command specifies the settings needed to run the node and gets it started.
+This command specifies the settings needed to run the node, and gets it started.
 
 ```bash
-docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --baklava --datadir /root/.celo
+docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --alfajores --datadir /root/.celo
 ```
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has started syncing with the network and is receiving blocks.
@@ -122,11 +98,11 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can look up by visiting the [Baklava Block Explorer](https://celo-baklava.blockscout.com/).
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Alfajores Block Explorer](https://celo-alfajores.blockscout.com/).
 
 :::danger
 
-**Security**: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p` flags allows you to make RPC calls from outside the container, i.e., from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
+**Security**: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
 
 :::
 

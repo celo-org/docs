@@ -8,11 +8,11 @@ description: ContractKit requirements, installation, and initialization.
 ContractKit requirements, installation, and initialization.
 
 :::warning
-[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
+[ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain.
 
 Check out the [migration guide](./migrating-to-viem.md) for updating your dapp from ContractKit to viem.
 
-To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
+To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337).
 :::
 
 ---
@@ -43,7 +43,7 @@ Go to the [page about Forno](/network/node/forno) for details about different co
 
 ## Initialize the Kit with your own node
 
-If you are hosting your own node (you can follow [this guide](/network/node/run-mainnet) to run one) you can connect our ContractKit to it.
+If you are hosting your own node (you can follow [this guide](/cel2/operators/run-node) to run one) you can connect our ContractKit to it.
 
 ```js
 import Web3 from "web3";

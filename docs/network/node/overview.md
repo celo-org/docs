@@ -13,15 +13,11 @@ import PageRef from '@components/PageRef'
 
 ## Run a Node
 
-Running your own RPC endpoint.
-
-- [Mainnet Full Node](./run-mainnet.md)
-- [Alfajores Full Node](./run-alfajores.md)
-- [Baklava Full Node](./run-baklava.md)
+Running your own Celo node gives you direct access to the blockchain without relying on third-party services. This provides enhanced privacy, reliability, and control over your interactions with the Celo network. Follow [this guide](/cel2/operators/run-node) to set up and run your own RPC endpoint, which includes detailed instructions for configuration, deployment, and maintenance of your Celo L2 node infrastructure.
 
 ## Use a Community RPC Node
 
-As part of the migration from L1 to L2, Celo Validators have become [Community RPC providers](/cel2/operators/community-rpc-node.md).
+As part of the [migration from L1 to L2](/what-is-celo/history), Celo Validators have become [Community RPC providers](/cel2/operators/community-rpc-node.md).
 They are discoverable through the following:
 
 - Install [Celo CLI](/cli/index.md) at version 6.1.0 or later. Then run: `celocli network:community-rpc-nodes`.
@@ -54,7 +50,7 @@ Free and paid RPC endpoint hosting.
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -64,7 +60,7 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 [Infura](https://docs.metamask.io/services/reference/celo/) (by MetaMask) is an RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
@@ -75,7 +71,7 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -85,7 +81,7 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 All data from any blockchain in one place. [dRPC](https://drpc.org/docs/celo-api) offers a pay-as-you-go model. Pay only for what you use, scale resources effortlessly, and enjoy clear, predictable pricing. Our model eliminates large upfront costs, encourages innovation and simplifies budgeting. With dRPC, you can manage your Web3 infrastructure efficiently and cost-effectively.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
@@ -96,7 +92,7 @@ All data from any blockchain in one place. [dRPC](https://drpc.org/docs/celo-api
 
 [Lava](https://docs.lavanet.xyz) is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
@@ -107,7 +103,7 @@ All data from any blockchain in one place. [dRPC](https://drpc.org/docs/celo-api
 
 thirdweb is a complete web3 development platform, allowing developers to build, manage, and analyze their web3 applications.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 - Celo Alfajores (Testnet)
@@ -118,7 +114,7 @@ thirdweb is a complete web3 development platform, allowing developers to build, 
 
 [Pocket Network](https://pocket.network/) is compatible with any network/blockchain (RelayChain) that uses the RPC standard.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -128,7 +124,7 @@ thirdweb is a complete web3 development platform, allowing developers to build, 
 
 [Tatum](https://docs.tatum.io/reference/rpc-celo) provides lightning-fast RPC nodes, data APIs, a powerful SDK, and a whole lot more.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -138,7 +134,7 @@ thirdweb is a complete web3 development platform, allowing developers to build, 
 
 [Chainstack](https://docs.chainstack.com/docs/celo-tooling) provides global load-balanced nodes for Celo. A free developer plan is available with an easy social login (e.g. GitHub). You can also top up your balance with crypto.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -149,7 +145,7 @@ thirdweb is a complete web3 development platform, allowing developers to build, 
 [All that node](https://docs.allthatnode.com/reference/quickstart-celo) supports public and private RPC nodes. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as needed.
 You can also claim Alfajores funds from the faucet in the site without signing up.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
@@ -159,10 +155,8 @@ You can also claim Alfajores funds from the faucet in the site without signing u
 
 Dwellir provides scalable RPC nodes to power Web3 developers with high-speed, affordable infrastructure.
 
-#### **Supported Networks**
+#### Supported Networks
 
 - Celo Mainnet
 
 <PageRef url="https://www.dwellir.com/networks/celo" pageName="Dwellir" />
-
-
