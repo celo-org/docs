@@ -580,11 +580,6 @@ const whatIsCeloSidebar = [
           },
           {
             type: "doc",
-            label: "Celo Signal",
-            id: "what-is-celo/about-celo-l1/validator/celo-signal",
-          },
-          {
-            type: "doc",
             label: "Validator FAQ",
             id: "what-is-celo/about-celo-l1/validator/troubleshooting-faq",
           },
