@@ -5,13 +5,6 @@ description: Overview of Dynamic
 
 # Using Dynamic
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 [Dynamic](https://www.dynamic.xyz/) is a powerful web3 auth developer platform with built-in support for Celo. It lets you integrate multiple wallets such as **Valora, Celo Wallet**, Coinbase Wallet, Metamask, and more into your app or website, handles network switching, multi-wallet linking and more.
 
 Dynamic comes with Celo built-in. You can play around with a live demo of Dynamic [here](https://demo.dynamic.xyz/) and see a full video walkthrough [here](https://www.dynamic.xyz/product-walkthrough). In this tutorial, we'll go through how to set up Dynamic with Celo.

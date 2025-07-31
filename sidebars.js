@@ -358,17 +358,7 @@ const whatIsCeloSidebar = [
                     type: "doc",
                     label: "Locked CELO Rewards",
                     id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold",
-                  },
-                  {
-                    type: "doc",
-                    label: "Community Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund",
-                  },
-                  {
-                    type: "doc",
-                    label: "Carbon Offsetting Fund",
-                    id: "what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-                  },
+                  }
                 ],
               },
               {
@@ -589,11 +579,6 @@ const whatIsCeloSidebar = [
             type: "doc",
             label: "Voting Policy",
             id: "what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy",
-          },
-          {
-            type: "doc",
-            label: "Celo Signal",
-            id: "what-is-celo/about-celo-l1/validator/celo-signal",
           },
           {
             type: "doc",
@@ -1139,6 +1124,11 @@ const toolingSidebar = [
         type: "doc",
         label: "Reown",
         id: "developer/reown/index",
+      },
+      {
+        type: "doc",
+        label: "Dynamic",
+        id: "developer/dynamic/index",
       },
       {
         type: "doc",
