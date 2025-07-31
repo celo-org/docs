@@ -21,16 +21,6 @@ Forno is a free service with no terms of service or uptime guarantees. For produ
 
 Forno has HTTP and websocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access historic state.
 
-Forno can be used as an `Http Provider` with [ContractKit](/developer/contractkit).
-
-```javascript
-const Web3 = require("web3");
-const ContractKit = require("@celo/contractkit");
-
-const web3 = new Web3("https://forno.celo.org");
-const kit = ContractKit.newKitFromWeb3(web3);
-```
-
 Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno.
 Forno is rate limited, as your usage increases, consider options that can provide the desired level of support (SLA): [list of RPC providers](./overview#as-a-service).
 
