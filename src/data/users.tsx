@@ -539,7 +539,7 @@ const Users: User[] = [
   },
   {
     title: 'MetaMask',
-    description: 'Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide.',
+    description: 'Start exploring blockchain applications in seconds. Trusted by over 100 million users worldwide.',
     preview: require('./showcase/meta-mask.png'),
     website: 'https://metamask.io/',
     source: 'https://github.com/dsrvlabs/celo-extension-wallet',
