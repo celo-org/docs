@@ -7,13 +7,6 @@ description: Introduction to the community fund, its assets, and its relationshi
 
 Introduction to the community fund, its assets, and its relationship to the on-chain reserve.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 :::info
@@ -22,12 +15,22 @@ Check out the [State of Celo Community Treasury | Q1 2025](https://forum.celo.or
 
 ## What is the Community Fund?
 
-The Community Fund provides for the general upkeep of the Celo platform. CELO holders decide how to allocate these funds through governance proposals in the [governance forum](https://forum.celo.org/). Funds might be used to pay bounties for bugs or vulnerabilities, security audits, or grants for protocol development.
+The Community Fund supports the ongoing development and maintenance of the Celo platform. CELO holders collectively decide how to allocate these funds through governance proposals submitted to the [governance forum](https://forum.celo.org/c/governance/12).
 
-## Community Fund Assets
+## How the Community Fund Receives Assets
 
-The Community Fund receives assets from two sources:
+The Community Fund is funded through two primary mechanisms:
 
-- The Community Fund obtains a desired epoch reward defined as a fraction of the total desired epoch rewards \(governable, initially planned to be $$25\%$$\). This amount is subject to adjustment up or down in the event of under- or over-spending against the epoch rewards target schedule.
+- **Epoch rewards**: the Community Fund receives 1% of epoch rewards, adjustable via governance and distributed automatically at each epoch.
 
-- The Community Fund is the default destination for slashed assets.
+- **Slashed assets**: the Community Fund is the default destination for slashed assets.
+
+In April 2023, [CGP-79](https://mondo.celo.org/governance/cgp-79) was passed, enabling the Mento Reserve to return 120M CELO (originally allocated at genesis) to the Celo Community Fund.
+
+## On-chain and Analytics
+
+All Community Fund activities are transparent and verifiable on-chain: [0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972](https://celoscan.io/address/0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972).
+
+For deeper analysis of Community Fund activities, use the [Dune Analytics dashboard](https://dune.com/superchain_eco/celo-community-treasury).
+
+For a detailed view of the fund's assets, including both historical and current spending breakdowns, explore the [Celo Community Fund website](https://www.celocommunityfund.xyz/).
