@@ -641,7 +641,7 @@
 /getting-started/baklava-testnet/running-a-validator-in-baklava /network/baklava/run-validator
 /getting-started/choosing-a-network /network
 /getting-started/glossary /glossary
-/getting-started/hosted-nodes /network/node/run-hosted
+/getting-started/hosted-nodes /network/node/overview
 /getting-started/mainnet /network
 /getting-started/mainnet/index /network/mainnet
 /getting-started/mainnet/running-a-full-node-in-mainnet /network/mainnet/run-full-node
@@ -681,6 +681,10 @@
 /important-information/rc-network-disclaimer /network/mainnet/disclaimer
 /network#celo-alfajores-l2-testnet /network#celo-alfajores-testnet
 /network#celo-baklava-l2-testnet /network#celo-baklava-testnet
+/network/node/run-alfajores /cel2/operators/run-node
+/network/node/run-baklava /cel2/operators/run-node
+/network/node/run-hosted /network/node/overview
+/network/node/run-mainnet /cel2/operators/run-node
 
 /protocol/bridge /what-is-celo/using-celo/bridges 301
 /protocol/bridges /developer/bridges/

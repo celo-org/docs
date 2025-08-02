@@ -8,10 +8,7 @@ description: How to run a full node on the Alfajores Network using a prebuilt Do
 How to run a full node on the Alfajores Network using a prebuilt Docker image.
 
 :::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::
 
 ---
@@ -19,20 +16,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 ## What is a Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
-
-:::tip
-
-If you'd prefer a simple, one-click hosted setup for running a node on one of the major cloud providers (AWS and GCP), check out our [hosted nodes](/network/node/run-hosted) documentation.
-
-:::
-
-:::info
-
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation, and governance, please sign up for our [Celo Signal mailing list](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
-
-You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-
-:::
 
 ## Prerequisites
 

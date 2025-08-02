@@ -1,15 +1,16 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrating a Celo L1 node
+# Migrating a Celo L1 Node
 
-This guide is designed to help Celo L1 node operators migrate their nodes to the Celo L2. Specifically, it describes how to run the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) in order to transform a pre-hardfork db snapshot into a format from which a Celo L2 node can `full` sync.
+This guide helps Celo L1 node operators migrate their nodes to Celo L2. It describes how to use the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) to transform pre-migration database snapshots into a format that Celo L2 nodes can use for `full` sync.
 
-If you want to run a fresh L2 node, you may skip to the [node operator guide](run-node.md) for instructions on how to `snap` sync from an empty datadir.
+**Alternative options:**
 
-If you would like to use `full` sync but don't want to migrate your own pre-hardfork datadir, you can also download a migrated datadir from the links provided in the [Network Config & Assets](run-node.md#network-config--assets) section. Note that migrated datadirs won't be available until after the hardfork. For minimal downtime, we recommend migrating your own data for the hardfork.
+- **Fresh L2 node**: Skip to the [node operator guide](/cel2/operators/run-node.md) for `snap` sync from scratch
+- **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/cel2/operators/run-node.md#network-config--assets)
 
-:::note
+:::note Terminology
 The terms L1 and pre-hardfork are used interchangeably to reference Celo before the L2 transition. L1 does not refer to Ethereum in this document.
 :::
 
@@ -27,81 +28,118 @@ Migrating a pre-hardfork datadir involves these high-level steps:
 ### Important Notes
 
 - The migration tool can be run multiple times as the L1 chain data grows and will continue migrating from where it last left off.
-
+- While the pre-migration can be run multiple times and will get faster each time, you should avoid running the full migration more than once as it will be slower the second time.
 - All migrations writing to a given destination datadir must use the same node's source datadir. That is, you should not run the pre-migration with a db snapshot from node A and then run the full migration with a db snapshot from node B.
-
 - Your node must be stopped before the migration tool is run, even once it has reached the hardfork.
-
 - You should not attempt to migrate archive node data, only full node data.
 
-- While the pre-migration can be run multiple times and will get faster each time, you should avoid running the full migration more than once as it will be slower the second time.
+## Preparation Steps
 
-## Before the hardfork
+### 1. Upgrade L1 Nodes
 
-There are some important steps node operators should take ahead of the L2 hardfork. These include upgrading to the [latest client release](run-node.md#network-config--assets) so that the L1 network will stop producing blocks at the hardfork, and __running a pre-migration 1-2 days before the hardfork__. If you have not yet read the [Preparing for the L2 migration](../notices/l2-migration.md) page, please do so before continuing.
+All node operators must upgrade their L1 (`celo-blockchain`) nodes to the required version before the hardfork. This release defines migration block numbers so nodes will stop producing blocks at the right time.
 
-## Running the migration
+### 2. Run a Pre-Migration (Recommended)
 
-:::warning
-__It is not recommended to migrate from an L1 archive datadir.__
-
-If you only have an L1 archive node, we recommend syncing an L1 full node in preparation for the Mainnet migration. You can still run an L2 archive node after migrating from an L1 full node datadir. See [Running a Celo archive node](run-node.md#running-an-archive-node) for more.
+:::warning Archive Node Limitation
+Both pre-migration and full migration require **full node data only**. If you only have archive nodes, sync a full node before the hardfork. You cannot migrate archive data, even for L2 archive nodes. See [Running an archive node](/cel2/operators/run-node.md#running-an-archive-node) for details.
 :::
 
-:::warning
-__We have sometimes encountered the following problem when migrating an L1 datadir.__
+Run a pre-migration 1-2 days before the hardfork to migrate most data and minimize downtime.
+You can use either Docker or build from source.
+The pre-migration may take several hours to complete.
 
-We were able to resolve it by starting up the celo-blockchain client with the
-same datadir, waiting for the node to fully start, and then shutting it down
-again.
+#### Using Docker (Recommended)
 
-Alternatively you can open a local console with the celo-blockchain client
-(`geth console --datadir <datadir>`), wait for the console to load, and then
-exit the console. This ensures that all components have loaded before
-shutdown is attempted.
-
-It seems that this issue is caused by the celo-blockchain client sometimes
-shutting down in an inconsistent state, which is repaired upon the next
-startup.
-
-```
-CRIT [03-19|10:38:17.229] error in celo-migrate err="failed to run full migration: failed to get head header: failed to open database at \"/datadir/celo/chaindata\" err: failed to open leveldb: EOF"
-```
-
-:::
-
-The full migration process consists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions on running a pre-migration 1-2 days ahead of the hardfork.
-
-Once the hardfork block number is reached, we recommend node operators migrate using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). Alternatively, the migration tool can be [run from source](#run-migration-from-source).
-
-### Hardware requirements
-
-- Make sure you have enough storage to accomodate 2x the pre-hardfork chaindata. Chaindata size can vary, so please double check your node.
-
-- We recommend using local storage for the source and destination datadirs.
-
-- 16GB+ RAM recommended
-
-### Run migration with docker
-
-To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates. You can use it to migrate your L1 node as follows.
-
-1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions.
-
-2. Once the hardfork block number is reached, stop your L1 node.
-
-3. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
+1. Stop your L1 node
+2. Clone the migration repository:
 
     ```bash
     git clone https://github.com/celo-org/celo-l2-node-docker-compose.git
     cd celo-l2-node-docker-compose
     ```
 
-4. Run the full migration command, where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
+3. Run the pre-migration where `<network>` is `alfajores`, `baklava`, or `mainnet`:
 
-   :::warning
-   Please ensure your node is stopped before running the migration tool.
-   :::
+    ```bash
+    ./migrate pre <network> <path-to-your-L1-datadir> [<L2_destination_datadir>]
+    ```
+
+    If a destination datadir is specified, ensure that `DATADIR_PATH` inside `.env` is updated to match when you start your node.
+
+4. Restart your L1 node and wait for the hardfork
+
+#### Using Source Code
+
+1. Stop your L1 node
+2. Build the migration tool:
+
+    ```bash
+    git clone https://github.com/celo-org/optimism.git
+    cd optimism/op-chain-ops
+    make celo-migrate
+    ```
+
+3. Run the pre-migration:
+
+    ```bash
+    go run ./cmd/celo-migrate pre \
+    --old-db <path-to-your-L1-datadir>/celo/chaindata \
+    --new-db <path-to-your-L2-destination-datadir>/geth/chaindata
+    ```
+
+4. Restart your L1 node and wait for the hardfork
+
+### Key Information
+
+#### Alfajores testnet
+
+- Block number: `26384000`
+- Date: September 26, 2024
+- Minimum `celo-blockchain` version: [v1.8.7](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.7)
+- `op-geth`: [celo-v2.0.0-rc4](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0-rc4)
+- `op-node`: [celo-v2.0.0-rc4](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0-rc4)
+
+#### Baklava testnet
+
+- Block number: `28308600`
+- Date: February 20, 2025
+- Minimum `celo-blockchain` version: [v1.8.8](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.8)
+- `op-geth`: [celo-v2.0.0-rc4](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0-rc4)
+- `op-node`: [celo-v2.0.0-rc4](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0-rc4)
+
+#### Mainnet
+
+- Block number: `31056500`
+- Date: March 26, 2025 (3:00 AM UTC)
+- Minimum `celo-blockchain` version: [v1.8.9](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.9)
+- `op-geth`: [celo-v2.0.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0)
+- `op-node`: [celo-v2.0.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0)
+
+## Full Migration Process
+
+When the hardfork block number is reached, complete the migration using either Docker (recommended) or source code.
+
+### Hardware Requirements
+
+- Make sure you have enough storage to accomodate 2x the pre-hardfork chaindata. Chaindata size can vary, so please double check your node.
+- We recommend using local storage for the source and destination datadirs.
+- 16GB+ RAM recommended
+
+### Run Migration with Docker
+
+Once the hardfork block is reached, run the full migration using the same repository:
+
+1. Stop your L1 node when the hardfork block number is reached
+
+2. If you haven't already, clone the migration repository:
+
+    ```bash
+    git clone https://github.com/celo-org/celo-l2-node-docker-compose.git
+    cd celo-l2-node-docker-compose
+    ```
+
+3. Run the full migration where `<network>` is `alfajores`, `baklava`, or `mainnet`:
 
    ```bash
    ./migrate full <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]
@@ -109,15 +147,13 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
 
    If a destination datadir is specified, ensure that `DATADIR_PATH` inside `.env` is updated to match when you start your node.
 
-### Run migration from source
+### Run Migration from Source
 
-If you'd prefer not to use Docker, you can run the migration script directly from source:
+If you prefer not to use Docker, run the migration directly from source:
 
-1. Run a pre-migration 1-2 days before the hardfork. It may take 3 or more hours to migrate during the hardfork otherwise. See [Preparing for the L2 migration](../notices/l2-migration.md) for instructions.
+1. Stop your L1 node when the hardfork block number is reached
 
-2. Once the hardfork block number is reached, stop your L1 node.
-
-3. Checkout and build the migration script
+2. If you haven't already, build the migration tool:
 
    ```bash
    git clone https://github.com/celo-org/optimism.git
@@ -125,7 +161,7 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    make celo-migrate
    ```
 
-4. Run the full migration
+3. Run the full migration:
 
 <Tabs>
   <TabItem value="mainnet" label="Mainnet" default>
@@ -142,13 +178,15 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
    --new-db <path-to-your-L2-destination-datadir>/geth/chaindata \
    --l1-beacon-rpc=<L1-beacon-RPC-URL>
    ```
- 
+
    Note the L1-beacon-RPC-URL must support querying historical `finality_checkpoints`. We are using https://ethereum-beacon-api.publicnode.com in [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose).
-   
+
    You can check support for historical `finality_checkpoints` by retrieving some suitably old finality_checkpoints, for example slot 5000000.
-   ```
+
+   ```bash
    curl https://ethereum-beacon-api.publicnode.com/eth/v1/beacon/states/5000000/finality_checkpoints | jq
    ```
+
   </TabItem>
   <TabItem value="testnets" label="Testnets">
    ```bash
@@ -166,19 +204,38 @@ If you'd prefer not to use Docker, you can run the migration script directly fro
   </TabItem>
 </Tabs>
 
-   You can find the required input artifacts posted in the [Network config & Assets](./run-node.md#network-config--assets) section once they're available.
+   You can find the required input artifacts in the [Network config & Assets](/cel2/operators/run-node.md#network-config--assets) section.
 
    We recommend using the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase as an additional reference for running the migration from source.
 
-The full migration process will take at least 5 minutes to complete for mainnet, assuming most data has been pre-migrated. If no pre-migration was performed it could take several hours.
+The full migration process will take at least 5 minutes to complete for mainnet, assuming most data has been pre-migrated. If no pre-migration was performed, it could take several hours.
 
 Congrats! Your datadir is now ready to use with a Celo L2 node. See [Running a Celo Node](run-node.md) for instructions on how to start your Celo L2 node.
 
-### Troubleshooting
+## Troubleshooting
 
-If you encounter difficulties during the migration that are not covered below, please reach out to our team. You can also checkout the `celo-l2-node-docker-compose` [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/README.md#L1) and the `celo-migrate` [README](https://github.com/celo-org/optimism/blob/celo-rebase-12/op-chain-ops/cmd/celo-migrate/README.md) for more information on how the migration tooling works.
+If you encounter difficulties during the migration that are not covered below, please reach out to our team. You can also check the `celo-l2-node-docker-compose` [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) and the `celo-migrate` [README](https://github.com/celo-org/optimism/blob/celo-rebase-12/op-chain-ops/cmd/celo-migrate/README.md) for more information on how the migration tooling works.
 
-#### Missing Data / DB continuity check failures
+### Database Error (EOF)
+
+If you encounter this error during migration:
+
+```shell
+CRIT [03-19|10:38:17.229] error in celo-migrate err="failed to run full migration: failed to get head header: failed to open database at \"/datadir/celo/chaindata\" err: failed to open leveldb: EOF"
+```
+
+**Solution:** Start up the celo-blockchain client with the same datadir, wait for it to fully load, then shut it down. This repairs inconsistent shutdown states.
+
+Alternatively, open a console and exit:
+
+```bash
+geth console --datadir <datadir>
+# Wait for console to load, then exit
+```
+
+It seems that this issue is caused by the celo-blockchain client sometimes shutting down in an inconsistent state, which is repaired upon the next startup.
+
+### Missing Data / DB Continuity Check Failures
 
 Both the `pre` and `full` migration commands will first run a script to check whether the source db provided has any gaps in data. This check may fail with an error indicating that data is missing from your source db.
 
