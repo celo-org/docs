@@ -1,6 +1,6 @@
 # Celo Sepolia Testnet Launch
 
-This page announces Celo Sepolia, a new developer testnet replacing Alfajores following the planned Holesky sunset.
+Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky sunsets in September 2025.
 
 :::info Key Information
 This page will be kept updated with key information about the transition.
@@ -11,14 +11,14 @@ This page will be kept updated with key information about the transition.
 - **Phases**:
   - Jul 23, 2025: Celo Sepolia launch ✅
   - Jul 24, 2025—Jul 31, 2025: Internal testing ✅
-  - **Aug 1, 2025—Aug 31, 2025: Early access phase :round_pushpin:**
-  - Sep 1, 2025: Planned public announcement
-  - Sep 1, 2025—Sep 30, 2025: Migration period
-  - Sep 30, 2025: Alfajores sunset aligned with Holesky deprecation
+  - **Aug 1, 2025—Aug 12, 2025: Early access phase :round_pushpin:**
+  - Aug 13, 2025: Planned public announcement
+  - Aug 14, 2025—Sep 14, 2025: Planned transition period
+  - Sep 15, 2025: Planned Alfajores sunset, aligned with Holesky deprecation
 
-**Node Providers**: We kindly ask you to support both Alfajores and Celo Sepolia during early access phase, the four weeks in August 2025.
+**Node Providers**: We kindly ask you to support both Alfajores and Celo Sepolia during early access phase.
 
-**Developers**: You can go ahead and deploy all contracts.
+**Developers**: Verify your dependencies support Celo Sepolia, then go ahead and deploy all contracts.
 :::
 
 :::note
@@ -33,7 +33,7 @@ Celo Sepolia is the new developer testnet for Celo running as an Ethereum Layer 
 
 ### For Node Providers
 
-We kindly request node providers to support both Alfajores and Celo Sepolia in parallel during August 2025 to ensure a smooth transition for developers. See the [node setup guide](/cel2/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
+We kindly request node providers to support both Alfajores and Celo Sepolia in parallel during the early access and transition phases to ensure a smooth migration for developers. See the [node setup guide](/cel2/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
 
 Release versions:
 
@@ -68,3 +68,7 @@ Since Celo Sepolia starts with a clean slate, there is no historical data or con
 | Chain ID | 44787 | 11142220 |
 | State | Historical from L1 migration | Fresh start |
 | Longevity | Sunset planned Sept 2025 | Long-term testnet |
+
+## Getting Help
+
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
