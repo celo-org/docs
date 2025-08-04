@@ -15,9 +15,6 @@ For the most up-to-date information, refer to our [Celo L2 documentation](https:
 :::
 
 ---
-Here’s an improved and clearer version of your text that aligns with the Celo Docs Style Guide:
-
----
 
 # CELO Token Duality
 

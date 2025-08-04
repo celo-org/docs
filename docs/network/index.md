@@ -1,5 +1,5 @@
 ---
-title: Network Details
+title: Network Information
 description: How to choose a Celo network based on your needs and objectives.
 ---
 

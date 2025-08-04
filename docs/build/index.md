@@ -15,7 +15,7 @@ Whether you're building your first dApp or looking to integrate an existing prot
 - **EVM Compatibile:** Celo is fully EVM-compatible, offering the same development experience as Ethereum with improved scalability and lower costs.
 - **Fast Transactions:** After the migrations to an L2 Celo now has a **1-second block finality** compared to formerly 5 seconds.
 - **Easy, Low-Cost Payments:** Celo's seamless payment infrastructure, including [Fee Abstraction](/developer/fee-abstraction), **sub-cent fees**, and **native stablecoins**, enables simple and affordable transactions.
-- **Global Reach:** Celo provides access to more than **5 million real-world users** with some dApps having more than **200.000 DAUs**.
+- **Global Reach:** Celo provides access to more than **8 million real-world users** with some dApps having more than **200,000 DAUs**.
 
 <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
     <span className="text-3xl font-bold">
