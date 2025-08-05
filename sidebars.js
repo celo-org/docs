@@ -1352,11 +1352,6 @@ const celoL2Sidebar = [
         label: "Withdrawing CELO from L2 to L1",
         id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
       },
-      {
-        type: "doc",
-        label: "Fee Abstraction on Celo L2",
-        id: "cel2/guides/fee-abstraction",
-      },
     ],
   },
   { type: "doc", label: "FAQ", id: "cel2/faq" },
