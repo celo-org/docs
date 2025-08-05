@@ -3,9 +3,9 @@ title: Implementing Fee Abstraction in Wallets
 description: How to allow your wallet users to pay for gas fee using alternate fee currencies
 ---
 
-Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyWhitelist.sol**](/contracts/core-contracts).
+Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyDirectory.sol**](/contracts/core-contracts).
 
-Alternate fee currency works with EOAs and no paymaster is required!
+Alternate fee currencies work with EOAs and no paymaster is required!
 
 This works by specifying a token/adapter address as a value for the `feeCurrency` property in the transaction object. The `feeCurrency` property in the transaction object is exclusive to Celo and allows paying gas fees using assets other than the native currency of the network.
 
@@ -17,7 +17,7 @@ The protocol maintains a governable allowlist of smart contract addresses which 
 
 ## Allowlisted Gas Fee Addresses
 
-To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getCurrencies` method on the `FeeCurrencyDirectory` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getCurrencies()` method on the `FeeCurrencyDirectory` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
 
 ### Tokens with Adapters
 
@@ -81,7 +81,6 @@ let tx = {
 :::info
 To get details about the underlying token of the adapter you can call `adaptedToken` function on the adapter address, which will return the underlying token address.
 :::
-
 
 ## Enabling Transactions with ERC20 Token as fee currency
 
@@ -242,4 +241,4 @@ async function send(amountInWei) {
 }
 ```
 
-If you have any questions, please reach out [here](https://github.com/celo-org/developer-tooling/discussions/categories/q-a).
+If you have any questions, please [reach out](https://github.com/celo-org/developer-tooling/discussions/categories/q-a).
