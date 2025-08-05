@@ -1,6 +1,10 @@
-# Running a Celo node
+# Running a Celo Node
 
-This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
+This guide is designed to help node operators run a Celo L2 node.
+
+:::note L1 to L2 data migration
+If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing. Alternatively, you can `snap` sync from scratch without migrating existing L1 data.
+:::
 
 ## Recommended Hardware
 
@@ -18,46 +22,23 @@ This guide is designed to help node operators run a Celo L2 node, and assumes yo
 - Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
-:::warning
+:::warning Storage Requirements
 Storage size requirements will increase over time, especially for archive nodes.
 
 If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](#running-an-archive-node).
 :::
 
-### Networking requirements
-
-In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
-
-Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
-
-On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
-
-On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
-
-On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-To illustrate this, you may refer to the following table:
-
-TODO table
-
-| Machine \\ IPs open to | 0\.0\.0\.0/0 \(all\) | your\-validator\-ip | your\-proxy\-ip |
-| ---------------------- | -------------------- | ------------------- | --------------- |
-| Validator              |                      |                     | tcp:30503       |
-| Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-
-## Run node with docker
+## Run Node with Docker
 
 To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
 
 See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) for instructions on installing docker and docker compose if needed.
 
-:::note
-If using Docker Desktop on MacOS you will most likely need to increase the virtual disk limit in order to accomodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
+:::note Docker Desktop on MacOS
+You will most likely need to increase the virtual disk limit in order to accomodate the chaindata directory. This can be done by opening Docker Desktop, going to Settings -> Resources -> Advanced and increasing the disk image size.
 :::
 
-For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
-
-### Running a full node
+### Running a Full Node
 
 Follow these steps to run a full node. If you would like to run an archive node, see [below](#running-an-archive-node).
 
@@ -87,7 +68,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     To use `full` sync, configure `.env` as follows:
 
-    ```md
+    ```text
     OP_GETH__SYNCMODE=full
     DATADIR_PATH=<path to a migrated L1 datadir>
     ```
@@ -98,29 +79,14 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     __Configure P2P for external network access__
 
-    :::warning
-    If the following options are not configured correctly, your node will not be
-    discoverable or reachable to other nodes on the network. This is likely to
-    impair your node's ability to stay reliably connected to and synced with the
-    network.
+    :::warning Network Configuration
+    If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network. This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     :::
 
-    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
-    discovery so that other nodes can connect to your node. If unset op-node
-    other nodes on the network will not be able to discover and connect to your
-    node.
-    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 9222.
-
-    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
-    shared via the discovery mechanism. If the public IP is not correctly
-    configured then other nodes on the network will not be able to discover and
-    connect to your node. The default value of `any` will try to automatically
-    determine the public IP, but the most reliable approach is to explicitly set
-    the public IP using `extip:<your-public-ip>`. Other acceptable values are
-    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 30303.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
+    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node.
 
@@ -146,25 +112,19 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
    Note that until fully synced, the RPC API will return 0 for the head block number.
 
-### Running an archive node
-
-__Even if you plan to run an archive node, we do not recommend running the migration tool on archive node data. If you only have L1 archive nodes, we recommend syncing an L1 full node for the Mainnet migration.__
-
-The L2 execution client cannot use pre-hardfork state, so migrating an archive datadir will copy large amounts of data unnecessarily. The migration script will also run slowly and consume lots of memory when run on archive data, regardless of whether a pre-migration was performed. For these reasons, we recommend only running the migration script on a full node L1 datadir, even if you plan to run an L2 archive node.
+### Running an Archive Node
 
 #### Overview
 
-To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require archive data, even though it doesn't have any archive data from before the hardfork. You can then configure your node to forward requests for pre-hardfork archive data to a legacy archive node.
+To run an L2 archive node, you need to start the L2 execution client in archive mode. This allows the node to accept RPC requests that require archive data for blocks created after the L2 transition. For historical data from before the L2 transition, you can configure your node to forward those requests to a legacy Celo L1 archive node that contains the historical blockchain state.
 
 #### Instructions
 
-Here are step-by-step instructions for using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) to run an archive node:
-
-:::note
+:::note Prerequisites
 These instructions assume you already have
 
 1. A migrated full node datadir that has been synced to the migration block. See [Migrating an L1 Node](migrate-node.md) if you do not have this.
-2. A non-migrated L1 archive node datadir. Again, please do not attempt to migrate an archive datadir.
+2. A non-migrated Celo L1 archive node datadir. Do not attempt to migrate an archive datadir.
 
 Please ensure neither datadir is being used by a running node before proceeding.
 :::
@@ -193,7 +153,7 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     To use `full` sync, configure `.env` as follows:
 
-    ```md
+    ```text
     OP_GETH__SYNCMODE=full
     DATADIR_PATH=<path to a migrated L1 full node datadir>
     ```
@@ -202,58 +162,43 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     To enable `archive` mode, configure `.env` as follows:
 
-    ```md
+    ```text
     NODE_TYPE=archive
     ```
 
     __Configure Historical RPC Service__
 
-    To handle RPC requests for pre-hardfork state and execution, an L2 archive node proxy out to a legacy archive node or "Historical RPC Service".
-
+    To handle RPC requests for pre-hardfork state and execution, an L2 archive node proxies to a legacy archive node or "Historical RPC Service".
     There are two ways to configure a Historical RPC Service for your archive node:
 
-    1. You can supply a pre-hardfork archive datadir and have [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start a legacy archive node for you. To do this, simply configure `.env` as follows:
+    1. Supply a pre-hardfork archive datadir and let [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start a legacy archive node. To do this configure `.env` as follows:
 
-        ```md
+        ```text
         HISTORICAL_RPC_DATADIR_PATH=<path to your pre-hardfork archive datadir>
         ```
 
         When you start your L2 node, a legacy archive node will also start using the pre-hardfork archive datadir. Your L2 node will be configured to use the legacy archive node as its Historical RPC Service.
 
-    2. If you would prefer to start the legacy archive node yourself, you can configure `.env` as follows:
+    2. Start the legacy archive node yourself and configure `.env` as follows:
 
-        ```md
+        ```text
         OP_GETH__HISTORICAL_RPC=<RPC endpoint of a running legacy archive node>
         ```
 
-      This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored, and the tool will not start a legacy archive node when it starts your L2 archive node.
-      Note that if you choose to run your own legacy archive node, you should do so with different flags than before the hardfork as the node will no longer be syncing blocks or communicating with other nodes. To see how we recommend re-starting a legacy archive node as a Historical RPC Service, see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
+        This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored. The tool will not start a legacy archive node when it starts your L2 archive node.
+
+        If you choose to run your own legacy archive node, you should do so with different flags than before the hardfork, as the node will no longer be syncing blocks or communicating with other nodes. To see how we recommend re-starting a legacy archive node as a Historical RPC Service, see [this script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
 
     __Configure P2P for external network access__
 
-    :::warning
-    If the following options are not configured correctly, your node will not be
-    discoverable or reachable to other nodes on the network. This is likely to
-    impair your node's ability to stay reliably connected to and synced with the
-    network.
+    :::warning Network Configuration
+    If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network. This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     :::
 
-    * `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via
-    discovery so that other nodes can connect to your node. If unset op-node
-    other nodes on the network will not be able to discover and connect to your
-    node.
-    * `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 9222.
-
-    * `OP_GETH__NAT` - Controls how op-geth determines its public IP that is
-    shared via the discovery mechanism. If the public IP is not correctly
-    configured then other nodes on the network will not be able to discover and
-    connect to your node. The default value of `any` will try to automatically
-    determine the public IP, but the most reliable approach is to explicitly set
-    the public IP using `extip:<your-public-ip>`. Other acceptable values are
-    `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    * `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that
-    other nodes can connect to your node. Defaults to 30303.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via  discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
+    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node(s).
 
@@ -285,15 +230,13 @@ Please ensure neither datadir is being used by a running node before proceeding.
    cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993
    ```
 
-## Building a node from source
+## Building a Node from Source
 
 Docker images are the easiest way to run a Celo node, but you can always build your own node from source code. You might wish to do this if you want to run on a specific architecture or inspect the source code.
 
 The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase is still the best reference for how to run your nodes from source, and below you can find all the [Network config & Assets](#network-config--assets) needed to participate in the hardfork.
 
-Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
-
-## Network config & Assets
+## Network Config & Assets
 
 ### Mainnet
 
@@ -417,9 +360,7 @@ Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L
 
 ## Troubleshooting
 
-Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if your problem is not answered below.
-
-### Transactions are not being executed when submitted to a node
+### Transactions Are Not Being Executed When Submitted to a Node
 
 If your node is synced but transactions submitted to it are not executed, make sure the `--rollup.sequencerhttp` flag is correctly set.
 
@@ -427,6 +368,10 @@ If your node is synced but transactions submitted to it are not executed, make s
 - Alfajores: `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org`
 - Baklava: `--rollup.sequencerhttp=https://sequencer.baklava.celo-testnet.org`
 
-### Self-hosted public RPC does not retrieve transactions by hash
+### Self-Hosted Public RPC Does Not Retrieve Transactions by Hash
 
 If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.
+
+## Getting Help
+
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
