@@ -3,6 +3,11 @@ import TabItem from '@theme/TabItem';
 
 # Migrating a Celo L1 Node
 
+:::tip
+Unless you need to migrate your own Celo L1 data, we recommend using a snapshot instead.
+You can find the latest snapshot in the [Network Config & Assets](/cel2/operators/run-node.md#network-config--assets) section.
+:::
+
 This guide helps Celo L1 node operators migrate their nodes to Celo L2. It describes how to use the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) to transform pre-migration database snapshots into a format that Celo L2 nodes can use for a `full` sync.
 
 **Alternative options:**
@@ -45,7 +50,6 @@ All node operators must upgrade their L1 (`celo-blockchain`) nodes to the requir
 Both pre-migration and full migration require **full node data only**. If you only have archive nodes, sync a full node before the hardfork. You cannot migrate archive data, even for L2 archive nodes. See [Running an archive node](/cel2/operators/run-node.md#running-an-archive-node) for details.
 :::
 
-Run a pre-migration 1-2 days before the hardfork to migrate most data and minimize downtime.
 You can use either Docker or build from source.
 The pre-migration may take several hours to complete.
 
