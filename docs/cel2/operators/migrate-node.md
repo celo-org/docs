@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrating a Celo L1 Node
 
-This guide helps Celo L1 node operators migrate their nodes to Celo L2. It describes how to use the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) to transform pre-migration database snapshots into a format that Celo L2 nodes can use for `full` sync.
+This guide helps Celo L1 node operators migrate their nodes to Celo L2. It describes how to use the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) to transform pre-migration database snapshots into a format that Celo L2 nodes can use for a `full` sync.
 
 **Alternative options:**
 
