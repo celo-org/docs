@@ -5,8 +5,6 @@ description: How to allow your wallet users to pay for gas fee using alternate f
 
 Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyDirectory.sol**](/contracts/core-contracts).
 
-Alternate fee currencies work with EOAs and no paymaster is required!
-
 This works by specifying a token/adapter address as a value for the `feeCurrency` property in the transaction object. The `feeCurrency` property in the transaction object is exclusive to Celo and allows paying gas fees using assets other than the native currency of the network.
 
 The below steps describe how wallets can implement the alternate fee currency feature in order to allow users to use alternate assets in the user's wallet to pay for gas fees.
@@ -18,6 +16,15 @@ The protocol maintains a governable allowlist of smart contract addresses which 
 ## Allowlisted Gas Fee Addresses
 
 To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getCurrencies()` method on the `FeeCurrencyDirectory` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+
+You can also query the available tokens with `celocli`:
+
+```bash
+# Alfajores testnet
+celocli network:whitelist --node https://alfajores-forno.celo-testnet.org
+# Celo mainnet
+celocli network:whitelist --node https://forno.celo.org
+```
 
 ### Tokens with Adapters
 
@@ -46,57 +53,33 @@ To learn more about gas pricing, see [Gas Pricing](/what-is-celo/about-celo-l1/p
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `USDC` | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://alfajores.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b#code) | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://alfajores.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0#code) |
 
-##### Baklava (testnet)
+## Using Fee Abstraction with Celo CLI
 
-N/A
+Transfer 1 USDC using USDC as fee currency, with the [`celocli`](https://docs.celo.org/cli) using the `--gasCurrency` flag
 
-### Enabling Transactions with ERC20 Token as fee currency in a wallet
-
-We recommend using the [viem](https://viem.sh/) library as it has support for the `feeCurrency` field in the transaction required for sending transactions where the gas fees will be paid in ERC20 tokens. Ethers.js and web.js currently don't support `feeCurrency`.
-
-#### Estimating gas price
-
-To estimate gas price use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
-
-:::info
-The Gas Price Minimum value returned from the RPC has to be interpreted in 18 decimals.
-:::
-
-#### Preparing a transaction
-
-When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
-
-The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/what-is-celo/about-celo-l1/protocol/transaction/transaction-types).
-
-Here is how a transaction would look like when using USDC as a medium to pay for gas fees.
-
-```js
-let tx = {
-  // ... other transaction fields
-  feeCurrency: "0x2f25deb3848c207fc8e0c34035b3ba7fc157602b", // USDC Adapter address
-  type: "0x7b",
-};
+```bash
+celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 --value 1000000 --gasCurrency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --privateKey [PRIVATE_KEY]
 ```
 
-:::info
-To get details about the underlying token of the adapter you can call `adaptedToken` function on the adapter address, which will return the underlying token address.
-:::
+When using USDC or USDC for fee abstraction, you have to use the adapter address instead of the token address. This is necessary to avoid inaccuracies due to their low number of decimals (6 compared to 18 for the other tokens).
 
 ## Enabling Transactions with ERC20 Token as fee currency
 
-We recommend using the [viem](https://viem.sh) library as it has support for the `feeCurrency` field in the transaction required for sending transaction where the gas fees will be paid in ERC20 tokens.
+We recommend using [viem](https://viem.sh/) as it has support for the `feeCurrency` field in the transaction required for sending transactions where the gas fees will be paid in ERC20 tokens. Ethers.js and web.js currently don't support `feeCurrency`.
 
 ### Estimating gas price
 
 To estimate gas price use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for feeCurrency field in the transaction.
+
+:::info
+The Gas Price Minimum value returned from the RPC has to be interpreted in 18 decimals.
+:::
 
 Estimating gas price is important because if the user is trying to transfer the entire balance in an asset and using the same asset to pay for gas fees, the user shouldn't be able to transfer the entire amount as a small portion will be utilized to pay for gas fees.
 
 Example: If the user has 10 USDC and is trying to transfer the entire 10 USDC and chooses to use USDC as the currency to pay for gas, the user shouldn't be allowed to transfer the entire 10 USDC as a small portion has to be used for gas fees.
 
 The following code snippet calculates the transaction fee (in USDC) for a USDC transfer transaction.
-
-Feel free to modify to support the currency of your choice.
 
 ```js
 import { createPublicClient, hexToBigInt, http } from "viem";
@@ -154,11 +137,31 @@ async function main() {
 }
 ```
 
+### Preparing a transaction
+
+When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+
+The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/what-is-celo/about-celo-l1/protocol/transaction/transaction-types).
+
+Here is how a transaction would look like when using USDC as a medium to pay for gas fees.
+
+```js
+let tx = {
+  // ... other transaction fields
+  feeCurrency: "0x2f25deb3848c207fc8e0c34035b3ba7fc157602b", // USDC Adapter address
+  type: "0x7b",
+};
+```
+
+:::info
+To get details about the underlying token of the adapter you can call `adaptedToken` function on the adapter address, which will return the underlying token address.
+:::
+
 ### Sending transaction using Fee Abstraction
 
 Sending transaction with fee currency other than the native currency of the network is pretty straightforward all you need to do is set the `feeCurrency` property in the transaction object with the address of the token/adapter you want to use to pay for gas fees.
 
-The below code snippets demonstrates transferring 1 USDC using USDC as gas currency.
+The below code snippet demonstrates transferring 1 USDC using USDC as gas currency.
 
 ```js
 import { createWalletClient, http } from "viem";
