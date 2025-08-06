@@ -2,6 +2,8 @@
 
 Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky sunsets in September 2025.
 
+The Baklava testnet will sunset alongside Holesky with no replacement planned.
+
 :::info Key Information
 This page will be kept updated with key information about the transition.
 
