@@ -26,4 +26,4 @@ Support for decentralized dispersal is unlocked by eliminating DDoS attack surfa
 
 ## For Node Operators
 
-Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
+Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
