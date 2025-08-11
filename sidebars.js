@@ -1285,6 +1285,11 @@ const celoL2Sidebar = [
     items: [
       {
         type: "doc",
+        label: "Succinct Upgrade",
+        id: "cel2/notices/succinct-upgrade",
+      },
+      {
+        type: "doc",
         label: "EigenDA v2 Upgrade",
         id: "cel2/notices/eigenda-v2-upgrade",
       },
