@@ -13,18 +13,14 @@ This page will be kept updated with key information about the transition.
 - **Phases**:
   - Jul 23, 2025: Celo Sepolia launch ✅
   - Jul 24, 2025—Jul 31, 2025: Internal testing ✅
-  - **Aug 1, 2025—Aug 12, 2025: Early access phase :round_pushpin:**
-  - Aug 13, 2025: Planned public announcement
-  - Aug 14, 2025—Sep 14, 2025: Planned transition period
-  - Sep 15, 2025: Planned Alfajores sunset, aligned with Holesky deprecation
+  - Aug 1, 2025—Aug 12, 2025: Early access phase ✅
+  - Aug 13, 2025: Public announcement ✅
+  - **Aug 14, 2025—Sep 14, 2025: Transition period :round_pushpin:**
+  - Sep 30, 2025: Planned Alfajores and Baklava sunset, aligned with Holesky deprecation
 
 **Node Providers**: We kindly ask you to support both Alfajores and Celo Sepolia during early access phase.
 
 **Developers**: Verify your dependencies support Celo Sepolia, then go ahead and deploy all contracts.
-:::
-
-:::note
-This is an early announcement for coordination while documentation is being prepared for the broader rollout.
 :::
 
 ## What is Celo Sepolia?
