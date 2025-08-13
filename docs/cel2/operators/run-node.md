@@ -363,7 +363,7 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
 - [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json) used for snap syncing
-- P2P peers: [TO BE PROVIDED]
+- P2P peers:
   - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
     ```text
