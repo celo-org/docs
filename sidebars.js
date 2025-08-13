@@ -504,6 +504,27 @@ const whatIsCeloSidebar = [
       },
       {
         type: "category",
+        label: "Nodes",
+        items: [
+          {
+            type: "doc",
+            label: "Mainnet Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-mainnet",
+          },
+          {
+            type: "doc",
+            label: "Alfajores Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-alfajores",
+          },
+          {
+            type: "doc",
+            label: "Baklava Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-baklava",
+          },
+        ],
+      },
+      {
+        type: "category",
         label: "Validator",
         items: [
           {
@@ -525,11 +546,6 @@ const whatIsCeloSidebar = [
                 label: "Mainnet Validator",
                 id: "what-is-celo/about-celo-l1/validator/run/mainnet",
               },
-              // {
-              //   type: "doc",
-              //   label: "Baklava Validator",
-              //   id: "what-is-celo/about-celo-l1/validator/run/baklava",
-              // },
             ],
           },
           {
@@ -834,35 +850,16 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "Hosted Nodes",
-        id: "network/node/run-hosted",
-      },
-      {
-        type: "doc",
         label: "Forno",
         id: "network/node/forno",
       },
-      // {
-      //   type: "category",
-      //   label: "Run a Node",
-      //   items: [
-      // {
-      //   type: "doc",
-      //   label: "Mainnet Full Node",
-      //   id: "network/node/run-mainnet",
-      // },
-      // {
-      //   type: "doc",
-      //   label: "Alfajores Full Node",
-      //   id: "network/node/run-alfajores",
-      // },
-      // {
-      //   type: "doc",
-      //   label: "Baklava Full Node",
-      //   id: "network/node/run-baklava",
-      // },
-      //   ],
-      // },
+      {
+        type: "doc",
+        label: "Alchemy",
+        id: "network/node/alchemy",
+      },
+      // Historical L1 node documentation has been moved to:
+      // what-is-celo/about-celo-l1/node/
     ],
   },
   {
@@ -1360,11 +1357,6 @@ const celoL2Sidebar = [
         type: "doc",
         label: "Withdrawing CELO from L2 to L1",
         id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
-      },
-      {
-        type: "doc",
-        label: "Fee Abstraction on Celo L2",
-        id: "cel2/guides/fee-abstraction",
       },
     ],
   },
