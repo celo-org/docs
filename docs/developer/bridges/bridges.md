@@ -22,8 +22,9 @@ Be sure you understand and review the risks pages when bridging assets between c
 **Supported chains**
 
 - Celo Mainnet
-- Celo Alfajores
-- Celo Baklava
+- Celo Sepolia (Testnet)
+- Celo Alfajores (Testnet)
+- Celo Baklava (Testnet)
 
 <PageRef url="https://superbridge.app/celo" pageName="Superbridge" />
 
@@ -64,7 +65,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 **Supported chains**
 
 - Celo Mainnet
-- Celo Alfajores
+- Celo Alfajores (Testnet)
 
 <PageRef url="https://www.usenexus.org/" pageName="Hyperlane Nexus" />
 
