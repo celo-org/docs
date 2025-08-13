@@ -33,7 +33,7 @@ Please support both Alfajores and Celo Sepolia in parallel during the early acce
 
 Release versions:
 
-- `op-geth` at [v2.1.1](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.1)
+- `op-geth` at [v2.1.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.2)
 - `op-node` at [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0)
 - `eigenda-proxy` at [v1.8.2](https://github.com/layr-labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2)
 

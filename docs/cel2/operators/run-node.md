@@ -383,7 +383,7 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
     ```
 
 - Container images:
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.1)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.2)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
