@@ -22,26 +22,22 @@ The **Celo Sepolia Testnet** is Celo's new developer testnet built on Ethereum S
 
 The full network information is available [in the network overview](/network#celo-sepolia-testnet).
 
-:::info
-
-Celo Sepolia is currently in early access phase with internal transition and key partners. Public rollout is planned for the coming weeks. For the latest updates, see the [Celo Sepolia launch notice](/cel2/notices/celo-sepolia-launch).
-
+:::tip New Celo Sepolia Testnet Now Live!
+Try Celo's new developer testnet on Ethereum Sepolia.
+[Learn more →](/cel2/notices/celo-sepolia-launch)
 :::
 
 :::warning
-
 The Celo Sepolia Testnet is designed for testing and experimentation by developers. Its tokens hold no real world economic value. The testnet software will be upgraded on a regular basis. You may encounter bugs and limitations with the software and documentation.
-
 :::
 
 Please help the community to improve Celo by asking questions on the [Forum](https://forum.celo.org/)!
 
 ## Useful links
 
+- [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet/celo/sepolia)
 - [Celo Sepolia Self-Serve Faucet](https://faucet.celo.org/celo-sepolia)
 - [Celo Sepolia Network Block Explorer](https://celo-sepolia.blockscout.com/)
-- [Celo Sepolia Launch Notice](/cel2/notices/celo-sepolia-launch)
-- [Running a Node on Celo Sepolia](/cel2/operators/run-node)
 
 ## Migration from Alfajores
 

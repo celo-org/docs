@@ -53,6 +53,8 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 #### Supported Networks
 
 - Celo Mainnet
+- Celo Sepolia (Testnet)
+- Celo Alfajores (Testnet)
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
@@ -148,6 +150,7 @@ You can also claim Alfajores funds from the faucet in the site without signing u
 #### Supported Networks
 
 - Celo Mainnet
+- Celo Sepolia (Testnet)
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 

@@ -33,7 +33,7 @@ Overview of Celo Mainnet and the Alfajores, Baklava, and Celo Sepolia Testnets.
 | RPC Endpoint (best effort) | [https://forno.celo-sepolia.celo-testnet.org](https://forno.celo-sepolia.celo-testnet.org)                                                               |
 | Block Explorer             | [https://celo-sepolia.blockscout.com](https://celo-sepolia.blockscout.com)                                                                             |
 | Bridge Link                | [https://testnets.superbridge.app](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220) <br/> Note: Ensure you enable Testnet in settings |
-| Faucet Link                | [https://faucet.celo.org/celo-sepolia](https://faucet.celo.org/celo-sepolia)                                                                                                                                              |
+| Faucet Links                | <ul><li>[https://cloud.google.com/application/web3/faucet/celo/sepolia](https://cloud.google.com/application/web3/faucet/celo/sepolia)</li><li>[https://faucet.celo.org/celo-sepolia](https://faucet.celo.org/celo-sepolia)</li></ul>                                                                                                                                              |
 
 The Celo Sepolia Testnet is Celo's new developer testnet built on Ethereum Sepolia, designed to replace Alfajores following the planned Holesky deprecation in September 2025.
 
@@ -43,10 +43,9 @@ The Celo Sepolia Testnet is Celo's new developer testnet built on Ethereum Sepol
 - **L1 Foundation**: Built on Ethereum Sepolia for enhanced stability
 - **Developer-Focused**: Provides the same developer experience as Alfajores
 
-:::info
-
-Celo Sepolia is currently in early access phase with internal transition and key partners. Public rollout is planned for the coming weeks. For the latest updates, see the [Celo Sepolia launch notice](/cel2/notices/celo-sepolia-launch).
-
+:::tip New Celo Sepolia Testnet Now Live!
+Try Celo's new developer testnet on Ethereum Sepolia.
+[Learn more →](/cel2/notices/celo-sepolia-launch)
 :::
 
 :::warning
