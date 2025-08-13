@@ -1,8 +1,6 @@
 # Celo Sepolia Testnet Launch
 
-Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky sunsets in September 2025.
-
-The Baklava testnet will sunset alongside Holesky with no replacement planned.
+Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky sunsets in September 2025. The Baklava testnet will also sunset with Holesky, with no replacement planned.
 
 :::info Key Information
 This page will be kept updated with key information about the transition.
@@ -18,9 +16,9 @@ This page will be kept updated with key information about the transition.
   - **Aug 14, 2025—Sep 14, 2025: Transition period :round_pushpin:**
   - Sep 30, 2025: Planned Alfajores and Baklava sunset, aligned with Holesky deprecation
 
-**Node Providers**: We kindly ask you to support both Alfajores and Celo Sepolia during early access phase.
+**Node Providers**: Please support both Alfajores and Celo Sepolia during the transition period.
 
-**Developers**: Verify your dependencies support Celo Sepolia, then go ahead and deploy all contracts.
+**Developers**: Verify that your dependencies support Celo Sepolia, then go ahead and deploy all contracts.
 :::
 
 ## What is Celo Sepolia?
@@ -31,7 +29,7 @@ Celo Sepolia is the new developer testnet for Celo running as an Ethereum Layer 
 
 ### For Node Providers
 
-We kindly request node providers to support both Alfajores and Celo Sepolia in parallel during the early access and transition phases to ensure a smooth migration for developers. See the [node setup guide](/cel2/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
+Please support both Alfajores and Celo Sepolia in parallel during the early access and transition phases to ensure a smooth migration for developers. See the [node setup guide](/cel2/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
 
 Release versions:
 
@@ -43,7 +41,7 @@ Release versions:
 
 - Update applications to support chain ID 11142220.
 - Redeploy contracts on Celo Sepolia.
-- Help yourself to some [testnet CELO tokens](https://faucet.celo.org/celo-sepolia) to get started.
+- Get testnet CELO tokens from the faucets.
 
 Since Celo Sepolia starts with a clean slate, there is no historical data or contracts carried over from Alfajores, providing a pristine testing environment.
 
@@ -55,8 +53,10 @@ Since Celo Sepolia starts with a clean slate, there is no historical data or con
 - Contracts: [see the L1 and L2 contracts in the specification](https://specs.celo.org/core_contracts.html?#celo-sepolia-testnet)
 - RPC endpoint: [Celo Sepolia Forno](https://forno.celo-sepolia.celo-testnet.org)
 - Block explorer: [Blockscout](https://celo-sepolia.blockscout.com)
-- Faucet: [Celo Sepolia Token Faucet](https://faucet.celo.org/celo-sepolia)
-- Bridge: [Superbrige Celo Sepolia Testnet](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220)
+- Faucets:
+  - [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet/celo/sepolia)
+  - [Celo Sepolia Token Faucet](https://faucet.celo.org/celo-sepolia)
+- Bridge: [Superbridge for Celo Sepolia](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220)
 
 ## Key Differences from Alfajores
 
@@ -66,6 +66,20 @@ Since Celo Sepolia starts with a clean slate, there is no historical data or con
 | Chain ID | 44787 | 11142220 |
 | State | Historical from L1 migration | Fresh start |
 | Longevity | Sunset planned Sept 2025 | Long-term testnet |
+
+## Early Adopters
+
+Thank you to the first wave of our ecosystem partners supporting Celo Sepolia already:
+
+- **Google Cloud** – [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet/celo/sepolia)
+- **Blockscout** – [Block Explorer](https://celo-sepolia.blockscout.com/)
+- **EigenDA v2** – Data Availability
+- **Superbridge** – Bridging Infrastructure
+- **Ankr** – Node & RPC Provider
+- **AllThatNode by DSRV** – Node & RPC Provider
+- **Redstone** – Oracle Services
+- **Talent Protocol** – Web3 Professional Network
+- **Prosperity Pass** – Celo PG Onchain Access Pass
 
 ## Getting Help
 
