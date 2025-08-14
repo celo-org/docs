@@ -20,8 +20,8 @@ To obtain a list of the gas fee addresses that have been allowlisted using [Celo
 You can also query the available tokens with `celocli`:
 
 ```bash
-# Alfajores testnet
-celocli network:whitelist --node https://alfajores-forno.celo-testnet.org
+# Celo Sepolia 
+celocli network:whitelist --node https://forno.celo-sepolia.celo-testnet.org/
 # Celo mainnet
 celocli network:whitelist --node https://forno.celo.org
 ```

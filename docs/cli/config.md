@@ -5,7 +5,6 @@ Configure CLI options which persist across commands
 
 * [`celocli config:get`](#celocli-configget)
 * [`celocli config:set`](#celocli-configset)
-
 ## `celocli config:get`
 
 Output network node configuration
@@ -43,6 +42,8 @@ EXAMPLES
   set --node celo # alias for `forno`
 
   set --node forno # alias for https://forno.celo.org
+
+  set --node sepolia # alias for https://forno.celo-sepolia.celo-testnet.org
 
   set --node baklava # alias for https://baklava-forno.celo-testnet.org
 

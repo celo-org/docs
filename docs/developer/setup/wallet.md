@@ -15,7 +15,7 @@ While developing and deploying dApps on Celo, it’s helpful to have a wallet pr
 
 :::tip
 
-This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/network) tokens). You can also use the [Celo Extension Wallet](/wallet/) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo Mainnet.
+This guide will focus on funding an account on MetaMask with Celo ([CeloSepolia testnet](/network) tokens). You can also use the [Celo Extension Wallet](/wallet/) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo Mainnet.
 
 :::
 
@@ -97,7 +97,7 @@ If you created an account using option 2 or 3, you can now import these accounts
 
 No matter where you created your accounts, you can send them testnet funds using your **Account Address** and the testnet faucet.
 
-- Navigate to the [Alfajores Testnet Faucet](https://faucet.celo.org)
+- Navigate to the [Celo Sepolia Faucet](https://faucet.celo.org/celo-sepolia)
 - Copy your address from your terminal or wallet
 - Paste this address into the **Testnet Faucet**, complete the **Captcha**, and click **Get Started**
 

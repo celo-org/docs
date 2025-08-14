@@ -136,14 +136,14 @@ Copy `.env.template` to `.env` and populate the following environment variables 
 
 - **`OPENAI_API_KEY`**: Your OpenAI API key from [OpenAI](https://www.google.com/url?sa=E&source=gmail&q=https://platform.openai.com/).
 - **`WALLET_PRIVATE_KEY`**: Your private key for the wallet that will send tokens on Celo. **Security Best Practices:** Use a test wallet and handle private keys with extreme caution.
-- **`RPC_PROVIDER_URL`**: The RPC URL for the Celo network. Use a Celo Alfajores Testnet RPC URL for testing (e.g., `https://alfajores-forno.celo-testnet.org`). Refer to previous articles for more Celo RPC options.
+- **`RPC_PROVIDER_URL`**: The RPC URL for the Celo network. Use a Celo Sepolia RPC URL for testing (e.g., `https://forno.celo-sepolia.celo-testnet.org/`). Refer to previous articles for more Celo RPC options.
 
 **Example `.env` file (for Celo Alfajores Testnet):**
 
 ```
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_PROVIDER_URL=[https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
+RPC_PROVIDER_URL=[https://forno.celo-sepolia.celo-testnet.org/](https://forno.celo-sepolia.celo-testnet.org/)
 ```
 
 **Note:** We only need `OPENAI_API_KEY`, `WALLET_PRIVATE_KEY`, and `RPC_PROVIDER_URL` for this token sending agent.

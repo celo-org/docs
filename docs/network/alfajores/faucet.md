@@ -11,11 +11,11 @@ How to fund your Celo wallet account with testnet funds.
 
 ## Getting Started
 
-To start experimenting with the Alfajores Testnet, you will first need to get a funded account.
+To start experimenting with Celo Sepolia, you will first need to get a funded account.
 
 :::warning
 
-Alfajores Testnet accounts hold no real world economic value. The testnet's data may be reset on a regular basis. This will erase your accounts, their balance and your transaction history.
+Celo Sepolia accounts hold no real world economic value. The testnet's data may be reset on a regular basis. This will erase your accounts, their balance and your transaction history.
 
 :::
 
@@ -23,7 +23,7 @@ Getting an account is really being given or generating a public-private keypair.
 
 ## Using an existing EVM Address
 
-You can reuse the same address and private key you use on other EVM networks as long a you are using a wallet that has support for Celo Networks like Alfajores. [Open Config for Alfajores](https://chainlist.org/chain/44787)
+You can reuse the same address and private key you use on other EVM networks as long a you are using a wallet that has support for Celo Networks like Celo Sepolia. [Open Config for Sepolia](https://chainlist.org/chain/11142220)
 
 ## Creating an empty account with the Celo Client
 
@@ -42,7 +42,7 @@ mkdir celo-data-dir $ cd celo-data-dir
 Create an account by running this command:
 
 ```bash
-docker run -v `pwd`:/root/.celo --rm -it us.gcr.io/celo-org/geth:alfajores account new
+docker run -v `pwd`:/root/.celo --rm -it us.gcr.io/celo-org/geth:celo-sepolia account new
 ```
 
 It will prompt you for a passphrase, ask you to confirm it, and then will output your account address:
@@ -57,8 +57,8 @@ export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
 
 ## **Add funds to an existing account with the Faucet**
 
-The Alfajores Testnet Faucet is an easy way to get more funds deposited to an account, however it was created.
+The Celo Sepolia Faucet is an easy way to get more funds deposited to an account, however it was created.
 
-Visit [faucet.celo.org](https://faucet.celo.org), and enter your account address. If you are using the Celo Wallet, you can find your account address in the Settings page. Complete the Captcha, and click 'Add Funds'.
+Visit [faucet.celo.org](https://faucet.celo.org/celo-sepolia), and enter your account address. If you are using the Celo Wallet, you can find your account address in the Settings page.
 
 Each time you complete a faucet request, your account is funded with an additional CELO Tokens

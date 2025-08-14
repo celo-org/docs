@@ -11,7 +11,7 @@ Another one of SubQuery's competitive advantages is the ability to aggregate dat
 - [SubQuery Academy (Documentation)](https://academy.subquery.network/)
 - [Celo Mainnet Starter](https://github.com/subquery/ethereum-subql-starter/tree/main/Celo/celo-starter)
 - [Celo Mainnet Quick Start Guide](https://academy.subquery.network/indexer/quickstart/quickstart_chains/celo.html)
-- [Celo Alfajores Testnet Starter](https://github.com/subquery/ethereum-subql-starter/tree/main/Celo%20Alfajores/celo-alfajores-testnet-starter)
+
 
 For technical questions and support reach out to us `start@subquery.network`
 
