@@ -61,9 +61,11 @@ As Forno is a public node you will have to sign transactions locally because wit
 Forno networks:
 
 ```
-Alfajores = 'https://alfajores-forno.celo-testnet.org'
+Sepolia = 'https://forno.celo-sepolia.celo-testnet.org/'
 
-Baklava = 'https://baklava-forno.celo-testnet.org'
+Alfajores (deprecated) = 'https://alfajores-forno.celo-testnet.org'
+
+Baklava (deprecated) = 'https://baklava-forno.celo-testnet.org'
 
 Mainnet = 'https://forno.celo.org'
 ```
@@ -77,7 +79,7 @@ Alfajores = 'https://celo-alfajores.blockscout.com/'
 
 Baklava = 'https://celo-baklava.blockscout.com/'
 
-Mainnet = 'https://explorer.celo.org/'
+Mainnet = 'https://celo.blockscout.com/'
 ```
 
 ## Signing Transactions

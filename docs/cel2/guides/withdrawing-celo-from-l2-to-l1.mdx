@@ -5,7 +5,7 @@ title: Withdrawing CELO from L2 to L1
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-In this tutorial, you will learn how to programmatically withdraw CELO from Alfajores to Holesky using the [viem OP Stack](https://viem.sh/op-stack).  
+In this tutorial, you will learn how to programmatically withdraw CELO from Celo Sepolia to Sepolia using the [viem OP Stack](https://viem.sh/op-stack).  
 
 ## Steps to Withdraw CELO
 
@@ -17,7 +17,7 @@ Withdrawals require the user to submit three transactions:
 
 ## Code Example
 
-The following example demonstrates how to configure a file with all the details you need for interacting with the Alfajores testnet.
+The following example demonstrates how to configure a file with all the details you need for interacting with the Celo Sepolia.
 
 <Tabs>
   <TabItem value="index.js" label="index.js" default>
@@ -30,14 +30,14 @@ The following example demonstrates how to configure a file with all the details 
       parseEther,
     } from "viem";
     import { privateKeyToAccount } from "viem/accounts";
-    import { holesky } from "viem/chains";
+    import { sepolia } from "viem/chains";
     import {
       publicActionsL1,
       walletActionsL2,
       walletActionsL1,
       publicActionsL2,
     } from "viem/op-stack";
-    import { alfajores } from "./alfajores.js";
+    import { celo-sepolia } from "./celo-sepolia.js";
 
     const account = privateKeyToAccount(
       "[PRIVATE_KEY]",
@@ -46,23 +46,23 @@ The following example demonstrates how to configure a file with all the details 
     const value = parseEther("0.0001"); // Amount to Withdraw
 
     export const publicClientL1 = createPublicClient({
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
     }).extend(publicActionsL1());
 
     export const publicClientL2 = createPublicClient({
-      chain: alfajores,
+      chain: celo-sepolia,
       transport: http(),
     }).extend(publicActionsL2());
 
     export const walletClientL1 = createWalletClient({
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
       account,
     }).extend(walletActionsL1());
 
     export const walletClientL2 = createWalletClient({
-      chain: alfajores,
+      chain: celo-sepolia,
       transport: http(),
       account,
     }).extend(walletActionsL2());
@@ -149,16 +149,16 @@ The following example demonstrates how to configure a file with all the details 
 
   </TabItem>
 
-  <TabItem value="alfajores.js" label="alfajores.js">
+  <TabItem value="celo-sepolia.js" label="celo-sepolia.js">
 
 ```js
 import { defineChain } from "viem";
 
-const sourceId = 17000; // Holesky
+const sourceId = 17000; // sepolia
 
-export const alfajores = defineChain({
-  name: "Alfajores Testnet",
-  id: 44_787,
+export const celo-sepolia = defineChain({
+  name: "Sepolia Testnet",
+  id: 11142220,
   nativeCurrency: {
     decimals: 18,
     name: "CELO",
@@ -166,7 +166,7 @@ export const alfajores = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ["https://alfajores-forno.celo-testnet.org"],
+      http: ["https://forno.celo-sepolia.celo-testnet.org/"],
     },
   },
   contracts: {
@@ -204,8 +204,8 @@ export const alfajores = defineChain({
   blockExplorers: {
     default: {
       name: "Celo Explorer",
-      url: "https://explorer.celo.org/alfajores",
-      apiUrl: "https://explorer.celo.org/alfajores/api/v2",
+      url: "https://celo-sepolia.blockscout.com/",
+      apiUrl: "hhttps://celo-sepolia.blockscout.com/api/v2",
     },
   },
   testnet: true,

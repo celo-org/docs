@@ -226,7 +226,7 @@ Portal's MPC architecture creates backup key shares that enable wallet recovery 
 
 ## Receive Testnet Tokens
 
-After creating a wallet, you can fund it with test tokens using `portal.receiveTestnetAsset`. For Celo testnet tokens, you also can use the [Celo faucet](https://faucet.celo.org/).
+After creating a wallet, you can fund it with test tokens using `portal.receiveTestnetAsset`. For Celo testnet tokens, you also can use the [Celo faucet](https://faucet.celo.org/celo-sepolia/).
 
 <Tabs>
   <TabItem value="web" label="Web" default>

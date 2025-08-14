@@ -28,17 +28,27 @@ const celo = {
   chainId: 42220,
   name: 'Celo',
   currency: 'CELO',
-  explorerUrl: 'https://explorer.celo.org/mainnet',
+  explorerUrl: 'https://celo.blockscout.com/mainnet',
   rpcUrl: 'https://forno.celo.org'
 }
 
+const sepolia = {
+  chainId: 11142220,
+  name: 'Celo Sepolia',
+  currency: 'CELO',
+  explorerUrl: 'https://celo-sepolia.blockscout.com/',
+  rpcUrl: 'https://forno.celo-sepolia.celo-testnet.org/'
+}
+
+// will be depreacted on the 30th of September
 const alfajores = {
   chainId: 44787,
   name: 'Alfajores',
   currency: 'CELO',
-  explorerUrl: 'https://explorer.celo.org/alfajores',
+  explorerUrl: 'https://celo.blockscout.com/alfajores',
   rpcUrl: 'https://alfajores-forno.celo-testnet.org'
 }
+
 
 // 3. Create modal
 const metadata = {

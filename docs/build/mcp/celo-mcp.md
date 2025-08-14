@@ -44,7 +44,7 @@ Set up optional environment variables for custom RPC endpoints:
 
 ```bash
 export CELO_RPC_URL="https://forno.celo.org"  # Default: Celo mainnet
-export CELO_TESTNET_RPC_URL="https://alfajores-forno.celo-testnet.org"  # Alfajores testnet
+export CELO_TESTNET_RPC_URL="https://forno.celo-sepolia.celo-testnet.org/"  # Celo Sepolia testnet
 ```
 
 ## MCP Client Integration

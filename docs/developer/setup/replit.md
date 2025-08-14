@@ -73,7 +73,7 @@ You can now interact with your contract using the provided user interface or fro
 
 ## Verify Contract Deployment
 
-To view your deployed contract, copy your **account address** navigate to the [Celo explorer](https://explorer.celo.org/), and search for your account (verify that you are searching the correct network).
+To view your deployed contract, copy your **account address** navigate to the [Celo explorer](https://celo.blockscout.com/), and search for your account (verify that you are searching the correct network).
 
 - View the most recently deployed contract to find additional information on your deployment.
 

@@ -49,16 +49,16 @@ If you choose to [Set up a Local Development Chain](/developer/setup/development
 
 ### Connect to Testnet using Forno
 
-Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Sepolia) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
-   alfajores: {
-     url: "https://alfajores-forno.celo-testnet.org",
+   sepolia: {
+     url: "https://forno.celo-sepolia.celo-testnet.org/",
      accounts: {
        mnemonic: process.env.MNEMONIC,
        path: "m/44'/52752'/0'/0"
      },
-     chainId: 44787
+     chainId: 11142220
    }
 ```
 
@@ -91,10 +91,10 @@ Using [Forno](/network/node/forno) also allows you to connect to the Celo main b
 
 ## Deploy to Celo
 
-Run the following command from your root project directory to deploy to Celo Alfajores testnet.
+Run the following command from your root project directory to deploy to Celo Sepolia testnet.
 
 ```shell
-npx hardhat run scripts/sample-script.js --network alfajores
+npx hardhat run scripts/sample-script.js --network sepolia
 ```
 
 ...or run this command to deploy to Celo Mainnet.
@@ -105,7 +105,7 @@ npx hardhat run scripts/sample-script.js --network celo
 
 ## View Contract Deployment
 
-Copy your **contract address** from the terminal and navigate to the [block explorer](https://explorer.celo.org/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
+Copy your **contract address** from the terminal and navigate to the [block explorer](https://celo.blockscout.com/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
 ![github](/img/doc-images/deploy-hardhat/image1.png)
 

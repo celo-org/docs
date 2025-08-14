@@ -26,12 +26,26 @@ const CELO_PARAMS = {
   chainName: "Celo",
   nativeCurrency: { name: "Celo", symbol: "CELO", decimals: 18 },
   rpcUrls: ["https://forno.celo.org"],
-  blockExplorerUrls: ["https://explorer.celo.org/"],
+  blockExplorerUrls: ["https://celo.blockscout.com/"],
   iconUrls: ["future"],
 };
 ```
 
-### Alfajores
+### Celo Sepolia
+
+```jsx
+const CELO_SEPOLIA_PARAMS = {
+  chainId: "0xaef3",
+  chainName: "Celo Sepolia",
+  nativeCurrency: { name: "Celo", symbol: "CELO", decimals: 18 },
+  rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
+  blockExplorerUrls: ["https://celo-alfajores.blockscout.com/"],
+  iconUrls: ["future"],
+};
+```
+
+
+### Alfajores (deprecated)
 
 ```jsx
 const ALFAJORES_PARAMS = {

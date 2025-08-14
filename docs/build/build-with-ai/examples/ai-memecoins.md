@@ -19,7 +19,7 @@ title: Launching Tokens on Celo using Gaia AI Agent Framework
 1. Install the [Celo CLI](npm install -g @celo/celocli)
 2. Make sure you're working on Alfajores network 
 ```
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
+celocli config:set --node https://forno.celo-sepolia.celo-testnet.org//
 ```
 3. Create an account and store it well formatted in an .env file 
 ```
@@ -32,7 +32,7 @@ echo $accountAddress | pbcopy
 ```
 5. Head to the faucet to get some money and paste your account address there
 ```
-open https://faucet.celo.org
+open https://faucet.celo.org/celo-sepolia
 ```
 6. Verify you got money successfully
 ```

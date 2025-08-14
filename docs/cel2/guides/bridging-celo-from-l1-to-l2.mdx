@@ -5,16 +5,16 @@ title: Bridging CELO from L1 to L2
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-In this guide, you'll learn how to programmatically bridge CELO from Holesky to Alfajores using the [viem OP Stack](https://viem.sh/op-stack).  
+In this guide, you'll learn how to programmatically bridge CELO from Sepolia to Celo Sepolia using the [viem OP Stack](https://viem.sh/op-stack).  
 
 ## Steps to Bridge CELO
 
 Before transferring tokens, you must authorize the `OptimismPortalProxy` contract to spend CELO on your behalf. Without this approval, the bridging transaction cannot proceed.
 
-Call the [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) function on the `OptimismPortalProxy` contract on Holesky. This function moves CELO tokens from your account to the Alfajores testnet.
+Call the [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) function on the `OptimismPortalProxy` contract on Sepolia. This function moves CELO tokens from your account to the Celo Sepolia.
 
 ## Code Example
-The following example demonstrates how to configure a file with all the details you need for interacting with the Alfajores testnet.
+The following example demonstrates how to configure a file with all the details you need for interacting with the Celo Sepolia.
 
 
 <Tabs>
@@ -23,9 +23,9 @@ The following example demonstrates how to configure a file with all the details 
     ```js
     import { createWalletClient, createPublicClient, http, parseEther } from "viem";
     import { privateKeyToAccount } from "viem/accounts";
-    import { holesky } from "viem/chains";
+    import { sepolia } from "viem/chains";
     import { getL2TransactionHashes, publicActionsL2 } from "viem/op-stack";
-    import { alfajores } from "./alfajores.js";
+    import { celo-sepolia } from "./celo-sepolia.js";
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
@@ -38,23 +38,23 @@ The following example demonstrates how to configure a file with all the details 
 
     export const walletClientL1 = createWalletClient({
       account,
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
     });
 
     export const publicClientL1 = createPublicClient({
       account,
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
     });
 
     export const publicClientL2 = createPublicClient({
-      chain: alfajores,
+      chain: celo-sepolia,
       transport: http(),
     }).extend(publicActionsL2());
 
     async function main() {
-      // Approve OptimismPortal to pull CELO on Holesky
+      // Approve OptimismPortal to pull CELO on Sepolia
       const approve = await walletClientL1.writeContract({
         address: CELOL1,
         abi: [
@@ -148,16 +148,16 @@ The following example demonstrates how to configure a file with all the details 
 
   </TabItem>
 
-  <TabItem value="alfajores.js" label="alfajores.js">
+  <TabItem value="celo-sepolia.js" label="celo-sepolia.js">
 
     ```js
     import { defineChain } from "viem";
 
     const sourceId = 17000;
 
-    export const alfajores = defineChain({
-      name: "Alfajores Testnet",
-      id: 44_787,
+    export const celo-sepolia = defineChain({
+      name: "Celo Sepolia",
+      id: 11142220,
       nativeCurrency: {
         decimals: 18,
         name: "CELO",
@@ -165,7 +165,7 @@ The following example demonstrates how to configure a file with all the details 
       },
       rpcUrls: {
         default: {
-          http: ["https://alfajores-forno.celo-testnet.org"],
+          http: ["https://forno.celo-sepolia.celo-testnet.org/"],
         },
       },
       contracts: {
@@ -203,8 +203,8 @@ The following example demonstrates how to configure a file with all the details 
       blockExplorers: {
         default: {
           name: "Celo Explorer",
-          url: "https://explorer.celo.org/alfajores",
-          apiUrl: "https://explorer.celo.org/api",
+          url: "https://celo-sepolia.blockscout.com/",
+          apiUrl: "https://celo-sepolia.blockscout.com//api",
         },
       },
       testnet: true,

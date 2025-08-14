@@ -26,7 +26,7 @@ Similar to Mento, exchanges through Granda Mento are effectively made against th
 
 At the time of writing, exchanging about 50,000 cUSD via Mento results in a slippage of about 2%. Without Granda Mento, all launched Celo stable tokens can only be minted and burned using Mento, with the exception of cUSD that is minted as validator rewards each epoch. Granda Mento was created to enable institutional-grade liquidity to mint or burn millions of stable tokens at a time.
 
-The Mainnet Granda Mento contract address is `0x03f6842B82DD2C9276931A17dd23D73C16454a49` ([link](https://explorer.celo.org/address/0x03f6842B82DD2C9276931A17dd23D73C16454a49)), was introduced in [Contract Release 5](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0037.md), and activated in [CGP 31](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0031.md).
+The Mainnet Granda Mento contract address is `0x03f6842B82DD2C9276931A17dd23D73C16454a49` ([link](https://celo.blockscout.com/address/0x03f6842B82DD2C9276931A17dd23D73C16454a49)), was introduced in [Contract Release 5](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0037.md), and activated in [CGP 31](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0031.md).
 
 ## How it works
 
@@ -45,7 +45,7 @@ At a high level, the life of an exchange is:
 
 Processes surrounding Granda Mento exchanges, like how to achieve rough consensus from the community, are outlined in [CIP 46](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0046.md). At the minimum, it takes about 7 days to achieve rough consensus.
 
-The approver multi-sig that is ultimately responsible for approving an exchange proposal that has achieved rough consensus from the community is `0xf10011424A0F35B8411e9abcF120eCF067E4CF27` ([link](https://explorer.celo.org/address/0xf10011424A0F35B8411e9abcF120eCF067E4CF27/transactions)) and has the following signers:
+The approver multi-sig that is ultimately responsible for approving an exchange proposal that has achieved rough consensus from the community is `0xf10011424A0F35B8411e9abcF120eCF067E4CF27` ([link](https://celo.blockscout.com/address/0xf10011424A0F35B8411e9abcF120eCF067E4CF27/transactions)) and has the following signers:
 
 | **Name**        | **Affiliation**               | **Discord Handle**        | **Address**                                  |
 | --------------- | ----------------------------- | ------------------------- | -------------------------------------------- |

@@ -94,7 +94,7 @@ Add the following configuration to `foundry.toml` file in the root level of your
 
 ```toml
 [rpc_endpoints]
-celo-alfajores = "https://alfajores-forno.celo-testnet.org"
+celo-sepolia = "https://forno.celo-sepolia.celo-testnet.org/"
 celo = "https://forno.celo.org"
 ```
 
@@ -102,10 +102,10 @@ celo = "https://forno.celo.org"
 
 Forge can deploy smart contracts to a given network using:
 
-The below example deploys `Counter` contract at location `src/Counter.sol` in the project to the Celo Alfajores Testnet.
+The below example deploys `Counter` contract at location `src/Counter.sol` in the project to the Celo Sepolia Testnet.
 
 ```bash
-forge create --rpc-url celo-alfajores --private-key <your_private_key> src/Counter.sol:Counter
+forge create --rpc-url celo-sepolia --private-key <your_private_key> src/Counter.sol:Counter
 ```
 
 :::info

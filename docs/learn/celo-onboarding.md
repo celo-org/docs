@@ -44,8 +44,8 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 - [Valora](https://valoraapp.com/)
 - [Get CELO](https://celohub.org/purchase)
-- [Get Test Funds](https://faucet.celo.org)
-- [Block Explorer](https://explorer.celo.org/)
+- [Get Test Funds](https://faucet.celo.org/celo-sepolia)
+- [Block Explorer](https://celo.blockscout.com/)
 
 ## Connect with the Community
 
