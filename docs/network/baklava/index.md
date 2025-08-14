@@ -11,6 +11,11 @@ Get started with Celo Baklava Testnet (Celo's Node Operator Testnet).
 
 ## What is the Baklava Testnet?
 
+:::tip New Celo Sepolia Testnet Now Live!
+Try Celo's new developer testnet on Ethereum Sepolia.
+[Learn more →](/cel2/notices/celo-sepolia-launch)
+:::
+
 The **Baklava Testnet** is Celo’s dedicated testnet for node operators, offering a dynamic environment to test node upgrades, infrastructure, and new protocol releases before they are deployed to Mainnet. Participants can use Baklava to simulate Mainnet processes, identify vulnerabilities in upcoming software, and experiment with infrastructure changes in a risk-free setting.
 
 Comprehensive network details are available [in the network overview](/network#celo-baklava-testnet).
