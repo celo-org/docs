@@ -12,7 +12,7 @@ Introduction to the Celo Command Line Interface and installation instructions.
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
-It’s a command-line interface for interacting with the Celo Protocol and core contracts. Some common features you may want try include transferring tokens, viewing account balances, participating in elections or in on-chain governance, voting for validators,  or helping users interact with multi-sig contracts.
+It’s a command-line interface for interacting with the Celo Protocol and core contracts. Some common features you may want try include transferring tokens, viewing account balances, participating in elections or in on-chain governance, or helping users interact with multi-sig contracts.
 
 ## Installation {#installation}
 
@@ -65,17 +65,28 @@ To see all available commands, run `celocli commands`.
 
 To see all available flags for a command, add the flag `--globalHelp` to the command.
 
-## Optional: Run a Full Node {#optional-run-a-full-node}
+## Optional: Configure Full Node {#optional-configure-full-node}
 
-Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](/network/node/forno) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](/network/mainnet/run-full-node) instructions for more details on running a full node.
+Commands need to connect to a Celo node to execute most functionality.
+You have several options for node connectivity:
 
-The easiest way to connect `celocli` to the Celo network is by running the following command in your terminal with `celocli` installed:
+- [Running your own full node](/cel2/operators/run-node)
+- [Third-party node providers](/network/node/overview)
+- [Forno](/network/node/forno) (the easiest way)
+
+To connect `celocli` to any node, use the following command:
+
+```bash
+celocli config:set --node=<your-rpc-endpoint>
+```
+
+For example, to use Forno:
 
 ```bash
 celocli config:set --node=https://forno.celo.org
 ```
 
-You can verify that `celocli` is connected by running
+You can verify that `celocli` is connected by running:
 
 ```bash
 celocli config:get
@@ -93,9 +104,9 @@ Add the `--privateKey` flag followed by the private key associated with the send
 celocli transfer:celo --from <accountAddress> --to <addressOfChoice> --value <valueInCeloWei> --privateKey <privateKey> --node https://forno.celo.org
 ```
 
-Or you can use a Ledger hardware wallet. (preferred, see below)
+Or you can use a Ledger hardware wallet (preferred, see below).
 
-## Using a Ledger Wallet {#using-a-ledger-wallet}
+### Using a Ledger Wallet {#using-a-ledger-wallet}
 
 The Celo CLI supports using a [Ledger hardware wallet](/wallet/ledger/setup) to sign transactions. Just add the `--useLedger` flag to a command that requires a signature.
 
