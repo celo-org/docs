@@ -5,7 +5,7 @@ import ColoredText from '/src/components/ColoredText';
 
 ## [Blockscout](https://celo.blockscout.com/)
 
-Blockscout explorer is available for <ColoredText>[Celo](https://celo.blockscout.com/mainnet/blocks)</ColoredText>. If your contract is verfied on Blockscout, you can interact with and debug smart contracts.
+Blockscout explorer is available for <ColoredText>[Celo](https://celo.blockscout.com/blocks)</ColoredText>. If your contract is verfied on Blockscout, you can interact with and debug smart contracts.
 
 - Search by address, transaction hash, batch, or token
 - View, verify, and interact with smart contract source code.

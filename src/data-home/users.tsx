@@ -220,7 +220,7 @@ const Users: User[] = [
   },
   {
     title: 'Network Details',
-    description: 'Overview of Celo Mainnet, and Celo Sepolia Testnet.',
+    description: 'Overview of Celo Mainnet and Celo testnets.',
     preview: require('./showcase/integrations/network-details.webp'),
     website: '/network',
     tags: ['integrations'],

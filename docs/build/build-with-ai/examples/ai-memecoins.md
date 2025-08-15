@@ -17,9 +17,9 @@ title: Launching Tokens on Celo using Gaia AI Agent Framework
 ## Create you Celo Private Key
 
 1. Install the [Celo CLI](npm install -g @celo/celocli)
-2. Make sure you're working on Alfajores network 
+2. Make sure you're working on Celo Sepolia testnet
 ```
-celocli config:set --node https://forno.celo-sepolia.celo-testnet.org//
+celocli config:set --rpc-url https://forno.celo-sepolia.celo-testnet.org
 ```
 3. Create an account and store it well formatted in an .env file 
 ```

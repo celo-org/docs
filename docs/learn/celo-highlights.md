@@ -109,7 +109,7 @@ For real-time updates and information, please visit [explorer.celo.org](https://
 
 **Average Block Time**
 
-Celo's average blocktime is 5 seconds. For real-time updates and information, please visit [https://celo.blockscout.com/](https://celo.blockscout.com/)
+Celo's average blocktime is 1 second. For real-time updates and information, please visit [https://celo.blockscout.com/](https://celo.blockscout.com/)
 
 **Average User-Perceived Transaction Time Average Network Transaction (Gas) Fee**
 

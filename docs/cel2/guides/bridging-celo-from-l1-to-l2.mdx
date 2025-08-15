@@ -25,7 +25,7 @@ The following example demonstrates how to configure a file with all the details 
     import { privateKeyToAccount } from "viem/accounts";
     import { sepolia } from "viem/chains";
     import { getL2TransactionHashes, publicActionsL2 } from "viem/op-stack";
-    import { celo-sepolia } from "./celo-sepolia.js";
+    import { celoSepolia } from "./celo-sepolia.js";
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
@@ -49,7 +49,7 @@ The following example demonstrates how to configure a file with all the details 
     });
 
     export const publicClientL2 = createPublicClient({
-      chain: celo-sepolia,
+      chain: celoSepolia,
       transport: http(),
     }).extend(publicActionsL2());
 

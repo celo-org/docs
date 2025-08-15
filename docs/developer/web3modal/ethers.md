@@ -45,7 +45,7 @@ const alfajores = {
   chainId: 44787,
   name: 'Alfajores',
   currency: 'CELO',
-  explorerUrl: 'https://celo.blockscout.com/alfajores',
+  explorerUrl: 'https://celo-alfajores.blockscout.com/',
   rpcUrl: 'https://alfajores-forno.celo-testnet.org'
 }
 

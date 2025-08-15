@@ -39,7 +39,7 @@ const CELO_SEPOLIA_PARAMS = {
   chainName: "Celo Sepolia",
   nativeCurrency: { name: "Celo", symbol: "CELO", decimals: 18 },
   rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
-  blockExplorerUrls: ["https://celo-alfajores.blockscout.com/"],
+  blockExplorerUrls: ["https://celo-sepolia.blockscout.com/"],
   iconUrls: ["future"],
 };
 ```

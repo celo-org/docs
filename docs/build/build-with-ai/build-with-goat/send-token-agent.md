@@ -138,9 +138,12 @@ Copy `.env.template` to `.env` and populate the following environment variables 
 - **`WALLET_PRIVATE_KEY`**: Your private key for the wallet that will send tokens on Celo. **Security Best Practices:** Use a test wallet and handle private keys with extreme caution.
 - **`RPC_PROVIDER_URL`**: The RPC URL for the Celo network. Use a Celo Sepolia RPC URL for testing (e.g., `https://forno.celo-sepolia.celo-testnet.org/`). Refer to previous articles for more Celo RPC options.
 
-**Example `.env` file (for Celo Alfajores Testnet):**
+**Example `.env` file (for Celo Sepolia Testnet):**
 
-```
+```text
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
 RPC_PROVIDER_URL=[https://forno.celo-sepolia.celo-testnet.org/](https://forno.celo-sepolia.celo-testnet.org/)

@@ -44,7 +44,7 @@ const CELO_PARAMS = {
 
 ```jsx
 const CELO_SEPOLIA_PARAMS = {
-  chainId: "0xaef3",
+  chainId: "0xAA044C",
   chainName: "Celo Sepolia",
   nativeCurrency: { name: "Celo", symbol: "CELO", decimals: 18 },
   rpcUrls: ["https://forno.celo-sepolia.celo-testnet.org/"],
