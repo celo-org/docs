@@ -163,3 +163,13 @@ Dwellir provides scalable RPC nodes to power Web3 developers with high-speed, af
 - Celo Mainnet
 
 <PageRef url="https://www.dwellir.com/networks/celo" pageName="Dwellir" />
+
+### OnFinality
+
+[OnFinality](https://onfinality.io) provides the ultimate reliable RPC nodes endpoint that can power your app as it grows
+
+#### Supported Networks
+
+- Celo Mainnet
+
+<PageRef url="https://onfinality.io/networks/celo" pageName="OnFinality" />
