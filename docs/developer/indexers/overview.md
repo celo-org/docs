@@ -27,6 +27,5 @@ for querying real-time and historical data.
   - Goldsky provides live-streamed crypto data, enabling developers to build rich, instant, data-driven experiences. Their tools include Subgraphs for live data through custom endpoints and Mirror for syncing data to databases or warehouses.
 - [Chainbase](https://chainbase.com/)
   - Chainbase's primary objective is to offer a unique and decentralized Layer 1 infrastructure that directly addresses the problem of interoperability across various blockchain networks. This architecture will facilitate the utilization of the full capabilities of blockchain data by eliminating any constraints.
-
-
-
+- [OnFinality](https://indexing.onfinality.io)
+  - Industry leading SubQuery and Subgraph data indexer hosting, so you can sleep easy.
