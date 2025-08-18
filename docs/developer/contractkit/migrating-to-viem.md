@@ -21,10 +21,10 @@ Hello devs 🌱 this is a migration path away from contractkit. This aims to giv
 - const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 - const kit = newKitFromWeb3(web3);
 + import { createPublicClient, http } from 'viem'
-+ import { celo, celoAlfajores } from 'viem/chains'
++ import { celo, celoSepolia } from 'viem/chains'
 +
 + const publicClient = createPublicClient({
-+   chain: celoAlfajores, // or celo for celo's mainnet
++   chain: celoSepolia, // or celo for celo's mainnet
 +   transport: http()
 + })
 ```
@@ -53,8 +53,8 @@ With viem:
 +
 + const privateKey = "0x...";
 + const walletClient = createWalletClient({
-+   transport: http(celoAlfajores.rpcUrls.default.http[0] as string),
-+   chain: celoAlfajores,
++   transport: http(celoSepolia.rpcUrls.default.http[0] as string),
++   chain: celoSepolia,
 + });
 + const account = privateKeyToAccount(privateKey);
 + 
