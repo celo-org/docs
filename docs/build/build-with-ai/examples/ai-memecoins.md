@@ -92,7 +92,7 @@ The project uses three main components
 3. Smart Contract **`(tokenDeployer.js)`**
  - Standard ERC20 implementation
  - Built with OpenZeppelin for security
- - Deployable to Celo's Alfajores testnet
+ - Deployable to Celo's Sepolia testnet
  
 ## Example response
 
@@ -101,7 +101,7 @@ Generated fallback token: { name: 'Mega Gem', symbol: 'MG' }
 Reading artifacts from: /Users/blag/Documents/GitHub/celo-token-agent/artifacts/contracts/MemeToken.sol/MemeToken.json
 Deploying from account: 0x5A96d23F76440C099F22327D1324786f6abe459A
 Account balance:
-A-CELO: 1.08303052 A-CELO
+S-CELO: 1.08303052 S-CELO
 Sending deployment transaction...
 Transaction sent! Hash: 0x035457c46ef5118db065b0a2ccc6bae1ce62f1c8ef688bbaf2d2596a6dd0fbd8
 Deployment confirmed in block: 38170881

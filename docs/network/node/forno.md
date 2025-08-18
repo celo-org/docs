@@ -48,7 +48,7 @@ https://forno.celo-sepolia.celo-testnet.org/
 Websocket support:
 
 ```bash
-wss://forno.celo-sepolia.celo-testnet.org//ws
+wss://forno.celo-sepolia.celo-testnet.org/ws
 ```
 
 ### Alfajores Testnet (deprecated)

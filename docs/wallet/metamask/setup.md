@@ -46,7 +46,7 @@ const CELO_PARAMS = {
 const CELO_SEPOLIA_PARAMS = {
   chainId: "0xAA044C",
   chainName: "Celo Sepolia",
-  nativeCurrency: { name: "Celo", symbol: "CELO", decimals: 18 },
+  nativeCurrency: { name: "Celo", symbol: "S-CELO", decimals: 18 },
   rpcUrls: ["https://forno.celo-sepolia.celo-testnet.org/"],
   blockExplorerUrls: ["https://celo-sepolia.blockscout.com/"],
   iconUrls: ["future"],
@@ -59,7 +59,7 @@ const CELO_SEPOLIA_PARAMS = {
 const ALFAJORES_PARAMS = {
   chainId: "0xaef3",
   chainName: "Alfajores Testnet",
-  nativeCurrency: { name: "Alfajores Celo", symbol: "A-CELO", decimals: 18 },
+  nativeCurrency: { name: "Alfajores Celo", symbol: "S-CELO", decimals: 18 },
   rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
   blockExplorerUrls: ["https://celo-alfajores.blockscout.com/"],
   iconUrls: ["future"],

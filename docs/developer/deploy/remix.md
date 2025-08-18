@@ -28,7 +28,7 @@ The EVM version used by the selected environment is not compatible with the comp
 
 A **workaround** is to go into the advanced settings for the compiler in Remix and choose Paris as the EVM version.
 
-For Sepolia L2 everything should be working as on every other EVM compatible chain.
+For Celo Sepolia everything should be working as on every other EVM compatible chain.
 :::
 
 :::tip
@@ -60,7 +60,7 @@ To learn more about the features available to you as a smart contract developer 
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (11142220) network** for Celo Sepoolia testnet
+  - **Custom (11142220) network** for Celo Sepolia testnet
   - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 

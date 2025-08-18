@@ -49,10 +49,10 @@ If you choose to [Set up a Local Development Chain](/developer/setup/development
 
 ### Connect to Testnet using Forno
 
-Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Sepolia) using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Sepolia Testnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
-   sepolia: {
+   celoSepolia: {
      url: "https://forno.celo-sepolia.celo-testnet.org/",
      accounts: {
        mnemonic: process.env.MNEMONIC,
@@ -94,7 +94,7 @@ Using [Forno](/network/node/forno) also allows you to connect to the Celo main b
 Run the following command from your root project directory to deploy to Celo Sepolia testnet.
 
 ```shell
-npx hardhat run scripts/sample-script.js --network sepolia
+npx hardhat run scripts/sample-script.js --network celoSepolia
 ```
 
 ...or run this command to deploy to Celo Mainnet.

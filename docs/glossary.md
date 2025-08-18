@@ -79,7 +79,7 @@ The Celo native asset which may be used to take actions on-chain, such as partic
 
 ## Celo Sepolia 
 
-Celo Sepolia, launched on the 14th of September 2025, is a the new developer testnet that replaces Alfajores when Holesky sunsets in September 2025. The Baklava testnet will also sunset with Holesky, with no replacement planned.
+Celo Sepolia, launched on Jul 23, 2025, announced on Aug 13, is a the new developer testnet that replaces Alfajores when Holesky sunsets in September 2025. The Baklava testnet will also sunset with Holesky, with no replacement planned.
 
 ## cLabs, Celo Labs
 
