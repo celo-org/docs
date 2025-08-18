@@ -43,7 +43,7 @@ EXAMPLES
 
   set --node forno # alias for https://forno.celo.org
 
-  set --node sepolia # alias for https://forno.celo-sepolia.celo-testnet.org
+  set --node celo-sepolia # alias for https://forno.celo-sepolia.celo-testnet.org
 
   set --node baklava # alias for https://baklava-forno.celo-testnet.org
 
