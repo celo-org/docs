@@ -27,13 +27,7 @@ And if not, upgrade by running the same command as above.
 
 You will now need to point the Celo CLI to a node that is synchronized with one of Celo’s networks.
 
-#### Configure for Celo Mainnet
-
-Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
-
-```bash
-celocli config:set --node https://forno.celo.org/
-```
+#### Configure the network
 
 :::danger
 
@@ -41,19 +35,25 @@ Connecting celocli to an untrusted node may allow that node to influence the tra
 
 :::
 
-#### Configure for Celo Alfajores Testnet
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
+<Tabs>
+  <TabItem value="celo-sepolia" label="Celo Sepolia Testnet" default>
+    Configure the Celo CLI so that it uses a cLabs node on the Celo Sepolia network.
 
-```bash
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
-```
+    ```bash
+    celocli config:set --node https://forno.celo-sepolia.celo-testnet.org/
+    ```
+  </TabItem>
+  <TabItem value="mainnet" label="Celo Mainnet" default>
+    Configure the Celo CLI so that it uses a cLabs node on the Celo network.
 
-:::danger
-
-Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
-
-:::
+    ```bash
+    celocli config:set --node https://forno.celo.org/
+    ```
+  </TabItem>
+</Tabs>
 
 #### Check that the node is synchronized to Celo CLI:
 
