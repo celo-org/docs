@@ -2,7 +2,7 @@
 title: Add Celo Testnet to MetaMask
 ---
 
-Follow this quick guide to add Celo Sepolia to your MetaMask wallet and start playing around with it. You can get funds from the [Celo Sepolia Faucet](https://faucet.celo.org/celo-sepolia).
+Follow this quick guide to add Celo Sepolia to your MetaMask wallet and start playing around with it. You can get funds from the [Celo Faucet](https://faucet.celo.org).
 
 1. Open MetaMask
 
@@ -16,7 +16,7 @@ Follow this quick guide to add Celo Sepolia to your MetaMask wallet and start pl
 
 ![](/img/build/add-celo-testnet-to-metamask/3.png)
 
-4. Add info about Celo Sepolia
+4. Add info about Celo Sepolia Testnet
 
 :::info
 If you never added a new Network before then you need click on "Add a Network"
@@ -24,11 +24,11 @@ If you never added a new Network before then you need click on "Add a Network"
 
 Insert the following details:
 
-- Network Name: Celo Sepolia
-- New RPC URL: `https://forno.celo-sepolia.celo-testnet.org/`
+- Network Name: Celo Sepolia Testnet
+- New RPC URL: `https://forno.celo-sepolia.celo-testnet.org`
 - Chain ID: 11142220
-- Currency Symbol: CELO
-- Block explorer URL: `https://celo-sepolia.blockscout.com/`
+- Currency Symbol: S-CELO
+- Block explorer URL: `https://celo-sepolia.blockscout.com`
 
 ![](/img/build/add-celo-testnet-to-metamask/4.png)
 
