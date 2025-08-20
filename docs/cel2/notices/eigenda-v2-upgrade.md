@@ -7,7 +7,7 @@ This page outlines changes related to the EigenDA v2 upgrade for node operators.
 This page will be kept updated with key information about the upgrade. As this upgrade is activated on the sequencer, no detailed activation times can be given.
 
 - Baklava testnet activation was executed on Wed, Jul 30, 2025.
-- Alfajores testnet activation is planned for Wed, Aug 20, 2025.
+- Alfajores testnet activation was executed on Wed, Aug 20, 2025.
 - **Mainnet** activation is planned for Wed, Sep 10, 2025.
 
 :::
