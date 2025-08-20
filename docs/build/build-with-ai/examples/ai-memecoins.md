@@ -92,7 +92,7 @@ The project uses three main components
 3. Smart Contract **`(tokenDeployer.js)`**
  - Standard ERC20 implementation
  - Built with OpenZeppelin for security
- - Deployable to Celo's Sepolia testnet
+ - Deployable to Celo Sepolia testnet
  
 ## Example response
 

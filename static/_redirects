@@ -342,7 +342,7 @@
 /holder/exchange /what-is-celo/using-celo/manage/exchange
 /holder/release-gold /what-is-celo/using-celo/manage/release-gold
 /holder/self-custody /what-is-celo/using-celo/manage/self-custody 
-/important-information/alfajores-testnet-disclaimer /network/celo-sepolia/disclaimer
+/important-information/alfajores-testnet-disclaimer /network/alfajores/disclaimer
 /important-information/baklava-testnet-disclaimer /network/baklava/disclaimer
 /important-information/mainnet-testnet-disclaimer /network/mainnet/disclaimer
 /important-information/rc-network-disclaimer /network/mainnet/disclaimer
@@ -358,7 +358,6 @@
 /network/node/run-baklava /cel2/operators/run-node
 /network/node/run-hosted /network/node/overview
 /network/node/run-mainnet /cel2/operators/run-node
-/network/alfajores/ /network/celo-sepolia
 
 /protocol/bridge /what-is-celo/using-celo/bridges 301
 /protocol/bridges /developer/bridges/
