@@ -28,7 +28,7 @@ Support for decentralized dispersal is unlocked by eliminating DDoS attack surfa
 
 Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
 
-The new proxy version will require to ADD these new flags for each network (remember to fill the `eigenda.v2.eth-rpc` and `igenda.v2.signer-payment-key-hex` from your own set up):
+The new proxy version will require to ADD the following new flags for each network (remember to fill the `eigenda.v2.eth-rpc` and `eigenda.v2.signer-payment-key-hex` from your own set up)
 
 ### Mainnet
 ```
@@ -54,7 +54,7 @@ The new proxy version will require to ADD these new flags for each network (reme
   --eigenda.v2.bls-operator-state-retriever-addr="0xB4baAfee917fb4449f5ec64804217bccE9f46C67" \
 ```
 
-### Sepolia
+### Celo Sepolia
 ```
   --storage.backends-to-enable="V1,V2" \
   --eigenda.v2.disperser-rpc=disperser-testnet-sepolia.eigenda.xyz:443 \
@@ -65,3 +65,5 @@ The new proxy version will require to ADD these new flags for each network (reme
   --eigenda.v2.service-manager-addr="0x3a5acf46ba6890B8536420F4900AC9BC45Df4764" \
   --eigenda.v2.bls-operator-state-retriever-addr="0x22478d082E9edaDc2baE8443E4aC9473F6E047Ff" \
 ```
+
+***Notes:*** all the required configuration for each service can be found in our simple-node repo (https://github.com/celo-org/celo-l2-node-docker-compose), where every network specific configuration is stayed in each `<network>.env` file
