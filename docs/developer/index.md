@@ -26,7 +26,7 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 - [Explorers](/developer/explorers/overview)
 - [Indexers](/developer/indexers/overview)
 - [Bridges](/developer/bridges)
-- [Testnet Faucet](https://faucet.celo.org)
+- [Testnet Faucet](https://faucet.celo.org/celo-sepolia)
 
 ## Developer Environments
 

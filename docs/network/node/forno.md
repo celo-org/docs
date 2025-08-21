@@ -39,7 +39,19 @@ Websocket support:
 wss://forno.celo.org/ws
 ```
 
-### Alfajores Testnet
+### Celo Sepolia
+
+```bash
+https://forno.celo-sepolia.celo-testnet.org/
+```
+
+Websocket support:
+
+```bash
+wss://forno.celo-sepolia.celo-testnet.org/ws
+```
+
+### Alfajores Testnet (deprecated)
 
 ```bash
 https://alfajores-forno.celo-testnet.org
@@ -51,7 +63,7 @@ Websocket support:
 wss://alfajores-forno.celo-testnet.org/ws
 ```
 
-### Baklava Testnet
+### Baklava Testnet (deprecated)
 
 ```bash
 https://baklava-forno.celo-testnet.org

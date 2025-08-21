@@ -105,11 +105,11 @@ Celo has a validator set with a current size of 110 validators. Validators are e
 
 **Total Blocks**
 
-For real-time updates and information, please visit [explorer.celo.org](https://explorer.celo.org/)
+For real-time updates and information, please visit [explorer.celo.org](https://celo.blockscout.com/)
 
 **Average Block Time**
 
-Celo's average blocktime is 5 seconds. For real-time updates and information, please visit [https://explorer.celo.org/](https://explorer.celo.org/)
+Celo's average blocktime is 1 second. For real-time updates and information, please visit [https://celo.blockscout.com/](https://celo.blockscout.com/)
 
 **Average User-Perceived Transaction Time Average Network Transaction (Gas) Fee**
 

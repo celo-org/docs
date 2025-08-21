@@ -38,6 +38,7 @@ Native bridging refers to the process of transferring assets directly between th
 This method is designed to be more secure, efficient and cost-effective, leveraging the security and scalability of L2 solutions.
 
 - [Superbridge Celo Mainnet](https://superbridge.app/celo)
+- [Superbridge Celo Sepolia Testnet](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220)
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
 - [Superbridge Baklava Testnet](https://testnets.superbridge.app/celo-baklava)
 

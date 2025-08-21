@@ -9,7 +9,7 @@ description: Walkthrough on leveraging Particle Network's Wallet Abstraction on 
 
 The [Particle Connect SDK](https://developers.particle.network/api-reference/connect/desktop/web) supports EVM-compatible chains, including Celo and its testnet. It enables 2-click onboarding with social and Web3 login options within a single modal.
 
-With Particle Network's Wallet-as-a-Service, developers on Celo can integrate social logins for the Celo Mainnet and Alfajores Testnet, embedding wallets directly into applications.
+With Particle Network's Wallet-as-a-Service, developers on Celo can integrate social logins for the Celo Mainnet and Celo Sepolia Testnet, embedding wallets directly into applications.
 
 This page provides an overview and tutorial on implementing Particle Connect in a Celo-based application, specifically on the Celo Mainnet, to help you get started with integration.
 

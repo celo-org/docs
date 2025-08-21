@@ -28,7 +28,7 @@ The EVM version used by the selected environment is not compatible with the comp
 
 A **workaround** is to go into the advanced settings for the compiler in Remix and choose Paris as the EVM version.
 
-For Alfajores L2 everything should be working as on every other EVM compatible chain.
+For Celo Sepolia everything should be working as on every other EVM compatible chain.
 :::
 
 :::tip
@@ -60,7 +60,7 @@ To learn more about the features available to you as a smart contract developer 
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (44787) network** for Celo Alfajores testnet
+  - **Custom (11142220) network** for Celo Sepolia testnet
   - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 
@@ -78,7 +78,7 @@ To learn more about the features available to you as a smart contract developer 
 ## View Contract Details
 
 - Copy the contract address from the **Deployed Contracts** window on the left panel.
-- Navigate to the [Celo Block Explorer](https://explorer.celo.org/) and use the contract address to search for your contract.
+- Navigate to the [Celo Block Explorer](https://celo.blockscout.com/) and use the contract address to search for your contract.
 - Explore the details of your deployed smart contract and learn more about the explorer [here](http://docs.blockscout.com).
 
 ![github](/img/doc-images/deploy-remix/image6.png)

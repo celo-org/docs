@@ -254,7 +254,7 @@
 /developer-resources/integrations/general /integration/general
 /developer-resources/integrations/integrations /integration
 /developer-resources/integrations/listings /integration/listings
-/developer-resources/networks/alfajores-testnet /network/alfajores/
+/developer-resources/networks/alfajores-testnet /network/celo-sepolia/
 /developer-resources/networks/baklava-testnet /network/baklava/
 /developer-resources/networks/celo-mainnet /network/mainnet/
 /developer-resources/overview /developer
@@ -296,10 +296,10 @@
 /getting-started /developer
 /getting-started... /general
 /getting-started/alfajores-testnet /network
-/getting-started/alfajores-testnet/faucet /network/alfajores/faucet
-/getting-started/alfajores-testnet/index /network/alfajores
+/getting-started/alfajores-testnet/faucet /network/celo-sepolia/faucet
+/getting-started/alfajores-testnet/index /network/celo-sepolia
 /getting-started/alfajores-testnet/running-a-full-node-in-alfajores /cel2/operators/run-node
-/getting-started/alfajores-testnet/using-the-mobile-wallet /network/alfajores/use-mobile-wallet
+/getting-started/alfajores-testnet/using-the-mobile-wallet /network/celo-sepolia
 /getting-started/alfajores-testnet /network
 /getting-started/baklava-testnet /network
 /getting-started/baklava-testnet/index /network/baklava
@@ -358,6 +358,7 @@
 /network/node/run-baklava /cel2/operators/run-node
 /network/node/run-hosted /network/node/overview
 /network/node/run-mainnet /cel2/operators/run-node
+
 /protocol/bridge /what-is-celo/using-celo/bridges 301
 /protocol/bridges /developer/bridges/
 /protocol/bridging /what-is-celo/about-celo-l1/protocol/bridge
