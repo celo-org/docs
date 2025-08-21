@@ -28,7 +28,7 @@ Support for decentralized dispersal is unlocked by eliminating DDoS attack surfa
 
 Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
 
-The new proxy version will require to ADD the following new flags for each network (remember to fill the `eigenda.v2.eth-rpc` and `eigenda.v2.signer-payment-key-hex` from your own set up)
+The new proxy version will require to *add* the following new flags for each network (remember to fill the `eigenda.v2.eth-rpc` and `eigenda.v2.signer-payment-key-hex` from your own set up)
 
 ### Mainnet
 ```
