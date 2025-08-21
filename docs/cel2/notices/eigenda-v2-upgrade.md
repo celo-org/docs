@@ -66,4 +66,6 @@ The new proxy version will require to *add* the following new flags for each net
   --eigenda.v2.bls-operator-state-retriever-addr="0x22478d082E9edaDc2baE8443E4aC9473F6E047Ff" \
 ```
 
-***Notes:*** all the required configuration for each service can be found in our simple-node repo (https://github.com/celo-org/celo-l2-node-docker-compose), where every network specific configuration is stayed in each `<network>.env` file
+:::tip Docker Compose
+The required configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
+:::
