@@ -17,9 +17,9 @@ Identifies an account on Celo. There are two types of account. **Externally owne
 
 A unique identifier for an account on any blockchain.
 
-## Alfajores
+## Alfajores (deprecated)
 
-The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
+The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer). Alfajores is being sunset on the 30th of September 2025.
 
 ## Attestation
 
@@ -76,6 +76,10 @@ The deprecated name for the Celo native asset, which now is referred to simply a
 ## Celo Native Asset
 
 The Celo native asset which may be used to take actions on-chain, such as participating in [Governance](#governance).
+
+## Celo Sepolia 
+
+Celo Sepolia, launched on Jul 23, 2025, announced on Aug 13, is a the new developer testnet that replaces Alfajores when Holesky sunsets in September 2025. The Baklava testnet will also sunset with Holesky, with no replacement planned.
 
 ## cLabs, Celo Labs
 

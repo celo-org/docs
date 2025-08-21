@@ -17,9 +17,9 @@ title: Launching Tokens on Celo using Gaia AI Agent Framework
 ## Create you Celo Private Key
 
 1. Install the [Celo CLI](npm install -g @celo/celocli)
-2. Make sure you're working on Alfajores network 
+2. Make sure you're working on Celo Sepolia testnet
 ```
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
+celocli config:set --rpc-url https://forno.celo-sepolia.celo-testnet.org
 ```
 3. Create an account and store it well formatted in an .env file 
 ```
@@ -32,7 +32,7 @@ echo $accountAddress | pbcopy
 ```
 5. Head to the faucet to get some money and paste your account address there
 ```
-open https://faucet.celo.org
+open https://faucet.celo.org/celo-sepolia
 ```
 6. Verify you got money successfully
 ```
@@ -92,7 +92,7 @@ The project uses three main components
 3. Smart Contract **`(tokenDeployer.js)`**
  - Standard ERC20 implementation
  - Built with OpenZeppelin for security
- - Deployable to Celo's Alfajores testnet
+ - Deployable to Celo Sepolia testnet
  
 ## Example response
 
@@ -101,7 +101,7 @@ Generated fallback token: { name: 'Mega Gem', symbol: 'MG' }
 Reading artifacts from: /Users/blag/Documents/GitHub/celo-token-agent/artifacts/contracts/MemeToken.sol/MemeToken.json
 Deploying from account: 0x5A96d23F76440C099F22327D1324786f6abe459A
 Account balance:
-A-CELO: 1.08303052 A-CELO
+S-CELO: 1.08303052 S-CELO
 Sending deployment transaction...
 Transaction sent! Hash: 0x035457c46ef5118db065b0a2ccc6bae1ce62f1c8ef688bbaf2d2596a6dd0fbd8
 Deployment confirmed in block: 38170881

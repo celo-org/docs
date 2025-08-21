@@ -88,7 +88,8 @@ Whether you're building your first dApp or looking to integrate an existing prot
         </a>
 
         <a
-            href="https://faucet.celo.org/alfajores"
+            href="https://faucet.celo.org/celo-sepolia"
+            
             target="_blank"
             className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
         >

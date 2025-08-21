@@ -983,7 +983,7 @@ const toolingSidebar = [
       {
         type: "link",
         label: "Blockscout",
-        href: "https://explorer.celo.org/",
+        href: "https://celo.blockscout.com/",
       },
       {
         type: "link",
@@ -1171,7 +1171,7 @@ const toolingSidebar = [
   {
     type: "link",
     label: "Faucet",
-    href: "https://faucet.celo.org",
+    href: "https://faucet.celo.org/celo-sepolia",
   },
   {
     type: "category",

@@ -244,7 +244,7 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 ### Verify smart contracts
 
-Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/.
+Verification of smart contracts should be done both on https://celoscan.io/ and https://celo.blockscout.com/.
 
 1. [Update your Smart Contract on celoscan](/developer/verify/celoscan)
 2. [Update your Smart Contract on Blockscout](/developer/verify/blockscout)
