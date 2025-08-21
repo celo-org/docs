@@ -15,7 +15,7 @@ If you wish to migrate data from a Celo L1 node and have not yet done so, please
 - Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
-### Testnets (Alfajores and Baklava)
+### Testnets (Alfajores, Baklava, and Celo Sepolia)
 
 - 16GB+ RAM
 - 500GB SSD (NVME Recommended)
@@ -30,7 +30,7 @@ If running an archive node, please make sure you also have enough storage for th
 
 ## Run Node with Docker
 
-To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
+To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository with all the necessary configuration files and docker compose templates to make running a Celo L2 node easy.
 
 See the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/README.md) for instructions on installing docker and docker compose if needed.
 
@@ -53,10 +53,10 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     __Copy default configurations__
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, or mainnet>
+    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -140,10 +140,10 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     __Copy default configurations__
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, or mainnet>
+    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -358,6 +358,35 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
+### Celo Sepolia
+
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json) used for snap syncing
+- P2P peers:
+  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+
+    ```text
+    enode://7fd35dfea27042fe008c74ea97c7a41254b293152730419a6e9bcd84bb03c7ced418c1043e2ef6ad63d2facca6fbdacfbf7c4bfcf33ee7e9a0e6b7eb0617595d@34.169.104.197:30303
+    enode://151bcf170585971fc78129d9c16af355a1a53e1c825ce1ac20700ea754aa33eda60ca83de6f954bfed8d36c53f33295d93dbc3da9d549d6547d09467806b4b3d@104.199.124.11:30303
+    enode://aa5fb766438ac5a0354eb2eec1c0c002b56bb2ce7ed44f0e76e019cbb931222faa9ecfb0fa0055c0c62a2fcf04492d4129349a1045dfef140585250281885e4b@34.83.115.97:30303
+    enode://27c81ca466c99016d1595429afc68d66afb3ed9d5a2dd7f6a7797db23a4c826546a177b69b4932f3a75ce374b09d8ccc5b52dad615b3c47dbb8f6217d79ded22@35.247.1.226:30303
+    ```
+
+  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
+
+    ```text
+    enr:-J-4QF7_9Y18cQSQ2wXHD_e65Qy82L1DpfVK4TlOuTDC9oAxeFxmvAn877A2ZXXfc08eLFgZP1mrRjkF4Kts1eGPGbKGAZg2ao5CgmlkgnY0gmlwhCKRF6aHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhA3_TXf6icEL-AIx06pfHpBJUspMVJzBBmm6bzYS7A8fOg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QEbMTKrBfyAeq9hWlEchulzvt1gWA-wAGa_kUdWw1K-faR-AjFNzhcVGG7yDnRb1RptLDGWVpl-WXWhrgJ4TKEaGAZg2XFFugmlkgnY0gmlwhCKotN-Hb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhAxUbzxcFhZcfx4Ep2cFq81WhpT4cglzhrCBwDqdUqjPtg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QEawPak_hVU3h1wPZEGu7zLOv1C3k4WI8nHLUc83RqsRMauPtOPt8hYDFyxeJeaUyp0OUM0oyq-_9CEdshE1oWaGAZg2XLgDgmlkgnY0gmlwhCJSX5OHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhA6pft2ZDisWgNU6y7sHAwAK1a7LOftRPDnbgGcu5MSIvg3RjcIIkBoN1ZHCCJAY
+    enr:-J-4QCDpfivb0y0Sne1sZOqm1_WOKWWyJ6fo9j93jrxGVm0CcG6tScy3oQAaUuUbh-SmS_cQTO9ciw0_R3q1rpcjGLmGAZg2cWjGgmlkgnY0gmlwhCPFR5uHb3BzdGFja4XMiKgFAIlzZWNwMjU2azGhAifIHKRmyZAW0VlUKa_GjWavs-2dWi3X9qd5fbI6TIJlg3RjcIIkBoN1ZHCCJAY
+    ```
+
+- Container images:
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.2)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
+
 ## Troubleshooting
 
 ### Transactions Are Not Being Executed When Submitted to a Node
@@ -367,6 +396,7 @@ If your node is synced but transactions submitted to it are not executed, make s
 - Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
 - Alfajores: `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org`
 - Baklava: `--rollup.sequencerhttp=https://sequencer.baklava.celo-testnet.org`
+- Celo Sepolia: `--rollup.sequencerhttp=https://sequencer.celo-sepolia.celo-testnet.org`
 
 ### Self-Hosted Public RPC Does Not Retrieve Transactions by Hash
 

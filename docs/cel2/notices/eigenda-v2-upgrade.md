@@ -7,7 +7,7 @@ This page outlines changes related to the EigenDA v2 upgrade for node operators.
 This page will be kept updated with key information about the upgrade. As this upgrade is activated on the sequencer, no detailed activation times can be given.
 
 - Baklava testnet activation was executed on Wed, Jul 30, 2025.
-- Alfajores testnet activation is planned for Wed, Aug 20, 2025.
+- Alfajores testnet activation was executed on Wed, Aug 20, 2025.
 - **Mainnet** activation is planned for Wed, Sep 10, 2025.
 
 :::
@@ -26,4 +26,4 @@ Support for decentralized dispersal is unlocked by eliminating DDoS attack surfa
 
 ## For Node Operators
 
-Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda-proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.
+Node operators need to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2) before the activation date. The version is backwards compatible with EigenDA v1 and can be updated beforehand.

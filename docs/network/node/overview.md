@@ -53,6 +53,8 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 #### Supported Networks
 
 - Celo Mainnet
+- Celo Sepolia (Testnet)
+- Celo Alfajores (Testnet)
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
@@ -148,6 +150,7 @@ You can also claim Alfajores funds from the faucet in the site without signing u
 #### Supported Networks
 
 - Celo Mainnet
+- Celo Sepolia (Testnet)
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 
@@ -160,3 +163,13 @@ Dwellir provides scalable RPC nodes to power Web3 developers with high-speed, af
 - Celo Mainnet
 
 <PageRef url="https://www.dwellir.com/networks/celo" pageName="Dwellir" />
+
+### OnFinality
+
+[OnFinality](https://onfinality.io) provides the ultimate reliable RPC nodes endpoint that can power your app as it grows
+
+#### Supported Networks
+
+- Celo Mainnet
+
+<PageRef url="https://onfinality.io/networks/celo" pageName="OnFinality" />

@@ -54,7 +54,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'The <a href="/network/eclair">Celo Eclair testnet is live</a>.',
+        'The Celo Ice Cream hardfork 🍦 is coming. <a target="_blank" rel="noopener noreferrer" href="/cel2/notices/eigenda-v2-upgrade">Learn more about the upgrade</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
