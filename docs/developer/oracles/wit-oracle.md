@@ -7,7 +7,7 @@ Witnet can power most DeFi primitives like price feeds, stablecoins, synthetics,
 
 ## How To Use Witnet Price Feeds
 
-Witnet price feeds can be integrated into your own Boba Mainnet contracts in two different ways:
+Witnet price feeds can be integrated into your own Celo Mainnet contracts in two different ways:
 
 1. [Integrate through proxy](https://docs.witnet.io/smart-contracts/witnet-data-feeds/using-witnet-data-feeds#reading-multiple-currency-pairs-from-the-router) Recommended for testing and upgradability.
    This is the preferred way to consume the Witnet-powered price feeds. Through using the ***Price Feeds Router***.
@@ -24,7 +24,7 @@ The ***WitnetPriceRouter*** smart contract is deployed in all the [supported cha
 - *Mainnet*: [0x1111AbA2164AcdC6D291b08DfB374280035E1111](https://celo.blockscout.com/address/0x1111AbA2164AcdC6D291b08DfB374280035E1111)
 
 
-The Witnet Proxy contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](/smart-contracts/supported-chains).
+The Witnet Proxy contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](https://docs.witnet.io/smart-contracts/supported-chains).
 
 #### Solidity example
 
@@ -83,9 +83,9 @@ print("> latestUpdateStatus:", valueFor[2])
 ```
 
 ### Feeds supported
-A complete list of publicly available Witnet data feeds on Boba can be found in the Witnet Data Feeds website: [https://feeds.witnet.io/celo](https://feeds.witnet.io/celo)
+A complete list of publicly available Witnet data feeds on Celo can be found in the Witnet Data Feeds website: [https://feeds.witnet.io/celo](https://feeds.witnet.io/celo)
 
-[Request a new price feed on Celo](https://tally.so/r/wMZDAn) or [Create your own data feed](https://docs.witnet.io/smart-contracts/witnet-web-oracle/make-a-get-request).
+[Request a new price feed on Celo](https://tally.so/r/w46p6O) or [Create your own data feed](https://docs.witnet.io/smart-contracts/witnet-web-oracle/make-a-get-request).
 
 
 ## How to use WitnetRandomness

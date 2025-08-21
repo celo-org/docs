@@ -19,5 +19,5 @@ Here are lists of all on-chain Oracles:
 - [Pyth Network](https://pyth.network/)
   - Randomness
 - [Witnet](/developer/oracles/wit-oracle)
-  - [Randomness](/developer/oracles/wit-oracle/#How-to-use-WitnetRandomness)
+  - [Randomness](/developer/oracles/wit-oracle/#how-to-use-witnetrandomness)
 - [Quex Oracles](/developer/oracles/quex-oracles)
