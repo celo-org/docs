@@ -5,16 +5,16 @@ title: Bridging CELO from L1 to L2
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-In this guide, you'll learn how to programmatically bridge CELO from Holesky to Alfajores using the [viem OP Stack](https://viem.sh/op-stack).  
+In this guide, you'll learn how to programmatically bridge CELO from Sepolia to Celo Sepolia using the [viem OP Stack](https://viem.sh/op-stack).  
 
 ## Steps to Bridge CELO
 
 Before transferring tokens, you must authorize the `OptimismPortalProxy` contract to spend CELO on your behalf. Without this approval, the bridging transaction cannot proceed.
 
-Call the [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) function on the `OptimismPortalProxy` contract on Holesky. This function moves CELO tokens from your account to the Alfajores testnet.
+Call the [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) function on the `OptimismPortalProxy` contract on Sepolia. This function moves CELO tokens from your account to the Celo Sepolia.
 
 ## Code Example
-The following example demonstrates how to configure a file with all the details you need for interacting with the Alfajores testnet.
+The following example demonstrates how to configure a file with all the details you need for interacting with the Celo Sepolia.
 
 
 <Tabs>
@@ -23,9 +23,8 @@ The following example demonstrates how to configure a file with all the details 
     ```js
     import { createWalletClient, createPublicClient, http, parseEther } from "viem";
     import { privateKeyToAccount } from "viem/accounts";
-    import { holesky } from "viem/chains";
+    import { celoSepolia, sepolia } from "viem/chains";
     import { getL2TransactionHashes, publicActionsL2 } from "viem/op-stack";
-    import { alfajores } from "./alfajores.js";
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
@@ -38,23 +37,23 @@ The following example demonstrates how to configure a file with all the details 
 
     export const walletClientL1 = createWalletClient({
       account,
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
     });
 
     export const publicClientL1 = createPublicClient({
       account,
-      chain: holesky,
+      chain: sepolia,
       transport: http(),
     });
 
     export const publicClientL2 = createPublicClient({
-      chain: alfajores,
+      chain: celoSepolia,
       transport: http(),
     }).extend(publicActionsL2());
 
     async function main() {
-      // Approve OptimismPortal to pull CELO on Holesky
+      // Approve OptimismPortal to pull CELO on Sepolia
       const approve = await walletClientL1.writeContract({
         address: CELOL1,
         abi: [
@@ -145,72 +144,5 @@ The following example demonstrates how to configure a file with all the details 
 
     main();
     ```
-
-  </TabItem>
-
-  <TabItem value="alfajores.js" label="alfajores.js">
-
-    ```js
-    import { defineChain } from "viem";
-
-    const sourceId = 17000;
-
-    export const alfajores = defineChain({
-      name: "Alfajores Testnet",
-      id: 44_787,
-      nativeCurrency: {
-        decimals: 18,
-        name: "CELO",
-        symbol: "CELO",
-      },
-      rpcUrls: {
-        default: {
-          http: ["https://alfajores-forno.celo-testnet.org"],
-        },
-      },
-      contracts: {
-        gasPriceOracle: { address: "0x420000000000000000000000000000000000000F" },
-        l1Block: { address: "0x4200000000000000000000000000000000000015" },
-        l2CrossDomainMessenger: {
-          address: "0x4200000000000000000000000000000000000007",
-        },
-        l2Erc721Bridge: { address: "0x4200000000000000000000000000000000000014" },
-        l2StandardBridge: { address: "0x4200000000000000000000000000000000000010" },
-        l2ToL1MessagePasser: {
-          address: "0x4200000000000000000000000000000000000016",
-        },
-        disputeGameFactory: {
-          [sourceId]: {
-            address: "0x831f39053688f05698ad0fB5f4DE7e56B2949c55",
-          },
-        },
-        l2OutputOracle: {
-          [sourceId]: {
-            address: "0x419577592C884868C3ed85B97169b93362581855",
-          },
-        },
-        portal: {
-          [sourceId]: {
-            address: "0xB29597c6866c6C2870348f1035335B75eEf79d07",
-          },
-        },
-        l1StandardBridge: {
-          [sourceId]: {
-            address: "0x9FEBd0F16b97e0AEF9151AF07106d733E87B1be4",
-          },
-        },
-      },
-      blockExplorers: {
-        default: {
-          name: "Celo Explorer",
-          url: "https://explorer.celo.org/alfajores",
-          apiUrl: "https://explorer.celo.org/api",
-        },
-      },
-      testnet: true,
-    });
-
-    ```
-
   </TabItem>
 </Tabs>

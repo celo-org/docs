@@ -21,7 +21,7 @@ To register as a community RPC provider, you need:
 - **10,000 CELO** to register an RPC node
 - **10,000 CELO per member RPC** to register an RPC Group
 
-If you don't have enough CELO, you can practice the registration process on the [Alfajores](/network/alfajores) or [Baklava](/network/baklava) testnets. Use the [testnet faucet](https://faucet.celo.org/alfajores) to get test CELO - select "Advanced Needs" when requesting funds for RPC provider testing.
+If you don't have enough CELO, you can practice the registration process on the [Celo Sepolia Testnet](/network/celo-sepolia). Use the [testnet faucet](https://faucet.celo.org/celo-sepolia) to get test CELO - select "Advanced Needs" when requesting funds for RPC provider testing.
 
 ### Key Management
 

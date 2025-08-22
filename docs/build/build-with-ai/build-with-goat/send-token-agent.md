@@ -35,7 +35,7 @@ require("dotenv").config();
 ```
 
 - **Libraries:** The imports are similar to previous examples, including `readline`, `@ai-sdk/openai`, `ai`, `viem`, and `@goat-sdk`.
-- **Chain Import:** `baseSepolia` is imported from `viem/chains`, which we will replace with `celo` to target the Celo network.
+- **Chain Import:** `baseSepolia` is imported from `viem/chains`, which we will replace with `celoSepolia` to target the Celo network.
 - **Token Imports:** `PEPE` and `USDC` are imported from `@goat-sdk/plugin-erc20`. We will need to ensure these or similar tokens are relevant and available on Celo, or configure for other ERC20 tokens on Celo.
 - **`sendETH` Import:** `sendETH` from `@goat-sdk/wallet-evm` is imported to enable sending native tokens. We will adapt this to send CELO.
 
@@ -48,11 +48,11 @@ const account = privateKeyToAccount(process.env.WALLET_PRIVATE_KEY as `0x${strin
 const walletClient = createWalletClient({
     account: account,
     transport: http(process.env.RPC_PROVIDER_URL),
-    chain: baseSepolia, // We will change 'baseSepolia' to 'celo'
+    chain: baseSepolia, // We will change 'baseSepolia' to 'celoSepolia'
 });
 ```
 
-- **Wallet Client Setup:** This section sets up a `viem` wallet client, retrieving the private key from the `WALLET_PRIVATE_KEY` environment variable and connecting to the blockchain using the `RPC_PROVIDER_URL`. We will modify `chain` to `celo` for Celo.
+- **Wallet Client Setup:** This section sets up a `viem` wallet client, retrieving the private key from the `WALLET_PRIVATE_KEY` environment variable and connecting to the blockchain using the `RPC_PROVIDER_URL`. We will modify `chain` to `celoSepolia` for Celo.
 
 **3. Getting On-Chain Tools (Token Sending Focus):**
 
@@ -68,8 +68,8 @@ const tools = await getOnChainTools({
 ```
 
 - **On-Chain Tools for Token Sending:** This section configures the tools for sending tokens:
-  - `sendETH()`: Enables sending native ETH on Sepolia. We will adapt this to send native CELO on Celo.
-  - `erc20({ tokens: [USDC, PEPE] })`: Enables ERC20 token operations for USDC and PEPE. We will need to review and potentially replace these tokens with relevant ERC20 tokens on Celo.
+  - `sendETH()`: Enables sending native ETH on Base Sepolia. We will adapt this to send native CELO on Celo Sepolia.
+  - `erc20({ tokens: [USDC, PEPE] })`: Enables ERC20 token operations for USDC and PEPE. We will need to review and potentially replace these tokens with relevant ERC20 tokens on Celo Sepolia.
 
 **4. Command Line Interface and AI Interaction Loop:**
 
@@ -118,9 +118,9 @@ const tools = await getOnChainTools({
 
 - **Interactive Loop:** This section sets up the command-line interface and the AI interaction loop, identical to previous examples, using `generateText` to process prompts and interact with the configured tools.
 
-### Setup Guide for Celo Token Sending Agent
+### Setup Guide for Celo Sepolia Token Sending Agent
 
-Follow these steps to set up the AI-powered token sending agent on Celo:
+Follow these steps to set up the AI-powered token sending agent on Celo Sepolia:
 
 **1. Clone Repository and Navigate to Example Directory:**
 
@@ -134,16 +134,19 @@ cp .env.template .env
 
 Copy `.env.template` to `.env` and populate the following environment variables in the `.env` file:
 
-- **`OPENAI_API_KEY`**: Your OpenAI API key from [OpenAI](https://www.google.com/url?sa=E&source=gmail&q=https://platform.openai.com/).
+- **`OPENAI_API_KEY`**: Your OpenAI API key from [OpenAI](https://platform.openai.com/).
 - **`WALLET_PRIVATE_KEY`**: Your private key for the wallet that will send tokens on Celo. **Security Best Practices:** Use a test wallet and handle private keys with extreme caution.
-- **`RPC_PROVIDER_URL`**: The RPC URL for the Celo network. Use a Celo Alfajores Testnet RPC URL for testing (e.g., `https://alfajores-forno.celo-testnet.org`). Refer to previous articles for more Celo RPC options.
+- **`RPC_PROVIDER_URL`**: The RPC URL for the Celo Sepolia network. Use a Celo Sepolia RPC URL for testing (e.g., `https://forno.celo-sepolia.celo-testnet.org/`). Refer to previous articles for more Celo Sepolia RPC options.
 
-**Example `.env` file (for Celo Alfajores Testnet):**
+**Example `.env` file (for Celo Sepolia Testnet):**
 
-```
+```text
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_PROVIDER_URL=[https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
+RPC_PROVIDER_URL=[https://forno.celo-sepolia.celo-testnet.org/](https://forno.celo-sepolia.celo-testnet.org/)
 ```
 
 **Note:** We only need `OPENAI_API_KEY`, `WALLET_PRIVATE_KEY`, and `RPC_PROVIDER_URL` for this token sending agent.
@@ -153,7 +156,7 @@ RPC_PROVIDER_URL=[https://alfajores-forno.celo-testnet.org](https://alfajores-fo
 1.  **Chain Configuration:** In `index.ts`, replace `baseSepolia` with `celo` from `viem/chains`:
 
     ```javascript
-    import { celo } from "viem/chains"; // Import Celo chain
+    import { celoSepolia } from "viem/chains"; // Import Celo chain
 
     // ...
 
@@ -224,5 +227,5 @@ Enter your prompt (or "exit" to quit): exit
 
 ### Conclusion
 
-This tutorial has guided you through building an AI-powered agent capable of sending tokens on the Celo blockchain. By adapting the provided code, configuring for Celo, and utilizing the `@goat-sdk/wallet-evm` and `@goat-sdk/plugin-erc20` tools, you can create an interactive agent that can understand natural language prompts to send both native CELO and ERC20 tokens. Remember to test thoroughly on the Celo Alfajores Testnet before using on Mainnet and always handle private keys securely. Explore the `@goat-sdk` documentation to understand more advanced configurations and error handling for your token sending agent on Celo!
+This tutorial has guided you through building an AI-powered agent capable of sending tokens on the Celo Sepolia blockchain. By adapting the provided code, configuring for Celo Sepolia, and utilizing the `@goat-sdk/wallet-evm` and `@goat-sdk/plugin-erc20` tools, you can create an interactive agent that can understand natural language prompts to send both native CELO and ERC20 tokens. Remember to test thoroughly on the Celo Sepolia Testnet before using on Mainnet and always handle private keys securely. Explore the `@goat-sdk` documentation to understand more advanced configurations and error handling for your token sending agent on Celo!
 

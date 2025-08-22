@@ -154,14 +154,14 @@ Copy .env.template to .env and populate the following environment variables:
 
 - **OPENAI_API_KEY**: Your OpenAI API key from OpenAI.
 - **WALLET_PRIVATE_KEY**: Your private key for the wallet that will mint NFTs on Celo. Security Best Practices: Use a test wallet and handle private keys with extreme caution.
-- **RPC_PROVIDER_URL**: The RPC URL for the Celo network (e.g., Celo Alfajores Testnet: https://alfajores-forno.celo-testnet.org). See previous articles for more Celo RPC options.
+- **RPC_PROVIDER_URL**: The RPC URL for the Celo network (e.g., Celo Sepolia Testnet: https://forno.celo-sepolia.celo-testnet.org/). See previous articles for more Celo RPC options.
 
-Example .env file (for Celo Alfajores Testnet):
+Example .env file (for Celo Sepolia Testnet):
 
 ```
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_PROVIDER_URL=https://alfajores-forno.celo-testnet.org
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
 ```
 
 #### 3. Adapt Code for Celo and NFT Minting:

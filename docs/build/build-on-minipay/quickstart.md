@@ -49,7 +49,7 @@ npx @celo/celo-composer@latest create -t minipay
 
 ## 3. Get Testnet Tokens
 
-Request testnet tokens from the Celo [faucet](https://faucet.celo.org/) to test your Mini App.
+Request testnet tokens from the Celo [faucet](https://faucet.celo.org/celo-sepolia/) to test your Mini App.
 
 ## 4. Test your Mini App inside MiniPay
 

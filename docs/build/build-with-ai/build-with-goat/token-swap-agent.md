@@ -181,7 +181,7 @@ Edit the `.env` file to include:
 OPENAI_API_KEY=your_openai_api_key
 WALLET_PRIVATE_KEY=your_wallet_private_key
 RPC_PROVIDER_URL=https://forno.celo.org  # Celo Mainnet
-# or use https://alfajores-forno.celo-testnet.org for Testnet
+# or use https://forno.celo-sepolia.celo-testnet.org/ for Testnet
 UNISWAP_BASE_URL=provided_value  # Will be populated from template
 UNISWAP_API_KEY=provided_value   # Will be populated from template
 ```
