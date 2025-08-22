@@ -11,6 +11,11 @@ Get started with Celo Alfajores Testnet (Celo's Developer Testnet).
 
 ## What is the Alfajores Testnet?
 
+:::tip New Celo Sepolia Testnet Now Live!
+Try Celo's new developer testnet on Ethereum Sepolia.
+[Learn more →](/cel2/notices/celo-sepolia-launch)
+:::
+
 The **Alfajores Testnet** is Celo’s primary public developer testnet, providing a stable environment for developers to build, test, and deploy decentralized applications before launching on Mainnet. Developers can access testnet funds via the [faucet](https://faucet.celo.org/alfajores), interact with smart contracts, and experiment with wallets, dApps, and node operations without financial risk.
 
 The full network information is available [in the network overview](/network#celo-alfajores-testnet).

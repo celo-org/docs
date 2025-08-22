@@ -208,7 +208,7 @@ const Users: User[] = [
     title: 'Run a Full Node',
     description: 'Set up and run your own node on the Celo Network.',
     preview: require('./showcase/integrations/run-a-full-node.webp'),
-    website: '/network/node/run-mainnet',
+    website: '/cel2/operators/run-node',
     tags: ['integrations'],
   },
   {
@@ -220,7 +220,7 @@ const Users: User[] = [
   },
   {
     title: 'Network Details',
-    description: 'Overview of Celo Mainnet, Alfajores Testnet, and Baklava Testnet.',
+    description: 'Overview of Celo Mainnet and Celo testnets.',
     preview: require('./showcase/integrations/network-details.webp'),
     website: '/network',
     tags: ['integrations'],

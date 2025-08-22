@@ -7,13 +7,6 @@ import PageRef from '@components/PageRef'
 
 Cross-Chain Messaging enables seamless communication and data transfer between different blockchain networks, allowing decentralized applications (dApps) to interact and share information across multiple ecosystems.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ## Chainlink CCIP
 
 [Chainlink Cross-Chain Interoperability Protocol (CCIP)](https://chain.link/cross-chain) is a decentralized messaging protocol designed to enable secure and seamless communication between different blockchain networks. Built on Chainlink's proven oracle infrastructure, CCIP allows smart contracts to send and receive messages, data, and tokens across chains, facilitating cross-chain decentralized finance (DeFi), interoperability, and multi-chain application development.

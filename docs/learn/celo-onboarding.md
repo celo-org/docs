@@ -7,13 +7,6 @@ description: Learn the basics of the Celo platform.
 
 Learn the basics of the Celo platform.
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## What is Celo?
@@ -51,8 +44,8 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 - [Valora](https://valoraapp.com/)
 - [Get CELO](https://celohub.org/purchase)
-- [Get Test Funds](https://faucet.celo.org)
-- [Block Explorer](https://explorer.celo.org/)
+- [Get Test Funds](https://faucet.celo.org/celo-sepolia)
+- [Block Explorer](https://celo.blockscout.com/)
 
 ## Connect with the Community
 

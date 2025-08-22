@@ -629,7 +629,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.architecture.description",
                 }),
                 "img/homepage/icons/Architechture_White.svg",
-                "/what-is-celo/about-celo-l1/l1-architecture",
+                "/cel2/whats-changed/cel2-architecture",
               )}
 
               {sectionFourCard(
@@ -649,7 +649,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.protocol.description",
                 }),
                 "img/homepage/icons/Protocol_White.svg",
-                "/what-is-celo/about-celo-l1/protocol",
+                "/what-is-celo/using-celo/protocol",
               )}
             </div>
 
@@ -706,7 +706,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.faucet.description",
                 }),
                 "img/homepage/icons/CeloComposer_White.svg",
-                "https://faucet.celo.org/alfajores",
+                "https://faucet.celo.org",
               )}
 
               {sectionFourCard(

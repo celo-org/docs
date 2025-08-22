@@ -8,12 +8,6 @@ description: Overview of the similarities and differences between the Celo and E
 Overview of the similarities and differences between the Celo and Ethereum blockchains.
 
 ---
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
 
 :::tip
 
@@ -70,7 +64,7 @@ It can include additional functions and events and still be ERC20 compliant.
 This interface is relevant for two important assets on the Celo network, the Celo native asset (CELO) and the Celo Dollar (cUSD).
 
 CELO was called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold in the codebase.
-CELO and cGLD are the same thing. You can [view the CELO implementation here.](https://explorer.celo.org/address/0x8dd4f800851db9dc219fdfaeb82f8d69e2b13582/contracts)
+CELO and cGLD are the same thing. You can [view the CELO implementation here.](https://celo.blockscout.com/address/0x8dd4f800851db9dc219fdfaeb82f8d69e2b13582/contracts)
 
 CELO has an ERC20 interface, so users can interact with CELO via the token standard, but it is important to note that not all CELO transfers are required to go through the token contract.
 CELO can also be transferred by specifying the value field of a transaction, in the same way that ETH can be transferred in Ethereum.
@@ -78,7 +72,7 @@ To properly monitor balance changing operations of CELO, it can be helpful to us
 Celo Rosetta provides an easy way to obtain changes that are not easily queryable using the celo-blockchain RPC.
 
 The Celo Dollar (cUSD) is implemented solely as a smart contract, so all cUSD actions are mediated by the smart contract.
-You can [view the implementation here.](https://explorer.celo.org/address/0xaa933baf03cfc55b8e4e0d7de479bcc12f189352/contracts)
+You can [view the implementation here.](https://celo.blockscout.com/address/0xaa933baf03cfc55b8e4e0d7de479bcc12f189352/contracts)
 
 ## Key differences between Celo and Ethereum
 

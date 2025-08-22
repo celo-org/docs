@@ -7,13 +7,6 @@ description: How to deploy a Smart Contract to Celo using Foundry
 
 How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Foundry](https://book.getfoundry.sh/).
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## Introduction to Foundry
@@ -101,7 +94,7 @@ Add the following configuration to `foundry.toml` file in the root level of your
 
 ```toml
 [rpc_endpoints]
-celo-alfajores = "https://alfajores-forno.celo-testnet.org"
+celo-sepolia = "https://forno.celo-sepolia.celo-testnet.org/"
 celo = "https://forno.celo.org"
 ```
 
@@ -109,10 +102,10 @@ celo = "https://forno.celo.org"
 
 Forge can deploy smart contracts to a given network using:
 
-The below example deploys `Counter` contract at location `src/Counter.sol` in the project to the Celo Alfajores Testnet.
+The below example deploys `Counter` contract at location `src/Counter.sol` in the project to the Celo Sepolia Testnet.
 
 ```bash
-forge create --rpc-url celo-alfajores --private-key <your_private_key> src/Counter.sol:Counter
+forge create --rpc-url celo-sepolia --private-key <your_private_key> src/Counter.sol:Counter
 ```
 
 :::info

@@ -7,13 +7,6 @@ description: How to deploy a Smart Contract to Celo using remix.ethereum.org.
 
 How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Remix](https://remix.ethereum.org/).
 
-:::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
-:::
-
 ---
 
 ## Introduction to Remix
@@ -35,7 +28,7 @@ The EVM version used by the selected environment is not compatible with the comp
 
 A **workaround** is to go into the advanced settings for the compiler in Remix and choose Paris as the EVM version.
 
-For Alfajores L2 everything should be working as on every other EVM compatible chain.
+For Celo Sepolia everything should be working as on every other EVM compatible chain.
 :::
 
 :::tip
@@ -67,7 +60,7 @@ To learn more about the features available to you as a smart contract developer 
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (44787) network** for Celo Alfajores testnet
+  - **Custom (11142220) network** for Celo Sepolia testnet
   - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 
@@ -85,7 +78,7 @@ To learn more about the features available to you as a smart contract developer 
 ## View Contract Details
 
 - Copy the contract address from the **Deployed Contracts** window on the left panel.
-- Navigate to the [Celo Block Explorer](https://explorer.celo.org/) and use the contract address to search for your contract.
+- Navigate to the [Celo Block Explorer](https://celo.blockscout.com/) and use the contract address to search for your contract.
 - Explore the details of your deployed smart contract and learn more about the explorer [here](http://docs.blockscout.com).
 
 ![github](/img/doc-images/deploy-remix/image6.png)
