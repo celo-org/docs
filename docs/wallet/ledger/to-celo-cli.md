@@ -39,18 +39,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="celo-sepolia" label="Celo Sepolia Testnet" default>
-    Configure the Celo CLI so that it uses a cLabs node on the Celo Sepolia network.
-
-    ```bash
-    celocli config:set --node https://forno.celo-sepolia.celo-testnet.org/
-    ```
-  </TabItem>
   <TabItem value="mainnet" label="Celo Mainnet" default>
     Configure the Celo CLI so that it uses a cLabs node on the Celo network.
 
     ```bash
     celocli config:set --node https://forno.celo.org/
+    ```
+  </TabItem>
+  <TabItem value="celo-sepolia" label="Celo Sepolia Testnet" default>
+    Configure the Celo CLI so that it uses a cLabs node on the Celo Sepolia network.
+
+    ```bash
+    celocli config:set --node https://forno.celo-sepolia.celo-testnet.org/
     ```
   </TabItem>
 </Tabs>
