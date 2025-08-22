@@ -18,6 +18,6 @@ Here are lists of all on-chain Oracles:
 - [Supra](https://supraoracles.com/)
 - [Pyth Network](https://pyth.network/)
   - Randomness
-- [Witnet](https://witnet.io/)
-  - Randomness
+- [Witnet](/developer/oracles/wit-oracle)
+  - [Randomness](/developer/oracles/wit-oracle/#how-to-use-witnetrandomness)
 - [Quex Oracles](/developer/oracles/quex-oracles)
