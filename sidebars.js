@@ -715,6 +715,11 @@ const buildOnCeloSidebar = [
       },
       {
         type: "doc",
+        label: "Multi-Agent Systems",
+        id: "build/build-with-ai/multi-agent-systems",
+      },
+      {
+        type: "doc",
         label: "Use Cases",
         id: "build/build-with-ai/usecases",
       },

@@ -1,11 +1,11 @@
 ---
-title: Multi-Agent System
+title: Multi-Agent Systems
 description: A production-grade multi-agent system built with LangGraph and LangChain, featuring a web search agent and a Celo blockchain agent powered by Google's Gemini.
 ---
 import YouTube from '@components/YouTube';
 
 
-# Multi-Agent System
+# Multi-Agent Systems
 
 Learn how to build a [production-grade multi-agent system](https://github.com/celo-org/example-multi-agent-system) built with LangGraph and LangChain, featuring a web search agent and a Celo blockchain agent powered by Google's Gemini.
 
