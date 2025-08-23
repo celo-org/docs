@@ -88,7 +88,7 @@ The Celo CLI needs an RPC address. You can use the Celo Community RPC gateway wi
 You can use the Celo CLI with a Ledger hardware wallet (see [CLI docs](/wallet/ledger/to-celo-cli)) or pass a private key directly with the `--privateKey` flag. Both options work with any transaction-signing command.
 :::
 
-### Seting Up the Node Account
+### Setting Up the Node Account
 
 #### Lock CELO
 
