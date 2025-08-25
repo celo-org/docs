@@ -60,7 +60,7 @@ The following files are required to run the Envio indexer:
 
 These files are auto-generated according to the template and language chosen by running the `envio init` command. 
 
-#### Intialize your indexer
+#### Initialize your indexer
 
 `cd` into the folder of your choice and run
 ```bash

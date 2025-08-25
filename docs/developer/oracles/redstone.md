@@ -5,7 +5,7 @@ description: Tutorial on how to use the RedStone oracles on Celo
 
 import ImageWrapper from '@components/ImageWrapper'
 
-By the end of this tutorial you will understand how to intergrate your dApp built on Celo with RedStone oracles.
+By the end of this tutorial you will understand how to integrate your dApp built on Celo with RedStone oracles.
 
 This document will cover:
 
