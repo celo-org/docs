@@ -13,7 +13,7 @@ View and manage Validator Groups
 * [`celocli validatorgroup:rpc-urls`](#celocli-validatorgrouprpc-urls)
 * [`celocli validatorgroup:show ARG1`](#celocli-validatorgroupshow-arg1)
 
-## `celocli validatorgroup:commission`
+## `celocli validatorgroup:commission` {#celocli-validatorgroupcommission}
 
 Manage the commission for a registered Validator Group. This represents the share of the epoch rewards given to elected Validators that goes to the group they are a member of. Updates must be made in a two step process where the group owner first calls uses the queue-update option, then after the required update delay, the apply option. The commission update delay, in blocks, can be viewed with the network:parameters command. A groups next commission update block can be checked with validatorgroup:show
 
@@ -83,9 +83,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/commission.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/commission.js)_
+_See code: [src/commands/validatorgroup/commission.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/commission.ts)_
 
-## `celocli validatorgroup:community-rpc-nodes`
+## `celocli validatorgroup:community-rpc-nodes` {#celocli-validatorgroupcommunity-rpc-nodes}
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -132,7 +132,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli validatorgroup:deregister`
+## `celocli validatorgroup:deregister` {#celocli-validatorgroupderegister}
 
 Deregister a Validator Group. After the group lock perioid has passed it will be possible to deregister it start unlocking the CELO. If you wish to deregister your validator group, you must first remove all members, then wait the required time before running this command.
 
@@ -192,9 +192,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/deregister.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/deregister.js)_
+_See code: [src/commands/validatorgroup/deregister.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/deregister.ts)_
 
-## `celocli validatorgroup:list`
+## `celocli validatorgroup:list` {#celocli-validatorgrouplist}
 
 List registered Validator Groups, their names (if provided), commission, and members.
 
@@ -234,9 +234,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/list.js)_
+_See code: [src/commands/validatorgroup/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/list.ts)_
 
-## `celocli validatorgroup:member ARG1`
+## `celocli validatorgroup:member ARG1` {#celocli-validatorgroupmember-arg1}
 
 Add or remove members from a Validator Group
 
@@ -312,9 +312,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/member.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/member.js)_
+_See code: [src/commands/validatorgroup/member.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/member.ts)_
 
-## `celocli validatorgroup:register`
+## `celocli validatorgroup:register` {#celocli-validatorgroupregister}
 
 Register a new Validator Group
 
@@ -378,9 +378,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/register.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/register.js)_
+_See code: [src/commands/validatorgroup/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/register.ts)_
 
-## `celocli validatorgroup:reset-slashing-multiplier ARG1`
+## `celocli validatorgroup:reset-slashing-multiplier ARG1` {#celocli-validatorgroupreset-slashing-multiplier-arg1}
 
 Reset validator group slashing multiplier.
 
@@ -436,9 +436,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/reset-slashing-multiplier.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/reset-slashing-multiplier.js)_
+_See code: [src/commands/validatorgroup/reset-slashing-multiplier.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/reset-slashing-multiplier.ts)_
 
-## `celocli validatorgroup:rpc-urls`
+## `celocli validatorgroup:rpc-urls` {#celocli-validatorgrouprpc-urls}
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -485,9 +485,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/rpc-urls.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/rpc-urls.js)_
+_See code: [src/commands/validatorgroup/rpc-urls.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/rpc-urls.ts)_
 
-## `celocli validatorgroup:show ARG1`
+## `celocli validatorgroup:show ARG1` {#celocli-validatorgroupshow-arg1}
 
 Show information about an existing Validator Group
 
@@ -519,4 +519,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/validatorgroup/show.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/validatorgroup/show.js)_
+_See code: [src/commands/validatorgroup/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/show.ts)_
