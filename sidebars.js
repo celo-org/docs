@@ -72,6 +72,16 @@ const whatIsCeloSidebar = [
           },
           {
             type: "doc",
+            label: "EigenDA",
+            id: "what-is-celo/using-celo/protocol/eigenda",
+          },
+          {
+            type: "doc",
+            label: "Native Bridging",
+            id: "what-is-celo/using-celo/protocol/native-bridging",
+          },
+          {
+            type: "doc",
             label: "Escrow",
             id: "what-is-celo/using-celo/protocol/escrow",
           },
