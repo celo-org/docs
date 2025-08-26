@@ -179,7 +179,7 @@ RPC_PROVIDER_URL=[https://forno.celo-sepolia.celo-testnet.org/](https://forno.ce
 
     If `sendCELO()` is not directly available in `@goat-sdk/wallet-evm`, it's likely that `sendETH()` is designed to be chain-aware and will send the native token of the configured chain (`celo` in this case). In that case, you might not need to change `sendETH()`. **Test sending CELO after setup to confirm if `sendETH()` works for CELO or if you need to find an alternative.** If `sendETH()` does not work for CELO, you might need to create a custom tool using `viem`'s `sendTransaction` function to send CELO directly.
 
-3.  **Review ERC20 Tokens for Celo:** `USDC` and `PEPE` might not be ideal for Celo. Research popular ERC20 tokens on Celo Alfajores Testnet or Celo Mainnet (e.g., `cUSD`, `cEUR`, `USDT`, `DAI` on Celo). Update the `erc20` plugin configuration with relevant tokens:
+3.  **Review ERC20 Tokens for Celo:** `USDC` and `PEPE` might not be ideal for Celo. Research popular ERC20 tokens on Celo Sepolia Testnet or Celo Mainnet (e.g., `cUSD`, `cEUR`, `USDT`, `DAI` on Celo). Update the `erc20` plugin configuration with relevant tokens:
 
     ```javascript
     erc20({ tokens: [cUSD, cEUR, USDT] }), // Example: Use cUSD, cEUR, USDT if relevant on Celo
