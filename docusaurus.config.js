@@ -231,48 +231,23 @@ module.exports = {
             },
             {
               label: "Twitter",
-              href: "https://twitter.com/CeloOrg",
+              href: "https://x.com/Celo",
             },
             {
               label: "Reddit",
               href: "https://www.reddit.com/r/celo/",
             },
             {
-              href: "https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j",
-              label: "Celo Signal Mailing List",
+              label: "YouTube",
+              href: "https://www.youtube.com/@CeloOrg",
             },
             {
-              href: "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
-              label: "Celo Signal Calendar",
+              label: "Events",
+              href: "https://lemonade.social/celo",
             },
             {
-              href: "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
-              label: "Community Calendar",
-            },
-          ],
-        },
-        {
-          title: "Ecosystem",
-          items: [
-            {
-              label: "Celo Foundation",
-              href: "https://celo.org",
-            },
-            {
-              label: "Medium Blog",
-              href: "https://medium.com/celoorg",
-            },
-            {
-              label: "The Celo",
-              href: "https://thecelo.com/",
-            },
-            {
-              label: "Celo Hub",
-              href: "https://celohub.org/",
-            },
-            {
-              label: "Careers",
-              href: "https://celo.org/careers",
+              label: "Discord",
+              href: "https://discord.com/invite/celo",
             },
           ],
         },
