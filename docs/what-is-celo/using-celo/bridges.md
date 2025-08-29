@@ -34,16 +34,15 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 ### Native Bridges
 
-
 Native bridging refers to the process of transferring assets directly between the L2 (Celo) and the underlying L1 (Ethereum) without the need for intermediary networks or tokens.
 This method is designed to be more secure, efficient and cost-effective, leveraging the security and scalability of L2 solutions.
 
 - [Superbridge Celo Mainnet](https://superbridge.app/celo)
+- [Superbridge Celo Sepolia Testnet](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220)
 - [Superbridge Alfajores Testnet](https://testnets.superbridge.app/celo-alfajores)
 - [Superbridge Baklava Testnet](https://testnets.superbridge.app/celo-baklava)
 
 Follow [this guide](/what-is-celo/using-celo/native-ETH-bridging) to learn how to bridge native ETH and have it auto-wrapped to WETH on Celo.
-
 
 #### Natively Bridged Tokens on Mainnet
 

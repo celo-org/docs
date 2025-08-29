@@ -8,10 +8,7 @@ description: Overview of Validator elections for Validator groups including tech
 Resources for Validator Groups elections including technical details, policies, and Validator explorers.
 
 :::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::
 
 ---
@@ -38,7 +35,7 @@ If you hold CELO, or are a beneficiary of a [`ReleaseGold` contract](/what-is-ce
 
 CELO that you lock and use to vote for a group that elects one or more Validators receives [epoch rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards) every epoch (approximately every day) once the community passes a governance proposal enabling rewards. The initial level of rewards is anticipated to be around 6% per annum equivalent (but is subject to change).
 
-Unlike a number of Proof of Stake protocols, **CELO used for voting is never at risk**. The actions of the Validator Groups or Validators you vote for can cause you to receive lower or higher rewards, but the CELO you locked will always be available to be unlocked in the future. [Slashing](/what-is-celo/using-celo/glossary#slashing) in the Celo protocol applies only to Validators and Validator Groups.
+Unlike a number of Proof of Stake protocols, **CELO used for voting is never at risk**. The actions of the Validator Groups or Validators you vote for can cause you to receive lower or higher rewards, but the CELO you locked will always be available to be unlocked in the future. [Slashing](/glossary#slashing) in the Celo protocol applies only to Validators and Validator Groups.
 
 ## Choosing a Validator Group
 

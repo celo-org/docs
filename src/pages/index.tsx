@@ -145,7 +145,7 @@ export default function HomePage(): JSX.Element {
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
-              href="/developer/build/mcp"
+              href="/build/mcp"
               target="_blank"
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
             >
@@ -629,7 +629,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.architecture.description",
                 }),
                 "img/homepage/icons/Architechture_White.svg",
-                "/what-is-celo/about-celo-l1/l1-architecture",
+                "/cel2/whats-changed/cel2-architecture",
               )}
 
               {sectionFourCard(
@@ -649,7 +649,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.protocol.description",
                 }),
                 "img/homepage/icons/Protocol_White.svg",
-                "/what-is-celo/about-celo-l1/protocol",
+                "/what-is-celo/using-celo/protocol",
               )}
             </div>
 
@@ -706,7 +706,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.faucet.description",
                 }),
                 "img/homepage/icons/CeloComposer_White.svg",
-                "https://faucet.celo.org/alfajores",
+                "https://faucet.celo.org",
               )}
 
               {sectionFourCard(

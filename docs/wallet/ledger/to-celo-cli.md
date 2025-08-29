@@ -27,13 +27,7 @@ And if not, upgrade by running the same command as above.
 
 You will now need to point the Celo CLI to a node that is synchronized with one of Celo’s networks.
 
-#### Configure for Celo Mainnet
-
-Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
-
-```bash
-celocli config:set --node https://forno.celo.org/
-```
+#### Configure the network
 
 :::danger
 
@@ -41,19 +35,25 @@ Connecting celocli to an untrusted node may allow that node to influence the tra
 
 :::
 
-#### Configure for Celo Alfajores Testnet
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
+<Tabs>
+  <TabItem value="mainnet" label="Celo Mainnet" default>
+    Configure the Celo CLI so that it uses a cLabs node on the Celo network.
 
-```bash
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
-```
+    ```bash
+    celocli config:set --node https://forno.celo.org/
+    ```
+  </TabItem>
+  <TabItem value="celo-sepolia" label="Celo Sepolia Testnet" default>
+    Configure the Celo CLI so that it uses a cLabs node on the Celo Sepolia network.
 
-:::danger
-
-Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
-
-:::
+    ```bash
+    celocli config:set --node https://forno.celo-sepolia.celo-testnet.org/
+    ```
+  </TabItem>
+</Tabs>
 
 #### Check that the node is synchronized to Celo CLI:
 
@@ -97,9 +97,9 @@ celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 
 Before using your address on the Celo Mainnet, you may want to test it on the Celo Alfajores Testnet with the following instructions.
 
-Visit the Alfajores Faucet and send yourself some testnet CELO at the following URL:
+Visit the Celo Sepolia Faucet and send yourself some testnet CELO at the following URL:
 
-https://faucet.celo.org
+https://faucet.celo.org/celo-sepolia
 
 Check that you received the funds with the following command:
 
@@ -143,7 +143,7 @@ This will display the specific account balance for your address on Celo Mainnet.
 
 In order to receive Celo on your address, whether it's CELO or cUSD or any Mento stablecoin in the future, you must share your specific address with the sender.
 
-Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://explorer.celo.org/).
+Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://celo.blockscout.com/).
 
 ## Send Crypto Assets
 

@@ -43,7 +43,6 @@ Valora is a non-custodial multichain mobile wallet focused on helping users save
 - Ledger support: No
 - [Source Code](https://github.com/valora-inc/wallet)
 
-
 ---
 
 ### [Celo Terminal](https://celoterminal.com/)
@@ -55,8 +54,6 @@ Celo Terminal is a wallet and dApp platform designed as a hub for managing and r
 - Maintainers: [WOTrust](https://x.com/wotrust1)
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
-
-
 
 ---
 
@@ -125,7 +122,6 @@ Supports over 130 blockchains, including CELO. Enables users to store, trade, an
 - Maintainers: [OKX](https://okx.com/)
 - Source code is not available, although there are two repositories related and useful for developers: https://github.com/okx/go-wallet-sdk and https://github.com/okx/js-wallet-sdk
 
-
 ---
 
 ### [Gem Wallet](https://gemwallet.com/)
@@ -159,7 +155,6 @@ Gem Wallet is a mobile wallet available on Android and iOS designed for DeFi. It
 - Platforms: iOS, Android
 
 ---
-
 
 ### [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
 
@@ -280,3 +275,4 @@ Zerion Wallet is a non-custodial wallet for crypto that gives you access to a br
 - Platforms: Browser, iOS, Android
 - [Source Code](https://developers.zerion.io/reference/getting-started)
 
+---
