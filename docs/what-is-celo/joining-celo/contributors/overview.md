@@ -14,7 +14,6 @@ Our community welcomes contributors with diverse skills:
 - [**Code Contributors**](./code-contributors.md) - Developers who improve Celo's protocol and infrastructure
 - [**CIP Contributors**](./cip-contributors.md) - Authors of Celo Improvement Proposals
 - [**Documentation Contributors**](./documentation-contributors.md) - Writers who create and maintain technical documentation
-- **Tutorial Authors** - Community members who share experiences and create educational content
 
 ## General Contribution Guidelines
 
