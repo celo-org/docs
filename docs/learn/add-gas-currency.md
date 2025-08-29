@@ -71,7 +71,7 @@ An example of such proposal [can be found here](https://github.com/celo-org/gove
 
 #### Creating an equivalent Oracle
 
-SortedOracles supports flagging two tokens as "equivalent". This is example do that no new oracle has to be deployed and useful for fiat-backed stablecoins. [Here is an exampl](https://github.com/celo-org/governance/pull/419/files#diff-ba5ba5397b269ceb4b93f3876bedabac605daeec083a364a270675242fe7c424)e of this approach. Using this approach, it is not needed to submit to proposals and can be done in only one.
+SortedOracles supports flagging two tokens as "equivalent". This way, no new oracle has to be deployed, which is useful for fiat-backed stablecoins. [Here is an example](https://github.com/celo-org/governance/pull/419/files#diff-ba5ba5397b269ceb4b93f3876bedabac605daeec083a364a270675242fe7c424) of this approach. Using this approach, it is not needed to submit two proposals, the change can be done in only one.
 
 ##### Reporting
 
@@ -79,7 +79,7 @@ Before submitting the second proposal, at least one of the oracle addresses need
 
 ### Enabling as Gas Token
 
-The second proposal enables the gas token by calling `FeeCurrencyDirectory.setCurrencyConfig(address token, address oracle, uint256 intrinsicGas)`. `intrinsicGas` is the estimated average amount of gas used by the functions `creditGasFees(...)`and `debitGasFees(...)`. A benchmark is recommended as an attachment to the governance proposal.
+The second proposal enables the gas token by calling `FeeCurrencyDirectory.setCurrencyConfig(address token, address oracle, uint256 intrinsicGas)`. `intrinsicGas` is the estimated average amount of gas used by the functions `creditGasFees(...)` and `debitGasFees(...)`. A benchmark is recommended as an attachment to the governance proposal.
 
 After this proposal passes, EOAs should be able to pay for gas in the enabled token.
 
