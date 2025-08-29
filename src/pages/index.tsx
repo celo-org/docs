@@ -706,7 +706,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.faucet.description",
                 }),
                 "img/homepage/icons/CeloComposer_White.svg",
-                "https://faucet.celo.org/alfajores",
+                "https://faucet.celo.org",
               )}
 
               {sectionFourCard(

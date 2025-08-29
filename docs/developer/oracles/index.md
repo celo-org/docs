@@ -13,11 +13,11 @@ Here are lists of all on-chain Oracles:
 
 - [RedStone Oracles](/developer/oracles/redstone)
 - [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
-- [Band Protocol](/developer/oracles/band-protocol)
+- [Band](/developer/oracles/band-protocol)
 - [Celo Reserve Oracles](/what-is-celo/about-celo-l1/protocol/stability/oracles)
 - [Supra](https://supraoracles.com/)
 - [Pyth Network](https://pyth.network/)
   - Randomness
-- [Witnet](https://witnet.io/)
-  - Randomness
+- [Witnet](/developer/oracles/wit-oracle)
+  - [Randomness](/developer/oracles/wit-oracle/#how-to-use-witnetrandomness)
 - [Quex Oracles](/developer/oracles/quex-oracles)

@@ -1,34 +1,19 @@
 ---
-title: Run a Celo Full Node
-description: How to run a full node on the Celo Mainnet Network using a prebuilt Docker image.
+title: Run an Alfajores Full Node on Celo
+description: How to run a full node on the Alfajores Network using a prebuilt Docker image.
 ---
 
-# Run a Full Node
+# Run an Alfajores Full Node
 
-How to run on the Mainnet Network using a prebuilt Docker image.
+How to run a full node on the Alfajores Network using a prebuilt Docker image.
 
 :::warning
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
-
-For the most up-to-date information, refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+This page describes the historical Celo Layer 1 blockchain. It is useful for understanding Celo’s history, but does not reflect the current state of the network. As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
 :::
 
 ---
 
-:::tip Hosted Nodes
-
-If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.
-
-:::
-
-:::info
-
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
-
-You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-
-:::
+## What is a Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
 
@@ -38,7 +23,7 @@ Full nodes play a special purpose in the Celo ecosystem, acting as a bridge betw
 
 :::info
 
-Code you'll see on this page is bash commands and their output.
+The code you'll see on this page is bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
 
@@ -46,10 +31,10 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 ## Celo Networks
 
-First we are going to setup the environment variables required for the `mainnet` network. Run:
+First, we are going to setup the environment variables required for `Alfajores` network. Run:
 
 ```bash
-export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet
+export CELO_IMAGE=us.gcr.io/celo-org/geth:alfajores
 ```
 
 ## Pull the Celo Docker image
@@ -81,9 +66,9 @@ Run the command to create a new account:
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
 ```
 
-It will prompt you for a passphrase, ask you to confirm it, and then will output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
+It will prompt you for a passphrase, ask you to confirm it, and then output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
 
-Save this address to an environment variables, so that you can reference it below (don't include the braces):
+Save this address to an environment variable, so that you can reference it below (don't include the braces):
 
 ```bash
 export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
@@ -100,7 +85,7 @@ This environment variable will only persist while you have this terminal window 
 This command specifies the settings needed to run the node, and gets it started.
 
 ```bash
-docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo
+docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --alfajores --datadir /root/.celo
 ```
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has started syncing with the network and is receiving blocks.
@@ -113,7 +98,7 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Block Explorer](https://explorer.celo.org/).
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Alfajores Block Explorer](https://celo-alfajores.blockscout.com/).
 
 :::danger
 
@@ -121,21 +106,9 @@ You will have fully synced with the network once you have pulled the latest bloc
 
 :::
 
-## Running an Archive Node
-
-If you would like to run an archive node for `celo-blockchain`, you can run the following command:
-
-```bash
-docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --gcmode archive --txlookuplimit=0 --cache.preimages --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo
-```
-
-We add the following flags: `--gcmode archive --txlookuplimit=0 --cache.preimages`
-
-In `celo-blockchain`, this is called gcmode which refers to the concept of garbage collection. Setting it to archive basically turns it off.
-
 ## Command Line Interface
 
-Once the full node is running, it can serve the [Command Line Interface](/cli) tool `celocli`. For example:
+Once the full node is running, it can serve the [Command Line Interface](/cli/) tool `celocli`. For example:
 
 ```bash
 $ npm install -g @celo/celocli

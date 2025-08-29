@@ -10,7 +10,7 @@ View details about the network, like contracts and parameters
 * [`celocli network:rpc-urls`](#celocli-networkrpc-urls)
 * [`celocli network:whitelist`](#celocli-networkwhitelist)
 
-## `celocli network:community-rpc-nodes`
+## `celocli network:community-rpc-nodes` {#celocli-networkcommunity-rpc-nodes}
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -57,7 +57,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli network:contracts`
+## `celocli network:contracts` {#celocli-networkcontracts}
 
 Lists Celo core contracts and their addresses.
 
@@ -94,9 +94,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/network/contracts.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/network/contracts.js)_
+_See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/contracts.ts)_
 
-## `celocli network:info`
+## `celocli network:info` {#celocli-networkinfo}
 
 View general network information such as the current block number
 
@@ -123,9 +123,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/network/info.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/network/info.js)_
+_See code: [src/commands/network/info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/info.ts)_
 
-## `celocli network:parameters`
+## `celocli network:parameters` {#celocli-networkparameters}
 
 View parameters of the network, including but not limited to configuration for the various Celo core smart contracts.
 
@@ -153,9 +153,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/network/parameters.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/network/parameters.js)_
+_See code: [src/commands/network/parameters.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/parameters.ts)_
 
-## `celocli network:rpc-urls`
+## `celocli network:rpc-urls` {#celocli-networkrpc-urls}
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -202,7 +202,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli network:whitelist`
+## `celocli network:whitelist` {#celocli-networkwhitelist}
 
 List the whitelisted fee currencies
 
@@ -242,4 +242,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/network/whitelist.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/network/whitelist.js)_
+_See code: [src/commands/network/whitelist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/whitelist.ts)_

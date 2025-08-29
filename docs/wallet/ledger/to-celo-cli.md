@@ -97,9 +97,9 @@ celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 
 Before using your address on the Celo Mainnet, you may want to test it on the Celo Alfajores Testnet with the following instructions.
 
-Visit the Alfajores Faucet and send yourself some testnet CELO at the following URL:
+Visit the Celo Sepolia Faucet and send yourself some testnet CELO at the following URL:
 
-https://faucet.celo.org
+https://faucet.celo.org/celo-sepolia
 
 Check that you received the funds with the following command:
 
@@ -143,7 +143,7 @@ This will display the specific account balance for your address on Celo Mainnet.
 
 In order to receive Celo on your address, whether it's CELO or cUSD or any Mento stablecoin in the future, you must share your specific address with the sender.
 
-Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://explorer.celo.org/).
+Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://celo.blockscout.com/).
 
 ## Send Crypto Assets
 

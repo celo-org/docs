@@ -8,7 +8,7 @@ List oracle addresses for a given token
 * [`celocli oracle:report ARG1`](#celocli-oraclereport-arg1)
 * [`celocli oracle:reports ARG1`](#celocli-oraclereports-arg1)
 
-## `celocli oracle:list ARG1`
+## `celocli oracle:list ARG1` {#celocli-oraclelist-arg1}
 
 List oracle addresses for a given token
 
@@ -44,9 +44,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/oracle/list.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/oracle/list.js)_
+_See code: [src/commands/oracle/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/list.ts)_
 
-## `celocli oracle:remove-expired-reports ARG1`
+## `celocli oracle:remove-expired-reports ARG1` {#celocli-oracleremove-expired-reports-arg1}
 
 Remove expired oracle reports for a specified token
 
@@ -110,9 +110,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/oracle/remove-expired-reports.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/oracle/remove-expired-reports.js)_
+_See code: [src/commands/oracle/remove-expired-reports.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/remove-expired-reports.ts)_
 
-## `celocli oracle:report ARG1`
+## `celocli oracle:report ARG1` {#celocli-oraclereport-arg1}
 
 Report the price of CELO in a specified token
 
@@ -179,9 +179,9 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/oracle/report.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/oracle/report.js)_
+_See code: [src/commands/oracle/report.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/report.ts)_
 
-## `celocli oracle:reports ARG1`
+## `celocli oracle:reports ARG1` {#celocli-oraclereports-arg1}
 
 List oracle reports for a given token
 
@@ -268,4 +268,4 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [lib/commands/oracle/reports.js](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.0.1/packages/cli/lib/commands/oracle/reports.js)_
+_See code: [src/commands/oracle/reports.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/reports.ts)_

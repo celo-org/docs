@@ -30,17 +30,22 @@ const whatIsCeloSidebar = [
               },
               {
                 type: "doc",
+                label: "Governance Toolkit",
+                id: "what-is-celo/using-celo/protocol/governance/governance-toolkit",
+              },
+              {
+                type: "doc",
                 label: "Create a Governance Proposal",
                 id: "what-is-celo/using-celo/protocol/governance/create-governance-proposal",
               },
               {
                 type: "doc",
-                label: "Voting in Governance",
+                label: "CeloCLI for Governance",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance",
               },
               {
                 type: "doc",
-                label: "Voting with Celo Mondo",
+                label: "Vote with Celo Mondo",
                 id: "what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo",
               },
               {
@@ -48,12 +53,12 @@ const whatIsCeloSidebar = [
                 label: "Governable Parameters",
                 id: "what-is-celo/using-celo/protocol/governance/governable-parameters",
               },
+              {
+                type: "doc",
+                label: "Smart Contracts Upgrades",
+                id: "what-is-celo/using-celo/protocol/governance/smart-contracts-upgrades",
+              },
             ],
-          },
-          {
-            type: "doc",
-            label: "Penalties",
-            id: "what-is-celo/using-celo/protocol/penalties",
           },
           {
             type: "doc",
@@ -262,28 +267,31 @@ const whatIsCeloSidebar = [
     label: "Community RPC Nodes",
     collapsed: false,
     items: [
-      // TODO add intro to RPC
       // TODO también está https://docs.celo.org/cel2/operators/run-node?
-      // TODOs
       {
         type: "doc",
-        label: "Registering as a Community RPC Node",
+        label: "How it works",
+        id: "cel2/operators/how-it-works",
+      },
+      {
+        type: "doc",
+        label: "Register as a Community RPC Node",
         id: "cel2/operators/registering-as-rpc-node",
       },
       {
         type: "doc",
-        label: "Operating a Community RPC Node",
+        label: "Operate a Community RPC Node",
         id: "cel2/operators/community-rpc-node",
+      },
+      {
+        type: "doc",
+        label: "Penalties",
+        id: "cel2/operators/penalties",
       },
       {
         type: "doc",
         label: "Community RPC Provider FAQ",
         id: "cel2/operators/validator-rpc-faq",
-      },
-      {
-        type: "doc",
-        label: "How it works",
-        id: "cel2/operators/how-it-works",
       },
       // TODO
       // {
@@ -496,6 +504,27 @@ const whatIsCeloSidebar = [
       },
       {
         type: "category",
+        label: "Nodes",
+        items: [
+          {
+            type: "doc",
+            label: "Mainnet Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-mainnet",
+          },
+          {
+            type: "doc",
+            label: "Alfajores Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-alfajores",
+          },
+          {
+            type: "doc",
+            label: "Baklava Full Node",
+            id: "what-is-celo/about-celo-l1/node/run-baklava",
+          },
+        ],
+      },
+      {
+        type: "category",
         label: "Validator",
         items: [
           {
@@ -517,11 +546,6 @@ const whatIsCeloSidebar = [
                 label: "Mainnet Validator",
                 id: "what-is-celo/about-celo-l1/validator/run/mainnet",
               },
-              // {
-              //   type: "doc",
-              //   label: "Baklava Validator",
-              //   id: "what-is-celo/about-celo-l1/validator/run/baklava",
-              // },
             ],
           },
           {
@@ -691,6 +715,11 @@ const buildOnCeloSidebar = [
       },
       {
         type: "doc",
+        label: "Multi-Agent Systems",
+        id: "build/build-with-ai/multi-agent-systems",
+      },
+      {
+        type: "doc",
         label: "Use Cases",
         id: "build/build-with-ai/usecases",
       },
@@ -807,6 +836,7 @@ const toolingSidebar = [
   { type: "category", label: "Testnets", items: [
     { type: "doc", label: "Alfajores", id: "network/alfajores/index" },
     { type: "doc", label: "Baklava", id: "network/baklava/index" },
+    { type: "doc", label: "Celo Sepolia", id: "network/celo-sepolia/index" },
     { type: "doc", label: "Eclair", id: "network/eclair/index" },
   ] },
   {
@@ -825,35 +855,16 @@ const toolingSidebar = [
       },
       {
         type: "doc",
-        label: "Hosted Nodes",
-        id: "network/node/run-hosted",
-      },
-      {
-        type: "doc",
         label: "Forno",
         id: "network/node/forno",
       },
-      // {
-      //   type: "category",
-      //   label: "Run a Node",
-      //   items: [
-      // {
-      //   type: "doc",
-      //   label: "Mainnet Full Node",
-      //   id: "network/node/run-mainnet",
-      // },
-      // {
-      //   type: "doc",
-      //   label: "Alfajores Full Node",
-      //   id: "network/node/run-alfajores",
-      // },
-      // {
-      //   type: "doc",
-      //   label: "Baklava Full Node",
-      //   id: "network/node/run-baklava",
-      // },
-      //   ],
-      // },
+      {
+        type: "doc",
+        label: "Alchemy",
+        id: "network/node/alchemy",
+      },
+      // Historical L1 node documentation has been moved to:
+      // what-is-celo/about-celo-l1/node/
     ],
   },
   {
@@ -977,7 +988,7 @@ const toolingSidebar = [
       {
         type: "link",
         label: "Blockscout",
-        href: "https://explorer.celo.org/",
+        href: "https://celo.blockscout.com/",
       },
       {
         type: "link",
@@ -1100,27 +1111,6 @@ const toolingSidebar = [
         id: "developer/ethers/index",
       },
       {
-        type: "category",
-        label: "Web3Modal SDK",
-        items: [
-          {
-            type: "doc",
-            label: "Overview",
-            id: "developer/web3modal/index",
-          },
-          {
-            type: "doc",
-            label: "Wagmi",
-            id: "developer/web3modal/wagmi",
-          },
-          {
-            type: "doc",
-            label: "Ethers",
-            id: "developer/web3modal/ethers",
-          },
-        ],
-      },
-      {
         type: "doc",
         label: "Reown",
         id: "developer/reown/index",
@@ -1186,7 +1176,7 @@ const toolingSidebar = [
   {
     type: "link",
     label: "Faucet",
-    href: "https://faucet.celo.org",
+    href: "https://faucet.celo.org/celo-sepolia",
   },
   {
     type: "category",
@@ -1280,6 +1270,11 @@ const celoL2Sidebar = [
     items: [
       {
         type: "doc",
+        label: "Celo Sepolia Testnet Launch",
+        id: "cel2/notices/celo-sepolia-launch",
+      },
+      {
+        type: "doc",
         label: "EigenDA v2 Upgrade",
         id: "cel2/notices/eigenda-v2-upgrade",
       },
@@ -1346,11 +1341,6 @@ const celoL2Sidebar = [
         type: "doc",
         label: "Withdrawing CELO from L2 to L1",
         id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
-      },
-      {
-        type: "doc",
-        label: "Fee Abstraction on Celo L2",
-        id: "cel2/guides/fee-abstraction",
       },
     ],
   },

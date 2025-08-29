@@ -154,14 +154,14 @@ Copy .env.template to .env and populate the following environment variables:
 
 - **OPENAI_API_KEY**: Your OpenAI API key from OpenAI.
 - **WALLET_PRIVATE_KEY**: Your private key for the wallet that will mint NFTs on Celo. Security Best Practices: Use a test wallet and handle private keys with extreme caution.
-- **RPC_PROVIDER_URL**: The RPC URL for the Celo network (e.g., Celo Alfajores Testnet: https://alfajores-forno.celo-testnet.org). See previous articles for more Celo RPC options.
+- **RPC_PROVIDER_URL**: The RPC URL for the Celo network (e.g., Celo Sepolia Testnet: https://forno.celo-sepolia.celo-testnet.org/). See previous articles for more Celo RPC options.
 
-Example .env file (for Celo Alfajores Testnet):
+Example .env file (for Celo Sepolia Testnet):
 
 ```
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_PROVIDER_URL=https://alfajores-forno.celo-testnet.org
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
 ```
 
 #### 3. Adapt Code for Celo and NFT Minting:
@@ -216,7 +216,7 @@ RPC_PROVIDER_URL=https://alfajores-forno.celo-testnet.org
 
 - **NFT Contract Address and ABI**:
 
-  - **nftContractAddress**: You MUST replace "YOUR_NFT_CONTRACT_ADDRESS" with the actual address of your deployed NFT smart contract on the Celo network (Alfajores Testnet or Mainnet).
+  - **nftContractAddress**: You MUST replace "YOUR_NFT_CONTRACT_ADDRESS" with the actual address of your deployed NFT smart contract on the Celo network (Celo Sepolia testnet or Mainnet).
   - **nftContractAbi**: You MUST replace [...] with the ABI (Application Binary Interface) of your NFT smart contract. The ABI defines how to interact with your contract's functions. You can usually get the ABI from your smart contract compilation output (e.g., from Hardhat or Truffle).
 
 - **getContract**: We use viem's getContract function to create a contract instance, allowing us to interact with your deployed NFT contract. We provide the address, abi, and publicClient (or walletClient if you need to send transactions).
@@ -234,7 +234,7 @@ RPC_PROVIDER_URL=https://alfajores-forno.celo-testnet.org
 
 **Important Considerations for mintNFT Implementation:**
 
-- **NFT Contract Deployment**: You need to have a deployed NFT smart contract on Celo (Alfajores or Mainnet) to use this agent. You'll need the contract address and ABI.
+- **NFT Contract Deployment**: You need to have a deployed NFT smart contract on Celo (Celo Sepolia testnet or Mainnet) to use this agent. You'll need the contract address and ABI.
 - **NFT Contract mint Function**: Understand the exact function name, parameters, and any access control or requirements of your NFT contract's minting function.
 - **Metadata Handling**: Determine how your NFT contract handles metadata. You might need to adjust the metadata parameter and how you pass it to the mint function.
 - **Gas Fees**: Minting transactions require CELO to pay for gas fees. Ensure your wallet has sufficient CELO.
