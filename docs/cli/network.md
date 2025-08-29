@@ -10,7 +10,7 @@ View details about the network, like contracts and parameters
 * [`celocli network:rpc-urls`](#celocli-networkrpc-urls)
 * [`celocli network:whitelist`](#celocli-networkwhitelist)
 
-## `celocli network:community-rpc-nodes` {#celocli-networkcommunity-rpc-nodes}
+## `celocli network:community-rpc-nodes`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -54,10 +54,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli network:contracts` {#celocli-networkcontracts}
+## `celocli network:contracts`
 
 Lists Celo core contracts and their addresses.
 
@@ -91,12 +92,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/contracts.ts)_
+_See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/network/contracts.ts)_
 
-## `celocli network:info` {#celocli-networkinfo}
+## `celocli network:info`
 
 View general network information such as the current block number
 
@@ -120,12 +122,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/info.ts)_
+_See code: [src/commands/network/info.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/network/info.ts)_
 
-## `celocli network:parameters` {#celocli-networkparameters}
+## `celocli network:parameters`
 
 View parameters of the network, including but not limited to configuration for the various Celo core smart contracts.
 
@@ -150,12 +153,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/parameters.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/parameters.ts)_
+_See code: [src/commands/network/parameters.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/network/parameters.ts)_
 
-## `celocli network:rpc-urls` {#celocli-networkrpc-urls}
+## `celocli network:rpc-urls`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -199,10 +203,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli network:whitelist` {#celocli-networkwhitelist}
+## `celocli network:whitelist`
 
 List the whitelisted fee currencies
 
@@ -239,7 +244,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/network/whitelist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/whitelist.ts)_
+_See code: [src/commands/network/whitelist.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/network/whitelist.ts)_

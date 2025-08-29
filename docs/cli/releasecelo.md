@@ -5,6 +5,7 @@ View and manage ReleaseGold contracts
 
 * [`celocli releasecelo:authorize`](#celocli-releaseceloauthorize)
 * [`celocli releasecelo:create-account`](#celocli-releasecelocreate-account)
+* [`celocli releasecelo:locked-celo`](#celocli-releasecelolocked-celo)
 * [`celocli releasecelo:locked-gold`](#celocli-releasecelolocked-gold)
 * [`celocli releasecelo:refund-and-finalize`](#celocli-releasecelorefund-and-finalize)
 * [`celocli releasecelo:revoke`](#celocli-releasecelorevoke)
@@ -19,7 +20,7 @@ View and manage ReleaseGold contracts
 * [`celocli releasecelo:transfer-dollars`](#celocli-releasecelotransfer-dollars)
 * [`celocli releasecelo:withdraw`](#celocli-releasecelowithdraw)
 
-## `celocli releasecelo:authorize` {#celocli-releaseceloauthorize}
+## `celocli releasecelo:authorize`
 
 Authorize an alternative key to be used for a given action (Vote, Validate, Attest) on behalf of the ReleaseGold instance contract.
 
@@ -29,8 +30,7 @@ USAGE
     --role vote|validator|attestation --signer
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --signature 0x [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--blsKey 0x
-    --blsPop 0x]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -38,14 +38,6 @@ FLAGS
 
   -n, --node=<value>
       URL of the node to run commands against or an alias
-
-  --blsKey=0x
-      The BLS public key that the validator is using for consensus, should pass proof of
-      possession. 96 bytes.
-
-  --blsPop=0x
-      The BLS public key proof-of-possession, which consists of a signature on the account
-      address. 48 bytes.
 
   --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the ReleaseGold Contract
@@ -87,7 +79,7 @@ DESCRIPTION
 EXAMPLES
   authorize --contract 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role vote --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb
 
-  authorize --contract 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role validator --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb --blsKey 0x4fa3f67fc913878b068d1fa1cdddc54913d3bf988dbe5a36a20fa888f20d4894c408a6773f3d7bde11154f2a3076b700d345a42fd25a0e5e83f4db5586ac7979ac2053cd95d8f2efd3e959571ceccaa743e02cf4be3f5d7aaddb0b06fc9aff00 --blsPop 0xcdb77255037eb68897cd487fdd85388cbda448f617f874449d4b11588b0b7ad8ddc20d9bb450b513bb35664ea3923900
+  authorize --contract 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role validator --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb
 
   authorize --contract 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role attestation --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb
 
@@ -99,12 +91,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/authorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/authorize.ts)_
+_See code: [src/commands/releasecelo/authorize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/authorize.ts)_
 
-## `celocli releasecelo:create-account` {#celocli-releasecelocreate-account}
+## `celocli releasecelo:create-account`
 
 Creates a new account for the ReleaseGold instance
 
@@ -158,12 +151,89 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/create-account.ts)_
+_See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/create-account.ts)_
 
-## `celocli releasecelo:locked-gold` {#celocli-releasecelolocked-gold}
+## `celocli releasecelo:locked-celo`
+
+Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
+
+```
+USAGE
+  $ celocli releasecelo:locked-celo --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -a
+    lock|unlock|withdraw --value 10000000000000000000000 [-k <value> | --useLedger | ]
+    [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yes]
+
+FLAGS
+  -a, --action=<option>
+      (required) Action to perform on contract's celo
+      <options: lock|unlock|withdraw>
+
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the ReleaseGold Contract
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --value=10000000000000000000000
+      (required) Amount of celo to perform `action` with
+
+  --yes
+      Answer yes to prompt
+
+DESCRIPTION
+  Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided
+  ReleaseGold contract.
+
+ALIASES
+  $ celocli releasecelo:locked-celo
+
+EXAMPLES
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
+
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
+
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+## `celocli releasecelo:locked-gold`
 
 Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
 
@@ -217,12 +287,15 @@ DESCRIPTION
   Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided
   ReleaseGold contract.
 
+ALIASES
+  $ celocli releasecelo:locked-celo
+
 EXAMPLES
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action lock --value 10000000000000000000000
 
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action unlock --value 10000000000000000000000
 
-  locked-gold --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
+  locked-celo --contract 0xCcc8a47BE435F1590809337BB14081b256Ae26A8 --action withdraw --value 10000000000000000000000
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -232,12 +305,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/locked-gold.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/locked-gold.ts)_
+_See code: [src/commands/releasecelo/locked-gold.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/locked-gold.ts)_
 
-## `celocli releasecelo:refund-and-finalize` {#celocli-releasecelorefund-and-finalize}
+## `celocli releasecelo:refund-and-finalize`
 
 Refund the given contract's balance to the appropriate parties and destroy the contact. Can only be called by the release owner of revocable ReleaseGold instances.
 
@@ -292,12 +366,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/refund-and-finalize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/refund-and-finalize.ts)_
+_See code: [src/commands/releasecelo/refund-and-finalize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/refund-and-finalize.ts)_
 
-## `celocli releasecelo:revoke` {#celocli-releasecelorevoke}
+## `celocli releasecelo:revoke`
 
 Revoke the given contract instance. Once revoked, any Locked Gold can be unlocked by the release owner. The beneficiary will then be able to withdraw any released Gold that had yet to be withdrawn, and the remainder can be transferred by the release owner to the refund address. Note that not all ReleaseGold instances are revokable.
 
@@ -357,12 +432,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke.ts)_
+_See code: [src/commands/releasecelo/revoke.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/revoke.ts)_
 
-## `celocli releasecelo:revoke-votes` {#celocli-releasecelorevoke-votes}
+## `celocli releasecelo:revoke-votes`
 
 Revokes `votes` for the given contract's account from the given group's account
 
@@ -432,12 +508,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/revoke-votes.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke-votes.ts)_
+_See code: [src/commands/releasecelo/revoke-votes.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/revoke-votes.ts)_
 
-## `celocli releasecelo:set-account` {#celocli-releaseceloset-account}
+## `celocli releasecelo:set-account`
 
 Set account properties of the ReleaseGold instance account such as name, data encryption key, and the metadata URL
 
@@ -503,12 +580,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account.ts)_
+_See code: [src/commands/releasecelo/set-account.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-account.ts)_
 
-## `celocli releasecelo:set-account-wallet-address` {#celocli-releaseceloset-account-wallet-address}
+## `celocli releasecelo:set-account-wallet-address`
 
 Set the ReleaseGold contract account's wallet address
 
@@ -569,12 +647,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-account-wallet-address.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account-wallet-address.ts)_
+_See code: [src/commands/releasecelo/set-account-wallet-address.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-account-wallet-address.ts)_
 
-## `celocli releasecelo:set-beneficiary` {#celocli-releaseceloset-beneficiary}
+## `celocli releasecelo:set-beneficiary`
 
 Set the beneficiary of the ReleaseGold contract. This command is gated via a multi-sig, so this is expected to be called twice: once by the contract's beneficiary and once by the contract's releaseOwner. Once both addresses call this command with the same parameters, the tx will execute.
 
@@ -641,12 +720,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-beneficiary.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-beneficiary.ts)_
+_See code: [src/commands/releasecelo/set-beneficiary.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-beneficiary.ts)_
 
-## `celocli releasecelo:set-can-expire` {#celocli-releaseceloset-can-expire}
+## `celocli releasecelo:set-can-expire`
 
 Set the canExpire flag for the given ReleaseGold contract
 
@@ -707,12 +787,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-can-expire.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-can-expire.ts)_
+_See code: [src/commands/releasecelo/set-can-expire.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-can-expire.ts)_
 
-## `celocli releasecelo:set-liquidity-provision` {#celocli-releaseceloset-liquidity-provision}
+## `celocli releasecelo:set-liquidity-provision`
 
 Set the liquidity provision to true, allowing the beneficiary to withdraw released gold.
 
@@ -770,12 +851,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-liquidity-provision.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-liquidity-provision.ts)_
+_See code: [src/commands/releasecelo/set-liquidity-provision.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-liquidity-provision.ts)_
 
-## `celocli releasecelo:set-max-distribution` {#celocli-releaseceloset-max-distribution}
+## `celocli releasecelo:set-max-distribution`
 
 Set the maximum distribution of celo for the given contract
 
@@ -836,12 +918,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/set-max-distribution.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-max-distribution.ts)_
+_See code: [src/commands/releasecelo/set-max-distribution.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/set-max-distribution.ts)_
 
-## `celocli releasecelo:show` {#celocli-releaseceloshow}
+## `celocli releasecelo:show`
 
 Show info on a ReleaseGold instance contract.
 
@@ -873,12 +956,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/show.ts)_
+_See code: [src/commands/releasecelo/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/show.ts)_
 
-## `celocli releasecelo:transfer-dollars` {#celocli-releasecelotransfer-dollars}
+## `celocli releasecelo:transfer-dollars`
 
 Transfer Celo Dollars from the given contract address. Dollars may be accrued to the ReleaseGold contract via validator epoch rewards.
 
@@ -940,12 +1024,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/transfer-dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/transfer-dollars.ts)_
+_See code: [src/commands/releasecelo/transfer-dollars.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/transfer-dollars.ts)_
 
-## `celocli releasecelo:withdraw` {#celocli-releasecelowithdraw}
+## `celocli releasecelo:withdraw`
 
 Withdraws `value` released celo to the beneficiary address. Fails if `value` worth of celo has not been released yet.
 
@@ -1003,7 +1088,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/releasecelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/withdraw.ts)_
+_See code: [src/commands/releasecelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/releasecelo/withdraw.ts)_

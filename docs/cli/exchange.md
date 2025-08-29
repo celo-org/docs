@@ -10,7 +10,7 @@ Exchange Celo Dollars and CELO via Mento
 * [`celocli exchange:show`](#celocli-exchangeshow)
 * [`celocli exchange:stable`](#celocli-exchangestable)
 
-## `celocli exchange:celo` {#celocli-exchangecelo}
+## `celocli exchange:celo`
 
 Exchange CELO for StableTokens via Mento. (Note: this is the equivalent of the old exchange:gold)
 
@@ -78,12 +78,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/celo.ts)_
+_See code: [src/commands/exchange/celo.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/celo.ts)_
 
-## `celocli exchange:dollars` {#celocli-exchangedollars}
+## `celocli exchange:dollars`
 
 Exchange Celo Dollars for CELO via Mento
 
@@ -145,12 +146,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/dollars.ts)_
+_See code: [src/commands/exchange/dollars.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/dollars.ts)_
 
-## `celocli exchange:euros` {#celocli-exchangeeuros}
+## `celocli exchange:euros`
 
 Exchange Celo Euros for CELO via Mento
 
@@ -212,12 +214,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/euros.ts)_
+_See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/euros.ts)_
 
-## `celocli exchange:reals` {#celocli-exchangereals}
+## `celocli exchange:reals`
 
 Exchange Celo Brazilian Real (cREAL) for CELO via Mento
 
@@ -279,12 +282,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/reals.ts)_
+_See code: [src/commands/exchange/reals.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/reals.ts)_
 
-## `celocli exchange:show` {#celocli-exchangeshow}
+## `celocli exchange:show`
 
 Show the current exchange rates offered by the Broker
 
@@ -338,12 +342,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/show.ts)_
+_See code: [src/commands/exchange/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/show.ts)_
 
-## `celocli exchange:stable` {#celocli-exchangestable}
+## `celocli exchange:stable`
 
 Exchange Stable Token for CELO via Mento
 
@@ -410,7 +415,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/exchange/stable.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/stable.ts)_
+_See code: [src/commands/exchange/stable.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/exchange/stable.ts)_

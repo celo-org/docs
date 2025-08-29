@@ -10,16 +10,17 @@ Transfer CELO and Celo Dollars
 * [`celocli transfer:reals`](#celocli-transferreals)
 * [`celocli transfer:stable`](#celocli-transferstable)
 
-## `celocli transfer:celo` {#celocli-transfercelo}
+## `celocli transfer:celo`
 
 Transfer CELO to a specified address. (Note: this is the equivalent of the old transfer:gold)
 
 ```
 USAGE
   $ celocli transfer:celo --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -56,7 +57,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -74,21 +75,23 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/celo.ts)_
+_See code: [src/commands/transfer/celo.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/celo.ts)_
 
-## `celocli transfer:dollars` {#celocli-transferdollars}
+## `celocli transfer:dollars`
 
 Transfer Celo Dollars (cUSD) to a specified address.
 
 ```
 USAGE
   $ celocli transfer:dollars --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -125,7 +128,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -142,12 +145,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/dollars.ts)_
+_See code: [src/commands/transfer/dollars.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/dollars.ts)_
 
-## `celocli transfer:erc20` {#celocli-transfererc20}
+## `celocli transfer:erc20`
 
 Transfer ERC20 to a specified address
 
@@ -155,9 +159,10 @@ Transfer ERC20 to a specified address
 USAGE
   $ celocli transfer:erc20 --erc20Address 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -194,7 +199,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -211,21 +216,23 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/erc20.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/erc20.ts)_
+_See code: [src/commands/transfer/erc20.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/erc20.ts)_
 
-## `celocli transfer:euros` {#celocli-transfereuros}
+## `celocli transfer:euros`
 
 Transfer Celo Euros (cEUR) to a specified address.
 
 ```
 USAGE
   $ celocli transfer:euros --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -262,7 +269,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -279,21 +286,23 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/euros.ts)_
+_See code: [src/commands/transfer/euros.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/euros.ts)_
 
-## `celocli transfer:reals` {#celocli-transferreals}
+## `celocli transfer:reals`
 
 Transfer Celo Brazilian Real (cREAL) to a specified address.
 
 ```
 USAGE
   $ celocli transfer:reals --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -330,7 +339,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -347,22 +356,23 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/reals.ts)_
+_See code: [src/commands/transfer/reals.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/reals.ts)_
 
-## `celocli transfer:stable` {#celocli-transferstable}
+## `celocli transfer:stable`
 
 Transfer a stable token to a specified address.
 
 ```
 USAGE
   $ celocli transfer:stable --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
-    | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000
+    --stableToken cUSD|cusd|cEUR|ceur|cREAL|creal [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
     [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--comment <value>]
-    [--stableToken cUSD|cusd|cEUR|ceur|cREAL|creal]
 
 FLAGS
   -k, --privateKey=<value>
@@ -394,7 +404,7 @@ FLAGS
       Ledger Live
 
   --stableToken=<option>
-      Name of the stable to be transferred
+      (required) Name of the stable to be transferred
       <options: cUSD|cusd|cEUR|ceur|cREAL|creal>
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
@@ -403,7 +413,7 @@ FLAGS
   --useLedger
       Set it to use a ledger wallet
 
-  --value=<value>
+  --value=10000000000000000000000
       (required) Amount to transfer (in wei)
 
 DESCRIPTION
@@ -420,7 +430,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/transfer/stable.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/stable.ts)_
+_See code: [src/commands/transfer/stable.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/transfer/stable.ts)_
