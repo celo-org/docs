@@ -5,7 +5,7 @@ Interact with ODIS and the attestations service
 
 * [`celocli identity:withdraw-attestation-rewards`](#celocli-identitywithdraw-attestation-rewards)
 
-## `celocli identity:withdraw-attestation-rewards` {#celocli-identitywithdraw-attestation-rewards}
+## `celocli identity:withdraw-attestation-rewards`
 
 Withdraw accumulated attestation rewards for a given currency
 
@@ -61,7 +61,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/identity/withdraw-attestation-rewards.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/identity/withdraw-attestation-rewards.ts)_
+_See code: [src/commands/identity/withdraw-attestation-rewards.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/identity/withdraw-attestation-rewards.ts)_

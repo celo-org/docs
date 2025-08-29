@@ -13,7 +13,7 @@ View and manage Validator Groups
 * [`celocli validatorgroup:rpc-urls`](#celocli-validatorgrouprpc-urls)
 * [`celocli validatorgroup:show ARG1`](#celocli-validatorgroupshow-arg1)
 
-## `celocli validatorgroup:commission` {#celocli-validatorgroupcommission}
+## `celocli validatorgroup:commission`
 
 Manage the commission for a registered Validator Group. This represents the share of the epoch rewards given to elected Validators that goes to the group they are a member of. Updates must be made in a two step process where the group owner first calls uses the queue-update option, then after the required update delay, the apply option. The commission update delay, in blocks, can be viewed with the network:parameters command. A groups next commission update block can be checked with validatorgroup:show
 
@@ -80,12 +80,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/commission.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/commission.ts)_
+_See code: [src/commands/validatorgroup/commission.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/commission.ts)_
 
-## `celocli validatorgroup:community-rpc-nodes` {#celocli-validatorgroupcommunity-rpc-nodes}
+## `celocli validatorgroup:community-rpc-nodes`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -129,10 +130,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli validatorgroup:deregister` {#celocli-validatorgroupderegister}
+## `celocli validatorgroup:deregister`
 
 Deregister a Validator Group. After the group lock perioid has passed it will be possible to deregister it start unlocking the CELO. If you wish to deregister your validator group, you must first remove all members, then wait the required time before running this command.
 
@@ -189,12 +191,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/deregister.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/deregister.ts)_
+_See code: [src/commands/validatorgroup/deregister.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/deregister.ts)_
 
-## `celocli validatorgroup:list` {#celocli-validatorgrouplist}
+## `celocli validatorgroup:list`
 
 List registered Validator Groups, their names (if provided), commission, and members.
 
@@ -231,12 +234,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/list.ts)_
+_See code: [src/commands/validatorgroup/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/list.ts)_
 
-## `celocli validatorgroup:member ARG1` {#celocli-validatorgroupmember-arg1}
+## `celocli validatorgroup:member ARG1`
 
 Add or remove members from a Validator Group
 
@@ -309,12 +313,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/member.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/member.ts)_
+_See code: [src/commands/validatorgroup/member.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/member.ts)_
 
-## `celocli validatorgroup:register` {#celocli-validatorgroupregister}
+## `celocli validatorgroup:register`
 
 Register a new Validator Group
 
@@ -375,12 +380,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/register.ts)_
+_See code: [src/commands/validatorgroup/register.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/register.ts)_
 
-## `celocli validatorgroup:reset-slashing-multiplier ARG1` {#celocli-validatorgroupreset-slashing-multiplier-arg1}
+## `celocli validatorgroup:reset-slashing-multiplier ARG1`
 
 Reset validator group slashing multiplier.
 
@@ -433,12 +439,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/reset-slashing-multiplier.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/reset-slashing-multiplier.ts)_
+_See code: [src/commands/validatorgroup/reset-slashing-multiplier.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/reset-slashing-multiplier.ts)_
 
-## `celocli validatorgroup:rpc-urls` {#celocli-validatorgrouprpc-urls}
+## `celocli validatorgroup:rpc-urls`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -482,12 +489,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/rpc-urls.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/rpc-urls.ts)_
+_See code: [src/commands/validatorgroup/rpc-urls.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/rpc-urls.ts)_
 
-## `celocli validatorgroup:show ARG1` {#celocli-validatorgroupshow-arg1}
+## `celocli validatorgroup:show ARG1`
 
 Show information about an existing Validator Group
 
@@ -516,7 +524,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/validatorgroup/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/show.ts)_
+_See code: [src/commands/validatorgroup/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/validatorgroup/show.ts)_

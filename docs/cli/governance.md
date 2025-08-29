@@ -3,6 +3,7 @@
 
 Interact with on-chain governance proposals and hotfixes
 
+* [`celocli governance:approve`](#celocli-governanceapprove)
 * [`celocli governance:approvehotfix`](#celocli-governanceapprovehotfix)
 * [`celocli governance:build-proposal`](#celocli-governancebuild-proposal)
 * [`celocli governance:dequeue`](#celocli-governancedequeue)
@@ -22,12 +23,98 @@ Interact with on-chain governance proposals and hotfixes
 * [`celocli governance:viewhotfix`](#celocli-governanceviewhotfix)
 * [`celocli governance:vote`](#celocli-governancevote)
 * [`celocli governance:votePartially`](#celocli-governancevotepartially)
-* [`celocli governance:whitelisthotfix`](#celocli-governancewhitelisthotfix)
 * [`celocli governance:withdraw`](#celocli-governancewithdraw)
 
-## `celocli governance:approvehotfix` {#celocli-governanceapprovehotfix}
+## `celocli governance:approve`
 
-Approve a dequeued governance proposal (or hotfix)
+Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
+
+```
+USAGE
+  $ celocli governance:approve --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--proposalID <value> | --hotfix <value>]
+    [--useMultiSig | --useSafe] [--type approver|securityCouncil ]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Approver's address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --hotfix=<value>
+      Hash of hotfix proposal
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --proposalID=<value>
+      UUID of proposal to approve
+
+  --type=<option>
+      Determines which type of hotfix approval (approver or security council) to use.
+      <options: approver|securityCouncil>
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --useMultiSig
+      True means the request will be sent through multisig.
+
+  --useSafe
+      True means the request will be sent through SAFE (http://safe.global)
+
+DESCRIPTION
+  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
+  this command
+
+ALIASES
+  $ celocli governance:approvehotfix
+
+EXAMPLES
+  approve --proposalID 99 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+  approve --proposalID 99 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --useMultiSig
+
+  approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig
+
+  approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig --type securityCouncil
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/governance/approve.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/approve.ts)_
+
+## `celocli governance:approvehotfix`
+
+Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use this command
 
 ```
 USAGE
@@ -83,10 +170,10 @@ FLAGS
       True means the request will be sent through SAFE (http://safe.global)
 
 DESCRIPTION
-  Approve a dequeued governance proposal (or hotfix)
+  Approve a dequeued governance proposal (or hotfix). Only authorized approvers may use
+  this command
 
 ALIASES
-  $ celocli governance:approve
   $ celocli governance:approvehotfix
 
 EXAMPLES
@@ -106,10 +193,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:build-proposal` {#celocli-governancebuild-proposal}
+## `celocli governance:build-proposal`
 
 Interactively build a governance proposal
 
@@ -150,7 +238,7 @@ FLAGS
       Ledger Live
 
   --output=<value>
-      [default: proposalTransactions.json] Path to output
+      [default: proposalTransactions.tson] Path to output
 
   --useLedger
       Set it to use a ledger wallet
@@ -159,7 +247,7 @@ DESCRIPTION
   Interactively build a governance proposal
 
 EXAMPLES
-  build-proposal --output ./transactions.json
+  build-proposal --output ./transactions.tson
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -169,12 +257,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/build-proposal.ts)_
+_See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/build-proposal.ts)_
 
-## `celocli governance:dequeue` {#celocli-governancedequeue}
+## `celocli governance:dequeue`
 
 Try to dequeue governance proposal
 
@@ -228,12 +317,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/dequeue.ts)_
+_See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/dequeue.ts)_
 
-## `celocli governance:execute` {#celocli-governanceexecute}
+## `celocli governance:execute`
 
 Execute a passing governance proposal
 
@@ -290,12 +380,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/execute.ts)_
+_See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/execute.ts)_
 
-## `celocli governance:executehotfix` {#celocli-governanceexecutehotfix}
+## `celocli governance:executehotfix`
 
 Execute a governance hotfix prepared for the current epoch
 
@@ -345,7 +436,7 @@ DESCRIPTION
   Execute a governance hotfix prepared for the current epoch
 
 EXAMPLES
-  executehotfix --jsonTransactions ./transactions.json --salt 0x614dccb5ac13cba47c2430bdee7829bb8c8f3603a8ace22e7680d317b39e3658 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
+  executehotfix --jsonTransactions ./transactions.tson --salt 0x614dccb5ac13cba47c2430bdee7829bb8c8f3603a8ace22e7680d317b39e3658 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -355,12 +446,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/executehotfix.ts)_
+_See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/executehotfix.ts)_
 
-## `celocli governance:hashhotfix` {#celocli-governancehashhotfix}
+## `celocli governance:hashhotfix`
 
 Hash a governance hotfix specified by JSON and a salt
 
@@ -410,7 +502,7 @@ DESCRIPTION
   Hash a governance hotfix specified by JSON and a salt
 
 EXAMPLES
-  hashhotfix --jsonTransactions ./transactions.json --salt 0x614dccb5ac13cba47c2430bdee7829bb8c8f3603a8ace22e7680d317b39e3658
+  hashhotfix --jsonTransactions ./transactions.tson --salt 0x614dccb5ac13cba47c2430bdee7829bb8c8f3603a8ace22e7680d317b39e3658
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -420,12 +512,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/hashhotfix.ts)_
+_See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/hashhotfix.ts)_
 
-## `celocli governance:list` {#celocli-governancelist}
+## `celocli governance:list`
 
 List live governance proposals (queued and ongoing)
 
@@ -502,12 +595,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/list.ts)_
+_See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/list.ts)_
 
-## `celocli governance:preparehotfix` {#celocli-governancepreparehotfix}
+## `celocli governance:preparehotfix`
 
 Prepare a governance hotfix for execution in the current epoch
 
@@ -564,20 +658,21 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/preparehotfix.ts)_
+_See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/preparehotfix.ts)_
 
-## `celocli governance:propose` {#celocli-governancepropose}
+## `celocli governance:propose`
 
 Submit a governance proposal
 
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL https://www.celo.org [-k
-    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL <value> [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--ledgerLiveMode ] [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [--useMultiSig | --useSafe]] [--safeAddress
@@ -600,8 +695,9 @@ FLAGS
   --deposit=<value>
       (required) Amount of Celo to attach to proposal
 
-  --descriptionURL=https://www.celo.org
-      (required) A URL where further information about the proposal can be viewed
+  --descriptionURL=<value>
+      (required) A URL where further information about the proposal can be viewed. This
+      needs to be a valid proposal URL on https://github.com/celo-org/governance
 
   --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       Address of the multi-sig contract
@@ -650,9 +746,9 @@ DESCRIPTION
   Submit a governance proposal
 
 EXAMPLES
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+  propose --jsonTransactions ./transactions.tson --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-00000.md
 
-  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+  propose --jsonTransactions ./transactions.tson --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/gcp-00000.md
 
 FLAG DESCRIPTIONS
   -n, --node=<value>  URL of the node to run commands against or an alias
@@ -662,12 +758,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
+_See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/propose.ts)_
 
-## `celocli governance:revokeupvote` {#celocli-governancerevokeupvote}
+## `celocli governance:revokeupvote`
 
 Revoke upvotes for queued governance proposals
 
@@ -721,12 +818,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/revokeupvote.ts)_
+_See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/revokeupvote.ts)_
 
-## `celocli governance:show` {#celocli-governanceshow}
+## `celocli governance:show`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -792,12 +890,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/show.ts)_
+_See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/show.ts)_
 
-## `celocli governance:showaccount` {#celocli-governanceshowaccount}
+## `celocli governance:showaccount`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -863,10 +962,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:showhotfix` {#celocli-governanceshowhotfix}
+## `celocli governance:showhotfix`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -932,10 +1032,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:upvote` {#celocli-governanceupvote}
+## `celocli governance:upvote`
 
 Upvote a queued governance proposal
 
@@ -992,12 +1093,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/upvote.ts)_
+_See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/upvote.ts)_
 
-## `celocli governance:view` {#celocli-governanceview}
+## `celocli governance:view`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1063,10 +1165,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:viewaccount` {#celocli-governanceviewaccount}
+## `celocli governance:viewaccount`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1132,10 +1235,11 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:viewhotfix` {#celocli-governanceviewhotfix}
+## `celocli governance:viewhotfix`
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -1201,19 +1305,21 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli governance:vote` {#celocli-governancevote}
+## `celocli governance:vote`
 
 Vote on an approved governance proposal
 
 ```
 USAGE
-  $ celocli governance:vote --proposalID <value> --value Abstain|No|Yes --from
-    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
-    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+  $ celocli governance:vote --proposalID 10000000000000000000000 --value
+    Abstain|No|Yes --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1241,7 +1347,7 @@ FLAGS
       the 5th. This is useful to use same address on you Ledger with celocli as you do on
       Ledger Live
 
-  --proposalID=<value>
+  --proposalID=10000000000000000000000
       (required) UUID of proposal to vote on
 
   --useLedger
@@ -1265,12 +1371,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/vote.ts)_
+_See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/vote.ts)_
 
-## `celocli governance:votePartially` {#celocli-governancevotepartially}
+## `celocli governance:votePartially`
 
 Vote partially on an approved governance proposal
 
@@ -1337,74 +1444,13 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/votePartially.ts)_
+_See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/votePartially.ts)_
 
-## `celocli governance:whitelisthotfix` {#celocli-governancewhitelisthotfix}
-
-Whitelist a governance hotfix
-
-```
-USAGE
-  $ celocli governance:whitelisthotfix --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --hash
-    <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
-    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--ledgerLiveMode ] [--globalHelp]
-
-FLAGS
-  -k, --privateKey=<value>
-      Use a private key to sign local transactions with
-
-  -n, --node=<value>
-      URL of the node to run commands against or an alias
-
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-      (required) Whitelister's address
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
-
-  --globalHelp
-      View all available global flags
-
-  --hash=<value>
-      (required) Hash of hotfix transactions
-
-  --ledgerAddresses=<value>
-      [default: 1] If --useLedger is set, this will get the first N addresses for local
-      signing
-
-  --ledgerLiveMode
-      When set, the 4th postion of the derivation path will be iterated over instead of
-      the 5th. This is useful to use same address on you Ledger with celocli as you do on
-      Ledger Live
-
-  --useLedger
-      Set it to use a ledger wallet
-
-DESCRIPTION
-  Whitelist a governance hotfix
-
-EXAMPLES
-  whitelisthotfix --hash 0x614dccb5ac13cba47c2430bdee7829bb8c8f3603a8ace22e7680d317b39e3658 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
-
-FLAG DESCRIPTIONS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-
-    Can be a full url like https://forno.celo.org or an alias. default:
-    http://localhost:8545
-    Alias options:
-    local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
-    mainnet, celo, forno => Celo Mainnet chain',
-```
-
-_See code: [src/commands/governance/whitelisthotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/whitelisthotfix.ts)_
-
-## `celocli governance:withdraw` {#celocli-governancewithdraw}
+## `celocli governance:withdraw`
 
 Withdraw refunded governance proposal deposits.
 
@@ -1472,7 +1518,8 @@ FLAG DESCRIPTIONS
     Alias options:
     local, localhost => 'http://localhost:8545'
     alfajores => Celo Alfajores Testnet,
+    testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/governance/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/withdraw.ts)_
+_See code: [src/commands/governance/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/governance/withdraw.ts)_
