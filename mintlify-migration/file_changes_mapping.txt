@@ -1,0 +1,199 @@
+caminho antigo > caminho novo
+
+*ABOUT CELO
+
+what-is-celo/index > about-celo/index
+what-is-celo/history > about-celo/history
+what-is-celo/using-celo/wallets > about-celo/wallets
+what-is-celo/using-celo/exchanges > about-celo/exchanges
+what-is-celo/using-celo/gas-fees > about-celo/gas-fees
+what-is-celo/using-celo/ramps > about-celo/ramps
+what-is-celo/using-celo/bridges > about-celo/bridges
+
+what-is-celo/using-celo/protocol/index > about-celo/protocol/index
+what-is-celo/using-celo/protocol/consensus > about-celo/protocol/consensus
+what-is-celo/using-celo/protocol/celo-token > about-celo/protocol/celo-token
+what-is-celo/using-celo/protocol/escrow > about-celo/protocol/escrow
+
+what-is-celo/using-celo/protocol/governance/overview > about-celo/protocol/governance/overview
+what-is-celo/using-celo/protocol/governance/governance-toolkit > about-celo/protocol/governance/governance-toolkit
+what-is-celo/using-celo/protocol/governance/create-governance-proposal > about-celo/protocol/governance/create-governance-proposal
+what-is-celo/using-celo/protocol/governance/voting-in-governance > about-celo/protocol/governance/voting-in-governance
+what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo > about-celo/protocol/governance/voting-in-governance-using-mondo
+what-is-celo/using-celo/protocol/governance/governable-parameters > about-celo/protocol/governance/governable-parameters
+what-is-celo/using-celo/protocol/governance/smart-contracts-upgrades > about-celo/protocol/governance/smart-contracts-upgrades
+
+what-is-celo/using-celo/protocol/transaction/overview > about-celo/protocol/transactions/overview
+what-is-celo/using-celo/protocol/transaction/tx-comment-encryption > about-celo/protocol/transactions/transaction-types
+what-is-celo/using-celo/protocol/transaction/transaction-types > about-celo/protocol/transactions/tx-comment-encryption
+
+what-is-celo/using-celo/protocol/epoch-rewards/index > about-celo/protocol/epoch-rewards/index
+what-is-celo/using-celo/protocol/epoch-rewards/community-fund > about-celo/protocol/epoch-rewards/community-fund
+what-is-celo/using-celo/protocol/epoch-rewards/carbon-offsetting-fund > about-celo/protocol/epoch-rewards/carbon-offsetting-fund
+
+what-is-celo/using-celo/manage/self-custody > about-celo/manage/self-custody
+what-is-celo/using-celo/manage/release-gold > about-celo/manage/release-gold
+what-is-celo/using-celo/manage/exchange > about-celo/manage/exchange
+what-is-celo/using-celo/manage/asset > about-celo/manage/asset
+
+what-is-celo/using-celo/bridges >about-celo/bridged-tokens/bridges
+what-is-celo/using-celo/native-ETH-bridging > about-celo/bridged-tokens/native-ETH-bridging
+
+-------
+*BUILD ON CELO
+
+build/index >
+build/quickstart >
+build/composer-kit >
+
+cel2/whats-changed/cel2-architecture > build/cel2-architecture
+developer/launch-checklist > build/launch-checklist
+
+build/mcp/index > build/build-with-ai/mcp/index
+build/mcp/celo-mcp > build/build-with-ai/mcp/celo-mcp
+build/mcp/composer-mcp > build/build-with-ai/mcp/composer-mcp
+
+------
+*INFRA PARTNERS
+
+cel2/operators/overview >
+cel2/operators/architecture > infra-partners/operators/architecture
+cel2/operators/run-node > infra-partners/operators/run-node
+cel2/operators/migrate-node > infra-partners/operators/migrate-node
+
+cel2/notices/celo-sepolia-launch > infra-partners/notices/celo-sepolia-launch
+cel2/notices/eigenda-v2-upgrade > infra-partners/notices/eigenda-v2-upgrade
+cel2/notices/isthmus-upgrade > infra-partners/notices/isthmus-upgrade
+cel2/notices/l2-migration > infra-partners/notices/l2-migration
+
+cel2/specs > infra-partners/specs
+
+integration/index > infra-partners/integration/index
+integration/general > infra-partners/integration/general
+integration/checklist > infra-partners/integration/checklist
+integration/custody > infra-partners/integration/custody
+integration/listings > infra-partners/integration/listings
+integration/cloud-hsm > infra-partners/integration/cloud-hsm
+
+-----
+*TOOLING
+
+build/composer-kit > developer/sdks/composer-kit
+
+----
+*CONTRIBUTE TO CELO
+
+what-is-celo/joining-celo/index > contribute-to-celo/index
+what-is-celo/joining-celo/builders > contribute-to-celo/builders
+what-is-celo/joining-celo/daos > contribute-to-celo/daos
+what-is-celo/joining-celo/contributors/code-of-conduct > contribute-to-celo/code-of-conduct
+
+what-is-celo/joining-celo/contributors/overview > contribute-to-celo/contributors/overview
+what-is-celo/joining-celo/contributors/code-contributors > contribute-to-celo/contributors/code-contributors
+what-is-celo/joining-celo/contributors/cip-contributors > contribute-to-celo/contributors/cip-contributors
+what-is-celo/joining-celo/contributors/documentation-contributors > contribute-to-celo/contributors/documentation-contributors
+
+cel2/operators/how-it-works > contribute-to-celo/community-rpc-nodes/how-it-works
+cel2/operators/registering-as-rpc-node > contribute-to-celo/community-rpc-nodes/registering-as-rpc-node
+cel2/operators/community-rpc-node > contribute-to-celo/community-rpc-nodes/community-rpc-node
+cel2/operators/penalties > contribute-to-celo/community-rpc-nodes/penalties
+cel2/operators/validator-rpc-faq > contribute-to-celo/community-rpc-nodes/validator-rpc-faq
+
+what-is-celo/joining-celo/contributors/release-process/index > contribute-to-celo/release-process/index
+what-is-celo/joining-celo/contributors/release-process/smart-contracts > contribute-to-celo/release-process/smart-contracts
+what-is-celo/joining-celo/contributors/release-process/blockchain-client > contribute-to-celo/release-process/blockchain-client
+what-is-celo/joining-celo/contributors/release-process/base-cli-contractkit-dappkit-utils > contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils
+what-is-celo/joining-celo/contributors/release-process/attestation-service > contribute-to-celo/release-process/attestation-service
+
+-----
+*LEGACY
+
+cel2/whats-changed/l1-l2 > legacy/transition/whats-changed/l1-l2
+cel2/whats-changed/op-l2 > legacy/transition/optimism/op-l2
+cel2/whats-changed/overview > legacy/overview
+
+cel2/guides/bridging-celo-from-l1-to-l2 > legacy/transition/guides/bridging-celo-from-l1-to-l2
+cel2/guides/withdrawing-celo-from-l2-to-l1 > legacy/transition/guides/withdrawing-celo-from-l2-to-l1
+
+node:
+what-is-celo/about-celo-l1/node/run-alfajores > legacy/node/run-alfajores
+what-is-celo/about-celo-l1/node/run-baklava > legacy/node/run-baklava
+what-is-celo/about-celo-l1/node/run-mainnet > legacy/node/run-mainnet
+
+consensus:
+what-is-celo/about-celo-l1/protocol/consensus/index > legacy/protocol/consensus/index
+what-is-celo/about-celo-l1/protocol/consensus/locating-nodes > legacy/protocol/consensus/locating-nodes
+what-is-celo/about-celo-l1/protocol/consensus/validator-set-differences > legacy/protocol/consensus/validator-set-differences
+
+contracts:
+what-is-celo/about-celo-l1/protocol/contracts/add-contract > what-is-celo/about-celo-l1/protocol/contracts/add-contract
+
+identity:
+what-is-celo/about-celo-l1/protocol/identity >
+what-is-celo/about-celo-l1/protocol/identity/encrypted-cloud-backup > legacy/protocol/identity/encrypted-cloud-backup
+what-is-celo/about-celo-l1/protocol/identity/index > legacy/protocol/identity/index
+what-is-celo/about-celo-l1/protocol/identity/metadata > legacy/protocol/identity/metadata
+what-is-celo/about-celo-l1/protocol/identity/odis-domain-sequential-delay-domain > legacy/protocol/identity/odis-domain-sequential-delay-domain
+what-is-celo/about-celo-l1/protocol/identity/odis-domain > legacy/protocol/identity/odis-domain
+what-is-celo/about-celo-l1/protocol/identity/odis-use-case-key-hardening > legacy/protocol/identity/odis-use-case-key-hardening
+what-is-celo/about-celo-l1/protocol/identity/odis-use-case-phone-number-privacy > legacy/protocol/identity/odis-use-case-phone-number-privacy
+what-is-celo/about-celo-l1/protocol/identity/odis >
+what-is-celo/about-celo-l1/protocol/identity/privacy-research > legacy/protocol/identity/privacy-research
+what-is-celo/about-celo-l1/protocol/identity/smart-contract-accounts > legacy/protocol/identity/smart-contract-accounts
+
+pos: 
+what-is-celo/about-celo-l1/protocol/pos/becoming-a-validator >
+what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold > epoch-rewards-locked-gold
+what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-validator > legacy/protocol/pos/epoch-rewards-validator
+what-is-celo/about-celo-l1/protocol/pos/epoch-rewards > legacy/protocol/pos/epoch-rewards
+what-is-celo/about-celo-l1/protocol/pos/index > legacy/protocol/pos/index
+what-is-celo/about-celo-l1/protocol/pos/locked-gold > legacy/protocol/pos/locked-gold
+what-is-celo/about-celo-l1/protocol/pos/penalties > legacy/protocol/pos/penalties
+what-is-celo/about-celo-l1/protocol/pos/validator-elections > legacy/protocol/pos/validator-elections
+what-is-celo/about-celo-l1/protocol/pos/validator-groups > legacy/protocol/pos/validator-groups
+
+stability:
+what-is-celo/about-celo-l1/protocol/stability/adding-stable-assets > legacy/protocol/stability/adding-stable-assets
+what-is-celo/about-celo-l1/protocol/stability/doto > legacy/protocol/stability/doto
+what-is-celo/about-celo-l1/protocol/stability/granda-mento > legacy/protocol/stability/granda-mento
+what-is-celo/about-celo-l1/protocol/stability/index > legacy/protocol/stability/index
+what-is-celo/about-celo-l1/protocol/stability/oracles > legacy/protocol/stability/oracles
+what-is-celo/about-celo-l1/protocol/stability/stability-fees > legacy/protocol/stability/stability-fees
+
+transaction:
+what-is-celo/about-celo-l1/protocol/transaction >
+what-is-celo/about-celo-l1/protocol/transaction/erc20-transaction-fees > legacy/protocol/transaction/erc20-transaction-fees
+what-is-celo/about-celo-l1/protocol/transaction/escrow > legacy/protocol/transaction/escrow
+what-is-celo/about-celo-l1/protocol/transaction/gas-pricing > legacy/protocol/transaction/gas-pricing
+what-is-celo/about-celo-l1/protocol/transaction/index > legacy/protocol/transaction/index
+what-is-celo/about-celo-l1/protocol/transaction/native-currency > legacy/protocol/transaction/native-currency
+what-is-celo/about-celo-l1/protocol/transaction/transaction-types > legacy/protocol/transaction/transaction-types
+what-is-celo/about-celo-l1/protocol/transaction/tx-comment-encryption > legacy/protocol/transaction/tx-comment-encryption
+
+what-is-celo/about-celo-l1/protocol/randomness > legacy/protocol/randomness
+
+validator:
+
+what-is-celo/about-celo-l1/validator/celo-foundation-voting-policy > celo-foundation-voting-policy
+what-is-celo/about-celo-l1/validator/celo-website > legacy/validator/celo-website
+what-is-celo/about-celo-l1/validator/devops-best-practices > legacy/validator/devops-best-practices
+what-is-celo/about-celo-l1/validator/discord > legacy/validator/discord
+what-is-celo/about-celo-l1/validator/index > legacy/validator/index
+what-is-celo/about-celo-l1/validator/monitoring > legacy/validator/monitoring
+what-is-celo/about-celo-l1/validator/node-upgrade > legacy/validator/node-upgrade
+what-is-celo/about-celo-l1/validator/proxy > legacy/validator/proxy
+what-is-celo/about-celo-l1/validator/security > legacy/validator/security
+what-is-celo/about-celo-l1/validator/troubleshooting-faq > legacy/validator/troubleshooting-faq
+what-is-celo/about-celo-l1/validator/validator-explorer > legacy/validator/validator-explorer
+what-is-celo/about-celo-l1/validator/voting > legacy/validator/voting
+
+key-manage:
+
+what-is-celo/about-celo-l1/validator/key-management/detailed > legacy/validator/key-management/detailed
+what-is-celo/about-celo-l1/validator/key-management/key-rotation > legacy/validator/key-management/key-rotation
+what-is-celo/about-celo-l1/validator/key-management/summary > legacy/validator/key-management/summary
+
+run:
+what-is-celo/about-celo-l1/validator/run/mainnet > legacy/validator/run/mainnet
+
+

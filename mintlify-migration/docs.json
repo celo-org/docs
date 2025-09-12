@@ -1,0 +1,705 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "Celo Docs",
+  "colors": {
+    "primary": "#000000",
+    "light": "#fcff52",
+    "dark": "#000000"
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "background": {
+    "color": {
+      "dark": "#1e002b",
+      "light": "#fbf6f1"
+    }
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "fonts": {
+    "heading": {
+      "family": "system-ui"
+    },
+    "body": {
+      "family": "system-ui"
+    }
+  },
+  "banner": {
+    "content": "The Celo Ice Cream hardfork 🍦 is coming. [Learn more about the upgrade](https://docs.celo.org/cel2/notices/eigenda-v2-upgrade).",
+    "dismissible": true
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "tab": "About Celo",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "about-celo/index",
+              "about-celo/history",
+              "about-celo/wallets",
+              "about-celo/exchanges",
+              "about-celo/gas-fees",
+              "about-celo/ramps",
+              {
+                "group": "Bridging",
+                "pages": [
+                  "about-celo/bridged-tokens/bridges",
+                  "about-celo/bridged-tokens/native-ETH-bridging"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Protocol",
+            "pages": [
+              "about-celo/protocol/index",
+              "about-celo/protocol/consensus",
+              "about-celo/protocol/celo-token",
+              "about-celo/protocol/escrow"
+            ]
+          },
+          {
+            "group": "Governance",
+            "pages": [
+              "about-celo/protocol/governance/overview",
+              "about-celo/protocol/governance/governance-toolkit",
+              "about-celo/protocol/governance/create-governance-proposal",
+              "about-celo/protocol/governance/voting-in-governance",
+              "about-celo/protocol/governance/voting-in-governance-using-mondo",
+              "about-celo/protocol/governance/governable-parameters",
+              "about-celo/protocol/governance/smart-contracts-upgrades"
+            ]
+          },
+          {
+            "group": "Transactions",
+            "pages": [
+              "about-celo/protocol/transactions/overview",
+              "about-celo/protocol/transactions/tx-comment-encryption",
+              "about-celo/protocol/transactions/transaction-types"
+            ]
+          },
+          {
+            "group": "Epoch Rewards",
+            "pages": [
+              "about-celo/protocol/epoch-rewards/index",
+              "about-celo/protocol/epoch-rewards/community-fund",
+              "about-celo/protocol/epoch-rewards/carbon-offsetting-fund"
+            ]
+          },
+          {
+            "group": "Manage applications",
+            "pages": [
+              "about-celo/manage/self-custody",
+              "about-celo/manage/release-gold",
+              "about-celo/manage/exchange",
+              "about-celo/manage/asset"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Build on Celo",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "build/index",
+              "build/quickstart",
+              "build/cel2-architecture",
+              "build/launch-checklist",
+              "build/fund-your-project"
+            ]
+          },
+          {
+            "group": "Build with AI",
+            "pages": [
+              "build/build-with-ai/overview",
+              "build/build-with-ai/vibe-coding",
+              {
+                "group": "Build with GOAT",
+                "pages": [
+                  "build/build-with-ai/build-with-goat/token-swap-agent",
+                  "build/build-with-ai/build-with-goat/mint-nft-agent",
+                  "build/build-with-ai/build-with-goat/send-token-agent"
+                ]
+              },
+              "build/build-with-ai/resources",
+              "build/build-with-ai/tools",
+              "build/build-with-ai/multi-agent-systems",
+              "build/build-with-ai/usecases",
+              {
+                "group": "Examples",
+                "pages": [
+                  "build/build-with-ai/examples/ai-memecoins",
+                  "build/build-with-ai/examples/building_with_goat",
+                  "build/build-with-ai/examples/build-with-nebula"
+                ]
+              },
+              {
+                "group": "Celo MCPs",
+                "pages": [
+                  "build/build-with-ai/mcp/index",
+                  "build/build-with-ai/mcp/celo-mcp",
+                  "build/build-with-ai/mcp/composer-mcp"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Use Cases",
+            "pages": [
+              {
+                "group": "Build a Mini App",
+                "pages": [
+                  "build/build-on-minipay/overview",
+                  "build/build-on-minipay/quickstart",
+                  {
+                    "group": "Prerequisites",
+                    "pages": [
+                      "build/build-on-minipay/prerequisites/ngrok-setup"
+                    ]
+                  },
+                  "build/build-on-minipay/code-library",
+                  "build/build-on-minipay/deeplinks"
+                ]
+              },
+              "build/build-with-local-stablecoin",
+              "build/build-with-defi",
+              "build/build-with-zk-identity",
+              "build/build-with-self"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infra Partners",
+        "groups": [
+          {
+            "group": "Notices",
+            "pages": [
+              "infra-partners/notices/celo-sepolia-launch",
+              "infra-partners/notices/eigenda-v2-upgrade",
+              "infra-partners/notices/isthmus-upgrade",
+              "infra-partners/notices/l2-migration"
+            ]
+          },
+          {
+            "group": "Node Operation",
+            "pages": [
+              "infra-partners/operators/overview",
+              "infra-partners/operators/architecture",
+              "infra-partners/operators/run-node",
+              "infra-partners/operators/migrate-node"
+            ]
+          },
+          {
+            "group": "Celo L2 Specs",
+            "pages": [
+              "infra-partners/specs"
+            ]
+          },
+          {
+            "group": "Integrate with Celo",
+            "pages": [
+              "infra-partners/integration/index",
+              "infra-partners/integration/general",
+              "infra-partners/integration/checklist",
+              "infra-partners/integration/custody",
+              "infra-partners/integration/listings",
+              "infra-partners/integration/cloud-hsm"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tooling",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "developer/index",
+              "network/index",
+              "developer/bridges/bridges",
+              "developer/fee-abstraction",
+              "developer/faucet"
+            ]
+          },
+          {
+            "group": "Testnets",
+            "pages": [
+              "network/alfajores/index",
+              "network/baklava/index",
+              "network/celo-sepolia/index",
+              "network/eclair/index"
+            ]
+          },
+          {
+            "group": "Nodes",
+            "pages": [
+              "network/node/overview",
+              "network/node/run-a-celo-node",
+              "network/node/forno",
+              "network/node/alchemy"
+            ]
+          },
+          {
+            "group": "Contracts",
+            "pages": [
+              "contracts/core-contracts",
+              "contracts/token-contracts",
+              "contracts/uniswap-contracts"
+            ]
+          },
+          {
+            "group": "Wallets",
+            "pages": [
+              "wallet/index",
+              {
+                "group": "MetaMask",
+                "pages": [
+                  "wallet/metamask/add-celo-testnet-to-metamask",
+                  "wallet/metamask/setup",
+                  "wallet/metamask/use",
+                  "wallet/metamask/import"
+                ]
+              },
+              {
+                "group": "Ledger Wallet",
+                "pages": [
+                  "wallet/ledger/setup",
+                  "wallet/ledger/to-celo-terminal",
+                  "wallet/ledger/to-celo-web",
+                  "wallet/ledger/to-celo-cli"
+                ]
+              },
+              "wallet/staking"
+            ]
+          },
+          {
+            "group": "Explorers",
+            "pages": [
+              "developer/explorers/overview",
+              "developer/explorers/block-explorers",
+              "developer/explorers/analytics",
+              "developer/explorers/blockscout",
+              "developer/explorers/celoscan"
+            ]
+          },
+          {
+            "group": "Indexers",
+            "pages": [
+              "developer/indexers/overview",
+              "developer/indexers/the-graph",
+              "developer/indexers/subquery",
+              "developer/indexers/envio"
+            ]
+          },
+          {
+            "group": "Dev Environments",
+            "pages": [
+              "developer/deploy/index",
+              "developer/deploy/foundry",
+              {
+                "group": "Using thirdweb",
+                "pages": [
+                  "developer/deploy/thirdweb/overview",
+                  "developer/deploy/thirdweb/thirdweb",
+                  "developer/deploy/thirdweb/one-click-deploy"
+                ]
+              },
+              "developer/deploy/remix",
+              "developer/deploy/hardhat"
+            ]
+          },
+          {
+            "group": "Libraries & SDKs",
+            "pages": [
+              "developer/sdks/celo-sdks",
+              "developer/sdks/composer-kit",
+              {
+                "group": "CLI",
+                "pages": [
+                  "cli/index",
+                  "cli/account",
+                  "cli/config",
+                  "cli/dkg",
+                  "cli/election",
+                  "cli/epochs",
+                  "cli/exchange",
+                  "cli/governance",
+                  "cli/identity",
+                  "cli/lockedcelo",
+                  "cli/lockedgold",
+                  "cli/multisig",
+                  "cli/network",
+                  "cli/node",
+                  "cli/oracle",
+                  "cli/releasecelo",
+                  "cli/rewards",
+                  "cli/transfer",
+                  "cli/validator",
+                  "cli/validatorgroup",
+                  "cli/autocomplete",
+                  "cli/commands",
+                  "cli/help",
+                  "cli/plugins"
+                ]
+              },
+              "developer/viem/index",
+              "developer/thirdweb-sdk/index",
+              "developer/ethers/index",
+              "developer/reown/index",
+              "developer/dynamic/index",
+              "developer/portal/index",
+              "developer/particle-network/index",
+              {
+                "group": "ContractKit",
+                "pages": [
+                  "developer/contractkit/index",
+                  "developer/contractkit/setup",
+                  "developer/contractkit/usage",
+                  "developer/contractkit/contracts-wrappers-registry",
+                  "developer/contractkit/odis"
+                ]
+              },
+              "developer/rainbowkit-celo/index",
+              "developer/web3/index"
+            ]
+          },
+          {
+            "group": "Contract Verification",
+            "pages": [
+              "developer/verify/index",
+              "developer/verify/blockscout",
+              "developer/verify/celoscan",
+              "developer/verify/remix",
+              "developer/verify/hardhat"
+            ]
+          },
+          {
+            "group": "Oracles",
+            "pages": [
+              "developer/oracles/run",
+              "developer/oracles/index",
+              "developer/oracles/band-protocol",
+              "developer/oracles/chainlink-oracles",
+              "developer/oracles/redstone",
+              "developer/oracles/supra",
+              "developer/oracles/quex-oracles"
+            ]
+          },
+          {
+            "group": " ",
+            "pages": [
+              "developer/bridges/cross-chain-messaging"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Contribute to Celo",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "contribute-to-celo/index",
+              "contribute-to-celo/builders",
+              "contribute-to-celo/daos",
+              "contribute-to-celo/code-of-conduct"
+            ]
+          },
+          {
+            "group": "Contributors",
+            "pages": [
+              "contribute-to-celo/contributors/overview",
+              "contribute-to-celo/contributors/code-contributors",
+              "contribute-to-celo/contributors/cip-contributors",
+              "contribute-to-celo/contributors/documentation-contributors"
+            ]
+          },
+          {
+            "group": "Community RPC Nodes",
+            "pages": [
+              "contribute-to-celo/community-rpc-nodes/how-it-works",
+              "contribute-to-celo/community-rpc-nodes/registering-as-rpc-node",
+              "contribute-to-celo/community-rpc-nodes/community-rpc-node",
+              "contribute-to-celo/community-rpc-nodes/penalties",
+              "contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
+            ]
+          },
+          {
+            "group": "Release Process",
+            "pages": [
+              "contribute-to-celo/release-process/index",
+              "contribute-to-celo/release-process/smart-contracts",
+              "contribute-to-celo/release-process/blockchain-client",
+              "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils",
+              "contribute-to-celo/release-process/attestation-service"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Legacy",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "legacy/overview",
+              "legacy/l1-architecture",
+              "legacy/whitepapers",
+              "legacy/faq"
+            ]
+          },
+          {
+            "group": "Transition From L1 to L2",
+            "pages": [
+              "legacy/transition/whats-changed/overview",
+              "legacy/transition/whats-changed/l1-l2",
+              "legacy/transition/optimism/op-l2",
+              "legacy/transition/guides/bridging-celo-from-l1-to-l2",
+              "legacy/transition/guides/withdrawing-celo-from-l2-to-l1"
+            ]
+          },
+          {
+            "group": "Protocol",
+            "pages": [
+              {
+                "group": "Proof-of-Stake",
+                "pages": [
+                  "legacy/protocol/pos/index",
+                  "legacy/protocol/pos/validator-groups",
+                  "legacy/protocol/pos/locked-gold",
+                  "legacy/protocol/pos/validator-elections",
+                  {
+                    "group": "Epoch Rewards",
+                    "pages": [
+                      "legacy/protocol/pos/epoch-rewards",
+                      "legacy/protocol/pos/epoch-rewards-validator",
+                      "legacy/protocol/pos/epoch-rewards-locked-gold"
+                    ]
+                  },
+                  "legacy/protocol/pos/penalties"
+                ]
+              },
+              {
+                "group": "Consensus",
+                "pages": [
+                  "legacy/protocol/consensus/index",
+                  "legacy/protocol/consensus/validator-set-differences",
+                  "legacy/protocol/consensus/locating-nodes"
+                ]
+              },
+              {
+                "group": "Transactions",
+                "pages": [
+                  "legacy/protocol/transaction/index",
+                  "legacy/protocol/transaction/native-currency",
+                  "legacy/protocol/transaction/erc20-transaction-fees",
+                  "legacy/protocol/transaction/gas-pricing",
+                  "legacy/protocol/transaction/escrow",
+                  "legacy/protocol/transaction/tx-comment-encryption",
+                  "legacy/protocol/transaction/transaction-types"
+                ]
+              },
+              {
+                "group": "Stability",
+                "pages": [
+                  "legacy/protocol/stability/index",
+                  "legacy/protocol/stability/doto",
+                  "legacy/protocol/stability/granda-mento",
+                  "legacy/protocol/stability/oracles",
+                  "legacy/protocol/stability/stability-fees",
+                  "legacy/protocol/stability/adding-stable-assets"
+                ]
+              },
+              {
+                "group": "Identity",
+                "pages": [
+                  "legacy/protocol/identity/index",
+                  "legacy/protocol/identity/metadata",
+                  "legacy/protocol/identity/smart-contract-accounts",
+                  "legacy/protocol/identity/encrypted-cloud-backup",
+                  "legacy/protocol/identity/privacy-research",
+                  {
+                    "group": "ODIS",
+                    "pages": [
+                      "legacy/protocol/identity/odis-use-case-phone-number-privacy",
+                      {
+                        "group": "Use Cases",
+                        "pages": [
+                          "legacy/protocol/identity/odis-use-case-phone-number-privacy",
+                          "legacy/protocol/identity/odis-use-case-key-hardening"
+                        ]
+                      },
+                      {
+                        "group": "Domains",
+                        "pages": [
+                          "legacy/protocol/identity/odis-domain",
+                          "legacy/protocol/identity/odis-domain-sequential-delay-domain"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "legacy/protocol/randomness",
+              {
+                "group": "Contracts",
+                "pages": [
+                  "legacy/protocol/contracts/add-contract"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Nodes",
+            "pages": [
+              "legacy/node/run-mainnet",
+              "legacy/node/run-alfajores",
+              "legacy/node/run-baklava"
+            ]
+          },
+          {
+            "group": "Validator",
+            "pages": [
+              "legacy/validator/index",
+              "legacy/validator/voting",
+              {
+                "group": "Run a Validator",
+                "pages": [
+                  "legacy/validator/run/mainnet"
+                ]
+              },
+              {
+                "group": "Key Management",
+                "pages": [
+                  "legacy/validator/key-management/summary",
+                  "legacy/validator/key-management/detailed",
+                  "legacy/validator/key-management/key-rotation"
+                ]
+              },
+              "legacy/validator/security",
+              "legacy/validator/monitoring",
+              "legacy/validator/devops-best-practices",
+              "legacy/validator/node-upgrade",
+              "legacy/validator/proxy",
+              "legacy/validator/validator-explorer",
+              "legacy/validator/celo-foundation-voting-policy",
+              "legacy/validator/troubleshooting-faq",
+              {
+                "group": "External",
+                "pages": [
+                  "legacy/validator/celo-website",
+                  "legacy/validator/discord"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Organization",
+          "href": "https://celo.org/",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Support",
+          "href": "https://docs.celo.org/build/support",
+          "icon": "bullhorn"
+        },
+        {
+          "anchor": "Forum",
+          "href": "https://medium.com/celoorg",
+          "icon": "newspaper"
+        },
+        {
+          "anchor": "FAQs",
+          "href": "https://docs.celo.org/legacy/faq",
+          "icon": "square-question"
+        },
+        {
+          "anchor": "Glossary",
+          "href": "https://docs.celo.org/glossary",
+          "icon": "graduation-cap"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Community",
+        "href": "https://discord.com/invite/celo"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "GitHub",
+      "href": "https://github.com/celo-org"
+    }
+  },
+  "logo": {
+    "light": "/logo/celo_light.png",
+    "dark": "/logo/celo_dark.png",
+    "href": "https://celo.org"
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "Community",
+        "items": [
+          {
+            "label": "Forum",
+            "href": "https://forum.celo.org/"
+          },
+          {
+            "label": "Contributors",
+            "href": "https://docs.celo.org/contribute-to-celo/"
+          }
+        ]
+      },
+      {
+        "header": "Socials",
+        "items": [
+          {
+            "href": "https://www.youtube.com/@CeloOrg",
+            "label": "Youtube"
+          },
+          {
+            "href": "https://discord.com/invite/celo",
+            "label": "Discord"
+          },
+          {
+            "href": "https://x.com/Celo",
+            "label": "X"
+          },
+          {
+            "href": "https://lemonade.social/celo",
+            "label": "Lemonade"
+          }
+        ]
+      }
+    ]
+  }
+}
