@@ -32,10 +32,6 @@
       "family": "system-ui"
     }
   },
-  "banner": {
-    "content": "The Celo Ice Cream hardfork 🍦 is coming. [Learn more about the upgrade](https://docs.celo.org/cel2/notices/eigenda-v2-upgrade).",
-    "dismissible": true
-  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
