@@ -8,21 +8,16 @@
     "dark": "#000000"
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
   },
   "background": {
     "color": {
-      "dark": "#1e002b",
+      "dark": "#0b0d10",
       "light": "#fbf6f1"
     }
   },
   "appearance": {
-    "default": "light"
+    "default": "dark"
   },
   "fonts": {
     "heading": {
@@ -41,27 +36,25 @@
     "tabs": [
       {
         "tab": "Home",
-        "pages": [
-          "index"
-        ]
-      },
-      {
-        "tab": "About Celo",
         "groups": [
+          {
+            "group": "Introduction",
+            "pages": ["home/celo"]
+          },
           {
             "group": "Overview",
             "pages": [
-              "about-celo/index",
-              "about-celo/history",
-              "about-celo/wallets",
-              "about-celo/exchanges",
-              "about-celo/gas-fees",
-              "about-celo/ramps",
+              "home/index",
+              "home/history",
+              "home/wallets",
+              "home/exchanges",
+              "home/gas-fees",
+              "home/ramps",
               {
                 "group": "Bridging",
                 "pages": [
-                  "about-celo/bridged-tokens/bridges",
-                  "about-celo/bridged-tokens/native-ETH-bridging"
+                  "home/bridged-tokens/bridges",
+                  "home/bridged-tokens/native-ETH-bridging"
                 ]
               }
             ]
@@ -69,47 +62,47 @@
           {
             "group": "Protocol",
             "pages": [
-              "about-celo/protocol/index",
-              "about-celo/protocol/consensus",
-              "about-celo/protocol/celo-token",
-              "about-celo/protocol/escrow"
+              "home/protocol/index",
+              "home/protocol/consensus",
+              "home/protocol/celo-token",
+              "home/protocol/escrow"
             ]
           },
           {
             "group": "Governance",
             "pages": [
-              "about-celo/protocol/governance/overview",
-              "about-celo/protocol/governance/governance-toolkit",
-              "about-celo/protocol/governance/create-governance-proposal",
-              "about-celo/protocol/governance/voting-in-governance",
-              "about-celo/protocol/governance/voting-in-governance-using-mondo",
-              "about-celo/protocol/governance/governable-parameters",
-              "about-celo/protocol/governance/smart-contracts-upgrades"
+              "home/protocol/governance/overview",
+              "home/protocol/governance/governance-toolkit",
+              "home/protocol/governance/create-governance-proposal",
+              "home/protocol/governance/voting-in-governance",
+              "home/protocol/governance/voting-in-governance-using-mondo",
+              "home/protocol/governance/governable-parameters",
+              "home/protocol/governance/smart-contracts-upgrades"
             ]
           },
           {
             "group": "Transactions",
             "pages": [
-              "about-celo/protocol/transactions/overview",
-              "about-celo/protocol/transactions/tx-comment-encryption",
-              "about-celo/protocol/transactions/transaction-types"
+              "home/protocol/transactions/overview",
+              "home/protocol/transactions/tx-comment-encryption",
+              "home/protocol/transactions/transaction-types"
             ]
           },
           {
             "group": "Epoch Rewards",
             "pages": [
-              "about-celo/protocol/epoch-rewards/index",
-              "about-celo/protocol/epoch-rewards/community-fund",
-              "about-celo/protocol/epoch-rewards/carbon-offsetting-fund"
+              "home/protocol/epoch-rewards/index",
+              "home/protocol/epoch-rewards/community-fund",
+              "home/protocol/epoch-rewards/carbon-offsetting-fund"
             ]
           },
           {
             "group": "Manage applications",
             "pages": [
-              "about-celo/manage/self-custody",
-              "about-celo/manage/release-gold",
-              "about-celo/manage/exchange",
-              "about-celo/manage/asset"
+              "home/manage/self-custody",
+              "home/manage/release-gold",
+              "home/manage/exchange",
+              "home/manage/asset"
             ]
           }
         ]
@@ -120,44 +113,44 @@
           {
             "group": "Overview",
             "pages": [
-              "build/index",
-              "build/quickstart",
-              "build/cel2-architecture",
-              "build/launch-checklist",
-              "build/fund-your-project"
+              "build-on-celo/index",
+              "build-on-celo/quickstart",
+              "build-on-celo/cel2-architecture",
+              "build-on-celo/launch-checklist",
+              "build-on-celo/fund-your-project"
             ]
           },
           {
             "group": "Build with AI",
             "pages": [
-              "build/build-with-ai/overview",
-              "build/build-with-ai/vibe-coding",
+              "build-on-celo/build-with-ai/overview",
+              "build-on-celo/build-with-ai/vibe-coding",
               {
                 "group": "Build with GOAT",
                 "pages": [
-                  "build/build-with-ai/build-with-goat/token-swap-agent",
-                  "build/build-with-ai/build-with-goat/mint-nft-agent",
-                  "build/build-with-ai/build-with-goat/send-token-agent"
+                  "build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
+                  "build-on-celo/build-with-ai/build-with-goat/mint-nft-agent",
+                  "build-on-celo/build-with-ai/build-with-goat/send-token-agent"
                 ]
               },
-              "build/build-with-ai/resources",
-              "build/build-with-ai/tools",
-              "build/build-with-ai/multi-agent-systems",
-              "build/build-with-ai/usecases",
+              "build-on-celo/build-with-ai/resources",
+              "build-on-celo/build-with-ai/tools",
+              "build-on-celo/build-with-ai/multi-agent-systems",
+              "build-on-celo/build-with-ai/usecases",
               {
                 "group": "Examples",
                 "pages": [
-                  "build/build-with-ai/examples/ai-memecoins",
-                  "build/build-with-ai/examples/building_with_goat",
-                  "build/build-with-ai/examples/build-with-nebula"
+                  "build-on-celo/build-with-ai/examples/ai-memecoins",
+                  "build-on-celo/build-with-ai/examples/building_with_goat",
+                  "build-on-celo/build-with-ai/examples/build-with-nebula"
                 ]
               },
               {
                 "group": "Celo MCPs",
                 "pages": [
-                  "build/build-with-ai/mcp/index",
-                  "build/build-with-ai/mcp/celo-mcp",
-                  "build/build-with-ai/mcp/composer-mcp"
+                  "build-on-celo/build-with-ai/mcp/index",
+                  "build-on-celo/build-with-ai/mcp/celo-mcp",
+                  "build-on-celo/build-with-ai/mcp/composer-mcp"
                 ]
               }
             ]
@@ -168,22 +161,22 @@
               {
                 "group": "Build a Mini App",
                 "pages": [
-                  "build/build-on-minipay/overview",
-                  "build/build-on-minipay/quickstart",
+                  "build-on-celo/build-on-minipay/overview",
+                  "build-on-celo/build-on-minipay/quickstart",
                   {
                     "group": "Prerequisites",
                     "pages": [
-                      "build/build-on-minipay/prerequisites/ngrok-setup"
+                      "build-on-celo/build-on-minipay/prerequisites/ngrok-setup"
                     ]
                   },
-                  "build/build-on-minipay/code-library",
-                  "build/build-on-minipay/deeplinks"
+                  "build-on-celo/build-on-minipay/code-library",
+                  "build-on-celo/build-on-minipay/deeplinks"
                 ]
               },
-              "build/build-with-local-stablecoin",
-              "build/build-with-defi",
-              "build/build-with-zk-identity",
-              "build/build-with-self"
+              "build-on-celo/build-with-local-stablecoin",
+              "build-on-celo/build-with-defi",
+              "build-on-celo/build-with-zk-identity",
+              "build-on-celo/build-with-self"
             ]
           }
         ]
@@ -211,9 +204,7 @@
           },
           {
             "group": "Celo L2 Specs",
-            "pages": [
-              "infra-partners/specs"
-            ]
+            "pages": ["infra-partners/specs"]
           },
           {
             "group": "Integrate with Celo",
@@ -234,182 +225,180 @@
           {
             "group": "Overview",
             "pages": [
-              "developer/index",
-              "network/index",
-              "developer/bridges/bridges",
-              "developer/fee-abstraction",
-              "developer/faucet"
+              "tooling/overview/index",
+              "tooling/overview/network-overview",
+              "tooling/bridges/bridges",
+              "tooling/overview/fee-abstraction",
+              "tooling/overview/faucet"
             ]
           },
           {
             "group": "Testnets",
             "pages": [
-              "network/alfajores/index",
-              "network/baklava/index",
-              "network/celo-sepolia/index",
-              "network/eclair/index"
+              "tooling/testnets/alfajores/index",
+              "tooling/testnets/baklava/index",
+              "tooling/testnets/celo-sepolia/index",
+              "tooling/testnets/eclair/index"
             ]
           },
           {
             "group": "Nodes",
             "pages": [
-              "network/node/overview",
-              "network/node/run-a-celo-node",
-              "network/node/forno",
-              "network/node/alchemy"
+              "tooling/nodes/overview",
+              "tooling/nodes/run-a-celo-node",
+              "tooling/nodes/forno",
+              "tooling/nodes/alchemy"
             ]
           },
           {
             "group": "Contracts",
             "pages": [
-              "contracts/core-contracts",
-              "contracts/token-contracts",
-              "contracts/uniswap-contracts"
+              "tooling/contracts/core-contracts",
+              "tooling/contracts/token-contracts",
+              "tooling/contracts/uniswap-contracts"
             ]
           },
           {
             "group": "Wallets",
             "pages": [
-              "wallet/index",
+              "tooling/wallets/index",
               {
                 "group": "MetaMask",
                 "pages": [
-                  "wallet/metamask/add-celo-testnet-to-metamask",
-                  "wallet/metamask/setup",
-                  "wallet/metamask/use",
-                  "wallet/metamask/import"
+                  "tooling/wallets/metamask/add-celo-testnet-to-metamask",
+                  "tooling/wallets/metamask/setup",
+                  "tooling/wallets/metamask/use",
+                  "tooling/wallets/metamask/import"
                 ]
               },
               {
                 "group": "Ledger Wallet",
                 "pages": [
-                  "wallet/ledger/setup",
-                  "wallet/ledger/to-celo-terminal",
-                  "wallet/ledger/to-celo-web",
-                  "wallet/ledger/to-celo-cli"
+                  "tooling/wallets/ledger/setup",
+                  "tooling/wallets/ledger/to-celo-terminal",
+                  "tooling/wallets/ledger/to-celo-web",
+                  "tooling/wallets/ledger/to-celo-cli"
                 ]
               },
-              "wallet/staking"
+              "tooling/wallets/staking"
             ]
           },
           {
             "group": "Explorers",
             "pages": [
-              "developer/explorers/overview",
-              "developer/explorers/block-explorers",
-              "developer/explorers/analytics",
-              "developer/explorers/blockscout",
-              "developer/explorers/celoscan"
+              "tooling/explorers/overview",
+              "tooling/explorers/block-explorers",
+              "tooling/explorers/analytics",
+              "tooling/explorers/blockscout",
+              "tooling/explorers/celoscan"
             ]
           },
           {
             "group": "Indexers",
             "pages": [
-              "developer/indexers/overview",
-              "developer/indexers/the-graph",
-              "developer/indexers/subquery",
-              "developer/indexers/envio"
+              "tooling/indexers/overview",
+              "tooling/indexers/the-graph",
+              "tooling/indexers/subquery",
+              "tooling/indexers/envio"
             ]
           },
           {
             "group": "Dev Environments",
             "pages": [
-              "developer/deploy/index",
-              "developer/deploy/foundry",
+              "tooling/dev-environments/index",
+              "tooling/dev-environments/foundry",
               {
                 "group": "Using thirdweb",
                 "pages": [
-                  "developer/deploy/thirdweb/overview",
-                  "developer/deploy/thirdweb/thirdweb",
-                  "developer/deploy/thirdweb/one-click-deploy"
+                  "tooling/dev-environments/thirdweb/overview",
+                  "tooling/dev-environments/thirdweb/thirdweb",
+                  "tooling/dev-environments/thirdweb/one-click-deploy"
                 ]
               },
-              "developer/deploy/remix",
-              "developer/deploy/hardhat"
+              "tooling/dev-environments/remix",
+              "tooling/dev-environments/hardhat"
             ]
           },
           {
             "group": "Libraries & SDKs",
             "pages": [
-              "developer/sdks/celo-sdks",
-              "developer/sdks/composer-kit",
+              "tooling/libraries-sdks/celo-sdks",
+              "tooling/libraries-sdks/composer-kit",
               {
                 "group": "CLI",
                 "pages": [
-                  "cli/index",
-                  "cli/account",
-                  "cli/config",
-                  "cli/dkg",
-                  "cli/election",
-                  "cli/epochs",
-                  "cli/exchange",
-                  "cli/governance",
-                  "cli/identity",
-                  "cli/lockedcelo",
-                  "cli/lockedgold",
-                  "cli/multisig",
-                  "cli/network",
-                  "cli/node",
-                  "cli/oracle",
-                  "cli/releasecelo",
-                  "cli/rewards",
-                  "cli/transfer",
-                  "cli/validator",
-                  "cli/validatorgroup",
-                  "cli/autocomplete",
-                  "cli/commands",
-                  "cli/help",
-                  "cli/plugins"
+                  "tooling/libraries-sdks/cli/index",
+                  "tooling/libraries-sdks/cli/account",
+                  "tooling/libraries-sdks/cli/config",
+                  "tooling/libraries-sdks/cli/dkg",
+                  "tooling/libraries-sdks/cli/election",
+                  "tooling/libraries-sdks/cli/epochs",
+                  "tooling/libraries-sdks/cli/exchange",
+                  "tooling/libraries-sdks/cli/governance",
+                  "tooling/libraries-sdks/cli/identity",
+                  "tooling/libraries-sdks/cli/lockedcelo",
+                  "tooling/libraries-sdks/cli/lockedgold",
+                  "tooling/libraries-sdks/cli/multisig",
+                  "tooling/libraries-sdks/cli/network",
+                  "tooling/libraries-sdks/cli/node",
+                  "tooling/libraries-sdks/cli/oracle",
+                  "tooling/libraries-sdks/cli/releasecelo",
+                  "tooling/libraries-sdks/cli/rewards",
+                  "tooling/libraries-sdks/cli/transfer",
+                  "tooling/libraries-sdks/cli/validator",
+                  "tooling/libraries-sdks/cli/validatorgroup",
+                  "tooling/libraries-sdks/cli/autocomplete",
+                  "tooling/libraries-sdks/cli/commands",
+                  "tooling/libraries-sdks/cli/help",
+                  "tooling/libraries-sdks/cli/plugins"
                 ]
               },
-              "developer/viem/index",
-              "developer/thirdweb-sdk/index",
-              "developer/ethers/index",
-              "developer/reown/index",
-              "developer/dynamic/index",
-              "developer/portal/index",
-              "developer/particle-network/index",
+              "tooling/libraries-sdks/viem/index",
+              "tooling/libraries-sdks/thirdweb-sdk/index",
+              "tooling/libraries-sdks/ethers/index",
+              "tooling/libraries-sdks/reown/index",
+              "tooling/libraries-sdks/dynamic/index",
+              "tooling/libraries-sdks/portal/index",
+              "tooling/libraries-sdks/particle-network/index",
               {
                 "group": "ContractKit",
                 "pages": [
-                  "developer/contractkit/index",
-                  "developer/contractkit/setup",
-                  "developer/contractkit/usage",
-                  "developer/contractkit/contracts-wrappers-registry",
-                  "developer/contractkit/odis"
+                  "tooling/libraries-sdks/contractkit/index",
+                  "tooling/libraries-sdks/contractkit/setup",
+                  "tooling/libraries-sdks/contractkit/usage",
+                  "tooling/libraries-sdks/contractkit/contracts-wrappers-registry",
+                  "tooling/libraries-sdks/contractkit/odis"
                 ]
               },
-              "developer/rainbowkit-celo/index",
-              "developer/web3/index"
+              "tooling/libraries-sdks/rainbowkit-celo/index",
+              "tooling/libraries-sdks/web3/index"
             ]
           },
           {
             "group": "Contract Verification",
             "pages": [
-              "developer/verify/index",
-              "developer/verify/blockscout",
-              "developer/verify/celoscan",
-              "developer/verify/remix",
-              "developer/verify/hardhat"
+              "tooling/contract-verification/index",
+              "tooling/contract-verification/blockscout",
+              "tooling/contract-verification/celoscan",
+              "tooling/contract-verification/remix",
+              "tooling/contract-verification/hardhat"
             ]
           },
           {
             "group": "Oracles",
             "pages": [
-              "developer/oracles/run",
-              "developer/oracles/index",
-              "developer/oracles/band-protocol",
-              "developer/oracles/chainlink-oracles",
-              "developer/oracles/redstone",
-              "developer/oracles/supra",
-              "developer/oracles/quex-oracles"
+              "tooling/oracles/run",
+              "tooling/oracles/index",
+              "tooling/oracles/band-protocol",
+              "tooling/oracles/chainlink-oracles",
+              "tooling/oracles/redstone",
+              "tooling/oracles/supra",
+              "tooling/oracles/quex-oracles"
             ]
           },
           {
             "group": " ",
-            "pages": [
-              "developer/bridges/cross-chain-messaging"
-            ]
+            "pages": ["tooling/bridges/cross-chain-messaging"]
           }
         ]
       },
@@ -563,9 +552,7 @@
               "legacy/protocol/randomness",
               {
                 "group": "Contracts",
-                "pages": [
-                  "legacy/protocol/contracts/add-contract"
-                ]
+                "pages": ["legacy/protocol/contracts/add-contract"]
               }
             ]
           },
@@ -584,9 +571,7 @@
               "legacy/validator/voting",
               {
                 "group": "Run a Validator",
-                "pages": [
-                  "legacy/validator/run/mainnet"
-                ]
+                "pages": ["legacy/validator/run/mainnet"]
               },
               {
                 "group": "Key Management",
@@ -651,6 +636,10 @@
       {
         "label": "Community",
         "href": "https://discord.com/invite/celo"
+      },
+      {
+        "label": "Celo.org",
+        "href": "https://celo.org"
       }
     ],
     "primary": {
@@ -661,8 +650,7 @@
   },
   "logo": {
     "light": "/logo/celo_light.png",
-    "dark": "/logo/celo_dark.png",
-    "href": "https://celo.org"
+    "dark": "/logo/celo_dark.png"
   },
   "redirects": [
     {
@@ -691,7 +679,7 @@
     },
     {
       "source": "/cel2/builders",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/cel2/eclair",
@@ -703,7 +691,7 @@
     },
     {
       "source": "/cel2/notices/day-1-partners",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/cel2/operators/rpc-provider",
@@ -711,11 +699,11 @@
     },
     {
       "source": "/cel2/guides/fee-abstraction",
-      "destination": "/developer/fee-abstraction"
+      "destination": "/tooling/overview/fee-abstraction"
     },
     {
       "source": "/celo-codebase/protocol",
-      "destination": "/about-celo/protocol"
+      "destination": "/home/protocol"
     },
     {
       "source": "/celo-codebase/protocol/bridging/bridging-native-assets",
@@ -751,11 +739,11 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus",
-      "destination": "/about-celo/protocol/consensus"
+      "destination": "/home/protocol/consensus"
     },
     {
       "source": "/celo-codebase/protocol/consensus/index",
-      "destination": "/about-celo/protocol/consensus"
+      "destination": "/home/protocol/consensus"
     },
     {
       "source": "/celo-codebase/protocol/consensus/locating-nodes",
@@ -763,7 +751,7 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus/ultralight-sync",
-      "destination": "/about-celo/protocol/consensus"
+      "destination": "/home/protocol/consensus"
     },
     {
       "source": "/celo-codebase/protocol/consensus/validator-set-differences",
@@ -811,7 +799,7 @@
     },
     {
       "source": "/celo-codebase/protocol/index",
-      "destination": "/about-celo/protocol"
+      "destination": "/home/protocol"
     },
     {
       "source": "/celo-codebase/protocol/odis",
@@ -871,11 +859,11 @@
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund",
-      "destination": "/about-celo/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/community-fund",
-      "destination": "/about-celo/protocol/epoch-rewards/community-fund"
+      "destination": "/home/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards",
@@ -883,15 +871,15 @@
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund",
-      "destination": "/about-celo/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund",
-      "destination": "/about-celo/protocol/epoch-rewards/community-fund"
+      "destination": "/home/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund#bolstering-the-reserve",
-      "destination": "/about-celo/protocol/epoch-rewards/community-fund"
+      "destination": "/home/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards",
@@ -943,7 +931,7 @@
     },
     {
       "source": "/celo-codebase/protocol/release-gold",
-      "destination": "/about-celo/manage/release-gold"
+      "destination": "/home/manage/release-gold"
     },
     {
       "source": "/celo-codebase/protocol/stability",
@@ -983,7 +971,7 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/escrow",
-      "destination": "/about-celo/protocol/escrow"
+      "destination": "/home/protocol/escrow"
     },
     {
       "source": "/celo-codebase/protocol/transactions/gas-pricing",
@@ -991,7 +979,7 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/index",
-      "destination": "/about-celo/protocol/transactions/overview"
+      "destination": "/home/protocol/transactions/overview"
     },
     {
       "source": "/celo-codebase/protocol/transactions/native-currency",
@@ -999,7 +987,7 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/tx-comment-encryption",
-      "destination": "/about-celo/protocol/transactions/tx-comment-encryption"
+      "destination": "/home/protocol/transactions/tx-comment-encryption"
     },
     {
       "source": "/celo-codebase/wallet",
@@ -1039,11 +1027,11 @@
     },
     {
       "source": "/celo-gold-holder-guide/quick-start",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-gold-holder-guide/voting-governance",
-      "destination": "/about-celo/protocol/governance/voting-in-governance"
+      "destination": "/home/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-gold-holder-guide/voting-validators",
@@ -1051,11 +1039,11 @@
     },
     {
       "source": "/celo-holder-guide/celo-exchange-bot",
-      "destination": "/about-celo/manage/exchange"
+      "destination": "/home/manage/exchange"
     },
     {
       "source": "/celo-holder-guide/celo-recovery",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/connecting-ledger-celo-terminal-wallet",
@@ -1071,15 +1059,15 @@
     },
     {
       "source": "/celo-holder-guide/cusd",
-      "destination": "/about-celo/manage/asset"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/celo-holder-guide/eth-recovery",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/governance-cheat-sheet",
-      "destination": "/about-celo/protocol/governance/governable-parameters"
+      "destination": "/home/protocol/governance/governable-parameters"
     },
     {
       "source": "/celo-holder-guide/ledger",
@@ -1087,19 +1075,19 @@
     },
     {
       "source": "/celo-holder-guide/owners",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/quick-start",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/release-gold",
-      "destination": "/about-celo/manage/release-gold"
+      "destination": "/home/manage/release-gold"
     },
     {
       "source": "/celo-holder-guide/voting-governance",
-      "destination": "/about-celo/protocol/governance/voting-in-governance"
+      "destination": "/home/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-holder-guide/voting-validators",
@@ -1107,19 +1095,19 @@
     },
     {
       "source": "/celo-owner-guide/celo-exchange-bot",
-      "destination": "/about-celo/manage/exchange"
+      "destination": "/home/manage/exchange"
     },
     {
       "source": "/celo-owner-guide/celo-recovery",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/eth-recovery",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/governance-cheat-sheet",
-      "destination": "/about-celo/protocol/governance/governable-parameters"
+      "destination": "/home/protocol/governance/governable-parameters"
     },
     {
       "source": "/celo-owner-guide/ledger",
@@ -1127,11 +1115,11 @@
     },
     {
       "source": "/celo-owner-guide/quick-start",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/quick-start#lock-celo",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/quick-start#vote-for-a-validator-group",
@@ -1139,11 +1127,11 @@
     },
     {
       "source": "/celo-owner-guide/release-gold",
-      "destination": "/about-celo/manage/release-gold"
+      "destination": "/home/manage/release-gold"
     },
     {
       "source": "/celo-owner-guide/voting-governance",
-      "destination": "/about-celo/protocol/governance/voting-in-governance"
+      "destination": "/home/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-owner-guide/voting-validators",
@@ -1755,31 +1743,31 @@
     },
     {
       "source": "/developer/fee-currency",
-      "destination": "/developer/fee-abstraction"
+      "destination": "/tooling/overview/fee-abstraction"
     },
     {
       "source": "/developer/indexer",
-      "destination": "/developer/indexers"
+      "destination": "/tooling/indexers"
     },
     {
       "source": "/developer/indexer/overview",
-      "destination": "/developer/indexers/overview"
+      "destination": "/tooling/indexers/overview"
     },
     {
       "source": "/developer/indexer/subquery",
-      "destination": "/developer/indexers/subquery"
+      "destination": "/tooling/indexers/subquery"
     },
     {
       "source": "/developer/indexer/the-graph",
-      "destination": "/developer/indexers/the-graph"
+      "destination": "/tooling/indexers/the-graph"
     },
     {
       "source": "/developer/walletconnect",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/developer/deploy/thirdweb",
-      "destination": "/developer/deploy/thirdweb/overview"
+      "destination": "/tooling/dev-environments/thirdweb/overview"
     },
     {
       "source": "/docs.celo.org",
@@ -1819,7 +1807,7 @@
     },
     {
       "source": "/general/ecosystem/governance",
-      "destination": "/about-celo/protocol/governance"
+      "destination": "/home/protocol/governance"
     },
     {
       "source": "/general/ecosystem/overview",
@@ -2003,19 +1991,19 @@
     },
     {
       "source": "/holder/asset",
-      "destination": "/about-celo/manage/asset"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/holder/exchange",
-      "destination": "/about-celo/manage/exchange"
+      "destination": "/home/manage/exchange"
     },
     {
       "source": "/holder/release-gold",
-      "destination": "/about-celo/manage/release-gold"
+      "destination": "/home/manage/release-gold"
     },
     {
       "source": "/holder/self-custody",
-      "destination": "/about-celo/manage/self-custody"
+      "destination": "/home/manage/self-custody"
     },
     {
       "source": "/important-information/alfajores-testnet-disclaimer",
@@ -2095,7 +2083,7 @@
     },
     {
       "source": "/protocol/consensus/index",
-      "destination": "/about-celo/protocol/consensus"
+      "destination": "/home/protocol/consensus"
     },
     {
       "source": "/protocol/consensus/locating-nodes",
@@ -2103,7 +2091,7 @@
     },
     {
       "source": "/protocol/consensus/ultralight-sync",
-      "destination": "/about-celo/protocol/consensus"
+      "destination": "/home/protocol/consensus"
     },
     {
       "source": "/protocol/consensus/validator-set-differences",
@@ -2119,7 +2107,7 @@
     },
     {
       "source": "/protocol/governance",
-      "destination": "/about-celo/protocol/governance"
+      "destination": "/home/protocol/governance"
     },
     {
       "source": "/protocol/identity/index",
@@ -2127,7 +2115,7 @@
     },
     {
       "source": "/protocol/index",
-      "destination": "/about-celo/protocol"
+      "destination": "/home/protocol"
     },
     {
       "source": "/protocol/oracle/band-protocol",
@@ -2155,55 +2143,55 @@
     },
     {
       "source": "/protocol/pos/epoch-rewards",
-      "destination": "/about-celo/protocol/pos/epoch-rewards"
+      "destination": "/home/protocol/pos/epoch-rewards"
     },
     {
       "source": "/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-carbon-offsetting-fund"
+      "destination": "/home/protocol/pos/epoch-rewards-carbon-offsetting-fund"
     },
     {
       "source": "/protocol/pos/epoch-rewards-community-fund",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-community-fund"
+      "destination": "/home/protocol/pos/epoch-rewards-community-fund"
     },
     {
       "source": "/protocol/pos/epoch-rewards-locked-gold",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-locked-gold"
+      "destination": "/home/protocol/pos/epoch-rewards-locked-gold"
     },
     {
       "source": "/protocol/pos/epoch-rewards-validator",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-validator"
+      "destination": "/home/protocol/pos/epoch-rewards-validator"
     },
     {
       "source": "/protocol/pos/index",
-      "destination": "/about-celo/protocol/pos"
+      "destination": "/home/protocol/pos"
     },
     {
       "source": "/protocol/pos/locked-gold",
-      "destination": "/about-celo/protocol/pos/locked-gold"
+      "destination": "/home/protocol/pos/locked-gold"
     },
     {
       "source": "/protocol/pos/penalties",
-      "destination": "/about-celo/protocol/pos/penalties"
+      "destination": "/home/protocol/pos/penalties"
     },
     {
       "source": "/protocol/pos/validator-elections",
-      "destination": "/about-celo/protocol/pos/validator-elections"
+      "destination": "/home/protocol/pos/validator-elections"
     },
     {
       "source": "/protocol/pos/validator-groups",
-      "destination": "/about-celo/protocol/pos/validator-groups"
+      "destination": "/home/protocol/pos/validator-groups"
     },
     {
       "source": "/protocol/pos/validator-rewards",
-      "destination": "/about-celo/protocol/pos/validator-rewards"
+      "destination": "/home/protocol/pos/validator-rewards"
     },
     {
       "source": "/protocol/proof-of-stake",
-      "destination": "/about-celo/protocol/pos"
+      "destination": "/home/protocol/pos"
     },
     {
       "source": "/protocol/randomness",
-      "destination": "/about-celo/protocol/randomness"
+      "destination": "/home/protocol/randomness"
     },
     {
       "source": "/protocol/socialconnect",
@@ -2211,35 +2199,35 @@
     },
     {
       "source": "/protocol/stability",
-      "destination": "/about-celo/protocol/stability"
+      "destination": "/home/protocol/stability"
     },
     {
       "source": "/protocol/transaction/erc20-transaction-fees",
-      "destination": "/developer/fee-abstraction"
+      "destination": "/tooling/overview/fee-abstraction"
     },
     {
       "source": "/protocol/transaction/escrow",
-      "destination": "/about-celo/protocol/escrow"
+      "destination": "/home/protocol/escrow"
     },
     {
       "source": "/protocol/transaction/gas-pricing",
-      "destination": "/developer/fee-abstraction"
+      "destination": "/tooling/overview/fee-abstraction"
     },
     {
       "source": "/protocol/transaction/native-currency",
-      "destination": "/about-celo/protocol/celo-token"
+      "destination": "/home/protocol/celo-token"
     },
     {
       "source": "/protocol/transaction/overview",
-      "destination": "/about-celo/protocol/transaction/overview"
+      "destination": "/home/protocol/transaction/overview"
     },
     {
       "source": "/protocol/transaction/transaction-types",
-      "destination": "/about-celo/protocol/transaction/transaction-types"
+      "destination": "/home/protocol/transaction/transaction-types"
     },
     {
       "source": "/protocol/transaction/tx-comment-encryption",
-      "destination": "/about-celo/protocol/transaction/tx-comment-encryption"
+      "destination": "/home/protocol/transaction/tx-comment-encryption"
     },
     {
       "source": "/token-addresses",
@@ -2403,15 +2391,15 @@
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol",
-      "destination": "/about-celo/protocol"
+      "destination": "/home/protocol"
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-carbon-offsetting-fund"
+      "destination": "/home/protocol/pos/epoch-rewards-carbon-offsetting-fund"
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund",
-      "destination": "/about-celo/protocol/pos/epoch-rewards-community-fund"
+      "destination": "/home/protocol/pos/epoch-rewards-community-fund"
     },
     {
       "source": "/what-is-celo/about-celo-l1/validator/celo-signal",
@@ -2427,7 +2415,7 @@
     },
     {
       "source": "/what-is-celo/using-celo/protocol/governance",
-      "destination": "/about-celo/protocol/governance/overview"
+      "destination": "/home/protocol/governance/overview"
     },
     {
       "source": "/what-is-celo/using-celo/protocol/penalties",
