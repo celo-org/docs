@@ -2518,8 +2518,8 @@
       "destination": "/build-on-celo"
     },
     {
-      "source": "/build/*",
-      "destination": "/build-on-celo/:splat"
+      "source": "/build/:slug*",
+      "destination": "/build-on-celo/:slug*"
     },
     {
       "source": "/developer",
@@ -2530,56 +2530,56 @@
       "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
-      "source": "/developer/contractkit/*",
-      "destination": "/tooling/libraries-sdks/contractkit/:splat"
+      "source": "/developer/contractkit/:slug*",
+      "destination": "/tooling/libraries-sdks/contractkit/:slug*"
     },
     {
       "source": "/developer/deploy",
       "destination": "/tooling/dev-environments"
     },
     {
-      "source": "/developer/deploy/*",
-      "destination": "/tooling/dev-environments/:splat"
+      "source": "/developer/deploy/:slug*",
+      "destination": "/tooling/dev-environments/:slug*"
     },
     {
       "source": "/developer/verify",
       "destination": "/tooling/contract-verification"
     },
     {
-      "source": "/developer/verify/*",
-      "destination": "/tooling/contract-verification/:splat"
+      "source": "/developer/verify/:slug*",
+      "destination": "/tooling/contract-verification/:slug*"
     },
     {
-      "source": "/developer/explorers/*",
-      "destination": "/tooling/explorers/:splat"
+      "source": "/developer/explorers/:slug*",
+      "destination": "/tooling/explorers/:slug*"
     },
     {
       "source": "/developer/oracles",
       "destination": "/tooling/oracles"
     },
     {
-      "source": "/developer/oracles/*",
-      "destination": "/tooling/oracles/:splat"
+      "source": "/developer/oracles/:slug*",
+      "destination": "/tooling/oracles/:slug*"
     },
     {
-      "source": "/developer/indexers/*",
-      "destination": "/tooling/indexers/:splat"
+      "source": "/developer/indexers/:slug*",
+      "destination": "/tooling/indexers/:slug*"
     },
     {
-      "source": "/developer/bridges/*",
-      "destination": "/tooling/bridges/:splat"
+      "source": "/developer/bridges/:slug*",
+      "destination": "/tooling/bridges/:slug*"
     },
     {
-      "source": "/developer/setup/*",
-      "destination": "/tooling/overview/:splat"
+      "source": "/developer/setup/:slug*",
+      "destination": "/tooling/overview/:slug*"
     },
     {
-      "source": "/developer/migrate/*",
-      "destination": "/tooling/overview/:splat"
+      "source": "/developer/migrate/:slug*",
+      "destination": "/tooling/overview/:slug*"
     },
     {
-      "source": "/developer/sdks/*",
-      "destination": "/tooling/libraries-sdks/:splat"
+      "source": "/developer/sdks/:slug*",
+      "destination": "/tooling/libraries-sdks/:slug*"
     },
     {
       "source": "/developer/fee-abstraction",
@@ -2590,40 +2590,40 @@
       "destination": "/build-on-celo/launch-checklist"
     },
     {
-      "source": "/developer/dynamic/*",
-      "destination": "/tooling/libraries-sdks/dynamic/:splat"
+      "source": "/developer/dynamic/:slug*",
+      "destination": "/tooling/libraries-sdks/dynamic/:slug*"
     },
     {
-      "source": "/developer/ethers/*",
-      "destination": "/tooling/libraries-sdks/ethers/:splat"
+      "source": "/developer/ethers/:slug*",
+      "destination": "/tooling/libraries-sdks/ethers/:slug*"
     },
     {
-      "source": "/developer/particle-network/*",
-      "destination": "/tooling/libraries-sdks/particle-network/:splat"
+      "source": "/developer/particle-network/:slug*",
+      "destination": "/tooling/libraries-sdks/particle-network/:slug*"
     },
     {
-      "source": "/developer/portal/*",
-      "destination": "/tooling/libraries-sdks/portal/:splat"
+      "source": "/developer/portal/:slug*",
+      "destination": "/tooling/libraries-sdks/portal/:slug*"
     },
     {
-      "source": "/developer/rainbowkit-celo/*",
-      "destination": "/tooling/libraries-sdks/rainbowkit-celo/:splat"
+      "source": "/developer/rainbowkit-celo/:slug*",
+      "destination": "/tooling/libraries-sdks/rainbowkit-celo/:slug*"
     },
     {
-      "source": "/developer/reown/*",
-      "destination": "/tooling/libraries-sdks/reown/:splat"
+      "source": "/developer/reown/:slug*",
+      "destination": "/tooling/libraries-sdks/reown/:slug*"
     },
     {
-      "source": "/developer/thirdweb-sdk/*",
-      "destination": "/tooling/libraries-sdks/thirdweb-sdk/:splat"
+      "source": "/developer/thirdweb-sdk/:slug*",
+      "destination": "/tooling/libraries-sdks/thirdweb-sdk/:slug*"
     },
     {
-      "source": "/developer/viem/*",
-      "destination": "/tooling/libraries-sdks/viem/:splat"
+      "source": "/developer/viem/:slug*",
+      "destination": "/tooling/libraries-sdks/viem/:slug*"
     },
     {
-      "source": "/developer/web3/*",
-      "destination": "/tooling/libraries-sdks/web3/:splat"
+      "source": "/developer/web3/:slug*",
+      "destination": "/tooling/libraries-sdks/web3/:slug*"
     },
     {
       "source": "/what-is-celo",
@@ -2634,16 +2634,16 @@
       "destination": "/home/protocol"
     },
     {
-      "source": "/what-is-celo/using-celo/protocol/*",
-      "destination": "/home/protocol/:splat"
+      "source": "/what-is-celo/using-celo/protocol/:slug*",
+      "destination": "/home/protocol/:slug*"
     },
     {
-      "source": "/what-is-celo/using-celo/manage/*",
-      "destination": "/home/manage/:splat"
+      "source": "/what-is-celo/using-celo/manage/:slug*",
+      "destination": "/home/manage/:slug*"
     },
     {
-      "source": "/what-is-celo/using-celo/bridged_tokens/*",
-      "destination": "/home/bridged-tokens/:splat"
+      "source": "/what-is-celo/using-celo/bridged_tokens/:slug*",
+      "destination": "/home/bridged-tokens/:slug*"
     },
     {
       "source": "/what-is-celo/using-celo/bridges",
@@ -2678,20 +2678,20 @@
       "destination": "/contribute-to-celo"
     },
     {
-      "source": "/what-is-celo/joining-celo/*",
-      "destination": "/contribute-to-celo/:splat"
+      "source": "/what-is-celo/joining-celo/:slug*",
+      "destination": "/contribute-to-celo/:slug*"
     },
     {
-      "source": "/what-is-celo/about-celo-l1/*",
-      "destination": "/legacy/:splat"
+      "source": "/what-is-celo/about-celo-l1/:slug*",
+      "destination": "/legacy/:slug*"
     },
     {
       "source": "/cli",
       "destination": "/tooling/libraries-sdks/cli"
     },
     {
-      "source": "/cli/*",
-      "destination": "/tooling/libraries-sdks/cli/:splat"
+      "source": "/cli/:slug*",
+      "destination": "/tooling/libraries-sdks/cli/:slug*"
     },
     {
       "source": "/network",
@@ -2702,64 +2702,64 @@
       "destination": "/tooling/testnets/alfajores"
     },
     {
-      "source": "/network/alfajores/*",
-      "destination": "/tooling/testnets/alfajores/:splat"
+      "source": "/network/alfajores/:slug*",
+      "destination": "/tooling/testnets/alfajores/:slug*"
     },
     {
       "source": "/network/baklava",
       "destination": "/tooling/testnets/baklava"
     },
     {
-      "source": "/network/baklava/*",
-      "destination": "/tooling/testnets/baklava/:splat"
+      "source": "/network/baklava/:slug*",
+      "destination": "/tooling/testnets/baklava/:slug*"
     },
     {
       "source": "/network/celo-sepolia",
       "destination": "/tooling/testnets/celo-sepolia"
     },
     {
-      "source": "/network/celo-sepolia/*",
-      "destination": "/tooling/testnets/celo-sepolia/:splat"
+      "source": "/network/celo-sepolia/:slug*",
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
     },
     {
       "source": "/network/eclair",
       "destination": "/tooling/testnets/eclair"
     },
     {
-      "source": "/network/eclair/*",
-      "destination": "/tooling/testnets/eclair/:splat"
+      "source": "/network/eclair/:slug*",
+      "destination": "/tooling/testnets/eclair/:slug*"
     },
     {
       "source": "/network/mainnet",
       "destination": "/tooling/testnets/mainnet"
     },
     {
-      "source": "/network/mainnet/*",
-      "destination": "/tooling/testnets/mainnet/:splat"
+      "source": "/network/mainnet/:slug*",
+      "destination": "/tooling/testnets/mainnet/:slug*"
     },
     {
-      "source": "/network/node/*",
-      "destination": "/tooling/nodes/:splat"
+      "source": "/network/node/:slug*",
+      "destination": "/tooling/nodes/:slug*"
     },
     {
       "source": "/wallet",
       "destination": "/tooling/wallets"
     },
     {
-      "source": "/wallet/*",
-      "destination": "/tooling/wallets/:splat"
+      "source": "/wallet/:slug*",
+      "destination": "/tooling/wallets/:slug*"
     },
     {
       "source": "/integration",
       "destination": "/infra-partners/integration"
     },
     {
-      "source": "/integration/*",
-      "destination": "/infra-partners/integration/:splat"
+      "source": "/integration/:slug*",
+      "destination": "/infra-partners/integration/:slug*"
     },
     {
-      "source": "/contracts/*",
-      "destination": "/tooling/contracts/:splat"
+      "source": "/contracts/:slug*",
+      "destination": "/tooling/contracts/:slug*"
     },
     {
       "source": "/cel2/faq",
@@ -2922,8 +2922,8 @@
       "destination": "/home/index"
     },
     {
-      "source": "/learn/*",
-      "destination": "/home/:splat"
+      "source": "/learn/:slug*",
+      "destination": "/home/:slug*"
     },
     {
       "source": "/glossary",
