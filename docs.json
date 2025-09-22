@@ -2512,6 +2512,522 @@
     {
       "source": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq",
       "destination": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
+    },
+    {
+      "source": "/build",
+      "destination": "/build-on-celo"
+    },
+    {
+      "source": "/build/:slug*",
+      "destination": "/build-on-celo/:slug*"
+    },
+    {
+      "source": "/developer",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/developer/contractkit",
+      "destination": "/tooling/libraries-sdks/contractkit"
+    },
+    {
+      "source": "/developer/contractkit/:slug*",
+      "destination": "/tooling/libraries-sdks/contractkit/:slug*"
+    },
+    {
+      "source": "/developer/deploy",
+      "destination": "/tooling/dev-environments"
+    },
+    {
+      "source": "/developer/deploy/:slug*",
+      "destination": "/tooling/dev-environments/:slug*"
+    },
+    {
+      "source": "/developer/verify",
+      "destination": "/tooling/contract-verification"
+    },
+    {
+      "source": "/developer/verify/:slug*",
+      "destination": "/tooling/contract-verification/:slug*"
+    },
+    {
+      "source": "/developer/explorers/:slug*",
+      "destination": "/tooling/explorers/:slug*"
+    },
+    {
+      "source": "/developer/oracles",
+      "destination": "/tooling/oracles"
+    },
+    {
+      "source": "/developer/oracles/:slug*",
+      "destination": "/tooling/oracles/:slug*"
+    },
+    {
+      "source": "/developer/indexers/:slug*",
+      "destination": "/tooling/indexers/:slug*"
+    },
+    {
+      "source": "/developer/bridges/:slug*",
+      "destination": "/tooling/bridges/:slug*"
+    },
+    {
+      "source": "/developer/setup/:slug*",
+      "destination": "/tooling/overview/:slug*"
+    },
+    {
+      "source": "/developer/migrate/:slug*",
+      "destination": "/tooling/overview/:slug*"
+    },
+    {
+      "source": "/developer/sdks/:slug*",
+      "destination": "/tooling/libraries-sdks/:slug*"
+    },
+    {
+      "source": "/developer/fee-abstraction",
+      "destination": "/tooling/overview/fee-abstraction"
+    },
+    {
+      "source": "/developer/launch-checklist",
+      "destination": "/build-on-celo/launch-checklist"
+    },
+    {
+      "source": "/developer/dynamic/:slug*",
+      "destination": "/tooling/libraries-sdks/dynamic/:slug*"
+    },
+    {
+      "source": "/developer/ethers/:slug*",
+      "destination": "/tooling/libraries-sdks/ethers/:slug*"
+    },
+    {
+      "source": "/developer/particle-network/:slug*",
+      "destination": "/tooling/libraries-sdks/particle-network/:slug*"
+    },
+    {
+      "source": "/developer/portal/:slug*",
+      "destination": "/tooling/libraries-sdks/portal/:slug*"
+    },
+    {
+      "source": "/developer/rainbowkit-celo/:slug*",
+      "destination": "/tooling/libraries-sdks/rainbowkit-celo/:slug*"
+    },
+    {
+      "source": "/developer/reown/:slug*",
+      "destination": "/tooling/libraries-sdks/reown/:slug*"
+    },
+    {
+      "source": "/developer/thirdweb-sdk/:slug*",
+      "destination": "/tooling/libraries-sdks/thirdweb-sdk/:slug*"
+    },
+    {
+      "source": "/developer/viem/:slug*",
+      "destination": "/tooling/libraries-sdks/viem/:slug*"
+    },
+    {
+      "source": "/developer/web3/:slug*",
+      "destination": "/tooling/libraries-sdks/web3/:slug*"
+    },
+    {
+      "source": "/what-is-celo",
+      "destination": "/home"
+    },
+    {
+      "source": "/what-is-celo/using-celo/protocol",
+      "destination": "/home/protocol"
+    },
+    {
+      "source": "/what-is-celo/using-celo/protocol/:slug*",
+      "destination": "/home/protocol/:slug*"
+    },
+    {
+      "source": "/what-is-celo/using-celo/manage/:slug*",
+      "destination": "/home/manage/:slug*"
+    },
+    {
+      "source": "/what-is-celo/using-celo/bridged_tokens/:slug*",
+      "destination": "/home/bridged-tokens/:slug*"
+    },
+    {
+      "source": "/what-is-celo/using-celo/bridges",
+      "destination": "/home/bridged-tokens/bridges"
+    },
+    {
+      "source": "/what-is-celo/using-celo/native-ETH-bridging",
+      "destination": "/home/bridged-tokens/native-ETH-bridging"
+    },
+    {
+      "source": "/what-is-celo/using-celo/exchanges",
+      "destination": "/home/exchanges"
+    },
+    {
+      "source": "/what-is-celo/using-celo/gas-fees",
+      "destination": "/home/gas-fees"
+    },
+    {
+      "source": "/what-is-celo/using-celo/ramps",
+      "destination": "/home/ramps"
+    },
+    {
+      "source": "/what-is-celo/using-celo/wallets",
+      "destination": "/home/wallets"
+    },
+    {
+      "source": "/what-is-celo/history",
+      "destination": "/home/history"
+    },
+    {
+      "source": "/what-is-celo/joining-celo",
+      "destination": "/contribute-to-celo"
+    },
+    {
+      "source": "/what-is-celo/joining-celo/:slug*",
+      "destination": "/contribute-to-celo/:slug*"
+    },
+    {
+      "source": "/what-is-celo/about-celo-l1/:slug*",
+      "destination": "/legacy/:slug*"
+    },
+    {
+      "source": "/cli",
+      "destination": "/tooling/libraries-sdks/cli"
+    },
+    {
+      "source": "/cli/:slug*",
+      "destination": "/tooling/libraries-sdks/cli/:slug*"
+    },
+    {
+      "source": "/network",
+      "destination": "/tooling/overview/network-overview"
+    },
+    {
+      "source": "/network/alfajores",
+      "destination": "/tooling/testnets/alfajores"
+    },
+    {
+      "source": "/network/alfajores/:slug*",
+      "destination": "/tooling/testnets/alfajores/:slug*"
+    },
+    {
+      "source": "/network/baklava",
+      "destination": "/tooling/testnets/baklava"
+    },
+    {
+      "source": "/network/baklava/:slug*",
+      "destination": "/tooling/testnets/baklava/:slug*"
+    },
+    {
+      "source": "/network/celo-sepolia",
+      "destination": "/tooling/testnets/celo-sepolia"
+    },
+    {
+      "source": "/network/celo-sepolia/:slug*",
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
+    },
+    {
+      "source": "/network/eclair",
+      "destination": "/tooling/testnets/eclair"
+    },
+    {
+      "source": "/network/eclair/:slug*",
+      "destination": "/tooling/testnets/eclair/:slug*"
+    },
+    {
+      "source": "/network/mainnet",
+      "destination": "/tooling/testnets/mainnet"
+    },
+    {
+      "source": "/network/mainnet/:slug*",
+      "destination": "/tooling/testnets/mainnet/:slug*"
+    },
+    {
+      "source": "/network/node/:slug*",
+      "destination": "/tooling/nodes/:slug*"
+    },
+    {
+      "source": "/wallet",
+      "destination": "/tooling/wallets"
+    },
+    {
+      "source": "/wallet/:slug*",
+      "destination": "/tooling/wallets/:slug*"
+    },
+    {
+      "source": "/integration",
+      "destination": "/infra-partners/integration"
+    },
+    {
+      "source": "/integration/:slug*",
+      "destination": "/infra-partners/integration/:slug*"
+    },
+    {
+      "source": "/contracts/:slug*",
+      "destination": "/tooling/contracts/:slug*"
+    },
+    {
+      "source": "/cel2/faq",
+      "destination": "/legacy/faq"
+    },
+    {
+      "source": "/cel2/guides/bridging-celo-from-l1-to-l2",
+      "destination": "/legacy/transition/guides/bridging-celo-from-l1-to-l2"
+    },
+    {
+      "source": "/cel2/guides/withdrawing-celo-from-l2-to-l1",
+      "destination": "/legacy/transition/guides/withdrawing-celo-from-l2-to-l1"
+    },
+    {
+      "source": "/cel2/notices/celo-sepolia-launch",
+      "destination": "/infra-partners/notices/celo-sepolia-launch"
+    },
+    {
+      "source": "/cel2/notices/eigenda-v2-upgrade",
+      "destination": "/infra-partners/notices/eigenda-v2-upgrade"
+    },
+    {
+      "source": "/cel2/notices/isthmus-upgrade",
+      "destination": "/infra-partners/notices/isthmus-upgrade"
+    },
+    {
+      "source": "/cel2/notices/l2-migration",
+      "destination": "/infra-partners/notices/l2-migration"
+    },
+    {
+      "source": "/cel2/operators/architecture",
+      "destination": "/infra-partners/operators/architecture"
+    },
+    {
+      "source": "/cel2/operators/community-rpc-node",
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
+    },
+    {
+      "source": "/cel2/operators/how-it-works",
+      "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
+    },
+    {
+      "source": "/cel2/operators/migrate-node",
+      "destination": "/infra-partners/operators/migrate-node"
+    },
+    {
+      "source": "/cel2/operators/overview",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/cel2/operators/penalties",
+      "destination": "/contribute-to-celo/community-rpc-nodes/penalties"
+    },
+    {
+      "source": "/cel2/operators/registering-as-rpc-node",
+      "destination": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node"
+    },
+    {
+      "source": "/cel2/operators/run-node",
+      "destination": "/infra-partners/operators/run-node"
+    },
+    {
+      "source": "/cel2/operators/validator-rpc-faq",
+      "destination": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
+    },
+    {
+      "source": "/cel2/whats-changed/cel2-architecture",
+      "destination": "/build-on-celo/cel2-architecture"
+    },
+    {
+      "source": "/cel2/whats-changed/l1-l2",
+      "destination": "/legacy/transition/whats-changed/l1-l2"
+    },
+    {
+      "source": "/cel2/whats-changed/op-l2",
+      "destination": "/legacy/transition/optimism/op-l2"
+    },
+    {
+      "source": "/cel2/whats-changed/overview",
+      "destination": "/legacy/transition/whats-changed/overview"
+    },
+    {
+      "source": "/cel2",
+      "destination": "/legacy/overview"
+    },
+    {
+      "source": "/learn/add-gas-currency",
+      "destination": "/legacy/protocol/transaction/erc20-transaction-fees"
+    },
+    {
+      "source": "/learn/CELO-coin-summary",
+      "destination": "/home/celo"
+    },
+    {
+      "source": "/learn/celo-economic-model",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/learn/celo-ecosystem",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/celo-highlights",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/celo-milestones",
+      "destination": "/home/history"
+    },
+    {
+      "source": "/learn/celo-onboarding",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/celo-overview",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/Celo-payments",
+      "destination": "/home/protocol/transactions/overview"
+    },
+    {
+      "source": "/learn/celo-protocol",
+      "destination": "/home/protocol/index"
+    },
+    {
+      "source": "/learn/celo-protocol-summary",
+      "destination": "/home/protocol/index"
+    },
+    {
+      "source": "/learn/celo-resources",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/celo-stack",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/learn/celo-summary",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/celo-whitepapers",
+      "destination": "/legacy/whitepapers"
+    },
+    {
+      "source": "/learn/developer-onboarding",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/learn/platform-native-stablecoins-summary",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/learn/topology-of-a-celo-network",
+      "destination": "/tooling/overview/network-overview"
+    },
+    {
+      "source": "/learn/why-celo",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/learn/:slug*",
+      "destination": "/home/:slug*"
+    },
+    {
+      "source": "/glossary",
+      "destination": "/glossary"
+    },
+    {
+      "source": "/key-concepts",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/home",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/markdown-page",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/search",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/showcase",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/developer/bridges",
+      "destination": "/tooling/bridges"
+    },
+    {
+      "source": "/developer/dynamic",
+      "destination": "/tooling/libraries-sdks/dynamic"
+    },
+    {
+      "source": "/developer/ethers",
+      "destination": "/tooling/libraries-sdks/ethers"
+    },
+    {
+      "source": "/developer/particle-network",
+      "destination": "/tooling/libraries-sdks/particle-network"
+    },
+    {
+      "source": "/developer/portal",
+      "destination": "/tooling/libraries-sdks/portal"
+    },
+    {
+      "source": "/developer/rainbowkit-celo",
+      "destination": "/tooling/libraries-sdks/rainbowkit-celo"
+    },
+    {
+      "source": "/developer/reown",
+      "destination": "/tooling/libraries-sdks/reown"
+    },
+    {
+      "source": "/developer/thirdweb-sdk",
+      "destination": "/tooling/libraries-sdks/thirdweb-sdk"
+    },
+    {
+      "source": "/developer/viem",
+      "destination": "/tooling/libraries-sdks/viem"
+    },
+    {
+      "source": "/developer/web3",
+      "destination": "/tooling/libraries-sdks/web3"
+    },
+    {
+      "source": "/what-is-celo/using-celo",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/build/build-on-socialconnect",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/build/build-with-thirdweb/celo-nft-drop-tutorial",
+      "destination": "/tooling/dev-environments/thirdweb/thirdweb"
+    },
+    {
+      "source": "/build/build-with-thirdweb/one-click%20quickstart",
+      "destination": "/tooling/dev-environments/thirdweb/one-click-deploy"
+    },
+    {
+      "source": "/build/build-with-thirdweb/overview",
+      "destination": "/tooling/dev-environments/thirdweb/overview"
+    },
+    {
+      "source": "/build/composer-kit",
+      "destination": "/tooling/libraries-sdks/composer-kit"
+    },
+    {
+      "source": "/build/mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/index"
+    },
+    {
+      "source": "/build/mcp/celo-mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/celo-mcp"
+    },
+    {
+      "source": "/build/mcp/composer-mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/composer-mcp"
+    },
+    {
+      "source": "/build/support",
+      "destination": "/build-on-celo/index"
     }
   ],
   "footer": {
