@@ -24,6 +24,10 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Update system packages
+        run: |
+          sudo apt-get update || echo "apt-get update failed, continuing..."
+          
       - name: Install Mintlify CLI
         run: npm install -g mintlify
 

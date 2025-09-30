@@ -26,7 +26,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Install Mintlify CLI
         run: npm install -g mintlify
@@ -120,10 +122,13 @@ jobs:
               continue
             fi
             
-            # Check for unclosed JSX tags (basic check)
-            if grep -E '<[A-Z][a-zA-Z]*[^/>]*$' "$file" > /dev/null 2>&1; then
-              echo "⚠️ Potential unclosed JSX tag in: $file" >> $GITHUB_STEP_SUMMARY
-              errors=$((errors + 1))
+            # Check for obvious syntax errors (self-closing tags that are malformed)
+            # Skip multi-line JSX components which are valid
+            if grep -E '<[A-Z][a-zA-Z]*\s+[^>]*$' "$file" | grep -v '>' > /dev/null 2>&1; then
+              if grep -E '<[A-Z][a-zA-Z]*\s+[a-zA-Z]+=' "$file" | grep -vE '(>|/>)\s*$' > /dev/null 2>&1; then
+                echo "⚠️ Potential syntax issue in: $file" >> $GITHUB_STEP_SUMMARY
+                errors=$((errors + 1))
+              fi
             fi
           done
           
