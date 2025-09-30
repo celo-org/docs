@@ -26,7 +26,7 @@ mint broken-links
 - ✅ **Syntax Checking** - Detects common MDX/JSX syntax errors
 - ✅ **PR Comments** - Automatically comments on PRs with validation results
 
-See [DOCS_VALIDATION.md](./DOCS_VALIDATION.md) for complete documentation validation guide.
+Run `./scripts/validate-docs.sh` to check for errors before committing.
 
 ## Development
 
@@ -73,12 +73,12 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
 
 - **Dev environment not running:** Run `mint update` to ensure you have the most recent version of the CLI
 - **Page loads as 404:** Make sure you are running in a folder with a valid `docs.json`
-- **Validation fails:** Check [DOCS_VALIDATION.md](./DOCS_VALIDATION.md) for detailed troubleshooting
+- **Validation fails:** Run `./scripts/validate-docs.sh` and review the output for specific errors
 - **Broken links detected:** Review the validation output and fix referenced files or URLs
 
 ### Resources
 - [Celo Documentation](https://docs.celo.org)
-- [Documentation Validation Guide](./DOCS_VALIDATION.md)
+- [Validation Script](./scripts/validate-docs.sh)
 - [Mintlify Documentation](https://mintlify.com/docs)
 - [Mintlify Community](https://mintlify.com/community)
 - [Celo Discord](https://discord.com/invite/celo)
