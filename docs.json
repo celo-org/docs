@@ -193,8 +193,6 @@
           {
             "group": "Testnets",
             "pages": [
-              "tooling/testnets/alfajores/index",
-              "tooling/testnets/baklava/index",
               "tooling/testnets/celo-sepolia/index",
               "tooling/testnets/eclair/index"
             ]
