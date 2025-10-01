@@ -178,44 +178,6 @@
         ]
       },
       {
-        "tab": "Infra Partners",
-        "groups": [
-          {
-            "group": "Notices",
-            "pages": [
-              "infra-partners/notices/celo-sepolia-launch",
-              "infra-partners/notices/eigenda-v2-upgrade",
-              "infra-partners/notices/isthmus-upgrade",
-              "infra-partners/notices/l2-migration"
-            ]
-          },
-          {
-            "group": "Node Operation",
-            "pages": [
-              "infra-partners/operators/overview",
-              "infra-partners/operators/architecture",
-              "infra-partners/operators/run-node",
-              "infra-partners/operators/migrate-node"
-            ]
-          },
-          {
-            "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
-          },
-          {
-            "group": "Integrate with Celo",
-            "pages": [
-              "infra-partners/integration/index",
-              "infra-partners/integration/general",
-              "infra-partners/integration/checklist",
-              "infra-partners/integration/custody",
-              "infra-partners/integration/listings",
-              "infra-partners/integration/cloud-hsm"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Tooling",
         "groups": [
           {
@@ -437,6 +399,44 @@
               "contribute-to-celo/release-process/blockchain-client",
               "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils",
               "contribute-to-celo/release-process/attestation-service"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infra Partners",
+        "groups": [
+          {
+            "group": "Notices",
+            "pages": [
+              "infra-partners/notices/celo-sepolia-launch",
+              "infra-partners/notices/eigenda-v2-upgrade",
+              "infra-partners/notices/isthmus-upgrade",
+              "infra-partners/notices/l2-migration"
+            ]
+          },
+          {
+            "group": "Node Operation",
+            "pages": [
+              "infra-partners/operators/overview",
+              "infra-partners/operators/architecture",
+              "infra-partners/operators/run-node",
+              "infra-partners/operators/migrate-node"
+            ]
+          },
+          {
+            "group": "Celo L2 Specs",
+            "pages": ["infra-partners/specs"]
+          },
+          {
+            "group": "Integrate with Celo",
+            "pages": [
+              "infra-partners/integration/index",
+              "infra-partners/integration/general",
+              "infra-partners/integration/checklist",
+              "infra-partners/integration/custody",
+              "infra-partners/integration/listings",
+              "infra-partners/integration/cloud-hsm"
             ]
           }
         ]
