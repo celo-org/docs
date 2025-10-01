@@ -1,0 +1,50 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+# See [Github Documentation](https://help.github.com/articles/about-codeowners/).
+
+# Default ownership - DevRel team owns all documentation
+* @celo-org/devrel 
+
+# Build on Celo section - DevRel team
+/build-on-celo/ @celo-org/devrel
+
+# Home section (protocol, manage, etc.) - Blockchain and Primitives teams
+/home/ @celo-org/blockchain @celo-org/primitives
+/home/protocol/ @celo-org/blockchain @celo-org/primitives
+
+# Contribute to Celo section - DevRel team
+/contribute-to-celo/ @celo-org/devrel
+
+# Infrastructure Partners section - Blockchain team (was cel2)
+/infra-partners/ @celo-org/blockchain
+
+# Legacy section - Blockchain team (L1 content)
+/legacy/ @celo-org/blockchain
+
+# Tooling section
+/tooling/ @celo-org/devrel
+
+# CLI tools - DevRel and DevTooling teams
+/tooling/libraries-sdks/cli/ @celo-org/devrel @celo-org/devtooling
+
+# ContractKit - DevRel and DevTooling teams
+/tooling/libraries-sdks/contractkit/ @celo-org/devrel @celo-org/devtooling
+
+# Development environments (was developer/deploy) - DevRel and Primitives teams
+/tooling/dev-environments/ @celo-org/devrel @celo-org/primitives
+
+# SDK libraries - DevRel and DevTooling teams
+/tooling/libraries-sdks/rainbowkit-celo/ @celo-org/devrel @celo-org/devtooling
+/tooling/libraries-sdks/viem/ @celo-org/devrel @celo-org/devtooling
+/tooling/libraries-sdks/ @celo-org/devrel @celo-org/devtooling
+
+# Smart contracts - Primitives team
+/tooling/contracts/ @celo-org/primitives
+
+# Network/Node operations - DevRel and Blockchain teams
+/tooling/testnets/ @celo-org/devrel @celo-org/blockchain
+/tooling/nodes/ @celo-org/devrel @celo-org/blockchain
+
+# Configuration files
+/docs.json @celo-org/devrel
+/.github/ @celo-org/devrel
