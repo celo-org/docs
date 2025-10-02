@@ -604,23 +604,23 @@
         },
         {
           "anchor": "Support",
-          "href": "https://docs.celo.org/build/support",
+          "href": "https://discord.com/invite/celo",
           "icon": "bullhorn"
         },
         {
           "anchor": "Forum",
-          "href": "https://medium.com/celoorg",
+          "href": "https://forum.celo.org/",
           "icon": "newspaper"
+        },
+        {
+          "anchor": "Faucet",
+          "href": "https://faucet.celo.org/celo-sepolia",
+          "icon": "faucet"
         },
         {
           "anchor": "FAQs",
           "href": "https://docs.celo.org/legacy/faq",
           "icon": "square-question"
-        },
-        {
-          "anchor": "Glossary",
-          "href": "https://docs.celo.org/glossary",
-          "icon": "graduation-cap"
         }
       ]
     }
