@@ -1,0 +1,174 @@
+---
+title: "Nightfall Privacy Layer"
+og:description: Integrate enterprise-grade privacy into your Celo applications with EY Nightfall L3
+sidebarTitle: "Nightfall Privacy Layer"
+---
+
+## Overview
+
+**Nightfall** is an open-source, zero-knowledge proof (ZKP) privacy layer developed by EY Blockchain that enables private transactions on Celo. As a Layer 3 solution on top of Celo, Nightfall brings enterprise-grade privacy to payments, supply chain finance, and B2B transactions while maintaining Celo's speed and low-cost advantages.
+
+Celo is the **first payments-focused blockchain** to deploy Nightfall, combining private transactions with Celo's mobile-first infrastructure and 1-second block times.
+
+<Note>
+**Testnet Status**: Live and ready for testing
+
+Nightfall testnet is currently active on Celo mainnet for developers and enterprises to build and test private payment applications.
+
+**Full API documentation** is available in the [Nightfall GitHub docs](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md#apis).
+</Note>
+
+## What is Nightfall?
+
+Nightfall uses **zero-knowledge rollup (ZK-ZK rollup)** technology to batch private transactions into succinct blocks that are verified on-chain through cryptographic proofs. This means:
+
+- **Transaction details are hidden**: Sender, receiver, and amounts remain private
+- **Fast finality**: Achieves finality at the same speed as the underlying Celo blockchain
+- **Low cost**: Private transfers typically cost around 6000 Gas (~90% cheaper than standard transfers)
+- **Auditable privacy**: Transactions are cryptographically verifiable for compliance
+
+## Key Features
+
+### Privacy Technology
+- **Zero-Knowledge Proofs**: Cryptographic privacy without trusted intermediaries
+- **Layer 3 Architecture**: Runs on top of Celo L2 for maximum efficiency
+- **Enterprise Access Control**: X509 certificate-based authentication
+
+### Token Support
+- **ERC-20**: Stablecoins (USDT, USDC) and other fungible tokens
+- **ERC-721**: Non-fungible tokens (NFTs)
+- **ERC-1155**: Multi-token standard
+- **ERC-3525**: Semi-fungible tokens
+
+### Performance
+- **Low Gas Costs**: ~6000 Gas per private transfer
+- **Fast Finality**: Cryptographic finality matching Celo's block time
+- **Scalability**: Transaction batching for efficient throughput
+
+## Architecture
+
+Nightfall operates with three main components:
+
+### Client
+The user-facing application that enables users to make private transactions. Clients interact with proposers and manage:
+- Deposits (converting public tokens to private commitments)
+- Transfers (private peer-to-peer transactions)
+- Withdrawals (converting private commitments back to public tokens)
+
+### Proposer
+Network nodes that create Layer 2 blocks by batching transactions and generating zero-knowledge proofs. Proposers:
+- Collect transactions from clients
+- Generate ZK proofs for transaction validity
+- Submit blocks to on-chain smart contracts
+
+### Smart Contracts
+On-chain contracts that handle:
+- Token escrow for deposits and withdrawals
+- ZK proof verification
+- X509 certificate validation for access control
+
+## Use Cases
+
+### Private B2B Payments
+Enable confidential business-to-business transactions while maintaining an auditable record for compliance. Ideal for:
+- Invoice settlements
+- Vendor payments
+- Intercompany transfers
+
+### Supply Chain Finance
+Process payments across supply chain partners with privacy, reducing transaction costs and eliminating intermediaries.
+
+### Enterprise Treasury Management
+Manage corporate funds with confidentiality for strategic transactions, mergers, acquisitions, and sensitive operations.
+
+### Cross-Border Payments
+Leverage Celo's global reach and low fees with added privacy for international B2B flows, particularly valuable in emerging markets.
+
+## Getting Started
+
+### Prerequisites
+
+To integrate Nightfall, you'll need:
+
+1. **X509 Certificates**: Required for network access and authentication
+2. **Ethereum Keys**: For signing transactions on Celo
+3. **ZKP Keys**: For generating zero-knowledge proofs (must be directly available to the client)
+4. **Node Access**: Connection to Nightfall proposer nodes
+
+### Transaction Flow
+
+#### Deposits
+Convert public tokens on Celo into private commitments on Nightfall:
+```
+Public Celo Token → Nightfall Smart Contract (escrow) → Private Commitment
+```
+
+#### Transfers
+Send private transactions between Nightfall users:
+```
+Private Commitment (sender) → ZK Proof → Private Commitment (receiver)
+```
+
+#### Withdrawals
+Convert private commitments back to public tokens:
+```
+Private Commitment → ZK Proof → Nightfall Smart Contract → Public Celo Token
+```
+
+### Integration Steps
+
+1. **Review Technical Documentation**: Start with the [Nightfall GitHub documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)
+2. **Set Up Development Environment**: Install Nightfall client and connect to testnet
+3. **Obtain Credentials**: Acquire X509 certificates for testnet access
+4. **Deploy Test Application**: Build and test your integration on testnet
+5. **Implement APIs**: Integrate Nightfall Client and Proposer APIs into your application
+
+## Resources
+
+### Documentation
+- **[Nightfall GitHub Repository](https://github.com/EYBlockchain/nightfall_4_CE)**: Full source code and implementation
+- **[Technical Documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)**: Comprehensive guide including architecture, APIs, deployment, and testing
+- **[EY Blockchain](https://blockchain.ey.com/)**: Learn more about EY's blockchain solutions
+
+### APIs
+- **Client APIs**: Deposit, transfer, withdraw, and balance query endpoints
+- **Proposer APIs**: Block submission and transaction validation
+- **Webhook Support**: Real-time transaction notifications
+
+Full API documentation is available in the [Nightfall GitHub docs](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md#apis).
+
+### Testing & Deployment
+- **Local Testing**: Instructions for running Nightfall locally with Docker
+- **Testnet Deployment**: Guide for deploying on Celo testnet
+- **Production Deployment**: Best practices for mainnet deployment
+
+### Community & Support
+
+Get help and connect with the community:
+- **[Celo Discord](https://chat.celo.org)**: Join the #nightfall channel for questions
+- **[Celo Forum](https://forum.celo.org)**: Discuss integration strategies and use cases
+- **[GitHub Issues](https://github.com/EYBlockchain/nightfall_4_CE/issues)**: Report bugs or request features
+
+## About EY Nightfall
+
+Nightfall was developed by **Ernst & Young (EY)** as an open-source privacy solution for public blockchains. The project has evolved through multiple iterations:
+
+- **Nightfall_3**: Optimistic rollup approach
+- **Nightfall_4**: Current version using cryptographic (ZK-ZK) rollups for instant finality
+
+By deploying on Celo, Nightfall brings enterprise-grade privacy to a mobile-first, payments-focused blockchain infrastructure that already serves millions of users globally.
+
+<Warning>
+**Testnet Environment**
+
+Nightfall testnet is for development and testing purposes only. Do not use real assets, production data, or sensitive information during testing. Testnet tokens hold no real-world economic value.
+</Warning>
+
+---
+
+## Next Steps
+
+1. Explore the [Nightfall technical documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)
+2. Review [integration requirements](#prerequisites)
+3. Join the [Celo community](https://chat.celo.org) to ask questions
+4. Start building your private payment application on testnet
