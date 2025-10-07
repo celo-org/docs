@@ -113,7 +113,8 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
-              "build-on-celo/fund-your-project"
+              "build-on-celo/fund-your-project",
+              "build-on-celo/nightfall"
             ]
           },
           {
@@ -431,7 +432,6 @@
             "pages": [
               "infra-partners/integration/index",
               "infra-partners/integration/general",
-              "infra-partners/integration/nightfall",
               "infra-partners/integration/checklist",
               "infra-partners/integration/custody",
               "infra-partners/integration/listings",
