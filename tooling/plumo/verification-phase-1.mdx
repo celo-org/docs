@@ -4,11 +4,190 @@ og:description: Verifying Celo Plumo Phase 1.
 sidebarTitle: "Verifying Phase 1"
 ---
 
-Overview of how to verify the Celo Plumo Ceremony Phase 1.
+How to verify the Celo Plumo Ceremony Phase 1.
 
 ---
 
+## Introduction
+
+Plumo Ceremony had 8 rounds in total. Stored files for the ceremony (available [here](https://console.cloud.google.com/storage/browser/plumoceremonyphase1)) follow the pattern `round.chunk_id.contribution_number.verifier_id`. For example file `1.0.14.0xe9053647d4bba6c53a88d1d012e0cf1af86c049f` refers to round 1, chunk ID 0, contribution number 14, verifier ID `0xe9053647d4bba6c53a88d1d012e0cf1af86c049f`.
+
+You can find references to round 9 in the stored chunks, but round 9 was never officially finalized. Please disregard files related to round 9. 
+
 ## Preparation
 
-Lorem Ipsum...
+What you will need:
 
+    - Ceremony files, available [here](https://console.cloud.google.com/storage/browser/plumoceremonyphase1).
+    - Go verification script, by Consensys, available [here](https://github.com/Consensys/gnark-ignition-verifier/blob/feat/celo_parser/celo/main.go).
+
+### Ceremony Files
+
+All Ceremony files are available [here](https://console.cloud.google.com/storage/browser/plumoceremonyphase1). In order to verify a given round, you will need the following:
+
+    - File related to the highest `contribution_number` for `chunk_id` `0` for the previous round.
+    - Files related to the highest `contribution_number` for each `chunk_id` from `0` to `127`, for the round you want to verify.
+
+For example, if you want to verify round 8 (previous round would be 7), you will need the following files:
+
+    - 7.0.10.0x097a648556127e742f8c3bbab155ee368f00ca14
+    - 8.0.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.1.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.2.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.3.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.4.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.5.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.6.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.7.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.8.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.9.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.10.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.11.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.12.18.0x097a648556127e742f8c3bbab155ee368f00ca14
+    - 8.13.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.14.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.15.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.16.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.17.18.0x8a2ffeeb7ab7241c305a39b75231902adff38d0a
+    - 8.18.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.19.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.20.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.21.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.22.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.23.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.24.18.0x9fb9983a2cce67496663ad8f6c947c0b164c7bab
+    - 8.25.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.26.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.27.18.0x6862299fa35dde3a9cf7ec1263edc51cb2fc566a
+    - 8.28.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.29.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.30.18.0x8a2ffeeb7ab7241c305a39b75231902adff38d0a
+    - 8.31.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.32.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.33.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.34.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.35.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.36.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.37.18.0x097a648556127e742f8c3bbab155ee368f00ca14
+    - 8.38.18.0x9fb9983a2cce67496663ad8f6c947c0b164c7bab
+    - 8.39.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.40.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.41.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.42.18.0x8a2ffeeb7ab7241c305a39b75231902adff38d0a
+    - 8.43.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.44.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.45.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.46.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.47.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.48.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.49.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.50.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.51.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.52.18.0x6862299fa35dde3a9cf7ec1263edc51cb2fc566a
+    - 8.53.18.0x8a2ffeeb7ab7241c305a39b75231902adff38d0a
+    - 8.54.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.55.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.56.18.0x9fb9983a2cce67496663ad8f6c947c0b164c7bab
+    - 8.57.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.58.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.59.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.60.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.61.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.62.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.63.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.64.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.65.18.0x9fb9983a2cce67496663ad8f6c947c0b164c7bab
+    - 8.66.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.67.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.68.18.0x6862299fa35dde3a9cf7ec1263edc51cb2fc566a
+    - 8.69.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.70.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.71.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.72.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.73.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.74.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+    - 8.75.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.76.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.77.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.78.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.79.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.80.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.81.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.82.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.83.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+    - 8.84.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.85.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.86.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.87.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.88.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.89.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.90.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.91.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.92.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.93.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.94.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.95.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.96.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.97.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.98.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+    - 8.99.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.100.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.101.18.0x7188c2cf6ec09a45fe60a79f3c9b98a6924107be
+    - 8.102.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.103.18.0xf686ca82313c54d36cfa6e88ca86764154e3a097
+    - 8.104.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+    - 8.105.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.106.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+    - 8.107.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.108.18.0x6862299fa35dde3a9cf7ec1263edc51cb2fc566a
+    - 8.109.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.110.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.111.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+    - 8.112.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.113.18.0x6862299fa35dde3a9cf7ec1263edc51cb2fc566a
+    - 8.114.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+    - 8.115.18.0x8a2ffeeb7ab7241c305a39b75231902adff38d0a
+    - 8.116.18.0x097a648556127e742f8c3bbab155ee368f00ca14
+    - 8.117.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.118.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.119.18.0x2095c929ec2a37cf57c997331da6cd60b047258a
+    - 8.120.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+    - 8.121.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.122.18.0x9fb9983a2cce67496663ad8f6c947c0b164c7bab
+    - 8.123.18.0x3721615b340294677d0dad4a5454c1785d78b14e
+    - 8.124.18.0x097a648556127e742f8c3bbab155ee368f00ca14
+    - 8.125.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+    - 8.126.18.0xe0e346a8a4f46bfd8c91a5c7ab7b44b71dd8d1dc
+    - 8.127.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+
+### Go verification script
+
+The Go verification script has some hardcoded numbers and paths:
+
+    - The script expects the files above to exist in a directory `./rounds/` where the `main.go` file exists. This is defined at line 285 as `const roundsRootDir = "./rounds/"`.
+    - The script defines the round number being verified at lines 142 and 196. For example for round 8:
+        - Line 142: `if err := currChunk.read(8, 0); err != nil {` (8 refers to round number 8).
+        - Line 196: `if err := nextChunk.read(8, i); err != nil {` (8 refers to round number 8).
+    - Finally, the script also defines the previous round number at line 146. For example, if you are verifying round 8, the previous round is 7 so:
+        - Line 146: `if err := prevChunkPrevRound.read(7, 0); err != nil {` (7 refers to the previous round).
+
+## Executing the Verification Script
+
+Once you have all the necessary files in the correct directory, and the script tailored to the round you want to verify, you can run the script as:
+
+```bash
+$ go run . --srs ./<OUTPUT_FILE_NAME>.srs
+2025/09/30 07:44:14 opening file 8.0.18.0x21c9bdf38a32bbe3d4cbfb81c82b26ae82246296
+2025/09/30 07:44:15 opening file 7.0.10.0x097a648556127e742f8c3bbab155ee368f00ca14
+2025/09/30 07:46:23 opening file 8.1.18.0x621f62e35ae4cf7c3d672e16227d65263c0796a1
+2025/09/30 07:47:30 opening file 8.2.18.0x877d43c37a1484c76c92fbfa59a9ffc296b021ed
+2025/09/30 07:48:39 opening file 8.3.18.0x7f2137fcc9c08381eff306f6f8138139ad961334
+2025/09/30 07:49:48 opening file 8.4.18.0xdcc3013396a6fc966b911cdcce4984728f71444e
+...
+2025/09/30 10:10:38 opening file 8.127.18.0x5f748472f15a02231c869c567d28e3130ed1b46c
+2025/09/30 10:11:45 built srs of len 134217728
+2025/09/30 10:26:26 done validiting, writing SRS to disk
+2025/09/30 10:31:02 done writing SRS to disk
+```
+
+The output file (e.g. `./<OUTPUT_FILE_NAME>.srs`) will be a KZG (Kate–Zaverucha–Goldberg) SRS (Structured Reference String) file for the given round. This SRS is “universal”: you can use it in any proving system that requires a KZG commitment setup (Groth16, PLONK, Marlin, etc.), provided it uses the same curve (BW6-761).
