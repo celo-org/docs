@@ -354,6 +354,13 @@
             ]
           },
           {
+            "group": "Plumo",
+            "pages": [
+              "tooling/plumo/index",
+              "tooling/plumo/verification-phase-1"
+            ]
+          },
+          {
             "group": " ",
             "pages": ["tooling/bridges/cross-chain-messaging"]
           }
