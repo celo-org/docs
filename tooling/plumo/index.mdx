@@ -1,0 +1,39 @@
+---
+title: Celo Plumo Ceremony
+og:description: Overview of Plumo Ceremony.
+sidebarTitle: "Overview"
+---
+
+Overview of Celo Plumo Ceremony, a ceremony that secured one of the most complex yet powerful SNARKs to ever be secured.
+
+---
+
+## The Plumo Ceremony
+
+The Plumo Ceremony generated a trusted setup for KZG commitments over BW6-761 curve. The outcome can be used not only by cLabs, but also by any project that uses the BW6 curve with the Groth16 proving system or any other based on polynomial commitments. In fact, it was originally run for Celo Plumo and later reused for [Linea prover](https://l2beat.com/zk-catalog/lineaprover). The Ceremony had 55 participants.
+
+---
+
+## The Results
+
+The original Celo Plumo Ceremony had 2 phases.
+
+### Phase 1: The Powers of Tau
+
+This phase was circuit agnostic, meaning that anyone who wants to build a SNARK circuit can use the outputs from this phase to bootstrap their SNARK circuit. This means that the output is a wider public good, which can be highlighted as a contribution from the Celo community to the larger cryptography community.
+
+### Phase 2: The Plumo Snark
+
+The second part of the setup, Phase 2, is more specific to the Plumo SNARK circuit itself. This phase led to the outputs that enabled proving SNARKs and verifying them. This was not a public good, and was used specifically for Celo Plumo (now discontinued).
+
+---
+
+## Assets
+
+- Repository with ceremony instructions: [celo-org/snark-setup](https://github.com/celo-org/snark-setup?tab=readme-ov-file).
+- Archived link to the ceremony details: [Plumo Ceremony](https://web.archive.org/web/20221201203227/https://celo.org/plumo).
+- Links to ceremony transcript:
+    - [Phase 1](https://console.cloud.google.com/storage/browser/plumoceremonyphase1).
+    - [Phase 2](https://console.cloud.google.com/storage/browser/plumoceremonyphase2).
+- Link to ceremony verification code by Consensys: [Consensys/gnark-ignition-verifier](https://github.com/Consensys/gnark-ignition-verifier/blob/feat/celo_parser/celo/main.go).
+    - Backup at celo-org GitHub: [celo-org/plumo-ceremony-verifier](https://github.com/celo-org/plumo-ceremony-verifier)
