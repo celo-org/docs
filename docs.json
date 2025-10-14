@@ -992,6 +992,10 @@
       "destination": "/home/protocol/transactions/tx-comment-encryption"
     },
     {
+      "source": "/celo-codebase/protocol/transactions/transaction-types",
+      "destination": "/home/protocol/transactions/transaction-types"
+    },
+    {
       "source": "/celo-codebase/wallet",
       "destination": "/wallet"
     },
@@ -2500,19 +2504,19 @@
       "destination": "/contribute-to-celo"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/how-it-works",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/how-it-works",
       "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/registering-as-rpc-node",
       "destination": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/penalties",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/penalties",
       "destination": "/contribute-to-celo/community-rpc-nodes/penalties"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/validator-rpc-faq",
       "destination": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
     },
     {
