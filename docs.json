@@ -415,6 +415,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/jello-upgrade",
               "infra-partners/notices/l1-fusaka-upgrade",
               "infra-partners/notices/celo-sepolia-launch",
               "infra-partners/notices/eigenda-v2-upgrade",
