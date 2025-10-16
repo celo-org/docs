@@ -1,5 +1,5 @@
 ---
-title: Build DeFi AI Agents
+title: Build with DeFi
 og:description: A beginner's guide to building DeFi applications on Celo
 ---
 
@@ -7,11 +7,19 @@ In this guide you can explore tooling and infrastructure for building DeFi on Ce
 
 ## Overview  
 
-Stablecoins play a crucial role in decentralized finance (DeFi) by providing price stability, reducing volatility, and enabling seamless financial transactions. Celo has built an ecosystem optimized for stablecoins, making it a leading platform for real-world DeFi applications. With a focus on financial inclusion, building on Celo means enabling accessible and affordable financial tools for people around the world.  
+DeFi on Celo is designed for builders who want to create accessible, stable, and inclusive financial systems. This guide walks you through the key tools and infrastructure available for developing decentralized finance applications on Celo.
+
+Stablecoins are at the heart of DeFi, they provide price stability, reduce volatility, and power seamless transactions. Celo’s ecosystem is uniquely optimized for stablecoins, supporting real-world use cases that go beyond speculation. By building on Celo, you’re contributing to a global movement that makes financial access open and affordable for everyone.
+
+Explore below how to integrate stablecoins, exchanges, and oracles into your next DeFi project.
 
 ## Why Stablecoins Matter  
 
-Stablecoins are digital assets pegged to a stable reserve, such as fiat currency or a basket of assets. They provide key benefits in DeFi and financial transactions and financial inclusion:  
+[Stablecoins](build-with-local-stablecoin) are digital assets pegged to a stable reserve, such as fiat currency or a basket of assets. They provide key benefits in DeFi and financial transactions and financial inclusion:  
+
+<Info>
+Check out ["Build with Stablecoins"](build-with-local-stablecoin) for an extensive list of all stablecoins on Celo.
+</Info>
 
 - **Price Stability** – Unlike volatile cryptocurrencies, stablecoins maintain a predictable value.  
 - **Low-Cost Transactions** – Sending stablecoins on Celo costs significantly less than on traditional blockchains.  
@@ -22,40 +30,6 @@ Stablecoins are digital assets pegged to a stable reserve, such as fiat currency
 Celo is uniquely positioned to advance the adoption of stable digital assets through the [Mento](https://www.mento.org/) Protocol—a decentralized stablecoin platform built on Celo. [Mento](https://www.mento.org/) enables the creation of local stablecoins that are algorithmically stabilized and backed by crypto collateral. This approach helps users access a price-stable digital currency that is aligned with their local economy.
 
 The goal of Mento is simple: to provide a stable asset for every country in the world. These stable assets can be used for everyday payments, savings, remittances, and commerce—empowering individuals in regions with high inflation or limited access to traditional banking infrastructure.
-
-### Celo Stablecoin Ecosystem  
-
-Celo offers multiple stablecoin options for different use cases:  
-
-| Stablecoin       | Issuer                                                                  | Use Case                                          |
-| ---------------- | ----------------------------------------------------------------------- | ------------------------------------------------- |
-| **cUSD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | US Dollar-pegged digital cash                     |
-| **cEUR**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Euro-pegged stablecoin                            |
-| **cREAL**        | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Brazilian Real-pegged stablecoin                  |
-| **eXOF**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | CFA Franc-pegged stablecoin                       |
-| **cKES**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Kenya Shilling-pegged stablecoin                  |
-| **PUSO**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Philippine Peso-pegged stablecoin                 |
-| **cCOP**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Colombia Peso-pegged stablecoin                   |
-| **cGBP**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | British Pound-pegged stablecoin                   |
-| **cCAD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Canadian Dollar-pegged stablecoin                 |
-| **cAUD**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Australian Dollar-pegged stablecoin               |
-| **cZAR**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | South African Rand-pegged stablecoin              |
-| **cGHS**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Ghanaian Cedi-pegged stablecoin                   |
-| **cNGN**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Nigerian Naira-pegged stablecoin                  |
-| **cJPY**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Japanese Yen-pegged stablecoin                    |
-| **cCHF**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Swiss Franc-pegged stablecoin                     |
-| **USDT**         | [Tether](https://tether.to/en/)                                         | Popular stablecoin on multiple blockchains        |
-| **USDC**         | [Circle](https://www.circle.com/usdc)                                   | Widely used stablecoin with high liquidity        |
-| **vEUR**         | [VNX](https://vnx.li/)                                                  | Euro-pegged stablecoin                            |
-| **vGBP**         | [VNX](https://vnx.li/)                                                  | British Pound-pegged stablecoin                   |
-| **vCHF**         | [VNX](https://vnx.li/)                                                  | Swiss Franc-pegged stablecoin                     |
-| **USDM**         | [Mountain Protocol](https://mountainprotocol.com/)                      | Yield-bearing stablecoin                          |
-| **USDA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing USD stablecoin                      |
-| **EURA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing Euro stablecoin                     |
-| **USDGLO**       | [Glo Foundation](https://www.glodollar.org/)                            | Impact-driven stablecoin supporting global causes |
-| **BRLA Digital** | [BRLA](https://brla.digital/)                                           | Brazil-based stablecoin                           |
-| **COPM**         | [Minteo](https://minteo.com/)                                           | Fiat-backed Colombian Peso Stablecoin             |
-| **G$**           | [GoodDollar](https://www.gooddollar.org/)                               | UBI-focused stablecoin for financial inclusion    |
 
 ## Examples of DeFi Applications on Celo  
 
