@@ -1794,15 +1794,15 @@
     },
     {
       "source": "/faqs#who-are-the-founders-of-celo",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/general",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/general/architecture",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/general/ecosystem/builders",
@@ -1826,7 +1826,7 @@
     },
     {
       "source": "/getting-started...",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/getting-started/alfajores-testnet",
@@ -2430,27 +2430,27 @@
     },
     {
       "source": "/why-celo",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/why-celo#celo-is-mobile-open-and-real",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/why-celo#mobile",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/why-celo#open",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/why-celo#real",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/overview",
-      "destination": "/about-celo"
+      "destination": "/what-is-celo"
     },
     {
       "source": "/indexer/envio",
