@@ -26,9 +26,9 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
 
 ```js
     networks: {
-        alfajores: {
+        celoSepolia: {
             // can be replaced with the RPC url of your choice.
-            url: "https://alfajores-forno.celo-testnet.org",
+            url: "https://forno.celo-sepolia.celo-testnet.org/",
             accounts: [
                 "<YOUR_PRIVATE_KEY>"
             ],
@@ -42,16 +42,16 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
     },
     etherscan: {
         apiKey: {
-            alfajores: "<CELOSCAN_API_KEY>",
+            celoSepolia: "<CELOSCAN_API_KEY>",
             celo: "<CELOSCAN_API_KEY>"
         },
         customChains: [
             {
-                network: "alfajores",
+                network: "celoSepolia",
                 chainId: 44787,
                 urls: {
-                    apiURL: "https://api-alfajores.celoscan.io/api",
-                    browserURL: "https://alfajores.celoscan.io",
+                    apiURL: "https://api-sepolia.celoscan.io/api",
+                    browserURL: "https://sepolia.celoscan.io",
                 },
             },
             {
@@ -70,10 +70,10 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
 
 Use the following command (Make sure your contracts are compiled before verification)
 
-Alfajores Testnet
+Celo Sepolia Testnet
 
 ```bash
-npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network alfajores
+npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network sepolia
 ```
 
 Celo Mainnet

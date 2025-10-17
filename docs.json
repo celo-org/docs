@@ -316,7 +316,6 @@
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
               "tooling/libraries-sdks/portal/index",
-              "tooling/libraries-sdks/particle-network/index",
               {
                 "group": "ContractKit",
                 "pages": [
@@ -1785,6 +1784,14 @@
       "destination": "/developer"
     },
     {
+      "source": "/es/learn/celo-resources",
+      "destination": "/developer"
+    },
+    {
+      "source": "/es/learn/Celo-payments",
+      "destination": "/developer"
+    },
+    {
       "source": "/faqs",
       "destination": "/"
     },
@@ -2606,7 +2613,11 @@
     },
     {
       "source": "/developer/particle-network/:slug*",
-      "destination": "/tooling/libraries-sdks/particle-network/:slug*"
+      "destination": "/tooling/libraries-sdks/celo-sdks"
+    },
+    {
+      "source": "/tooling/libraries-sdks/particle-network/:slug*",
+      "destination": "/tooling/libraries-sdks/celo-sdks"
     },
     {
       "source": "/developer/portal/:slug*",

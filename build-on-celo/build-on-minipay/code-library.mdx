@@ -276,13 +276,13 @@ The issuer is the account registering attestations. When a user requests attesta
 
 ```js
 import { createClient } from "viem";
-import { celoAlfajores } from "viem/chains";
+import { celoSepolia } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 
 // The issuer is the account that is registering the attestation
 let ISSUER_PRIVATE_KEY = "YOUR_ISSUER_PRIVATE_KEY";
 
-// Create Alfajores viem client with the issuer private key
+// Create Celo Sepolia viem client with the issuer private key
 const viemClient = createClient({
   account: privateKeyToAccount(ISSUER_PRIVATE_KEY),
   transport: http(),
