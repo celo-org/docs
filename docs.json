@@ -1784,14 +1784,6 @@
       "destination": "/developer"
     },
     {
-      "source": "/es/learn/celo-resources",
-      "destination": "/developer"
-    },
-    {
-      "source": "/es/learn/Celo-payments",
-      "destination": "/developer"
-    },
-    {
       "source": "/faqs",
       "destination": "/"
     },
