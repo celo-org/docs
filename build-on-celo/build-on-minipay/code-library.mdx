@@ -286,7 +286,7 @@ let ISSUER_PRIVATE_KEY = "YOUR_ISSUER_PRIVATE_KEY";
 const viemClient = createClient({
   account: privateKeyToAccount(ISSUER_PRIVATE_KEY),
   transport: http(),
-  chain: celoAlfajores,
+  chain: celoSepolia,
 });
 
 // Information provided by user, issuer should confirm they own the identifier
@@ -369,16 +369,16 @@ console.log(attestations.accounts);
 ```js
 import { createWalletClient, custom } from 'viem'
 // import { celo } from 'viem/chains'
-import { celoAlfajores } from 'viem/chains'
+import { celoSepolia } from 'viem/chains'
  
 const client = createWalletClient({
-  chain: celoAlfajores,
+  chain: celoSepolia,
   // chain: celo,
   transport: custom(window.ethereum!)
 })
 
 const publicClient = createPublicClient({ 
-  chain: celoAlfajores,
+  chain: celoSepolia,
   // chain: celo,
   transport: http()
 })
@@ -400,7 +400,7 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals) {
       ],
     }),
     // If the wallet is connected to a different network then you get an error.
-    chain: celoAlfajores,
+    chain: celoSepolia,
     // chain: celo,
   });
 
