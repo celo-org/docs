@@ -670,15 +670,15 @@
     },
     {
       "source": "/blog/2022/03/04/Celo%20Composer%20-%20Easily%20Build%20Full-Stack%20Mobile%20dApps%20on%20Celo",
-      "destination": "/developer/sdks/composer-kit"
+      "destination": "/tooling/sdks/composer-kit"
     },
     {
       "source": "/blog/2022/03/06/6%20Steps%20to%20Quickly%20Build%20Smart%20Contracts%20on%20Celo%20with%20Remix",
-      "destination": "/developer/deploy/remix"
+      "destination": "/tooling/deploy/remix"
     },
     {
       "source": "/blog/2022/03/07/Truffle%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20with%20Truffle",
-      "destination": "/developer/deploy"
+      "destination": "/tooling/deploy"
     },
     {
       "source": "/cel2/builders",
@@ -1822,11 +1822,11 @@
     },
     {
       "source": "/getting-started",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/getting-started...",
-      "destination": "/home/index"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/getting-started/alfajores-testnet",
@@ -1930,7 +1930,7 @@
     },
     {
       "source": "/getting-started/running-oracles",
-      "destination": "/developer/oracles/run"
+      "destination": "/tooling/oracles/run"
     },
     {
       "source": "/getting-started/using-the-cli",
@@ -2078,15 +2078,15 @@
     },
     {
       "source": "/protocol/bridge",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/bridges",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/bridging",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/consensus/index",
@@ -2126,27 +2126,27 @@
     },
     {
       "source": "/protocol/oracle/band-protocol",
-      "destination": "/developer/oracles/band-protocol"
+      "destination": "/tooling/oracles/band-protocol"
     },
     {
       "source": "/protocol/oracle/chainlink-oracles",
-      "destination": "/developer/oracles/chainlink-oracles"
+      "destination": "/tooling/oracles/chainlink-oracles"
     },
     {
       "source": "/protocol/oracle/index",
-      "destination": "/developer/oracles"
+      "destination": "/tooling/oracles"
     },
     {
       "source": "/protocol/oracle/redstone",
-      "destination": "/developer/oracles/redstone"
+      "destination": "/tooling/oracles/redstone"
     },
     {
       "source": "/protocol/oracle/run",
-      "destination": "/developer/oracles/run"
+      "destination": "/tooling/oracles/run"
     },
     {
       "source": "/protocol/oracle/supra",
-      "destination": "/developer/oracles/supra"
+      "destination": "/tooling/oracles/supra"
     },
     {
       "source": "/protocol/pos/epoch-rewards",
@@ -2242,15 +2242,15 @@
     },
     {
       "source": "/v/master/developer-guide/overview",
-      "destination": "/developer"
+      "destination": "/tooling"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/contractkit"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/forno",
@@ -2258,7 +2258,7 @@
     },
     {
       "source": "/v/master/developer-guide/start",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/v/master/developer-guide/start/hello-mobile-dapp",
@@ -2454,7 +2454,7 @@
     },
     {
       "source": "/indexer/envio",
-      "destination": "/developer/indexers/envio"
+      "destination": "/tooling/indexers/envio"
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/overview",
