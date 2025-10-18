@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
@@ -33,181 +33,14 @@ jobs:
       - name: Install Mintlify CLI
         run: npm install -g mintlify
 
-      - name: Check for broken links
-        id: broken-links
-        continue-on-error: true
+      - name: Run validation script
+        id: validate
         run: |
-          echo "## 🔍 Broken Links Check" >> $GITHUB_STEP_SUMMARY
+          echo "## 📚 Documentation Validation" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if mint broken-links 2>&1 | tee broken-links-output.txt; then
-            echo "✅ No broken links found!" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Broken links detected:" >> $GITHUB_STEP_SUMMARY
-            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-            cat broken-links-output.txt >> $GITHUB_STEP_SUMMARY
-            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-
-      - name: Validate documentation structure
-        id: validate-structure
-        continue-on-error: true
-        run: |
-          echo "## 📋 Documentation Structure Check" >> $GITHUB_STEP_SUMMARY
+          echo "Running validation checks using ./scripts/validate-docs.sh" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          # Check if docs.json exists
-          if [ ! -f "docs.json" ]; then
-            echo "❌ docs.json not found!" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-          
-          # Validate JSON syntax
-          if jq empty docs.json 2>&1; then
-            echo "✅ docs.json is valid JSON" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ docs.json has invalid JSON syntax" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-          
-          # Check for required fields
-          if jq -e '.name' docs.json > /dev/null; then
-            echo "✅ Required 'name' field present" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Missing required 'name' field" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-
-      - name: Check for missing MDX files
-        id: check-mdx
-        continue-on-error: true
-        run: |
-          echo "## 📄 MDX Files Check" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          # Extract all page references from docs.json and check if files exist
-          missing_files=0
-          
-          # Find all .mdx references in navigation
-          jq -r '.. | .pages? // empty | .[] | select(type == "string")' docs.json | while read -r page; do
-            # Convert page path to file path
-            file_path="${page}.mdx"
-            
-            if [ ! -f "$file_path" ] && [ ! -f "${page}.md" ]; then
-              echo "⚠️ Missing file: $file_path" >> $GITHUB_STEP_SUMMARY
-              missing_files=$((missing_files + 1))
-            fi
-          done
-          
-          if [ $missing_files -eq 0 ]; then
-            echo "✅ All referenced MDX files exist" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Found $missing_files missing file(s)" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-
-      - name: Check for common MDX syntax errors
-        id: check-syntax
-        continue-on-error: true
-        run: |
-          echo "## ⚙️ MDX Syntax Check" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          errors=0
-          
-          # Find all MDX files
-          find . -name "*.mdx" -o -name "*.md" | while read -r file; do
-            # Skip node_modules and hidden directories
-            if [[ "$file" == *"node_modules"* ]] || [[ "$file" == *"/.git/"* ]]; then
-              continue
-            fi
-            
-            # Check for obvious syntax errors (self-closing tags that are malformed)
-            # Skip multi-line JSX components which are valid
-            if grep -E '<[A-Z][a-zA-Z]*\s+[^>]*$' "$file" | grep -v '>' > /dev/null 2>&1; then
-              if grep -E '<[A-Z][a-zA-Z]*\s+[a-zA-Z]+=' "$file" | grep -vE '(>|/>)\s*$' > /dev/null 2>&1; then
-                echo "⚠️ Potential syntax issue in: $file" >> $GITHUB_STEP_SUMMARY
-                errors=$((errors + 1))
-              fi
-            fi
-          done
-          
-          if [ $errors -eq 0 ]; then
-            echo "✅ No obvious syntax errors detected" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "⚠️ Found $errors potential syntax issue(s)" >> $GITHUB_STEP_SUMMARY
-          fi
-
-      - name: Final status check
-        if: always()
-        run: |
-          echo "## 🎯 Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          all_passed=true
-          
-          if [ "${{ steps.broken-links.outcome }}" != "success" ]; then
-            echo "- ❌ Broken links check failed" >> $GITHUB_STEP_SUMMARY
-            all_passed=false
-          else
-            echo "- ✅ Broken links check passed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ "${{ steps.validate-structure.outcome }}" != "success" ]; then
-            echo "- ❌ Structure validation failed" >> $GITHUB_STEP_SUMMARY
-            all_passed=false
-          else
-            echo "- ✅ Structure validation passed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ "${{ steps.check-mdx.outcome }}" != "success" ]; then
-            echo "- ❌ MDX files check failed" >> $GITHUB_STEP_SUMMARY
-            all_passed=false
-          else
-            echo "- ✅ MDX files check passed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ "$all_passed" = false ]; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "⚠️ Some checks failed. Please review the errors above." >> $GITHUB_STEP_SUMMARY
-            exit 1
-          else
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "🎉 All documentation checks passed successfully!" >> $GITHUB_STEP_SUMMARY
-          fi
-
-      - name: Comment PR with results
-        if: github.event_name == 'pull_request' && always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            
-            let comment = '## 📚 Documentation Validation Results\n\n';
-            
-            // Add check results
-            comment += '### Check Status\n\n';
-            comment += '| Check | Status |\n';
-            comment += '|-------|--------|\n';
-            comment += `| Broken Links | ${'${{ steps.broken-links.outcome }}' === 'success' ? '✅ Passed' : '❌ Failed'} |\n`;
-            comment += `| Structure | ${'${{ steps.validate-structure.outcome }}' === 'success' ? '✅ Passed' : '❌ Failed'} |\n`;
-            comment += `| MDX Files | ${'${{ steps.check-mdx.outcome }}' === 'success' ? '✅ Passed' : '❌ Failed'} |\n`;
-            comment += `| Syntax | ${'${{ steps.check-syntax.outcome }}' === 'success' ? '✅ Passed' : '⚠️ Warnings'} |\n`;
-            
-            // Add broken links details if available
-            if (fs.existsSync('broken-links-output.txt')) {
-              const brokenLinks = fs.readFileSync('broken-links-output.txt', 'utf8');
-              if (brokenLinks.trim()) {
-                comment += '\n### Broken Links Details\n\n```\n' + brokenLinks + '\n```\n';
-              }
-            }
-            
-            comment += '\n---\n';
-            comment += '*This check was performed by the [Documentation Validation](.github/workflows/docs-validation.yml) workflow.*';
-            
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
+          # Make script executable and run it
+          chmod +x ./scripts/validate-docs.sh
+          ./scripts/validate-docs.sh
