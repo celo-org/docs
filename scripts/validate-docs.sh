@@ -70,10 +70,15 @@ echo ""
 # Check for broken links
 echo "2️⃣  Checking for broken links..."
 # Capture output and check for "found" message
+# Temporarily disable exit on error to capture output even if command fails
+set +e
 BROKEN_LINKS_OUTPUT=$(mint broken-links 2>&1)
+BROKEN_LINKS_EXIT_CODE=$?
+set -e
+
 echo "$BROKEN_LINKS_OUTPUT"
 
-if echo "$BROKEN_LINKS_OUTPUT" | grep -q "found [1-9][0-9]* broken link"; then
+if [ $BROKEN_LINKS_EXIT_CODE -ne 0 ] || echo "$BROKEN_LINKS_OUTPUT" | grep -q "found [1-9][0-9]* broken link"; then
     echo -e "${RED}❌ Broken links detected! See output above.${NC}"
     ALL_PASSED=false
 elif echo "$BROKEN_LINKS_OUTPUT" | grep -q "found 0 broken links"; then
