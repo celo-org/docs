@@ -32,8 +32,8 @@ Run `./scripts/validate-docs.sh` to check for errors before committing.
 
 Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally:
 
-```bash
-npm i -g mintlify
+```sh
+npm i -g mint
 ```
 
 Run the following command at the root of your documentation, where your `docs.json` is located:
@@ -77,8 +77,11 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
 - **Broken links detected:** Review the validation output and fix referenced files or URLs
 
 ### Resources
+
 - [Celo Documentation](https://docs.celo.org)
 - [Validation Script](./scripts/validate-docs.sh)
 - [Mintlify Documentation](https://mintlify.com/docs)
 - [Mintlify Community](https://mintlify.com/community)
 - [Celo Discord](https://discord.com/invite/celo)
+- [Mintlify documentation](https://mintlify.com/docs)
+- [Mintlify community](https://mintlify.com/community)

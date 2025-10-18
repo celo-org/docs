@@ -3,11 +3,25 @@ title: Uniswap Contracts
 id: uniswap-contracts
 ---
 
-The latest version of @uniswap/v3-core, @uniswap/v3-periphery, and @uniswap/swap-router-contracts are 
-deployed at the addresses listed below. Integrators should no longer assume that they are deployed to the 
-same addresses across chains and be extremely careful to confirm mappings below.
+<Info>
+The latest versions of Uniswap v4 and v3 contracts are deployed at the addresses listed below. Integrators should no longer assume that they are deployed to the same addresses across chains and be extremely careful to confirm mappings below.
+</Info>
 
-## Uniswap Contracts
+## Uniswap V4 Contracts
+
+Uniswap v4 introduces a new modular architecture with hooks and singleton pool manager design. The core contracts are deployed on Celo mainnet.
+
+| Contract                           | CELO Address                               |
+| ---------------------------------- | ------------------------------------------ |
+| PoolManager                        | [0x288dc841A52FCA2707c6947B3A777c5E56cd87BC](https://celoscan.io/address/0x288dc841A52FCA2707c6947B3A777c5E56cd87BC) |
+| PositionManager                    | [0xf7965f3981e4d5bc383bfbcb61501763e9068ca9](https://celoscan.io/address/0xf7965f3981e4d5bc383bfbcb61501763e9068ca9) |
+| PositionDescriptor                 | [0x5727E22b25fEEe05E8dFa83C752B86F19D102D8A](https://celoscan.io/address/0x5727E22b25fEEe05E8dFa83C752B86F19D102D8A) |
+| V4Quoter                           | [0x28566da1093609182dff2cb2a91cfd72e61d66cd](https://celoscan.io/address/0x28566da1093609182dff2cb2a91cfd72e61d66cd) |
+| StateView                          | [0xbc21f8720babf4b20d195ee5c6e99c52b76f2bfb](https://celoscan.io/address/0xbc21f8720babf4b20d195ee5c6e99c52b76f2bfb) |
+| UniversalRouter                    | [0xcb695bc5d3aa22cad1e6df07801b061a05a0233a](https://celoscan.io/address/0xcb695bc5d3aa22cad1e6df07801b061a05a0233a) |
+| Permit2                            | [0x000000000022D473030F116dDEE9F6B43aC78BA3](https://celoscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3) |
+
+## Uniswap V3 Contracts
 
 | Contract                           | CELO Address                               | Alfajores Address                          |
 | ---------------------------------- | ------------------------------------------ |--------------------------------------------|

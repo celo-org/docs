@@ -113,7 +113,8 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
-              "build-on-celo/fund-your-project"
+              "build-on-celo/fund-your-project",
+              "build-on-celo/nightfall"
             ]
           },
           {
@@ -178,44 +179,6 @@
         ]
       },
       {
-        "tab": "Infra Partners",
-        "groups": [
-          {
-            "group": "Notices",
-            "pages": [
-              "infra-partners/notices/celo-sepolia-launch",
-              "infra-partners/notices/eigenda-v2-upgrade",
-              "infra-partners/notices/isthmus-upgrade",
-              "infra-partners/notices/l2-migration"
-            ]
-          },
-          {
-            "group": "Node Operation",
-            "pages": [
-              "infra-partners/operators/overview",
-              "infra-partners/operators/architecture",
-              "infra-partners/operators/run-node",
-              "infra-partners/operators/migrate-node"
-            ]
-          },
-          {
-            "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
-          },
-          {
-            "group": "Integrate with Celo",
-            "pages": [
-              "infra-partners/integration/index",
-              "infra-partners/integration/general",
-              "infra-partners/integration/checklist",
-              "infra-partners/integration/custody",
-              "infra-partners/integration/listings",
-              "infra-partners/integration/cloud-hsm"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Tooling",
         "groups": [
           {
@@ -231,8 +194,6 @@
           {
             "group": "Testnets",
             "pages": [
-              "tooling/testnets/alfajores/index",
-              "tooling/testnets/baklava/index",
               "tooling/testnets/celo-sepolia/index",
               "tooling/testnets/eclair/index"
             ]
@@ -393,6 +354,13 @@
             ]
           },
           {
+            "group": "Plumo",
+            "pages": [
+              "tooling/plumo/index",
+              "tooling/plumo/verification-phase-1"
+            ]
+          },
+          {
             "group": " ",
             "pages": ["tooling/bridges/cross-chain-messaging"]
           }
@@ -437,6 +405,45 @@
               "contribute-to-celo/release-process/blockchain-client",
               "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils",
               "contribute-to-celo/release-process/attestation-service"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infra Partners",
+        "groups": [
+          {
+            "group": "Notices",
+            "pages": [
+              "infra-partners/notices/l1-fusaka-upgrade",
+              "infra-partners/notices/celo-sepolia-launch",
+              "infra-partners/notices/eigenda-v2-upgrade",
+              "infra-partners/notices/isthmus-upgrade",
+              "infra-partners/notices/l2-migration"
+            ]
+          },
+          {
+            "group": "Node Operation",
+            "pages": [
+              "infra-partners/operators/overview",
+              "infra-partners/operators/architecture",
+              "infra-partners/operators/run-node",
+              "infra-partners/operators/migrate-node"
+            ]
+          },
+          {
+            "group": "Celo L2 Specs",
+            "pages": ["infra-partners/specs"]
+          },
+          {
+            "group": "Integrate with Celo",
+            "pages": [
+              "infra-partners/integration/index",
+              "infra-partners/integration/general",
+              "infra-partners/integration/checklist",
+              "infra-partners/integration/custody",
+              "infra-partners/integration/listings",
+              "infra-partners/integration/cloud-hsm"
             ]
           }
         ]
@@ -606,23 +613,23 @@
         },
         {
           "anchor": "Support",
-          "href": "https://docs.celo.org/build/support",
+          "href": "https://discord.com/invite/celo",
           "icon": "bullhorn"
         },
         {
           "anchor": "Forum",
-          "href": "https://medium.com/celoorg",
+          "href": "https://forum.celo.org/",
           "icon": "newspaper"
+        },
+        {
+          "anchor": "Faucet",
+          "href": "https://faucet.celo.org/celo-sepolia",
+          "icon": "faucet"
         },
         {
           "anchor": "FAQs",
           "href": "https://docs.celo.org/legacy/faq",
           "icon": "square-question"
-        },
-        {
-          "anchor": "Glossary",
-          "href": "https://docs.celo.org/glossary",
-          "icon": "graduation-cap"
         }
       ]
     }
@@ -984,6 +991,10 @@
     {
       "source": "/celo-codebase/protocol/transactions/tx-comment-encryption",
       "destination": "/home/protocol/transactions/tx-comment-encryption"
+    },
+    {
+      "source": "/celo-codebase/protocol/transactions/transaction-types",
+      "destination": "/home/protocol/transactions/transaction-types"
     },
     {
       "source": "/celo-codebase/wallet",
@@ -2494,19 +2505,19 @@
       "destination": "/contribute-to-celo"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/how-it-works",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/how-it-works",
       "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/registering-as-rpc-node",
       "destination": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/penalties",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/penalties",
       "destination": "/contribute-to-celo/community-rpc-nodes/penalties"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/validator-rpc-faq",
       "destination": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
     },
     {
