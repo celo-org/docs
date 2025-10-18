@@ -113,7 +113,8 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
-              "build-on-celo/fund-your-project"
+              "build-on-celo/fund-your-project",
+              "build-on-celo/nightfall"
             ]
           },
           {
@@ -353,6 +354,13 @@
             ]
           },
           {
+            "group": "Plumo",
+            "pages": [
+              "tooling/plumo/index",
+              "tooling/plumo/verification-phase-1"
+            ]
+          },
+          {
             "group": " ",
             "pages": ["tooling/bridges/cross-chain-messaging"]
           }
@@ -407,6 +415,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/l1-fusaka-upgrade",
               "infra-partners/notices/celo-sepolia-launch",
               "infra-partners/notices/eigenda-v2-upgrade",
               "infra-partners/notices/isthmus-upgrade",
@@ -431,7 +440,6 @@
             "pages": [
               "infra-partners/integration/index",
               "infra-partners/integration/general",
-              "infra-partners/integration/nightfall",
               "infra-partners/integration/checklist",
               "infra-partners/integration/custody",
               "infra-partners/integration/listings",
@@ -605,23 +613,23 @@
         },
         {
           "anchor": "Support",
-          "href": "https://docs.celo.org/build/support",
+          "href": "https://discord.com/invite/celo",
           "icon": "bullhorn"
         },
         {
           "anchor": "Forum",
-          "href": "https://medium.com/celoorg",
+          "href": "https://forum.celo.org/",
           "icon": "newspaper"
+        },
+        {
+          "anchor": "Faucet",
+          "href": "https://faucet.celo.org/celo-sepolia",
+          "icon": "faucet"
         },
         {
           "anchor": "FAQs",
           "href": "https://docs.celo.org/legacy/faq",
           "icon": "square-question"
-        },
-        {
-          "anchor": "Glossary",
-          "href": "https://docs.celo.org/glossary",
-          "icon": "graduation-cap"
         }
       ]
     }
@@ -983,6 +991,10 @@
     {
       "source": "/celo-codebase/protocol/transactions/tx-comment-encryption",
       "destination": "/home/protocol/transactions/tx-comment-encryption"
+    },
+    {
+      "source": "/celo-codebase/protocol/transactions/transaction-types",
+      "destination": "/home/protocol/transactions/transaction-types"
     },
     {
       "source": "/celo-codebase/wallet",
@@ -2493,19 +2505,19 @@
       "destination": "/contribute-to-celo"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/how-it-works",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/how-it-works",
       "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/registering-as-rpc-node",
       "destination": "/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/penalties",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/penalties",
       "destination": "/contribute-to-celo/community-rpc-nodes/penalties"
     },
     {
-      "source": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq",
+      "source": "/what-is-celo/joining-celo/community-rpc-nodes/validator-rpc-faq",
       "destination": "/contribute-to-celo/community-rpc-nodes/validator-rpc-faq"
     },
     {
