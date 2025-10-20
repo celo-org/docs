@@ -2944,10 +2944,6 @@
       "destination": "/home/index"
     },
     {
-      "source": "/home",
-      "destination": "/home/index"
-    },
-    {
       "source": "/markdown-page",
       "destination": "/home/index"
     },
