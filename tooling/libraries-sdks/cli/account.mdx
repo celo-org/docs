@@ -24,8 +24,6 @@ Manage your account, keys, and metadata
 * [`celocli account:list`](#celocli-accountlist)
 * [`celocli account:lock ARG1`](#celocli-accountlock-arg1)
 * [`celocli account:new`](#celocli-accountnew)
-* [`celocli account:offchain-read ARG1`](#celocli-accountoffchain-read-arg1)
-* [`celocli account:offchain-write`](#celocli-accountoffchain-write)
 * [`celocli account:proof-of-possession`](#celocli-accountproof-of-possession)
 * [`celocli account:register`](#celocli-accountregister)
 * [`celocli account:register-data-encryption-key`](#celocli-accountregister-data-encryption-key)
@@ -43,7 +41,7 @@ Manage your account, keys, and metadata
 
 Keep your locked Gold more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked Gold in cold storage. You must include a "proof-of-possession" of the key being authorized, which can be generated with the "account:proof-of-possession" command.
 
-```sh
+```
 USAGE
   $ celocli account:authorize --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -r
     vote|validator|attestation --signature 0x --signer
@@ -109,18 +107,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/authorize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/authorize.ts)_
+_See code: [src/commands/account/authorize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/authorize.ts)_
 
 ## `celocli account:balance ARG1`
 
 View Celo Stables and CELO balances for an address
 
-```sh
+```
 USAGE
   $ celocli account:balance ARG1 [-n <value>] [--globalHelp] [--erc20Address
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
@@ -150,18 +147,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/balance.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/balance.ts)_
+_See code: [src/commands/account/balance.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/balance.ts)_
 
 ## `celocli account:claim-account ARG1`
 
 Claim another account, and optionally its public key, and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-account ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --address <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -221,18 +217,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-account.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-account.ts)_
+_See code: [src/commands/account/claim-account.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-account.ts)_
 
 ## `celocli account:claim-domain ARG1`
 
 Claim a domain and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-domain ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --domain <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -288,18 +283,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-domain.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-domain.ts)_
+_See code: [src/commands/account/claim-domain.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-domain.ts)_
 
 ## `celocli account:claim-keybase ARG1`
 
 Claim a keybase username and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-keybase ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --username <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -355,18 +349,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-keybase.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-keybase.ts)_
+_See code: [src/commands/account/claim-keybase.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-keybase.ts)_
 
 ## `celocli account:claim-name ARG1`
 
 Claim a name and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-name ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --name <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -422,18 +415,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-name.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-name.ts)_
+_See code: [src/commands/account/claim-name.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-name.ts)_
 
 ## `celocli account:claim-rpc-url ARG1`
 
 Claim a RPC URL and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-rpc-url ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --rpcUrl https://www.celo.org [-k <value> | --useLedger | ] [-n <value>]
@@ -489,18 +481,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-rpc-url.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-rpc-url.ts)_
+_See code: [src/commands/account/claim-rpc-url.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-rpc-url.ts)_
 
 ## `celocli account:claim-storage ARG1`
 
 Claim a storage root and add the claim to a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:claim-storage ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --url https://www.celo.org [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -556,18 +547,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/claim-storage.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/claim-storage.ts)_
+_See code: [src/commands/account/claim-storage.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/claim-storage.ts)_
 
 ## `celocli account:create-metadata ARG1`
 
 Create an empty identity metadata file. Use this metadata file to store claims attesting to ownership of off-chain resources. Claims can be generated with the account:claim-* commands.
 
-```sh
+```
 USAGE
   $ celocli account:create-metadata ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -622,18 +612,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/create-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/create-metadata.ts)_
+_See code: [src/commands/account/create-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/create-metadata.ts)_
 
 ## `celocli account:deauthorize`
 
 Remove an account's authorized attestation signer role.
 
-```sh
+```
 USAGE
   $ celocli account:deauthorize --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -r
     attestation --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> |
@@ -690,18 +679,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/deauthorize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/deauthorize.ts)_
+_See code: [src/commands/account/deauthorize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/deauthorize.ts)_
 
 ## `celocli account:delete-payment-delegation`
 
 Removes a validator's payment delegation by setting beneficiary and fraction to 0.
 
-```sh
+```
 USAGE
   $ celocli account:delete-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -750,18 +738,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/delete-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/delete-payment-delegation.ts)_
+_See code: [src/commands/account/delete-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/delete-payment-delegation.ts)_
 
 ## `celocli account:get-metadata ARG1`
 
 Show information about an address. Retrieves the metadata URL for an account from the on-chain, then fetches the metadata file off-chain and verifies proofs as able.
 
-```sh
+```
 USAGE
   $ celocli account:get-metadata ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
@@ -837,18 +824,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/get-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/get-metadata.ts)_
+_See code: [src/commands/account/get-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/get-metadata.ts)_
 
 ## `celocli account:get-payment-delegation`
 
 Get the payment delegation account beneficiary and fraction allocated from a validator's payment each epoch. The fraction cannot be greater than 1.
 
-```sh
+```
 USAGE
   $ celocli account:get-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -925,18 +911,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/get-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/get-payment-delegation.ts)_
+_See code: [src/commands/account/get-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/get-payment-delegation.ts)_
 
 ## `celocli account:list`
 
 List the addresses from the node and the local instance
 
-```sh
+```
 USAGE
   $ celocli account:list [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -982,18 +967,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/list.ts)_
+_See code: [src/commands/account/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/list.ts)_
 
 ## `celocli account:lock ARG1`
 
 Lock an account which was previously unlocked
 
-```sh
+```
 USAGE
   $ celocli account:lock ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
@@ -1041,18 +1025,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/lock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/lock.ts)_
+_See code: [src/commands/account/lock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/lock.ts)_
 
 ## `celocli account:new`
 
 Creates a new account locally using the --derivationPath if passed or the one set with config:set (defaults to m/44'/60'/0')  and print out the key information. Save this information for local transaction signing or import into a Celo node. Ledger: this command has been tested swapping mnemonics with the Ledger successfully (only supports english)
 
-```sh
+```
 USAGE
   $ celocli account:new [-n <value>] [--globalHelp] [--passphrasePath <value>]
     [--changeIndex <value>] [--addressIndex <value>] [--language chinese_simplified|chin
@@ -1123,7 +1106,6 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 
@@ -1138,165 +1120,13 @@ FLAG DESCRIPTIONS
     path. (use changeIndex, and addressIndex flags to change BIP44 positions 4 and 5)
 ```
 
-_See code: [src/commands/account/new.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/new.ts)_
-
-## `celocli account:offchain-read ARG1`
-
-DEV: Reads the name from offchain storage
-
-```sh
-USAGE
-  $ celocli account:offchain-read ARG1 [-k <value> | --useLedger | ] [-n <value>]
-    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--ledgerLiveMode ] [--globalHelp] [--directory <value>] [--bucket <value>
-    --provider git|aws|gcp] [--from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
-    [--privateDEK <value>]
-
-FLAGS
-  -k, --privateKey=<value>
-      Use a private key to sign local transactions with
-
-  -n, --node=<value>
-      URL of the node to run commands against or an alias
-
-  --bucket=<value>
-      If using a GCP or AWS storage bucket this parameter is required
-
-  --directory=<value>
-      [default: .] To which directory data should be written
-
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-      Account Address
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
-
-  --globalHelp
-      View all available global flags
-
-  --ledgerAddresses=<value>
-      [default: 1] If --useLedger is set, this will get the first N addresses for local
-      signing
-
-  --ledgerLiveMode
-      When set, the 4th postion of the derivation path will be iterated over instead of
-      the 5th. This is useful to use same address on you Ledger with celocli as you do on
-      Ledger Live
-
-  --privateDEK=<value>
-
-  --provider=<option>
-      If the CLI should attempt to push to the cloud
-      <options: git|aws|gcp>
-
-  --useLedger
-      Set it to use a ledger wallet
-
-DESCRIPTION
-  DEV: Reads the name from offchain storage
-
-EXAMPLES
-  offchain-read 0x...
-
-  offchain-read 0x... --from 0x... --privateKey 0x...
-
-FLAG DESCRIPTIONS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-
-    Can be a full url like https://forno.celo.org or an alias. default:
-    http://localhost:8545
-    Alias options:
-    local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
-    testnet, celo-sepolia => Celo Sepolia Testnet,
-    mainnet, celo, forno => Celo Mainnet chain',
-```
-
-_See code: [src/commands/account/offchain-read.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/offchain-read.ts)_
-
-## `celocli account:offchain-write`
-
-DEV: Writes a name to offchain storage
-
-```sh
-USAGE
-  $ celocli account:offchain-write --name <value> [-n <value>] [--gasCurrency
-    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> (--useLedger
-    | --privateKey <value>)] [--ledgerLiveMode ] [--globalHelp] [--directory <value>]
-    [--bucket <value> --provider git|aws|gcp] [--privateDEK <value>  --encryptTo
-    <value>]
-
-FLAGS
-  -n, --node=<value>
-      URL of the node to run commands against or an alias
-
-  --bucket=<value>
-      If using a GCP or AWS storage bucket this parameter is required
-
-  --directory=<value>
-      [default: .] To which directory data should be written
-
-  --encryptTo=<value>
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
-
-  --globalHelp
-      View all available global flags
-
-  --ledgerAddresses=<value>
-      [default: 1] If --useLedger is set, this will get the first N addresses for local
-      signing
-
-  --ledgerLiveMode
-      When set, the 4th postion of the derivation path will be iterated over instead of
-      the 5th. This is useful to use same address on you Ledger with celocli as you do on
-      Ledger Live
-
-  --name=<value>
-      (required)
-
-  --privateDEK=<value>
-
-  --privateKey=<value>
-      (required)
-
-  --provider=<option>
-      If the CLI should attempt to push to the cloud
-      <options: git|aws|gcp>
-
-  --useLedger
-      Set it to use a ledger wallet
-
-DESCRIPTION
-  DEV: Writes a name to offchain storage
-
-EXAMPLES
-  offchain-write --name test-account --privateKey 0x...
-
-  offchain-write --name test-account --privateKey 0x...  privateDEK 0x... --encryptTo 0x...
-
-FLAG DESCRIPTIONS
-  -n, --node=<value>  URL of the node to run commands against or an alias
-
-    Can be a full url like https://forno.celo.org or an alias. default:
-    http://localhost:8545
-    Alias options:
-    local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
-    testnet, celo-sepolia => Celo Sepolia Testnet,
-    mainnet, celo, forno => Celo Mainnet chain',
-```
-
-_See code: [src/commands/account/offchain-write.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/offchain-write.ts)_
+_See code: [src/commands/account/new.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/new.ts)_
 
 ## `celocli account:proof-of-possession`
 
 Generate proof-of-possession to be used to authorize a signer. See the "account:authorize" command for more details.
 
-```sh
+```
 USAGE
   $ celocli account:proof-of-possession --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ]
@@ -1349,18 +1179,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/proof-of-possession.ts)_
+_See code: [src/commands/account/proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/proof-of-possession.ts)_
 
 ## `celocli account:register`
 
 Register an account on-chain. This allows you to lock Gold, which is a pre-requisite for registering a Validator or Group, participating in Validator elections and on-chain Governance, and earning epoch rewards.
 
-```sh
+```
 USAGE
   $ celocli account:register --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -1415,18 +1244,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/register.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/register.ts)_
+_See code: [src/commands/account/register.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/register.ts)_
 
 ## `celocli account:register-data-encryption-key`
 
 Register a data encryption key for an account on chain. This key can be used to encrypt data to you such as offchain metadata or transaction comments
 
-```sh
+```
 USAGE
   $ celocli account:register-data-encryption-key --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --publicKey <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -1479,18 +1307,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/register-data-encryption-key.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/register-data-encryption-key.ts)_
+_See code: [src/commands/account/register-data-encryption-key.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/register-data-encryption-key.ts)_
 
 ## `celocli account:register-metadata`
 
 Register metadata URL for an account where users will be able to retrieve the metadata file and verify your claims
 
-```sh
+```
 USAGE
   $ celocli account:register-metadata --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --url
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -1573,18 +1400,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/register-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/register-metadata.ts)_
+_See code: [src/commands/account/register-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/register-metadata.ts)_
 
 ## `celocli account:set-name`
 
 Sets the name of a registered account on-chain. An account's name is an optional human readable identifier
 
-```sh
+```
 USAGE
   $ celocli account:set-name --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --name <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -1637,18 +1463,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/set-name.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/set-name.ts)_
+_See code: [src/commands/account/set-name.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/set-name.ts)_
 
 ## `celocli account:set-payment-delegation`
 
 Sets a payment delegation beneficiary, an account address to receive a fraction of the validator's payment every epoch. The fraction must not be greater than 1.
 
-```sh
+```
 USAGE
   $ celocli account:set-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --beneficiary 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --fraction <value> [-k
@@ -1705,18 +1530,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/set-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/set-payment-delegation.ts)_
+_See code: [src/commands/account/set-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/set-payment-delegation.ts)_
 
 ## `celocli account:set-wallet`
 
 Sets the wallet of a registered account on-chain. An account's wallet is an optional wallet associated with an account. Can be set by the account or an account's signer.
 
-```sh
+```
 USAGE
   $ celocli account:set-wallet --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --wallet 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ]
@@ -1778,18 +1602,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/set-wallet.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/set-wallet.ts)_
+_See code: [src/commands/account/set-wallet.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/set-wallet.ts)_
 
 ## `celocli account:show ARG1`
 
 Show information for an account, including name, authorized vote, validator, and attestation signers, the URL at which account metadata is hosted, the address the account is using with the mobile wallet, and a public key that can be used to encrypt information for the account.
 
-```sh
+```
 USAGE
   $ celocli account:show ARG1 [-n <value>] [--globalHelp]
 
@@ -1813,18 +1636,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/show.ts)_
+_See code: [src/commands/account/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/show.ts)_
 
 ## `celocli account:show-claimed-accounts ARG1`
 
 Show information about claimed accounts
 
-```sh
+```
 USAGE
   $ celocli account:show-claimed-accounts ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
@@ -1869,18 +1691,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/show-claimed-accounts.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/show-claimed-accounts.ts)_
+_See code: [src/commands/account/show-claimed-accounts.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/show-claimed-accounts.ts)_
 
 ## `celocli account:show-metadata ARG1`
 
 Show the data in a local metadata file
 
-```sh
+```
 USAGE
   $ celocli account:show-metadata ARG1 [-n <value>] [--globalHelp] [--columns <value> | -x]
     [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
@@ -1915,18 +1736,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/show-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/show-metadata.ts)_
+_See code: [src/commands/account/show-metadata.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/show-metadata.ts)_
 
 ## `celocli account:unlock ARG1`
 
 Unlock an account address to send transactions or validate blocks
 
-```sh
+```
 USAGE
   $ celocli account:unlock ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
@@ -1985,18 +1805,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/unlock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/unlock.ts)_
+_See code: [src/commands/account/unlock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/unlock.ts)_
 
 ## `celocli account:verify-proof-of-possession`
 
 Verify a proof-of-possession. See the "account:proof-of-possession" command for more details.
 
-```sh
+```
 USAGE
   $ celocli account:verify-proof-of-possession --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --signature 0x [-k <value> |
@@ -2053,9 +1872,8 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/verify-proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/account/verify-proof-of-possession.ts)_
+_See code: [src/commands/account/verify-proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/account/verify-proof-of-possession.ts)_

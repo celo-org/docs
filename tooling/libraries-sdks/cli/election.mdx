@@ -20,7 +20,7 @@ Participate in and view the state of Validator Elections
 
 Activate pending votes in validator elections to begin earning rewards. To earn rewards as a voter, it is required to activate your pending votes at some point after the end of the epoch in which they were made.
 
-```sh
+```
 USAGE
   $ celocli election:activate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -82,18 +82,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/activate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/activate.ts)_
+_See code: [src/commands/election/activate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/activate.ts)_
 
 ## `celocli election:current`
 
 Outputs the set of rpc nodes currently elected. An election is run to select the community rpc node set at the end of every epoch.
 
-```sh
+```
 USAGE
   $ celocli election:current [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -167,18 +166,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/current.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/current.ts)_
+_See code: [src/commands/election/current.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/current.ts)_
 
 ## `celocli election:list`
 
 Prints the list of validator groups, the number of votes they have received, the number of additional votes they are able to receive, and whether or not they are eligible to elect validators.
 
-```sh
+```
 USAGE
   $ celocli election:list [-n <value>] [--globalHelp] [--columns <value> | -x]
     [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
@@ -212,18 +210,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/list.ts)_
+_See code: [src/commands/election/list.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/list.ts)_
 
 ## `celocli election:revoke`
 
 Revoke votes for a Validator Group in validator elections.
 
-```sh
+```
 USAGE
   $ celocli election:revoke --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
@@ -278,18 +275,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/revoke.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/revoke.ts)_
+_See code: [src/commands/election/revoke.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/revoke.ts)_
 
 ## `celocli election:run`
 
 Runs a "mock" election and prints out the validators that would be elected if the epoch ended right now.
 
-```sh
+```
 USAGE
   $ celocli election:run [-n <value>] [--globalHelp] [--columns <value> | -x]
     [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
@@ -319,18 +315,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/run.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/run.ts)_
+_See code: [src/commands/election/run.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/run.ts)_
 
 ## `celocli election:show ARG1`
 
 Show election information about a voter or registered Validator Group
 
-```sh
+```
 USAGE
   $ celocli election:show ARG1 [-n <value>] [--globalHelp] [--voter | --group]
 
@@ -358,18 +353,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/show.ts)_
+_See code: [src/commands/election/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/show.ts)_
 
 ## `celocli election:vote`
 
 Vote for a Validator Group in elections.
 
-```sh
+```
 USAGE
   $ celocli election:vote --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
@@ -425,9 +419,8 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/election/vote.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/election/vote.ts)_
+_See code: [src/commands/election/vote.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/election/vote.ts)_
