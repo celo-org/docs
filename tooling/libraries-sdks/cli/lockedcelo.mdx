@@ -1,8 +1,3 @@
----
-title: celocli lockedcelo
-sidebarTitle: "LockedCelo"
----
-
 `celocli lockedcelo`
 ====================
 
@@ -22,7 +17,7 @@ View and manage locked CELO
 
 Delegate locked celo.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
@@ -81,18 +76,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/delegate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/delegate.ts)_
+_See code: [src/commands/lockedcelo/delegate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/delegate.ts)_
 
 ## `celocli lockedcelo:delegate-info`
 
 Delegate info about account.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:delegate-info --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -144,18 +138,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/delegate-info.ts)_
+_See code: [src/commands/lockedcelo/delegate-info.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/delegate-info.ts)_
 
 ## `celocli lockedcelo:lock`
 
 Locks CELO to be used in governance and validator elections.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:lock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -210,18 +203,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/lock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/lock.ts)_
+_See code: [src/commands/lockedcelo/lock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/lock.ts)_
 
 ## `celocli lockedcelo:max-delegatees-count`
 
 Returns the maximum number of delegates allowed per account.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:max-delegatees-count [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
@@ -269,18 +261,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/max-delegatees-count.ts)_
+_See code: [src/commands/lockedcelo/max-delegatees-count.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/max-delegatees-count.ts)_
 
 ## `celocli lockedcelo:revoke-delegate`
 
 Revoke delegated locked celo.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:revoke-delegate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --percent <value> [-k <value> |
@@ -339,18 +330,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/revoke-delegate.ts)_
+_See code: [src/commands/lockedcelo/revoke-delegate.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/revoke-delegate.ts)_
 
 ## `celocli lockedcelo:show ARG1`
 
 Show Locked Celo information for a given account. This includes the total amount of locked celo, the amount being used for voting in Validator Elections, the Locked Celo balance this account is required to maintain due to a registered Validator or Validator Group, and any pending withdrawals that have been initiated via "lockedcelo:unlock".
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:show ARG1 [-n <value>] [--globalHelp]
 
@@ -378,18 +368,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/show.ts)_
+_See code: [src/commands/lockedcelo/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/show.ts)_
 
 ## `celocli lockedcelo:unlock`
 
 Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "lockedgold:withdraw".
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:unlock --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -446,18 +435,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/unlock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/unlock.ts)_
+_See code: [src/commands/lockedcelo/unlock.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/unlock.ts)_
 
 ## `celocli lockedcelo:update-delegated-amount`
 
 Updates the amount of delegated locked celo. There might be discrepancy between the amount of locked celo and the amount of delegated locked celo because of received rewards.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:update-delegated-amount --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --to
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
@@ -514,18 +502,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/update-delegated-amount.ts)_
+_See code: [src/commands/lockedcelo/update-delegated-amount.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/update-delegated-amount.ts)_
 
 ## `celocli lockedcelo:withdraw`
 
 Withdraw any pending withdrawals created via "lockedgold:unlock" that have become available.
 
-```sh
+```
 USAGE
   $ celocli lockedcelo:withdraw --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -578,9 +565,8 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/lockedcelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/lockedcelo/withdraw.ts)_
+_See code: [src/commands/lockedcelo/withdraw.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/lockedcelo/withdraw.ts)_

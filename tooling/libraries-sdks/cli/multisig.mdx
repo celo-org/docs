@@ -1,8 +1,3 @@
----
-title: celocli multisig
-sidebarTitle: "Multisig"
----
-
 `celocli multisig`
 ==================
 
@@ -17,7 +12,7 @@ Approves an existing transaction on a multi-sig contract
 
 Approves an existing transaction on a multi-sig contract
 
-```sh
+```
 USAGE
   $ celocli multisig:approve --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --tx 10000000000000000000000 [-k <value>
@@ -73,18 +68,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/multisig/approve.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/multisig/approve.ts)_
+_See code: [src/commands/multisig/approve.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/multisig/approve.ts)_
 
 ## `celocli multisig:propose ARG1`
 
 Propose a transaction to a multi-sig contract
 
-```sh
+```
 USAGE
   $ celocli multisig:propose ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --to 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
@@ -145,18 +139,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/multisig/propose.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/multisig/propose.ts)_
+_See code: [src/commands/multisig/propose.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/multisig/propose.ts)_
 
 ## `celocli multisig:show ARG1`
 
 Shows information about multi-sig contract
 
-```sh
+```
 USAGE
   $ celocli multisig:show ARG1 [-n <value>] [--globalHelp] [--tx <value>] [--all]
     [--raw]
@@ -185,18 +178,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/multisig/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/multisig/show.ts)_
+_See code: [src/commands/multisig/show.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/multisig/show.ts)_
 
 ## `celocli multisig:transfer ARG1`
 
 Ability to approve CELO transfers to and from multisig. Submit transaction or approve a matching existing transaction
 
-```sh
+```
 USAGE
   $ celocli multisig:transfer ARG1 --to 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --amount 10000000000000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
@@ -262,9 +254,8 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/multisig/transfer.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/multisig/transfer.ts)_
+_See code: [src/commands/multisig/transfer.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/multisig/transfer.ts)_

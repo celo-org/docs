@@ -1,8 +1,3 @@
----
-title: celocli epochs
-sidebarTitle: "Epochs"
----
-
 `celocli epochs`
 ================
 
@@ -20,7 +15,7 @@ Finishes next epoch process.
 
 View epoch info.
 
-```sh
+```
 USAGE
   $ celocli epochs:current [-n <value>] [--columns <value> | -x] [--filter <value>]
     [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort
@@ -51,7 +46,6 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
@@ -60,7 +54,7 @@ FLAG DESCRIPTIONS
 
 Finishes next epoch process.
 
-```sh
+```
 USAGE
   $ celocli epochs:finish --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -109,18 +103,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/finish.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/finish.ts)_
+_See code: [src/commands/epochs/finish.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/finish.ts)_
 
 ## `celocli epochs:process-groups`
 
 Processes validator groups for the next epoch.
 
-```sh
+```
 USAGE
   $ celocli epochs:process-groups --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -169,18 +162,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/process-groups.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/process-groups.ts)_
+_See code: [src/commands/epochs/process-groups.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/process-groups.ts)_
 
 ## `celocli epochs:send-validator-payment`
 
 Sends the allocated epoch payment to a validator, their group, and delegation beneficiary.
 
-```sh
+```
 USAGE
   $ celocli epochs:send-validator-payment --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
@@ -236,18 +228,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/send-validator-payment.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/send-validator-payment.ts)_
+_See code: [src/commands/epochs/send-validator-payment.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/send-validator-payment.ts)_
 
 ## `celocli epochs:start`
 
 Starts next epoch process.
 
-```sh
+```
 USAGE
   $ celocli epochs:start --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -296,18 +287,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/start.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/start.ts)_
+_See code: [src/commands/epochs/start.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/start.ts)_
 
 ## `celocli epochs:status`
 
 View epoch info.
 
-```sh
+```
 USAGE
   $ celocli epochs:status [-n <value>] [--columns <value> | -x] [--filter <value>]
     [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort
@@ -338,18 +328,17 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/status.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/status.ts)_
+_See code: [src/commands/epochs/status.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/status.ts)_
 
 ## `celocli epochs:switch`
 
 Finishes current epoch and starts a new one.
 
-```sh
+```
 USAGE
   $ celocli epochs:switch --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
@@ -401,9 +390,8 @@ FLAG DESCRIPTIONS
     http://localhost:8545
     Alias options:
     local, localhost => 'http://localhost:8545'
-    alfajores => Celo Alfajores Testnet,
     testnet, celo-sepolia => Celo Sepolia Testnet,
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/epochs/switch.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%407.1.0/packages/cli/src/commands/epochs/switch.ts)_
+_See code: [src/commands/epochs/switch.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%408.0.0/packages/cli/src/commands/epochs/switch.ts)_
