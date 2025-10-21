@@ -8,7 +8,13 @@
     "dark": "#000000"
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor"
+    ]
   },
   "background": {
     "color": {
@@ -35,7 +41,9 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["home/celo"]
+            "pages": [
+              "home/celo"
+            ]
           },
           {
             "group": "Overview",
@@ -286,28 +294,25 @@
                 "pages": [
                   "tooling/libraries-sdks/cli/index",
                   "tooling/libraries-sdks/cli/account",
+                  "tooling/libraries-sdks/cli/autocomplete",
+                  "tooling/libraries-sdks/cli/commands",
                   "tooling/libraries-sdks/cli/config",
-                  "tooling/libraries-sdks/cli/dkg",
                   "tooling/libraries-sdks/cli/election",
                   "tooling/libraries-sdks/cli/epochs",
-                  "tooling/libraries-sdks/cli/exchange",
                   "tooling/libraries-sdks/cli/governance",
+                  "tooling/libraries-sdks/cli/help",
                   "tooling/libraries-sdks/cli/identity",
                   "tooling/libraries-sdks/cli/lockedcelo",
-                  "tooling/libraries-sdks/cli/lockedgold",
                   "tooling/libraries-sdks/cli/multisig",
                   "tooling/libraries-sdks/cli/network",
                   "tooling/libraries-sdks/cli/node",
                   "tooling/libraries-sdks/cli/oracle",
+                  "tooling/libraries-sdks/cli/plugins",
                   "tooling/libraries-sdks/cli/releasecelo",
                   "tooling/libraries-sdks/cli/rewards",
                   "tooling/libraries-sdks/cli/transfer",
                   "tooling/libraries-sdks/cli/validator",
-                  "tooling/libraries-sdks/cli/validatorgroup",
-                  "tooling/libraries-sdks/cli/autocomplete",
-                  "tooling/libraries-sdks/cli/commands",
-                  "tooling/libraries-sdks/cli/help",
-                  "tooling/libraries-sdks/cli/plugins"
+                  "tooling/libraries-sdks/cli/validatorgroup"
                 ]
               },
               "tooling/libraries-sdks/viem/index",
@@ -362,7 +367,9 @@
           },
           {
             "group": " ",
-            "pages": ["tooling/bridges/cross-chain-messaging"]
+            "pages": [
+              "tooling/bridges/cross-chain-messaging"
+            ]
           }
         ]
       },
@@ -433,7 +440,9 @@
           },
           {
             "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
+            "pages": [
+              "infra-partners/specs"
+            ]
           },
           {
             "group": "Integrate with Celo",
@@ -555,7 +564,9 @@
               "legacy/protocol/randomness",
               {
                 "group": "Contracts",
-                "pages": ["legacy/protocol/contracts/add-contract"]
+                "pages": [
+                  "legacy/protocol/contracts/add-contract"
+                ]
               }
             ]
           },
@@ -574,7 +585,9 @@
               "legacy/validator/voting",
               {
                 "group": "Run a Validator",
-                "pages": ["legacy/validator/run/mainnet"]
+                "pages": [
+                  "legacy/validator/run/mainnet"
+                ]
               },
               {
                 "group": "Key Management",
