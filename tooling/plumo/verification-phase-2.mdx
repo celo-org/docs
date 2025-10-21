@@ -1,0 +1,76 @@
+---
+title: Verifying Celo Plumo Phase 2
+og:description: Verifying Celo Plumo Phase 2.
+sidebarTitle: "Verifying Phase 2"
+---
+
+How to verify the Celo Plumo Ceremony Phase 2.
+
+<Warning>
+This page describes how to verify the Plumo Ceremony Phase 2, that was related to the historical Celo Layer 1 blockchain. It is useful as a theoretical exercise, but Plumo is not in use anymore because as of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo has transitioned to an Ethereum Layer 2.
+</Warning>
+
+---
+
+## Introduction
+
+Plumo Ceremony Phase 2 had 10 rounds in total. Stored files for the ceremony (available [here](https://console.cloud.google.com/storage/browser/plumoceremonyphase2)).
+
+## Preparation
+
+What you will need:
+
+    - A Virtual Machine with at least 128 vCPUs and 864 GB memory (we used a `n2-highmem-128` VM in GCP).
+        - Disk space of at least 15 TB.
+    - The Plumo cicuit, available [here](https://storage.googleapis.com/plumoceremonyphase2/plumo_circuit_150v_143e) as `plumo_circuit_150v_143e`.
+    - The initial file for Phase 2, available [here](https://storage.googleapis.com/plumoceremonyphase2/phase2_init_27p) as `phase2_init_27p`.
+    - The initial query file, available [here](https://storage.googleapis.com/plumoceremonyphase2/new_challenge.query) as `new_challenge.query`.
+    - The initial full file, available [here](https://storage.googleapis.com/plumoceremonyphase2/new_challenge.full) as `new_challenge.full`.
+    - The full transcript for Phase 2, available [here](https://storage.googleapis.com/plumoceremonyphase2/transcript_backup_with_beacon/full_transcript.json) as `full_transcript.json`.
+    - The [beacon hash](https://github.com/celo-org/celo-bls-snark-rs/issues/227), which was `50e6fa2d3e8ed9613bda92005c72193ebd6d0443d3c1b092ad9f569e531cc176`.
+    - The snark-setup-operator [repository](https://github.com/celo-org/snark-setup-operator).
+
+### Building the snark-setup-operator repository
+
+In Ubuntu, you will need the `build-essential` package, as well as Rust version 1.63.0:
+
+```bash
+sudo apt-get install build-essential
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup toolchain install 1.63.0
+rustup default 1.63.0
+```
+
+Now, assuming you are at the root of the `snark-setup-operator` repository, just run:
+
+```bash
+cargo build --release
+```
+
+## Executing the Verification Crate
+
+Once you have all the necessary files, and the Rust repository built, you can run (from the root of the `snark-setup-operator` repository):
+
+```bash
+$ sudo target/release/verify_transcript --phase phase2 --beacon-hash 50e6fa2d3e8ed9613bda92005c72193ebd6d0443d3c1b092ad9f569e531cc176 --transcript-path <PATH_TO_INITIAL_PHASE2_FILE> --phase1-powers 27 --phase1-filename <PATH_TO_FULL_TRANSCRIPT_FILE> --circuit-filename <PATH_TO_CIRCUIT_FILE> --initial-query-filename <PATH_TO_INITIAL_QUERY_FILE> --initial-full-filename <PATH_TO_INITIAL_FULL_FILE>
+{"timestamp":"Oct 21 07:45:29.797","level":"INFO","fields":{"message":"verifying round 0"},"target":"verify_transcript"}
+{"timestamp":"Oct 21 07:45:29.798","level":"INFO","fields":{"message":"Generating phase 2"},"target":"phase2_cli::new_challenge"}
+{"timestamp":"Oct 21 07:53:14.746","level":"INFO","fields":{"message":"Loaded circuit with 133758430 constraints"},"target":"phase2_cli::new_challenge"}
+{"timestamp":"Oct 21 07:53:14.932","level":"INFO","fields":{"message":"reading groth16 parameters..."},"target":"setup_utils::groth16_utils","span":{"name":"Groth16Utils_read"},"spans":[{"name":"Groth16Utils_read"}]}
+{"timestamp":"Oct 21 07:55:30.961","level":"INFO","fields":{"message":"successfully read groth16 parameters"},"target":"setup_utils::groth16_utils","span":{"name":"Groth16Utils_read"},"spans":[{"name":"Groth16Utils_read"}]}
+...
+```
+
+As the verification progresses, you will start seeing these lines:
+
+```
+...
+{"timestamp":"Oct 21 09:57:21.795","level":"INFO","fields":{"message":"chunk 0 verified"},"target":"verify_transcript"}
+...
+{"timestamp":"Oct 21 10:01:02.423","level":"INFO","fields":{"message":"chunk 1 verified"},"target":"verify_transcript"}
+...
+````
+
+Once you see a line with the content `Finished verification successfully!`. the verification has finished.
