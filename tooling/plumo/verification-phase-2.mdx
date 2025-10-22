@@ -21,7 +21,7 @@ Plumo Ceremony Phase 2 had 10 rounds in total. Stored files for the ceremony are
 What you will need:
 
     - A Virtual Machine with at least 128 vCPUs and 864 GB memory (we used a `n2-highmem-128` VM in GCP).
-        - Disk space of at least 15 TB.
+        - Disk space of at least 10 TB.
     - The Plumo circuit, available [here](https://storage.googleapis.com/plumoceremonyphase2/plumo_circuit_150v_143e) as `plumo_circuit_150v_143e`.
     - The initial file for Phase 2, available [here](https://storage.googleapis.com/plumoceremonyphase2/phase2_init_27p) as `phase2_init_27p`.
     - The initial query file, available [here](https://storage.googleapis.com/plumoceremonyphase2/new_challenge.query) as `new_challenge.query`.
@@ -71,6 +71,12 @@ As the verification progresses, you will start seeing these lines:
 ...
 {"timestamp":"Oct 21 10:01:02.423","level":"INFO","fields":{"message":"chunk 1 verified"},"target":"verify_transcript"}
 ...
+{"timestamp":"Oct 22 00:08:54.549","level":"INFO","fields":{"message":"chunk 255 verified"},"target":"verify_transcript"}
+{"timestamp":"Oct 22 00:08:54.549","level":"INFO","fields":{"message":"participants found in the transcript of round 0:\n0x9eec1def5ad49b8b239015fc40444b42c282ecf3\n0xca97ae6d16fc1476f00856c60bb0bc4e33722f2b\n0xf3c12b9df3e58ae5683639ae0badfb537720deb6\n0x5d32478f3c55c0865239d4e55134e4338cafb4e3\n0x7252af82efe17fb17f9d22f8f8fce11228212556\n0x0853e301c0e4669670d6a1bb16e134a7f2178ab8"},"target":"verify_transcript"}
+{"timestamp":"Oct 22 00:08:54.580","level":"INFO","fields":{"message":"Verified round 0"},"target":"verify_transcript"}
+{"timestamp":"Oct 22 00:08:54.580","level":"INFO","fields":{"message":"all rounds and chunks verified, aggregating"},"target":"verify_transcript"}
+...
+{"timestamp":"Oct 22 03:54:24.767","level":"INFO","fields":{"message":"Finished verification successfully!"},"target":"verify_transcript"}
 ```
 
 Once you see a line with the content `Finished verification successfully!`, the verification has finished.
