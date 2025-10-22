@@ -362,7 +362,8 @@
             "group": "Plumo",
             "pages": [
               "tooling/plumo/index",
-              "tooling/plumo/verification-phase-1"
+              "tooling/plumo/verification-phase-1",
+              "tooling/plumo/verification-phase-2"
             ]
           },
           {
