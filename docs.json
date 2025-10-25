@@ -321,7 +321,6 @@
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
               "tooling/libraries-sdks/portal/index",
-              "tooling/libraries-sdks/particle-network/index",
               {
                 "group": "ContractKit",
                 "pages": [
@@ -2621,7 +2620,11 @@
     },
     {
       "source": "/developer/particle-network/:slug*",
-      "destination": "/tooling/libraries-sdks/particle-network/:slug*"
+      "destination": "/tooling/libraries-sdks/celo-sdks"
+    },
+    {
+      "source": "/tooling/libraries-sdks/particle-network/:slug*",
+      "destination": "/tooling/libraries-sdks/celo-sdks"
     },
     {
       "source": "/developer/portal/:slug*",
