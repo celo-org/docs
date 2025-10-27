@@ -126,8 +126,9 @@ def csv_to_markdown(csv_text: str, network: str) -> str:
 
 def token_csv_to_markdown(csv_text: str, network: str) -> str:
     reader = csv.DictReader(io.StringIO(csv_text))
+    sorted_rows = sorted(reader, key=lambda row: row["Symbol"].lower())
     lines = ["| Token | Symbol | Token Address |", "| ----- | ------ | ------------- |"]
-    for row in reader:
+    for row in sorted_rows:
         contract = row.get("Name", "").strip()
         symbol = row.get("Symbol", "").strip()
         address = row.get("Token Address", "").strip()
@@ -150,7 +151,7 @@ def main():
         f.write(PAGE_HEADER_CORE_CONTRACTS)
 
         for network, data in NETWORKS.items():
-            print(f"Fetching contract data from celocli for {network}...")
+            print(f"> Fetching contract data from celocli for {network}...")
 
             csv_output = fetch_celo_cli_csv(network, "network:contracts")
             markdown = csv_to_markdown(csv_output, network)
@@ -163,7 +164,9 @@ def main():
         f.write(PAGE_HEADER_TOKEN_CONTRACTS)
 
         for network, data in NETWORKS.items():
-            print(f"Fetching fee currency contract data from celocli for {network}...")
+            print(
+                f"> Fetching fee currency contract data from celocli for {network}..."
+            )
 
             csv_output = fetch_celo_cli_csv(network, "network:whitelist")
             markdown = token_csv_to_markdown(csv_output, network)
