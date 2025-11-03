@@ -19,7 +19,7 @@ If you wish to migrate data from a Celo L1 node and have not yet done so, please
 - Minimum 4 CPU, recommended 8 CPU
 - 100mb/s+ Download
 
-### Testnets (Alfajores, Baklava, and Celo Sepolia)
+### Celo Sepolia Testnet
 
 - 16GB+ RAM
 - 500GB SSD (NVME Recommended)
@@ -61,10 +61,10 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     #### Copy default configurations
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`celo-sepolia`, `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
+    export NETWORK=<celo-sepolia or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -152,10 +152,10 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     #### Copy default configurations
 
-    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, `celo-sepolia`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`celo-sepolia`, `mainnet`). Start by copying the default configuration for the appropriate network.
 
     ```bash
-    export NETWORK=<alfajores, baklava, celo-sepolia, or mainnet>
+    export NETWORK=<celo-sepolia or mainnet>
     cp $NETWORK.env .env
     ```
 
@@ -301,77 +301,6 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
 
-### Alfajores
-
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
-- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
-- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json)
-- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/alfajores/l2-allocs.json)
-- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json)
-- [Genesis](https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json) used for snap syncing
-- P2P peers:
-  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
-
-    ```text
-    enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303
-    enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303
-    enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303
-    enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303
-    enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
-    ```
-
-  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
-
-    ```text
-    enr:-J64QOpbyT0wCfa37PO5qirwmbRsdHy_nMy8-Yam8-SaeK4oL6S-5Z0YKE6TphhZWjfux-EfjxedIbqdiXDEd2bRrNiGAZX2gzlHgmlkgnY0gmlwhCPFGTSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDrA9C-kb4zBC9AqEDiU1x1JVTdGUTPnxEK8Atx2chpfSDdGNwgiQGg3VkcIIkBg
-    enr:-J64QI8egoBPlV8cBO9xhBK1wg2ZJj3UH_nw9DjA_mfyYNY2ewDNJ88uCKXV5Kmlj15p3OpdbdUiyXBI9OuxU0LEBtmGAZX2gyNbgmlkgnY0gmlwhCJpFgSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaECWWAClpuLJppPo0tHCblgC2QgHn0C4vXxNQr_0CGwy9qDdGNwgiQGg3VkcIIkBg
-    enr:-J64QCnvpKsWBbrZEzJXQYraWh6XpAI4ygdtrjRPxBKsrdPwHOaN2OcN1w7eBdA2vyXEicxseNVpIFQfvB3nKKzSBo2GAZX2gtNGgmlkgnY0gmlwhCJT0aiHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDNhlFUGTvHOZnFxu6HfgM_UwJfwGM8CBaqtSW8NUJYRuDdGNwgiQGg3VkcIIkBg
-    enr:-J64QLMeHf5MBmx06LfYEVAB2-5BfvChT-uf3_cKiUFwoA8BI6yjQVSGQMe8F-Oqd662lPaa62Aikq-ra9a_J82852iGAZX2grXVgmlkgnY0gmlwhCJT1pWHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEC48VNtgBKktTuh1BPBz8yNKJXWbSFJ0zCJAN-Pl7nkvODdGNwgiQGg3VkcIIkBg
-    enr:-J64QH2pBtdN_th8TLGEEMjmz5lMsU7nxcY2hpRGUtbPb7McP4VD089C72g0Ms8eztJzf5u3S-3ooH9S3Q0Qj1BYnbKGAZX2gn8tgmlkgnY0gmlwhCKpBTSHb3BzdGFja4Tz3QIAiXNlY3AyNTZrMaEDZ0QQs0_VTIQGpPlFKSuWERaI1Lq0muzcNLTxs0aJH0aDdGNwgiQGg3VkcIIkBg
-    ```
-
-- Container images:
-  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0-rc2)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
-
-### Baklava
-
-- [Final Celo L1 chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-l1-final.tar.zst)
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zst)
-- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/baklava/config.json)
-- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/baklava/deployment-l1.json)
-- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/baklava/l2-allocs.json)
-- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/baklava/rollup.json)
-- [Genesis](https://storage.googleapis.com/cel2-rollup-files/baklava/genesis.json) used for snap syncing
-- P2P peers:
-  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
-
-    ```text
-    enode://6017c373a4151250e166ee7205b78cf845caff6a2003b3be38af8a09a569e413e31b21667d38a065f747a3662aec4920f122ad1bf1d46605cacf2d3d19f0ff5b@34.19.52.198:30303
-    enode://e0ab5ed2071b0ea0d57a52e3cd3da7c97db1a0754e00e91a32a1ca9dab6bf040fa1dd8775e8d6812a557d75760b1b90d18a8d69cbf8cfc2b7acdacf0b47fce96@34.168.70.112:30303
-    enode://b6d21edf251da32ffc1527092045ad3beba435f8ba27373dba8ce35f3ee54a411dc8327b57ebce9dc5c53e29825ea9e62356289a849fc4a048cce64da771aed8@34.82.194.102:30303
-    enode://339acdcbc3961b11f5458bab3c931e1bbb41548d9cea7692311db1543deac1f4a9efc1e6cff93f745865988d16bdc6bbb38cd59a8dde71bafd236eec0d5e0fea@34.82.75.77:30303
-    enode://616429f584575f8da463c18e5e2d38ec028b95446bffd607ebf8ac3d2dd3bbe9b859c91efbbbea6cf51ad78fb0d5db178f66ca57e647bd46bfe6692cc06127e9@34.53.24.17:30303
-    ```
-
-  - op-node static peers, to be used with op-node `--p2p.bootnodes` flag:
-
-    ```text
-    enr:-J64QKvLBbIvoGzKERuQQuFGDttUj_Yww7s0JBR6BGvI6utnGIHyUuHX87XEbHBDUk71XhkKb3N_kpFlrbOljK8yqO2GAZXyJxGRgmlkgnY0gmlwhCJpeVSHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEDYBfDc6QVElDhZu5yBbeM-EXK_2ogA7O-OK-KCaVp5BODdGNwgiQGg3VkcIIkBg
-    enr:-J64QJIRPy9nuK8uc1s3UnyimNCBp2neviwNseTF70lHBkRYMv6GaioffcV_0s5TRL6JoDdLehW4gtUuy5Y45gETTP-GAZXTuoo-gmlkgnY0gmlwhCPHp8iHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEC4Kte0gcbDqDVelLjzT2nyX2xoHVOAOkaMqHKnatr8ECDdGNwgiQGg3VkcIIkBg
-    enr:-J64QGsGoqQCyPbkzIUG-fxqC6uo1WE7akbchrMTNXVn1KPqUEwq03AlRYzmyyM22WAP69-vZfdMIx1J-A2OL-1t2R-GAZXTurk8gmlkgnY0gmlwhCKRbx6Hb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaECttIe3yUdoy_8FScJIEWtO-ukNfi6Jzc9uozjXz7lSkGDdGNwgiQGg3VkcIIkBg
-    enr:-J64QHJ0ygyqmw5Tvli7SzMujhP8GxhQ672vF_C-7hcRQudZe5J2SxAton0wMt3C47jyHq2fvaTEh029mzwYQ3jHhCGGAZXTuuivgmlkgnY0gmlwhCPp9oGHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaECM5rNy8OWGxH1RYurPJMeG7tBVI2c6naSMR2xVD3qwfSDdGNwgiQGg3VkcIIkBg
-    enr:-J64QPX27ur5gkXOhje9MU7p6AD_C26n-vcBiKq8adst3WkpAyVgo-sWCIAikqDyX-i94hoOYxOOAV1Mx5pIQ5xgHUmGAZXTuxj7gmlkgnY0gmlwhCJ_LRWHb3BzdGFja4Tw5gMAiXNlY3AyNTZrMaEDYWQp9YRXX42kY8GOXi047AKLlURr_9YH6_isPS3Tu-mDdGNwgiQGg3VkcIIkBg
-    ```
-
-- Container images:
-  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0-rc2)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0-rc)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
-
 ### Celo Sepolia
 
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
@@ -408,8 +337,6 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
 If your node is synced but transactions submitted to it are not executed, make sure the `--rollup.sequencerhttp` flag is correctly set.
 
 - Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
-- Alfajores: `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org`
-- Baklava: `--rollup.sequencerhttp=https://sequencer.baklava.celo-testnet.org`
 - Celo Sepolia: `--rollup.sequencerhttp=https://sequencer.celo-sepolia.celo-testnet.org`
 
 ### Self-Hosted Public RPC Does Not Retrieve Transactions by Hash

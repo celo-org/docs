@@ -1,0 +1,40 @@
+---
+title: "Jello Hardfork: OP Succinct Lite Integration"
+---
+
+This page outlines changes related to the Jello Upgrade for node operators.
+
+<Note>
+This page will be kept updated with key information about the upgrade. As this upgrade is activated via a smart contract switch, no concrete activation time can be given.
+
+- Celo Sepolia testnet activation is planned for end-October, 2025.
+- **Mainnet** activation is planned for mid-November, 2025.
+</Note>
+
+## What is the Jello Hardfork?
+
+The Jello Hardfork enables OP Succinct Lite, a production-ready, zero-knowledge-powered fault proof system built in collaboration with OP Labs and Succinct.
+
+Key benefits include:
+
+- ZK-powered dispute resolution, reducing latency, cost and complexity in the dispute process
+- Improved infrastructure security through bond-based incentives and proof verification
+- Support for alternative DA layers, aligning with Celo’s modular roadmap
+
+Succinct’s architecture is built on Optimism’s Kona execution engine, Succinct’s high-performance zkVM (SP1), and the Succinct Prover Network.
+
+## For Node Operators
+
+Node operators do **not** need to do any upgrades of the Celo client software for this Upgrade.
+
+We recommend the latest released versions:
+
+- `op-geth` at [v2.1.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.2)
+- `op-node` at [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0)
+- `eigenda-proxy` at [v1.8.2](https://github.com/layr-labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2)
+
+<Tip>
+**Docker Compose**
+
+The required configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
+</Tip>
