@@ -276,17 +276,17 @@ The issuer is the account registering attestations. When a user requests attesta
 
 ```js
 import { createClient } from "viem";
-import { celoAlfajores } from "viem/chains";
+import { celoSepolia } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 
 // The issuer is the account that is registering the attestation
 let ISSUER_PRIVATE_KEY = "YOUR_ISSUER_PRIVATE_KEY";
 
-// Create Alfajores viem client with the issuer private key
+// Create Celo Sepolia viem client with the issuer private key
 const viemClient = createClient({
   account: privateKeyToAccount(ISSUER_PRIVATE_KEY),
   transport: http(),
-  chain: celoAlfajores,
+  chain: celoSepolia,
 });
 
 // Information provided by user, issuer should confirm they own the identifier
@@ -311,7 +311,7 @@ const authSigner: AuthSigner = {
 
 // serviceContext provides the ODIS endpoint and public key
 const serviceContext = OdisUtils.Query.getServiceContext(
-  OdisContextName.ALFAJORES
+  OdisContextName.CELO_SEPOLIA
 );
 
 // Check existing quota on issuer account
@@ -369,16 +369,16 @@ console.log(attestations.accounts);
 ```js
 import { createWalletClient, custom } from 'viem'
 // import { celo } from 'viem/chains'
-import { celoAlfajores } from 'viem/chains'
+import { celoSepolia } from 'viem/chains'
  
 const client = createWalletClient({
-  chain: celoAlfajores,
+  chain: celoSepolia,
   // chain: celo,
   transport: custom(window.ethereum!)
 })
 
 const publicClient = createPublicClient({ 
-  chain: celoAlfajores,
+  chain: celoSepolia,
   // chain: celo,
   transport: http()
 })
@@ -400,7 +400,7 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals) {
       ],
     }),
     // If the wallet is connected to a different network then you get an error.
-    chain: celoAlfajores,
+    chain: celoSepolia,
     // chain: celo,
   });
 
