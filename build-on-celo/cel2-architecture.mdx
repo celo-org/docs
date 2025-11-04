@@ -37,36 +37,25 @@ The Application Layer connects users directly to the blockchain. Developers can 
 
 The Celo network topology consists of various nodes running the Celo blockchain software in different configurations to support the decentralized infrastructure of the network.
 
-### Sequencers
+### Sequencer
 
-Sequencers replace the traditional validator role in the L2 architecture. They are responsible for:
+Sequencer replace the traditional validator role in the L2 architecture. They are responsible for:
 
 - Gathering transactions from other nodes
 - Executing associated smart contracts to form new blocks
 - Submitting these blocks to the Ethereum L1 for final settlement
 
-Sequencers operate on a faster 2-second block time, improving transaction speed and throughput.
+Sequencer operate on a faster 1-second block time, improving transaction speed and throughput.
 
 ### Full Nodes
 
 Full nodes in the Celo L2 network serve multiple important functions:
 
-- Relaying transactions and responding to queries from light clients
 - Maintaining a copy of the L2 blockchain state
 - Interacting with Ethereum L1 to read and verify L2 block data
 - Optionally running an Ethereum node or using a third-party Ethereum node service
 
 Full nodes can join or leave the network at any time, providing a decentralized infrastructure for the network.
-
-### Light Clients
-
-Light clients, such as those running on mobile apps with limited data, continue to play a crucial role:
-
-- Connecting to full nodes to request account and transaction data
-- Signing and submitting new transactions
-- Operating without maintaining a full copy of the blockchain state
-
-Light clients benefit from the improved speed and lower costs of the L2 architecture while maintaining a similar user experience.
 
 ### Data Availability Layer
 
