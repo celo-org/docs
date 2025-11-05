@@ -202,8 +202,7 @@
           {
             "group": "Testnets",
             "pages": [
-              "tooling/testnets/celo-sepolia/index",
-              "tooling/testnets/eclair/index"
+              "tooling/testnets/celo-sepolia/index"
             ]
           },
           {
@@ -700,7 +699,7 @@
     },
     {
       "source": "/cel2/eclair",
-      "destination": "/network/eclair"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/cel2/l2-operator-guide",
@@ -2748,11 +2747,11 @@
     },
     {
       "source": "/network/eclair",
-      "destination": "/tooling/testnets/eclair"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/network/eclair/:slug*",
-      "destination": "/tooling/testnets/eclair/:slug*"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/network/mainnet",
