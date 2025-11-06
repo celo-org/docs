@@ -10,6 +10,7 @@ This directory contains utility scripts for maintaining and updating the Celo do
 
 - Python 3.12 or higher
 - `celocli`
+- `cast`
 
 ## Usage
 
