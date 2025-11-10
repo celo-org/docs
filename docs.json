@@ -207,6 +207,7 @@
           {
             "group": "Contracts",
             "pages": [
+              "tooling/contracts/l1-contracts",
               "tooling/contracts/core-contracts",
               "tooling/contracts/token-contracts",
               "tooling/contracts/uniswap-contracts"
