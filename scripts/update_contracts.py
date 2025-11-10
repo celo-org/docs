@@ -42,7 +42,7 @@ NETWORKS = {
         },
         "l2_rpc": "https://forno.celo-sepolia.celo-testnet.org",
         "l1_rpc": f"https://eth-sepolia.g.alchemy.com/v2/{API_KEY}",
-        "l1_explorer": "https://sepolia.etherscan.io",
+        "l1_explorer": "https://eth-sepolia.blockscout.com",
         "l2_explorer": "https://celo-sepolia.blockscout.com",
     },
 }
