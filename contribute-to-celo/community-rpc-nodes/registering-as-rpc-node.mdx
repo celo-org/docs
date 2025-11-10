@@ -230,7 +230,7 @@ celocli account:register-metadata --url $METADATA_URL --from $CELO_NODE_ADDRESS
 ```
 
 <Note>
-If your account is a [ReleaseGold contract](/about-celo/manage/release-gold), use the command `celocli releasecelo:set-account` instead. Documentation can be found [here](/cli/releasecelo#celocli-releaseceloset-account).
+If your account is a `ReleaseGold` contract, use the command `celocli releasecelo:set-account` instead. Documentation can be found [here](/cli/releasecelo#celocli-releaseceloset-account).
 </Note>
 
 #### Verify Registration
@@ -326,6 +326,6 @@ celocli lockedcelo:show $CELO_NODE_ADDRESS
 
 ### cUSD Rewards
 
-Active validators receive cUSD rewards based on their validator score, calculated as part of the L2 epoch rewards process (see `EpochRewards.calculateTargetEpochRewards()`). For more details, refer to the [L2 Epoch Rewards documentation](/about-celo/protocol/epoch-rewards/index).
+Active validators receive cUSD rewards based on their validator score, calculated as part of the L2 epoch rewards process (see `EpochRewards.calculateTargetEpochRewards()`). For more details, refer to the [L2 Epoch Rewards documentation](/home/protocol/epoch-rewards).
 
 For reward claiming instructions, see [Claiming Rewards](./community-rpc-node#claiming-rewards).

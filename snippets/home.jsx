@@ -288,13 +288,13 @@ export const CeloDeveloperResources = ({
         {
           label: "What is Celo?",
           desc: "Discover how Celo L2 is scaling real world use cases on Ethereum",
-          href: "/about-celo",
+          href: "/home/index",
           icon: "img/homepage/icons/WhatIsCelo_White.svg",
         },
         {
           label: "Architecture",
           desc: "Overview of our stack and core contracts",
-          href: "/build/cel2-architecture",
+          href: "/build-on-celo/cel2-architecture",
           icon: "img/homepage/icons/Architechture_White.svg",
         },
         {
@@ -307,7 +307,7 @@ export const CeloDeveloperResources = ({
         {
           label: "Protocol",
           desc: "Learn about our protocol and its relationship to Ethereum",
-          href: "/about-celo/protocol",
+          href: "/home/protocol",
           icon: "img/homepage/icons/Protocol_White.svg",
         },
       ],
@@ -354,7 +354,7 @@ export const CeloDeveloperResources = ({
         {
           label: "Bridge",
           desc: "Bridge Assets across chains",
-          href: "/about-celo/bridged-tokens/bridges",
+          href: "/home/bridged-tokens/bridges",
           icon: "img/homepage/icons/Rainbow_White.svg",
         },
         {
@@ -482,7 +482,7 @@ export const CeloBuilderEcosystem = ({
     {
       title: "Bring Your Ideas to Life",
       desc: "Sign up for upcoming hackathons and workshops",
-      href: "https://celo.lemonade.social/",
+      href: "https://lemonade.social/celo",
       external: true,
       icon: "img/homepage/contribute.svg",
     },
@@ -496,7 +496,7 @@ export const CeloBuilderEcosystem = ({
     {
       title: "Make your Voice Heard",
       desc: "Vote on Governance Proposals",
-      href: "/about-celo/protocol/governance/voting-in-governance",
+      href: "/home/protocol/governance/voting-in-governance-using-mondo",
       external: false,
       icon: "img/homepage/connect.svg",
     },

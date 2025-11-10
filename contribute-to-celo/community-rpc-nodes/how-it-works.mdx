@@ -6,7 +6,7 @@ title: "How it works"
 
 Following Celo's migration to L2, validators have evolved to serve as RPC node providers for the community. The initial active RPC providers were established in Celo L2's genesis block. Subsequently, elections occur at each epoch's conclusion (approximately every 24 hours) to potentially add or remove nodes from the active set.
 
-This system is based on the [proposal for validator engagement during the transition to L2](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700) and [Set The Great Celo Halvening Parameters](https://forum.celo.org/t/set-the-great-celo-halvening-parameters/10455/3). For additional details, see [Epoch Rewards](/about-celo/protocol/epoch-rewards/index) and the related [forum discussion: The Great Celo Halvening – Proposed Tokenomics in the Era of Celo L2](https://forum.celo.org/t/the-great-celo-halvening-proposed-tokenomics-in-the-era-of-celo-l2/9701). For updates make sure to refer to the [Celo Forum](https://forum.celo.org).
+This system is based on the [proposal for validator engagement during the transition to L2](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700) and [Set The Great Celo Halvening Parameters](https://forum.celo.org/t/set-the-great-celo-halvening-parameters/10455/3). For additional details, see [Epoch Rewards](/home/protocol/epoch-rewards) and the related [forum discussion: The Great Celo Halvening – Proposed Tokenomics in the Era of Celo L2](https://forum.celo.org/t/the-great-celo-halvening-proposed-tokenomics-in-the-era-of-celo-l2/9701). For updates make sure to refer to the [Celo Forum](https://forum.celo.org).
 
 <Note>
 ****Terminology****
@@ -26,7 +26,7 @@ The election process follows these steps:
 
 3. **Earn rewards**: Participants receive rewards for their involvement, and validators and groups can also vote and earn rewards using their own stake.
 
-The same Locked CELO can simultaneously be used for multiple purposes: voting in RPC node elections, maintaining Community RPC stakes, and participating in on-chain [Governance](/about-celo/protocol/governance/overview) proposals.
+The same Locked CELO can simultaneously be used for multiple purposes: voting in RPC node elections, maintaining Community RPC stakes, and participating in on-chain [Governance](/home/protocol/governance/overview) proposals.
 
 <Tip>
 **No voter slashing**
@@ -36,7 +36,7 @@ Unlike in other proof-of-stake systems, holding Locked Gold or voting for a grou
 
 ## Implementation
 
-Elections are handled my smart contracts, and as such can be changed through Celo's on-chain [Governance](/about-celo/protocol/governance/overview) process.
+Elections are handled my smart contracts, and as such can be changed through Celo's on-chain [Governance](/home/protocol/governance/overview) process.
 
 - [`Accounts.sol`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) manages key delegation and metadata for all accounts including Validators, Groups and Locked Gold holders.
 

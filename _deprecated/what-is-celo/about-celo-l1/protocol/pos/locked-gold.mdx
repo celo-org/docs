@@ -44,13 +44,13 @@ The flow is as follows:
 
 - An account calls `lock`, transferring an amount of CELO from their balance to the `LockedGold` smart contract. This increments the account's 'non-voting' balance by the same amount.
 
-- Then the account calls `vote`, passing in an amount and the address of the group to vote for. This decrements the account's 'non-voting' balance and increments the 'pending' balance associated with that group by the same amount. This counts immediately towards electing validators. Note that the vote may be rejected if it would mean that the account would be voting for more than 3 distinct groups, or that the [voting cap](/what-is-celo/about-celo-l1/protocol/pos/validator-elections#group-voting-caps) for the group would be exceeded.
+- Then the account calls `vote`, passing in an amount and the address of the group to vote for. This decrements the account's 'non-voting' balance and increments the 'pending' balance associated with that group by the same amount. This counts immediately towards electing validators. Note that the vote may be rejected if it would mean that the account would be voting for more than 3 distinct groups, or that the [voting cap](/legacy/protocol/pos/validator-elections#group-voting-caps) for the group would be exceeded.
 
-- At the end of the current epoch, the protocol will first deliver [epoch rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards) to validators, groups and voters based on the current epoch (pending votes do not count for these purposes), and then run an [election](/what-is-celo/about-celo-l1/protocol/pos/validator-elections) to select the active validator set for the following epoch.
+- At the end of the current epoch, the protocol will first deliver [epoch rewards](/legacy/protocol/pos/epoch-rewards) to validators, groups and voters based on the current epoch (pending votes do not count for these purposes), and then run an [election](/legacy/protocol/pos/validator-elections) to select the active validator set for the following epoch.
 
 - The pending vote continues to contribute towards electing validators until it is changed, but the account must call `activate` (in a subsequent epoch to the one in which the vote was made) to convert the pending vote to one that earns rewards.
 
-- At the end of that epoch, if the group for which the vote was made had elected one or more validators in the prior election, then the activated vote is eligible for [Locked CELO rewards](/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-locked-gold). These are applied to the pool of activated votes for the group. This means that activated voting Locked CELO automatically compounds, with the rewards increasing the account's votes for the same group, thereby increasing future rewards, benefitting participants who have elected to continuously participate in governance.
+- At the end of that epoch, if the group for which the vote was made had elected one or more validators in the prior election, then the activated vote is eligible for [Locked CELO rewards](/legacy/protocol/pos/epoch-rewards-locked-gold). These are applied to the pool of activated votes for the group. This means that activated voting Locked CELO automatically compounds, with the rewards increasing the account's votes for the same group, thereby increasing future rewards, benefitting participants who have elected to continuously participate in governance.
 
 - The account may subsequently choose to `unvote` a specific amount of voting Locked CELO from a group, up to the total balance that the account has accrued there. Due to rewards, this Locked CELO amount may be higher than the original value passed to `vote`.
 
@@ -72,4 +72,4 @@ The governance participants who cannot actively participate to vote on governanc
 
 Currently, participants can only delegate to 10 other delegatees.
 
-Participants can follow the steps [here](/what-is-celo/using-celo/protocol/governance/voting-in-governance#vote-delegation) to perform delegation using CeloCLI.
+Participants can follow the steps [here](/what-is-celo/using-celo/protocol/governance/voting-in-governance-using-mondo#vote-delegation) to perform delegation using CeloCLI.

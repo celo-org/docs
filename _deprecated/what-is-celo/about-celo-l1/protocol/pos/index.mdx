@@ -20,7 +20,7 @@ This page describes the historical Celo Layer 1 blockchain. It is useful for und
 
 ## Validator Types
 
-Celo uses a Byzantine Fault Tolerant [consensus protocol](/what-is-celo/about-celo-l1/protocol/consensus) to agree on new blocks to append to the blockchain. The instances of the Celo software that participate in this consensus protocol are known as **validators**. More accurately, they are **active validators** or **elected validators**, to distinguish them from **registered validators** which are configured to participate but are not actively selected.
+Celo uses a Byzantine Fault Tolerant [consensus protocol](/legacy/protocol/consensus) to agree on new blocks to append to the blockchain. The instances of the Celo software that participate in this consensus protocol are known as **validators**. More accurately, they are **active validators** or **elected validators**, to distinguish them from **registered validators** which are configured to participate but are not actively selected.
 
 ## Proof-of-Stake
 
@@ -36,9 +36,9 @@ The first set of active validators are determined in the genesis block. Thereaft
 
 ## Validator Elections
 
-In Celo's [Validator Elections](/what-is-celo/about-celo-l1/protocol/pos/validator-elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/what-is-celo/about-celo-l1/protocol/pos/validator-groups).
+In Celo's [Validator Elections](/legacy/protocol/pos/validator-elections), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/legacy/protocol/pos/validator-groups).
 
-Before they can vote, holders of CELO move balances into the [Locked Gold](/what-is-celo/about-celo-l1/protocol/pos/locked-gold) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
+Before they can vote, holders of CELO move balances into the [Locked Gold](/legacy/protocol/pos/locked-gold) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/what-is-celo/using-celo/protocol/governance/overview/) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
 <Tip>
 **note**
@@ -60,6 +60,6 @@ Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and a
 
 In Celo blockchain:
 
-- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](/what-is-celo/about-celo-l1/protocol/consensus/validator-set-differences).
+- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](/legacy/protocol/consensus/validator-set-differences).
 
 - [`consensus/istanbul/backend/pos.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/pos.go) is called in the last block of the epoch to process validator uptime scores and make epoch rewards.
