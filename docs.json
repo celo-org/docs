@@ -8,13 +8,7 @@
     "dark": "#000000"
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "cursor"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
   },
   "background": {
     "color": {
@@ -41,9 +35,7 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": [
-              "home/celo"
-            ]
+            "pages": ["home/celo"]
           },
           {
             "group": "Overview",
@@ -67,7 +59,7 @@
             "group": "Protocol",
             "pages": [
               "home/protocol/index",
-              "home/protocol/consensus",
+              "home/protocol/security-council",
               "home/protocol/celo-token",
               "home/protocol/escrow"
             ]
@@ -201,9 +193,7 @@
           },
           {
             "group": "Testnets",
-            "pages": [
-              "tooling/testnets/celo-sepolia/index"
-            ]
+            "pages": ["tooling/testnets/celo-sepolia/index"]
           },
           {
             "group": "Nodes",
@@ -367,9 +357,7 @@
           },
           {
             "group": " ",
-            "pages": [
-              "tooling/bridges/cross-chain-messaging"
-            ]
+            "pages": ["tooling/bridges/cross-chain-messaging"]
           }
         ]
       },
@@ -441,9 +429,7 @@
           },
           {
             "group": "Celo L2 Specs",
-            "pages": [
-              "infra-partners/specs"
-            ]
+            "pages": ["infra-partners/specs"]
           },
           {
             "group": "Integrate with Celo",
@@ -565,9 +551,7 @@
               "legacy/protocol/randomness",
               {
                 "group": "Contracts",
-                "pages": [
-                  "legacy/protocol/contracts/add-contract"
-                ]
+                "pages": ["legacy/protocol/contracts/add-contract"]
               }
             ]
           },
@@ -586,9 +570,7 @@
               "legacy/validator/voting",
               {
                 "group": "Run a Validator",
-                "pages": [
-                  "legacy/validator/run/mainnet"
-                ]
+                "pages": ["legacy/validator/run/mainnet"]
               },
               {
                 "group": "Key Management",
@@ -756,11 +738,11 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/index",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/locating-nodes",
@@ -768,7 +750,7 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/validator-set-differences",
@@ -2104,7 +2086,7 @@
     },
     {
       "source": "/protocol/consensus/index",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/protocol/consensus/locating-nodes",
@@ -2112,7 +2094,7 @@
     },
     {
       "source": "/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/protocol/consensus/validator-set-differences",
