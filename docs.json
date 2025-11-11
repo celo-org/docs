@@ -207,6 +207,7 @@
           {
             "group": "Contracts",
             "pages": [
+              "tooling/contracts/l1-contracts",
               "tooling/contracts/core-contracts",
               "tooling/contracts/token-contracts",
               "tooling/contracts/uniswap-contracts"
@@ -557,9 +558,7 @@
           {
             "group": "Nodes",
             "pages": [
-              "legacy/node/run-mainnet",
-              "legacy/node/run-alfajores",
-              "legacy/node/run-baklava"
+              "legacy/node/run-mainnet"
             ]
           },
           {
