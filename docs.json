@@ -558,9 +558,7 @@
           {
             "group": "Nodes",
             "pages": [
-              "legacy/node/run-mainnet",
-              "legacy/node/run-alfajores",
-              "legacy/node/run-baklava"
+              "legacy/node/run-mainnet"
             ]
           },
           {
