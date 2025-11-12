@@ -156,7 +156,7 @@
             "group": "Use Cases",
             "pages": [
               {
-                "group": "Build a Mini App",
+                "group": "Build for MiniPay",
                 "pages": [
                   "build-on-celo/build-on-minipay/overview",
                   "build-on-celo/build-on-minipay/quickstart",
@@ -170,9 +170,9 @@
                   "build-on-celo/build-on-minipay/deeplinks"
                 ]
               },
+              "build-on-celo/build-with-farcaster",
               "build-on-celo/build-with-local-stablecoin",
               "build-on-celo/build-with-defi",
-              "build-on-celo/build-with-zk-identity",
               "build-on-celo/build-with-self"
             ]
           }
