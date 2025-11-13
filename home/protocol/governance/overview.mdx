@@ -30,22 +30,19 @@ Pleas follow [this guide to create a proposal](/about-celo/protocol/governance/c
 
 The governance process follows three sequential phases, each with specific timing requirements:
 
-1. **Proposal Phase** - **Up to 4 weeks**: Each proposal starts in the proposal queue where community members can upvote it to improve its position relative to other queued proposals. Proposal authors should actively seek community support for upvotes (proposers may upvote their own proposals). The top 3 proposals are automatically promoted to the approval stage daily. Proposals remaining in the queue for 4 weeks will expire.
+1. **Proposal Phase** - **Up to 4 weeks**: Each proposal starts in the proposal queue where community members can upvote it to improve its position relative to other queued proposals. Proposal authors should actively seek community support for upvotes (proposers may upvote their own proposals). The top 3 proposals are automatically promoted to the referendum stage daily. Proposals remaining in the queue for 4 weeks will expire.
 
-2. **Approval and Referendum Phase** - in parallel:
-   - **Approval** - **24 hours**: During this single day window, the proposal must receive approval from the designated Approvers.
-
-   - **Referendum** - **5 days**: Locked CELO holders vote YES or NO on the proposal during this period.
-
-   Proposals that both meet the required quorum threshold and are successfully approved are promoted to the execution phase.
+2. **Referendum Phase** - **7 days**: Locked CELO holders vote YES or NO on the proposal during this period. Proposals that meet the required quorum threshold are promoted to the execution phase.
 
 3. **Execution Phase** - **Up to 3 days**: Any community member may trigger the execution of the approved proposal during this window.
 
+**Important Note on Approval**: Approval is not a separate stage, but rather a requirement that can be satisfied during either the Referendum or Execution phases. The designated Approvers can grant approval at any point during these phases. A proposal can only be executed after receiving full approval from the Approvers, regardless of when that approval is granted.
+
 ### Proposal
 
-Any user may submit a Proposal to the Governance smart contract, along with a small deposit of CELO. This deposit is required to avoid spam proposals, and is refunded to the proposer if the proposal reaches the Approval stage. A Proposal consists of a list of transactions, and a description URL where voters can get more information about the proposal. It is encouraged that this description URL points to a CGP document in the [celo-org/celo-proposals](https://github.com/celo-org/celo-proposals) repository. Transaction data in the proposal includes the destination address, data, and value. If the proposal passes, the included transactions will be executed by the `Governance` contract.
+Any user may submit a Proposal to the Governance smart contract, along with a small deposit of CELO. This deposit is required to avoid spam proposals, and is refunded to the proposer when the proposal is dequeued. A Proposal consists of a list of transactions, and a description URL where voters can get more information about the proposal. It is encouraged that this description URL points to a CGP document in the [celo-org/celo-proposals](https://github.com/celo-org/celo-proposals) repository. Transaction data in the proposal includes the destination address, data, and value. If the proposal passes, the included transactions will be executed by the `Governance` contract.
 
-Submitted proposals are added to the queue of proposals. While a proposal is on this queue, voters may use their Locked CELO to upvote the proposal. Once per day the top three proposals, by weight of the Locked CELO upvoting them, are dequeued and moved into the Approval phase. Note that if there are fewer than three proposals on the queue, all may be dequeued even if they have no upvotes. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
+Submitted proposals are added to the queue of proposals. While a proposal is on this queue, voters may use their Locked CELO to upvote the proposal. Once per day the top three proposals, by weight of the Locked CELO upvoting them, are dequeued and moved into the Referendum phase. Note that if there are fewer than three proposals on the queue, all may be dequeued even if they have no upvotes. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
 
 #### Types of Proposals
 
@@ -67,13 +64,11 @@ A proposal needs to be up for discussion for at least **7 full days,** during wh
 
 After a proposal has received feedback and has been presented on the governance call the proposal author shall update the proposal thread title from [Draft] to [Final]. Authors shall also include a summary of incorporated feedback as a comment on their proposal thread so future reviewers can understand the proposal's progress. If feedback was gathered outside of the Forum (e.g., on Discord), proposal authors should include relevant links.
 
-### Approval
-
-Every day, the top three proposals at the head of the queue pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked CELO deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Celo Foundation, and will move to a DAO in the future. The Approval phase lasts 1 day and if the proposal is not approved in this window, it is considered expired and does not move on to the "Referendum" phase.
-
 ### Referendum
 
-Once the Approval phase is over, approved proposals graduate to the referendum phase. Any user may vote YES, NO, or ABSTAIN on these proposals. Their vote's weight is determined by the weight of their Locked CELO. After the Referendum phase is over, which lasts five days, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
+Once dequeued, proposals move to the Referendum phase. Any user may vote YES, NO, or ABSTAIN on these proposals. Their vote's weight is determined by the weight of their Locked CELO. After the Referendum phase is over, which lasts seven days, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
+
+During the Referendum phase, the proposal can also receive approval from the designated Approvers (initially a 3 of 9 multi-signature address held by individuals from the Celo community. Approval is not required for a proposal to advance to the Execution phase, but is required before a proposal can be executed.
 
 In order for a proposal to pass, it must meet a minimum threshold for **participation**, and **agreement**:
 
@@ -82,7 +77,7 @@ In order for a proposal to pass, it must meet a minimum threshold for **particip
 
 ### Execution
 
-Proposals that graduate from the Referendum phase to the Execution phase may be executed by anyone, triggering a call operation code with the arguments defined in the proposal, originating from the Governance smart contract. Proposals expire from this phase after three days.
+Proposals that graduate from the Referendum phase to the Execution phase may be executed by anyone, triggering a call operation code with the arguments defined in the proposal, originating from the Governance smart contract. However, a proposal can only be executed if it has received approval from the designated Approvers. If approval was not granted during the Referendum phase, it can still be granted during the Execution phase. Proposals expire from this phase after three days.
 
 ## Cool-off period for failed proposals
 
@@ -92,4 +87,4 @@ If a proposal is not accepted, a cool-off period is required for additional conv
 
 2. If a proposal is rejected and has a majority of NO votes, the proposal is moved back to the discussion stage and may be submitted for a vote after receiving approval from the Governance Guardians and waiting for 28 days.
 
-**Note**: In the event that a proposal meets or exceeds quorum, but is not approved in time, the proposers should be able to re-submit as soon as they are able. This would happen in a rare situations when approvers are unable to approve in the 72 hour window following a referendum vote.
+**Note**: In the event that a proposal meets or exceeds quorum, but is not approved in time, the proposers should be able to re-submit as soon as they are able. This would happen in rare situations when approvers are unable to approve during the 7-day Referendum phase or the 3-day Execution phase.
