@@ -49,6 +49,26 @@ export CELO_TESTNET_RPC_URL="https://forno.celo-sepolia.celo-testnet.org/"  # Ce
 
 ## MCP Client Integration
 
+MCP is supported by a wide range of IDEs and development tools. Below are setup instructions for popular options:
+
+### VS Code Setup
+
+VS Code has native MCP support. Add the following configuration to your MCP settings:
+
+**macOS/Linux**: `~/.vscode/mcp.json` or via VS Code settings
+**Windows**: `%APPDATA%\Code\User\mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "celo-mcp": {
+      "command": "uvx",
+      "args": ["--refresh", "celo-mcp"]
+    }
+  }
+}
+```
+
 ### Cursor IDE Setup
 
 Add the following configuration to your MCP settings file (`~/.cursor/mcp.json`):
@@ -65,6 +85,14 @@ Add the following configuration to your MCP settings file (`~/.cursor/mcp.json`)
 ```
 
 The `--refresh` flag ensures the latest code is always loaded when the MCP server starts.
+
+### JetBrains IDEs Setup
+
+For IntelliJ IDEA, WebStorm, PyCharm, and other JetBrains IDEs, configure MCP through the IDE settings or via the JetBrains MCP Server plugin.
+
+### Windsurf Setup
+
+Windsurf has built-in MCP support. Configure MCP servers through the Windsurf settings interface.
 
 ### Claude Desktop Setup
 

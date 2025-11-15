@@ -139,7 +139,7 @@
                 "pages": [
                   "build-on-celo/build-with-ai/examples/ai-memecoins",
                   "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-nebula"
+                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
                 ]
               },
               {
@@ -557,9 +557,7 @@
           },
           {
             "group": "Nodes",
-            "pages": [
-              "legacy/node/run-mainnet"
-            ]
+            "pages": ["legacy/node/run-mainnet"]
           },
           {
             "group": "Validator",
