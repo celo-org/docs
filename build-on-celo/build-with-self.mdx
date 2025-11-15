@@ -1,49 +1,440 @@
 ---
 title: Build with Self
-og:description: A beginner's guide to understanding and using Self
+og:description: A comprehensive guide to understanding and using Self identity protocol on Celo
 ---
 
-By the conclusion of this guide, you will have a basic understanding of Self and how to get started with it.
+By the conclusion of this guide, you will have a comprehensive understanding of Self and how to integrate it into your Celo applications.
 
 This document will cover:
 
 - What is Self?
+- Getting Started
+- Integration Examples
+- New Features (2025)
 - Technical Resources
-- Opportunities for Builders
+- Use Cases
 
 ## What is Self?
 
 [Self](https://self.xyz/) is a privacy-first, open-source identity protocol that uses zero-knowledge proofs for secure identity verification.
 
-It enables Sybil resistance and selective disclosure using real-world attestations like passports. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
+It enables Sybil resistance and selective disclosure using real-world attestations like passports, EU ID cards, and Indian Aadhaar. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
 
-Access the [Self developer docs](https://docs.self.xyz/), explore APIs, and start building today.
+### How It Works
+
+Self Protocol simplifies digital identity verification with zero-knowledge proofs in three steps:
+
+1. **Scan Your Identity Document**: Users scan their passport, EU ID card, or Aadhaar using the NFC reader of their phone.
+2. **Generate a Proof**: Generate a zk proof over the identity document, selecting only what you want to disclose.
+3. **Share Your Proof**: Share the zk proof with the selected application.
 
 ## Verify Your Digital Identity
 
 Seamlessly and securely verify your digital identity with Self. It allows you to:
 
 - **Prove Your Humanity:** Confirm you are human without revealing personal information.
-- **Proof your identity, age, nationality or :** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
-- **Privacy-preserving technology:** Protect your users private information. They will only disclose credentials and information that they allow.
+- **Prove Identity, Age, Nationality:** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
+- **Privacy-preserving Technology:** Protect your users' private information. They will only disclose credentials and information that they allow.
 - **Streamline Verification:** Enjoy a smooth and efficient identity verification process.
-- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps
+- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps.
+
+## New Features (2025)
+
+### Expanded Identity Document Support
+
+Self now supports:
+- **EU Biometric ID Cards**: Scan NFC-enabled EU IDs covering 27 countries
+- **Indian Aadhaar**: Support for Aadhaar verification
+- **Passports**: Continued support for passport verification
+
+All verification leverages zero-knowledge proofs (ZKPs) and no data leaves the user's device.
+
+### Points/Rewards System
+
+Self has introduced a points program that incentivizes consistent, secure use:
+- Users earn points for setting up Self Pass
+- Points earned for continued use across partner platforms
+- Points can be redeemed for rewards
+- Designed to drive engagement and validate active, verified users
+
+### Major Integrations
+
+- **Google Cloud**: Integrated Self's SDK and ZKP-based proof-of-humanity in its Web3 Portal
+- **Aave**: DeFi protocol integration enabling compliance checks, sybil-resistant airdrops, and age/country-gated services
+- **Celo Blockchain**: On-chain attestations leverage the Celo blockchain for transparency and auditability
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ or a modern web browser
+- A Celo wallet (for on-chain integrations)
+- Access to Self SDK or API
+
+### Installation
+
+Install the Self SDK:
+
+<CodeGroup>
+```bash npm
+npm install @self.id/sdk
+```
+
+```bash yarn
+yarn add @self.id/sdk
+```
+
+```bash pnpm
+pnpm add @self.id/sdk
+```
+</CodeGroup>
+
+### Basic Frontend Integration
+
+#### QRCode SDK Integration
+
+The QRCode SDK allows users to scan a QR code with their mobile device to verify their identity:
+
+```js
+import { QRCodeSDK } from "@self.id/qrcode-sdk";
+
+const qrcodeSDK = new QRCodeSDK({
+  appName: "My Celo App",
+  appUrl: "https://myapp.com",
+});
+
+// Generate QR code for user to scan
+const qrCode = await qrcodeSDK.generateQRCode({
+  disclosures: [
+    {
+      type: "age",
+      minAge: 18,
+    },
+    {
+      type: "nationality",
+      allowedCountries: ["US", "CA"],
+    },
+  ],
+});
+
+// Display QR code to user
+displayQRCode(qrCode);
+```
+
+#### Disclosure Configuration
+
+Configure what information you need from users:
+
+```js
+const disclosureConfig = {
+  age: {
+    minAge: 21, // Require users to be at least 21
+  },
+  nationality: {
+    allowedCountries: ["US", "CA", "GB"], // Only allow specific countries
+  },
+  humanity: true, // Require proof of humanity
+};
+```
+
+### Contract Integration
+
+#### Basic On-Chain Verification
+
+Integrate Self verification into your smart contracts:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@self.id/contracts/SelfVerification.sol";
+
+contract MyCeloContract is SelfVerification {
+    mapping(address => bool) public verifiedUsers;
+    
+    function verifyUser(address user) external {
+        require(isVerified(user), "User not verified");
+        verifiedUsers[user] = true;
+    }
+    
+    function claimAirdrop() external {
+        require(verifiedUsers[msg.sender], "User must be verified");
+        // Airdrop logic here
+    }
+}
+```
+
+#### Frontend Contract Interaction
+
+```js
+import { getContract, createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
+import { SelfVerificationABI } from "@self.id/contracts";
+
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+
+const contract = getContract({
+  address: "0x...", // Your contract address
+  abi: SelfVerificationABI,
+  client: publicClient,
+});
+
+// Check if user is verified
+const isVerified = await contract.read.isVerified([userAddress]);
+
+if (isVerified) {
+  // User is verified, proceed with protected action
+  await contract.write.claimAirdrop();
+}
+```
+
+### Backend Verification
+
+Verify Self proofs on your backend:
+
+```js
+import { SelfBackendVerifier } from "@self.id/backend-verifier";
+
+const verifier = new SelfBackendVerifier({
+  rpcUrl: "https://forno.celo.org", // Celo RPC
+});
+
+// Verify a proof submitted by the frontend
+const isValid = await verifier.verifyProof({
+  proof: userProof,
+  disclosureConfig: {
+    age: { minAge: 18 },
+    humanity: true,
+  },
+});
+
+if (isValid) {
+  // Issue session token or grant access
+  const sessionToken = generateSessionToken(userAddress);
+  return { success: true, token: sessionToken };
+}
+```
+
+## Step-by-Step Integration Guide
+
+### 1. Set Up Your Project
+
+```bash
+# Create a new project
+npx create-next-app@latest my-self-app
+cd my-self-app
+
+# Install dependencies
+npm install @self.id/sdk viem@2 @celo/abis
+```
+
+### 2. Configure Self SDK
+
+Create a configuration file:
+
+```js
+// lib/self-config.js
+export const selfConfig = {
+  appName: "My Celo App",
+  appUrl: process.env.NEXT_PUBLIC_APP_URL,
+  chainId: 42220, // Celo mainnet
+  rpcUrl: process.env.NEXT_PUBLIC_RPC_URL || "https://forno.celo.org",
+};
+```
+
+### 3. Create Verification Component
+
+```jsx
+// components/SelfVerification.jsx
+"use client";
+
+import { useState } from "react";
+import { QRCodeSDK } from "@self.id/qrcode-sdk";
+import { selfConfig } from "@/lib/self-config";
+
+export function SelfVerification() {
+  const [qrCode, setQrCode] = useState(null);
+  const [isVerified, setIsVerified] = useState(false);
+
+  const handleVerify = async () => {
+    const qrcodeSDK = new QRCodeSDK(selfConfig);
+    
+    const qr = await qrcodeSDK.generateQRCode({
+      disclosures: [
+        { type: "humanity" },
+        { type: "age", minAge: 18 },
+      ],
+    });
+    
+    setQrCode(qr);
+    
+    // Listen for verification result
+    qrcodeSDK.onVerification((result) => {
+      if (result.success) {
+        setIsVerified(true);
+        // Send proof to backend for verification
+        verifyOnBackend(result.proof);
+      }
+    });
+  };
+
+  return (
+    <div>
+      {!isVerified ? (
+        <button onClick={handleVerify}>Verify Identity</button>
+      ) : (
+        <div>Verified! You can now access protected features.</div>
+      )}
+      {qrCode && <img src={qrCode} alt="Verification QR Code" />}
+    </div>
+  );
+}
+```
+
+### 4. Backend Verification Endpoint
+
+```js
+// pages/api/verify.js
+import { SelfBackendVerifier } from "@self.id/backend-verifier";
+
+const verifier = new SelfBackendVerifier({
+  rpcUrl: process.env.CELO_RPC_URL,
+});
+
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  const { proof, userAddress } = req.body;
+
+  try {
+    const isValid = await verifier.verifyProof({
+      proof,
+      disclosureConfig: {
+        humanity: true,
+        age: { minAge: 18 },
+      },
+    });
+
+    if (isValid) {
+      // Issue session token
+      const sessionToken = generateSessionToken(userAddress);
+      return res.status(200).json({ success: true, token: sessionToken });
+    } else {
+      return res.status(400).json({ error: "Invalid proof" });
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
+```
+
+## Use Cases
+
+### Airdrop Protection
+
+Protect token distributions from bots by requiring proof of humanity:
+
+```js
+// Only allow verified humans to claim airdrop
+const canClaim = await contract.read.isVerified([userAddress]);
+
+if (canClaim) {
+  await contract.write.claimAirdrop();
+}
+```
+
+### Quadratic Funding
+
+Prevent farmers from skewing rewards in quadratic funding mechanisms:
+
+```js
+// Verify user is human before allowing vote
+const isHuman = await verifyHumanity(userAddress);
+if (isHuman) {
+  submitQuadraticVote(projectId, voteAmount);
+}
+```
+
+### Wallet Recovery
+
+Safeguard assets using IDs as recovery sources:
+
+```js
+// Require identity verification for wallet recovery
+const isVerified = await verifyIdentity(recoveryAddress);
+if (isVerified) {
+  initiateWalletRecovery(newWalletAddress);
+}
+```
+
+### Age Verification
+
+Restrict access to age-gated content or services:
+
+```js
+// Verify user is over 21
+const isOver21 = await verifyAge(userAddress, { minAge: 21 });
+if (isOver21) {
+  grantAccess();
+}
+```
+
+### Country-Specific Functionality
+
+Enable country-based features while preserving privacy:
+
+```js
+// Verify user is from allowed country
+const isFromAllowedCountry = await verifyNationality(userAddress, {
+  allowedCountries: ["US", "CA"],
+});
+```
+
+### Sanction List Checking
+
+Check users are not on sanctioned entity lists:
+
+```js
+// Verify user is not on sanctions list
+const isNotSanctioned = await verifySanctions(userAddress);
+if (isNotSanctioned) {
+  allowTransaction();
+}
+```
+
+### Sybil-Resistant Polling
+
+Ensure one person = one vote:
+
+```js
+// Verify user hasn't already voted
+const hasVoted = await checkVoteStatus(userAddress);
+const isHuman = await verifyHumanity(userAddress);
+
+if (!hasVoted && isHuman) {
+  submitVote(option);
+  markAsVoted(userAddress);
+}
+```
 
 ## Technical Resources
 
 - [Self Website](https://self.xyz/)
 - [Self Documentation](https://docs.self.xyz/)
 - [Self Playground](https://playground.self.xyz/)
-- [Self Quickstart](https://docs.self.xyz/use-self/quickstart)
+- [Self Quickstart Guide](https://docs.self.xyz/use-self/quickstart)
+- [Contract Integration Guide](https://docs.self.xyz/contract-integration/basic-integration)
+- [Backend Integration Guide](https://docs.self.xyz/backend-integration/basic-integration)
+- [QRCode SDK Documentation](https://docs.self.xyz/frontend-integration/qrcode-sdk)
+- [Deployed Contracts](https://docs.self.xyz/contract-integration/deployed-contracts)
 
-## What to build?
+## Support
 
-- Airdrop Protection
-- Quadratic Funding
-- Wallet Recovery
-- Social Media & Marketplaces
-- Country-Specific Functionality
-- AI Protection for Smart Contracts
-- Sanction List Checking
-- Age Verification
-- Sybil-Resistant Polling
+Join the [Self Builder Group](https://t.me/+d2TGsbkSDmgzODVi) on Telegram for community support and updates.
+
+For Celo-specific integrations, visit the [Celo Discord](https://discord.com/invite/celo) and ask in the #build-with-celo channel.

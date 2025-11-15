@@ -10,19 +10,22 @@ A step-by-step guide to setting up, building, and testing your MiniPay Mini App.
 
 ## 1. Installing MiniPay
 
-MiniPay is designed for mainstream adoption, making digital payments simple and easy to use. 
+MiniPay is designed for mainstream adoption, making digital payments simple and easy to use.
 
 #### Key Features:
+
 - **Currency Display**: Balances appear in your local currency.
 - **Stablecoin Support**: Only stablecoins (cUSD, USDC, and USDT) are supported.
 - **Simple Swaps**: The pocket swap feature allows for easy swaps between stablecoins by dragging one pocket into another.
 
 <Note>
-MiniPay is only available on Celo and Celo Sepolia Testnet. Other blockchain networks are not supported.
+  MiniPay is only available on Celo and Celo Sepolia Testnet. Other blockchain
+  networks are not supported.
 </Note>
 
 #### How to Access MiniPay:
-- [**Opera Mini Browser**](https://www.opera.com/pl/products/minipay) (Android) 
+
+- [**Opera Mini Browser**](https://www.opera.com/pl/products/minipay) (Android)
 - [**Standalone App Android**](https://play.google.com/store/apps/details?id=com.opera.minipay)
 - [**Standalone App iOS**](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB)
 
@@ -40,7 +43,8 @@ MiniPay is only available on Celo and Celo Sepolia Testnet. Other blockchain net
 ```bash
 npx @celo/celo-composer@latest create -t minipay
 ```
-- Follow the [Quickstart Guide](/build/quickstart) for a step-by-step tutorial.
+
+- Follow the [Quickstart Guide](/build-on-celo/quickstart) for a step-by-step tutorial.
 
 #### For integrating an existing app:
 
@@ -53,72 +57,76 @@ Request CELO testnet tokens from the Celo [faucet](https://faucet.celo.org/celo-
 ## 4. Test your Mini App inside MiniPay
 
 <Warning>
-You cannot test MiniPay using the Android Studio Emulator. Use an Android or iOS mobile device.
+  You cannot test MiniPay using the Android Studio Emulator. Use an Android or
+  iOS mobile device.
 </Warning>
 
 ### Enable Developer Mode:
+
 1. Open the MiniPay app on your phone and navigate to settings.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/choose-settings.jpg"}
-  style={{ width: 250 }}
-  alt="Open MiniPay dApp store"
-/>
+  <img
+    src={"/img/doc-images/minipay/build-on-minipay/choose-settings.jpg"}
+    style={{ width: 250 }}
+    alt="Open MiniPay dApp store"
+  />
 </Frame>
 
 2. In the **About** section, tap the **Version** number repeatedly until the confirmation message appears.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/activate-developer-mode.jpg"}
-  style={{ width: 250 }}
-  alt="Open MiniPay dApp test page"
-/>
+  <img
+    src={"/img/doc-images/minipay/build-on-minipay/activate-developer-mode.jpg"}
+    style={{ width: 250 }}
+    alt="Open MiniPay dApp test page"
+  />
 </Frame>
 
 3. Return to **Settings**, then select **Developer Settings**.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/choose-developer-settings.jpg"}
-  style={{ width: 250 }}
-  alt="MiniPay dApp testing"
-/>
+  <img
+    src={
+      "/img/doc-images/minipay/build-on-minipay/choose-developer-settings.jpg"
+    }
+    style={{ width: 250 }}
+    alt="MiniPay dApp testing"
+  />
 </Frame>
 
 4. Enable **Developer Mode** and toggle **Use Testnet** to connect to Sepolia L2 testnet.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/choose-testnet.jpg"}
-  style={{ width: 250 }}
-  alt="MiniPay dApp testing"
-/>
+  <img
+    src={"/img/doc-images/minipay/build-on-minipay/choose-testnet.jpg"}
+    style={{ width: 250 }}
+    alt="MiniPay dApp testing"
+  />
 </Frame>
 
-
 ### Load Your Mini App:
-1. In **Developer Settings,** tap **Load Test Page.** 
+
+1. In **Developer Settings,** tap **Load Test Page.**
 2. Enter your **Mini App URL.**
-    - If testing a local deployment, use [ngrok](#testing-local-development-with-minipay) to expose your localhost.
+   - If testing a local deployment, use [ngrok](#testing-local-development-with-minipay) to expose your localhost.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/enter-url.jpg"}
-  style={{ width: 250 }}
-  alt="MiniPay dApp testing"
-/>
+  <img
+    src={"/img/doc-images/minipay/build-on-minipay/enter-url.jpg"}
+    style={{ width: 250 }}
+    alt="MiniPay dApp testing"
+  />
 </Frame>
 
 6. Click **Go** to launch and test your Mini App.
 
 <Frame>
-<img
-  src={"/img/doc-images/minipay/build-on-minipay/site-tester-opening.jpg"}
-  style={{ width: 250 }}
-  alt="MiniPay dApp testing"
-/>
+  <img
+    src={"/img/doc-images/minipay/build-on-minipay/site-tester-opening.jpg"}
+    style={{ width: 250 }}
+    alt="MiniPay dApp testing"
+  />
 </Frame>
 
 ---
@@ -126,18 +134,20 @@ You cannot test MiniPay using the Android Studio Emulator. Use an Android or iOS
 ## Helpful Tips to Make Your Mini App MiniPay Compatible
 
 <Warning>
-MiniPay uses Custom [Fee Abstraction](/developer/fee-abstraction) based transactions. We recommend using viem or wagmi as they provide native support for fee currency. 
+  MiniPay uses Custom [Fee Abstraction](/tooling/fee-abstraction) based
+  transactions. We recommend using viem or wagmi as they provide native support
+  for fee currency.
 </Warning>
 
 #### 1. Using Viem
 
 ```js
 import { createWalletClient, custom } from "viem";
-import { celo, celoAlfajores } from "viem/chains";
+import { celo, celoSepolia } from "viem/chains";
 
 const client = createWalletClient({
   chain: celo,
-  // chain: celoAlfajores, // For Celo Testnet
+  // chain: celoSepolia, // For Celo Sepolia Testnet
   transport: custom(window.ethereum),
 });
 
@@ -206,12 +216,12 @@ export default function Header() {
 - MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `cUSD`. More currencies might be supported in future.
 - MiniPay only accepts legacy transactions at the moment. EIP-1559 properties won't be considered when handling requests.
 
-
 ## Testing Local Development with MiniPay
 
-If you're developing your MiniApp locally (e.g., on `localhost:3000`), use `ngrok` to tunnel traffic over HTTP, for real-time testing. 
+If you're developing your MiniApp locally (e.g., on `localhost:3000`), use `ngrok` to tunnel traffic over HTTP, for real-time testing.
 
 #### Set Up ngrok
+
 - **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
 - **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
 - **Tunnel Traffic with ngrok:** In your terminal, run the following command to start an ngrok tunnel:
@@ -222,6 +232,6 @@ ngrok http 3000
 
 This will provide you with a public URL that tunnels to your localhost.
 
-For a more in depth guide, check out the official [ngrok setup](/build/build-on-minipay/prerequisites/ngrok-setup).
+For a more in depth guide, check out the official [ngrok setup](/build-on-celo/build-on-minipay/prerequisites/ngrok-setup).
 
 - **Test in MiniPay:** Copy the provided ngrok URL and use it inside the MiniPay app to test your DApp.
