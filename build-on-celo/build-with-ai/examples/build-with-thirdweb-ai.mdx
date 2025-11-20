@@ -22,7 +22,14 @@ Thirdweb AI (formerly Nebula) is a natural language model with improved blockcha
 
 Watch this workshop to learn more about thirdweb AI and how to create a Telegram bot for app developers to access daily and weekly stats of the dApp.
 
-<YouTube videoId="FeubfHwfJcM" />
+<iframe
+  src="https://www.youtube.com/embed/FeubfHwfJcM"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
 
 ## Get started building
 
@@ -52,6 +59,9 @@ fetch("https://api.thirdweb.com/ai/chat", {
       },
     ],
     context: {
+      // Note: Chain IDs for thirdweb differ from standard chain IDs.
+      // Find the correct chain IDs in the thirdweb dashboard or documentation.
+      // https://thirdweb.com/chainlist/mainnets
       chain_ids: [8453],
       from: "0x1234567890123456789012345678901234567890",
     },

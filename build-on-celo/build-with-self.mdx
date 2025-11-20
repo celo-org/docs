@@ -43,6 +43,7 @@ Seamlessly and securely verify your digital identity with Self. It allows you to
 ### Expanded Identity Document Support
 
 Self now supports:
+
 - **EU Biometric ID Cards**: Scan NFC-enabled EU IDs covering 27 countries
 - **Indian Aadhaar**: Support for Aadhaar verification
 - **Passports**: Continued support for passport verification
@@ -52,6 +53,7 @@ All verification leverages zero-knowledge proofs (ZKPs) and no data leaves the u
 ### Points/Rewards System
 
 Self has introduced a points program that incentivizes consistent, secure use:
+
 - Users earn points for setting up Self Pass
 - Points earned for continued use across partner platforms
 - Points can be redeemed for rewards
@@ -70,6 +72,9 @@ Self has introduced a points program that incentivizes consistent, secure use:
 - Node.js 18+ or a modern web browser
 - A Celo wallet (for on-chain integrations)
 - Access to Self SDK or API
+- **Self App**: Download the Self app to verify your identity
+  - [Google Play Store](https://play.google.com/store/apps/details?id=com.proofofpassportapp&pli=1)
+  - [App Store](https://apps.apple.com/us/app/self-zk-passport-identity/id6478563710)
 
 ### Installation
 
@@ -87,6 +92,7 @@ yarn add @self.id/sdk
 ```bash pnpm
 pnpm add @self.id/sdk
 ```
+
 </CodeGroup>
 
 ### Basic Frontend Integration
@@ -151,12 +157,12 @@ import "@self.id/contracts/SelfVerification.sol";
 
 contract MyCeloContract is SelfVerification {
     mapping(address => bool) public verifiedUsers;
-    
+
     function verifyUser(address user) external {
         require(isVerified(user), "User not verified");
         verifiedUsers[user] = true;
     }
-    
+
     function claimAirdrop() external {
         require(verifiedUsers[msg.sender], "User must be verified");
         // Airdrop logic here
@@ -261,16 +267,13 @@ export function SelfVerification() {
 
   const handleVerify = async () => {
     const qrcodeSDK = new QRCodeSDK(selfConfig);
-    
+
     const qr = await qrcodeSDK.generateQRCode({
-      disclosures: [
-        { type: "humanity" },
-        { type: "age", minAge: 18 },
-      ],
+      disclosures: [{ type: "humanity" }, { type: "age", minAge: 18 }],
     });
-    
+
     setQrCode(qr);
-    
+
     // Listen for verification result
     qrcodeSDK.onVerification((result) => {
       if (result.success) {
@@ -427,6 +430,7 @@ if (!hasVoted && isHuman) {
 - [Self Website](https://self.xyz/)
 - [Self Documentation](https://docs.self.xyz/)
 - [Self Playground](https://playground.self.xyz/)
+- [Self Staging Playground](https://playground.staging.self.xyz/)
 - [Self Quickstart Guide](https://docs.self.xyz/use-self/quickstart)
 - [Contract Integration Guide](https://docs.self.xyz/contract-integration/basic-integration)
 - [Backend Integration Guide](https://docs.self.xyz/backend-integration/basic-integration)

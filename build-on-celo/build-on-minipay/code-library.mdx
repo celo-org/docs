@@ -60,6 +60,7 @@ import { getContract, formatEther, createPublicClient, http } from "viem";
 import { celo } from "viem/chains";
 import { stableTokenABI } from "@celo/abis";
 
+// cUSD address on Celo mainnet
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
 async function checkCUSDBalance(publicClient, address) {
