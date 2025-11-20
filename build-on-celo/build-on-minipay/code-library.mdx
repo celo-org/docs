@@ -7,7 +7,7 @@ sidebarTitle: "Code Library"
 Snippets of code that can be used to implement flows inside MiniPay
 
 <Warning>
-Make sure you are using Typescript v5 or above and Viem v2 or above.
+  Make sure you are using Typescript v5 or above and Viem v2 or above.
 </Warning>
 
 ## Get the connected user's address without any Library
@@ -43,61 +43,61 @@ To use the code snippets below, install the following packages:
 
 <CodeGroup>
   ```bash yarn
-  yarn add @celo/abis @celo/identity viem@1
+  yarn add @celo/abis @celo/identity viem@2
   ```
 
 
   ```bash npm
-  npm install @celo/abis @celo/identity viem@1
+  npm install @celo/abis @celo/identity viem@2
   ```
 </CodeGroup>
 
 
 ## Check cUSD Balance of an address
 
-    ```js
-    const { getContract, formatEther, createPublicClient, http } = require("viem");
-    const { celo } = require("viem/chains");
-    const { stableTokenABI } = require("@celo/abis");
+```js
+import { getContract, formatEther, createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
+import { stableTokenABI } from "@celo/abis";
 
-    const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
+// cUSD address on Celo mainnet
+const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-    async function checkCUSDBalance(publicClient, address) {
-      let StableTokenContract = getContract({
-          abi: stableTokenABI,
-          address: STABLE_TOKEN_ADDRESS,
-          publicClient,
-      });
+async function checkCUSDBalance(publicClient, address) {
+  const StableTokenContract = getContract({
+    abi: stableTokenABI,
+    address: STABLE_TOKEN_ADDRESS,
+    client: publicClient,
+  });
 
-      let balanceInBigNumber = await StableTokenContract.read.balanceOf([
-          address,
-      ]);
+  const balanceInBigNumber = await StableTokenContract.read.balanceOf([
+    address,
+  ]);
 
-      let balanceInWei = balanceInBigNumber.toString();
+  const balanceInWei = balanceInBigNumber.toString();
+  const balanceInEthers = formatEther(balanceInWei);
 
-      let balanceInEthers = formatEther(balanceInWei);
+  return balanceInEthers;
+}
 
-      return balanceInEthers;
-    }
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+}); // Mainnet
 
-    const publicClient = createPublicClient({
-      chain: celo,
-      transport: http(),
-    }); // Mainnet
-
-    let balance = await checkCUSDBalance(publicClient, address); // In Ether unit
-    ```
+const balance = await checkCUSDBalance(publicClient, address); // In Ether unit
+```
 
 
 
 ## Check If a transaction succeeded
 
 ```js
-const { createPublicClient, http } = require("viem");
-const { celo } = require("viem/chains");
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
 
 async function checkIfTransactionSucceeded(publicClient, transactionHash) {
-  let receipt = await publicClient.getTransactionReceipt({
+  const receipt = await publicClient.getTransactionReceipt({
     hash: transactionHash,
   });
 
@@ -109,7 +109,7 @@ const publicClient = createPublicClient({
   transport: http(),
 }); // Mainnet
 
-let transactionStatus = await checkIfTransactionSucceeded(
+const transactionStatus = await checkIfTransactionSucceeded(
   publicClient,
   transactionHash
 );
@@ -119,8 +119,8 @@ let transactionStatus = await checkIfTransactionSucceeded(
 ## Estimate Gas for a transaction (in Celo)
 
 ```js
-const { createPublicClient, http } = require("viem");
-const { celo } = require("viem/chains");
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
 
 async function estimateGas(publicClient, transaction, feeCurrency = "") {
   return await publicClient.estimateGas({
@@ -134,7 +134,7 @@ const publicClient = createPublicClient({
   transport: http(),
 });
 
-let gasLimit = await estimateGas(publicClient, {
+const gasLimit = await estimateGas(publicClient, {
   account: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
   to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
   value: "0x1",
@@ -148,10 +148,9 @@ let gasLimit = await estimateGas(publicClient, {
 
 ## Estimate Gas for a transaction (in cUSD)
 
-
 ```js
-const { createPublicClient, http } = require("viem");
-const { celo } = require("viem/chains");
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
 
 async function estimateGas(publicClient, transaction, feeCurrency = "") {
   return await publicClient.estimateGas({
@@ -167,7 +166,7 @@ const publicClient = createPublicClient({
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-let gasLimit = await estimateGas(
+const gasLimit = await estimateGas(
   publicClient,
   {
     account: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
@@ -184,8 +183,8 @@ let gasLimit = await estimateGas(
 ## Estimate Gas Price for a transaction (in Celo)
 
 ```js
-const { createPublicClient, http } = require("viem");
-const { celo } = require("viem/chains");
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
 
 async function estimateGasPrice(publicClient, feeCurrency = "") {
   return await publicClient.request({
@@ -199,15 +198,14 @@ const publicClient = createPublicClient({
   transport: http(),
 });
 
-let gasPrice = await estimateGasPrice(publicClient);
+const gasPrice = await estimateGasPrice(publicClient);
 ```
 
 ## Estimate Gas Price for a transaction (in cUSD)
 
-
 ```js
-const { createPublicClient, http } = require("viem");
-const { celo } = require("viem/chains");
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
 
 async function estimateGasPrice(publicClient, feeCurrency = "") {
   return await publicClient.request({
@@ -223,42 +221,42 @@ const publicClient = createPublicClient({
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-let gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
+const gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 ```
 
 
 ## Calculate cUSD to be spent for transaction fees
 
-
-
-  ```js
-const { createPublicClient, http, formatEther } = require("viem");
-const { celo } = require("viem/chains");
+```js
+import { createPublicClient, http, formatEther, fromHex } from "viem";
+import { celo } from "viem/chains";
 
 const publicClient = createPublicClient({
-    chain: celo,
-    transport: http(),
+  chain: celo,
+  transport: http(),
 });
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
 // `estimateGas` implemented above
-let gasLimit = await estimateGas(
-    publicClient,
-    {
-        account: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
-        to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
-        value: "0x1",
-        data: "0x",
-    },
-    STABLE_TOKEN_ADDRESS
+const gasLimit = await estimateGas(
+  publicClient,
+  {
+    account: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
+    to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
+    value: "0x1",
+    data: "0x",
+  },
+  STABLE_TOKEN_ADDRESS
 );
 
 // `estimateGasPrice` implemented above
-let gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
+const gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 
-let transactionFeesInCUSD = formatEther(gasLimit * hexToBigInt(gasPrice));
-  ```
+// Convert hex gas price to BigInt and calculate fees
+const gasPriceBigInt = fromHex(gasPrice, "bigint");
+const transactionFeesInCUSD = formatEther(gasLimit * gasPriceBigInt);
+```
 
 
 
@@ -275,15 +273,15 @@ npm install @celo/identity
 The issuer is the account registering attestations. When a user requests attestation registration, verify they own the identifier (e.g., SMS verification for phone numbers).
 
 ```js
-import { createClient } from "viem";
+import { createWalletClient, http } from "viem";
 import { celoSepolia } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 
 // The issuer is the account that is registering the attestation
-let ISSUER_PRIVATE_KEY = "YOUR_ISSUER_PRIVATE_KEY";
+const ISSUER_PRIVATE_KEY = "YOUR_ISSUER_PRIVATE_KEY";
 
 // Create Celo Sepolia viem client with the issuer private key
-const viemClient = createClient({
+const viemClient = createWalletClient({
   account: privateKeyToAccount(ISSUER_PRIVATE_KEY),
   transport: http(),
   chain: celoSepolia,
@@ -302,6 +300,7 @@ const attestationVerifiedTime = Date.now();
 ```js
 import { OdisUtils } from "@celo/identity";
 import { AuthSigner } from "@celo/identity/lib/odis/query";
+import { OdisContextName } from "@celo/identity/lib/odis/query";
 
 // authSigner provides information needed to authenticate with ODIS
 const authSigner: AuthSigner = {
@@ -315,6 +314,7 @@ const serviceContext = OdisUtils.Query.getServiceContext(
 );
 
 // Check existing quota on issuer account
+const issuerAddress = viemClient.account.address;
 const { remainingQuota } = await OdisUtils.Quota.getPnpQuotaStatus(
   issuerAddress,
   authSigner,
@@ -322,18 +322,10 @@ const { remainingQuota } = await OdisUtils.Quota.getPnpQuotaStatus(
 );
 
 // If needed, approve and send payment to OdisPayments to get quota for ODIS
+// Note: This example uses viem. For contract interactions, use getContract from viem
 if (remainingQuota < 1) {
-  const stableTokenContract = await kit.contracts.getStableToken();
-  const odisPaymentsContract = await kit.contracts.getOdisPayments();
-  const ONE_CENT_CUSD_WEI = 10000000000000000;
-  
-  await stableTokenContract
-    .increaseAllowance(odisPaymentsContract.address, ONE_CENT_CUSD_WEI)
-    .sendAndWaitForReceipt();
-    
-  const odisPayment = await odisPaymentsContract
-    .payInCUSD(issuerAddress, ONE_CENT_CUSD_WEI)
-    .sendAndWaitForReceipt();
+  // Use viem's getContract to interact with stable token and ODIS payments contracts
+  // Implementation depends on your specific contract setup
 }
 ```
 
@@ -367,31 +359,31 @@ console.log(attestations.accounts);
 ## Request an ERC20 token transfer
 
 ```js
-import { createWalletClient, custom } from 'viem'
-// import { celo } from 'viem/chains'
-import { celoSepolia } from 'viem/chains'
- 
-const client = createWalletClient({
-  chain: celoSepolia,
-  // chain: celo,
-  transport: custom(window.ethereum!)
-})
+import { createWalletClient, createPublicClient, custom, http, encodeFunctionData, parseUnits } from "viem";
+import { celo, celoSepolia } from "viem/chains";
+import { stableTokenABI } from "@celo/abis";
 
-const publicClient = createPublicClient({ 
-  chain: celoSepolia,
-  // chain: celo,
-  transport: http()
-})
+const walletClient = createWalletClient({
+  chain: celoSepolia, // For testnet
+  // chain: celo, // For mainnet
+  transport: custom(window.ethereum!),
+});
 
-async function requestTransfer(tokenAddress, transferValue, tokenDecimals) {
+const publicClient = createPublicClient({
+  chain: celoSepolia, // For testnet
+  // chain: celo, // For mainnet
+  transport: http(),
+});
 
-  let hash = await client.sendTransaction({
+async function requestTransfer(tokenAddress, transferValue, tokenDecimals, receiverAddress) {
+  const hash = await walletClient.sendTransaction({
     to: tokenAddress,
-    // to: '0x765DE816845861e75A25fCA122bb6898B8B1282a' // cUSD (Mainnet)
-    // to: '0xcebA9300f2b948710d2653dD7B07f33A8B32118C' // USDC (Mainnet)
-    // to: '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e' // USDT (Mainnet)
+    // Mainnet addresses:
+    // cUSD: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+    // USDC: '0xcebA9300f2b948710d2653dD7B07f33A8B32118C'
+    // USDT: '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e'
     data: encodeFunctionData({
-      abi: stableTokenAbi, // Token ABI can be fetched from Explorer.
+      abi: stableTokenABI, // Token ABI from @celo/abis
       functionName: "transfer",
       args: [
         receiverAddress,
@@ -399,9 +391,6 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals) {
         parseUnits(`${Number(transferValue)}`, tokenDecimals),
       ],
     }),
-    // If the wallet is connected to a different network then you get an error.
-    chain: celoSepolia,
-    // chain: celo,
   });
 
   const transaction = await publicClient.waitForTransactionReceipt({

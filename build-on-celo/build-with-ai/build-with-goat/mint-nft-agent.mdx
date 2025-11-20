@@ -69,7 +69,7 @@ const tools = await getOnChainTools({
         // This is a placeholder - actual minting logic needs to be implemented
         console.log(
           `Minting NFT to address: ${recipientAddress} with metadata:`,
-          metadata,
+          metadata
         );
         return "NFT minting initiated (placeholder - not actually minted). Implement actual minting logic in the execute function.";
       },
@@ -177,7 +177,7 @@ RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
 // ... inside the plugins array in getOnChainTools:
 {
     name: "mintNFT",
-    og:description: "...",
+    description: "...",
     async execute({ recipientAddress, metadata }) {
         try {
             // 1. NFT Contract Address and ABI:

@@ -3,7 +3,6 @@ title: Build an AI-Powered Token Swap Agent on Celo Using GOAT SDK
 sidebarTitle: "Build a TokenSwap Agent"
 ---
 
-
 This article provides a detailed guide on how to build an AI-powered token swap agent on the Celo blockchain using GOAT SDK. You'll learn how to create an interactive agent capable of performing token swaps through natural language prompts.
 
 ## Understanding GOAT SDK for Token Swapping
@@ -179,11 +178,18 @@ Edit the `.env` file to include:
 ```plaintext
 OPENAI_API_KEY=your_openai_api_key
 WALLET_PRIVATE_KEY=your_wallet_private_key
-RPC_PROVIDER_URL=https://forno.celo.org  # Celo Mainnet
-# or use https://forno.celo-sepolia.celo-testnet.org/ for Testnet
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/  # Celo Sepolia Testnet (recommended for testing)
+# For mainnet: https://forno.celo.org
 UNISWAP_BASE_URL=provided_value  # Will be populated from template
 UNISWAP_API_KEY=provided_value   # Will be populated from template
 ```
+
+**Security Best Practices:**
+
+- Use a dedicated test wallet with minimal funds for development
+- Never commit your `.env` file to version control
+- Use environment variables for all sensitive data
+- For production, use a dedicated RPC provider (Ankr, QuickNode, etc.) instead of public RPCs
 
 For production use, you can get your own Uniswap API key from [Uniswap Hub](https://www.uniswap.org/developers).
 

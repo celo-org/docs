@@ -5,7 +5,7 @@ og:description: A beginner's guide to building DeFi applications on Celo
 
 In this guide you can explore tooling and infrastructure for building DeFi on Celo.
 
-## Overview  
+## Overview
 
 DeFi on Celo is designed for builders who want to create accessible, stable, and inclusive financial systems. This guide walks you through the key tools and infrastructure available for developing decentralized finance applications on Celo.
 
@@ -13,55 +13,68 @@ Stablecoins are at the heart of DeFi, they provide price stability, reduce volat
 
 Explore below how to integrate stablecoins, exchanges, and oracles into your next DeFi project.
 
-## Why Stablecoins Matter  
+## Why Stablecoins Matter
 
-[Stablecoins](build-with-local-stablecoin) are digital assets pegged to a stable reserve, such as fiat currency or a basket of assets. They provide key benefits in DeFi and financial transactions and financial inclusion:  
+[Stablecoins](/build-on-celo/build-with-local-stablecoin) are digital assets pegged to a stable reserve, such as fiat currency or a basket of assets. They provide key benefits in DeFi and financial transactions and financial inclusion:
 
 <Info>
-Check out ["Build with Stablecoins"](build-with-local-stablecoin) for an extensive list of all stablecoins on Celo.
+  Check out ["Build with
+  Stablecoins"](/build-on-celo/build-with-local-stablecoin) for an extensive
+  list of all stablecoins on Celo.
 </Info>
 
-- **Price Stability** – Unlike volatile cryptocurrencies, stablecoins maintain a predictable value.  
-- **Low-Cost Transactions** – Sending stablecoins on Celo costs significantly less than on traditional blockchains.  
-- **Borderless Access** – Users can send and receive stablecoins globally, without needing a bank account.  
-- **Programmability** – Stablecoins can be used in smart contracts to enable lending, savings, and remittances.  
-- **Financial Inclusion** – Stablecoins empower unbanked and underbanked populations with access to digital financial services.  
+- **Price Stability** – Unlike volatile cryptocurrencies, stablecoins maintain a predictable value.
+- **Low-Cost Transactions** – Sending stablecoins on Celo costs significantly less than on traditional blockchains.
+- **Borderless Access** – Users can send and receive stablecoins globally, without needing a bank account.
+- **Programmability** – Stablecoins can be used in smart contracts to enable lending, savings, and remittances.
+- **Financial Inclusion** – Stablecoins empower unbanked and underbanked populations with access to digital financial services.
 
 Celo is uniquely positioned to advance the adoption of stable digital assets through the [Mento](https://www.mento.org/) Protocol—a decentralized stablecoin platform built on Celo. [Mento](https://www.mento.org/) enables the creation of local stablecoins that are algorithmically stabilized and backed by crypto collateral. This approach helps users access a price-stable digital currency that is aligned with their local economy.
 
 The goal of Mento is simple: to provide a stable asset for every country in the world. These stable assets can be used for everyday payments, savings, remittances, and commerce—empowering individuals in regions with high inflation or limited access to traditional banking infrastructure.
 
-## Examples of DeFi Applications on Celo  
+## Examples of DeFi Applications on Celo
 
-Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:  
+Celo supports a vibrant ecosystem of DeFi protocols that utilize stablecoins:
 
-### Lending & Borrowing  
+### Lending & Borrowing
 
-- **[Aave](https://aave.com/)** – Decentralized lending and borrowing using stablecoins.
-- **[PWN](https://pwn.xyz/)**  - Fixed rate lending
+- **[Aave](https://aave.com/)** – Decentralized lending and borrowing platform officially launched on Celo in 2025, expanding lending options with institutional and retail liquidity support.
+- **[Credit Collective](https://creditcollective.xyz/)** – On-chain private credit protocol supporting real-world assets (RWAs) and emerging market stablecoins. Manages liquidity strategies and provides sustainable market-making for new stablecoins.
+- **[PWN](https://pwn.xyz/)** – Fixed rate lending platform.
 
 ### Exchanges
 
-Find all Exchanges [here](/about-celo/exchanges). For cross-chain exchanges check out the [bridges](/developer/bridges) and [cross-chain messaging](/developer/bridges/cross-chain-messaging) pages. 
+Find all Exchanges [here](/home/exchanges). For cross-chain exchanges check out the [bridges](/tooling/bridges) and [cross-chain messaging](/tooling/bridges/cross-chain-messaging) pages.
 
-- **[Velodrome](https://velodrome.finance/)** – Velodrome is a decentralized exchange where you can execute low-fee swaps, deposit tokens to earn rewards, and actively participate in the onchain economy.
-- **[Uniswap](https://app.uniswap.org/)** – Swaps and liquidity pools for stablecoins.  
-- **[Ubeswap](https://ubeswap.org/)** – A Celo-native DEX optimized for mobile users.  
-- **[Carbon DeFi by Bancor](https://www.carbondefi.xyz/)** – Empowering users with onchain automation and superior orderbook-like features. 
-- 
+- **[Uniswap v4](https://app.uniswap.org/)** – Launched on Celo in early 2025, bringing advanced "Hooks" features for developer customizations, low-cost swaps, and sub-cent transaction fees. Enables seamless integration with Ethereum liquidity.
+- **[Velodrome](https://velodrome.finance/)** – Decentralized exchange where you can execute low-fee swaps, deposit tokens to earn rewards, and actively participate in the onchain economy. Offers high liquidity mining yields.
+- **[Carbon DeFi by Bancor](https://www.carbondefi.xyz/)** – Empowering users with onchain automation and superior orderbook-like features. One of the largest DEXs on Celo, processing over $33.5M in trading volume within its first year.
+- **[Ubeswap](https://ubeswap.org/)** – A Celo-native DEX optimized for mobile users, supporting hundreds of trading pairs.
 
-### Liquidity Incentives  
+### DEX Aggregators
 
-- **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.  
+- **[LI.FI](https://li.fi/)** – Cross-chain DEX aggregator and bridge, facilitating optimal trading routes with a focus on speed and user-friendly access.
+- **[Matcha](https://matcha.xyz/)** – Cross-chain DEX aggregator allowing users to find optimal trading routes and limit orders for a wide variety of tokens.
+
+### Liquidity Incentives
+
+- **[Steer Protocol](https://steer.finance/)** – Automated liquidity strategies.
 - **[Merkl](https://app.merkl.xyz/)** – Rewarding liquidity providers with stablecoin incentives.
 - **[Ichi](https://www.ichi.org/)** – Automated Liquidity Strategies for DeFi Yield.
 
+### Derivatives
+
+- **[Lynx](https://lynx.finance/)** – Decentralized perpetual contract trading platform, adding leveraged trading and robust liquidity to Celo's DeFi toolkit.
+
 ### Oracles
 
-Oracles are a crucial part to get real time price information on tokens. Speed is crucial when it comes to building DeFi applications, and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/developer/oracles).
+Oracles are a crucial part to get real time price information on tokens. Speed is crucial when it comes to building DeFi applications, and you should not rely on web2 APIs for price feeds. Find all Oracles in the [tooling section](/tooling/oracles).
 
-- [RedStone Oracles](/developer/oracles/redstone)
-- [Chainlink, Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
+- [RedStone Oracles](/tooling/oracles/redstone)
+- [Chainlink Price Feed Oracles](https://docs.chain.link/data-feeds/price-feeds/addresses?network=celo)
+- [Supra Oracles](/tooling/oracles/supra)
+- [Band Protocol](/tooling/oracles/band-protocol)
 
 ### Human-Centered Security Tools
 
@@ -70,8 +83,8 @@ Oracles are a crucial part to get real time price information on tokens. Speed i
   - Pre‑sign safety simulations in any Celo wallet
   - Real‑time CELO / cUSD / stCELO pricing
 
-## Get Started  
+## Get Started
 
-Developers and entrepreneurs can leverage Celo's infrastructure to build next-generation stablecoin applications.  
+Developers and entrepreneurs can leverage Celo's infrastructure to build next-generation stablecoin applications.
 
-By building on Celo, you're not just creating DeFi applications, you're enabling real-world financial inclusion and empowering users globally.  
+By building on Celo, you're not just creating DeFi applications, you're enabling real-world financial inclusion and empowering users globally.

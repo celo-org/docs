@@ -145,48 +145,52 @@ Copy `.env.template` to `.env` and populate the following environment variables 
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
 RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/
-OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-WALLET_PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_PROVIDER_URL=[https://forno.celo-sepolia.celo-testnet.org/](https://forno.celo-sepolia.celo-testnet.org/)
 ```
 
 **Note:** We only need `OPENAI_API_KEY`, `WALLET_PRIVATE_KEY`, and `RPC_PROVIDER_URL` for this token sending agent.
 
 **3. Adapt Code for Celo Token Sending:**
 
-1.  **Chain Configuration:** In `index.ts`, replace `baseSepolia` with `celo` from `viem/chains`:
+1.  **Chain Configuration:** In `index.ts`, replace `baseSepolia` with `celoSepolia` from `viem/chains`:
 
     ```javascript
-    import { celoSepolia } from "viem/chains"; // Import Celo chain
+    import { celoSepolia } from "viem/chains"; // Import Celo Sepolia chain
 
     // ...
 
     const walletClient = createWalletClient({
       account: account,
       transport: http(process.env.RPC_PROVIDER_URL),
-      chain: celo, // Use Celo chain configuration
+      chain: celoSepolia, // Use Celo Sepolia chain configuration for testnet
     });
     ```
 
 2.  **Adapt `sendETH()` to `sendCELO()`:** The `@goat-sdk/wallet-evm` might have a function specifically for sending CELO. Check the `@goat-sdk` documentation for `sendCELO()`. If it exists, replace `sendETH()` with `sendCELO()` in the `plugins` array:
 
     ```javascript
+    import { cUSD, CELO } from "@goat-sdk/plugin-erc20"; // Import Celo tokens
+
+    // ...
+
     plugins: [
-      sendCELO(), // Enable CELO transfers (if available in @goat-sdk)
-      erc20({ tokens: [USDC, PEPE] }), // ERC20 token operations - Review tokens for Celo
+      sendETH(), // sendETH() is chain-aware and works with CELO on Celo network
+      erc20({ tokens: [cUSD, CELO] }), // Use Celo-specific tokens: cUSD, CELO
       // ...
     ];
     ```
 
     If `sendCELO()` is not directly available in `@goat-sdk/wallet-evm`, it's likely that `sendETH()` is designed to be chain-aware and will send the native token of the configured chain (`celo` in this case). In that case, you might not need to change `sendETH()`. **Test sending CELO after setup to confirm if `sendETH()` works for CELO or if you need to find an alternative.** If `sendETH()` does not work for CELO, you might need to create a custom tool using `viem`'s `sendTransaction` function to send CELO directly.
 
-3.  **Review ERC20 Tokens for Celo:** `USDC` and `PEPE` might not be ideal for Celo. Research popular ERC20 tokens on Celo Sepolia Testnet or Celo Mainnet (e.g., `cUSD`, `cEUR`, `USDT`, `DAI` on Celo). Update the `erc20` plugin configuration with relevant tokens:
+3.  **Use Celo-Specific Tokens:** Import and use Celo native tokens from `@goat-sdk/plugin-erc20`:
 
     ```javascript
-    erc20({ tokens: [cUSD, cEUR, USDT] }), // Example: Use cUSD, cEUR, USDT if relevant on Celo
+    import { cUSD, CELO } from "@goat-sdk/plugin-erc20";
+
+    // In plugins array:
+    erc20({ tokens: [cUSD, CELO] }), // Use Celo-specific tokens
     ```
 
-    You might need to define or import configurations for `cUSD`, `cEUR`, `USDT` similar to `USDC` and `PEPE`, potentially using their token contract addresses on Celo. For a more generic approach, you can remove the `tokens` array to allow the agent to handle any ERC20 token specified by symbol or address in the prompt.
+    The `@goat-sdk/plugin-erc20` package includes pre-configured Celo tokens. For additional tokens, you can define custom token configurations or remove the `tokens` array to allow the agent to handle any ERC20 token specified by symbol or address in the prompt.
 
 **4. Usage Instructions:**
 
@@ -229,4 +233,3 @@ Enter your prompt (or "exit" to quit): exit
 ### Conclusion
 
 This tutorial has guided you through building an AI-powered agent capable of sending tokens on the Celo Sepolia blockchain. By adapting the provided code, configuring for Celo Sepolia, and utilizing the `@goat-sdk/wallet-evm` and `@goat-sdk/plugin-erc20` tools, you can create an interactive agent that can understand natural language prompts to send both native CELO and ERC20 tokens. Remember to test thoroughly on the Celo Sepolia Testnet before using on Mainnet and always handle private keys securely. Explore the `@goat-sdk` documentation to understand more advanced configurations and error handling for your token sending agent on Celo!
-

@@ -113,6 +113,7 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
+              "build-on-celo/scaling-your-app",
               "build-on-celo/fund-your-project",
               "build-on-celo/nightfall"
             ]
@@ -139,7 +140,7 @@
                 "pages": [
                   "build-on-celo/build-with-ai/examples/ai-memecoins",
                   "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-nebula"
+                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
                 ]
               },
               {
@@ -557,9 +558,7 @@
           },
           {
             "group": "Nodes",
-            "pages": [
-              "legacy/node/run-mainnet"
-            ]
+            "pages": ["legacy/node/run-mainnet"]
           },
           {
             "group": "Validator",
