@@ -182,12 +182,6 @@ export const CeloDiscoverGrid = ({
       external: true,
     },
     {
-      label: "Build with Self",
-      desc: "Verify real users with ZK",
-      href: "/build/build-with-self",
-      external: true,
-    },
-    {
       label: "Build with AI",
       desc: "Launch agents for an onchain economy",
       href: "/build/build-with-ai/overview",

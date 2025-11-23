@@ -173,8 +173,7 @@
               },
               "build-on-celo/build-with-farcaster",
               "build-on-celo/build-with-local-stablecoin",
-              "build-on-celo/build-with-defi",
-              "build-on-celo/build-with-self"
+              "build-on-celo/build-with-defi"
             ]
           }
         ]
