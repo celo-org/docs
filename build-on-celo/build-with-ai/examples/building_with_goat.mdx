@@ -11,9 +11,9 @@ This tutorial guides you through creating a Node.js application using TypeScript
 
 Before you begin, ensure you have the following:
 
-- **Node.js (v16 or higher) and npm (or yarn) installed.** You can download Node.js from [https://nodejs.org/](https://nodejs.org/).
+- **Node.js (v18 or higher) and npm (or yarn) installed.** You can download Node.js from [https://nodejs.org/](https://nodejs.org/).
 - **A Celo wallet with a private key.** You'll need a wallet with some CELO and cUSD for testing. _Never commit your private key to version control._
-- **An RPC provider URL for the Celo network.** We'll use [Forno](https://forno.celo.org/) in this example, which is a public provider. For production, consider using a dedicated RPC provider like [Ankr](https://www.ankr.com/), [QuickNode](https://www.quicknode.com/), or others.
+- **An RPC provider URL for the Celo network.** For testing, use the Celo Sepolia testnet RPC: `https://forno.celo-sepolia.celo-testnet.org/`. For production, consider using a dedicated RPC provider like [Ankr](https://www.ankr.com/), [QuickNode](https://www.quicknode.com/), or others.
 - **An OpenAI API key.** GOAT utilizes OpenAI's language models. Obtain an API key from [https://platform.openai.com/](https://platform.openai.com/).
 - **A code editor or IDE.** VS Code, Sublime Text, or any other code editor will work.
 
@@ -166,7 +166,7 @@ dotenv.config();
 
 // --- Wallet Setup ---
 const account = privateKeyToAccount(
-  process.env.WALLET_PRIVATE_KEY as `0x${string}`,
+  process.env.WALLET_PRIVATE_KEY as `0x${string}`
 );
 
 const walletClient = createWalletClient({
@@ -223,7 +223,8 @@ Create a `.env` file in the root of your project and add the following, replacin
 
 ```bash
 WALLET_PRIVATE_KEY=your_wallet_private_key
-RPC_PROVIDER_URL=https://forno.celo.org  # Or your preferred provider
+RPC_PROVIDER_URL=https://forno.celo-sepolia.celo-testnet.org/  # Celo Sepolia Testnet (recommended for testing)
+# For mainnet: https://forno.celo.org
 OPENAI_API_KEY=your_openai_api_key
 ```
 
@@ -231,10 +232,24 @@ Important Security Note: Never commit your `.env` file or your private key to ve
 
 ## Running the Application
 
-Compile the TypeScript code:
+Compile and run the TypeScript code:
 
 ```bash
-pnpm dev
+# Compile TypeScript
+npx tsc
+
+# Run the compiled JavaScript
+node dist/index.js
+```
+
+Or use a TypeScript runner:
+
+```bash
+# Using ts-node
+npx ts-node src/index.ts
+
+# Or using tsx
+npx tsx src/index.ts
 ```
 
 The application will start, and you'll see the prompt: `Enter your prompt (or "exit" to quit):`. You can now enter natural language commands.

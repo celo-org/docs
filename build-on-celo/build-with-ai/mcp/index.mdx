@@ -1,12 +1,9 @@
 ---
 title: Model Context Protocol (MCP)
-og:description: Learn how to get started with MCP servers and implement the Model Context Protocol
-sidebarTitle: "Intro to MCP Servers"
+og:description: Learn about the Model Context Protocol and how to use Celo-specific MCP servers for building AI agents
 ---
 
-import {YouTube} from '/snippets/YouTube.jsx';
-
-[The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed by Anthropic, the AI company behind Claude, to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools. This makes Claude natively compatible with all MPC servers. OpenAI has announced compatibility with the MCP standard, ensuring broad adoption across major AI platforms.
+[The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed by Anthropic, the AI company behind Claude, to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools. MCP has become the industry standard for integrating AI tools and IDEs, with widespread adoption across major development environments including VS Code, Cursor, JetBrains IDEs, Windsurf, Zed, and many others. OpenAI has also adopted MCP across their Agents SDK and ChatGPT desktop app, ensuring broad compatibility across major AI platforms.
 
 ## Celo specific MCPs:
 
@@ -18,7 +15,14 @@ import {YouTube} from '/snippets/YouTube.jsx';
   - components
   - set up your project on Celo in minutes
 
-<YouTube videoId="7XInE4Ll0as"/>
+<iframe
+  src="https://www.youtube.com/embed/7XInE4Ll0as"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
 
 ## Why MCP?
 
@@ -34,7 +38,7 @@ MCP follows a client-server architecture where a host application can connect to
 
 ### Components
 
-- **MCP Hosts**: Programs like Claude Desktop, IDEs, or AI tools that want to access data through MCP
+- **MCP Hosts**: Programs like Claude Desktop, IDEs (VS Code, Cursor, JetBrains, Windsurf, Zed, and more), or AI tools that want to access data through MCP
 - **MCP Clients**: Protocol clients that maintain 1:1 connections with servers
 - **MCP Servers**: Lightweight programs that each expose specific capabilities through the standardized Model Context Protocol
 - **Local Data Sources**: Your computer's files, databases, and services that MCP servers can securely access
@@ -51,5 +55,3 @@ Explore existing MCP server implementations:
 
 - [Official MCP Documentation](https://modelcontextprotocol.io/introduction)
 - [MCP Community Forum](https://community.modelcontextprotocol.io)
-
-

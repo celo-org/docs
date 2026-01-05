@@ -1,0 +1,404 @@
+---
+title: Build with Farcaster
+og:description: Learn how to build Farcaster MiniApps on Celo with seamless wallet integration and user experience
+---
+
+## Build a Farcaster MiniApp
+
+Building a MiniApp comes with many benefits. You don't need to manage on- and off‑ramp integrations, and the user experience is more seamless because your app runs inside a wallet client. For testing and scaling, we recommend keeping a standard wallet connection in your app; it should be hidden automatically when the app runs in a MiniApp environment. Our templates already include this setup, so we suggest creating your MiniApp using our starterkit, [Celo Composer](https://github.com/celo-org/celo-composer). Setting up a Farcaster MiniApp involves several specific settings, and our template provides a step‑by‑step guide to walk you through them.
+
+Before you start building a Farcaster MiniApp, we recommend watching this video on how to build a successful MiniApp on Farcaster.
+
+<iframe
+  src="https://www.youtube.com/embed/bwTrGAfZhSQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
+
+Make sure to also read the [Farcaster MiniApp documentation](https://miniapps.farcaster.xyz/). You'll save a lot of time by reviewing it in detail before building. We also recommend testing a few popular Farcaster MiniApps to get a feel for UX patterns.
+
+## Quick Start
+
+Use this command to scaffold a Farcaster MiniApp quickly using the [Celo Composer](https://github.com/celo-org/celo-composer):
+
+```bash
+npx @celo/celo-composer@latest create --template farcaster-miniapp
+```
+
+When using this command, follow this workshop to configure everything correctly and avoid missing important implementations or settings.
+
+<iframe
+  src="https://www.youtube.com/embed/Wt7TMbH4RUQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
+
+## SDK Installation and Setup
+
+### Install the MiniApp SDK
+
+Install the Farcaster MiniApp SDK using your preferred package manager:
+
+<CodeGroup>
+```bash npm
+npm install @farcaster/miniapp-sdk
+```
+
+```bash yarn
+yarn add @farcaster/miniapp-sdk
+```
+
+```bash pnpm
+pnpm add @farcaster/miniapp-sdk
+```
+
+</CodeGroup>
+
+### Initialize the SDK
+
+After your app loads, you **must** call `sdk.actions.ready()` to hide the splash screen and display your content:
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+// After your app is fully loaded and ready to display
+await sdk.actions.ready();
+```
+
+<Warning>
+  **Important**: If you don't call `ready()`, users will see an infinite loading
+  screen. This is one of the most common issues when building Mini Apps.
+</Warning>
+
+## Wallet Integration
+
+### Using Wagmi (Recommended)
+
+The Mini App SDK exposes an [EIP-1193 Ethereum Provider API](https://eips.ethereum.org/EIPS/eip-1193) at `sdk.wallet.getEthereumProvider()`. We recommend using [Wagmi](https://wagmi.sh) to connect to and interact with the user's wallet.
+
+#### Install the Wagmi Connector
+
+```bash
+npm install @farcaster/miniapp-wagmi-connector wagmi viem
+```
+
+#### Configure Wagmi
+
+Add the Mini App connector to your Wagmi config:
+
+```js
+import { http, createConfig } from "wagmi";
+import { celo, celoSepolia } from "wagmi/chains";
+import { farcasterMiniApp as miniAppConnector } from "@farcaster/miniapp-wagmi-connector";
+
+export const config = createConfig({
+  chains: [celo, celoSepolia],
+  transports: {
+    [celo.id]: http(),
+    [celoSepolia.id]: http(),
+  },
+  connectors: [miniAppConnector()],
+});
+```
+
+#### Connect to Wallet
+
+If a user already has a connected wallet, the connector will automatically connect (e.g., `isConnected` will be `true`). Always check for a connection and prompt users to connect if needed:
+
+```js
+import { useAccount, useConnect } from "wagmi";
+
+function ConnectMenu() {
+  const { isConnected, address } = useAccount();
+  const { connect, connectors } = useConnect();
+
+  if (isConnected) {
+    return (
+      <>
+        <div>You're connected!</div>
+        <div>Address: {address}</div>
+      </>
+    );
+  }
+
+  return (
+    <button type="button" onClick={() => connect({ connector: connectors[0] })}>
+      Connect
+    </button>
+  );
+}
+```
+
+<Info>
+  Your Mini App won't need to show a wallet selection dialog that is common in a
+  web-based dapp. The Farcaster client hosting your app will take care of
+  getting the user connected to their preferred crypto wallet.
+</Info>
+
+### Send Transactions
+
+You're now ready to prompt the user to transact. They will be shown a preview of the transaction in their wallet and asked to confirm it:
+
+```js
+import { useSendTransaction } from "wagmi";
+import { parseEther } from "viem";
+
+function SendTransaction() {
+  const { sendTransaction } = useSendTransaction();
+
+  const handleSend = () => {
+    sendTransaction({
+      to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      value: parseEther("0.01"),
+    });
+  };
+
+  return <button onClick={handleSend}>Send 0.01 CELO</button>;
+}
+```
+
+### Batch Transactions (EIP-5792)
+
+The Farcaster Wallet supports EIP-5792 `wallet_sendCalls`, allowing you to batch multiple transactions into a single user confirmation. This improves UX by enabling operations like "approve and swap" in one step.
+
+Common use cases include:
+
+- Approving a token allowance and executing a swap
+- Multiple NFT mints in one operation
+- Complex DeFi interactions requiring multiple contract calls
+
+#### Using Batch Transactions with Wagmi
+
+```js
+import { useSendCalls } from "wagmi";
+import { parseEther } from "viem";
+
+function BatchTransfer() {
+  const { sendCalls } = useSendCalls();
+
+  return (
+    <button
+      onClick={() =>
+        sendCalls({
+          calls: [
+            {
+              to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+              value: parseEther("0.01"),
+            },
+            {
+              to: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+              value: parseEther("0.02"),
+            },
+          ],
+        })
+      }
+    >
+      Send Batch Transfer
+    </button>
+  );
+}
+```
+
+#### Example: Token Approval and Swap
+
+```js
+import { useSendCalls } from "wagmi";
+import { encodeFunctionData, parseUnits } from "viem";
+import { erc20Abi } from "viem";
+
+function ApproveAndSwap() {
+  const { sendCalls } = useSendCalls();
+
+  const handleApproveAndSwap = () => {
+    sendCalls({
+      calls: [
+        // Approve USDC
+        {
+          to: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C", // USDC on Celo
+          data: encodeFunctionData({
+            abi: erc20Abi,
+            functionName: "approve",
+            args: [
+              "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D", // Router address
+              parseUnits("100", 6), // Amount
+            ],
+          }),
+        },
+        // Swap USDC for CELO
+        {
+          to: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D", // Uniswap Router
+          data: encodeFunctionData({
+            abi: uniswapAbi,
+            functionName: "swapExactTokensForETH",
+            args: [
+              /* swap parameters */
+            ],
+          }),
+        },
+      ],
+    });
+  };
+
+  return <button onClick={handleApproveAndSwap}>Approve & Swap</button>;
+}
+```
+
+<Info>
+**Limitations:**
+- Transactions execute sequentially, not atomically
+- No paymaster support yet
+- Available on all EVM chains Farcaster supports
+
+Use individual transactions when you need to check outputs between calls.
+
+</Info>
+
+## Authentication
+
+### Quick Auth (Recommended)
+
+Quick Auth is the easiest way to get an authenticated session for a user. It uses [Sign in with Farcaster](https://docs.farcaster.xyz/developers/siwf/) under the hood and returns a standard JWT that can be easily verified by your server.
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+// Get authentication token
+const token = await sdk.quickAuth.getToken();
+
+// Use token in API calls
+const response = await fetch("https://api.example.com/user", {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+```
+
+The `getToken()` method stores the token in memory and returns it if not expired, otherwise fetches a new one.
+
+### Sign In with Farcaster
+
+Alternatively, you can use the `signIn` action to get a Sign in with Farcaster authentication credential:
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+const credential = await sdk.actions.signIn();
+```
+
+After requesting the credential, applications must verify it on their server using [`verifySignInMessage`](https://docs.farcaster.xyz/auth-kit/client/app/verify-sign-in-message). Apps can then issue a session token like a JWT for the remainder of the session.
+
+## Manifest Configuration
+
+Mini Apps require a manifest file that describes your app. The manifest tells Farcaster clients how to display and interact with your app.
+
+### Basic Manifest
+
+Create a `manifest.json` file in your app's root directory:
+
+```json
+{
+  "name": "My Celo MiniApp",
+  "description": "A MiniApp built on Celo",
+  "iconUrl": "https://example.com/icon.png",
+  "splashImageUrl": "https://example.com/splash.png",
+  "splashBackgroundColor": "#000000",
+  "url": "https://example.com"
+}
+```
+
+### Required Fields
+
+- **name**: Display name of your MiniApp
+- **description**: Brief description of what your app does
+- **iconUrl**: URL to your app's icon (recommended: 512x512px)
+- **splashImageUrl**: URL to splash screen image (recommended: 1920x1080px)
+- **splashBackgroundColor**: Background color for splash screen (hex format)
+- **url**: URL where your MiniApp is hosted
+
+### Optional Fields
+
+- **requiredChains**: Array of chain IDs your app requires (e.g., `[42220]` for Celo)
+- **requiredCapabilities**: Array of required wallet capabilities
+- **homeUrl**: URL to navigate when user taps home button
+
+### Deprecated Fields
+
+The following fields are deprecated and should not be used:
+
+- `imageUrl` (use `iconUrl` instead)
+- `buttonTitle` (no longer needed)
+
+<Info>
+  When `url` is not provided in `actionLaunchFrameSchema`, it defaults to the
+  current webpage URL (including query parameters).
+</Info>
+
+## Additional Features
+
+### Environment Detection
+
+Detect if your app is running inside a MiniApp environment:
+
+```js
+import { isInMiniApp } from "@farcaster/miniapp-sdk";
+
+if (isInMiniApp()) {
+  // Running in MiniApp
+} else {
+  // Running in regular browser
+}
+```
+
+### Back Navigation
+
+Integrate back control for better navigation:
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+// Navigate back
+sdk.back();
+```
+
+### Haptic Feedback
+
+Provide haptic feedback for better user interaction:
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+// Trigger haptic feedback
+sdk.haptics.impact(); // Light impact
+sdk.haptics.notification(); // Notification feedback
+sdk.haptics.selection(); // Selection feedback
+```
+
+### Share Extensions
+
+Enable your app to receive shared casts from the system share sheet:
+
+```js
+import { sdk } from "@farcaster/miniapp-sdk";
+
+// Listen for shared casts
+sdk.context.cast_share?.then((cast) => {
+  console.log("Received cast:", cast);
+});
+```
+
+## Publishing Your MiniApp
+
+After building your MiniApp, you'll need to publish it so users can discover and use it. Follow the [Farcaster MiniApp publishing guide](https://miniapps.farcaster.xyz/docs/guides/publishing) for detailed instructions.
+
+## Resources
+
+- [Farcaster MiniApp Documentation](https://miniapps.farcaster.xyz/)
+- [Farcaster MiniApp SDK Reference](https://miniapps.farcaster.xyz/docs/sdk)
+- [Celo Composer](https://github.com/celo-org/celo-composer)
+- [Wagmi Documentation](https://wagmi.sh)

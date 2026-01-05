@@ -1,15 +1,15 @@
----
-title: Composer Kit MCP Server
----
-
-import {YouTube} from '/snippets/YouTube.jsx';
-
 The **Composer Kit MCP Server** is a Model Context Protocol (MCP) server that provides comprehensive access to Composer Kit UI components documentation, examples, and usage information. This powerful tool enables AI assistants and development environments to access the complete Composer Kit React component library designed for building web3 applications on the Celo blockchain.
 
 > Watch [this step-by-step vibe coding tutorial](https://www.youtube.com/watch?v=QOCO1G8cJyI) using the Celo Composer Kit MCP to create a token claim dApp in minutes!
-> 
 
-<YouTube videoId="QOCO1G8cJyI"/>
+<iframe
+  src="https://www.youtube.com/embed/QOCO1G8cJyI"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
 
 ## Key Features
 
@@ -74,6 +74,37 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ## MCP Client Integration
 
+MCP is supported by a wide range of IDEs and development tools. Below are setup instructions for popular options:
+
+### VS Code Setup
+
+VS Code has native MCP support:
+
+1. **Install the MCP server**:
+
+   ```bash
+   pip install composer-kit-mcp
+   ```
+
+2. **Configure VS Code** by adding the MCP server to your settings:
+
+   - Open VS Code Settings (Cmd/Ctrl + ,)
+   - Search for "MCP" or navigate to MCP settings
+   - Add configuration:
+
+   ```json
+   {
+     "mcpServers": {
+       "composer-kit-mcp": {
+         "command": "uvx",
+         "args": ["composer-kit-mcp"]
+       }
+     }
+   }
+   ```
+
+3. **Restart VS Code** and verify setup
+
 ### Cursor IDE Setup
 
 1. **Install the MCP server** (if not already done):
@@ -103,6 +134,22 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
    - "What Composer Kit components are available?"
    - "Show me how to use the Wallet component"
    - "Search for payment-related components"
+
+### JetBrains IDEs Setup
+
+For IntelliJ IDEA, WebStorm, PyCharm, and other JetBrains IDEs:
+
+1. **Install the MCP server**:
+
+   ```bash
+   pip install composer-kit-mcp
+   ```
+
+2. **Configure through JetBrains MCP plugin** or IDE settings
+
+### Windsurf Setup
+
+Windsurf has built-in MCP support. Configure through Windsurf's settings interface.
 
 ### Claude Desktop Setup
 
