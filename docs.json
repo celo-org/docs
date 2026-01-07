@@ -8,7 +8,13 @@
     "dark": "#000000"
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "cursor"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor"
+    ]
   },
   "background": {
     "color": {
@@ -35,7 +41,9 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["home/celo"]
+            "pages": [
+              "home/celo"
+            ]
           },
           {
             "group": "Overview",
@@ -195,7 +203,9 @@
           },
           {
             "group": "Testnets",
-            "pages": ["tooling/testnets/celo-sepolia/index"]
+            "pages": [
+              "tooling/testnets/celo-sepolia/index"
+            ]
           },
           {
             "group": "Nodes",
@@ -359,7 +369,9 @@
           },
           {
             "group": " ",
-            "pages": ["tooling/bridges/cross-chain-messaging"]
+            "pages": [
+              "tooling/bridges/cross-chain-messaging"
+            ]
           }
         ]
       },
@@ -431,7 +443,9 @@
           },
           {
             "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
+            "pages": [
+              "infra-partners/specs"
+            ]
           },
           {
             "group": "Integrate with Celo",
@@ -553,13 +567,17 @@
               "legacy/protocol/randomness",
               {
                 "group": "Contracts",
-                "pages": ["legacy/protocol/contracts/add-contract"]
+                "pages": [
+                  "legacy/protocol/contracts/add-contract"
+                ]
               }
             ]
           },
           {
             "group": "Nodes",
-            "pages": ["legacy/node/run-mainnet"]
+            "pages": [
+              "legacy/node/run-mainnet"
+            ]
           },
           {
             "group": "Validator",
@@ -568,7 +586,9 @@
               "legacy/validator/voting",
               {
                 "group": "Run a Validator",
-                "pages": ["legacy/validator/run/mainnet"]
+                "pages": [
+                  "legacy/validator/run/mainnet"
+                ]
               },
               {
                 "group": "Key Management",
