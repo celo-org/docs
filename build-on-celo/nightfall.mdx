@@ -10,12 +10,18 @@ sidebarTitle: "Nightfall Privacy Layer"
 
 Celo is the **first payments-focused blockchain** to deploy Nightfall, combining private transactions with Celo's mobile-first infrastructure and 1-second block times.
 
+<Info>
+  Visit the [Nightfall website](https://nightfall.celo.org/) to learn more about
+  Nightfall on Celo, explore use cases, and see what enterprises are saying.
+</Info>
+
 <Note>
 **Testnet Status**: Live and ready for testing
 
-Nightfall testnet is currently active on Celo mainnet for developers and enterprises to build and test private payment applications.
+**Nightfall** testnet is currently active on Celo Sepolia for developers and enterprises to build and test private payment applications.
 
 **Full API documentation** is available in the [Nightfall GitHub docs](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md#apis).
+
 </Note>
 
 ## What is Nightfall?
@@ -30,17 +36,20 @@ Nightfall uses **zero-knowledge rollup (ZK-ZK rollup)** technology to batch priv
 ## Key Features
 
 ### Privacy Technology
+
 - **Zero-Knowledge Proofs**: Cryptographic privacy without trusted intermediaries
 - **Layer 3 Architecture**: Runs on top of Celo L2 for maximum efficiency
 - **Enterprise Access Control**: X509 certificate-based authentication
 
 ### Token Support
+
 - **ERC-20**: Stablecoins (USDT, USDC) and other fungible tokens
 - **ERC-721**: Non-fungible tokens (NFTs)
 - **ERC-1155**: Multi-token standard
 - **ERC-3525**: Semi-fungible tokens
 
 ### Performance
+
 - **Low Gas Costs**: ~6000 Gas per private transfer
 - **Fast Finality**: Cryptographic finality matching Celo's block time
 - **Scalability**: Transaction batching for efficient throughput
@@ -50,19 +59,25 @@ Nightfall uses **zero-knowledge rollup (ZK-ZK rollup)** technology to batch priv
 Nightfall operates with three main components:
 
 ### Client
+
 The user-facing application that enables users to make private transactions. Clients interact with proposers and manage:
+
 - Deposits (converting public tokens to private commitments)
 - Transfers (private peer-to-peer transactions)
 - Withdrawals (converting private commitments back to public tokens)
 
 ### Proposer
+
 Network nodes that create Layer 2 blocks by batching transactions and generating zero-knowledge proofs. Proposers:
+
 - Collect transactions from clients
 - Generate ZK proofs for transaction validity
 - Submit blocks to on-chain smart contracts
 
 ### Smart Contracts
+
 On-chain contracts that handle:
+
 - Token escrow for deposits and withdrawals
 - ZK proof verification
 - X509 certificate validation for access control
@@ -70,18 +85,23 @@ On-chain contracts that handle:
 ## Use Cases
 
 ### Private B2B Payments
+
 Enable confidential business-to-business transactions while maintaining an auditable record for compliance. Ideal for:
+
 - Invoice settlements
 - Vendor payments
 - Intercompany transfers
 
 ### Supply Chain Finance
+
 Process payments across supply chain partners with privacy, reducing transaction costs and eliminating intermediaries.
 
 ### Enterprise Treasury Management
+
 Manage corporate funds with confidentiality for strategic transactions, mergers, acquisitions, and sensitive operations.
 
 ### Cross-Border Payments
+
 Leverage Celo's global reach and low fees with added privacy for international B2B flows, particularly valuable in emerging markets.
 
 ## Getting Started
@@ -90,47 +110,287 @@ Leverage Celo's global reach and low fees with added privacy for international B
 
 To integrate Nightfall, you'll need:
 
-1. **X509 Certificates**: Required for network access and authentication
-2. **Ethereum Keys**: For signing transactions on Celo
-3. **ZKP Keys**: For generating zero-knowledge proofs (must be directly available to the client)
-4. **Node Access**: Connection to Nightfall proposer nodes
+1. **Development Tools**:
+
+   - **git**: For cloning the repository
+   - **docker-compose**: For running the client services
+   - **curl**: For making API requests to the client
+   - **cast** (from Foundry): For generating mnemonics (optional)
+
+2. **Ethereum Keys**: For signing transactions on Celo Sepolia
+3. **ZKP Keys**: For generating zero-knowledge proofs (derived from mnemonic)
+4. **Testnet Tokens**: CELO tokens on Celo Sepolia for paying gas fees and deposits
 
 ### Transaction Flow
 
 #### Deposits
+
 Convert public tokens on Celo into private commitments on Nightfall:
+
 ```
 Public Celo Token → Nightfall Smart Contract (escrow) → Private Commitment
 ```
 
 #### Transfers
+
 Send private transactions between Nightfall users:
+
 ```
 Private Commitment (sender) → ZK Proof → Private Commitment (receiver)
 ```
 
 #### Withdrawals
+
 Convert private commitments back to public tokens:
+
 ```
 Private Commitment → ZK Proof → Nightfall Smart Contract → Public Celo Token
 ```
 
+### Running the Client on Celo Sepolia
+
+This guide explains how to set up and use the Nightfall client to interact with the Celo Sepolia testnet.
+
+#### Setup
+
+**1. Clone the Repository**
+
+```bash
+git clone https://github.com/celo-org/nightfall_4_CE
+cd nightfall_4_CE
+git checkout celo
+```
+
+**2. Configure Environment Variables**
+
+Before running the client, update the `celo-sepolia.env` file with your own addresses and private keys. These addresses must have CELO tokens for paying gas fees during deposits and withdrawals, as well as the tokens you want to deposit.
+
+Update the following variables in `celo-sepolia.env`:
+
+- `CLIENT_SIGNING_KEY`: Your private key (without the `0x` prefix or with it, depending on your setup)
+- `CLIENT_ADDRESS`: The Ethereum address corresponding to your private key
+- `NF4_SIGNING_KEY`: Should be the same as `CLIENT_SIGNING_KEY`
+
+<Note>
+**Funding Your Address**
+
+These addresses must be funded with CELO on the Celo Sepolia testnet. You can get testnet CELO from a [faucet](https://faucet.celo.org/celo-sepolia) if needed.
+
+</Note>
+
+**3. Run Docker Compose as Client**
+
+Start the client connected to the Celo Sepolia testnet. This will build the necessary Docker images and start the webhook service:
+
+```bash
+NF4_RUN_MODE=celo_sepolia docker-compose --env-file celo-sepolia.env --profile indie-client up --build
+```
+
+The client will be available at `http://localhost:3000` and the webhook at `http://localhost:8081/webhook` once they're healthy. The webhook automatically receives notifications from the client about transaction status updates.
+
+**4. Configure Your Mnemonic**
+
+Before performing any operations, you need to derive your ZKP keys from a mnemonic. Generate a new 24-word mnemonic using `cast` (from Foundry):
+
+```bash
+cast w new-mnemonic -w 24
+```
+
+Keep your mnemonic safe. Then derive your keys using the client API:
+
+```bash
+curl -X POST http://localhost:3000/v1/deriveKey \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mnemonic": "your mnemonic phrase here",
+    "child_path": "m/44'\''/60'\''/0'\''/0/0"
+  }'
+```
+
+This will return your `root_key`, `nullifier_key`, `zkp_private_key`, and `zkp_public_key`. Save these values for future operations.
+
+#### Operations
+
+**Deposit to Nightfall**
+
+A deposit moves tokens from Layer 1 (Celo Sepolia) into Nightfall's privacy layer.
+
+**Step 1:** Generate a unique deposit ID:
+
+```bash
+DEPOSIT_ID=$(uuidgen)
+```
+
+**Step 2:** Make the deposit request:
+
+```bash
+curl -X POST http://localhost:3000/v1/deposit \
+  -H "Content-Type: application/json" \
+  -H "X-Request-ID: $DEPOSIT_ID" \
+  -d '{
+    "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+    "tokenId": "0000000000000000000000000000000000000000000000000000000000000000",
+    "tokenType": "0",
+    "value": "000000000000000000000000000000000000000000000000016345785d8a0000",
+    "fee": "0000000000000000000000000000000000000000000000000000000000000000",
+    "deposit_fee": "0000000000000000000000000000000000000000000000000000000000000000"
+  }'
+```
+
+**Parameters:**
+
+- `ercAddress`: The ERC20/ERC721/ERC1155/ERC3525 token contract address. Use `0x471EcE3750Da237f93B8E339c536989b8978a438` for CELO token (ERC20 via Celo Token Duality)
+- `tokenId`: Token ID (use all zeros for ERC20)
+- `tokenType`: `0` for ERC20, `1` for ERC721, `2` for ERC1155, `3` for ERC3525
+- `value`: Amount in hex format (without `0x` prefix)
+- `fee`: Transaction fee in hex format
+- `deposit_fee`: Deposit fee in hex format
+
+**Step 3:** Check deposit status:
+
+```bash
+curl -i "http://localhost:3000/v1/request/$DEPOSIT_ID"
+```
+
+**Transfer in Nightfall**
+
+Transfers tokens privately within Nightfall to another account.
+
+**Step 1:** The recipient must first derive their keys and share their `zkp_public_key`:
+
+```bash
+curl -X POST http://localhost:3000/v1/deriveKey \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mnemonic": "recipient mnemonic phrase",
+    "child_path": "m/44'\''/60'\''/0'\''/0/0"
+  }'
+```
+
+Extract the `zkp_public_key` from the response (e.g., `"02dd2cd1ab715037f4b77903844b08c731e6a0a3f5036490af4eaf49f841f9cb"`).
+
+**Step 2:** Generate a transfer ID and make the transfer:
+
+```bash
+TRANSFER_ID=$(uuidgen)
+curl -i -H "Content-Type: application/json" \
+      -H "X-Request-ID: $TRANSFER_ID" \
+      --request POST 'http://localhost:3000/v1/transfer' \
+      --json '{
+        "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+        "tokenId": "0x00",
+        "recipientData": {
+          "values": ["000000000000000000000000000000000000000000000000016345785d8a0000"],
+          "recipientCompressedZkpPublicKeys": ["02dd2cd1ab715037f4b77903844b08c731e6a0a3f5036490af4eaf49f841f9cb"]
+        },
+        "fee": "0000000000000000000000000000000000000000000000000000000000000000"
+      }'
+```
+
+**Parameters:**
+
+- `ercAddress`: Token contract address
+- `tokenId`: Token ID (`0x00` for ERC20)
+- `recipientData.values`: Array of amounts to send (in hex without `0x` prefix)
+- `recipientData.recipientCompressedZkpPublicKeys`: Array of recipient public keys
+- `fee`: Transaction fee
+
+**Step 3:** Check transfer status:
+
+```bash
+curl -i "http://localhost:3000/v1/request/$TRANSFER_ID"
+```
+
+**Withdraw from Nightfall**
+
+Withdraws tokens from Nightfall back to Layer 1. The withdrawal process involves two steps: initiating the withdrawal (which creates an escrow) and then de-escrowing to complete the withdrawal.
+
+**Step 1: Initiate Withdrawal**
+
+```bash
+WITHDRAW_ID=$(uuidgen)
+curl -X POST http://localhost:3000/v1/withdraw \
+  -H "Content-Type: application/json" \
+  -H "X-Request-ID: $WITHDRAW_ID" \
+  -d '{
+    "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+    "tokenId": "0000000000000000000000000000000000000000000000000000000000000000",
+    "tokenType": "0",
+    "value": "000000000000000000000000000000000000000000000000016345785d8a0000",
+    "recipientAddress": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92267",
+    "fee": "0000000000000000000000000000000000000000000000000000000000000000"
+  }'
+```
+
+**Parameters:**
+
+- `ercAddress`: Token contract address
+- `tokenId`: Token ID (all zeros for ERC20)
+- `tokenType`: `0` for ERC20, `1` for ERC721, `2` for ERC1155, `3` for ERC3525
+- `value`: Amount to withdraw in hex format
+- `recipientAddress`: Layer 1 address to receive the tokens
+- `fee`: Transaction fee
+
+**Step 2:** Check withdrawal status:
+
+```bash
+curl -i "http://localhost:3000/v1/request/$WITHDRAW_ID"
+```
+
+The withdrawal response will include a `withdrawFundSalt` value that you'll need for the de-escrow step.
+
+**Step 3: De-escrow (Complete Withdrawal)**
+
+After the withdrawal is processed and included in a block, complete the withdrawal by de-escrowing:
+
+```bash
+curl -X POST http://localhost:3000/v1/de-escrow \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+    "tokenId": "0000000000000000000000000000000000000000000000000000000000000000",
+    "tokenType": "0",
+    "value": "000000000000000000000000000000000000000000000000016345785d8a0000",
+    "recipientAddress": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92267",
+    "fee": "0000000000000000000000000000000000000000000000000000000000000000",
+    "withdrawFundSalt": "178a2ac1938304e86ada919e6c3931702df4c0b78ffb8e314322d289e4fb197a"
+  }'
+```
+
+**Parameters:**
+
+- All parameters from the withdrawal request
+- `withdrawFundSalt`: The salt value returned from the withdrawal operation
+
+<Note>
+**Important Notes:**
+
+- All hex values should be provided without the `0x` prefix (except for `tokenId` in transfer which uses `0x00`)
+- The client must be healthy before making requests. Check health with: `curl http://localhost:3000/v1/health`
+- Transaction status can be checked using the request ID returned from each operation
+- The webhook is automatically started with docker-compose and will receive notifications about transaction status changes
+- For Celo Sepolia, the default ERC20 token address is `0x471EcE3750Da237f93B8E339c536989b8978a438` (CELO)
+- Operations (deposits, transfers, withdrawals) may take up to 1 hour to complete and be included in a block by the proposer. Client execution should take few seconds.
+</Note>
+
 ### Integration Steps
 
 1. **Review Technical Documentation**: Start with the [Nightfall GitHub documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)
-2. **Set Up Development Environment**: Install Nightfall client and connect to testnet
-3. **Obtain Credentials**: Acquire X509 certificates for testnet access
+2. **Set Up Development Environment**: Follow the [Running the Client on Celo Sepolia](#running-the-client-on-celo-sepolia) guide above
+3. **Test Operations**: Practice deposits, transfers, and withdrawals on testnet
 4. **Deploy Test Application**: Build and test your integration on testnet
 5. **Implement APIs**: Integrate Nightfall Client and Proposer APIs into your application
 
 ## Resources
 
 ### Documentation
+
 - **[Nightfall GitHub Repository](https://github.com/EYBlockchain/nightfall_4_CE)**: Full source code and implementation
 - **[Technical Documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)**: Comprehensive guide including architecture, APIs, deployment, and testing
 - **[EY Blockchain](https://blockchain.ey.com/)**: Learn more about EY's blockchain solutions
 
 ### APIs
+
 - **Client APIs**: Deposit, transfer, withdraw, and balance query endpoints
 - **Proposer APIs**: Block submission and transaction validation
 - **Webhook Support**: Real-time transaction notifications
@@ -138,13 +398,15 @@ Private Commitment → ZK Proof → Nightfall Smart Contract → Public Celo Tok
 Full API documentation is available in the [Nightfall GitHub docs](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md#apis).
 
 ### Testing & Deployment
-- **Local Testing**: Instructions for running Nightfall locally with Docker
-- **Testnet Deployment**: Guide for deploying on Celo testnet
+
+- **Local Testing**: See [Running the Client on Celo Sepolia](#running-the-client-on-celo-sepolia) for instructions on running Nightfall locally with Docker
+- **Testnet Deployment**: Guide for deploying on Celo Sepolia testnet
 - **Production Deployment**: Best practices for mainnet deployment
 
 ### Community & Support
 
 Get help and connect with the community:
+
 - **[Celo Discord](https://chat.celo.org)**: Join the #nightfall channel for questions
 - **[Celo Forum](https://forum.celo.org)**: Discuss integration strategies and use cases
 - **[GitHub Issues](https://github.com/EYBlockchain/nightfall_4_CE/issues)**: Report bugs or request features
@@ -161,7 +423,8 @@ By deploying on Celo, Nightfall brings enterprise-grade privacy to a mobile-firs
 <Warning>
 **Testnet Environment**
 
-Nightfall testnet is for development and testing purposes only. Do not use real assets, production data, or sensitive information during testing. Testnet tokens hold no real-world economic value.
+Nightfall testnet on Celo Sepolia is for development and testing purposes only. Do not use real assets, production data, or sensitive information during testing. Testnet tokens hold no real-world economic value.
+
 </Warning>
 
 ---
@@ -170,5 +433,6 @@ Nightfall testnet is for development and testing purposes only. Do not use real 
 
 1. Explore the [Nightfall technical documentation](https://github.com/EYBlockchain/nightfall_4_CE/blob/master/doc/nf_4.md)
 2. Review [integration requirements](#prerequisites)
-3. Join the [Celo community](https://chat.celo.org) to ask questions
-4. Start building your private payment application on testnet
+3. Follow the [Running the Client on Celo Sepolia](#running-the-client-on-celo-sepolia) guide to set up your development environment
+4. Join the [Celo community](https://chat.celo.org) to ask questions
+5. Start building your private payment application on testnet

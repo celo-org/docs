@@ -61,7 +61,8 @@
               "home/protocol/index",
               "home/protocol/security-council",
               "home/protocol/celo-token",
-              "home/protocol/escrow"
+              "home/protocol/escrow",
+              "home/protocol/challengers"
             ]
           },
           {
@@ -113,6 +114,7 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
+              "build-on-celo/scaling-your-app",
               "build-on-celo/fund-your-project",
               "build-on-celo/nightfall"
             ]
@@ -139,7 +141,7 @@
                 "pages": [
                   "build-on-celo/build-with-ai/examples/ai-memecoins",
                   "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-nebula"
+                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
                 ]
               },
               {
@@ -156,7 +158,7 @@
             "group": "Use Cases",
             "pages": [
               {
-                "group": "Build a Mini App",
+                "group": "Build for MiniPay",
                 "pages": [
                   "build-on-celo/build-on-minipay/overview",
                   "build-on-celo/build-on-minipay/quickstart",
@@ -170,10 +172,10 @@
                   "build-on-celo/build-on-minipay/deeplinks"
                 ]
               },
+              "build-on-celo/build-with-farcaster",
+              "build-on-celo/build-with-self",
               "build-on-celo/build-with-local-stablecoin",
-              "build-on-celo/build-with-defi",
-              "build-on-celo/build-with-zk-identity",
-              "build-on-celo/build-with-self"
+              "build-on-celo/build-with-defi"
             ]
           }
         ]
@@ -557,11 +559,7 @@
           },
           {
             "group": "Nodes",
-            "pages": [
-              "legacy/node/run-mainnet",
-              "legacy/node/run-alfajores",
-              "legacy/node/run-baklava"
-            ]
+            "pages": ["legacy/node/run-mainnet"]
           },
           {
             "group": "Validator",
