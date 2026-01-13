@@ -254,6 +254,7 @@
             "group": "Indexers",
             "pages": [
               "tooling/indexers/overview",
+              "tooling/indexers/goldrush",
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
               "tooling/indexers/envio"
