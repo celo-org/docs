@@ -55,7 +55,7 @@ You will need:
 
 - Your **Vote Signer Ledger:** One Ledger Nano S or X configured with a new, unused key. This will become a "warm wallet" you can use whenever you want to participate in validator elections or governance proposals.
 
-As a first step, follow [these instructions](/wallet/ledger/setup) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Alfajores test network.
+As a first step, follow [these instructions](/wallet/ledger/setup) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Celo Sepolia test network.
 
 <Note>
 The latest version of the Celo Ledger app is 1.1.8. If you are already using a Ledger with an earlier version installed, please [upgrade](/wallet/ledger/setup).
@@ -433,4 +433,4 @@ Finally, request that the `ReleaseGold` contract transfer an amount to your bene
 celocli releasecelo:withdraw --contract $CELO_RG_ADDRESS --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
-To vote with any CELO in your beneficiary account, you'll want to register it as a Locked CELO Acccount, authorize a new vote signing key for it, then lock CELO.
+To vote with any CELO in your beneficiary account, you'll want to register it as a Locked CELO Account, authorize a new vote signing key for it, then lock CELO.

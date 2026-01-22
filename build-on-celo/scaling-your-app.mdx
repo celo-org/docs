@@ -1,0 +1,298 @@
+---
+title: Scaling Your App
+og:description: Learn best practices for scaling your Celo dApp, covering infrastructure, RPC optimization, caching strategies, and monitoring
+---
+
+Scaling a dApp requires careful planning across infrastructure, blockchain interactions, and cost optimization. This guide shares practical strategies from real-world experience building and scaling applications on Celo.
+
+## Overview
+
+As your dApp grows, costs can scale exponentially if not managed properly. This guide covers:
+
+- Infrastructure and hosting strategies
+- RPC and blockchain interaction optimization
+- Caching and data management
+- AI/LLM cost optimization
+- Testing and monitoring best practices
+
+## Infrastructure & Hosting
+
+### Server Architecture
+
+Start simple, but plan for growth:
+
+- **Early Stage**: Begin with a single server to minimize costs
+- **Monitor Usage**: Track CPU, memory, and network usage closely
+- **Plan Migration**: Be ready to migrate to scalable solutions like:
+  - **Kubernetes (K8s)**: For container orchestration and auto-scaling
+  - **Docker Swarm**: Lighter alternative for container management
+  - **Managed Services**: Consider AWS ECS, Google Cloud Run, or similar
+
+<Info>
+  Monitor your server metrics from day one. Set up alerts for CPU, memory, and
+  disk usage to catch scaling issues before they impact users.
+</Info>
+
+### Image Hosting & CDN
+
+Avoid expensive default CDNs:
+
+- **Don't Use**: Vercel's default CDN (can be expensive at scale)
+- **Use Instead**: Cost-effective CDN solutions like:
+  - Cloudflare (free tier available)
+  - AWS CloudFront
+  - BunnyCDN
+  - ImageKit or Cloudinary for image optimization
+
+<Warning>
+  CDN costs can add up quickly with high traffic. Choose a CDN with predictable
+  pricing and monitor bandwidth usage.
+</Warning>
+
+### Backend Architecture
+
+Separate your backend from your frontend for better scaling:
+
+- **Avoid**: Next.js API routes for production workloads
+- **Use Instead**: Separate backend service (Node.js, Python, Go, etc.)
+- **Benefits**:
+  - Scale backend independently without increasing Vercel pricing
+  - Better control over resources and deployment
+  - Easier to implement queues, caching, and background jobs
+
+<Info>
+  Use Next.js API routes only for lightweight, user-specific operations. Move
+  heavy processing, RPC calls, and background jobs to a separate backend
+  service.
+</Info>
+
+### Message Queues
+
+Implement queues wherever they make sense:
+
+- **Use Cases**:
+
+  - Processing blockchain transactions
+  - Sending notifications
+  - Background data processing
+  - Image processing
+  - Email/SMS sending
+
+- **Queue Solutions**:
+  - **Redis + BullMQ**: Lightweight and fast
+  - **RabbitMQ**: Robust message broker
+  - **AWS SQS**: Managed queue service
+  - **Google Cloud Tasks**: Managed task queue
+
+<Info>
+  Queues prevent request timeouts, improve user experience, and allow you to
+  process jobs at your own pace without overwhelming your server.
+</Info>
+
+## RPC & Blockchain Interactions
+
+### RPC Strategy
+
+RPC calls are a precious resource—treat them carefully:
+
+- **Choose Scalable RPC Providers**:
+
+  - Use providers with high rate limits and good uptime
+  - Consider multiple RPC endpoints for redundancy
+  - Monitor RPC response times and error rates
+
+- **Early Stage Strategy**:
+
+  - Use free RPC endpoints in the frontend
+  - Each user gets their own rate limits
+  - Reduces backend RPC load
+
+- **Scale Considerations**:
+  - RPC usage scales exponentially with user growth
+  - Audit all RPC calls regularly
+  - Remove unnecessary RPC calls
+  - Batch requests when possible
+
+<Warning>
+  RPC costs can become your largest expense. Audit your RPC calls regularly and
+  optimize aggressively. A single unnecessary RPC call per user can cost
+  thousands at scale.
+</Warning>
+
+### Caching Strategy
+
+Cache API responses wherever it makes sense:
+
+- **Don't Always Fetch Latest Data**:
+
+  - Cache blockchain data that doesn't change frequently
+  - Use appropriate TTLs (Time To Live) based on data freshness requirements
+  - Balance between data freshness and RPC costs
+
+- **Cache Layers**:
+
+  - **In-Memory Cache**: Redis or Memcached for frequently accessed data
+  - **CDN Cache**: For static or semi-static content
+  - **Application Cache**: Cache responses in your application layer
+
+- **What to Cache**:
+  - Token balances (with short TTL)
+  - Token metadata
+  - Historical transaction data
+  - Price data (with appropriate TTL)
+  - Contract ABIs
+
+<Info>
+  Most blockchain data doesn't need to be real-time. Cache aggressively and only
+  fetch fresh data when absolutely necessary.
+</Info>
+
+### Indexer Selection
+
+If you need an indexer, choose cost-effective options:
+
+- **Recommended**: Use affordable indexers like [thirdweb Insight](https://portal.thirdweb.com/insights)
+- **Consider**:
+  - The Graph (decentralized indexing)
+  - Alchemy (if already using their RPC)
+  - Custom indexer (if you have specific needs)
+
+<Info>
+  Indexers can significantly reduce RPC calls by providing pre-indexed
+  blockchain data. Choose one that fits your budget and requirements.
+</Info>
+
+## AI & LLM Optimization
+
+### Model Selection
+
+Optimize LLM costs by choosing the right model for each task:
+
+- **Small Tasks**: Use cheaper models (e.g., GPT-3.5-turbo, Claude Haiku)
+- **Complex Tasks**: Reserve expensive models (e.g., GPT-4, Claude Opus) only when necessary
+- **Consider Alternatives**:
+  - Open-source models (Llama, Mistral)
+  - Specialized models for specific tasks
+
+<Info>
+  Most tasks don't require the most powerful models. Use cheaper models for
+  simple tasks and save expensive models for complex reasoning.
+</Info>
+
+### AI SDK
+
+Use AI SDKs for better developer experience:
+
+- **Benefits**:
+
+  - Better error handling
+  - Built-in retry logic
+  - Streaming support
+  - Cost tracking
+  - Easier model switching
+
+- **Recommended SDKs**:
+  - [Vercel AI SDK](https://sdk.vercel.ai/) for JavaScript/TypeScript
+  - [LangChain](https://www.langchain.com/) for Python
+  - [LlamaIndex](https://www.llamaindex.ai/) for data indexing
+
+## Testing & Monitoring
+
+### Testing Strategy
+
+Comprehensive testing prevents costly production issues:
+
+- **Unit Tests**: Test individual functions and components
+- **Integration Tests**: Test how different parts work together
+- **E2E Tests**: Test complete user flows
+- **Load Tests**: Test your application under expected load
+- **Reburst Tests**: Test how your system handles sudden traffic spikes
+
+<Warning>
+  Don't skip testing. Production bugs are expensive to fix and can damage user
+  trust. Invest in a solid testing strategy from the start.
+</Warning>
+
+### Error Monitoring
+
+Use Sentry to audit error rates:
+
+- **Benefits**:
+
+  - Track error rates over time
+  - Get alerts for error spikes
+  - Debug production issues quickly
+  - Monitor performance issues
+
+- **Setup**:
+  - Install Sentry SDK in your application
+  - Configure error tracking
+  - Set up alerts for critical errors
+  - Monitor error trends
+
+<Info>
+  Sentry helps you catch and fix errors before they impact too many users. Set
+  up error monitoring from day one.
+</Info>
+
+### Analytics & Logging
+
+Use Grafana for analytics and logs:
+
+- **Metrics to Track**:
+
+  - Request rates and response times
+  - Error rates
+  - RPC call counts and costs
+  - Server resource usage
+  - User activity metrics
+
+- **Logging**:
+
+  - Centralized logging with Grafana Loki or similar
+  - Structured logging (JSON format)
+  - Log retention policies
+  - Search and query capabilities
+
+- **Dashboards**:
+  - Create dashboards for key metrics
+  - Set up alerts for anomalies
+  - Monitor trends over time
+
+<Info>
+  Good observability helps you catch issues early and make data-driven decisions
+  about scaling. Invest in monitoring from the start.
+</Info>
+
+## Best Practices Summary
+
+### Cost Optimization Checklist
+
+- [ ] Use cost-effective CDNs instead of default options
+- [ ] Separate backend from frontend for independent scaling
+- [ ] Implement message queues for background processing
+- [ ] Cache API responses aggressively
+- [ ] Audit and optimize RPC calls regularly
+- [ ] Use free RPC endpoints in frontend during early stages
+- [ ] Choose affordable indexers when needed
+- [ ] Use cheaper LLM models for simple tasks
+- [ ] Monitor all costs and set up alerts
+
+### Scaling Readiness Checklist
+
+- [ ] Monitor server metrics (CPU, memory, disk)
+- [ ] Have a plan to migrate to scalable infrastructure (K8s, Docker Swarm)
+- [ ] Implement comprehensive testing (unit, integration, E2E, load)
+- [ ] Set up error monitoring (Sentry)
+- [ ] Configure analytics and logging (Grafana)
+- [ ] Document your architecture and scaling plan
+- [ ] Set up alerts for critical metrics
+
+## Additional Resources
+
+- [Celo Documentation](/build-on-celo) - Explore Celo development resources
+- [Launch Checklist](/build-on-celo/launch-checklist) - Pre-launch preparation guide
+- [thirdweb Insight](https://portal.thirdweb.com/insights) - Affordable blockchain indexer
+- [Vercel AI SDK](https://sdk.vercel.ai/) - AI SDK for JavaScript/TypeScript
+- [Sentry Documentation](https://docs.sentry.io/) - Error monitoring and performance tracking
+- [Grafana Documentation](https://grafana.com/docs/) - Analytics and observability platform

@@ -22,43 +22,53 @@ Make sure to have dependencies installed and the hardhat config file is importin
 
 ### Hardhat Configuration
 
-Add the following configuration to the `config` object in `hardhat.config.js`.
+Use environment variables for secrets. Install `dotenv`, create a `.env`, and load it at the top of `hardhat.config.js`.
+
+```bash
+npm i -D dotenv
+```
+
+```js
+// hardhat.config.js
+require("dotenv").config();
+```
+
+```bash
+# .env
+PRIVATE_KEY=0xYOUR_PRIVATE_KEY
+ETHERSCAN_API_KEY=your_celoscan_api_key
+```
+
+Then add the following configuration to the `config` object in `hardhat.config.js`.
 
 ```js
     networks: {
-        alfajores: {
+        celoSepolia: {
             // can be replaced with the RPC url of your choice.
-            url: "https://alfajores-forno.celo-testnet.org",
-            accounts: [
-                "<YOUR_PRIVATE_KEY>"
-            ],
+            url: "https://forno.celo-sepolia.celo-testnet.org/",
+            accounts: [process.env.PRIVATE_KEY],
         },
         celo: {
             url: "https://forno.celo.org",
-            accounts: [
-                "<YOUR_PRIVATE_KEY>"
-            ],
+            accounts: [process.env.PRIVATE_KEY],
         }
     },
     etherscan: {
-        apiKey: {
-            alfajores: "<CELOSCAN_API_KEY>",
-            celo: "<CELOSCAN_API_KEY>"
-        },
+        apiKey: process.env.ETHERSCAN_API_KEY,
         customChains: [
             {
-                network: "alfajores",
-                chainId: 44787,
+                network: "celoSepolia",
+                chainId: 11142220,
                 urls: {
-                    apiURL: "https://api-alfajores.celoscan.io/api",
-                    browserURL: "https://alfajores.celoscan.io",
+                    apiURL: "https://api.etherscan.io/v2/api",
+                    browserURL: "https://sepolia.celoscan.io",
                 },
             },
             {
                 network: "celo",
                 chainId: 42220,
                 urls: {
-                    apiURL: "https://api.celoscan.io/api",
+                    apiURL: "https://api.etherscan.io/v2/api",
                     browserURL: "https://celoscan.io/",
                 },
             },
@@ -70,10 +80,10 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
 
 Use the following command (Make sure your contracts are compiled before verification)
 
-Alfajores Testnet
+Celo Sepolia Testnet
 
 ```bash
-npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network alfajores
+npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network celoSepolia
 ```
 
 Celo Mainnet

@@ -1,0 +1,86 @@
+# What is thirdweb AI?
+
+<Warning>
+  **Migration Notice**: Nebula has been rebranded to **thirdweb AI**. The Nebula
+  app and API were deprecated on September 30, 2025. All functionality is now
+  available through the thirdweb AI dashboard and API. Please migrate to the new
+  endpoints and update your integrations.
+</Warning>
+
+Thirdweb AI (formerly Nebula) is a natural language model with improved blockchain reasoning, autonomous transaction capabilities, and real-time access to the blockchain. It provides a standard OpenAI-compatible chat completion API optimized for blockchain interactions.
+
+**Key Features:**
+
+- Query real-time data from the blockchain
+- Analyze transactions
+- Fetch token balances, prices and metadata
+- Execute or prepare any contract call or transaction
+- Execute or prepare swaps from/to any token pair
+- Deploy contracts
+- Generate images
+- Search the web
+
+Watch this workshop to learn more about thirdweb AI and how to create a Telegram bot for app developers to access daily and weekly stats of the dApp.
+
+<iframe
+  src="https://www.youtube.com/embed/FeubfHwfJcM"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
+
+## Get started building
+
+### API Endpoint
+
+The thirdweb AI API endpoint is:
+
+```
+https://api.thirdweb.com/ai/chat
+```
+
+### Authentication
+
+Use your project's `secret_key` from the thirdweb dashboard for authenticated API calls:
+
+```javascript
+fetch("https://api.thirdweb.com/ai/chat", {
+  method: "POST",
+  headers: {
+    "x-secret-key": "<your-project-secret-key>",
+  },
+  body: {
+    messages: [
+      {
+        role: "user",
+        content: "Send 0.01 ETH to vitalik.eth",
+      },
+    ],
+    context: {
+      // Note: Chain IDs for thirdweb differ from standard chain IDs.
+      // Find the correct chain IDs in the thirdweb dashboard or documentation.
+      // https://thirdweb.com/chainlist/mainnets
+      chain_ids: [8453],
+      from: "0x1234567890123456789012345678901234567890",
+    },
+    stream: false,
+  },
+});
+```
+
+### Example Projects
+
+- Follow this [guide](https://github.com/thirdweb-example/erc20-token-deployer) to test out thirdweb AI and build your own token deployer
+- Check out the [thirdweb AI mini-app example](https://github.com/thirdweb-example/thirdweb-ai-mini-app)
+
+### Documentation
+
+- [thirdweb AI Documentation](https://portal.thirdweb.com/ai/chat)
+- [API Reference](https://portal.thirdweb.com/reference#tag/ai/post/ai/chat)
+- [Migration Guide](https://blog.thirdweb.com/changelog/nebula-is-now-thirdweb-ai/)
+
+## Support
+
+Join the [Celo Discord server](https://discord.com/invite/celo). Reach out in the #build-with-celo channel with your questions and feedback.

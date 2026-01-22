@@ -5,11 +5,16 @@ og:description: How to use the `SuperBridgeETHWrapper.sol` contract to auto-wrap
 
 This document provides a minimal overview of the `SuperBridgeETHWrapper.sol` contract and its deployed addresses.
 
+<Warning>
+Alfajores has been replaced by Celo Sepolia as testnet on Celo.
+This tutorial has not yet been updated to Celo Sepolia. 
+</Warning>
+
 ---
 
 ## Purpose
 
-The `SuperBridgeETHWrapper.sol` contract allows users to bridge native ETH from an L1 network (like Ethereum or Holesky) to the Celo L2 network, where it arrives as WETH.
+The `SuperBridgeETHWrapper.sol` contract allows users to bridge native ETH from an L1 network (like Ethereum or Sepolia) to the Celo L2 network, where it arrives as WETH.
 
 <Info>
 When using Superbridge, this entire process is abstracted away from the user.
@@ -24,28 +29,6 @@ When using Superbridge, this entire process is abstracted away from the user.
 
 ## Deployed Contract Addresses
 
-<Info>
-For Alfajores and Baklava, the L1 is the Holesky testnet. For Celo Mainnet, the L1 is Ethereum Mainnet.
-</Info>
-
-### Alfajores (L1: Holesky)
-
-| Description                                   | Address                                      |
-| :-------------------------------------------- | :------------------------------------------- |
-| L1 WETH Address (WETH_ADDRESS_LOCAL)          | [`0x94373a4919B3240D86eA41593D5eBa789FEF3848`](https://holesky.etherscan.io/address/0x94373a4919B3240D86eA41593D5eBa789FEF3848) |
-| L2 WETH Address (WETH_ADDRESS_REMOTE on Celo Alfajores) | [`0x4EE7Ea447197c6b7BE0ab1A068F55c74a3390F33`](https://alfajores.celoscan.io/address/0x4EE7Ea447197c6b7BE0ab1A068F55c74a3390F33#code) |
-| L1 Standard Bridge Proxy (STANDARD_BRIDGE_ADDRESS) | [`0xD1B0E0581973c9eB7f886967A606b9441A897037`](https://holesky.etherscan.io/address/0xD1B0E0581973c9eB7f886967A606b9441A897037) |
-| Deployed SuperBridgeETHWrapper Address (on Holesky) | [`0x78fb67119c4a055d6eb497b1aa5d09f7124225e5`](https://holesky.etherscan.io/address/0x78fb67119c4a055d6eb497b1aa5d09f7124225e5) |
-
-### Baklava (L1: Holesky)
-
-| Description                                   | Address                                      |
-| :-------------------------------------------- | :------------------------------------------- |
-| L1 WETH Address (WETH_ADDRESS_LOCAL)          | [`0x94373a4919B3240D86eA41593D5eBa789FEF3848`](https://holesky.etherscan.io/address/0x94373a4919B3240D86eA41593D5eBa789FEF3848) |
-| L2 WETH Address (WETH_ADDRESS_REMOTE on Celo Baklava) | [`0xBEcfCB91527166382187D5EE80ac07433D01549e`](https://celo-baklava.blockscout.com/address/0xBEcfCB91527166382187D5EE80ac07433D01549e) |
-| L1 Standard Bridge Proxy (STANDARD_BRIDGE_ADDRESS) | [`0x6fd3fF186975aD8B66Ab40b705EC016b36da0486`](https://holesky.etherscan.io/address/0x6fd3fF186975aD8B66Ab40b705EC016b36da0486) |
-| Deployed SuperBridgeETHWrapper Address (on Holesky) | [`0x6b7FAa7cC86DCd14e78F6a78F2dCfC76f8042e58`](https://holesky.etherscan.io/address/0x6b7FAa7cC86DCd14e78F6a78F2dCfC76f8042e58) |
-
 ### Mainnet (L1: Ethereum)
 
 | Description                                   | Address                                      |
@@ -54,3 +37,12 @@ For Alfajores and Baklava, the L1 is the Holesky testnet. For Celo Mainnet, the 
 | L2 WETH Address (WETH_ADDRESS_REMOTE on Celo Mainnet) | [`0xD221812de1BD094f35587EE8E174B07B6167D9Af`](https://celoscan.io/address/0xD221812de1BD094f35587EE8E174B07B6167D9Af) |
 | L1 Standard Bridge Proxy (STANDARD_BRIDGE_ADDRESS) | [`0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe`](https://etherscan.io/address/0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe) |
 | Deployed SuperBridgeETHWrapper Address (on Ethereum Mainnet) | [`0x3bC7C4f8Afe7C8d514c9d4a3A42fb8176BE33c1e`](https://etherscan.io/address/0x3bC7C4f8Afe7C8d514c9d4a3A42fb8176BE33c1e) |
+
+### Celo Sepolia (L1: Sepolia)
+
+| Description                                   | Address                                      |
+| :-------------------------------------------- | :------------------------------------------- |
+| L1 WETH Address (WETH_ADDRESS_LOCAL)          | [`0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9`](https://sepolia.etherscan.io/address/0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9) |
+| L2 WETH Address (WETH_ADDRESS_REMOTE on Celo Sepolia) | [`0x2cE73DC897A3E10b3FF3F86470847c36ddB735cf`](https://sepolia.celoscan.io/address/0x2cE73DC897A3E10b3FF3F86470847c36ddB735cf) |
+| L1 Standard Bridge Proxy (STANDARD_BRIDGE_ADDRESS) | [`0xec18a3c30131a0db4246e785355fbc16e2eaf408`](https://sepolia.etherscan.io/address/0xec18a3c30131a0db4246e785355fbc16e2eaf408) |
+| Deployed SuperBridgeETHWrapper Address (on Ethereum Sepolia) | [`0x523e358dFd0c4e98F3401DAc7b1879445d377e37`](https://sepolia.etherscan.io/address/0x523e358dFd0c4e98F3401DAc7b1879445d377e37) |

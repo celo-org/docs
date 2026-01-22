@@ -1,49 +1,97 @@
 ---
 title: Build with Self
-og:description: A beginner's guide to understanding and using Self
+og:description: A comprehensive guide to understanding and using Self identity protocol on Celo
 ---
 
-By the conclusion of this guide, you will have a basic understanding of Self and how to get started with it.
+Self is a leading digital identity infrastructure for Web2 and Web3. Self leverages zero-knowledge cryptography to disclose verifiable credentials without revealing any sensitive information. No third parties. No data leaks.
+
+<Info>
+Self is the only leader in the space that is production-ready, live across iOS and Google Play Store, and fully audited by third-party zkSecurity that doesn’t rely on additional dependencies such as biometric hardware.
+</Info>
+
+By the conclusion of this guide, you will have a comprehensive understanding of Self and how to integrate it into your Celo applications.
 
 This document will cover:
 
 - What is Self?
+- Getting Started
+- New Features (2025)
 - Technical Resources
-- Opportunities for Builders
+- Use Cases
 
 ## What is Self?
 
 [Self](https://self.xyz/) is a privacy-first, open-source identity protocol that uses zero-knowledge proofs for secure identity verification.
 
-It enables Sybil resistance and selective disclosure using real-world attestations like passports. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
+It enables Sybil resistance and selective disclosure using real-world attestations like passports, EU ID cards, and Indian Aadhaar. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
 
-Access the [Self developer docs](https://docs.self.xyz/), explore APIs, and start building today.
+### How It Works
 
-## Verify Your Digital Identity
+Self Protocol simplifies digital identity verification with zero-knowledge proofs in three steps:
+
+1. **Scan Your Identity Document**: Users scan their passport, EU ID card, or Aadhaar using the NFC reader of their phone.
+2. **Generate a Proof**: Generate a zk proof over the identity document, selecting only what you want to disclose.
+3. **Share Your Proof**: Share the zk proof with the selected application.
+
+## Use cases
 
 Seamlessly and securely verify your digital identity with Self. It allows you to:
 
 - **Prove Your Humanity:** Confirm you are human without revealing personal information.
-- **Proof your identity, age, nationality or :** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
-- **Privacy-preserving technology:** Protect your users private information. They will only disclose credentials and information that they allow.
+    - Airdrop Protection
+    - Social Media & Marketplaces (add trust to user profiles)
+    - Quadratic Funding
+    - Sybil-Resistant Polling
+- **Prove Identity, Age, Nationality:** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
+    - Sanction List Checking
+    - Age Verification
+    - Wallet Recovery
+- **Privacy-preserving Technology:** Protect your users' private information. They will only disclose credentials and information that they allow.
 - **Streamline Verification:** Enjoy a smooth and efficient identity verification process.
-- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps
+- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps.
+
+## New Features (2025)
+
+### Expanded Identity Document Support
+
+Self now supports:
+
+- **EU Biometric ID Cards**: Scan NFC-enabled EU IDs covering 27 countries
+- **Indian Aadhaar**: Support for Aadhaar verification
+- **Passports**: Continued support for passport verification
+
+All verification leverages zero-knowledge proofs (ZKPs) and no data leaves the user's device.
+
+### Points/Rewards System
+
+Self has introduced a points program that incentivizes consistent, secure use:
+
+- Users earn points for setting up Self Pass
+- Points earned for continued use across partner platforms
+- Points can be redeemed for rewards
+- Designed to drive engagement and validate active, verified users
+
+### Major Integrations
+
+- **Google Cloud**: Integrated Self's SDK and ZKP-based proof-of-humanity in its Web3 Portal
+- **Aave**: DeFi protocol integration enabling compliance checks, sybil-resistant airdrops, and age/country-gated services
+- **Celo Blockchain**: On-chain attestations leverage the Celo blockchain for transparency and auditability
+
 
 ## Technical Resources
 
 - [Self Website](https://self.xyz/)
 - [Self Documentation](https://docs.self.xyz/)
 - [Self Playground](https://playground.self.xyz/)
-- [Self Quickstart](https://docs.self.xyz/use-self/quickstart)
+- [Self Staging Playground](https://playground.staging.self.xyz/)
+- [Self Quickstart Guide](https://docs.self.xyz/use-self/quickstart)
+- [Contract Integration Guide](https://docs.self.xyz/contract-integration/basic-integration)
+- [Backend Integration Guide](https://docs.self.xyz/backend-integration/basic-integration)
+- [QRCode SDK Documentation](https://docs.self.xyz/frontend-integration/qrcode-sdk)
+- [Deployed Contracts](https://docs.self.xyz/contract-integration/deployed-contracts)
 
-## What to build?
+## Support
 
-- Airdrop Protection
-- Quadratic Funding
-- Wallet Recovery
-- Social Media & Marketplaces
-- Country-Specific Functionality
-- AI Protection for Smart Contracts
-- Sanction List Checking
-- Age Verification
-- Sybil-Resistant Polling
+Join the [Self Builder Group](https://t.me/selfprotocolbuilder) on Telegram for community support and updates.
+
+For Celo-specific integrations, visit the [Celo Discord](https://discord.com/invite/celo) and ask in the #build-with-celo channel.

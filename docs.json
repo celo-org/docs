@@ -59,9 +59,10 @@
             "group": "Protocol",
             "pages": [
               "home/protocol/index",
-              "home/protocol/consensus",
+              "home/protocol/security-council",
               "home/protocol/celo-token",
-              "home/protocol/escrow"
+              "home/protocol/escrow",
+              "home/protocol/challengers"
             ]
           },
           {
@@ -113,6 +114,7 @@
               "build-on-celo/quickstart",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
+              "build-on-celo/scaling-your-app",
               "build-on-celo/fund-your-project",
               "build-on-celo/nightfall"
             ]
@@ -139,7 +141,7 @@
                 "pages": [
                   "build-on-celo/build-with-ai/examples/ai-memecoins",
                   "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-nebula"
+                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
                 ]
               },
               {
@@ -156,7 +158,7 @@
             "group": "Use Cases",
             "pages": [
               {
-                "group": "Build a Mini App",
+                "group": "Build for MiniPay",
                 "pages": [
                   "build-on-celo/build-on-minipay/overview",
                   "build-on-celo/build-on-minipay/quickstart",
@@ -170,10 +172,10 @@
                   "build-on-celo/build-on-minipay/deeplinks"
                 ]
               },
+              "build-on-celo/build-with-farcaster",
+              "build-on-celo/build-with-self",
               "build-on-celo/build-with-local-stablecoin",
-              "build-on-celo/build-with-defi",
-              "build-on-celo/build-with-zk-identity",
-              "build-on-celo/build-with-self"
+              "build-on-celo/build-with-defi"
             ]
           }
         ]
@@ -193,10 +195,7 @@
           },
           {
             "group": "Testnets",
-            "pages": [
-              "tooling/testnets/celo-sepolia/index",
-              "tooling/testnets/eclair/index"
-            ]
+            "pages": ["tooling/testnets/celo-sepolia/index"]
           },
           {
             "group": "Nodes",
@@ -210,6 +209,7 @@
           {
             "group": "Contracts",
             "pages": [
+              "tooling/contracts/l1-contracts",
               "tooling/contracts/core-contracts",
               "tooling/contracts/token-contracts",
               "tooling/contracts/uniswap-contracts"
@@ -286,28 +286,25 @@
                 "pages": [
                   "tooling/libraries-sdks/cli/index",
                   "tooling/libraries-sdks/cli/account",
+                  "tooling/libraries-sdks/cli/autocomplete",
+                  "tooling/libraries-sdks/cli/commands",
                   "tooling/libraries-sdks/cli/config",
-                  "tooling/libraries-sdks/cli/dkg",
                   "tooling/libraries-sdks/cli/election",
                   "tooling/libraries-sdks/cli/epochs",
-                  "tooling/libraries-sdks/cli/exchange",
                   "tooling/libraries-sdks/cli/governance",
+                  "tooling/libraries-sdks/cli/help",
                   "tooling/libraries-sdks/cli/identity",
                   "tooling/libraries-sdks/cli/lockedcelo",
-                  "tooling/libraries-sdks/cli/lockedgold",
                   "tooling/libraries-sdks/cli/multisig",
                   "tooling/libraries-sdks/cli/network",
                   "tooling/libraries-sdks/cli/node",
                   "tooling/libraries-sdks/cli/oracle",
+                  "tooling/libraries-sdks/cli/plugins",
                   "tooling/libraries-sdks/cli/releasecelo",
                   "tooling/libraries-sdks/cli/rewards",
                   "tooling/libraries-sdks/cli/transfer",
                   "tooling/libraries-sdks/cli/validator",
-                  "tooling/libraries-sdks/cli/validatorgroup",
-                  "tooling/libraries-sdks/cli/autocomplete",
-                  "tooling/libraries-sdks/cli/commands",
-                  "tooling/libraries-sdks/cli/help",
-                  "tooling/libraries-sdks/cli/plugins"
+                  "tooling/libraries-sdks/cli/validatorgroup"
                 ]
               },
               "tooling/libraries-sdks/viem/index",
@@ -316,7 +313,6 @@
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
               "tooling/libraries-sdks/portal/index",
-              "tooling/libraries-sdks/particle-network/index",
               {
                 "group": "ContractKit",
                 "pages": [
@@ -357,7 +353,8 @@
             "group": "Plumo",
             "pages": [
               "tooling/plumo/index",
-              "tooling/plumo/verification-phase-1"
+              "tooling/plumo/verification-phase-1",
+              "tooling/plumo/verification-phase-2"
             ]
           },
           {
@@ -415,6 +412,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/jello-upgrade",
               "infra-partners/notices/l1-fusaka-upgrade",
               "infra-partners/notices/celo-sepolia-launch",
               "infra-partners/notices/eigenda-v2-upgrade",
@@ -561,11 +559,7 @@
           },
           {
             "group": "Nodes",
-            "pages": [
-              "legacy/node/run-mainnet",
-              "legacy/node/run-alfajores",
-              "legacy/node/run-baklava"
-            ]
+            "pages": ["legacy/node/run-mainnet"]
           },
           {
             "group": "Validator",
@@ -670,15 +664,15 @@
     },
     {
       "source": "/blog/2022/03/04/Celo%20Composer%20-%20Easily%20Build%20Full-Stack%20Mobile%20dApps%20on%20Celo",
-      "destination": "/developer/sdks/composer-kit"
+      "destination": "/tooling/sdks/composer-kit"
     },
     {
       "source": "/blog/2022/03/06/6%20Steps%20to%20Quickly%20Build%20Smart%20Contracts%20on%20Celo%20with%20Remix",
-      "destination": "/developer/deploy/remix"
+      "destination": "/tooling/deploy/remix"
     },
     {
       "source": "/blog/2022/03/07/Truffle%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20with%20Truffle",
-      "destination": "/developer/deploy"
+      "destination": "/tooling/deploy"
     },
     {
       "source": "/cel2/builders",
@@ -686,7 +680,7 @@
     },
     {
       "source": "/cel2/eclair",
-      "destination": "/network/eclair"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/cel2/l2-operator-guide",
@@ -742,11 +736,11 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/index",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/locating-nodes",
@@ -754,7 +748,7 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/celo-codebase/protocol/consensus/validator-set-differences",
@@ -1794,15 +1788,15 @@
     },
     {
       "source": "/faqs#who-are-the-founders-of-celo",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/general",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/general/architecture",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/general/ecosystem/builders",
@@ -1822,11 +1816,11 @@
     },
     {
       "source": "/getting-started",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/getting-started...",
-      "destination": "/about-celo"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/getting-started/alfajores-testnet",
@@ -1930,7 +1924,7 @@
     },
     {
       "source": "/getting-started/running-oracles",
-      "destination": "/developer/oracles/run"
+      "destination": "/tooling/oracles/run"
     },
     {
       "source": "/getting-started/using-the-cli",
@@ -2078,19 +2072,19 @@
     },
     {
       "source": "/protocol/bridge",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/bridges",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/bridging",
-      "destination": "/developer/bridges"
+      "destination": "/tooling/bridges"
     },
     {
       "source": "/protocol/consensus/index",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/protocol/consensus/locating-nodes",
@@ -2098,7 +2092,7 @@
     },
     {
       "source": "/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/consensus"
+      "destination": "/home/protocol/security-council"
     },
     {
       "source": "/protocol/consensus/validator-set-differences",
@@ -2126,27 +2120,27 @@
     },
     {
       "source": "/protocol/oracle/band-protocol",
-      "destination": "/developer/oracles/band-protocol"
+      "destination": "/tooling/oracles/band-protocol"
     },
     {
       "source": "/protocol/oracle/chainlink-oracles",
-      "destination": "/developer/oracles/chainlink-oracles"
+      "destination": "/tooling/oracles/chainlink-oracles"
     },
     {
       "source": "/protocol/oracle/index",
-      "destination": "/developer/oracles"
+      "destination": "/tooling/oracles"
     },
     {
       "source": "/protocol/oracle/redstone",
-      "destination": "/developer/oracles/redstone"
+      "destination": "/tooling/oracles/redstone"
     },
     {
       "source": "/protocol/oracle/run",
-      "destination": "/developer/oracles/run"
+      "destination": "/tooling/oracles/run"
     },
     {
       "source": "/protocol/oracle/supra",
-      "destination": "/developer/oracles/supra"
+      "destination": "/tooling/oracles/supra"
     },
     {
       "source": "/protocol/pos/epoch-rewards",
@@ -2242,15 +2236,15 @@
     },
     {
       "source": "/v/master/developer-guide/overview",
-      "destination": "/developer"
+      "destination": "/tooling"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/contractkit"
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/forno",
@@ -2258,7 +2252,7 @@
     },
     {
       "source": "/v/master/developer-guide/start",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/v/master/developer-guide/start/hello-mobile-dapp",
@@ -2430,31 +2424,31 @@
     },
     {
       "source": "/why-celo",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/why-celo#celo-is-mobile-open-and-real",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/why-celo#mobile",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/why-celo#open",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/why-celo#real",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/overview",
-      "destination": "/about-celo"
+      "destination": "/home/index"
     },
     {
       "source": "/indexer/envio",
-      "destination": "/developer/indexers/envio"
+      "destination": "/tooling/indexers/envio"
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/overview",
@@ -2606,7 +2600,11 @@
     },
     {
       "source": "/developer/particle-network/:slug*",
-      "destination": "/tooling/libraries-sdks/particle-network/:slug*"
+      "destination": "/tooling/libraries-sdks/celo-sdks"
+    },
+    {
+      "source": "/tooling/libraries-sdks/particle-network/:slug*",
+      "destination": "/tooling/libraries-sdks/celo-sdks"
     },
     {
       "source": "/developer/portal/:slug*",
@@ -2730,11 +2728,11 @@
     },
     {
       "source": "/network/eclair",
-      "destination": "/tooling/testnets/eclair"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/network/eclair/:slug*",
-      "destination": "/tooling/testnets/eclair/:slug*"
+      "destination": "/tooling/testnets/"
     },
     {
       "source": "/network/mainnet",
@@ -2938,10 +2936,6 @@
     },
     {
       "source": "/key-concepts",
-      "destination": "/home/index"
-    },
-    {
-      "source": "/home",
       "destination": "/home/index"
     },
     {
