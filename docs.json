@@ -112,6 +112,7 @@
             "pages": [
               "build-on-celo/index",
               "build-on-celo/quickstart",
+              "build-on-celo/overview/network-overview",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
               "build-on-celo/scaling-your-app",
@@ -124,26 +125,10 @@
             "pages": [
               "build-on-celo/build-with-ai/overview",
               "build-on-celo/build-with-ai/vibe-coding",
-              {
-                "group": "Build with GOAT",
-                "pages": [
-                  "build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
-                  "build-on-celo/build-with-ai/build-with-goat/mint-nft-agent",
-                  "build-on-celo/build-with-ai/build-with-goat/send-token-agent"
-                ]
-              },
               "build-on-celo/build-with-ai/resources",
               "build-on-celo/build-with-ai/tools",
               "build-on-celo/build-with-ai/multi-agent-systems",
               "build-on-celo/build-with-ai/usecases",
-              {
-                "group": "Examples",
-                "pages": [
-                  "build-on-celo/build-with-ai/examples/ai-memecoins",
-                  "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
-                ]
-              },
               {
                 "group": "Celo MCPs",
                 "pages": [
@@ -187,7 +172,6 @@
             "group": "Overview",
             "pages": [
               "tooling/overview/index",
-              "tooling/overview/network-overview",
               "tooling/bridges/bridges",
               "tooling/overview/fee-abstraction",
               "tooling/overview/faucet"
@@ -236,8 +220,7 @@
                   "tooling/wallets/ledger/to-celo-web",
                   "tooling/wallets/ledger/to-celo-cli"
                 ]
-              },
-              "tooling/wallets/staking"
+              }
             ]
           },
           {
@@ -256,7 +239,8 @@
               "tooling/indexers/overview",
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
-              "tooling/indexers/envio"
+              "tooling/indexers/envio",
+              "tooling/indexers/goldrush"
             ]
           },
           {
@@ -3029,6 +3013,38 @@
     {
       "source": "/build/support",
       "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/mint-nft-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/send-token-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/ai-memecoins",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/building_with_goat",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/build-with-thirdweb-ai",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/tooling/overview/network-overview",
+      "destination": "/build-on-celo/overview/network-overview"
+    },
+    {
+      "source": "/tooling/wallets/staking",
+      "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
     }
   ],
   "footer": {
@@ -3063,7 +3079,7 @@
           },
           {
             "href": "https://lemonade.social/celo",
-            "label": "Lemonade"
+            "label": "Events"
           }
         ]
       }
