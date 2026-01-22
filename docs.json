@@ -125,7 +125,6 @@
             "pages": [
               "build-on-celo/build-with-ai/overview",
               "build-on-celo/build-with-ai/vibe-coding",
-              "build-on-celo/build-with-ai/resources",
               "build-on-celo/build-with-ai/tools",
               "build-on-celo/build-with-ai/multi-agent-systems",
               "build-on-celo/build-with-ai/usecases",
@@ -3036,6 +3035,10 @@
     },
     {
       "source": "/build-on-celo/build-with-ai/examples/build-with-thirdweb-ai",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/resources",
       "destination": "/build-on-celo/build-with-ai/overview"
     },
     {
