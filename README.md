@@ -1,20 +1,36 @@
-# Mintlify Starter Kit
+# Celo Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Official documentation for Celo, built with [Mintlify](https://mintlify.com).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## 🔍 Documentation Validation
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+We have automated checks for errors and broken links that run on every push and pull request.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+### Quick Validation
+
+Before committing, run local validation:
+
+```bash
+# Run all validation checks
+./scripts/validate-docs.sh
+
+# Check for broken links using Mintlify CLI
+mint broken-links
+```
+
+### CI/CD Workflows
+
+- ✅ **Broken Links Check** - Automatically scans for broken internal/external links
+- ✅ **Structure Validation** - Validates docs.json syntax and structure
+- ✅ **MDX File Verification** - Ensures all referenced files exist
+- ✅ **Syntax Checking** - Detects common MDX/JSX syntax errors
+- ✅ **PR Comments** - Automatically comments on PRs with validation results
+
+Run `./scripts/validate-docs.sh` to check for errors before committing.
 
 ## Development
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally:
 
 ```sh
 npm i -g mint
@@ -22,7 +38,7 @@ npm i -g mint
 
 Run the following command at the root of your documentation, where your `docs.json` is located:
 
-```sh
+```bash
 mint dev
 ```
 
@@ -32,14 +48,40 @@ View your local preview at `http://localhost:3000`.
 
 Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
 
+**Important:** All PRs must pass validation checks before merging.
+
+## Contributing
+
+1. **Before committing:**
+   - Run `./scripts/validate-docs.sh` to check for errors
+   - Test your changes locally with `mint dev`
+   - Ensure all links work correctly
+
+2. **Creating a PR:**
+   - Wait for automated checks to complete
+   - Review any validation warnings or errors
+   - Fix issues before requesting review
+
+3. **For reviewers:**
+   - Check that all validation checks pass
+   - Review any warnings in PR comments
+   - Verify changes render correctly
+
 ## Need help?
 
 ### Troubleshooting
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+- **Dev environment not running:** Run `mint update` to ensure you have the most recent version of the CLI
+- **Page loads as 404:** Make sure you are running in a folder with a valid `docs.json`
+- **Validation fails:** Run `./scripts/validate-docs.sh` and review the output for specific errors
+- **Broken links detected:** Review the validation output and fix referenced files or URLs
 
 ### Resources
 
+- [Celo Documentation](https://docs.celo.org)
+- [Validation Script](./scripts/validate-docs.sh)
+- [Mintlify Documentation](https://mintlify.com/docs)
+- [Mintlify Community](https://mintlify.com/community)
+- [Celo Discord](https://discord.com/invite/celo)
 - [Mintlify documentation](https://mintlify.com/docs)
 - [Mintlify community](https://mintlify.com/community)

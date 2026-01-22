@@ -10,7 +10,7 @@ How to use the [Celo CLI](/cli/) to participate in Goverance and create a Govern
 
 ## Governance
 
-Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol. More information about the Governance system can be found in the [Governance overview](/about-celo/protocol/governance/overview).
+Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol. More information about the Governance system can be found in the [Governance overview](/home/protocol/governance/overview).
 
 <Note>
 In the following commands `<VARIABLE>` is used as a placeholder for something you should specify on the command line.
@@ -27,7 +27,7 @@ celocli governance:list
 Included will be three lists of proposals by status:
 
 - **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
-- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [Governance overview](/about-celo/protocol/governance/overview).
+- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [Governance overview](/home/protocol/governance/overview).
 - **Expired** proposals are no longer being considered.
 
 ## Understanding Proposal Details
@@ -98,7 +98,7 @@ celocli governance:upvote --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
 At a defined frequency, which can be checked with the `celocli network:parameters` command, proposals can be dequeued, with the highest upvoted proposals being dequeued first.
 
 After a proposal is dequeued, it will first enter the Approval phase.
-In this phase, the [Governance Approver](/about-celo/protocol/governance/overview#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
+In this phase, the [Governance Approver](/home/protocol/governance/overview#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
 
 Once a proposal has reached the Referendum phase, it is open to community for voting.
 
@@ -179,4 +179,4 @@ To stay up-to-date with all governance activities and proposals:
 - Add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) to track important dates and events
 - Follow discussions on the [Celo Forum](https://forum.celo.org/) in the Governance category
 
-For more comprehensive information about Celo's governance system, see the [Governance Overview](/about-celo/protocol/governance/overview) and [Voting in Governance](/about-celo/protocol/governance/voting-in-governance) guides.
+For more comprehensive information about Celo's governance system, see the [Governance Overview](/home/protocol/governance/overview) and [Voting in Governance](/home/protocol/governance/voting-in-governance) guides.
