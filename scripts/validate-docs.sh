@@ -18,14 +18,14 @@ NC='\033[0m' # No Color
 # Track overall success
 ALL_PASSED=true
 
-# Check if Mintlify CLI is installed
-echo "Checking for Mintlify CLI..."
-if ! command -v mint &> /dev/null; then
-    echo -e "${RED}❌ Mintlify CLI is not installed${NC}"
-    echo "Install it with: npm install -g mintlify"
+# Check if npx is available (for running mintlify)
+echo "Checking for npx..."
+if ! command -v npx &> /dev/null; then
+    echo -e "${RED}❌ npx is not available${NC}"
+    echo "Please ensure Node.js and npm are installed"
     exit 1
 fi
-echo -e "${GREEN}✅ Mintlify CLI found${NC}"
+echo -e "${GREEN}✅ npx found (will use npx mintlify)${NC}"
 echo ""
 
 # Check if jq is installed
@@ -72,7 +72,7 @@ echo "2️⃣  Checking for broken links..."
 # Capture output and check for "found" message
 # Temporarily disable exit on error to capture output even if command fails
 set +e
-BROKEN_LINKS_OUTPUT=$(mint broken-links 2>&1)
+BROKEN_LINKS_OUTPUT=$(npx mintlify broken-links 2>&1)
 BROKEN_LINKS_EXIT_CODE=$?
 set -e
 
@@ -94,14 +94,15 @@ if [ "$JQ_AVAILABLE" = true ]; then
     MISSING_FILES=0
     
     # Extract all page references and check if files exist
-    jq -r '.. | .pages? // empty | .[] | select(type == "string")' docs.json 2>/dev/null | while read -r page; do
+    # Using process substitution to avoid subshell variable scope issues
+    while read -r page; do
         file_path="${page}.mdx"
-        
+
         if [ ! -f "$file_path" ] && [ ! -f "${page}.md" ]; then
             echo -e "${YELLOW}⚠️  Missing file: $file_path${NC}"
             MISSING_FILES=$((MISSING_FILES + 1))
         fi
-    done
+    done < <(jq -r '.. | .pages? // empty | .[] | select(type == "string")' docs.json 2>/dev/null)
     
     if [ $MISSING_FILES -eq 0 ]; then
         echo -e "${GREEN}✅ All referenced MDX files exist${NC}"

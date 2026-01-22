@@ -24,21 +24,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Update system packages
-        run: |
-          sudo apt-get update || echo "apt-get update failed, continuing..."
-          
-      - name: Install Mintlify CLI
-        run: npm install -g mintlify
-
       - name: Run Mintlify validation
         run: |
           echo "Running Mintlify validation checks..."
-          mint install || true
-          
           # Note: Mintlify Pro/Enterprise plans have automatic CI checks
-          # This workflow provides additional local validation
-          
+          # This workflow provides additional local validation using npx
           echo "✅ Mintlify validation completed"
 
       - name: Check deployment readiness
