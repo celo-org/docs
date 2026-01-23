@@ -112,7 +112,7 @@
             "pages": [
               "build-on-celo/index",
               "build-on-celo/quickstart",
-              "build-on-celo/overview/network-overview",
+              "build-on-celo/network-overview",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
               "build-on-celo/scaling-your-app",
@@ -171,14 +171,12 @@
             "group": "Overview",
             "pages": [
               "tooling/overview/index",
-              "tooling/bridges/bridges",
+              "tooling/overview/faucet",
               "tooling/overview/fee-abstraction",
-              "tooling/overview/faucet"
+              "tooling/bridges/bridges",
+              "tooling/bridges/cross-chain-messaging",
+              "tooling/testnets/celo-sepolia/index"
             ]
-          },
-          {
-            "group": "Testnets",
-            "pages": ["tooling/testnets/celo-sepolia/index"]
           },
           {
             "group": "Nodes",
@@ -240,6 +238,18 @@
               "tooling/indexers/subquery",
               "tooling/indexers/envio",
               "tooling/indexers/goldrush"
+            ]
+          },
+          {
+            "group": "Oracles",
+            "pages": [
+              "tooling/oracles/run",
+              "tooling/oracles/index",
+              "tooling/oracles/band-protocol",
+              "tooling/oracles/chainlink-oracles",
+              "tooling/oracles/redstone",
+              "tooling/oracles/supra",
+              "tooling/oracles/quex-oracles"
             ]
           },
           {
@@ -319,30 +329,6 @@
               "tooling/contract-verification/remix",
               "tooling/contract-verification/hardhat"
             ]
-          },
-          {
-            "group": "Oracles",
-            "pages": [
-              "tooling/oracles/run",
-              "tooling/oracles/index",
-              "tooling/oracles/band-protocol",
-              "tooling/oracles/chainlink-oracles",
-              "tooling/oracles/redstone",
-              "tooling/oracles/supra",
-              "tooling/oracles/quex-oracles"
-            ]
-          },
-          {
-            "group": "Plumo",
-            "pages": [
-              "tooling/plumo/index",
-              "tooling/plumo/verification-phase-1",
-              "tooling/plumo/verification-phase-2"
-            ]
-          },
-          {
-            "group": " ",
-            "pages": ["tooling/bridges/cross-chain-messaging"]
           }
         ]
       },
@@ -1459,7 +1445,7 @@
     },
     {
       "source": "/developer-guide/forno",
-      "destination": "/network/node/forno"
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/developer-guide/integrations/checklist",
@@ -1610,8 +1596,8 @@
       "destination": "/developer"
     },
     {
-      "source": "/developer-resources/forno/inde",
-      "destination": "/network/node/forno"
+      "source": "/developer-resources/forno/index",
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/developer-resources/integrations/checklist",
@@ -1643,15 +1629,15 @@
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/networks/baklava-testnet",
-      "destination": "/network/baklava"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/networks/celo-mainnet",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/overview",
@@ -1807,15 +1793,15 @@
     },
     {
       "source": "/getting-started/alfajores-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/faucet",
-      "destination": "/network/celo-sepolia/faucet"
+      "destination": "https://faucet.celo.org/celo-sepolia"
     },
     {
       "source": "/getting-started/alfajores-testnet/index",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
@@ -1823,15 +1809,15 @@
     },
     {
       "source": "/getting-started/alfajores-testnet/using-the-mobile-wallet",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet/index",
-      "destination": "/network/baklava"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-full-node",
@@ -1847,7 +1833,7 @@
     },
     {
       "source": "/getting-started/choosing-a-network",
-      "destination": "/network"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/getting-started/glossary",
@@ -1855,15 +1841,15 @@
     },
     {
       "source": "/getting-started/hosted-nodes",
-      "destination": "/network/node/overview"
+      "destination": "/tooling/nodes/overview"
     },
     {
       "source": "/getting-started/mainnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/mainnet/index",
-      "destination": "/network/mainnet"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/getting-started/mainnet/running-a-full-node-in-mainnet",
@@ -1875,7 +1861,7 @@
     },
     {
       "source": "/getting-started/rc1",
-      "destination": "/network/mainnet"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/getting-started/rc1/running-a-full-node-in-rc1",
@@ -1991,27 +1977,27 @@
     },
     {
       "source": "/important-information/alfajores-testnet-disclaimer",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/baklava-testnet-disclaimer",
-      "destination": "/network/baklava/disclaimer"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/important-information/mainnet-testnet-disclaimer",
-      "destination": "/network/mainnet"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/important-information/rc-network-disclaimer",
-      "destination": "/network/mainnet"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/network#celo-alfajores-l2-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network#celo-baklava-l2-testnet",
-      "destination": "/network"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/network/alfajores/run-full-node",
@@ -2019,7 +2005,7 @@
     },
     {
       "source": "/network/alfajores/faucet",
-      "destination": "/network/celo-sepolia/faucet"
+      "destination": "https://faucet.celo.org/celo-sepolia"
     },
     {
       "source": "/network/baklava/run-full-node",
@@ -2047,7 +2033,7 @@
     },
     {
       "source": "/network/node/run-hosted",
-      "destination": "/network/node/overview"
+      "destination": "/tooling/nodes/overview"
     },
     {
       "source": "/network/node/run-mainnet",
@@ -2231,7 +2217,7 @@
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/forno",
-      "destination": "/network/node/forno"
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/v/master/developer-guide/start",
@@ -2247,7 +2233,7 @@
     },
     {
       "source": "/v/master/getting-started/baklava-testnet",
-      "destination": "/network"
+      "destination": "/build-with-celo/network-overview"
     },
     {
       "source": "/validator-guide/attestation-service",
@@ -2683,7 +2669,7 @@
     },
     {
       "source": "/network",
-      "destination": "/tooling/overview/network-overview"
+      "destination": "/tooling/network-overview"
     },
     {
       "source": "/network/alfajores",
@@ -2719,11 +2705,11 @@
     },
     {
       "source": "/network/mainnet",
-      "destination": "/tooling/testnets/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/mainnet/:slug*",
-      "destination": "/tooling/testnets/mainnet/:slug*"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/node/:slug*",
@@ -2903,7 +2889,7 @@
     },
     {
       "source": "/learn/topology-of-a-celo-network",
-      "destination": "/tooling/overview/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/learn/why-celo",
@@ -3043,11 +3029,23 @@
     },
     {
       "source": "/tooling/overview/network-overview",
-      "destination": "/build-on-celo/overview/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/tooling/wallets/staking",
       "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
+    },
+    {
+      "source": "/tooling/plumo/index",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/tooling/plumo/verification-phase-1",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/tooling/plumo/verification-phase-2",
+      "destination": "/home/index"
     }
   ],
   "footer": {
