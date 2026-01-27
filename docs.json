@@ -1833,7 +1833,7 @@
     },
     {
       "source": "/getting-started/choosing-a-network",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/glossary",
@@ -1849,7 +1849,7 @@
     },
     {
       "source": "/getting-started/mainnet/index",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/mainnet/running-a-full-node-in-mainnet",
@@ -1861,7 +1861,7 @@
     },
     {
       "source": "/getting-started/rc1",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/rc1/running-a-full-node-in-rc1",
@@ -1981,15 +1981,15 @@
     },
     {
       "source": "/important-information/baklava-testnet-disclaimer",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/mainnet-testnet-disclaimer",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/rc-network-disclaimer",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network#celo-alfajores-l2-testnet",
@@ -1997,7 +1997,7 @@
     },
     {
       "source": "/network#celo-baklava-l2-testnet",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/alfajores/run-full-node",
@@ -2233,7 +2233,7 @@
     },
     {
       "source": "/v/master/getting-started/baklava-testnet",
-      "destination": "/build-with-celo/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/validator-guide/attestation-service",
@@ -2669,23 +2669,23 @@
     },
     {
       "source": "/network",
-      "destination": "/tooling/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/alfajores",
-      "destination": "/tooling/testnets/alfajores"
+      "destination": "/tooling/testnets/celo-sepolia"
     },
     {
       "source": "/network/alfajores/:slug*",
-      "destination": "/tooling/testnets/alfajores/:slug*"
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
     },
     {
       "source": "/network/baklava",
-      "destination": "/tooling/testnets/baklava"
+      "destination": "/tooling/testnets/celo-sepolia"
     },
     {
       "source": "/network/baklava/:slug*",
-      "destination": "/tooling/testnets/baklava/:slug*"
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
     },
     {
       "source": "/network/celo-sepolia",
