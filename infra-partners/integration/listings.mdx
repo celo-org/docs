@@ -41,7 +41,7 @@ For more specific use-cases for exchanges, please checkout the [Custody and Exch
 
 ### Celo Native Asset and Stable Value Currencies
 
-There are key assets on the Celo network, the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/tooling/overview/migrate/from-ethereum#the-celo-native-asset-and-the-celo-dollar) section of the docs.
+There are key assets on the Celo network, the Celo native asset (CELO) and Mento Stablecoins, such as USDm (Mento Dollar) and EURm (Mento Euro). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/tooling/overview/migrate/from-ethereum#the-celo-native-asset-and-mento-stablecoins) section of the docs.
 
 You can also view the forum post about the name change [here](https://forum.celo.org/t/proposal-to-rename-celo-gold-to-celo-native-asset/528).
 
@@ -50,13 +50,13 @@ You can also view the forum post about the name change [here](https://forum.celo
 ### Address for CELO and Stable Value Currencies
 
 - CELO (\$CELO) - [`0x471ece3750da237f93b8e339c536989b8978a438`](https://celo.blockscout.com/address/0x471ece3750da237f93b8e339c536989b8978a438/transactions)
-- Celo Dollar (\$cUSD) - [`0x765de816845861e75a25fca122bb6898b8b1282a`](https://celo.blockscout.com/address/0x765de816845861e75a25fca122bb6898b8b1282a/transactions)
-- Celo Euro (\$cEUR) - [`0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`](https://celo.blockscout.com/address/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73/transactions)
-- Celo Brazilian Real (\$cREAL) - [`0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787`](https://celo.blockscout.com/address/0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787/transactions)
+- Mento Dollar (\$USDm) - [`0x765de816845861e75a25fca122bb6898b8b1282a`](https://celo.blockscout.com/address/0x765de816845861e75a25fca122bb6898b8b1282a/transactions)
+- Mento Euro (\$EURm) - [`0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`](https://celo.blockscout.com/address/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73/transactions)
+- Mento Brazilian Real (\$BRLm) - [`0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787`](https://celo.blockscout.com/address/0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787/transactions)
 
 ### Useful API endpoints
 
-The following are useful API endpoints available to you that would help you in your listings of the CELO and cUSD digital assets.
+The following are useful API endpoints available to you that would help you in your listings of the CELO and USDm digital assets.
 
 #### CELO and Stable Value Currencies
 
@@ -71,7 +71,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_totalcoins
 
 ##### Stable Value Currencies
 
-###### cUSD Circulating Supply
+###### USDm Circulating Supply
 
 Circulating Supply refers to the # of coins that are circulating in the market and in the general public's hands.
 
@@ -80,7 +80,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_cusd_circulating
 11353464.550486518
 ```
 
-###### cEUR Circulating Supply
+###### EURm Circulating Supply
 
 This endpoint is not yet available.
 
@@ -92,13 +92,13 @@ For API endpoints useful for listing that follow [CMC requirements](https://docs
 
 ##### Mento Addresses
 
-- cUSD/CELO contract - [`0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275`](https://celo.blockscout.com/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275/transactions)
-- cEUR/CELO contract - [`0xE383394B913d7302c49F794C7d3243c429d53D1d`](https://celo.blockscout.com/address/0xE383394B913d7302c49F794C7d3243c429d53D1d/transactions)
-- cREAL/CELO contract - [`0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA`](https://celo.blockscout.com/address/0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA/transactions)
+- USDm/CELO contract - [`0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275`](https://celo.blockscout.com/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275/transactions)
+- EURm/CELO contract - [`0xE383394B913d7302c49F794C7d3243c429d53D1d`](https://celo.blockscout.com/address/0xE383394B913d7302c49F794C7d3243c429d53D1d/transactions)
+- BRLm/CELO contract - [`0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA`](https://celo.blockscout.com/address/0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA/transactions)
 
 ##### Summary
 
-Summary overview of market data for all tickers and all markets. These endpoints don't yet support cEUR.
+Summary overview of market data for all tickers and all markets. These endpoints don't yet support EURm.
 
 ```sh
 $ curl https://thecelo.com/api/v0.1.js?method=ex_summary
@@ -136,7 +136,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_orderbook
 {"code":"200","msg":"success","data":{"timestamp":1601061465962,"bids":[["2.5964","100"]],"asks":[["2.622606871230003","100"]]}}
 ```
 
-##### CELO cUSD
+##### CELO USDm
 
 Recently completed (past 24h) trades.
 

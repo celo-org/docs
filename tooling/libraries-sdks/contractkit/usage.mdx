@@ -19,7 +19,7 @@ import { CeloContract } from "@celo/contractkit";
 
 let accounts = await kit.web3.eth.getAccounts();
 kit.defaultAccount = accounts[0];
-// paid gas in cUSD
+// paid gas in USDm
 await kit.setFeeCurrency(CeloContract.StableToken);
 ```
 
@@ -28,15 +28,15 @@ await kit.setFeeCurrency(CeloContract.StableToken);
 You can set the `feeCurrency` for each transaction individually by setting the `feeCurrency` field in the `.send()` method. The `feeCurrency` field accepts contract addresses of whitelisted fee currencies.
 
 ```js
-let cUSDcontract = await kit.contracts.getStableToken();
-let cUSDtx = await cUSDcontract
+let USDmContract = await kit.contracts.getStableToken();
+let USDmTx = await USDmContract
   .transfer(someAddress, amount)
-  .send({ feeCurrency: cUSDcontract.address });
+  .send({ feeCurrency: USDmContract.address });
 ```
 
 ## Getting the Total Balance
 
-This method from the `kit` will return the CELO, locked CELO, cUSD and total balance of the address
+This method from the `kit` will return the CELO, locked CELO, USDm and total balance of the address
 
 ```ts
 let totalBalance = await kit.getTotalBalance(myAddress);
@@ -65,7 +65,7 @@ The Celo transaction object is not the same as Ethereum's. There is a new option
 
 - `feeCurrency` (address of the ERC20 contract to use to pay for gas)
 
-`feeCurrency` enables transaction fees to be paid in currencies other than CELO. The currently supported fee currencies are CELO, cUSD and cEUR. You can specify the currency by passing the contract address of the currency you would like the transaction fees to be paid in.
+`feeCurrency` enables transaction fees to be paid in currencies other than CELO. The currently supported fee currencies are CELO, USDm and EURm. You can specify the currency by passing the contract address of the currency you would like the transaction fees to be paid in.
 
 Celo accepts original Ethereum type transactions as well, so you can use Ethereum signing tools (like Metamask) as well as Celo specific wallets and tools. You can read more about these transaction formats in [CIP 35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
 
@@ -98,7 +98,7 @@ const receipt = await tx.waitReceipt();
 You can use ContractKit to interact with any deployed smart contract, provided you have the contract address and the [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html). To do so, you will initialize a new `web3` Contract instance. Then you can call functions on the contract instance to read state or send transactions to update the contract. You can see some code snippets below.
 
 ```ts
-let cUSDcontract = await kit.contracts.getStableToken();
+let USDmContract = await kit.contracts.getStableToken();
 let contract = new kit.connection.web3.eth.Contract(ABI, address); // Init a web3.js contract instance
 let name = await instance.methods.getName().call(); // Read contract state
 
@@ -106,13 +106,13 @@ let name = await instance.methods.getName().call(); // Read contract state
 // Transactions with an unspecified feeCurrency field will default to paying fees in CELO
 const tx = await instance.methods
   .setName(newName)
-  .send({ from: account.address, feeCurrency: cUSDcontract.address });
+  .send({ from: account.address, feeCurrency: USDmContract.address });
 ```
 
 ## Selling CELO only if the rate is favorable
 
 ```ts
-// This is at lower price I will accept in cUSD for every CELO
+// This is at lower price I will accept in USDm for every CELO
 const favorableAmount = 100;
 const amountToExchange = kit.web3.utils.toWei("10", "ether");
 const oneGold = kit.web3.utils.toWei("1", "ether");
@@ -133,7 +133,7 @@ if (amountOfcUsd > favorableAmount) {
 }
 ```
 
-## Buying all the CELO I can, with the cUSD in my account
+## Buying all the CELO I can, with the USDm in my account
 
 ```ts
 const stableToken = await this.contracts.getStableToken();

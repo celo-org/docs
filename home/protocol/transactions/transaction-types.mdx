@@ -473,7 +473,7 @@ const walletClient = createWalletClient({
           account, // Sender
           to: "0x70997970c51812dc3a010c7d01b50e0d17dc79c8", // Recipient (illustrative address)
           value: parseEther("0.01"), // 0.01 CELO
-          feeCurrency: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1", // cUSD fee currency
+          feeCurrency: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1", // USDm fee currency
           maxFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
           maxPriorityFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
       });

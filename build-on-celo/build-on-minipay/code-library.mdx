@@ -53,17 +53,17 @@ To use the code snippets below, install the following packages:
 </CodeGroup>
 
 
-## Check cUSD Balance of an address
+## Check USDm Balance of an address
 
 ```js
 import { getContract, formatEther, createPublicClient, http } from "viem";
 import { celo } from "viem/chains";
 import { stableTokenABI } from "@celo/abis";
 
-// cUSD address on Celo mainnet
+// USDm address on Celo mainnet
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-async function checkCUSDBalance(publicClient, address) {
+async function checkUSDmBalance(publicClient, address) {
   const StableTokenContract = getContract({
     abi: stableTokenABI,
     address: STABLE_TOKEN_ADDRESS,
@@ -85,7 +85,7 @@ const publicClient = createPublicClient({
   transport: http(),
 }); // Mainnet
 
-const balance = await checkCUSDBalance(publicClient, address); // In Ether unit
+const balance = await checkUSDmBalance(publicClient, address); // In Ether unit
 ```
 
 
@@ -146,7 +146,7 @@ const gasLimit = await estimateGas(publicClient, {
   
 
 
-## Estimate Gas for a transaction (in cUSD)
+## Estimate Gas for a transaction (in USDm)
 
 ```js
 import { createPublicClient, http } from "viem";
@@ -201,7 +201,7 @@ const publicClient = createPublicClient({
 const gasPrice = await estimateGasPrice(publicClient);
 ```
 
-## Estimate Gas Price for a transaction (in cUSD)
+## Estimate Gas Price for a transaction (in USDm)
 
 ```js
 import { createPublicClient, http } from "viem";
@@ -225,7 +225,7 @@ const gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 ```
 
 
-## Calculate cUSD to be spent for transaction fees
+## Calculate USDm to be spent for transaction fees
 
 ```js
 import { createPublicClient, http, formatEther, fromHex } from "viem";
@@ -255,7 +255,7 @@ const gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 
 // Convert hex gas price to BigInt and calculate fees
 const gasPriceBigInt = fromHex(gasPrice, "bigint");
-const transactionFeesInCUSD = formatEther(gasLimit * gasPriceBigInt);
+const transactionFeesInUSDm = formatEther(gasLimit * gasPriceBigInt);
 ```
 
 
@@ -379,7 +379,7 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals, recei
   const hash = await walletClient.sendTransaction({
     to: tokenAddress,
     // Mainnet addresses:
-    // cUSD: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+    // USDm: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
     // USDC: '0xcebA9300f2b948710d2653dD7B07f33A8B32118C'
     // USDT: '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e'
     data: encodeFunctionData({
@@ -387,7 +387,7 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals, recei
       functionName: "transfer",
       args: [
         receiverAddress,
-        // Different tokens can have different decimals, cUSD (18), USDC (6)
+        // Different tokens can have different decimals, USDm (18), USDC (6)
         parseUnits(`${Number(transferValue)}`, tokenDecimals),
       ],
     }),

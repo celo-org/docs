@@ -68,14 +68,14 @@ When the epoch duration has elapsed, anyone can call `startNextEpochProcess()` t
 1. **Updates target voting yield** - Adjusts reward rates
 2. **Calculates epoch rewards** - Determines total rewards via `EpochRewards.calculateTargetEpochRewards()`
 3. **Allocates validator rewards:**
-   - Mints CELO and exchanges it for cUSD
+   - Mints CELO and exchanges it for USDm
    - Creates internal mapping for validator allocations
    - Validators later claim rewards by calling `sendValidatorPayment`
 4. **Activates protection mode** - Temporarily blocks certain actions (locking/unlocking CELO, changing validator locks)
 5. **Emits events:**
    - EpochRewards: `TargetVotingYieldUpdated(uint256 fraction)`
    - CeloUnreleasedTreasury: `Released(address indexed to, uint256 amount)`
-   - cUSD: `Transfer(address indexed from, address indexed to, uint256 value)`
+   - USDm: `Transfer(address indexed from, address indexed to, uint256 value)`
    - EpochManager: `EpochProcessingStarted(uint256 indexed epochNumber)`
 
 ### Phase 2: Completing Epoch Processing

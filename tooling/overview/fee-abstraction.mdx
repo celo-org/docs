@@ -70,7 +70,7 @@ We recommend using [viem](https://viem.sh/) as it has support for the `feeCurren
 
 ### Estimating gas price
 
-To estimate gas price use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for feeCurrency field in the transaction.
+To estimate gas price use the token address (in case of USDm, EURm and BRLm) or the adapter address (in case of USDC and USDT) as the value for feeCurrency field in the transaction.
 
 <Note>
 The Gas Price Minimum value returned from the RPC has to be interpreted in 18 decimals.
@@ -140,7 +140,7 @@ async function main() {
 
 ### Preparing a transaction
 
-When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of USDm, EURm and BRLm) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
 
 The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/legacy/protocol/transaction/transaction-types).
 
@@ -207,7 +207,7 @@ async function send(amountInWei) {
     functionName: "transfer",
     args: [
       "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D",
-      // Different tokens can have different decimals, cUSD (18), USDC (6)
+      // Different tokens can have different decimals, USDm (18), USDC (6)
       amountInWei,
     ],
   });
@@ -224,7 +224,7 @@ async function send(amountInWei) {
     functionName: "transfer",
     args: [
       "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D",
-      // Different tokens can have different decimals, cUSD (18), USDC (6)
+      // Different tokens can have different decimals, USDm (18), USDC (6)
       tokenReceivedbyReceiver,
     ],
   });
