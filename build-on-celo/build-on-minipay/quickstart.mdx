@@ -15,7 +15,7 @@ MiniPay is designed for mainstream adoption, making digital payments simple and 
 #### Key Features:
 
 - **Currency Display**: Balances appear in your local currency.
-- **Stablecoin Support**: Only stablecoins (cUSD, USDC, and USDT) are supported.
+- **Stablecoin Support**: Only stablecoins (USDm, USDC, and USDT) are supported.
 - **Simple Swaps**: The pocket swap feature allows for easy swaps between stablecoins by dragging one pocket into another.
 
 <Note>
@@ -52,7 +52,7 @@ npx @celo/celo-composer@latest create -t minipay
 
 ## 3. Get Testnet Tokens
 
-Request CELO testnet tokens from the Celo [faucet](https://faucet.celo.org/celo-sepolia/) to test your Mini App. After you got the CELO tokens, you can exchange them for stablecoins like cUSD, USDT and USDC in the [mento app](https://app.mento.org/).
+Request CELO testnet tokens from the Celo [faucet](https://faucet.celo.org/celo-sepolia/) to test your Mini App. After you got the CELO tokens, you can exchange them for stablecoins like USDm, USDT and USDC in the [mento app](https://app.mento.org/).
 
 ## 4. Test your Mini App inside MiniPay
 
@@ -213,7 +213,7 @@ export default function Header() {
 - Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the MiniPay wallet.
 - When using `ngrok`, remember that the tunneling URL is temporary. You'll get a new URL every time you restart ngrok.
 - Be cautious about exposing sensitive information or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
-- MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `cUSD`. More currencies might be supported in future.
+- MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `USDm`. More currencies might be supported in future.
 - MiniPay only accepts legacy transactions at the moment. EIP-1559 properties won't be considered when handling requests.
 
 ## Testing Local Development with MiniPay

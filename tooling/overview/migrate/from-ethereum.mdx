@@ -55,9 +55,9 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 An **ERC20 compliant contract** must include the required functions and events at _minimum_.
 It can include additional functions and events and still be ERC20 compliant.
 
-## The Celo Native Asset and the Celo Dollar
+## The Celo Native Asset and Mento Stablecoins
 
-This interface is relevant for two important assets on the Celo network, the Celo native asset (CELO) and the Celo Dollar (cUSD).
+This interface is relevant for two important assets on the Celo network, the Celo native asset (CELO) and Mento stablecoins like USDm (Mento Dollar).
 
 CELO was called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold in the codebase.
 CELO and cGLD are the same thing. You can [view the CELO implementation here.](https://celo.blockscout.com/address/0x8dd4f800851db9dc219fdfaeb82f8d69e2b13582/contracts)
@@ -67,14 +67,14 @@ CELO can also be transferred by specifying the value field of a transaction, in 
 To properly monitor balance changing operations of CELO, it can be helpful to use [Celo Rosetta.](https://github.com/celo-org/rosetta)
 Celo Rosetta provides an easy way to obtain changes that are not easily queryable using the celo-blockchain RPC.
 
-The Celo Dollar (cUSD) is implemented solely as a smart contract, so all cUSD actions are mediated by the smart contract.
+USDm (Mento Dollar) is implemented solely as a smart contract, so all USDm actions are mediated by the smart contract.
 You can [view the implementation here.](https://celo.blockscout.com/address/0xaa933baf03cfc55b8e4e0d7de479bcc12f189352/contracts)
 
 ## Key differences between Celo and Ethereum
 
 ### Features exclusive to Celo
 
-1.  Celo allows users to pay transaction fees in cryptoassets other than the native asset. On Ethereum, users must pay transaction fees in Ether. For example, users can send cUSD, and then pay any transaction fees in cUSD as well.
+1.  Celo allows users to pay transaction fees in cryptoassets other than the native asset. On Ethereum, users must pay transaction fees in Ether. For example, users can send USDm, and then pay any transaction fees in USDm as well.
 2.  The Celo protocol uses EigenLayer as the data settlement layer. This allows blocks on Celo to be created in 1 seconds, as compared to ~12+ seconds on Ethereum. In addition, all blocks are finalized immediately, so there is no need to wait for more than 1 block confirmation to ensure that a transaction won't be reverted.
 
 ### Things to watch out for

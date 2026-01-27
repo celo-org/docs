@@ -119,7 +119,7 @@ With viem:
 
 ### Contract interaction
 
-I'll show the most "basic" interaction, which is a transfer. On CELO, it comes with a twist, you can transfer 4 currencies, CELO, cUSD, cEUR, and cREAL.
+I'll show the most "basic" interaction, which is a transfer. On CELO, it comes with a twist, you can transfer 4 currencies, CELO, USDm, EURm, and BRLm.
 
 You can get the addresses on these tokens by heading to the explorer and getting their abi and addresses, or you can also use our [registry contract](/developer/contractkit/contracts-wrappers-registry). You can also use the [`@celo/abis`](https://www.npmjs.com/package/@celo/abis) package to get the ABIs directly.
 
@@ -153,10 +153,10 @@ async function CeloTokens(): Promise<[string, string][]> {
 - const contract = await kit.contracts.getGoldToken();
 - const balance = await contract.balanceOf(wallet.address);
 + const tokenAddresses = await CeloTokens();
-+ const cUSD = tokenAddresses["StableToken]
++ const USDm = tokenAddresses["StableToken]
 + const balance = await client.readContract({
 +   abi: tokenAbi,
-+   address: cUSD,
++   address: USDm,
 +   functionName: "balanceOf",
 +   args: [account.address],
 + });
@@ -171,10 +171,10 @@ Then, use the address of the token that you need and call the transfer method of
 - const CELO = await kit.contracts.getGoldToken();
 - const txReceipt = await CELO.transfer('0x...', amount)
 + const tokenAddresses = await CeloTokens();
-+ const cUSD = tokenAddresses["StableToken]
++ const USDm = tokenAddresses["StableToken]
 + const { request } = await walletClient.simulateContract({
 +   abi,
-+   address: cUSD,
++   address: USDm,
 +   functionName: 'transfer',
 +   args: [
 +     '0x...', // to address
@@ -232,7 +232,7 @@ With Viem's built in Celo transaction serializer and Celo block/transaction form
   const account = privateKeyToAccount(PRIVATE_KEY)
 
   // ALFAJORES ADDRESS: Celo Mainnet can be fetched from the registry
-  const cUSDAddress = '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1'
+  const USDmAddress = '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1'
 
   const localAccountClient = createWalletClient({
     account,
@@ -244,7 +244,7 @@ With Viem's built in Celo transaction serializer and Celo block/transaction form
   }
 
   const hash = await sendTransaction({
-    feeCurrency: cUSDAddress,
+    feeCurrency: USDmAddress,
     value: BigInt(100000000),
     to: '0x22579CA45eE22E2E16dDF72D955D6cf4c767B0eF',
   })
