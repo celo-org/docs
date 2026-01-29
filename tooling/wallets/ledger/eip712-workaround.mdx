@@ -1,0 +1,151 @@
+---
+title: Ledger EIP-712 Signing Workaround
+og:description: How to sign EIP-712 typed data with Ledger using the Eth Recovery app.
+sidebarTitle: "EIP-712 Workaround"
+---
+
+Workaround for signing EIP-712 typed data with Ledger hardware wallets on Celo.
+
+---
+
+## The Issue
+
+The **Celo Ledger app** (when using the Celo-specific derivation path) currently does not support signing EIP-712 typed data, which is required for certain operations including:
+
+- Signing transactions in Safe multisigs via WalletConnect
+- Other dApps that require EIP-712 signature support
+- Smart contract interactions that use typed data signing
+
+If you encounter errors when trying to sign transactions (particularly with Safe multisigs), you'll need to use the **Eth Recovery** app as a workaround.
+
+<Note>
+**Important**: This issue only affects users using the **Celo app** with the Celo derivation path (`m/44'/52752'/0'/0`). If you're using the **Ethereum app** to interact with the Celo network (using the standard Ethereum derivation path `m/44'/60'/0'/0`), you do not need this workaround as the Ethereum app already supports EIP-712 signing.
+</Note>
+
+<Warning>
+This is a temporary workaround until the Celo Ledger app adds native EIP-712 typed data support. Future updates to the Celo Ledger app may add this functionality natively.
+</Warning>
+
+## When You DON'T Need This Workaround
+
+You do **not** need this workaround if:
+
+- You're using the **Ethereum app** on your Ledger to interact with Celo (using Ethereum derivation path)
+- Your wallet or dApp connects to Celo using the standard Ethereum derivation path (`m/44'/60'/0'/0`)
+- You're not using the Celo-specific Ledger app
+
+The Ethereum app natively supports EIP-712 signing and works with Celo network since Celo is EVM-compatible.
+
+## Solution: Using the Eth Recovery App
+
+This workaround is specifically for users who need to use the **Celo app** with the Celo derivation path but also need EIP-712 signing support.
+
+The Eth Recovery app provides the necessary EIP-712 signing capabilities that the Celo app currently lacks.
+
+<Note>
+The Eth Recovery app requires Developer Mode to be enabled in Ledger Wallet. This is a Ledger feature, not specific to Celo.
+</Note>
+
+### Step 1: Enable Developer Mode in Ledger Wallet
+
+1. Open **Ledger Wallet** on your computer
+2. Go to **Settings** → **About**
+3. Click **10 times** on the Ledger Wallet version number
+4. A new **Developer** tab will appear in the settings menu
+
+<Frame>
+![Ledger Wallet Developer Mode](https://developers.ledger.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdeveloper_mode_tab.18db0467.png&w=1920&q=75)
+</Frame>
+
+<Note>
+Developer Mode is available in Ledger Wallet version 2.32 and above. If you don't see the Developer tab appear after clicking on the version number, ensure your Ledger Wallet is updated to the latest version.
+</Note>
+
+### Step 2: Install the Eth Recovery App
+
+1. **Plug in your Ledger** device and unlock it
+2. Go to the **My Ledger** menu
+3. Search in the App Catalog for **"Eth Recovery"**
+4. If no app is found, check if your Ledger is prompting to upgrade firmware. If so, upgrade and return to step 3
+5. Click **Install** to install the Eth Recovery app
+
+### Step 3: Sign Transactions Using Eth Recovery
+
+When you need to sign a transaction that requires EIP-712 support (such as Safe multisig transactions):
+
+1. Connect to your Celo application (Celo Terminal, Safe, etc.) as you normally would
+2. **Instead of opening the Celo app** on your Ledger device, **open the Eth Recovery app**
+3. Proceed with your transaction signing as normal
+
+The key difference is which app you have open on your Ledger device when signing the transaction.
+
+### Important: Derivation Path Configuration
+
+<Warning>
+When using the Eth Recovery app to sign for an account originally created with the Celo app, you must ensure your wallet software is configured to use the **Celo derivation path** (`m/44'/52752'/0'/0`).
+</Warning>
+
+The Eth Recovery app can sign transactions for any derivation path - it's your wallet software (Celo Terminal, MetaMask, etc.) that determines which derivation path to use when requesting signatures.
+
+**If your account was created with the Celo app:**
+- Your address was derived using the Celo path: `m/44'/52752'/0'/0`
+- Your wallet software must continue using this path when connecting via the Eth Recovery app
+- Most Celo-native wallets (like Celo Terminal) will automatically use the correct Celo derivation path
+
+**If you're having trouble accessing the same address:**
+1. Check your wallet's derivation path settings
+2. Ensure it's set to use the Celo derivation path (`m/44'/52752'/0'/0`) rather than Ethereum (`m/44'/60'/0'/0`)
+3. In Celo Terminal, the derivation path should be preserved from your original account setup
+
+## Tested Configurations
+
+This workaround has been verified to work with:
+
+- **Celo Terminal**: versions 2.5.2 and 2.5.3
+- **Ledger Hardware**: Ledger Nano S on firmware 2.1.0
+- **Celo App**: version 1.3.2
+- **Safe**: multisig transactions via WalletConnect
+
+## Technical Background
+
+The issue occurs because the Celo Ledger app's library (`@celo/wallet-ledger`) checks for EIP-712 signing capabilities and errors out early if the feature isn't implemented, rather than returning a random error from the Ledger app itself. The specific method `signEIP712HashedMessage` is not implemented in the Celo Ledger app.
+
+This was introduced in this commit: [developer-tooling@25bf8e3](https://github.com/celo-org/developer-tooling/commit/25bf8e32ce76d5fb46de018714ed5aa71a715bc0)
+
+### Why This Affects Only the Celo App
+
+The Celo Ledger app uses a Celo-specific derivation path (`m/44'/52752'/0'/0`) to generate addresses. This is different from the Ethereum derivation path (`m/44'/60'/0'/0`) used by the Ethereum app.
+
+- **Celo app** (Celo derivation path): Does not support EIP-712 signing ❌
+- **Ethereum app** (Ethereum derivation path): Supports EIP-712 signing ✅
+
+Since Celo is EVM-compatible, you can use either derivation path to interact with the Celo network, but each has trade-offs:
+- **Celo path**: Celo-specific optimizations but lacks EIP-712 support
+- **Ethereum path**: Full EIP-712 support but uses standard Ethereum derivation
+
+## Troubleshooting
+
+### "Eth Recovery app not found"
+
+Make sure you have:
+- Enabled Developer Mode in Ledger Wallet settings
+- Updated your Ledger firmware to the latest version
+- Properly connected and unlocked your Ledger device
+
+### "Transaction still failing with Eth Recovery app"
+
+Verify that:
+- The Eth Recovery app is actually open on your Ledger device (not the Celo app)
+- Your Ledger device is unlocked and ready
+- You're using a supported version of Celo Terminal or other wallet software
+
+### Need Additional Help?
+
+If you continue to experience issues:
+- Check the [Celo Discord](https://chat.celo.org) for community support
+- Review the [Ledger Support](https://support.ledger.com/) documentation
+- File an issue in the relevant GitHub repository
+
+## Future Updates
+
+The Celo community is working on adding native EIP-712 support to the Celo Ledger app. Once this feature is implemented, this workaround will no longer be necessary.
