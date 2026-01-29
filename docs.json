@@ -13,7 +13,7 @@
   "background": {
     "color": {
       "dark": "#0b0d10",
-      "light": "#fbf6f1"
+      "light": "#FCF6F1"
     }
   },
   "appearance": {
@@ -27,7 +27,7 @@
       "family": "system-ui"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/CeloDocs_Favicon_64px.png",
   "navigation": {
     "tabs": [
       {
@@ -615,8 +615,8 @@
     }
   },
   "logo": {
-    "light": "/logo/celo_light.png",
-    "dark": "/logo/celo_dark.png"
+    "light": "/images/CeloDocs_LogoLight.svg",
+    "dark": "/images/CeloDocs_LogoDark.svg"
   },
   "redirects": [
     {
