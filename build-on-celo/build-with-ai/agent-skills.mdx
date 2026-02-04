@@ -7,10 +7,10 @@ Agent Skills are modular, file-based capabilities that teach AI coding agents ho
 
 ## Key Features
 
-- 🧠 **Domain Expertise**: Packaged knowledge for specific development tasks
-- 🔄 **Auto-Activation**: Skills trigger automatically based on context
-- 🛠️ **IDE Compatible**: Works with Claude Code, Cursor, Windsurf, and other AI coding tools
-- 📦 **Modular**: Install individual skills or the complete collection
+- **Domain Expertise**: Packaged knowledge for specific development tasks
+- **Auto-Activation**: Skills trigger automatically based on context
+- **IDE Compatible**: Works with Claude Code, Cursor, Windsurf, and other AI coding tools
+- **Modular**: Install individual skills or the complete collection
 
 ## Installation
 
@@ -77,7 +77,11 @@ bunx openskills install celo-org/agent-skills -g
 
 ## How Skills Work
 
-Skills follow a progressive disclosure model:
+Skills use a **progressive disclosure** architecture to minimize token usage while maximizing relevance. Instead of loading entire documentation sets upfront (which would consume your AI assistant's context window), skills load information in layers. This keeps your AI assistant responsive while ensuring it has deep knowledge available when needed.
+
+For the complete specification, see [agentskills.io](https://agentskills.io).
+
+Skills follow this progressive disclosure model:
 
 ```
 Level 1: Metadata (always loaded, ~100 tokens)

@@ -7,20 +7,18 @@ ERC-8004 is an Ethereum standard that establishes trust infrastructure for auton
 
 ## Key Features
 
-- 🔗 **Identity Registry**: Portable agent identifiers based on ERC-721 NFTs
-- ⭐ **Reputation Registry**: Standardized feedback and rating system for agents
-- ✅ **Validation Registry**: Cryptographic verification mechanisms for high-stakes operations
-- 🌐 **Cross-Chain Support**: Works on any EVM-compatible chain including Celo
+- **Identity Registry**: Portable agent identifiers based on ERC-721 NFTs
+- **Reputation Registry**: Standardized feedback and rating system for agents
+- **Validation Registry**: Independent verification hooks where third-party validators can attest to agent outputs—supporting stake-secured re-execution, zkML proofs, or TEE attestations for high-stakes operations
+- **Cross-Chain Support**: Works on any EVM-compatible chain including Celo
 
 ## Why ERC-8004?
 
 When AI agents interact across organizational boundaries, three critical questions arise:
 
-| Question | Challenge | ERC-8004 Solution |
-|----------|-----------|-------------------|
-| **Discovery** | How do agents find each other? | Identity Registry with searchable metadata |
-| **Identity** | How do agents verify who they're dealing with? | On-chain ERC-721 identity with wallet verification |
-| **Trust** | How do agents evaluate reliability? | Reputation Registry with portable feedback |
+- **Discovery**: How do agents find each other? The Identity Registry provides searchable metadata—agents query the registry to discover other agents by capabilities, endpoints, or domain.
+- **Identity**: How do agents verify who they're dealing with? Each agent is an ERC-721 NFT with a cryptographically linked wallet, enabling verification that you're communicating with the authentic agent owner.
+- **Trust**: How do agents evaluate reliability? The Reputation Registry stores feedback from every interaction, creating a portable track record that travels with the agent across platforms.
 
 ### Protocol stack
 
@@ -58,7 +56,7 @@ flowchart TB
 Makes agents discoverable via portable NFT identifiers.
 
 **Key capabilities:**
-- Every agent is an ERC-721 NFT (browsable, transferable)
+- Every agent **identity** is represented as an ERC-721 NFT—the agent itself runs off-chain, but its on-chain identity is an NFT that's browsable in wallets, transferable between owners, and queryable by smart contracts
 - `agentURI` points to registration file with endpoints
 - Supports multiple endpoint types (A2A, MCP, wallet, ENS, DIDs)
 - Domain verification for endpoint ownership
@@ -92,7 +90,7 @@ Makes agents discoverable via portable NFT identifiers.
 
 ### 2. Reputation Registry
 
-Stores feedback and attestations about agent performance.
+Stores feedback and attestations about agent performance. Feedback is submitted on-chain by any address that has interacted with the agent—this includes users who hired the agent, other agents that collaborated with it, or monitoring services that track uptime and responsiveness. The contract prevents agents from rating themselves (owner and operator addresses are blocked from submitting feedback on their own agent).
 
 **Common feedback tags:**
 
@@ -147,6 +145,8 @@ ERC-8004 deployment on Celo is scheduled for Q1 2026. Contract addresses will be
 
 ### Install SDK
 
+The ERC-8004 SDK provides TypeScript/JavaScript and Python interfaces to interact with the on-chain registries. Install the SDK for your preferred language:
+
 ```bash
 # JavaScript/TypeScript
 npm install @chaoschain/sdk
@@ -156,6 +156,11 @@ pip install chaoschain-sdk
 ```
 
 ### Register an Agent
+
+Registration mints a new ERC-721 NFT that represents your agent's on-chain identity. You'll need to:
+1. Create a registration file (JSON) describing your agent's name, capabilities, and endpoints
+2. Upload it to IPFS or host it at a public URL
+3. Call the registry to mint your agent NFT with the URI pointing to that file
 
 ```javascript
 import { IdentityRegistry } from '@chaoschain/sdk';
@@ -173,6 +178,8 @@ console.log('Agent registered with ID:', agentId);
 ```
 
 ### Give Feedback
+
+After interacting with an agent, submit feedback to the Reputation Registry. Each feedback entry includes a score, category tag (like "starred" for quality or "uptime" for availability), and an optional link to detailed off-chain feedback data:
 
 ```javascript
 import { ReputationRegistry } from '@chaoschain/sdk';
@@ -193,6 +200,8 @@ await reputation.giveFeedback(
 
 ### Query Agent Reputation
 
+Before delegating tasks to an agent, check its reputation. You can retrieve all individual feedback entries or get aggregated statistics:
+
 ```javascript
 // Get all feedback
 const feedback = await reputation.readAllFeedback(agentId);
@@ -206,6 +215,13 @@ console.log('Total reviews:', summary.totalFeedback);
 ## Use Cases
 
 ### DeFi Trading Agents
+
+This diagram shows a typical agent-to-agent interaction flow. A portfolio management agent needs to execute a trade, so it:
+1. Queries the Identity Registry to discover available strategy agents
+2. Filters candidates using the Reputation Registry (checking track records, success rates)
+3. Selects an agent and requests a trade
+4. Pays for the service via x402 (HTTP-native payments)
+5. After the trade completes, submits feedback to build the strategy agent's reputation
 
 ```mermaid
 sequenceDiagram

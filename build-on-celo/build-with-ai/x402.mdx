@@ -7,11 +7,11 @@ x402 is an open protocol for internet-native payments that activates the HTTP 40
 
 ## Key Features
 
-- 💸 **HTTP-Native**: Built into existing HTTP requests with no additional communication required
-- ⚡ **Instant Settlement**: Sub-second on Celo, compared to days with traditional payments
-- 🆓 **Zero Protocol Fees**: Only pay nominal blockchain gas fees
-- 🤖 **Agent-First**: Designed for autonomous AI agent transactions
-- 🌐 **Chain Agnostic**: Supports 170+ EVM chains including Celo
+- **HTTP-Native**: Built into existing HTTP requests with no additional communication required
+- **Instant Settlement**: Sub-second on Celo, compared to days with traditional payments
+- **Zero Protocol Fees**: Only pay nominal blockchain gas fees
+- **Agent-First**: Designed for autonomous AI agent transactions
+- **Chain Agnostic**: Supports 170+ EVM chains including Celo
 
 ## Why x402?
 
@@ -252,6 +252,8 @@ const testnetConfig = {
 
 ### AI Agent API Access
 
+In this example, an AI agent uses its own wallet to pay for API calls autonomously. The agent doesn't need API keys or pre-registered accounts—it simply pays per request using the x402 protocol. This enables truly permissionless agent commerce:
+
 ```typescript
 // AI agent paying for API calls autonomously
 const agent = {
@@ -265,6 +267,13 @@ const analysis = await agent.fetchWithPayment("https://api.ai.com/analyze");
 ```
 
 ### Pay-Per-Use AI Inference
+
+This server-side example demonstrates dynamic pricing using the `upto` scheme. Instead of charging a fixed price upfront, the server:
+1. Verifies the payment authorization is valid for up to the maximum amount
+2. Runs the inference and measures actual token usage
+3. Charges only for what was used (respecting the minimum price)
+
+This is ideal for AI inference where costs vary based on prompt length and output tokens:
 
 ```typescript
 // Server: Charge based on actual token usage with "upto" scheme
@@ -291,6 +300,8 @@ await settlePayment({
 ```
 
 ### Micropayments for Content
+
+Publishers can monetize individual articles instead of requiring subscriptions. Each request is checked for a valid x402 payment—if missing, the server returns `402 Payment Required` with pricing details. If present, the payment is settled and content is delivered:
 
 ```typescript
 // Pay-per-article instead of subscriptions
