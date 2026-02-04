@@ -1,0 +1,277 @@
+---
+title: "ERC-8004: Agent Trust Protocol"
+sidebarTitle: "8004: Agent Trust"
+---
+
+ERC-8004 is an Ethereum standard that establishes trust infrastructure for autonomous AI agents. It enables agents to discover, identify, and evaluate other agents across organizational boundaries without pre-existing trust relationships.
+
+## Key Features
+
+- **Identity Registry**: Portable agent identifiers based on ERC-721 NFTs
+- **Reputation Registry**: Standardized feedback and rating system for agents
+- **Validation Registry**: Independent verification hooks where third-party validators can attest to agent outputs—supporting stake-secured re-execution, zkML proofs, or TEE attestations for high-stakes operations
+- **Cross-Chain Support**: Works on any EVM-compatible chain including Celo
+
+## Why ERC-8004?
+
+When AI agents interact across organizational boundaries, three critical questions arise:
+
+- **Discovery**: How do agents find each other? The Identity Registry provides searchable metadata—agents query the registry to discover other agents by capabilities, endpoints, or domain.
+- **Identity**: How do agents verify who they're dealing with? Each agent is an ERC-721 NFT with a cryptographically linked wallet, enabling verification that you're communicating with the authentic agent owner.
+- **Trust**: How do agents evaluate reliability? The Reputation Registry stores feedback from every interaction, creating a portable track record that travels with the agent across platforms.
+
+### Protocol stack
+
+ERC-8004 fits into the broader agent infrastructure stack:
+
+```mermaid
+flowchart TB
+    subgraph APP["APPLICATION LAYER"]
+        A1["Agent Apps, Platforms, Marketplaces"]
+    end
+
+    subgraph TRUST["TRUST LAYER"]
+        T1["ERC-8004"]
+        T2["Identity, Reputation, Validation"]
+    end
+
+    subgraph PAY["PAYMENT LAYER"]
+        P1["x402"]
+        P2["HTTP 402 + Stablecoin Payments"]
+    end
+
+    subgraph COMM["COMMUNICATION LAYER"]
+        C1["A2A (Google) + MCP (Anthropic)"]
+    end
+
+    APP --> TRUST
+    TRUST --> PAY
+    PAY --> COMM
+```
+
+## The Three Registries
+
+### 1. Identity Registry
+
+Makes agents discoverable via portable NFT identifiers.
+
+**Key capabilities:**
+- Every agent **identity** is represented as an ERC-721 NFT—the agent itself runs off-chain, but its on-chain identity is an NFT that's browsable in wallets, transferable between owners, and queryable by smart contracts
+- `agentURI` points to registration file with endpoints
+- Supports multiple endpoint types (A2A, MCP, wallet, ENS, DIDs)
+- Domain verification for endpoint ownership
+
+**Agent registration file structure:**
+
+```json
+{
+  "type": "Agent",
+  "name": "My AI Agent",
+  "description": "Description of capabilities",
+  "image": "ipfs://...",
+  "endpoints": [
+    {
+      "type": "a2a",
+      "url": "https://example.com/.well-known/agent.json"
+    },
+    {
+      "type": "mcp",
+      "url": "https://example.com/mcp"
+    },
+    {
+      "type": "wallet",
+      "address": "0x...",
+      "chainId": 42220
+    }
+  ],
+  "supportedTrust": ["reputation", "validation", "tee"]
+}
+```
+
+### 2. Reputation Registry
+
+Stores feedback and attestations about agent performance. Feedback is submitted on-chain by any address that has interacted with the agent—this includes users who hired the agent, other agents that collaborated with it, or monitoring services that track uptime and responsiveness. The contract prevents agents from rating themselves (owner and operator addresses are blocked from submitting feedback on their own agent).
+
+**Common feedback tags:**
+
+| Tag | Measures | Example |
+|-----|----------|---------|
+| `starred` | Quality rating (0-100) | 87/100 |
+| `uptime` | Endpoint uptime % | 99.77% |
+| `successRate` | Task success rate % | 89% |
+| `responseTime` | Response time (ms) | 560ms |
+| `reachable` | Endpoint reachable | true/false |
+
+**Key functions:**
+- `giveFeedback()` - Submit feedback with score and tags
+- `revokeFeedback()` - Remove previous feedback
+- `readAllFeedback()` - Get all feedback for an agent
+- `getSummary()` - Get aggregated reputation summary
+
+### 3. Validation Registry
+
+Independent verification hooks for high-stakes operations.
+
+**Supported validation approaches:**
+
+| Model | Mechanism | Best For |
+|-------|-----------|----------|
+| **Reputation-based** | Client feedback with scores | Low-stake, frequent interactions |
+| **Crypto-economic** | Stake-secured validation with slashing | Medium-stake financial operations |
+| **zkML** | Zero-knowledge proofs of correct execution | Privacy-preserving verification |
+| **TEE Attestation** | Hardware-isolated execution proofs | High-assurance requirements |
+
+## Contract Deployments
+
+### Celo Mainnet
+
+<Note>
+ERC-8004 deployment on Celo is scheduled for Q1 2026. Contract addresses will be updated here once deployed.
+</Note>
+
+| Contract | Address |
+|----------|---------|
+| Identity Registry | Coming Soon |
+| Reputation Registry | Coming Soon |
+
+### Celo Sepolia (Testnet)
+
+| Contract | Address |
+|----------|---------|
+| Identity Registry | Coming Soon |
+| Reputation Registry | Coming Soon |
+
+## Quick Start
+
+### Install SDK
+
+The ERC-8004 SDK provides TypeScript/JavaScript and Python interfaces to interact with the on-chain registries. Install the SDK for your preferred language:
+
+```bash
+# JavaScript/TypeScript
+npm install @chaoschain/sdk
+
+# Python
+pip install chaoschain-sdk
+```
+
+### Register an Agent
+
+Registration mints a new ERC-721 NFT that represents your agent's on-chain identity. You'll need to:
+1. Create a registration file (JSON) describing your agent's name, capabilities, and endpoints
+2. Upload it to IPFS or host it at a public URL
+3. Call the registry to mint your agent NFT with the URI pointing to that file
+
+```javascript
+import { IdentityRegistry } from '@chaoschain/sdk';
+
+const registry = new IdentityRegistry(provider);
+
+// Upload registration file to IPFS first
+const agentURI = 'ipfs://QmYourRegistrationFile';
+
+// Register and get agent ID
+const tx = await registry.register(agentURI);
+const agentId = tx.events.Transfer.returnValues.tokenId;
+
+console.log('Agent registered with ID:', agentId);
+```
+
+### Give Feedback
+
+After interacting with an agent, submit feedback to the Reputation Registry. Each feedback entry includes a score, category tag (like "starred" for quality or "uptime" for availability), and an optional link to detailed off-chain feedback data:
+
+```javascript
+import { ReputationRegistry } from '@chaoschain/sdk';
+
+const reputation = new ReputationRegistry(provider);
+
+await reputation.giveFeedback(
+  agentId,
+  85,                    // score (0-100)
+  0,                     // decimals
+  'starred',             // tag1: category
+  '',                    // tag2: optional
+  'https://agent.example.com',  // endpoint used
+  'ipfs://QmDetailedFeedback',  // detailed feedback URI
+  feedbackHash           // keccak256 of feedback content
+);
+```
+
+### Query Agent Reputation
+
+Before delegating tasks to an agent, check its reputation. You can retrieve all individual feedback entries or get aggregated statistics:
+
+```javascript
+// Get all feedback
+const feedback = await reputation.readAllFeedback(agentId);
+
+// Get summary statistics
+const summary = await reputation.getSummary(agentId);
+console.log('Average rating:', summary.averageScore);
+console.log('Total reviews:', summary.totalFeedback);
+```
+
+## Use Cases
+
+### DeFi Trading Agents
+
+This diagram shows a typical agent-to-agent interaction flow. A portfolio management agent needs to execute a trade, so it:
+1. Queries the Identity Registry to discover available strategy agents
+2. Filters candidates using the Reputation Registry (checking track records, success rates)
+3. Selects an agent and requests a trade
+4. Pays for the service via x402 (HTTP-native payments)
+5. After the trade completes, submits feedback to build the strategy agent's reputation
+
+```mermaid
+sequenceDiagram
+    participant PA as Portfolio Agent
+    participant IR as Identity Registry
+    participant RR as Reputation Registry
+    participant SA as Strategy Agent
+    participant x402 as x402 Payment
+
+    PA->>IR: Discover Strategy Agents
+    IR-->>PA: List of registered agents
+    PA->>RR: Check reputation scores
+    RR-->>PA: Filtered by track record
+    PA->>SA: Execute trade request
+    SA->>x402: Payment required
+    PA->>x402: Pay for service
+    x402-->>SA: Payment confirmed
+    SA-->>PA: Trade executed
+    PA->>RR: Submit feedback
+```
+
+### Multi-Agent Workflows
+
+AI agents collaborating across organizations can:
+- Discover each other via Identity Registry
+- Verify credentials before delegation
+- Track performance with Reputation Registry
+- Use Validation Registry for high-stakes decisions
+
+## Integration with Celo
+
+ERC-8004 works seamlessly with Celo's ecosystem:
+
+- **Fee abstraction**: Register agents and give feedback paying gas in stablecoins
+- **x402 payments**: Combine trust verification with instant payments
+- **MCP servers**: Agents can expose capabilities via Celo MCP Server
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| EIP Specification | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) |
+| Official Website | [8004.org](https://www.8004.org) |
+| Learning Portal | [8004.org/learn](https://www.8004.org/learn) |
+| Contracts Repo | [github.com/erc-8004/erc-8004-contracts](https://github.com/erc-8004/erc-8004-contracts) |
+| Telegram | [t.me/ERC8004](https://t.me/ERC8004) |
+| Builder Program | [bit.ly/8004builderprogram](http://bit.ly/8004builderprogram) |
+
+## Related Protocols
+
+- [x402](/build-on-celo/build-with-ai/x402) - Payment layer for AI agents
+- [Agent Skills](/build-on-celo/build-with-ai/agent-skills) - Modular agent capabilities
+- [MCP Servers](/build-on-celo/build-with-ai/mcp/index) - Connect agents to data and tools
