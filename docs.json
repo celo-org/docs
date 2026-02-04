@@ -124,18 +124,29 @@
             "group": "Build with AI",
             "pages": [
               "build-on-celo/build-with-ai/overview",
-              "build-on-celo/build-with-ai/vibe-coding",
-              "build-on-celo/build-with-ai/tools",
-              "build-on-celo/build-with-ai/multi-agent-systems",
-              "build-on-celo/build-with-ai/usecases",
               {
-                "group": "Celo MCPs",
+                "group": "Agent Infrastructure",
+                "pages": [
+                  "build-on-celo/build-with-ai/8004",
+                  "build-on-celo/build-with-ai/x402",
+                  "build-on-celo/build-with-ai/agent-skills"
+                ]
+              },
+              {
+                "group": "Development Tools",
+                "pages": [
+                  "build-on-celo/build-with-ai/vibe-coding",
+                  "build-on-celo/build-with-ai/tools"
+                ]
+              },
+              {
+                "group": "MCP Servers",
                 "pages": [
                   "build-on-celo/build-with-ai/mcp/index",
-                  "build-on-celo/build-with-ai/mcp/celo-mcp",
-                  "build-on-celo/build-with-ai/mcp/composer-mcp"
+                  "build-on-celo/build-with-ai/mcp/celo-mcp"
                 ]
-              }
+              },
+              "build-on-celo/build-with-ai/usecases"
             ]
           },
           {

@@ -1,0 +1,305 @@
+---
+title: "Agent Skills"
+sidebarTitle: "Agent Skills"
+---
+
+Agent Skills are modular, file-based capabilities that teach AI coding agents how to build on Celo and EVM chains. They provide specialized knowledge, workflows, and best practices that automatically activate when relevant tasks are detected.
+
+## Key Features
+
+- 🧠 **Domain Expertise**: Packaged knowledge for specific development tasks
+- 🔄 **Auto-Activation**: Skills trigger automatically based on context
+- 🛠️ **IDE Compatible**: Works with Claude Code, Cursor, Windsurf, and other AI coding tools
+- 📦 **Modular**: Install individual skills or the complete collection
+
+## Installation
+
+### Install All Celo Skills
+
+```bash
+npx openskills install celo-org/agent-skills -g
+```
+
+### Install a Specific Skill
+
+```bash
+npx openskills install celo-org/agent-skills --skill evm-hardhat -g
+```
+
+### Using Other Package Managers
+
+```bash
+# pnpm
+pnpm dlx openskills install celo-org/agent-skills -g
+
+# yarn
+yarn dlx openskills install celo-org/agent-skills -g
+
+# bun
+bunx openskills install celo-org/agent-skills -g
+```
+
+## Available Skills
+
+### Development Tools
+
+| Skill | Description |
+|-------|-------------|
+| **evm-hardhat** | Hardhat development for EVM chains. Covers project setup, compilation, testing, deployment, and verification. |
+| **evm-foundry** | Foundry development with forge, cast, anvil. Covers testing, deployment, and verification. |
+| **celo-composer** | Scaffold Celo dApps with templates. Supports React, Next.js, and various wallet providers. |
+| **contract-verification** | Verify smart contracts on Celoscan, Blockscout, Sourcify, and Remix. |
+
+### Blockchain Interaction
+
+| Skill | Description |
+|-------|-------------|
+| **celo-rpc** | Interact with Celo via RPC. Reading balances, transactions, blocks, and Celo-specific methods. |
+| **viem** | TypeScript library with first-class support for fee currencies and CIP-64 transactions. |
+| **wagmi** | React hooks for wallet connection, contract interaction, and transaction handling. |
+| **fee-abstraction** | Pay gas fees with ERC-20 tokens (USDC, USDT, USDm) on Celo. |
+
+### Wallet Integration
+
+| Skill | Description |
+|-------|-------------|
+| **evm-wallet-integration** | Integrate wallets using Reown AppKit, Dynamic, or custom wagmi implementations. |
+| **minipay-integration** | Build Mini Apps for MiniPay with wallet detection and stablecoin payments. |
+| **thirdweb** | Full-stack Web3 development with contract deployment and pre-built components. |
+
+### DeFi & Assets
+
+| Skill | Description |
+|-------|-------------|
+| **celo-stablecoins** | Work with Mento stablecoins (USDm, cEUR, cREAL) and bridged stables (USDC, USDT). |
+| **celo-defi** | DeFi protocol integration with Uniswap, Aave, and Ubeswap. |
+| **bridging** | Bridge assets using native bridge, Wormhole, LayerZero, and other bridges. |
+
+## How Skills Work
+
+Skills follow a progressive disclosure model:
+
+```
+Level 1: Metadata (always loaded, ~100 tokens)
+         └── Name and description for activation detection
+
+Level 2: Instructions (loaded when triggered, <5000 tokens)
+         └── SKILL.md with workflows and examples
+
+Level 3: Resources (loaded on-demand)
+         └── references/, rules/, scripts/
+```
+
+### Skill Structure
+
+```
+skill-name/
+├── SKILL.md           # Main instructions (required)
+├── references/        # Detailed documentation
+├── rules/             # Best practices and standards
+└── scripts/           # Executable scripts
+```
+
+## Using Skills
+
+Once installed, skills activate automatically. Just ask your AI coding agent to perform a task:
+
+### Example: Deploy a Contract
+
+```
+You: "Deploy this ERC20 token to Celo Sepolia"
+
+AI: [evm-hardhat skill activates]
+    - Sets up hardhat.config.ts with Celo networks
+    - Compiles the contract
+    - Deploys to Celo Sepolia
+    - Verifies on Celoscan
+```
+
+### Example: Pay Gas with Stablecoins
+
+```
+You: "Send a transaction paying gas in USDC"
+
+AI: [fee-abstraction skill activates]
+    - Uses viem with feeCurrency parameter
+    - Sets USDC adapter address
+    - Sends CIP-64 transaction
+```
+
+### Example: Build a MiniPay App
+
+```
+You: "Create a simple payment app for MiniPay"
+
+AI: [minipay-integration skill activates]
+    - Scaffolds Next.js project with celo-composer
+    - Adds MiniPay wallet detection
+    - Implements stablecoin transfer
+    - Configures for mobile-first design
+```
+
+## Skill Examples
+
+### evm-hardhat
+
+The Hardhat skill includes configuration for Celo networks:
+
+```typescript
+// Generated hardhat.config.ts
+const config: HardhatUserConfig = {
+  solidity: "0.8.28",
+  networks: {
+    celo: {
+      url: "https://forno.celo.org",
+      chainId: 42220,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    celoSepolia: {
+      url: "https://forno.celo-sepolia.celo-testnet.org",
+      chainId: 11142220,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      celo: process.env.CELOSCAN_API_KEY,
+    },
+  },
+};
+```
+
+### fee-abstraction
+
+The fee abstraction skill teaches paying gas in stablecoins:
+
+```typescript
+import { createWalletClient, custom } from "viem";
+import { celo } from "viem/chains";
+
+// USDC adapter address for fee payment
+const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
+
+const walletClient = createWalletClient({
+  chain: celo,
+  transport: custom(window.ethereum),
+});
+
+const hash = await walletClient.sendTransaction({
+  to: recipientAddress,
+  value: parseEther("0.01"),
+  feeCurrency: USDC_ADAPTER, // Pay gas in USDC
+});
+```
+
+### celo-rpc
+
+The RPC skill covers blockchain interactions:
+
+```typescript
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
+
+const client = createPublicClient({
+  chain: celo,
+  transport: http("https://forno.celo.org"),
+});
+
+// Get CELO balance
+const balance = await client.getBalance({
+  address: "0x...",
+});
+
+// Get USDm token balance
+const USDm = "0x765de816845861e75a25fca122bb6898b8b1282a";
+const tokenBalance = await client.readContract({
+  address: USDm,
+  abi: erc20Abi,
+  functionName: "balanceOf",
+  args: [userAddress],
+});
+```
+
+## Creating Custom Skills
+
+You can create skills for your own workflows:
+
+### 1. Create Skill Directory
+
+```bash
+mkdir -p ~/.claude/skills/my-custom-skill
+```
+
+### 2. Write SKILL.md
+
+```markdown
+---
+name: my-custom-skill
+description: Handles specific tasks for my project.
+  Use when building features related to X.
+---
+
+# My Custom Skill
+
+## When to Use
+- Task type 1
+- Task type 2
+
+## Process
+
+### Step 1: Setup
+Instructions here...
+
+### Step 2: Implementation
+More instructions...
+
+## Examples
+
+**Input**: "Do X with Y"
+**Output**: Expected result...
+```
+
+### 3. Add Resources (Optional)
+
+```
+my-custom-skill/
+├── SKILL.md
+├── references/
+│   └── api-docs.md
+├── rules/
+│   └── best-practices.md
+└── scripts/
+    └── helper.py
+```
+
+## Celo Network Reference
+
+| Network | Chain ID | RPC Endpoint | Explorer |
+|---------|----------|--------------|----------|
+| Celo Mainnet | 42220 | https://forno.celo.org | https://celoscan.io |
+| Celo Sepolia | 11142220 | https://forno.celo-sepolia.celo-testnet.org | https://sepolia.celoscan.io |
+
+## Contributing
+
+Want to add a new skill? See the [contribution guide](https://github.com/celo-org/agent-skills/blob/main/CONTRIBUTING.md).
+
+**Quality checklist:**
+- [ ] SKILL.md follows the Agent Skills spec
+- [ ] All contract addresses are verified on block explorers
+- [ ] Code examples have been tested
+- [ ] No deprecated APIs or testnets
+- [ ] All links are valid
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| Celo Agent Skills | [github.com/celo-org/agent-skills](https://github.com/celo-org/agent-skills) |
+| Agent Skills Spec | [agentskills.io](https://agentskills.io) |
+| OpenSkills CLI | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills) |
+
+## Related
+
+- [ERC-8004](/build-on-celo/build-with-ai/8004) - Trust layer for AI agents
+- [x402](/build-on-celo/build-with-ai/x402) - Payment layer for AI agents
+- [Celo MCP](/build-on-celo/build-with-ai/mcp/celo-mcp) - MCP server for Celo blockchain
