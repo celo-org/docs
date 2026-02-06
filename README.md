@@ -1,34 +1,8 @@
 # Celo Documentation
 
-Official documentation for Celo, built with [Mintlify](https://mintlify.com).
+Official documentation for Celo
 
-## 🔍 Documentation Validation
-
-We have automated checks for errors and broken links that run on every push and pull request.
-
-### Quick Validation
-
-Before committing, run local validation:
-
-```bash
-# Run all validation checks
-./scripts/validate-docs.sh
-
-# Check for broken links using Mintlify CLI
-mint broken-links
-```
-
-### CI/CD Workflows
-
-- ✅ **Broken Links Check** - Automatically scans for broken internal/external links
-- ✅ **Structure Validation** - Validates docs.json syntax and structure
-- ✅ **MDX File Verification** - Ensures all referenced files exist
-- ✅ **Syntax Checking** - Detects common MDX/JSX syntax errors
-- ✅ **PR Comments** - Automatically comments on PRs with validation results
-
-Run `./scripts/validate-docs.sh` to check for errors before committing.
-
-## Development
+## Making Changes
 
 Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally:
 
@@ -36,25 +10,17 @@ Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your d
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+Run the following command. It will display a preview of you changes at `http://localhost:3000`.
 
-```bash
+```sh
 mint dev
 ```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-**Important:** All PRs must pass validation checks before merging.
 
 ## Contributing
 
 1. **Before committing:**
-   - Run `./scripts/validate-docs.sh` to check for errors
    - Test your changes locally with `mint dev`
+   - Check for broken links with `mint broken-links`
    - Ensure all links work correctly
 
 2. **Creating a PR:**
@@ -67,8 +33,6 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
    - Review any warnings in PR comments
    - Verify changes render correctly
 
-## Need help?
-
 ### Troubleshooting
 
 - **Dev environment not running:** Run `mint update` to ensure you have the most recent version of the CLI
@@ -79,9 +43,5 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
 ### Resources
 
 - [Celo Documentation](https://docs.celo.org)
-- [Validation Script](./scripts/validate-docs.sh)
-- [Mintlify Documentation](https://mintlify.com/docs)
-- [Mintlify Community](https://mintlify.com/community)
 - [Celo Discord](https://discord.com/invite/celo)
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+- [Mintlify Documentation](https://mintlify.com/docs)
