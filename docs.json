@@ -19,6 +19,10 @@
   "appearance": {
     "default": "dark"
   },
+  "banner": {
+    "content": "🤖 **Build Agents for the Real World** — Celo Hackathon (Feb 6–15)! [Join now →](https://celoplatform.notion.site/Build-Agents-for-the-Real-World-Celo-Hackathon-2fdd5cb803de80c99010c04b6902a3a9)",
+    "dismissible": true
+  },
   "fonts": {
     "heading": {
       "family": "system-ui"
