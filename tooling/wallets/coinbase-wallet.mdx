@@ -44,9 +44,9 @@ const CELO_SEPOLIA_PARAMS = {
 };
 ```
 
-## Adding Tokens \(e.g. cUSD, cEUR\)
+## Adding Tokens \(e.g. USDm, EURm\)
 
-To watch an asset on a Celo netowork \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.cloud.coinbase.com/wallet-sdk/docs/tracking-assets#calling-wallet_watchasset)\).
+To watch an asset on a Celo netowork \(e.g. USDm, EURm\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.cloud.coinbase.com/wallet-sdk/docs/tracking-assets#calling-wallet_watchasset)\).
 
 Here is a JavaScript snippet you can use:
 
@@ -66,7 +66,7 @@ await window.ethereum.request({
 ```
 
 - Where it says `INSERT_ADDRESS_HERE`, please replace with any of the following constants, depending on which network and which asset you'd like to connect to.
-- Where it says `INSERT_SYMBOL_HERE`, please replace with the correct symbol for the asset you'd like to watch. For Celo Dollars, it's `cUSD` and for Celo Euros, it's `cEUR`.
+- Where it says `INSERT_SYMBOL_HERE`, please replace with the correct symbol for the asset you'd like to watch. For Mento Dollar, it's `USDm` and for Mento Euro, it's `EURm`.
 
 <Tip>
 View available token addresses for Celo assets to add to Coinbase Wallet [here](/contracts/token-contracts).

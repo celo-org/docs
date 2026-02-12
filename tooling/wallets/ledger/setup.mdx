@@ -23,7 +23,7 @@ Make sure to have the following before you begin:
 
 - Initialized your [Ledger Nano X or S](https://support.ledger.com/hc/en-us/articles/360018784134)
 - The [latest firmware](https://support.ledger.com/hc/en-us/articles/360013349800) is installed
-- [Ledger Live](https://www.ledger.com/ledger-live) is ready to be used.
+- [Ledger Wallet](https://www.ledger.com/ledger-live) is ready to be used.
 
 ## Installation Instructions
 
@@ -35,7 +35,7 @@ Start by installing the Celo application and setting a PIN on your Ledger device
 Make sure to securely back up both the PIN and the recovery phrase (also known as a backup key or mnemonic). If you lose them, or they are stolen, you lose access to your Celo assets with no recovery possible. The recovery phrase will be shown only once.
 </Danger>
 
-Open the Ledger Live App on your computer and follow the instructions on the screen.
+Open the Ledger Wallet App on your computer and follow the instructions on the screen.
 
 Search for “Celo” in the app store.
 
@@ -57,7 +57,7 @@ The installation is completed once you see the green tick and **Installed** labe
 
 You should now see on your device’s screen `Celo app`. You may need to toggle left or right using the buttons on the device to find the app.
 
-Quit the Ledger Live app on your compute but keep the Ledger wallet connected to your computer.
+Quit the Ledger Wallet app on your compute but keep the Ledger wallet connected to your computer.
 
 ### Setting up the Celo app
 
@@ -72,3 +72,11 @@ The Celo app is now ready for use and you should see `Application is ready` on t
 - [Celo Terminal App](/wallet/ledger/to-celo-terminal)
 - [Celo Web Wallet](/wallet/ledger/to-celo-web)
 - [Celo CLI](/wallet/ledger/to-celo-cli)
+
+## Known Limitations
+
+<Warning>
+The Celo Ledger app currently does not support signing EIP-712 typed data, which is required for certain operations like signing Safe multisig transactions via WalletConnect.
+
+If you need to sign EIP-712 transactions, you'll need to use the **Eth Recovery app** as a workaround. See the [EIP-712 Signing Workaround guide](/wallet/ledger/eip712-workaround) for detailed instructions.
+</Warning>

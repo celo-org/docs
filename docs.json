@@ -13,11 +13,15 @@
   "background": {
     "color": {
       "dark": "#0b0d10",
-      "light": "#fbf6f1"
+      "light": "#FCF6F1"
     }
   },
   "appearance": {
     "default": "dark"
+  },
+  "banner": {
+    "content": "🤖 **Build Agents for the Real World** — Celo Hackathon (Feb 6–15)! [Join now →](https://celoplatform.notion.site/Build-Agents-for-the-Real-World-Celo-Hackathon-2fdd5cb803de80c99010c04b6902a3a9)",
+    "dismissible": true
   },
   "fonts": {
     "heading": {
@@ -27,7 +31,7 @@
       "family": "system-ui"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/CeloDocs_Favicon_64px.png",
   "navigation": {
     "tabs": [
       {
@@ -112,6 +116,7 @@
             "pages": [
               "build-on-celo/index",
               "build-on-celo/quickstart",
+              "build-on-celo/network-overview",
               "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
               "build-on-celo/scaling-your-app",
@@ -123,35 +128,29 @@
             "group": "Build with AI",
             "pages": [
               "build-on-celo/build-with-ai/overview",
-              "build-on-celo/build-with-ai/vibe-coding",
               {
-                "group": "Build with GOAT",
+                "group": "Agent Infrastructure",
                 "pages": [
-                  "build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
-                  "build-on-celo/build-with-ai/build-with-goat/mint-nft-agent",
-                  "build-on-celo/build-with-ai/build-with-goat/send-token-agent"
-                ]
-              },
-              "build-on-celo/build-with-ai/resources",
-              "build-on-celo/build-with-ai/tools",
-              "build-on-celo/build-with-ai/multi-agent-systems",
-              "build-on-celo/build-with-ai/usecases",
-              {
-                "group": "Examples",
-                "pages": [
-                  "build-on-celo/build-with-ai/examples/ai-memecoins",
-                  "build-on-celo/build-with-ai/examples/building_with_goat",
-                  "build-on-celo/build-with-ai/examples/build-with-thirdweb-ai"
+                  "build-on-celo/build-with-ai/8004",
+                  "build-on-celo/build-with-ai/x402",
+                  "build-on-celo/build-with-ai/agent-skills"
                 ]
               },
               {
-                "group": "Celo MCPs",
+                "group": "Development Tools",
+                "pages": [
+                  "build-on-celo/build-with-ai/vibe-coding",
+                  "build-on-celo/build-with-ai/tools"
+                ]
+              },
+              {
+                "group": "MCP Servers",
                 "pages": [
                   "build-on-celo/build-with-ai/mcp/index",
-                  "build-on-celo/build-with-ai/mcp/celo-mcp",
-                  "build-on-celo/build-with-ai/mcp/composer-mcp"
+                  "build-on-celo/build-with-ai/mcp/celo-mcp"
                 ]
-              }
+              },
+              "build-on-celo/build-with-ai/usecases"
             ]
           },
           {
@@ -187,15 +186,12 @@
             "group": "Overview",
             "pages": [
               "tooling/overview/index",
-              "tooling/overview/network-overview",
-              "tooling/bridges/bridges",
+              "tooling/overview/faucet",
               "tooling/overview/fee-abstraction",
-              "tooling/overview/faucet"
+              "tooling/bridges/bridges",
+              "tooling/bridges/cross-chain-messaging",
+              "tooling/testnets/celo-sepolia/index"
             ]
-          },
-          {
-            "group": "Testnets",
-            "pages": ["tooling/testnets/celo-sepolia/index"]
           },
           {
             "group": "Nodes",
@@ -236,8 +232,7 @@
                   "tooling/wallets/ledger/to-celo-web",
                   "tooling/wallets/ledger/to-celo-cli"
                 ]
-              },
-              "tooling/wallets/staking"
+              }
             ]
           },
           {
@@ -256,7 +251,20 @@
               "tooling/indexers/overview",
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
-              "tooling/indexers/envio"
+              "tooling/indexers/envio",
+              "tooling/indexers/goldrush"
+            ]
+          },
+          {
+            "group": "Oracles",
+            "pages": [
+              "tooling/oracles/run",
+              "tooling/oracles/index",
+              "tooling/oracles/band-protocol",
+              "tooling/oracles/chainlink-oracles",
+              "tooling/oracles/redstone",
+              "tooling/oracles/supra",
+              "tooling/oracles/quex-oracles"
             ]
           },
           {
@@ -336,30 +344,6 @@
               "tooling/contract-verification/remix",
               "tooling/contract-verification/hardhat"
             ]
-          },
-          {
-            "group": "Oracles",
-            "pages": [
-              "tooling/oracles/run",
-              "tooling/oracles/index",
-              "tooling/oracles/band-protocol",
-              "tooling/oracles/chainlink-oracles",
-              "tooling/oracles/redstone",
-              "tooling/oracles/supra",
-              "tooling/oracles/quex-oracles"
-            ]
-          },
-          {
-            "group": "Plumo",
-            "pages": [
-              "tooling/plumo/index",
-              "tooling/plumo/verification-phase-1",
-              "tooling/plumo/verification-phase-2"
-            ]
-          },
-          {
-            "group": " ",
-            "pages": ["tooling/bridges/cross-chain-messaging"]
           }
         ]
       },
@@ -646,8 +630,8 @@
     }
   },
   "logo": {
-    "light": "/logo/celo_light.png",
-    "dark": "/logo/celo_dark.png"
+    "light": "/images/CeloDocs_LogoLight.svg",
+    "dark": "/images/CeloDocs_LogoDark.svg"
   },
   "redirects": [
     {
@@ -1476,7 +1460,7 @@
     },
     {
       "source": "/developer-guide/forno",
-      "destination": "/network/node/forno"
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/developer-guide/integrations/checklist",
@@ -1627,8 +1611,8 @@
       "destination": "/developer"
     },
     {
-      "source": "/developer-resources/forno/inde",
-      "destination": "/network/node/forno"
+      "source": "/developer-resources/forno/index",
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/developer-resources/integrations/checklist",
@@ -1660,15 +1644,15 @@
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/networks/baklava-testnet",
-      "destination": "/network/baklava"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/networks/celo-mainnet",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/developer-resources/overview",
@@ -1824,15 +1808,15 @@
     },
     {
       "source": "/getting-started/alfajores-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/faucet",
-      "destination": "/network/celo-sepolia/faucet"
+      "destination": "https://faucet.celo.org/celo-sepolia"
     },
     {
       "source": "/getting-started/alfajores-testnet/index",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
@@ -1840,15 +1824,15 @@
     },
     {
       "source": "/getting-started/alfajores-testnet/using-the-mobile-wallet",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet/index",
-      "destination": "/network/baklava"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-full-node",
@@ -1864,7 +1848,7 @@
     },
     {
       "source": "/getting-started/choosing-a-network",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/glossary",
@@ -1872,15 +1856,15 @@
     },
     {
       "source": "/getting-started/hosted-nodes",
-      "destination": "/network/node/overview"
+      "destination": "/tooling/nodes/overview"
     },
     {
       "source": "/getting-started/mainnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/mainnet/index",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/mainnet/running-a-full-node-in-mainnet",
@@ -1892,7 +1876,7 @@
     },
     {
       "source": "/getting-started/rc1",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/getting-started/rc1/running-a-full-node-in-rc1",
@@ -2008,27 +1992,27 @@
     },
     {
       "source": "/important-information/alfajores-testnet-disclaimer",
-      "destination": "/network/celo-sepolia"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/baklava-testnet-disclaimer",
-      "destination": "/network/baklava/disclaimer"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/mainnet-testnet-disclaimer",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/important-information/rc-network-disclaimer",
-      "destination": "/network/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network#celo-alfajores-l2-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network#celo-baklava-l2-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/alfajores/run-full-node",
@@ -2036,7 +2020,7 @@
     },
     {
       "source": "/network/alfajores/faucet",
-      "destination": "/network/celo-sepolia/faucet"
+      "destination": "https://faucet.celo.org/celo-sepolia"
     },
     {
       "source": "/network/baklava/run-full-node",
@@ -2064,7 +2048,7 @@
     },
     {
       "source": "/network/node/run-hosted",
-      "destination": "/network/node/overview"
+      "destination": "/tooling/nodes/overview"
     },
     {
       "source": "/network/node/run-mainnet",
@@ -2248,7 +2232,7 @@
     },
     {
       "source": "/v/master/developer-guide/overview/introduction/forno",
-      "destination": "/network/node/forno"
+      "destination": "/tooling/nodes/forno"
     },
     {
       "source": "/v/master/developer-guide/start",
@@ -2264,7 +2248,7 @@
     },
     {
       "source": "/v/master/getting-started/baklava-testnet",
-      "destination": "/network"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/validator-guide/attestation-service",
@@ -2700,23 +2684,23 @@
     },
     {
       "source": "/network",
-      "destination": "/tooling/overview/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/alfajores",
-      "destination": "/tooling/testnets/alfajores"
+      "destination": "/tooling/testnets/celo-sepolia"
     },
     {
       "source": "/network/alfajores/:slug*",
-      "destination": "/tooling/testnets/alfajores/:slug*"
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
     },
     {
       "source": "/network/baklava",
-      "destination": "/tooling/testnets/baklava"
+      "destination": "/tooling/testnets/celo-sepolia"
     },
     {
       "source": "/network/baklava/:slug*",
-      "destination": "/tooling/testnets/baklava/:slug*"
+      "destination": "/tooling/testnets/celo-sepolia/:slug*"
     },
     {
       "source": "/network/celo-sepolia",
@@ -2736,11 +2720,11 @@
     },
     {
       "source": "/network/mainnet",
-      "destination": "/tooling/testnets/mainnet"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/mainnet/:slug*",
-      "destination": "/tooling/testnets/mainnet/:slug*"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/network/node/:slug*",
@@ -2920,7 +2904,7 @@
     },
     {
       "source": "/learn/topology-of-a-celo-network",
-      "destination": "/tooling/overview/network-overview"
+      "destination": "/build-on-celo/network-overview"
     },
     {
       "source": "/learn/why-celo",
@@ -3029,6 +3013,54 @@
     {
       "source": "/build/support",
       "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/mint-nft-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/build-with-goat/send-token-agent",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/ai-memecoins",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/building_with_goat",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/examples/build-with-thirdweb-ai",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/resources",
+      "destination": "/build-on-celo/build-with-ai/overview"
+    },
+    {
+      "source": "/tooling/overview/network-overview",
+      "destination": "/build-on-celo/network-overview"
+    },
+    {
+      "source": "/tooling/wallets/staking",
+      "destination": "/contribute-to-celo/community-rpc-nodes/how-it-works"
+    },
+    {
+      "source": "/tooling/plumo/index",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/tooling/plumo/verification-phase-1",
+      "destination": "/home/index"
+    },
+    {
+      "source": "/tooling/plumo/verification-phase-2",
+      "destination": "/home/index"
     }
   ],
   "footer": {
@@ -3063,10 +3095,11 @@
           },
           {
             "href": "https://lemonade.social/celo",
-            "label": "Lemonade"
+            "label": "Events"
           }
         ]
       }
     ]
-  }
+  },
+  "description": "Learn to develop on the Ethereum L2 built for the real world. Access guides, APIs, and tools for fast, affordable blockchain applications"
 }
