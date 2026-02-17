@@ -1,0 +1,33 @@
+---
+title: "Jovian Hardfork"
+---
+
+This page outlines changes related to the Jovian Upgrade for node operators.
+
+<Note>
+This page will be kept updated with key information about the upgrade. Activation dates are TBD.
+
+- Celo Sepolia testnet activation: TBD (Q1 2026)
+- **Mainnet** activation: TBD (Q1 2026)
+</Note>
+
+## What is the Jovian Hardfork?
+
+The Jovian Hardfork adopts features from [Optimism's Jovian hardfork](https://specs.optimism.io/protocol/superchain-upgrades.html) along with Celo-specific improvements focused on gas accounting and base fee alignment.
+
+Key changes include:
+
+- **Transfer Precompile Address Warming**: The transfer precompile now warms `from` and `to` addresses during execution, aligning with standard EVM behavior and ensuring correct gas accounting for subsequent operations on the same address.
+- **Minimum Base Fee Transition**: Celo moves from its own gas price floor mechanism to Optimism's configurable Minimum Base Fee standard, maintaining a cost floor while aligning with OP Stack conventions.
+For the full technical specification, see the [Jovian upgrade spec](https://specs.celo.org/upgrades/jovian.html).
+- **L1 Fusaka Upgrade**: Celo now includes improvements to handle the L1 Fusaka upgrade, leading to better compatibility with the Optimism stack. For more details see [OP Fusaka upgrade notice](https://docs.optimism.io/notices/archive/fusaka-notice).
+
+## For Node Operators
+
+Software versions will be announced ahead of the activation date. Check back for updates.
+
+<Tip>
+**Docker Compose**
+
+The required configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
+</Tip>
