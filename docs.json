@@ -396,6 +396,7 @@
           {
             "group": "Notices",
             "pages": [
+              "notices/index",
               "notices/jello-upgrade",
               "notices/l1-fusaka-upgrade",
               "notices/celo-sepolia-launch",
