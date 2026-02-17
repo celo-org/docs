@@ -396,6 +396,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/jovian-upgrade",
               "infra-partners/notices/jello-upgrade",
               "infra-partners/notices/l1-fusaka-upgrade",
               "infra-partners/notices/celo-sepolia-launch",
