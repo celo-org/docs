@@ -391,19 +391,24 @@
         ]
       },
       {
-        "tab": "Infra Partners",
+        "tab": "Notices",
         "groups": [
           {
             "group": "Notices",
             "pages": [
-              "infra-partners/notices/jello-upgrade",
-              "infra-partners/notices/l1-fusaka-upgrade",
-              "infra-partners/notices/celo-sepolia-launch",
-              "infra-partners/notices/eigenda-v2-upgrade",
-              "infra-partners/notices/isthmus-upgrade",
-              "infra-partners/notices/l2-migration"
+              "notices/jello-upgrade",
+              "notices/l1-fusaka-upgrade",
+              "notices/celo-sepolia-launch",
+              "notices/eigenda-v2-upgrade",
+              "notices/isthmus-upgrade",
+              "notices/l2-migration"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Infra Partners",
+        "groups": [
           {
             "group": "Node Operation",
             "pages": [
@@ -2764,19 +2769,43 @@
     },
     {
       "source": "/cel2/notices/celo-sepolia-launch",
-      "destination": "/infra-partners/notices/celo-sepolia-launch"
+      "destination": "/notices/celo-sepolia-launch"
     },
     {
       "source": "/cel2/notices/eigenda-v2-upgrade",
-      "destination": "/infra-partners/notices/eigenda-v2-upgrade"
+      "destination": "/notices/eigenda-v2-upgrade"
     },
     {
       "source": "/cel2/notices/isthmus-upgrade",
-      "destination": "/infra-partners/notices/isthmus-upgrade"
+      "destination": "/notices/isthmus-upgrade"
     },
     {
       "source": "/cel2/notices/l2-migration",
-      "destination": "/infra-partners/notices/l2-migration"
+      "destination": "/notices/l2-migration"
+    },
+    {
+      "source": "/infra-partners/notices/jello-upgrade",
+      "destination": "/notices/jello-upgrade"
+    },
+    {
+      "source": "/infra-partners/notices/l1-fusaka-upgrade",
+      "destination": "/notices/l1-fusaka-upgrade"
+    },
+    {
+      "source": "/infra-partners/notices/celo-sepolia-launch",
+      "destination": "/notices/celo-sepolia-launch"
+    },
+    {
+      "source": "/infra-partners/notices/eigenda-v2-upgrade",
+      "destination": "/notices/eigenda-v2-upgrade"
+    },
+    {
+      "source": "/infra-partners/notices/isthmus-upgrade",
+      "destination": "/notices/isthmus-upgrade"
+    },
+    {
+      "source": "/infra-partners/notices/l2-migration",
+      "destination": "/notices/l2-migration"
     },
     {
       "source": "/cel2/operators/architecture",
