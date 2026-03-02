@@ -1,0 +1,362 @@
+---
+title: Build with JAW
+og:description: Smart account infrastructure for Celo with passkey authentication, ENS identity, gasless transactions, and programmable permissions.
+sidebarTitle: "JAW"
+---
+
+[JAW](https://jaw.id/) provides smart account infrastructure for Celo applications. Give users passkey-secured accounts with ENS identity, sponsor their gas, and enable programmable permissions for subscriptions and delegated agent execution.
+
+## Key Features
+
+- **Passkey authentication**: phishing-resistant, synced across devices via iCloud/Google (works as transport layer)
+- **ERC-4337 smart accounts**: gasless, batchable, and programmable
+- **EIP-1193 compatible**: drop-in replacement for MetaMask or any injected wallet
+- **Delegated permissions**: let contracts or agents perform scoped actions (ERC-7715)
+- **ENS subname issuance**: assign human-readable identities on onboarding
+- **Headless/server-side support**: AI agent wallets or backend-triggered transactions
+
+## Getting Started
+
+Get an API key from the [JAW Dashboard](https://dashboard.jaw.id) and add your domain to the allowed list. Use `localhost` for local development, your production domain for production.
+
+**`@jaw.id/wagmi`**: React connector with wagmi hooks. Use this for React and Next.js apps.
+**`@jaw.id/core`**: Framework-agnostic EIP-1193 provider. Use this for vanilla JS, server-side, or headless environments.
+
+<Tabs group="sdk">
+  <Tab title="wagmi">
+
+**Installation**
+
+```bash
+npm install @jaw.id/wagmi wagmi @tanstack/react-query
+```
+
+**Configure**
+
+Create your wagmi config with the JAW connector, then wrap your app with `WagmiProvider` and `QueryClientProvider`. Both are required.
+
+```typescript
+// config.ts
+import { createConfig, http } from 'wagmi';
+import { celo } from 'wagmi/chains';
+import { jaw } from '@jaw.id/wagmi';
+
+export const config = createConfig({
+  chains: [celo],
+  connectors: [
+    jaw({
+      apiKey: process.env.NEXT_PUBLIC_JAW_API_KEY!,
+      appName: 'My Celo App',
+      defaultChainId: celo.id, // 42220
+    }),
+  ],
+  transports: {
+    [celo.id]: http(),
+  },
+});
+```
+
+```tsx
+// App.tsx
+import { WagmiProvider } from 'wagmi';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { config } from './config';
+
+const queryClient = new QueryClient();
+
+export function App({ children }: { children: React.ReactNode }) {
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}
+```
+
+For testnet (Celo Sepolia), enable `showTestnets` in the connector:
+
+```typescript
+jaw({
+  apiKey: process.env.NEXT_PUBLIC_JAW_API_KEY!,
+  defaultChainId: 11142220, // Celo Sepolia Testnet
+  preference: { showTestnets: true },
+})
+```
+
+**Connect a Wallet**
+
+Use `useConnect` from `@jaw.id/wagmi` (not from `wagmi`) to support JAW-specific capabilities like SIWE and subname issuance during connection.
+
+```tsx
+import { useConnect } from '@jaw.id/wagmi';
+import { useAccount } from 'wagmi';
+
+export function ConnectButton() {
+  const { connect, connectors } = useConnect();
+  const { address, isConnected } = useAccount();
+
+  if (isConnected) return <p>Connected: {address}</p>;
+
+  return (
+    <button onClick={() => connect({ connector: connectors[0] })}>
+      Sign in with Passkey
+    </button>
+  );
+}
+```
+
+In CrossPlatform mode, clicking the button opens a `keys.jaw.id` popup where the user registers or authenticates with their passkey. In AppSpecific mode, the `uiHandler` renders the UI inside your app instead.
+
+**Send a Transaction**
+
+```tsx
+import { useSendCalls } from 'wagmi';
+import { parseEther } from 'viem';
+
+export function SendCelo() {
+  const { sendCalls } = useSendCalls();
+
+  return (
+    <button
+      onClick={() =>
+        sendCalls({
+          calls: [{
+            to: '0xRecipientAddress',
+            value: parseEther('0.01'),
+          }],
+        })
+      }
+    >
+      Send 0.01 CELO
+    </button>
+  );
+}
+```
+
+**Enable Gasless Transactions**
+
+Add a paymaster to your config to sponsor gas fees so users never need to hold CELO. JAW requires an ERC-7677 compatible paymaster using EntryPoint v0.8.
+
+```typescript
+// config.ts
+import { createConfig, http } from 'wagmi';
+import { celo } from 'wagmi/chains';
+import { jaw } from '@jaw.id/wagmi';
+
+export const config = createConfig({
+  chains: [celo],
+  connectors: [
+    jaw({
+      apiKey: process.env.NEXT_PUBLIC_JAW_API_KEY!,
+      appName: 'My Celo App',
+      defaultChainId: celo.id,
+      paymasters: {
+        [celo.id]: { url: 'https://your-paymaster-url/rpc' },
+      },
+    }),
+  ],
+  transports: {
+    [celo.id]: http(),
+  },
+});
+```
+
+Once configured, transactions via `useSendCalls` and `useWriteContract` are automatically sponsored. No changes to your transaction code needed.
+
+**Delegated Permissions**
+
+Permissions (ERC-7715) let you grant a spender (a backend wallet, contract, or AI agent) the ability to perform scoped actions on behalf of the user. Permissions define exactly which contracts can be called, how much can be spent, and for how long. Use them for subscription payments, recurring charges, and autonomous agent wallets.
+
+```tsx
+import { useGrantPermissions } from '@jaw.id/wagmi';
+import { parseUnits } from 'viem';
+
+const CELO_NATIVE = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
+
+function GrantPermission() {
+  const { mutate: grant, isPending } = useGrantPermissions();
+
+  return (
+    <button
+      disabled={isPending}
+      onClick={() =>
+        grant({
+          end: Math.floor(Date.now() / 1000) + 86400 * 30, // 30 days
+          spender: '0xYourAgentOrBackendWallet',
+          permissions: {
+            calls: [{
+              target: '0xSomeContract',
+              functionSignature: 'execute(address,uint256)',
+            }],
+            spends: [{
+              token: CELO_NATIVE,
+              allowance: parseUnits('1', 18).toString(), // 1 CELO per day
+              unit: 'day',
+            }],
+          },
+        }, {
+          onSuccess: ({ permissionId }) => {
+            // Store permissionId, required to execute delegated calls and to revoke
+            console.log('Permission granted:', permissionId);
+          },
+        })
+      }
+    >
+      Grant Permission
+    </button>
+  );
+}
+```
+
+Use `usePermissions` to query active permissions and `useRevokePermissions` to revoke them, both from `@jaw.id/wagmi`.
+
+  </Tab>
+  <Tab title="core">
+
+**Installation**
+
+```bash
+npm install @jaw.id/core
+```
+
+**Configure**
+
+Initialize once in a dedicated file and import the instance wherever needed. No provider wrapping required.
+
+```typescript
+// jaw.ts
+import { JAW } from '@jaw.id/core';
+
+export const provider = JAW.create({
+  apiKey: process.env.JAW_API_KEY!, // set in your .env file
+  appName: 'My Celo App',
+  defaultChainId: 42220, // Celo Mainnet
+});
+```
+
+For testnet (Celo Sepolia), enable `showTestnets`:
+
+```typescript
+export const provider = JAW.create({
+  apiKey: process.env.JAW_API_KEY!,
+  defaultChainId: 11142220, // Celo Sepolia Testnet
+  preference: { showTestnets: true },
+});
+```
+
+**Connect a Wallet**
+
+```typescript
+import { provider } from './jaw';
+
+const accounts = await provider.request({ method: 'eth_requestAccounts' });
+console.log('Connected:', accounts[0]);
+```
+
+**Send a Transaction**
+
+```typescript
+import { provider } from './jaw';
+import { numberToHex, parseEther } from 'viem';
+
+const result = await provider.request({
+  method: 'wallet_sendCalls',
+  params: [{
+    calls: [{
+      to: '0xRecipientAddress',
+      value: numberToHex(parseEther('0.01')),
+    }],
+  }],
+});
+console.log('Call ID:', result.id);
+```
+
+**Enable Gasless Transactions**
+
+Add a paymaster to sponsor gas fees. JAW requires an ERC-7677 compatible paymaster using EntryPoint v0.8.
+
+```typescript
+// jaw.ts
+import { JAW } from '@jaw.id/core';
+
+export const provider = JAW.create({
+  apiKey: process.env.JAW_API_KEY!,
+  defaultChainId: 42220,
+  paymasters: {
+    42220: { url: 'https://your-paymaster-url/rpc' },
+  },
+});
+```
+
+**Delegated Permissions**
+
+Permissions (ERC-7715) let you grant a spender (a backend wallet, contract, or AI agent) the ability to perform scoped actions on behalf of the user. Permissions define exactly which contracts can be called, how much can be spent, and for how long. Use them for subscription payments, recurring charges, and autonomous agent wallets.
+
+```typescript
+import { provider } from './jaw';
+import { parseUnits } from 'viem';
+
+const CELO_NATIVE = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
+
+const result = await provider.request({
+  method: 'wallet_grantPermissions',
+  params: [{
+    expiry: Math.floor(Date.now() / 1000) + 86400 * 30, // 30 days
+    spender: '0xYourAgentOrBackendWallet',
+    permissions: {
+      calls: [{
+        target: '0xSomeContract',
+        functionSignature: 'execute(address,uint256)',
+      }],
+      spends: [{
+        token: CELO_NATIVE,
+        allowance: parseUnits('1', 18).toString(),
+        unit: 'day',
+      }],
+    },
+  }],
+});
+
+// Store result.permissionId, needed to execute delegated calls and to revoke
+console.log('Permission granted:', result.permissionId);
+```
+
+Once a permission is granted, a server-side spender can execute calls against it using `Account.fromLocalAccount()` from `@jaw.id/core`. See [Subscription Payments](https://docs.jaw.id/guides/subscription-payments) and [Account API](https://docs.jaw.id/account) for full details.
+
+  </Tab>
+</Tabs>
+
+## Authentication Modes
+
+- **CrossPlatform** (default): passkey operations run on `keys.jaw.id` via a popup, giving users a portable wallet that works across any JAW-powered app.
+- **AppSpecific**: passkey operations run inside your app via a `uiHandler`, giving you full UI control at the cost of wallet portability.
+
+See the [JAW configuration docs](https://docs.jaw.id/configuration) for setup details and UIHandler implementation.
+
+## Common Setup Issues
+
+| Symptom | Likely cause |
+|---|---|
+| Passkey popup doesn't open | Your domain isn't in the allowed list on the JAW Dashboard |
+| Testnet chain not available | Set `preference: { showTestnets: true }` when using a testnet `defaultChainId` |
+| AppSpecific mode throws on init | `uiHandler` is missing, required when using `Mode.AppSpecific` |
+
+## Next Steps
+
+- [Quickstart guide](https://docs.jaw.id/guides/quickstart): full end-to-end walkthrough
+- [Account API](https://docs.jaw.id/account): headless smart accounts for agents and server-side use
+- [Gas Sponsoring](https://docs.jaw.id/guides/gas-sponsoring): paymaster setup and sponsorship policies
+- [Sign-In With Ethereum](https://docs.jaw.id/guides/sign-in-with-ethereum): SIWE during connection
+- [Subscription Payments](https://docs.jaw.id/guides/subscription-payments): recurring charges with delegated permissions
+- [Onchain Identity](https://docs.jaw.id/guides/onchain-identity): ENS subname issuance on onboarding
+- [Configuration reference](https://docs.jaw.id/configuration): all config options
+
+## Resources
+
+- [JAW Documentation](https://docs.jaw.id/)
+- [JAW Website](https://jaw.id/)
+- [JAW Dashboard](https://dashboard.jaw.id/)
+- [Source Code](https://github.com/JustaName-id/jaw-mono)
+- [Example Integrations](https://github.com/JustaName-id/jaw-examples)
