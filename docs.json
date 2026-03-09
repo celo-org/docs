@@ -2597,10 +2597,6 @@
       "destination": "/tooling/libraries-sdks/portal/:slug*"
     },
     {
-      "source": "/developer/jaw/:slug*",
-      "destination": "/tooling/libraries-sdks/jaw/:slug*"
-    },
-    {
       "source": "/developer/rainbowkit-celo/:slug*",
       "destination": "/tooling/libraries-sdks/rainbowkit-celo/:slug*"
     },
@@ -2959,10 +2955,6 @@
     {
       "source": "/developer/portal",
       "destination": "/tooling/libraries-sdks/portal"
-    },
-    {
-      "source": "/developer/jaw",
-      "destination": "/tooling/libraries-sdks/jaw"
     },
     {
       "source": "/developer/rainbowkit-celo",
