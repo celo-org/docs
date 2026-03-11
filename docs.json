@@ -133,16 +133,11 @@
                 "pages": [
                   "build-on-celo/build-with-ai/8004",
                   "build-on-celo/build-with-ai/x402",
-                  "build-on-celo/build-with-ai/agent-skills"
+                  "build-on-celo/build-with-ai/agent-skills",
+                  "build-on-celo/build-with-ai/vibe-coding"
                 ]
               },
-              {
-                "group": "Development Tools",
-                "pages": [
-                  "build-on-celo/build-with-ai/vibe-coding",
-                  "build-on-celo/build-with-ai/tools"
-                ]
-              },
+
               {
                 "group": "MCP Servers",
                 "pages": [
@@ -331,7 +326,6 @@
                   "tooling/libraries-sdks/contractkit/odis"
                 ]
               },
-              "tooling/libraries-sdks/rainbowkit-celo/index",
               "tooling/libraries-sdks/web3/index"
             ]
           },
@@ -2957,7 +2951,7 @@
     },
     {
       "source": "/developer/rainbowkit-celo",
-      "destination": "/tooling/libraries-sdks/rainbowkit-celo"
+      "destination": "/tooling/libraries-sdks/celo-sdks"
     },
     {
       "source": "/developer/reown",
@@ -3062,6 +3056,10 @@
     {
       "source": "/tooling/plumo/verification-phase-2",
       "destination": "/home/index"
+    },
+    {
+      "source": "/community/developer-events",
+      "destination": "/contribute-to-celo/builders"
     }
   ],
   "footer": {
