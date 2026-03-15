@@ -1,0 +1,150 @@
+---
+title: Indexing Co
+---
+
+[Indexing Co](https://indexing.co) provides custom blockchain data pipelines with JavaScript transformation logic, sub-second latency, and delivery to Postgres, webhooks, or Kafka. Indexing Co supports Celo and 100+ other blockchains, making it easy to build cross-chain data workflows from a single platform.
+
+## How It Works
+
+Indexing Co pipelines have three stages:
+
+| Stage | Description |
+|---|---|
+| **Filter** | Select which blocks and transactions to process by contract address, event signature, or other criteria. |
+| **Transformation** | Write JavaScript functions that extract and reshape the data you need from each block. |
+| **Destination** | Deliver processed data to Postgres, HTTP webhooks, WebSockets, or other adapters. |
+
+## Key Features
+
+- **Celo support** — Native support for Celo mainnet with real-time and historical data.
+- **Custom JavaScript transformations** — Write `function main(block)` handlers with full control over how data is extracted and shaped.
+- **Multiple destinations** — Deliver data to Postgres, HTTP endpoints, WebSockets, or Kafka.
+- **Backfills** — Replay historical blocks through your pipeline to populate your database from any starting point.
+- **Cross-chain** — Run the same pipeline logic across 100+ supported blockchains.
+- **Built-in helpers** — Use `templates.tokenTransfers(block)`, `utils.evmDecodeLog()`, and other utilities to accelerate development.
+
+## Quick Start
+
+All API requests use the base URL `https://app.indexing.co/dw` and require an `X-API-KEY` header for authentication. Sign up at [indexing.co](https://indexing.co) to get your API key.
+
+### Step 1: Create a Filter
+
+Create a filter to select which Celo transactions to process. This example filters for a specific contract address:
+
+```bash
+curl -X POST https://app.indexing.co/dw/filters/my-celo-filter \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: YOUR_API_KEY" \
+  -d '{
+    "addresses": ["0xYOUR_CONTRACT_ADDRESS"]
+  }'
+```
+
+### Step 2: Create a Transformation
+
+Create a transformation with a JavaScript `function main(block)` handler that processes each block:
+
+```bash
+curl -X POST https://app.indexing.co/dw/transformations/my-celo-transform \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: YOUR_API_KEY" \
+  -d '{
+    "code": "function main(block) {\n  const transfers = templates.tokenTransfers(block);\n  return transfers.map(t => ({\n    from: t.from,\n    to: t.to,\n    value: t.value,\n    token: t.address,\n    block_number: block.number,\n    timestamp: block.timestamp\n  }));\n}"
+  }'
+```
+
+### Step 3: Test the Transformation
+
+Test your transformation against a real Celo block to verify the output:
+
+```bash
+curl -X POST "https://app.indexing.co/dw/transformations/test?network=celo&beat=BLOCK_NUMBER" \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: YOUR_API_KEY" \
+  -d '{
+    "code": "function main(block) {\n  const transfers = templates.tokenTransfers(block);\n  return transfers.map(t => ({\n    from: t.from,\n    to: t.to,\n    value: t.value,\n    token: t.address,\n    block_number: block.number,\n    timestamp: block.timestamp\n  }));\n}"
+  }'
+```
+
+### Step 4: Create a Pipeline
+
+Combine the filter, transformation, and a destination into a pipeline that delivers data to Postgres:
+
+```bash
+curl -X POST https://app.indexing.co/dw/pipelines \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: YOUR_API_KEY" \
+  -d '{
+    "name": "my-celo-pipeline",
+    "network": "celo",
+    "filter": "my-celo-filter",
+    "transformation": "my-celo-transform",
+    "adapter": {
+      "type": "POSTGRES",
+      "config": {
+        "connection_url": "postgresql://user:password@host:5432/dbname",
+        "table": "celo_transfers"
+      }
+    }
+  }'
+```
+
+## Backfilling Historical Data
+
+Once your pipeline is running, you can backfill historical data from any starting block:
+
+```bash
+curl -X POST https://app.indexing.co/dw/pipelines/my-celo-pipeline/backfill \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: YOUR_API_KEY" \
+  -d '{
+    "start_block": 20000000
+  }'
+```
+
+## Claude Code Integration
+
+Indexing Co provides first-class support for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) through an MCP server and a pipeline skill, enabling you to build and query Celo data pipelines directly from your AI coding workflow.
+
+### MCP Server
+
+The [Indexing Co MCP server](https://github.com/indexing-co/indexing-co-mcp) streams real-time blockchain data from your pipelines into Claude Code. Events are stored in local SQLite and queryable with SQL — no external database needed for development.
+
+```bash
+# Install
+git clone https://github.com/indexing-co/indexing-co-mcp.git
+cd indexing-co-mcp && npm install && npm run build
+
+# Register with Claude Code
+claude mcp add indexing-co -- node /path/to/indexing-co-mcp/dist/index.js
+```
+
+Once registered, Claude Code gains tools to subscribe to pipeline channels, query event data with SQL, and manage pipelines, filters, and transformations — all through natural conversation.
+
+To stream Celo data into Claude Code, set the pipeline destination to the `DIRECT` adapter:
+
+```json
+{
+  "adapter": "DIRECT",
+  "connectionUri": "my-celo-channel",
+  "table": "my-celo-channel"
+}
+```
+
+### Claude Code Skill
+
+The [Indexing Co pipeline skill](https://github.com/indexing-co/indexing-co-pipeline-skill) guides Claude through building and deploying pipelines via conversation. Install it to let Claude help you write transformation functions, generate SQL schemas, and manage pipelines:
+
+```bash
+git clone https://github.com/indexing-co/indexing-co-pipeline-skill.git
+cp -r indexing-co-pipeline-skill/skills/indexing-co-pipelines ~/.claude/skills/
+```
+
+## Resources
+
+- [Documentation](https://docs.indexing.co)
+- [Platform](https://app.indexing.co)
+- [GitHub](https://github.com/indexing-co)
+- [MCP Server](https://github.com/indexing-co/indexing-co-mcp)
+- [Claude Code Skill](https://github.com/indexing-co/indexing-co-pipeline-skill)
+- [Support](mailto:support@indexing.co)

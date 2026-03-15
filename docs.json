@@ -247,7 +247,8 @@
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
               "tooling/indexers/envio",
-              "tooling/indexers/goldrush"
+              "tooling/indexers/goldrush",
+              "tooling/indexers/indexing-co"
             ]
           },
           {
