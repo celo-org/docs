@@ -259,7 +259,8 @@
               "tooling/oracles/chainlink-oracles",
               "tooling/oracles/redstone",
               "tooling/oracles/supra",
-              "tooling/oracles/quex-oracles"
+              "tooling/oracles/quex-oracles",
+              "tooling/oracles/dia"
             ]
           },
           {
