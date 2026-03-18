@@ -247,7 +247,8 @@
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
               "tooling/indexers/envio",
-              "tooling/indexers/goldrush"
+              "tooling/indexers/goldrush",
+              "tooling/indexers/indexing-co"
             ]
           },
           {
@@ -316,6 +317,7 @@
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
               "tooling/libraries-sdks/portal/index",
+              "tooling/libraries-sdks/jaw/index",
               {
                 "group": "ContractKit",
                 "pages": [
