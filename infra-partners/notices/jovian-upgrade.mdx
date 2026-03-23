@@ -74,3 +74,11 @@ Make the following checks to verify that your node is properly configured.
 - op-node and op-geth will log their configurations at startup
 - Check that the Jovian time is set correctly in the `op-node` startup logs
 - Check that the Jovian time is set correctly in the `op-geth` startup logs
+
+### Notes
+
+#### Log Index Rebuild on Upgrade
+
+Nodes will perform a one-time log index rebuild on first start, visible as `Log
+index head rendering in progress` in logs. This can take several hours as the
+full chain history is processed. Subsequent restarts will not re-index.
