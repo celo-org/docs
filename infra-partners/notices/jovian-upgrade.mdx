@@ -47,15 +47,19 @@ This update requires some changes to the configuration:
   - `--eigenda.v2.network` to either `mainnet` or `sepolia_testnet`
   - `--eigenda.v2.cert-verifier-router-or-immutable-verifier-addr` to the `CertRouter` contract on the corresponding L1
     - Sepolia: [`0xf4f934A0b5c09d302d9C6f60040754fEebdd6073`](https://sepolia.etherscan.io/address/0xf4f934A0b5c09d302d9C6f60040754fEebdd6073)
-    - Mainnet: TBD
+    - Mainnet: [`0x2ea418AE1852bfC79e18B37E55F278F9c598AA08`](https://etherscan.io/address/0x2ea418AE1852bfC79e18B37E55F278F9c598AA08)
   - `--apis.enabled` to `"op-generic,op-keccak,standard,metrics"`
 - Remove the following flags if they are set
   - `--eigenda.signer-private-key-hex`
   - `--eigenda.v2.disperser-rpc`
   - `--eigenda.v2.cert-verifier-addr`
+  - `--eigenda.v2.eigenda-directory`
   - `--eigenda.v2.signer-payment-key-hex`
   - `--eigenda.v2.service-manager-addr`
   - `--eigenda.v2.bls-operator-state-retriever-addr`
+  - `--eigenda.g1-path`
+  - `--eigenda.g2-path`
+  - `--eigenda.g2-path-trailing`
 
 <Tip>
 **Docker Compose**
