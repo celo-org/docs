@@ -25,6 +25,23 @@ For the full technical specification, see the [Jovian upgrade spec](https://spec
 - **L1 Fusaka Upgrade**: Celo now includes improvements to handle the L1 Fusaka upgrade, leading to better compatibility with the Optimism stack. For more details see [OP Fusaka upgrade notice](https://docs.optimism.io/notices/archive/fusaka-notice).
 - **EigenDA upgrade**: The EigenDA proxy is upgraded to a recent version which improves the trustless integration and allows switching to the latest EigenDA protocol version.
 
+## For Bridges and Users
+
+<Note>
+All withdrawals that are not finalized before the contract upgrade right before the Jovian hardfork will need to be reproven after the upgrade is complete. You may want to consider waiting until after the upgrade is complete to begin a withdrawal during this 7-day window.
+</Note>
+
+Celo's Jovian hardfork includes [Optimism Upgrade 16](https://docs.optimism.io/notices/archive/upgrade-16). Users should be aware of the following impacts:
+
+### Withdrawal flow changes
+
+1. There will be a one-time invalidation of all pending withdrawal proofs created on L1.
+2. Complete any pending withdrawals before the upgrade is executed.
+3. Avoid creating new withdrawal proofs that would not become executable in time.
+4. If a withdrawal was invalidated, submit a second withdrawal proof transaction on L1.
+
+This invalidation does not place any ETH or ERC-20 tokens at risk.
+
 ## For Node Operators
 
 Node operators will need to upgrade to the respective Jovian releases before the activation dates.
