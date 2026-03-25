@@ -84,6 +84,18 @@ This update requires some changes to the configuration:
 The configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
 </Tip>
 
+### Re-download genesis and rollup.json files
+
+The `genesis.json` and `rollup.json` files have been updated for the Jovian hardfork. Node operators not using the [Docker Compose setup](https://github.com/celo-org/celo-l2-node-docker-compose) must re-download these files before upgrading.
+
+**Mainnet:**
+- [`genesis.json`](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json)
+- [`rollup.json`](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+
+**Celo Sepolia:**
+- [`genesis.json`](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json)
+- [`rollup.json`](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
+
 ### Verify Your Configuration
 
 Make the following checks to verify that your node is properly configured.
