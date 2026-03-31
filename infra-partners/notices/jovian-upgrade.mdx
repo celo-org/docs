@@ -108,13 +108,13 @@ Make the following checks to verify that your node is properly configured.
 
 #### Event logs
 
-##### Index rebuild on upgrade
+**Index rebuild on upgrade**
 
 Nodes will perform a one-time log index rebuild on first start, visible as `Log
 index head rendering in progress` in logs. This can take several hours as the
 full chain history is processed. Subsequent restarts will not re-index.
 
-##### New flag `--history.logs`
+**New flag `--history.logs`**
 
 Controls how long (in blocks) to maintain the event log indexes. Prior to this
 upgrade the event log index was maintained for all evnt logs since genesis, now
