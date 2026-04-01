@@ -4,7 +4,7 @@ og:description: How to allow your wallet users to pay for gas fees using alterna
 sidebarTitle: "Fee Abstraction"
 ---
 
-Celo allows users to pay gas fees in currencies other than the native CELO token. The list of accepted tokens is governed on-chain and maintained in [**FeeCurrencyDirectory.sol**](/contracts/core-contracts).
+Celo allows users to pay gas fees in currencies other than the native CELO token. The list of accepted tokens is governed on-chain and maintained in [**FeeCurrencyDirectory.sol**](/tooling/contracts/core-contracts).
 
 To use an alternate fee currency, set its token or adapter address as the `feeCurrency` property on the transaction object. This field is exclusive to Celo. Leaving it empty defaults to CELO. Note that transactions specifying a non-CELO fee currency cost approximately 50,000 additional gas.
 
@@ -206,3 +206,9 @@ async function send(amountInWei) {
 ---
 
 If you have any questions, please [reach out](https://github.com/celo-org/developer-tooling/discussions/categories/q-a).
+
+
+
+
+
+

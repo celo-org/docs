@@ -34,7 +34,7 @@ See [this overview document](/legacy/protocol/identity/odis-use-case-phone-numbe
 
 ## Authentication
 
-Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer/contractkit/data-encryption-key)
+Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/tooling/libraries-sdks/contractkit/data-encryption-key)
 
 You may use the `EncryptionKeySigner` for your `AuthSigner` by passing in the raw private key:
 
@@ -112,3 +112,8 @@ Instead of querying for all the user's contact's peppers and consuming the user'
 The response will be a subset of the input `e164NumberContacts` that are matched by the matchmaking service.
 
 You can view an example of this call in [our mobile project here](https://github.com/celo-org/wallet/blob/master/packages/mobile/src/identity/matchmaking.ts).
+
+
+
+
+

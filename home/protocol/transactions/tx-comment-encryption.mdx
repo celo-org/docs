@@ -36,3 +36,8 @@ A 128 bit randomly generated session key, sk, is generated and used to symmetric
 5. The MAC key, km, is SHA-256 of the second 128 bits of k
 6. Encrypt the plaintext symmetrically with AES-128-CTR using ke, km, and a random iv
 7. Return ephemPubKey \| AES-128-CTR-HMAC\(ke, km, plaintext\) where the public key needs to be uncompressed \(current limitation with decrypt\).
+
+
+
+
+

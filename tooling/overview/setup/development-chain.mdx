@@ -10,7 +10,7 @@ How to set up a Celo development blockchain that includes all of the [core proto
 
 ## What to expect
 
-At the end of this tutorial, you will have a local Celo development blockchain running exposed at `http://localhost:7545` and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](/cli/) and the [ContractKit](/developer/contractkit/).
+At the end of this tutorial, you will have a local Celo development blockchain running exposed at `http://localhost:7545` and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](/cli/) and the [ContractKit](/tooling/libraries-sdks/contractkit/).
 
 Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with CELO and all transactions on the network are virtually instant.
 
@@ -46,7 +46,7 @@ Once you custom chain data is generated, you can run it locally with the followi
 
 Now that we have a Celo development chain running, we probably want to know what accounts we have access to, how much cGLD and USDm they have as well as the addresses of the deployed protocol contracts.
 
-We can use the [Celo CLI tool](/cli/) for this, or we can use the [ContractKit](/developer/contractkit/) npm package in a node script.
+We can use the [Celo CLI tool](/cli/) for this, or we can use the [ContractKit](/tooling/libraries-sdks/contractkit/) npm package in a node script.
 
 ### **Celo CLI**
 
@@ -83,7 +83,7 @@ pending: 0
 
 ### ContractKit + Node.js
 
-You can also use the [ContractKit](/developer/contractkit/) to access the local node in a node.js script.
+You can also use the [ContractKit](/tooling/libraries-sdks/contractkit/) to access the local node in a node.js script.
 
 As an example, try running [this script](https://gist.github.com/critesjosh/35ba7b1c2fe41934308cb243b003001c) in an npm project with contractkit installed.
 
@@ -96,3 +96,9 @@ You are now prepared to start developing, transacting and deploying contracts on
 You can connect the development chain to a tool like [Remix](https://remix.ethereum.org/) to begin interacting with it. Keep in mind that these tools are built primarily for Ethereum development and are compatible with Celo because Celo is similar to Ethereum. The two blockchains have similar block architectures and both run the Ethereum Virtual Machine \(EVM\) for executing smart contracts.
 
 The main difference between Celo and Ethereum that dapp developers need to keep in mind is that Celo has a slightly different transaction object than Ethereum. Celo requires one additional field in a transaction object, a `feeCurrency`. When Remix is connected to a locally running Celo node, the local node will fill these fields with default values \(if the fields are empty\). The node will sign the Celo transaction and broadcast it to the network.
+
+
+
+
+
+

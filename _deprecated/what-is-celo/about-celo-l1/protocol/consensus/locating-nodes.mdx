@@ -34,3 +34,7 @@ The way that validators communicate their IP address to other validators is by p
 That message will contain `n` copies (where `n` is the total number of validators for the current epoch) of the sending validator's IP address where each copy is encrypted with the other validators' public key. Once a validator receives a gossiped _IstanbulAnnounce_ message, it will decrypt the encrypted IP address that was encrypted with its public key, and then establish a TCP connection to it. All consensus related messages will then sent via those direct TCP connections.
 
 When an epoch ends, a validator will establish new connections with any newly elected validator and disconnect from any removed validators. If the validator itself is removed from the new epoch's validator set, then it will disconnect with all the validators.
+
+
+
+

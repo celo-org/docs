@@ -5,7 +5,7 @@ title: Using the Kit
 <Warning>
 [ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
 
-Check out the [migration guide](/developer/contractkit/migrating-to-viem) for updating your dapp from ContractKit to viem.
+Check out the [migration guide](/tooling/libraries-sdks/contractkit/migrating-to-viem) for updating your dapp from ContractKit to viem.
 
 To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
 </Warning>
@@ -150,3 +150,9 @@ const goldAmount = await exchange.quoteUsdSell(cUsdBalance);
 const sellTx = await exchange.sellDollar(cUsdBalance, goldAmount).send();
 const sellReceipt = await sellTx.waitReceipt();
 ```
+
+
+
+
+
+

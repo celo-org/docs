@@ -4,9 +4,9 @@ og:description: A minimal wrapper to make Ethers.JS compatible with the Celo net
 ---
 
 <Warning>
-When using Ethers.js on Celo, we suggest using the Celo Ethers.js Wrapper to make Ethers.JS compatible with the Celo network. This means being able to handle [fee abstraction](/developer/fee-abstraction) when opened in MiniPay/ Valora. 
+When using Ethers.js on Celo, we suggest using the Celo Ethers.js Wrapper to make Ethers.JS compatible with the Celo network. This means being able to handle [fee abstraction](/tooling/overview/fee-abstraction) when opened in MiniPay/ Valora. 
 
-[Fee Abstraction](/developer/fee-abstraction) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
+[Fee Abstraction](/tooling/overview/fee-abstraction) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
 </Warning>
 
 ## Celo Ethers.JS Wrapper
@@ -101,3 +101,9 @@ const txResponse = await signer.sendTransaction({
   feeCurrency: stableTokenAddress,
 });
 ```
+
+
+
+
+
+

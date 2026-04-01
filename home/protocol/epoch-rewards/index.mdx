@@ -40,7 +40,7 @@ For technical changes since the L1 to L2 migration, refer to the [official specs
 ## Epoch Duration and Processing
 
 An epoch is a time period lasting at least one day, with no guaranteed maximum duration.
-The epoch logic is implemented in Solidity via the [EpochManager contract](/contracts/core-contracts), introduced in [Contract Release 12](https://github.com/celo-org/celo-monorepo/tree/core-contracts.v12).
+The epoch logic is implemented in Solidity via the [EpochManager contract](/tooling/contracts/core-contracts), introduced in [Contract Release 12](https://github.com/celo-org/celo-monorepo/tree/core-contracts.v12).
 
 Since epoch processing requires significant gas consumption, it's handled through multiple function calls rather than a single transaction.
 
@@ -96,3 +96,8 @@ After the initial phase, anyone can call `finishNextEpochProcess()` to complete 
    - Election: `EpochRewardsDistributedToVoters(address indexed group, uint256 value)`
    - CeloUnreleasedTreasury: `Released(address indexed to, uint256 amount)`
    - EpochManager: `EpochProcessingEnded(uint256 indexed epochNumber)`
+
+
+
+
+

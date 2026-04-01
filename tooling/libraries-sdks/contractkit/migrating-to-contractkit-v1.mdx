@@ -8,7 +8,7 @@ How to migrate to from prerelease of ContractKit to v1 and make use of its featu
 <Warning>
 [ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
 
-Check out the [migration guide](/developer/contractkit/migrating-to-viem) for updating your dapp from ContractKit to viem.
+Check out the [migration guide](/tooling/libraries-sdks/contractkit/migrating-to-viem) for updating your dapp from ContractKit to viem.
 
 To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
 </Warning>
@@ -36,7 +36,7 @@ ContractKit is a suite of packages.
 ### Main packages
 
 - `Connect` handles how we communicate to the our chain nodes. It wraps the `web3` library and has its own `rpcCaller` class, to make custom calls to the node. It's the layer in charge of knowing how and which parameters are added by Celo, connect to the node, build the message, send it and handle those responses.
-- `ContractKit` is a reduced subset of the previous versions of ContractKit. This is the layer in charge of loading and using our [core contracts](/developer/contractkit/contracts-wrappers-registry). Internally, uses the `connect` package described above. It has our contracts generated from the ABIs, their wrappers, and also the logic to make claims.
+- `ContractKit` is a reduced subset of the previous versions of ContractKit. This is the layer in charge of loading and using our [core contracts](/tooling/libraries-sdks/contractkit/contracts-wrappers-registry). Internally, uses the `connect` package described above. It has our contracts generated from the ABIs, their wrappers, and also the logic to make claims.
 
 ### Complementary Packages
 
@@ -129,3 +129,8 @@ The `connection` package update includes implementations of some common web3 fun
 - `kit.web3.eth.sign` --> `kit.connection.sign`
 - `kit.isListening` --> `kit.connection.isListening`
 - `kit.addAccount` --> `kit.connection.addAccount`
+
+
+
+
+
