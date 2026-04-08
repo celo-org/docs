@@ -392,6 +392,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/op-geth-deprecation",
               "infra-partners/notices/jovian-upgrade",
               "infra-partners/notices/jello-upgrade",
               "infra-partners/notices/l1-fusaka-upgrade",
