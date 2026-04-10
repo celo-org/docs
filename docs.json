@@ -260,7 +260,8 @@
               "tooling/oracles/chainlink-oracles",
               "tooling/oracles/redstone",
               "tooling/oracles/supra",
-              "tooling/oracles/quex-oracles"
+              "tooling/oracles/quex-oracles",
+              "tooling/oracles/dia"
             ]
           },
           {
@@ -274,6 +275,14 @@
                   "tooling/dev-environments/thirdweb/overview",
                   "tooling/dev-environments/thirdweb/thirdweb",
                   "tooling/dev-environments/thirdweb/one-click-deploy"
+                ]
+              },
+              {
+                "group": "Using MultiBaas",
+                "pages": [
+                  "tooling/dev-environments/multibaas/overview",
+                  "tooling/dev-environments/multibaas/contracts",
+                  "tooling/dev-environments/multibaas/webhooks"
                 ]
               },
               "tooling/dev-environments/remix",
