@@ -54,6 +54,8 @@ The release contains the activation timestamps for Celo Mainnet and Celo Sepolia
 - `op-node` at [v2.2.1](https://github.com/celo-org/optimism/releases/tag/celo-v2.2.1)
 - `eigenda-proxy` at [v2.6.0](https://github.com/Layr-Labs/eigenda/releases/tag/v2.6.0)
 
+- For an easy way to run a node and an example of valid flags see [celo-l2-node-docker-compose v1.3.3](https://github.com/celo-org/celo-l2-node-docker-compose/tree/v1.3.3)
+
 #### Updating the EigenDA proxy
 
 The Jovian hardfork also increases the minimum EigenDA proxy version to `v2.6.0`.
@@ -106,8 +108,16 @@ Make the following checks to verify that your node is properly configured.
 
 ### Notes
 
-#### Log Index Rebuild on Upgrade
+#### Event logs index rebuild on upgrade
 
 Nodes will perform a one-time log index rebuild on first start, visible as `Log
 index head rendering in progress` in logs. This can take several hours as the
 full chain history is processed. Subsequent restarts will not re-index.
+
+#### Event logs new flag `--history.logs`
+
+Controls how long (in blocks) to maintain the event log indexes. Prior to this
+upgrade the event log index was maintained for all event logs since genesis, now
+the flag has a default setting of 28200000 blocks which is ~326 days. To index
+all event logs since genesis set the flag to zero.
+
