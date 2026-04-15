@@ -171,6 +171,14 @@
               "build-on-celo/build-with-local-stablecoin",
               "build-on-celo/build-with-defi"
             ]
+          },
+          {
+            "group": "Fee Abstraction",
+            "pages": [
+              "build-on-celo/fee-abstraction/overview",
+              "build-on-celo/fee-abstraction/using-fee-abstraction",
+              "build-on-celo/fee-abstraction/add-fee-currency"
+            ]
           }
         ]
       },
@@ -182,7 +190,6 @@
             "pages": [
               "tooling/overview/index",
               "tooling/overview/faucet",
-              "tooling/overview/fee-abstraction",
               "tooling/bridges/bridges",
               "tooling/bridges/cross-chain-messaging",
               "tooling/testnets/celo-sepolia/index"
@@ -678,7 +685,11 @@
     },
     {
       "source": "/cel2/guides/fee-abstraction",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
+    },
+    {
+      "source": "/tooling/overview/fee-abstraction",
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/celo-codebase/protocol",
@@ -1726,7 +1737,7 @@
     },
     {
       "source": "/developer/fee-currency",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/developer/indexer",
@@ -2186,7 +2197,7 @@
     },
     {
       "source": "/protocol/transaction/erc20-transaction-fees",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/protocol/transaction/escrow",
@@ -2194,7 +2205,7 @@
     },
     {
       "source": "/protocol/transaction/gas-pricing",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/protocol/transaction/native-currency",
@@ -2566,7 +2577,7 @@
     },
     {
       "source": "/developer/fee-abstraction",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/developer/launch-checklist",
