@@ -1,0 +1,40 @@
+---
+title: Fee Abstraction
+sidebarTitle: "Overview"
+og:description: Pay gas fees using ERC20 tokens instead of the native CELO token
+---
+
+Fee abstraction is one of Celo's core protocol features. It allows users to pay gas fees in ERC20 tokens — like USDC, USDT, or Mento stablecoins — instead of needing to hold the native CELO token.
+
+## Why Fee Abstraction Matters
+
+On most EVM chains, users must hold the native token to pay for gas. This creates friction: a user who receives USDC on Celo can't send it anywhere without first acquiring CELO. Fee abstraction removes this barrier entirely.
+
+With fee abstraction, a user holding only USDC can send transactions, interact with contracts, and pay gas — all in USDC. No bridging, no swaps, no extra steps. This is especially valuable for:
+
+- **Onboarding new users** who receive stablecoins but don't know about gas tokens
+- **Payment applications** where users transact in a single currency end-to-end
+- **AI agents** that operate autonomously with a single token balance
+
+## How It Works
+
+Fee abstraction is built into the Celo protocol at the node level — it is not a paymaster or relayer. When a transaction includes a `feeCurrency` field, the Celo blockchain:
+
+1. Calls `debitGasFees` on the fee currency contract to reserve the maximum gas cost
+2. Executes the transaction normally
+3. Calls `creditGasFees` to refund unused gas and distribute fees to block producers
+
+This means fee abstraction works with any externally owned account (EOA). No smart contract wallets, no relayers, no extra infrastructure needed.
+
+To use an alternate fee currency, set its token or adapter address as the `feeCurrency` property on the transaction object.
+
+For implementation details, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction). To add a new fee currency to the protocol, see [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency).
+
+---
+
+## Related
+
+- [Fee Abstraction for AI Agents](/build-on-celo/build-with-ai/overview#fee-abstraction-for-agents) — Using fee abstraction in autonomous agent backends
+- [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — HTTP-native stablecoin payments for agents
+- [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction) — How to pay gas with alternate fee currencies in your transactions
+- [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency) — How to implement and register a new fee currency

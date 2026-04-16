@@ -1,18 +1,16 @@
 ---
-title: Implementing Fee Abstraction in Wallets
-og:description: How to allow your wallet users to pay for gas fees using alternate fee currencies
-sidebarTitle: "Fee Abstraction"
+title: Using Fee Abstraction in Transactions
+sidebarTitle: "Using Fee Abstraction"
+og:description: How to pay gas fees using alternate fee currencies on Celo with viem and celocli
 ---
 
-Celo allows users to pay gas fees in currencies other than the native CELO token. The list of accepted tokens is governed on-chain and maintained in [**FeeCurrencyDirectory.sol**](/contracts/core-contracts).
-
-To use an alternate fee currency, set its token or adapter address as the `feeCurrency` property on the transaction object. This field is exclusive to Celo. Leaving it empty defaults to CELO. Note that transactions specifying a non-CELO fee currency cost approximately 50,000 additional gas.
+This guide shows how to send transactions that pay gas fees in ERC20 tokens instead of CELO. For background on how fee abstraction works, see the [Overview](/build-on-celo/fee-abstraction/overview).
 
 ---
 
 ## Allowlisted Fee Currencies
 
-The protocol maintains a governable allowlist of smart contract addresses that implement an extension of the ERC20 interface, with additional functions for debiting and crediting transaction fees.
+The protocol maintains a governable allowlist of smart contract addresses that can be used as fee currencies. These contracts implement an extension of the ERC20 interface with additional functions for debiting and crediting transaction fees (see [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency)).
 
 To fetch the current allowlist, call `getCurrencies()` on the `FeeCurrencyDirectory` contract, or use `celocli`:
 ```bash
@@ -20,14 +18,14 @@ To fetch the current allowlist, call `getCurrencies()` on the `FeeCurrencyDirect
 celocli network:whitelist --node celo-sepolia
 
 # Celo mainnet
-celocli network:whitelist --node https://forno.celo.org
+celocli network:whitelist --node celo
 ```
 
 ---
 
 ## Adapters for Non-18-Decimal Tokens
 
-After Contract Release 11, allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapters are used when a token has decimals other than 18 (e.g., USDC and USDT use 6 decimals). The Celo blockchain calculates gas pricing in 18 decimals, so adapters normalize the value.
+Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapters are used when a token has decimals other than 18 (e.g., USDC and USDT use 6 decimals). The Celo blockchain calculates gas pricing in 18 decimals, so adapters normalize the value.
 
 - **For transfers**: use the token address as usual.
 - **For `feeCurrency`**: use the adapter address.
@@ -193,15 +191,6 @@ async function send(amountInWei) {
   return hash;
 }
 ```
-
----
-
----
-
-## Related
-
-- [Fee Abstraction for AI Agents](/build-on-celo/build-with-ai/overview#fee-abstraction-for-agents) — Using fee abstraction in autonomous agent backends
-- [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — HTTP-native stablecoin payments for agents
 
 ---
 
