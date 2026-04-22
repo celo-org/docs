@@ -91,7 +91,7 @@ yarn tags:view
 ```bash
 # Run from `packages/protocol` in the celo-monorepo
 PREVIOUS_RELEASE="core-contracts.v${N-1}"
-NETWORK=${"baklava"|"alfajores"|"mainnet"}
+NETWORK=${"anvil"|"sepolia"|"mainnet"}
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
 yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
