@@ -91,7 +91,7 @@ yarn tags:view
 ```bash
 # Run from `packages/protocol` in the celo-monorepo
 PREVIOUS_RELEASE="core-contracts.v${N-1}"
-NETWORK=${"anvil"|"sepolia"|"mainnet"}
+NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
 yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
@@ -137,7 +137,7 @@ Use the following script to build and deploy a candidate release. This takes as 
 STORAGE updates are adopted by deploying a new proxy/implementation pair. This script outputs a JSON contract upgrade governance proposal.
 
 ```bash
-NETWORK=${"baklava"|"alfajores"|"mainnet"}
+NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
 RELEASE_CANDIDATE="core-contracts.v${N}"
 yarn release:make -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
 ```
@@ -171,7 +171,7 @@ Additionally, include `initialization_data.json` from the CGP if any of the cont
 
 ```bash
 RELEASE_CANDIDATE="core-contracts.v${N}"
-NETWORK=${"baklava"|"alfajores"|"mainnet"}
+NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
 yarn release:verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
 ```
@@ -182,7 +182,7 @@ After a release executes via Governance, you can use `release:verify-deployed` a
 
 ```bash
 RELEASE="core-contracts.v${N}"
-NETWORK=${"baklava"|"alfajores"|"mainnet"}
+NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
 yarn release:verify-deployed -n $NETWORK -b $RELEASE -f
 ```
 
@@ -342,21 +342,19 @@ Deploying a new contract release should occur with the following process. On-cha
     <td>T+2w</td>
     <td>
       <ol>
+        <li>Confirm all contracts working as intended on an Anvil testnet.</li>
         <li>
-          On Tuesday: Run the{" "}
-          <a href="#release-process">smart contract release script</a>{" "}
-          in order to to deploy the contracts to Baklava as well as submit a
+          Run the{" "}
+          <a href="#release-process">
+            smart contract release script
+          </a>{" "}
+          in order to to deploy the contracts to Celo Sepolia as well as submit a
           governance proposal.
-          <ul>
-            <li>
-              Transition proposal through Baklava governance process.
-            </li>
-            <li>
-              Update your forum post with the Baklava <code>PROPOSAL_ID</code>,
-              updated timings (if any changes), and notify the community in the
-              Discord <code>#governance</code> channel.
-            </li>
-          </ul>
+        </li>
+        <li>
+          Update your forum post with the Celo Sepolia <code>PROPOSAL_ID</code>,
+          updated timings (if any changes), and notify the community in the
+          Discord <code>#governance</code> channel.
         </li>
       </ol>
     </td>
@@ -365,28 +363,7 @@ Deploying a new contract release should occur with the following process. On-cha
     <td>T+3w</td>
     <td>
       <ol>
-        <li>Confirm all contracts working as intended on Baklava.</li>
-        <li>
-          Run the{" "}
-          <a href="#release-process">
-            smart contract release script
-          </a>{" "}
-          in order to to deploy the contracts to Alfajores as well as submit a
-          governance proposal.
-        </li>
-        <li>
-          Update your forum post with the Alfajores <code>PROPOSAL_ID</code>,
-          updated timings (if any changes), and notify the community in the
-          Discord <code>#governance</code> channel.
-        </li>
-      </ol>
-    </td>
-  </tr>
-  <tr>
-    <td>T+4w</td>
-    <td>
-      <ol>
-        <li>Confirm all contracts working as intended on Alfajores.</li>
+        <li>Confirm all contracts working as intended on Celo Sepolia.</li>
         <li>
           Confirm audit is complete and make the release notes and forum post
           contain a link to it.
@@ -476,9 +453,8 @@ Each smart contract release governance proposal should be accompanied by a [Gove
 - Background information.
 - Link to the release on Github.
 - Link to the audit report(s).
-- Anticipated timings for the Baklava and Alfajores testnets and Mainnet.
+- Anticipated timings for the Celo Sepolia testnet and Mainnet.
 
-It's recommended to post as early as possible and at minimum one week before the anticipated Baklava testnet governance proposal date.
 
 Make sure to keep the post up to date. All updates (excluding fixing typos) should be communicated to the community in the [Discord](http://chat.celo.org/) `#governance` channel.
 
