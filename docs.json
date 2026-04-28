@@ -102,7 +102,6 @@
             "pages": [
               "home/manage/self-custody",
               "home/manage/release-gold",
-              "home/manage/exchange",
               "home/manage/asset"
             ]
           }
@@ -1031,7 +1030,7 @@
     },
     {
       "source": "/celo-holder-guide/celo-exchange-bot",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/celo-holder-guide/celo-recovery",
@@ -1087,7 +1086,7 @@
     },
     {
       "source": "/celo-owner-guide/celo-exchange-bot",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/celo-owner-guide/celo-recovery",
@@ -1987,7 +1986,7 @@
     },
     {
       "source": "/holder/exchange",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/holder/release-gold",
