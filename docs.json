@@ -430,17 +430,6 @@
           {
             "group": "Celo L2 Specs",
             "pages": ["infra-partners/specs"]
-          },
-          {
-            "group": "Integrate with Celo",
-            "pages": [
-              "infra-partners/integration/index",
-              "infra-partners/integration/general",
-              "infra-partners/integration/checklist",
-              "infra-partners/integration/custody",
-              "infra-partners/integration/listings",
-              "infra-partners/integration/cloud-hsm"
-            ]
           }
         ]
       },
@@ -1482,31 +1471,31 @@
     },
     {
       "source": "/developer-guide/integrations/checklist",
-      "destination": "/infra-partners/integration/checklist"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/cloud-hsm",
-      "destination": "/infra-partners/integration/cloud-hsm"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/dapps",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/general",
-      "destination": "/infra-partners/integration/general"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/integrations",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/listings",
-      "destination": "/infra-partners/integration/listings"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/overview",
@@ -1522,7 +1511,7 @@
     },
     {
       "source": "/developer-guide/overview/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/overview/introduction",
@@ -1634,31 +1623,31 @@
     },
     {
       "source": "/developer-resources/integrations/checklist",
-      "destination": "/infra-partners/integration/checklist"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/cloud-hsm",
-      "destination": "/infra-partners/integration/cloud-hsm"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/dapps",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/general",
-      "destination": "/infra-partners/integration/general"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/integrations",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/listings",
-      "destination": "/infra-partners/integration/listings"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
@@ -2758,11 +2747,11 @@
     },
     {
       "source": "/integration",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/integration/:slug*",
-      "destination": "/infra-partners/integration/:slug*"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/contracts/:slug*",
