@@ -174,7 +174,12 @@ Update the following variables in `celo-sepolia.env`:
 <Note>
 **Funding Your Address**
 
-These addresses must be funded with CELO on the Celo Sepolia testnet. You can get testnet CELO from a [faucet](https://faucet.celo.org/celo-sepolia) if needed.
+`CLIENT_ADDRESS` must be funded on Celo Sepolia with:
+
+- **CELO for gas** on deposit and de-escrow transactions. Get it from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia).
+- **A balance of whichever token you intend to deposit.** For example, to move USDT into Nightfall, `CLIENT_ADDRESS` must hold USDT on Celo Sepolia.
+
+The client calls `approve()` and `transferFrom()` on your behalf when you submit a deposit — no manual approval step is needed.
 
 </Note>
 
@@ -207,7 +212,46 @@ curl -X POST http://localhost:3000/v1/deriveKey \
   }'
 ```
 
-This will return your `root_key`, `nullifier_key`, `zkp_private_key`, and `zkp_public_key`. Save these values for future operations.
+This will return your `root_key`, `nullifier_key`, `zkp_private_key`, and `zkp_public_key`. Save these values for future operations — in particular, the recipient's `zkp_public_key` is what a sender needs to route a private transfer.
+
+<Warning>
+**Run one `nightfall_client` instance per user identity**
+
+A `nightfall_client` process tracks exactly one ZKP key pair at a time. The client only decrypts L2 blocks with whichever keys are currently loaded, so swapping mnemonics via `/v1/deriveKey` on a running client **will not reveal funds addressed to the new keys** — past blocks are never re-decrypted.
+
+For a sender → recipient flow, run **two independent stacks** (two `nightfall_client` + MongoDB pairs, e.g. on different host ports). Each stack derives its own mnemonic once and keeps it for its lifetime.
+
+**Do not drop the client's MongoDB while you hold unspent commitments.** The commitment salts and preimages live only there; they cannot be reconstructed from L1, and the underlying L1 escrow for those funds will be permanently stranded.
+
+</Warning>
+
+#### Amount Encoding
+
+Every `value`, `fee`, and `deposit_fee` in Nightfall's API is a **64-character hex string of the raw token amount, without `0x` prefix**. The number of decimals depends on the token:
+
+| Token (Celo Sepolia)                  | Address                                      | Decimals | 1 whole unit                                                       |
+| ------------------------------------- | -------------------------------------------- | -------- | ------------------------------------------------------------------ |
+| CELO                                  | `0x471EcE3750Da237f93B8E339c536989b8978a438` | 18       | `0000000000000000000000000000000000000000000000000de0b6b3a7640000` |
+| USD₮ (Tether USD testnet)             | `0xd077A400968890Eacc75cdc901F0356c943e4fDb` | 6        | `00000000000000000000000000000000000000000000000000000000000f4240` |
+
+Common amounts:
+
+- `0.1 CELO` → `000000000000000000000000000000000000000000000000016345785d8a0000`
+- `1 CELO` → `0000000000000000000000000000000000000000000000000de0b6b3a7640000`
+- `1 USDT` → `00000000000000000000000000000000000000000000000000000000000f4240`
+- `10 USDT` → `0000000000000000000000000000000000000000000000000000000000989680`
+
+#### Diagnostic Endpoints
+
+Useful read-only endpoints for checking state and debugging:
+
+| Endpoint                                 | Returns                                                                                   |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `GET /v1/health`                         | `"Healthy"` when the client is ready                                                      |
+| `GET /v1/balance/$ercAddress/$tokenId`   | Total balance of the token under the currently-loaded ZKP keys (64-char hex)              |
+| `GET /v1/commitments`                    | All commitments (preimages, status, nullifiers) known to this client                      |
+| `GET /v1/proposers`                      | Registered proposers on-chain and their URLs                                              |
+| `GET /v1/request/$uuid`                  | Status of a submitted request (`Queued` → `Processing` → `Submitted` → `Confirmed`)       |
 
 #### Operations
 
@@ -239,12 +283,12 @@ curl -X POST http://localhost:3000/v1/deposit \
 
 **Parameters:**
 
-- `ercAddress`: The ERC20/ERC721/ERC1155/ERC3525 token contract address. Use `0x471EcE3750Da237f93B8E339c536989b8978a438` for CELO token (ERC20 via Celo Token Duality)
-- `tokenId`: Token ID (use all zeros for ERC20)
-- `tokenType`: `0` for ERC20, `1` for ERC721, `2` for ERC1155, `3` for ERC3525
-- `value`: Amount in hex format (without `0x` prefix)
-- `fee`: Transaction fee in hex format
-- `deposit_fee`: Deposit fee in hex format
+- `ercAddress`: The ERC20/ERC721/ERC1155/ERC3525 token contract address. Use `0x471EcE3750Da237f93B8E339c536989b8978a438` for CELO token (ERC20 via Celo Token Duality).
+- `tokenId`: Token ID (use all zeros for ERC20 — full 64-char form without `0x`).
+- `tokenType`: `0` for ERC20, `1` for ERC721, `2` for ERC1155, `3` for ERC3525.
+- `value`: Amount in hex format, without `0x` prefix (see [Amount Encoding](#amount-encoding)).
+- `fee`: Transaction fee in hex format.
+- `deposit_fee`: Deposit fee in hex format.
 
 **Step 3:** Check deposit status:
 
@@ -290,9 +334,9 @@ curl -i -H "Content-Type: application/json" \
 **Parameters:**
 
 - `ercAddress`: Token contract address
-- `tokenId`: Token ID (`0x00` for ERC20)
-- `recipientData.values`: Array of amounts to send (in hex without `0x` prefix)
-- `recipientData.recipientCompressedZkpPublicKeys`: Array of recipient public keys
+- `tokenId`: Token ID. For **transfers only**, use the short form `"0x00"` — the deposit, withdraw, and de-escrow endpoints expect the full 64-zero form (`"0000…0000"`) without `0x`.
+- `recipientData.values`: Array of amounts to send (in hex without `0x` prefix; see [Amount Encoding](#amount-encoding))
+- `recipientData.recipientCompressedZkpPublicKeys`: Array of recipient public keys (from each recipient's `deriveKey` response — the recipient must be running their own `nightfall_client`)
 - `fee`: Transaction fee
 
 **Step 3:** Check transfer status:
@@ -303,75 +347,117 @@ curl -i "http://localhost:3000/v1/request/$TRANSFER_ID"
 
 **Withdraw from Nightfall**
 
-Withdraws tokens from Nightfall back to Layer 1. The withdrawal process involves two steps: initiating the withdrawal (which creates an escrow) and then de-escrowing to complete the withdrawal.
+Withdraws tokens from Nightfall back to Layer 1. The withdrawal process involves two on-chain phases: initiating the withdrawal (an L2 transaction that nullifies your private commitment), and then de-escrowing (an L1 transaction that releases the tokens from the Nightfall contract to your recipient).
 
-**Step 1: Initiate Withdrawal**
+**Step 1: Build the padded recipient address**
+
+`recipientAddress` must be the **32-byte** (64-char) hex representation of the L1 recipient — the 20-byte EOA left-padded with 12 zero bytes, **no `0x` prefix**. The short `0x…` form used elsewhere is not accepted here:
+
+```bash
+L1_ADDR="0xf39fd6e51aad88f6f4ce6ab8827279cfffb92267"
+L1_PADDED="000000000000000000000000${L1_ADDR#0x}"
+echo "$L1_PADDED"
+# 000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb92267
+```
+
+**Step 2: Initiate the withdrawal**
 
 ```bash
 WITHDRAW_ID=$(uuidgen)
 curl -X POST http://localhost:3000/v1/withdraw \
   -H "Content-Type: application/json" \
   -H "X-Request-ID: $WITHDRAW_ID" \
-  -d '{
-    "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
-    "tokenId": "0000000000000000000000000000000000000000000000000000000000000000",
-    "tokenType": "0",
-    "value": "000000000000000000000000000000000000000000000000016345785d8a0000",
-    "recipientAddress": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92267",
-    "fee": "0000000000000000000000000000000000000000000000000000000000000000"
-  }'
+  -d "{
+    \"ercAddress\": \"0x471EcE3750Da237f93B8E339c536989b8978a438\",
+    \"tokenId\": \"0000000000000000000000000000000000000000000000000000000000000000\",
+    \"tokenType\": \"0\",
+    \"value\": \"000000000000000000000000000000000000000000000000016345785d8a0000\",
+    \"recipientAddress\": \"$L1_PADDED\",
+    \"fee\": \"0000000000000000000000000000000000000000000000000000000000000000\"
+  }"
 ```
 
 **Parameters:**
 
 - `ercAddress`: Token contract address
-- `tokenId`: Token ID (all zeros for ERC20)
+- `tokenId`: Token ID (all zeros for ERC20 — same 64-char form as deposit)
 - `tokenType`: `0` for ERC20, `1` for ERC721, `2` for ERC1155, `3` for ERC3525
-- `value`: Amount to withdraw in hex format
-- `recipientAddress`: Layer 1 address to receive the tokens
+- `value`: Amount to withdraw in hex format (see [Amount Encoding](#amount-encoding))
+- `recipientAddress`: **32-byte** (64-char) hex L1 recipient, no `0x` prefix (see Step 1)
 - `fee`: Transaction fee
 
-**Step 2:** Check withdrawal status:
+**Step 3: Capture the `withdrawFundSalt`**
+
+The salt is needed for de-escrow in Step 5. It is returned in the **client stdout logs** (and in the webhook payload if you configured `WEBHOOK_URL`), **not** in `/v1/request/$WITHDRAW_ID`:
 
 ```bash
-curl -i "http://localhost:3000/v1/request/$WITHDRAW_ID"
+SALT=$(docker logs nf4_indie_client 2>&1 \
+  | grep -o '"withdraw_fund_salt":"[^"]*"' \
+  | tail -1 \
+  | sed 's/.*"withdraw_fund_salt":"\([^"]*\)".*/\1/')
+echo "$SALT"
 ```
 
-The withdrawal response will include a `withdrawFundSalt` value that you'll need for the de-escrow step.
+**Step 4: Wait until the withdrawal is included in an L2 block**
 
-**Step 3: De-escrow (Complete Withdrawal)**
+The commitment state is the authoritative signal. When the commitment you just spent flips to `Spent` with `nullifier == withdraw_fund_salt`, the withdrawal has landed on L2 and is ready to be de-escrowed:
 
-After the withdrawal is processed and included in a block, complete the withdrawal by de-escrowing:
+```bash
+curl -s http://localhost:3000/v1/commitments \
+  | jq '.[] | select(.nullifier == "'"$SALT"'") | .status'
+# Expect "PendingSpend" initially, then "Spent" once the block lands
+```
+
+<Note>
+In some client builds `/v1/request/$WITHDRAW_ID` can remain stuck at `Submitted` even after the withdrawal has landed. Treat the commitment status (above) as the source of truth. The status-tracking fix is on the `celo` branch of [celo-org/nightfall\_4\_CE](https://github.com/celo-org/nightfall_4_CE) from commit `12a85a8` onward.
+
+</Note>
+
+**Step 5: De-escrow (release tokens on L1)**
+
+After the commitment is `Spent`, call `/v1/de-escrow` to release the tokens from the Nightfall contract to the L1 recipient:
 
 ```bash
 curl -X POST http://localhost:3000/v1/de-escrow \
   -H "Content-Type: application/json" \
-  -d '{
-    "ercAddress": "0x471EcE3750Da237f93B8E339c536989b8978a438",
-    "tokenId": "0000000000000000000000000000000000000000000000000000000000000000",
-    "tokenType": "0",
-    "value": "000000000000000000000000000000000000000000000000016345785d8a0000",
-    "recipientAddress": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92267",
-    "fee": "0000000000000000000000000000000000000000000000000000000000000000",
-    "withdrawFundSalt": "178a2ac1938304e86ada919e6c3931702df4c0b78ffb8e314322d289e4fb197a"
-  }'
+  -d "{
+    \"ercAddress\": \"0x471EcE3750Da237f93B8E339c536989b8978a438\",
+    \"tokenId\": \"0000000000000000000000000000000000000000000000000000000000000000\",
+    \"tokenType\": \"0\",
+    \"value\": \"000000000000000000000000000000000000000000000000016345785d8a0000\",
+    \"recipientAddress\": \"$L1_PADDED\",
+    \"fee\": \"0000000000000000000000000000000000000000000000000000000000000000\",
+    \"withdrawFundSalt\": \"$SALT\"
+  }"
 ```
+
+Expect `HTTP 200 OK`. The L1 balance of `$L1_ADDR` is now higher by `value` (minus the de-escrow L1 gas).
 
 **Parameters:**
 
-- All parameters from the withdrawal request
-- `withdrawFundSalt`: The salt value returned from the withdrawal operation
+- All parameters from the withdrawal request — in particular, the same padded `recipientAddress` form
+- `withdrawFundSalt`: The salt captured in Step 3
 
 <Note>
 **Important Notes:**
 
-- All hex values should be provided without the `0x` prefix (except for `tokenId` in transfer which uses `0x00`)
-- The client must be healthy before making requests. Check health with: `curl http://localhost:3000/v1/health`
-- Transaction status can be checked using the request ID returned from each operation
-- The webhook is automatically started with docker-compose and will receive notifications about transaction status changes
-- For Celo Sepolia, the default ERC20 token address is `0x471EcE3750Da237f93B8E339c536989b8978a438` (CELO)
-- Operations (deposits, transfers, withdrawals) may take up to 1 hour to complete and be included in a block by the proposer. Client execution should take few seconds.
+- All `value` / `fee` / `tokenId` fields are hex **without** the `0x` prefix — **except** `tokenId` in `/v1/transfer`, which uses the short form `"0x00"`.
+- `recipientAddress` on `/v1/withdraw` and `/v1/de-escrow` must be 32-byte (64-char) left-padded hex, **no** `0x` prefix.
+- The client must be healthy before making requests. Check with `curl http://localhost:3000/v1/health`.
+- The webhook is automatically started with docker-compose and receives notifications about transaction status changes, including the `withdraw_fund_salt`.
+- For Celo Sepolia, the default ERC20 token address is `0x471EcE3750Da237f93B8E339c536989b8978a438` (CELO).
+- **Timing expectations** (with a healthy proposer):
+  - Client-side work (proof generation, L1 escrow transaction) typically completes in a few seconds.
+  - L2 block confirmation of a deposit, transfer, or withdrawal is usually **~30 minutes** (the proposer batches for 120 s, then generates the rollup proof before posting the `BlockProposed` transaction).
+  - This can extend up to **~1 hour** under adverse conditions. If an operation stays at `Submitted` substantially longer, call `GET /v1/proposers` to confirm a registered proposer is available.
+- **De-escrow must come after** the withdrawal has been included on L2 (commitment `Spent`). Calling `/v1/de-escrow` earlier will fail.
+
 </Note>
+
+<Tip>
+A worked end-to-end example of this entire flow (deposit → transfer → withdraw → de-escrow), with sample mnemonics, state variables, and diagnostic checkpoints, is available at [`doc/celo_sepolia_client_playbook.md`](https://github.com/celo-org/nightfall_4_CE/blob/celo/doc/celo_sepolia_client_playbook.md) on the `celo` branch.
+
+</Tip>
 
 ### Integration Steps
 

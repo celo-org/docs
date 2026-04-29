@@ -20,7 +20,7 @@
     "default": "dark"
   },
   "banner": {
-    "content": "🤖 **Build Agents for the Real World** — Celo Hackathon (Feb 6–15)! [Join now →](https://celoplatform.notion.site/Build-Agents-for-the-Real-World-Celo-Hackathon-2fdd5cb803de80c99010c04b6902a3a9)",
+    "content": "⚡️ **Proof of Ship** | Our monthly builder program is back! [Submit your project](https://talent.app/~/earn/celo-proof-of-ship) between 1st - 26th April",
     "dismissible": true
   },
   "fonts": {
@@ -102,7 +102,6 @@
             "pages": [
               "home/manage/self-custody",
               "home/manage/release-gold",
-              "home/manage/exchange",
               "home/manage/asset"
             ]
           }
@@ -133,16 +132,11 @@
                 "pages": [
                   "build-on-celo/build-with-ai/8004",
                   "build-on-celo/build-with-ai/x402",
-                  "build-on-celo/build-with-ai/agent-skills"
+                  "build-on-celo/build-with-ai/agent-skills",
+                  "build-on-celo/build-with-ai/vibe-coding"
                 ]
               },
-              {
-                "group": "Development Tools",
-                "pages": [
-                  "build-on-celo/build-with-ai/vibe-coding",
-                  "build-on-celo/build-with-ai/tools"
-                ]
-              },
+
               {
                 "group": "MCP Servers",
                 "pages": [
@@ -176,6 +170,14 @@
               "build-on-celo/build-with-local-stablecoin",
               "build-on-celo/build-with-defi"
             ]
+          },
+          {
+            "group": "Fee Abstraction",
+            "pages": [
+              "build-on-celo/fee-abstraction/overview",
+              "build-on-celo/fee-abstraction/using-fee-abstraction",
+              "build-on-celo/fee-abstraction/add-fee-currency"
+            ]
           }
         ]
       },
@@ -187,7 +189,6 @@
             "pages": [
               "tooling/overview/index",
               "tooling/overview/faucet",
-              "tooling/overview/fee-abstraction",
               "tooling/bridges/bridges",
               "tooling/bridges/cross-chain-messaging",
               "tooling/testnets/celo-sepolia/index"
@@ -252,7 +253,8 @@
               "tooling/indexers/the-graph",
               "tooling/indexers/subquery",
               "tooling/indexers/envio",
-              "tooling/indexers/goldrush"
+              "tooling/indexers/goldrush",
+              "tooling/indexers/indexing-co"
             ]
           },
           {
@@ -264,7 +266,8 @@
               "tooling/oracles/chainlink-oracles",
               "tooling/oracles/redstone",
               "tooling/oracles/supra",
-              "tooling/oracles/quex-oracles"
+              "tooling/oracles/quex-oracles",
+              "tooling/oracles/dia"
             ]
           },
           {
@@ -278,6 +281,14 @@
                   "tooling/dev-environments/thirdweb/overview",
                   "tooling/dev-environments/thirdweb/thirdweb",
                   "tooling/dev-environments/thirdweb/one-click-deploy"
+                ]
+              },
+              {
+                "group": "Using MultiBaas",
+                "pages": [
+                  "tooling/dev-environments/multibaas/overview",
+                  "tooling/dev-environments/multibaas/contracts",
+                  "tooling/dev-environments/multibaas/webhooks"
                 ]
               },
               "tooling/dev-environments/remix",
@@ -321,6 +332,7 @@
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
               "tooling/libraries-sdks/portal/index",
+              "tooling/libraries-sdks/jaw/index",
               {
                 "group": "ContractKit",
                 "pages": [
@@ -331,7 +343,6 @@
                   "tooling/libraries-sdks/contractkit/odis"
                 ]
               },
-              "tooling/libraries-sdks/rainbowkit-celo/index",
               "tooling/libraries-sdks/web3/index"
             ]
           },
@@ -396,6 +407,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/req-resp-cl-sync-deprecation",
               "infra-partners/notices/jovian-upgrade",
               "infra-partners/notices/jello-upgrade",
               "infra-partners/notices/l1-fusaka-upgrade",
@@ -417,17 +429,6 @@
           {
             "group": "Celo L2 Specs",
             "pages": ["infra-partners/specs"]
-          },
-          {
-            "group": "Integrate with Celo",
-            "pages": [
-              "infra-partners/integration/index",
-              "infra-partners/integration/general",
-              "infra-partners/integration/checklist",
-              "infra-partners/integration/custody",
-              "infra-partners/integration/listings",
-              "infra-partners/integration/cloud-hsm"
-            ]
           }
         ]
       },
@@ -681,7 +682,11 @@
     },
     {
       "source": "/cel2/guides/fee-abstraction",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
+    },
+    {
+      "source": "/tooling/overview/fee-abstraction",
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/celo-codebase/protocol",
@@ -1025,7 +1030,7 @@
     },
     {
       "source": "/celo-holder-guide/celo-exchange-bot",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/celo-holder-guide/celo-recovery",
@@ -1081,7 +1086,7 @@
     },
     {
       "source": "/celo-owner-guide/celo-exchange-bot",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/celo-owner-guide/celo-recovery",
@@ -1465,31 +1470,31 @@
     },
     {
       "source": "/developer-guide/integrations/checklist",
-      "destination": "/infra-partners/integration/checklist"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/cloud-hsm",
-      "destination": "/infra-partners/integration/cloud-hsm"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/dapps",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/general",
-      "destination": "/infra-partners/integration/general"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/integrations",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/listings",
-      "destination": "/infra-partners/integration/listings"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/overview",
@@ -1505,7 +1510,7 @@
     },
     {
       "source": "/developer-guide/overview/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-guide/overview/introduction",
@@ -1617,31 +1622,31 @@
     },
     {
       "source": "/developer-resources/integrations/checklist",
-      "destination": "/infra-partners/integration/checklist"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/cloud-hsm",
-      "destination": "/infra-partners/integration/cloud-hsm"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/custody",
-      "destination": "/infra-partners/integration/custody"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/dapps",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/general",
-      "destination": "/infra-partners/integration/general"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/integrations",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/listings",
-      "destination": "/infra-partners/integration/listings"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
@@ -1729,7 +1734,7 @@
     },
     {
       "source": "/developer/fee-currency",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/developer/indexer",
@@ -1981,7 +1986,7 @@
     },
     {
       "source": "/holder/exchange",
-      "destination": "/home/manage/exchange"
+      "destination": "/home/manage/asset"
     },
     {
       "source": "/holder/release-gold",
@@ -2189,7 +2194,7 @@
     },
     {
       "source": "/protocol/transaction/erc20-transaction-fees",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/protocol/transaction/escrow",
@@ -2197,7 +2202,7 @@
     },
     {
       "source": "/protocol/transaction/gas-pricing",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/protocol/transaction/native-currency",
@@ -2569,7 +2574,7 @@
     },
     {
       "source": "/developer/fee-abstraction",
-      "destination": "/tooling/overview/fee-abstraction"
+      "destination": "/build-on-celo/fee-abstraction/overview"
     },
     {
       "source": "/developer/launch-checklist",
@@ -2741,11 +2746,35 @@
     },
     {
       "source": "/integration",
-      "destination": "/infra-partners/integration"
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/integration/:slug*",
-      "destination": "/infra-partners/integration/:slug*"
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/checklist",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/cloud-hsm",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/custody",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/general",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/listings",
+      "destination": "/infra-partners/operators/overview"
     },
     {
       "source": "/contracts/:slug*",
@@ -2957,7 +2986,7 @@
     },
     {
       "source": "/developer/rainbowkit-celo",
-      "destination": "/tooling/libraries-sdks/rainbowkit-celo"
+      "destination": "/tooling/libraries-sdks/celo-sdks"
     },
     {
       "source": "/developer/reown",
@@ -3062,6 +3091,10 @@
     {
       "source": "/tooling/plumo/verification-phase-2",
       "destination": "/home/index"
+    },
+    {
+      "source": "/community/developer-events",
+      "destination": "/contribute-to-celo/builders"
     }
   ],
   "footer": {
@@ -3095,8 +3128,8 @@
             "label": "X"
           },
           {
-            "href": "https://lemonade.social/celo",
-            "label": "Events"
+            "href": "https://lemonade.social/s/celogovernance",
+            "label": "Governance Events"
           }
         ]
       }

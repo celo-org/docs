@@ -50,3 +50,68 @@ On Celo, agents are first-class participants in the economy. They can send and r
 **4. Multi-Agent Systems**
 - Collaborative systems where agents work together.
 - Examples: Collective problem-solving, distributed decision-making, or agent-to-agent communication.
+
+## Fee Abstraction for Agents
+
+AI agents on Celo can pay gas fees in stablecoins like USDC or USDT instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
+
+Celo supports a `feeCurrency` field on transactions that lets you specify which token to use for gas. [viem](https://viem.sh/) has native support for this field, making it the recommended library for agent backends.
+
+### Quick Start
+
+This example shows an agent sending a USDC transfer while paying gas in USDC:
+
+```typescript
+import { createWalletClient, createPublicClient, http, parseUnits } from "viem";
+import { celo } from "viem/chains";
+import { privateKeyToAccount } from "viem/accounts";
+import { erc20Abi } from "viem";
+
+// Agent's wallet
+const account = privateKeyToAccount(process.env.AGENT_PRIVATE_KEY as `0x${string}`);
+
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
+
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+
+// Addresses
+const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
+
+async function sendUSDCWithFeeAbstraction(to: `0x${string}`, amount: bigint) {
+  const hash = await walletClient.writeContract({
+    address: USDC,
+    abi: erc20Abi,
+    functionName: "transfer",
+    args: [to, amount],
+    feeCurrency: USDC_ADAPTER, // Pay gas in USDC
+  });
+
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  return receipt;
+}
+
+// Agent sends 1 USDC, gas paid in USDC — no CELO needed
+await sendUSDCWithFeeAbstraction("0xRecipient...", parseUnits("1", 6));
+```
+
+<Note>
+  When using USDC or USDT as fee currency, always use the **adapter address** (not the token address). Adapters normalize the 6-decimal tokens to the 18-decimal format that Celo's gas pricing requires. For 18-decimal tokens like USDm, use the token address directly.
+</Note>
+
+### Adapter Addresses
+
+| Token | Network | Token Address | Adapter Address (use for `feeCurrency`) |
+|-------|---------|---------------|----------------------------------------|
+| USDC | Mainnet | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B) |
+| USDT | Mainnet | [`0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e`](https://celoscan.io/address/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e) | [`0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72`](https://celoscan.io/address/0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72) |
+| USDC | Sepolia | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://sepolia.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b) | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://sepolia.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0) |
+
+For the full guide — including gas estimation, CIP-64 transaction types, and CLI usage — see [Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction).
