@@ -2753,6 +2753,30 @@
       "destination": "/infra-partners/operators/overview"
     },
     {
+      "source": "/infra-partners/integration",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/checklist",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/cloud-hsm",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/custody",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/general",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
+      "source": "/infra-partners/integration/listings",
+      "destination": "/infra-partners/operators/overview"
+    },
+    {
       "source": "/contracts/:slug*",
       "destination": "/tooling/contracts/:slug*"
     },
