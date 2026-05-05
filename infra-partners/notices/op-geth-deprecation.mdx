@@ -2,31 +2,32 @@
 title: "op-geth Deprecation"
 ---
 
-This page outlines the deprecation of `op-geth` in favor of `op-reth` as the execution client for Celo, and what node operators, RPC users, and bridge operators need to know.
+This notice outlines the deprecation of `op-geth` and the transition to `op-reth` as the supported execution client for Celo. It includes key information for node operators, RPC providers, and bridge operators.
 
-<Warning>
-`op-geth` will not support the L1 Glamsterdam hardfork. Celo will support `op-geth` until the Glamsterdam Ethereum hardfork, with security patches and critical bug fixes issued during that window. Node operators must migrate to `op-reth` before Glamsterdam to maintain compatibility with the canonical chain.
-</Warning>
+`op-geth` will not support the upcoming Ethereum Glamsterdam hardfork. All node operators must migrate to `op-reth` before this upgrade to remain in sync with the canonical chain.
 
-## What is changing?
+We will share exact dates once the Ethereum Glamsterdam timeline is finalized.
 
-Following [Optimism's deprecation of op-geth](https://docs.optimism.io/notices/op-geth-deprecation), Celo is ending support for `op-geth` as an execution client. The replacement is `op-reth`, which is built on [Reth](https://github.com/paradigmxyz/reth).
+## Summary Of Changes
 
-- **`op-geth`**: Supported until the Glamsterdam Ethereum hardfork (security patches and critical bug fixes only), after which support ends. It will not support the L1 Glamsterdam hardfork.
-- **`op-reth`**: The new supported execution client going forward. New feature development will happen on `op-reth` only.
-- **`op-node`**: Not affected by this change and continues to be supported as before.
+Following [Optimism's](https://docs.optimism.io/notices/op-geth-deprecation) deprecation of op-geth, Celo will also discontinue support for `op-geth` and adopt `op-reth` as the primary execution client.
 
-## For Node Operators
+- **`op-geth`**: Supported only until the Ethereum Glamsterdam hardfork. After this, it will no longer be compatible with the network. 
+- **`op-reth`**: The new supported execution client built on `reth`.
+- **`op-node`**: No changes. It remains fully supported.
 
-Node operators must migrate from `op-geth` to `op-reth` before the Glamsterdam Ethereum hardfork.
+## Requirements for Node Operators
 
-A Celo-compatible `op-reth` release for testnet will be available in June, with Mainnet release details to follow later. A detailed migration guide will be provided alongside the release. In the meantime, we recommend:
+Node operators must complete migration to `op-reth` before the Ethereum Glamsterdam hardfork.
 
-1. Familiarize yourself with [op-reth](https://reth.rs/) and its configuration.
-2. Begin planning your migration timeline.
-3. Once a Celo-compatible release is available, sync an `op-reth` node alongside your existing `op-geth` node and validate sync correctness over a meaningful window — compare block hashes, state roots, and RPC outputs before migrating production traffic.
-4. Watch this page and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for updates on Celo-specific releases and migration instructions.
+A Celo-compatible `op-reth` release and migration guide will be published shortly. In the meantime:
 
-## For RPC Users and Bridge Operators
+- Review `op-reth` and its configuration.
+- Begin planning your migration timeline
+- Monitor updates in the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository and this page for release details and instructions.
 
-The transition from `op-geth` to `op-reth` should be transparent for RPC consumers, as `op-reth` implements the same JSON-RPC API. However, there may be minor differences in behavior for some non-standard or debug RPC methods. We recommend testing your integration against an `op-reth` node once migration tooling is available, and comparing RPC outputs against your current `op-geth` node before cutover.
+## RPC Providers and Bridge Operators
+
+For most RPC users, this transition should be seamless. `op-reth` supports the same JSON-RPC interface as `op-geth`.
+
+However, some differences may exist in non-standard or debug RPC methods. We recommend validating your integrations against `op-reth` once test environments are available.
