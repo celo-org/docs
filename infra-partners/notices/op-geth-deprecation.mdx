@@ -5,31 +5,28 @@ title: "op-geth Deprecation"
 This page outlines the deprecation of `op-geth` in favor of `op-reth` as the execution client for Celo, and what node operators, RPC users, and bridge operators need to know.
 
 <Warning>
-`op-geth` will not support the L1 Glamsterdam hardfork. Node operators must migrate to `op-reth` before the Ethereum Glamsterdam hardfork to maintain compatibility with the canonical chain. We will update this notice with specific dates once the Glamsterdam timeline is confirmed.
+`op-geth` will not support the L1 Glamsterdam hardfork. Celo will support `op-geth` until the Glamsterdam Ethereum hardfork, with security patches and critical bug fixes issued during that window. Node operators must migrate to `op-reth` before Glamsterdam to maintain compatibility with the canonical chain.
 </Warning>
 
 ## What is changing?
 
 Following [Optimism's deprecation of op-geth](https://docs.optimism.io/notices/op-geth-deprecation), Celo is ending support for `op-geth` as an execution client. The replacement is `op-reth`, which is built on [Reth](https://github.com/paradigmxyz/reth).
 
-- **`op-geth`**: Will be supported until the Ethereum Glamsterdam hardfork, after which it will no longer be compatible with the canonical chain.
-- **`op-reth`**: The new supported execution client going forward.
+- **`op-geth`**: Supported until the Glamsterdam Ethereum hardfork (security patches and critical bug fixes only), after which support ends. It will not support the L1 Glamsterdam hardfork.
+- **`op-reth`**: The new supported execution client going forward. New feature development will happen on `op-reth` only.
 - **`op-node`**: Not affected by this change and continues to be supported as before.
 
 ## For Node Operators
 
-Node operators must migrate from `op-geth` to `op-reth` before the Ethereum Glamsterdam hardfork.
+Node operators must migrate from `op-geth` to `op-reth` before the Glamsterdam Ethereum hardfork.
 
-A Celo-compatible `op-reth` release will be available as soon as possible. A detailed migration guide will be provided alongside the release. In the meantime, we recommend:
+A Celo-compatible `op-reth` release for testnet will be available in June, with Mainnet release details to follow later. A detailed migration guide will be provided alongside the release. In the meantime, we recommend:
 
 1. Familiarize yourself with [op-reth](https://reth.rs/) and its configuration.
 2. Begin planning your migration timeline.
-3. Watch this page and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for updates on Celo-specific releases and migration instructions.
+3. Once a Celo-compatible release is available, sync an `op-reth` node alongside your existing `op-geth` node and validate sync correctness over a meaningful window — compare block hashes, state roots, and RPC outputs before migrating production traffic.
+4. Watch this page and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for updates on Celo-specific releases and migration instructions.
 
 ## For RPC Users and Bridge Operators
 
-The transition from `op-geth` to `op-reth` should be transparent for RPC consumers, as `op-reth` implements the same JSON-RPC API. However, there may be minor differences in behavior for some non-standard or debug RPC methods. We recommend testing your integration against an `op-reth` node once migration tooling is available.
-
-## Getting Help
-
-Please reach out to our team on [Discord](https://chat.celo.org) if you have any questions.
+The transition from `op-geth` to `op-reth` should be transparent for RPC consumers, as `op-reth` implements the same JSON-RPC API. However, there may be minor differences in behavior for some non-standard or debug RPC methods. We recommend testing your integration against an `op-reth` node once migration tooling is available, and comparing RPC outputs against your current `op-geth` node before cutover.
