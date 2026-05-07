@@ -407,6 +407,7 @@
           {
             "group": "Notices",
             "pages": [
+              "infra-partners/notices/op-geth-deprecation",
               "infra-partners/notices/req-resp-cl-sync-deprecation",
               "infra-partners/notices/jovian-upgrade",
               "infra-partners/notices/jello-upgrade",
