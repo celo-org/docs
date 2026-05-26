@@ -132,7 +132,7 @@
                 "pages": [
                   "build-on-celo/build-with-ai/8004",
                   "build-on-celo/build-with-ai/x402",
-                  "build-on-celo/build-with-ai/celo-pedia",
+                  "build-on-celo/build-with-ai/celopedia",
                   "build-on-celo/build-with-ai/vibe-coding"
                 ]
               },
@@ -3075,7 +3075,11 @@
     },
     {
       "source": "/build-on-celo/build-with-ai/agent-skills",
-      "destination": "/build-on-celo/build-with-ai/celo-pedia"
+      "destination": "/build-on-celo/build-with-ai/celopedia"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/celo-pedia",
+      "destination": "/build-on-celo/build-with-ai/celopedia"
     },
     {
       "source": "/tooling/overview/network-overview",
