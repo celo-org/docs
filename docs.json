@@ -3074,6 +3074,10 @@
       "destination": "/build-on-celo/build-with-ai/overview"
     },
     {
+      "source": "/build-on-celo/build-with-ai/agent-skills",
+      "destination": "/build-on-celo/build-with-ai/celo-pedia"
+    },
+    {
       "source": "/tooling/overview/network-overview",
       "destination": "/build-on-celo/network-overview"
     },
