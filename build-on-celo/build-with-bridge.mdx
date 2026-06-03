@@ -1,0 +1,95 @@
+---
+title: Build with Bridge
+og:description: Use Bridge's stablecoin orchestration APIs to add fiat on/off ramps, virtual bank accounts, custodial wallets, and card issuance to your Celo app — without becoming a regulated financial institution yourself.
+---
+
+# Build with Bridge
+
+[Bridge](https://www.bridge.xyz) is a stablecoin orchestration platform that lets you move money between fiat and stablecoins programmatically. Acquired by Stripe in 2024, Bridge handles the regulated parts of payments — KYC/KYB, money transmission, banking relationships, fiat rails — so you can ship products on Celo without standing up that infrastructure yourself.
+
+Celo is a supported chain across Bridge's APIs. That means USD, EUR, MXN, BRL, GBP, and COP deposits can land as stablecoins directly on Celo, and Celo stablecoin balances can be sent out as fiat to bank accounts worldwide.
+
+<Info>
+  **Bridge is developer infrastructure, not a consumer ramp.** If you're a user looking to buy CELO or stablecoins with a card, see the [ramps directory](/home/ramps). If you're a developer building a product that needs to move fiat in or out of Celo at scale, Bridge is built for you.
+</Info>
+
+## What Bridge gives you
+
+Bridge exposes a composable set of APIs. Most Celo apps will use one or two of these — picking up the others as the product grows.
+
+* **Orchestration** — One-time and recurring transfers between fiat and stablecoins. Convert USD → USDT on Celo, USDT on Celo → MXN, USDT on Celo → USDT on another chain, etc.
+* **Virtual accounts** — Issue real bank account numbers (US ACH/Wire, EUR IBAN, MXN CLABE, BRL Pix, GBP Faster Payments) to your users. Deposits auto-convert and land as stablecoins on a Celo address you specify.
+* **Liquidation addresses** — Link a Celo address to a fiat destination. Stablecoins sent to that address are automatically converted and paid out to a bank account.
+* **Custodial wallets** — Bridge-managed stablecoin wallets per customer, for apps that don't want to handle key management.
+* **Card issuing** — Visa-powered virtual and physical cards backed by a customer's stablecoin balance, via Bridge's integration with Stripe Issuing.
+* **Stablecoin issuance** — Launch your own branded stablecoin, or hold balances in **USDB** (Bridge's native stablecoin) to earn yield automatically.
+
+Full reference: [apidocs.bridge.xyz](https://apidocs.bridge.xyz).
+
+## Why this matters for Celo developers
+
+Three things make Bridge particularly useful in the Celo ecosystem:
+
+**Stablecoin-first API design.** Bridge's API is purpose-built for stablecoin flows. You don't get a generic payments API with crypto bolted on — you get primitives (transfers, virtual accounts, liquidation addresses) that match how Celo apps actually move money.
+
+**Compliance is a moat.** KYC/KYB, sanctions screening, transaction monitoring, and bank partnerships are the parts of payments that are slow and expensive to build. For a Celo team focused on shipping product, Bridge's biggest value isn't the API surface — it's the year of regulatory work you don't have to do yourself.
+
+**Pairs cleanly with Celo's fee abstraction.** If you're paying users in USDT on Celo, they can also pay gas in USDT via [fee abstraction](/build-on-celo/fee-abstraction/overview). The combination is a fully USD-denominated UX — your user never sees a native gas token, never sees a conversion step, never thinks about which chain they're on.
+
+## Supported assets and rails on Celo
+
+Refer to Bridge's [Route Explorer](https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes) for the current source/destination matrix. At a high level, the assets Bridge supports on Celo are the stablecoins your users are most likely to hold — USDT, USDC, and USDB.
+
+**Fiat rails currently supported:**
+
+* ACH and Wire (USD)
+* SEPA Instant and SEPA Credit (EUR)
+* SPEI (MXN)
+* Pix (BRL)
+* Faster Payments (GBP)
+* Bre-B and Bank Transfer PSE/ACH (COP, beta)
+
+**Important caveats:**
+
+* **USDT and Bridge-issued stablecoins are not available to users in the EEA** due to MiCA-related restrictions. USDC is the practical choice for EU consumer flows.
+* Sending an unsupported asset to a Bridge deposit address can result in permanent loss. Always confirm the route in the Route Explorer before integrating.
+* Bridge enforces per-route transaction minimums. Check them before quoting amounts to your users.
+
+## Common Celo developer use cases
+
+The patterns below map Bridge's primitives to scenarios that show up regularly in Celo product work.
+
+### Cross-border payments (B2B)
+
+A Celo-based supplier-payment app lets businesses in the US pay vendors in Mexico in MXN. Bridge issues a USD virtual account to the business. USD deposits convert to stablecoin balances on Celo. The Transfers API sends those stablecoins out as MXN via SPEI to the vendor's bank account. The business never touches crypto; the vendor receives local currency. Full walkthrough: [Cross-border payments guide](https://apidocs.bridge.xyz/get-started/guides/common-use-cases/cross-border-payments).
+
+### Stablecoin payouts (remittances, payroll, creator payments)
+
+A Celo-based app pays contractors in 20+ countries. Funds sit as stablecoins on Celo. When a contractor is paid, the app calls Transfers to convert and deliver to that contractor's local fiat rail — Pix in Brazil, SEPA in Europe, ACH in the US.
+
+### On-ramps for Celo dApps
+
+A DeFi or savings app on Celo wants users to fund their position with a bank transfer instead of forcing them through a card-based ramp. The app provisions a virtual account per user via Bridge. The user sees their own bank details inside the app, sends funds via local rails, and the deposit lands as USDT or USDC on their Celo address.
+
+### Treasury management for Celo-native businesses
+
+A Celo-based business holds operational reserves in USDT on Celo. Bridge's Transfers API lets the business move funds to fiat for vendor payments, to USDB to earn yield on idle balances, or to USDC on another chain when needed.
+
+## Getting started
+
+1. **Read the [platform overview](https://apidocs.bridge.xyz/get-started/introduction/quick-start/overview).** It explains how the Orchestration, Wallets, Issuance, Cards, and Customers APIs fit together.
+2. **[Set up a sandbox environment](https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox).** All endpoints are available in sandbox before you need any production access.
+3. **Pick the right entry point** based on what you're building:
+   * Moving money between fiat and stablecoins → [Transfers](https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer)
+   * Issuing fiat deposit addresses → [Virtual Accounts](https://apidocs.bridge.xyz/platform/orchestration/virtual_accounts/virtual-account)
+   * Auto-converting incoming crypto → [Liquidation Addresses](https://apidocs.bridge.xyz/platform/orchestration/liquidation_address/liquidation_address)
+   * Holding stablecoin balances for users → [Wallets](https://apidocs.bridge.xyz/platform/wallets/overview)
+   * Spending from stablecoin balances with a card → [Cards](https://apidocs.bridge.xyz/platform/cards/overview/overview)
+
+For production access or account questions, contact [support@bridge.xyz](mailto:support@bridge.xyz).
+
+## Related Celo resources
+
+* [Build with local stablecoins](/build-on-celo/build-with-local-stablecoin) — Working with Mento's local-currency stablecoins on Celo.
+* [Celo Global Ramps Ecosystem](/home/ramps) — Consumer-facing on/off ramps that already support Celo.
+* [Fee Abstraction](/build-on-celo/fee-abstraction/overview) — Letting users pay gas in stablecoins on Celo.
