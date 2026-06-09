@@ -406,3 +406,146 @@ async function requestTransfer(tokenAddress, transferValue, tokenDecimals, recei
 ```
 
 {/* prettier-ignore-end */}
+
+
+## MiniPay with wagmi v2 + viem v2
+
+If you are building with **wagmi v2** and **viem v2** (the current standard for Next.js 14 apps), here is the complete integration pattern for MiniPay detection and auto-connect.
+
+### Install dependencies
+
+```bash
+npm install wagmi viem @tanstack/react-query
+```
+
+### Configure wagmi with Celo
+
+```ts
+// src/app/providers.tsx
+"use client";
+
+import { WagmiProvider, createConfig, http } from "wagmi";
+import { celo } from "wagmi/chains";
+import { injected } from "wagmi/connectors";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const wagmiConfig = createConfig({
+  chains: [celo],
+  connectors: [injected()],
+  transports: {
+    [celo.id]: http("https://forno.celo.org"),
+  },
+});
+
+const queryClient = new QueryClient();
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <WagmiProvider config={wagmiConfig}>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}
+```
+
+### MiniPay detection hook
+
+```ts
+// src/hooks/useMiniPay.ts
+"use client";
+
+import { useState, useEffect } from "react";
+import { injected } from "wagmi/connectors";
+import { useConnect, useAccount } from "wagmi";
+
+export function useMiniPay() {
+  const [isMiniPay, setIsMiniPay] = useState(false);
+  const [isDetecting, setIsDetecting] = useState(true);
+  const { connect } = useConnect();
+  const { address, isConnected } = useAccount();
+
+  useEffect(() => {
+    const detect = () => {
+      if (typeof window !== "undefined" && (window as any).ethereum) {
+        const detected = Boolean((window as any).ethereum.isMiniPay);
+        setIsMiniPay(detected);
+
+        // Auto-connect inside MiniPay — wallet connection is implicit
+        if (detected && !isConnected) {
+          connect({ connector: injected({ target: "metaMask" }) });
+        }
+      }
+      setIsDetecting(false);
+    };
+
+    // Small delay to allow injected provider to initialize
+    const timer = setTimeout(detect, 100);
+    return () => clearTimeout(timer);
+  }, [connect, isConnected]);
+
+  return { isMiniPay, isDetecting, address, isConnected };
+}
+```
+
+### Hide connect button inside MiniPay
+
+```tsx
+// src/components/Header.tsx
+"use client";
+
+import { useMiniPay } from "@/hooks/useMiniPay";
+import { WalletConnect } from "@/components/WalletConnect";
+
+export function Header() {
+  const { isMiniPay, isDetecting } = useMiniPay();
+
+  return (
+    <header>
+      <div>My App</div>
+      {/* Only show connect button outside MiniPay */}
+      {!isMiniPay && !isDetecting && <WalletConnect />}
+    </header>
+  );
+}
+```
+
+### Avoid React hydration errors
+
+When rendering wallet-dependent UI (address, connection status) in a Next.js app, you will encounter a hydration mismatch error because the server renders before the wallet is detected. Fix this by gating all wallet-dependent renders behind a `mounted` state:
+
+```tsx
+"use client";
+
+import { useState, useEffect } from "react";
+import { useMiniPay } from "@/hooks/useMiniPay";
+
+export default function Page() {
+  const [mounted, setMounted] = useState(false);
+  const { isMiniPay, address, isConnected } = useMiniPay();
+
+  useEffect(() => { setMounted(true); }, []);
+
+  // Don't render wallet-dependent UI until client has mounted
+  if (!mounted) return null;
+
+  return (
+    <main>
+      {isConnected && <p>Connected: {address}</p>}
+      {!isConnected && !isMiniPay && <button>Connect Wallet</button>}
+    </main>
+  );
+}
+```
+
+> **Note:** Skipping the `mounted` guard causes a `Text content did not match` hydration error because the server renders "Agent" while the client renders "Wallet" for wallet connection status labels.
+
+### Key differences from wagmi v1
+
+| v1 | v2 |
+|---|---|
+| `useConnect({ connector: new InjectedConnector() })` | `useConnect()` + `injected()` from `wagmi/connectors` |
+| `chain` from `wagmi/chains` | `celo` from `viem/chains` |
+| `WagmiConfig` | `WagmiProvider` |
+| `configureChains` | `createConfig` with `transports` |
