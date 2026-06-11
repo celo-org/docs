@@ -423,8 +423,7 @@
             "pages": [
               "infra-partners/operators/overview",
               "infra-partners/operators/architecture",
-              "infra-partners/operators/run-node",
-              "infra-partners/operators/run-from-source"
+              "infra-partners/operators/run-node"
             ]
           },
           {
