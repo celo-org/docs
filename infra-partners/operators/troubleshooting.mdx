@@ -1,0 +1,19 @@
+---
+title: "Troubleshooting"
+sidebarTitle: "Troubleshooting"
+---
+
+## Transactions Are Not Being Executed When Submitted to a Node
+
+If your node is synced but transactions submitted to it are not executed, make sure the `--rollup.sequencerhttp` flag is correctly set.
+
+- Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
+- Celo Sepolia: `--rollup.sequencerhttp=https://sequencer.celo-sepolia.celo-testnet.org`
+
+## Self-Hosted Public RPC Does Not Retrieve Transactions by Hash
+
+If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.
+
+## Getting Help
+
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.

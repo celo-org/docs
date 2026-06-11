@@ -424,7 +424,21 @@
               "infra-partners/operators/overview",
               "infra-partners/operators/architecture",
               "infra-partners/operators/run-node",
+              "infra-partners/operators/run-from-source"
+            ]
+          },
+          {
+            "group": "Node Management",
+            "pages": [
+              "infra-partners/operators/archive-node",
+              "infra-partners/operators/troubleshooting",
               "infra-partners/operators/migrate-node"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "infra-partners/operators/network-config"
             ]
           },
           {
