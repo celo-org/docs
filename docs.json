@@ -430,6 +430,7 @@
             "group": "Node Management",
             "pages": [
               "infra-partners/operators/archive-node",
+              "infra-partners/operators/monitoring",
               "infra-partners/operators/troubleshooting",
               "infra-partners/operators/migrate-node"
             ]
@@ -437,6 +438,7 @@
           {
             "group": "Reference",
             "pages": [
+              "infra-partners/operators/configuration",
               "infra-partners/operators/network-config"
             ]
           },

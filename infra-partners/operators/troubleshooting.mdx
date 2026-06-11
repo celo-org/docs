@@ -10,9 +10,33 @@ If your node is synced but transactions submitted to it are not executed, make s
 - Mainnet: `--rollup.sequencerhttp=https://cel2-sequencer.celo.org/`
 - Celo Sepolia: `--rollup.sequencerhttp=https://sequencer.celo-sepolia.celo-testnet.org`
 
-## Self-Hosted Public RPC Does Not Retrieve Transactions by Hash
-
 If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.
+
+## Checking Sync Progress
+
+If you are unsure whether your node is syncing, follow the op-geth logs and watch the sync percentage climb:
+
+```sh
+docker compose logs -n 50 -f op-geth
+```
+
+You can also run `./progress.sh` from the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo, or query the head block number — it returns `0` until the node is fully synced, then increases over time:
+
+```sh
+cast block-number --rpc-url http://localhost:9993
+```
+
+See [Monitoring & metrics](/infra-partners/operators/monitoring) for the Grafana dashboard and the metrics that show sync health.
+
+## Node Is Not Syncing or Has No Peers
+
+If your node stalls or falls behind the sequencer, it usually has too few peers. Check `op_node_default_peer_count` (see [Monitoring & metrics](/infra-partners/operators/monitoring)); if it is low or zero, your node cannot discover or reach other nodes. This is almost always a P2P configuration problem:
+
+- Set `OP_NODE__P2P_ADVERTISE_IP` to your node's public IP.
+- Set `OP_GETH__NAT` to `extip:<your-public-ip>` rather than relying on auto-detection.
+- Make sure the P2P ports are reachable (op-geth `30303`, op-node `9222` by default).
+
+See the [Configuration reference](/infra-partners/operators/configuration#networking-p2p) for these variables. Because op-node now syncs via the execution layer, healthy execution-client peer connectivity is required — see [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
 
 ## Getting Help
 
