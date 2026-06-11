@@ -85,6 +85,7 @@ These flags are set for you by the compose start scripts; they are listed here b
 - **`--rollup.sequencerhttp`** (op-geth) — the sequencer endpoint transactions are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
 - **`--history.transactions=0`** (op-geth) — index the full transaction history so all transactions are retrievable by hash. Set by default; required if you run a public RPC node.
 - **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
+- **`--l2.enginekind`** (op-node) — tells op-node which execution client it is driving. It must match your execution client: keep it set to **`geth`** while you run op-geth, which is the current Celo setup. Upstream op-node is moving this default to `reth` as part of the op-reth transition, so if you build a newer op-node yourself, set `--l2.enginekind=geth` explicitly until you have migrated to op-reth.
 - **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/infra-partners/operators/monitoring).
 
 For every other op-geth/op-node flag, see the Optimism [op-geth config](https://docs.optimism.io/node-operators/reference/op-geth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
