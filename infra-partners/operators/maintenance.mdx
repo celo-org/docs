@@ -1,0 +1,58 @@
+---
+title: "Upgrades & Maintenance"
+sidebarTitle: "Upgrades & Maintenance"
+---
+
+Routine operational tasks for a running Celo L2 node, using the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup.
+
+## Upgrading your node
+
+To upgrade to the latest client versions:
+
+```sh
+git pull
+docker compose pull
+docker compose up -d --build
+```
+
+This pulls the latest changes from GitHub and the latest images from the registry, rebuilds the containers, and restarts the node.
+
+<Warning>
+**Hardfork upgrades are time-sensitive**
+
+Network hardforks require running a compatible client version *before* the fork block, or your node will stop following the chain. Watch the [Notices](/infra-partners/notices/l2-migration) for each upgrade's required versions and timing. The next major required migration is the move from op-geth to op-reth ahead of the Ethereum Glamsterdam hardfork — see [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation).
+</Warning>
+
+To pin a specific image version instead of tracking the latest, set the matching `IMAGE_TAG__*` variable in your `.env` (for example `IMAGE_TAG__OP_GETH` or `IMAGE_TAG__OP_NODE`).
+
+## Restarting and stopping
+
+```sh
+# Restart with minimal downtime (no upgrade)
+docker compose restart
+
+# Stop the node without wiping any data; safe to start again afterwards
+docker compose down
+```
+
+<Warning>
+**`docker compose down -v` wipes all data**
+
+The `-v` flag deletes the node's volumes, including the chaindata. Only use it when you intend to discard everything and re-sync from scratch.
+</Warning>
+
+## Backing up your data
+
+The chaindata lives in `DATADIR_PATH` (default `./envs/<network>/datadir`). To back it up, stop the node first so the database is in a consistent state, then copy the datadir:
+
+```sh
+docker compose down
+cp -a ./envs/<network>/datadir /path/to/backup
+```
+
+## Re-syncing
+
+If you need to rebuild a node, you do not need a backup or snapshot:
+
+- A **full node** can `snap` sync from scratch — see [Run a node with Docker](/infra-partners/operators/run-node).
+- A **full-sync or archive node** needs a migrated pre-hardfork datadir — see the migrated chaindata in [Network Config & Assets](/infra-partners/operators/network-config) and [Migrating an L1 Node](/infra-partners/operators/migrate-node).

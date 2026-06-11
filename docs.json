@@ -430,7 +430,9 @@
             "group": "Node Management",
             "pages": [
               "infra-partners/operators/archive-node",
+              "infra-partners/operators/public-rpc-node",
               "infra-partners/operators/monitoring",
+              "infra-partners/operators/maintenance",
               "infra-partners/operators/troubleshooting",
               "infra-partners/operators/migrate-node"
             ]
