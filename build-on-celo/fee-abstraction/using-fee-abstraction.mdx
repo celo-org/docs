@@ -65,7 +65,18 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
-When using USDC or USDT, use the adapter address (not the token address) to avoid inaccuracies caused by their 6-decimal precision.
+When using USDC or USDT, use the **adapter address** (not the token address) as `--gasCurrency`. Both tokens use 6 decimals — pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC).
+
+Transfer 1 USDT using USDT as the fee currency:
+```bash
+celocli transfer:erc20 \
+  --erc20Address 0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e \
+  --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 \
+  --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 \
+  --value 1000000 \
+  --gasCurrency 0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72 \
+  --privateKey [PRIVATE_KEY]
+```
 
 ---
 
