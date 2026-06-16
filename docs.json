@@ -254,7 +254,8 @@
               "tooling/indexers/subquery",
               "tooling/indexers/envio",
               "tooling/indexers/goldrush",
-              "tooling/indexers/indexing-co"
+              "tooling/indexers/indexing-co",
+              "tooling/indexers/codex"
             ]
           },
           {
