@@ -156,20 +156,58 @@ const [address] = await client.getAddresses();
 
 #### 2. Using Wagmi
 
-```js
-import { useConnect } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
+<Note>
+  These snippets use **wagmi v2** (the current major version). In v2, connectors
+  are functions (e.g. `injected()`) rather than the classes used in v1
+  (`new InjectedConnector()`), `WagmiConfig` is now `WagmiProvider`, and the
+  config is built with `createConfig`.
+</Note>
 
-const { connect } = useConnect({
-  connector: new InjectedConnector(),
+First, create your wagmi config and wrap your app in `WagmiProvider` (wagmi v2 also requires a TanStack Query provider):
+
+```tsx
+// providers.tsx
+"use client";
+
+import { WagmiProvider, createConfig, http } from "wagmi";
+import { celo } from "wagmi/chains";
+import { injected } from "wagmi/connectors";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+export const config = createConfig({
+  chains: [celo],
+  connectors: [injected({ target: "metaMask" })],
+  transports: {
+    [celo.id]: http(),
+  },
 });
 
-useEffect(() => {
-  connect();
-}, []);
+const queryClient = new QueryClient();
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </WagmiProvider>
+  );
+}
 ```
 
-This code sets up an `InjectedConnector` and then utilizes the `connect` method from the `useConnect` hook. The `useEffect` ensures that the connection is established when the page loads.
+Then auto-connect on load using the connector from your config:
+
+```tsx
+import { useEffect } from "react";
+import { useConnect } from "wagmi";
+
+const { connect, connectors } = useConnect();
+
+useEffect(() => {
+  // `connectors[0]` is the `injected()` connector registered in `createConfig`
+  connect({ connector: connectors[0] });
+}, [connect, connectors]);
+```
+
+This sets up the `injected` connector in `createConfig` and then uses the `connect` method from the `useConnect` hook. The `useEffect` ensures that the connection is established when the page loads.
 
 In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
 
@@ -179,7 +217,11 @@ Ensure the "Connect Wallet" button is hidden when your DApp is loaded inside the
 
 _Code Example to hide Connect Wallet button if the user is using MiniPay wallet_
 
-```jsx
+```tsx
+import { useEffect, useState } from "react";
+import { useConnect } from "wagmi";
+import { injected } from "wagmi/connectors";
+
 export default function Header() {
   // State variable that determines whether to hide the button or not.
   const [hideConnectBtn, setHideConnectBtn] = useState(false);
@@ -192,7 +234,7 @@ export default function Header() {
 
       connect({ connector: injected({ target: "metaMask" }) });
     }
-  }, []);
+  }, [connect]);
 
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
