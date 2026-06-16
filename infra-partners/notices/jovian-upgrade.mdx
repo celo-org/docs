@@ -5,10 +5,12 @@ title: "Jovian Hardfork"
 This page outlines changes related to the Jovian Upgrade for node operators.
 
 <Note>
-This page will be kept updated with key information about the upgrade. Activation timestamps will be announced soon.
+This page will be kept updated with key information about the upgrade.
 
-- Celo Sepolia testnet activation: March 3, 2026.
-- **Mainnet** activation: March 17, 2026.
+- Celo Sepolia testnet activation: Tue, Mar 17, 2026, 12:03:57 UTC
+  - Activation timestamp: `1773749037`
+- **Mainnet** activation: Tue, Mar 31, 2026, 12:06:28 UTC
+  - Actvation timestamp: `1774958788`
 </Note>
 
 ## What is the Jovian Hardfork?
@@ -21,13 +23,101 @@ Key changes include:
 - **Minimum Base Fee Transition**: Celo moves from its own gas price floor mechanism to Optimism's configurable Minimum Base Fee standard, maintaining a cost floor while aligning with OP Stack conventions.
 For the full technical specification, see the [Jovian upgrade spec](https://specs.celo.org/upgrades/jovian.html).
 - **L1 Fusaka Upgrade**: Celo now includes improvements to handle the L1 Fusaka upgrade, leading to better compatibility with the Optimism stack. For more details see [OP Fusaka upgrade notice](https://docs.optimism.io/notices/archive/fusaka-notice).
+- **EigenDA upgrade**: The EigenDA proxy is upgraded to a recent version which improves the trustless integration and allows switching to the latest EigenDA protocol version.
+
+## For Bridges and Users
+
+<Note>
+All withdrawals that are not finalized before the contract upgrade right before the Jovian hardfork will need to be reproven after the upgrade is complete. You may want to consider waiting until after the upgrade is complete to begin a withdrawal during this 7-day window.
+</Note>
+
+Celo's Jovian hardfork includes [Optimism Upgrade 16](https://docs.optimism.io/notices/archive/upgrade-16). Users should be aware of the following impacts:
+
+### Withdrawal flow changes
+
+1. There will be a one-time invalidation of all pending withdrawal proofs created on L1.
+2. Complete any pending withdrawals before the upgrade is executed.
+3. Avoid creating new withdrawal proofs that would not become executable in time.
+4. If a withdrawal was invalidated, submit a second withdrawal proof transaction on L1.
+
+This invalidation does not place any ETH or ERC-20 tokens at risk.
 
 ## For Node Operators
 
-Software versions will be announced ahead of the activation date. Check back for updates.
+Node operators will need to upgrade to the respective Jovian releases before the activation dates.
+
+### Update to the latest release
+
+The release contains the activation timestamps for Celo Mainnet and Celo Sepolia testnet.
+
+- `op-geth` at [v2.2.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.2.2)
+- `op-node` at [v2.2.1](https://github.com/celo-org/optimism/releases/tag/celo-v2.2.1)
+- `eigenda-proxy` at [v2.6.0](https://github.com/Layr-Labs/eigenda/releases/tag/v2.6.0)
+
+- For an easy way to run a node and an example of valid flags see [celo-l2-node-docker-compose v1.3.3](https://github.com/celo-org/celo-l2-node-docker-compose/tree/v1.3.3)
+
+#### Updating the EigenDA proxy
+
+The Jovian hardfork also increases the minimum EigenDA proxy version to `v2.6.0`.
+
+This update requires some changes to the configuration:
+
+- Set the following flags
+  - `--eigenda.v2.network` to either `mainnet` or `sepolia_testnet`
+  - `--eigenda.v2.cert-verifier-router-or-immutable-verifier-addr` to the `CertRouter` contract on the corresponding L1
+    - Sepolia: [`0xf4f934A0b5c09d302d9C6f60040754fEebdd6073`](https://sepolia.etherscan.io/address/0xf4f934A0b5c09d302d9C6f60040754fEebdd6073)
+    - Mainnet: [`0x2ea418AE1852bfC79e18B37E55F278F9c598AA08`](https://etherscan.io/address/0x2ea418AE1852bfC79e18B37E55F278F9c598AA08)
+  - `--apis.enabled` to `"op-generic,op-keccak,standard,metrics"`
+- Remove the following flags if they are set
+  - `--eigenda.signer-private-key-hex`
+  - `--eigenda.v2.disperser-rpc`
+  - `--eigenda.v2.cert-verifier-addr`
+  - `--eigenda.v2.eigenda-directory`
+  - `--eigenda.v2.signer-payment-key-hex`
+  - `--eigenda.v2.service-manager-addr`
+  - `--eigenda.v2.bls-operator-state-retriever-addr`
+  - `--eigenda.g1-path`
+  - `--eigenda.g2-path`
+  - `--eigenda.g2-path-trailing`
 
 <Tip>
 **Docker Compose**
 
-The required configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
+The configuration for each service can be found in our [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose), where every network has a corresponding `<network>.env` file.
 </Tip>
+
+### Re-download genesis and rollup.json files
+
+The `genesis.json` and `rollup.json` files have been updated for the Jovian hardfork. Node operators not using the [Docker Compose setup](https://github.com/celo-org/celo-l2-node-docker-compose) must re-download these files before upgrading.
+
+**Mainnet:**
+- [`genesis.json`](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json)
+- [`rollup.json`](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
+
+**Celo Sepolia:**
+- [`genesis.json`](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json)
+- [`rollup.json`](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
+
+### Verify Your Configuration
+
+Make the following checks to verify that your node is properly configured.
+
+- op-node and op-geth will log their configurations at startup
+- Check that the Jovian time is set correctly in the `op-node` startup logs
+- Check that the Jovian time is set correctly in the `op-geth` startup logs
+
+### Notes
+
+#### Event logs index rebuild on upgrade
+
+Nodes will perform a one-time log index rebuild on first start, visible as `Log
+index head rendering in progress` in logs. This can take several hours as the
+full chain history is processed. Subsequent restarts will not re-index.
+
+#### Event logs new flag `--history.logs`
+
+Controls how long (in blocks) to maintain the event log indexes. Prior to this
+upgrade the event log index was maintained for all event logs since genesis, now
+the flag has a default setting of 28200000 blocks which is ~326 days. To index
+all event logs since genesis set the flag to zero.
+

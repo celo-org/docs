@@ -1,0 +1,166 @@
+---
+title: Event Webhooks
+description: Receive real-time HTTP callbacks for on-chain contract events using MultiBaas webhooks.
+---
+
+MultiBaas webhooks deliver real-time HTTP POST callbacks to your server whenever a configured on-chain event fires. This lets you react to contract activity without polling the blockchain.
+
+## Supported Event Types
+
+| Type | Trigger |
+|---|---|
+| `event.emitted` | A contract event is emitted on-chain (requires **Sync Events** enabled on the contract) |
+| `transaction.included` | A Cloud Wallet transaction is mined in a block |
+
+## Creating a Webhook
+
+### In the Dashboard
+
+1. Go to **Blockchain → Webhooks → +**
+2. Enter a label and your publicly accessible HTTPS endpoint URL
+3. Save
+
+### Via API
+
+```bash
+curl -X POST \
+  "https://<deployment-id>.multibaas.com/api/v0/webhooks" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "label": "my-webhook",
+    "url": "https://your-app.example.com/api/webhooks/multibaas"
+  }'
+```
+
+## Webhook Payload
+
+Each request delivers a JSON array of one or more events:
+
+```typescript
+type MultiBaasEvent = {
+  id: string;
+  event: 'event.emitted' | 'transaction.included';
+  data: {
+    triggeredAt: string;
+    event: {
+      name: string;
+      signature: string;
+      inputs: {
+        name: string;
+        value: string;
+        hashed: boolean;
+        type: string;
+      }[];
+      rawFields: string;
+      contract: {
+        address: string;
+        addressLabel: string;
+        name: string;
+        label: string;
+      };
+      indexInLog: number;
+    };
+  };
+};
+```
+
+## Verifying Signatures
+
+Every webhook request includes two headers:
+
+- **`X-MultiBaas-Signature`** — HMAC-SHA256 of the raw request body concatenated with the timestamp
+- **`X-MultiBaas-Timestamp`** — Unix timestamp as a string
+
+Always verify the signature before processing an event to confirm the request originated from MultiBaas.
+
+```typescript
+import { createHmac } from 'node:crypto';
+
+function verifyWebhookSignature(
+  payload: string,
+  signature: string | null,
+  timestamp: string | null,
+): boolean {
+  if (!payload || !signature || !timestamp) return false;
+
+  const hmac = createHmac('sha256', process.env.MULTIBAAS_WEBHOOK_SECRET!);
+  hmac.update(Buffer.from(payload));
+  hmac.update(timestamp);
+  const expected = hmac.digest().toString('hex');
+
+  return signature === expected;
+}
+```
+
+The webhook secret is shown once when you create the webhook in the MultiBaas dashboard.
+
+## Example: Next.js Webhook Handler
+
+The following is based on how [Celo Mondo](https://mondo.celo.org/) uses MultiBaas webhooks to process Celo governance events in real time.
+
+```typescript
+// app/api/webhooks/multibaas/route.ts
+import { NextRequest } from 'next/server';
+import { createHmac } from 'node:crypto';
+
+type MultiBaasEvent = {
+  id: string;
+  event: 'event.emitted';
+  data: {
+    triggeredAt: string;
+    event: {
+      name: string;
+      signature: string;
+      inputs: { name: string; value: string; hashed: boolean; type: string }[];
+      rawFields: string;
+      contract: {
+        address: string;
+        addressLabel: string;
+        name: string;
+        label: string;
+      };
+      indexInLog: number;
+    };
+  };
+};
+
+export async function POST(request: NextRequest): Promise<Response> {
+  const rawBody = await request.text();
+  const signature = request.headers.get('X-MultiBaas-Signature');
+  const timestamp = request.headers.get('X-MultiBaas-Timestamp');
+
+  if (!rawBody || !signature || !timestamp) {
+    return new Response(null, { status: 403 });
+  }
+
+  // Verify the signature before processing
+  const hmac = createHmac('sha256', process.env.MULTIBAAS_WEBHOOK_SECRET!);
+  hmac.update(Buffer.from(rawBody));
+  hmac.update(timestamp);
+  const expected = hmac.digest().toString('hex');
+
+  if (signature !== expected) {
+    return new Response(null, { status: 403 });
+  }
+
+  const events: MultiBaasEvent[] = JSON.parse(rawBody);
+
+  for (const { data: { event } } of events) {
+    console.log(`Received ${event.name} from ${event.contract.address}`);
+    // Handle each event...
+  }
+
+  return new Response(null, { status: 200 });
+}
+```
+
+For a full production example — including governance proposal processing, multisig approval handling, progressive historical backfill, and database integration — see the [Celo Mondo webhook handler](https://github.com/celo-org/celo-mondo/tree/main/src/app/api/webhooks/multibaas).
+
+## Environment Variables
+
+```bash
+MULTIBAAS_DEPLOYMENT_URL=https://<deployment-id>.multibaas.com
+MULTIBAAS_API_KEY=<your-api-key>
+MULTIBAAS_WEBHOOK_SECRET=<your-webhook-secret>
+```

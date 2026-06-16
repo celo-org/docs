@@ -10,9 +10,9 @@ import tempfile
 from typing import Optional
 from urllib.request import urlretrieve
 
-API_KEY = os.getenv("ALCHEMY_API_KEY")
+API_KEY = os.getenv("TENDERLY_API_KEY")
 if API_KEY is None:
-    print("Please set the ALCHEMY_API_KEY environment variable.")
+    print("Please set the TENDERLY_API_KEY environment variable.")
     sys.exit(1)
 
 ZERO_ADDRESS = f"0x{'0'*40}"
@@ -29,7 +29,7 @@ NETWORKS = {
             "contracts-l1.json": "https://storage.googleapis.com/cel2-rollup-files/celo/contracts-l1.json",
         },
         "l2_rpc": "https://forno.celo.org",
-        "l1_rpc": f"https://eth-mainnet.g.alchemy.com/v2/{API_KEY}",
+        "l1_rpc": f"https://mainnet.gateway.tenderly.co/{API_KEY}",
         "l1_explorer": "https://eth.blockscout.com",
         "l2_explorer": "https://celo.blockscout.com",
     },
@@ -41,7 +41,7 @@ NETWORKS = {
             "contracts-l1.json": "https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/contracts-l1.json",
         },
         "l2_rpc": "https://forno.celo-sepolia.celo-testnet.org",
-        "l1_rpc": f"https://eth-sepolia.g.alchemy.com/v2/{API_KEY}",
+        "l1_rpc": f"https://sepolia.gateway.tenderly.co/{API_KEY}",
         "l1_explorer": "https://eth-sepolia.blockscout.com",
         "l2_explorer": "https://celo-sepolia.blockscout.com",
     },

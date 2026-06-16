@@ -1,0 +1,151 @@
+---
+title: Adding Fee Currencies
+sidebarTitle: "Adding Fee Currencies"
+og:description: How to implement and register a new ERC20 token as a fee currency on Celo
+---
+
+Any ERC20 token can become a fee currency on Celo by implementing the `IFeeCurrency` interface and being added to the on-chain allowlist through governance. This guide explains the interface requirements and walks through an example implementation.
+
+For background on how fee abstraction works, see the [Overview](/build-on-celo/fee-abstraction/overview).
+
+---
+
+## The IFeeCurrency Interface
+
+Fee currencies must implement the [IFeeCurrency](https://github.com/celo-org/fee-currency-example/blob/main/src/IFeeCurrency.sol) interface, which extends ERC20 with two additional functions used by the Celo blockchain to debit and credit gas fees.
+
+When a [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) transaction is executed:
+
+1. **Before execution** — the blockchain calls `debitGasFees` to reserve the maximum gas the transaction can spend
+2. **After execution** — the blockchain calls `creditGasFees` to refund unused gas and distribute fees to the appropriate recipients
+
+### debitGasFees
+
+```solidity
+function debitGasFees(address from, uint256 value) external;
+```
+
+Called before transaction execution to reserve the maximum gas amount.
+
+- Must deduct `value` from `from`'s balance
+- Must revert if `msg.sender` is not `address(0)` (only the VM may call this)
+
+### creditGasFees
+
+There are two versions of `creditGasFees`. Both should be implemented for compatibility.
+
+**New signature** (used once all fee currencies have migrated):
+```solidity
+function creditGasFees(address[] calldata recipients, uint256[] calldata amounts) external;
+```
+
+- Must credit each `recipient` the corresponding `amount`
+- Must revert if `msg.sender` is not `address(0)`
+- Must revert if `recipients` and `amounts` have different lengths
+
+**Legacy signature** (for backwards compatibility):
+```solidity
+function creditGasFees(
+    address refundRecipient,
+    address tipRecipient,
+    address _gatewayFeeRecipient,
+    address baseFeeRecipient,
+    uint256 refundAmount,
+    uint256 tipAmount,
+    uint256 _gatewayFeeAmount,
+    uint256 baseFeeAmount
+) external;
+```
+
+- `_gatewayFeeRecipient` and `_gatewayFeeAmount` are deprecated and will always be zero
+- Must revert if `msg.sender` is not `address(0)`
+
+---
+
+## Example Implementation
+
+The following example from [celo-org/fee-currency-example](https://github.com/celo-org/fee-currency-example) shows a minimal fee currency token using OpenZeppelin's ERC20 with burn/mint mechanics for gas fee handling:
+
+```solidity
+pragma solidity ^0.8.13;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {IFeeCurrency} from "./IFeeCurrency.sol";
+
+contract FeeCurrency is ERC20, IFeeCurrency {
+    constructor(uint256 initialSupply) ERC20("ExampleFeeCurrency", "EFC") {
+        _mint(msg.sender, initialSupply);
+    }
+
+    modifier onlyVm() {
+        require(msg.sender == address(0), "Only VM can call");
+        _;
+    }
+
+    function debitGasFees(address from, uint256 value) external onlyVm {
+        _burn(from, value);
+    }
+
+    // New function signature
+    function creditGasFees(
+        address[] calldata recipients,
+        uint256[] calldata amounts
+    ) public onlyVm {
+        require(
+            recipients.length == amounts.length,
+            "Recipients and amounts must be the same length."
+        );
+
+        for (uint256 i = 0; i < recipients.length; i++) {
+            _mint(recipients[i], amounts[i]);
+        }
+    }
+
+    // Legacy function signature for backwards compatibility
+    function creditGasFees(
+        address from,
+        address feeRecipient,
+        address, // gatewayFeeRecipient, unused
+        address communityFund,
+        uint256 refund,
+        uint256 tipTxFee,
+        uint256, // gatewayFee, unused
+        uint256 baseTxFee
+    ) public onlyVm {
+        _mint(from, refund);
+        _mint(feeRecipient, tipTxFee);
+        _mint(communityFund, baseTxFee);
+    }
+}
+```
+
+This implementation uses `_burn` in `debitGasFees` and `_mint` in `creditGasFees` to handle the gas fee lifecycle. The `onlyVm` modifier ensures only the blockchain itself (via `address(0)`) can call these functions.
+
+---
+
+## Testing
+
+Use [Foundry](https://book.getfoundry.sh/) to test your fee currency implementation. The [fee-currency-example](https://github.com/celo-org/fee-currency-example) repository includes a test suite you can use as a starting point:
+
+```bash
+git clone https://github.com/celo-org/fee-currency-example.git
+cd fee-currency-example
+forge build
+forge test
+```
+
+Key things to test:
+
+- `debitGasFees` correctly reduces the sender's balance
+- `debitGasFees` reverts when called by any address other than `address(0)`
+- Both `creditGasFees` signatures correctly credit all recipients
+- `creditGasFees` reverts when called by any address other than `address(0)`
+- The total debited amount equals the total credited amount across a transaction lifecycle
+
+---
+
+## Registering a Fee Currency
+
+Once your token implements `IFeeCurrency`, it must be added to the on-chain allowlist in [**FeeCurrencyDirectory.sol**](/tooling/contracts/core-contracts) through a governance proposal. The governance process ensures that fee currencies meet the necessary requirements for network stability.
+
+If your token uses decimals other than 18, you will also need to deploy an adapter contract. See [Adapters for Non-18-Decimal Tokens](/build-on-celo/fee-abstraction/overview#adapters-for-non-18-decimal-tokens) for details.

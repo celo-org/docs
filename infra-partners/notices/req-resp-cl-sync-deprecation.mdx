@@ -1,0 +1,29 @@
+---
+title: "Deprecation of Req/Res CL P2P Sync"
+---
+
+The `op-node` request-response consensus-layer P2P sync client is being deprecated in favor of execution-layer syncing.
+
+<Note>
+Celo is following [Optimism's deprecation of Req/Res CL P2P sync](https://docs.optimism.io/notices/req-resp-cl-sync-deprecation). This change simplifies `op-node` configuration, removes fragile sync logic, and relies on the execution client's native P2P sync, which is the more battle-tested path.
+</Note>
+
+## What This Means
+
+- The Req/Res CL P2P sync **client** in `op-node` is being deprecated. Execution-layer syncing is now the preferred method.
+- `op-node` will rely on a connected execution-layer node for syncing rather than its own consensus-layer P2P mechanism.
+- Node operators must ensure their execution-layer node has healthy P2P connectivity.
+- If you have explicitly set `--syncmode.req-resp=true`, you must remove this override.
+- The Req/Res sync **server** will remain temporarily to support legacy nodes before being fully removed.
+
+## Action Required
+
+### For Node Operators
+
+1. Ensure your EL node has healthy P2P connectivity. The execution client's native P2P sync will be the primary sync path going forward.
+2. Remove any explicit `--syncmode.req-resp=true` settings from your node configuration.
+3. If you are running an older release where req-resp sync is still enabled by default, set `--syncmode.req-resp=false` explicitly.
+
+<Warning>
+Nodes with unhealthy execution-layer peer connectivity may fail to catch up to the unsafe tip once the deprecated sync path is fully removed.
+</Warning>

@@ -1,0 +1,55 @@
+---
+title: MultiBaas by Curvegrid
+sidebarTitle: Overview
+description: Blockchain middleware for building dApps on Celo with a REST API, smart contract management, and real-time event webhooks.
+---
+
+[MultiBaas](https://www.curvegrid.com/blockchain-platform) by [Curvegrid](https://www.curvegrid.com) is a blockchain middleware platform that wraps your smart contracts in a REST API and advanced feature toolkit. It handles contract management, transaction signing, event indexing, and webhook delivery so you can focus on building your application without managing low-level blockchain infrastructure.
+
+## Key Features
+
+- **[REST API](https://docs.curvegrid.com/multibaas/api/multibaas-api)** — interact with any linked smart contract over HTTPS using standard HTTP clients or the TypeScript/Go SDK
+- **[Contract Management](https://docs.curvegrid.com/multibaas/manage-contracts)** — deploy, link, and manage contracts via the dashboard or API; import ABIs from Blockscout or Etherscan by address
+- **[Event Webhooks](https://docs.curvegrid.com/multibaas/webhooks)** — receive real-time HTTP callbacks whenever a contract event is emitted on-chain
+- **[Cloud Wallets](https://docs.curvegrid.com/multibaas/cloud-wallets)** — server-side signing via Azure Key Vault (AWS KMS and Google Cloud KMS available on request)
+- **[Transaction Manager](https://docs.curvegrid.com/multibaas/txm)** — monitors Cloud Wallet transactions and auto-resubmits stuck transactions
+- **[Event Indexing](https://docs.curvegrid.com/multibaas/event-indexing)** — built-in indexer with a query and aggregation API for historical event data
+- **[Framework Plugins](https://docs.curvegrid.com/multibaas/plugins)** — Hardhat and Foundry Forge plugins to automate contract uploads during deployment
+
+## Getting Started
+
+### 1. Create a Deployment
+
+1. Sign up at [console.curvegrid.com](https://console.curvegrid.com) using Google, GitHub, Microsoft, or email
+2. Click **New Deployment**
+3. Enter a label, description, and select **Celo** (Mainnet or Sepolia) as the network
+
+The network cannot be changed after a deployment is created. Create separate deployments for mainnet and testnet environments.
+
+Your deployment will be available at `https://<deployment-id>.multibaas.com`.
+
+### 2. Generate an API Key
+
+In your deployment, go to **Admin → API Keys → New Key**.
+
+MultiBaas has multiple key types with different permission levels. The most frequently used are Administrator and DApp User:
+
+| Key Type | Use Case |
+|---|---|
+| **Administrator** | Server-side code only, full deployment control |
+| **DApp User** | Safe to use in frontend apps, read-only and unsigned transaction composition |
+
+Never expose an Administrator key in client-side code.
+
+### 3. Configure CORS (Frontend Apps)
+
+If you are building a frontend application, add your origin at **Admin → CORS**.
+
+## Resources
+
+- [MultiBaas Documentation](https://docs.curvegrid.com/multibaas/)
+- [Curvegrid Console](https://console.curvegrid.com)
+- [TypeScript SDK (`@curvegrid/multibaas-sdk`)](https://www.npmjs.com/package/@curvegrid/multibaas-sdk)
+- [Go SDK](https://github.com/curvegrid/multibaas-sdk-go)
+- [Sample App](https://github.com/curvegrid/multibaas-sample-app)
+- [Curvegrid Discord](https://discord.gg/ud9U7nP)

@@ -476,7 +476,7 @@ export const CeloBuilderEcosystem = ({
     {
       title: "Bring Your Ideas to Life",
       desc: "Sign up for upcoming hackathons and workshops",
-      href: "https://celo.lemonade.social/",
+      href: "https://lemonade.social/s/celogovernance",
       external: true,
       icon: "img/homepage/contribute.svg",
     },
