@@ -23,7 +23,7 @@ The TLDR is that passing a celo chain from `viem/chains` into the config of `cre
 const client = createWalletClient({
   account,
   // Passing chain is how viem knows to try serializing tx as cip42.
-  chain: celoAlfajores,
+  chain: celoSepolia,
   transport: http(),
 });
 
@@ -33,7 +33,7 @@ client.writeContract({
   functionName: "contractMethod",
   args: [to, parseEther(value)],
   // set the fee currency on the contract write call
-  feeCurrency: FEE_CURRENCIES_ALFAJORES["cusd"],
+  feeCurrency: FEE_CURRENCIES_ALFAJORES["cusd"]feeCurrency: FEE_CURRENCIES_SEPOLIA["cusd"],,
 });
 ```
 
