@@ -1,0 +1,95 @@
+---
+title: "Configuration Reference"
+sidebarTitle: "Configuration"
+---
+
+This page documents the `.env` variables and the key client flags used by the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup. For the exhaustive op-geth and op-node command-line flag reference, link out to the Optimism docs ([op-geth config](https://docs.optimism.io/node-operators/reference/op-geth-config), [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config)).
+
+<Warning>
+**op-geth is being deprecated**
+
+The variables below configure `op-geth`, the execution client used today. Celo is transitioning to `op-reth` as the primary execution client ahead of the Ethereum Glamsterdam hardfork. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation); `op-reth` configuration will be documented once a Celo-compatible release ships.
+</Warning>
+
+## Node type and sync mode
+
+| Variable | Values | Description |
+|---|---|---|
+| `NODE_TYPE` | `full` (default), `archive` | A `full` node stores historical state only for recent blocks. An `archive` node stores historical state for the entire chain (roughly 10x the storage). |
+| `OP_GETH__SYNCMODE` | `snap`, `full` | Sync mode for the L2 execution client. If unset, a `full` node defaults to `snap` and an `archive` node defaults to `full`. |
+
+- **`snap`** downloads chaindata from peers until it has an unbroken chain of headers up to the most recent block, then executes transactions from that point on. This is the fastest way to start and requires no migrated L1 data.
+- **`full`** executes all transactions from genesis (or the last block in the datadir) to verify every header. It requires a migrated pre-hardfork datadir — see [Migrating an L1 Node](/infra-partners/operators/migrate-node).
+
+For archive nodes, see [Running an archive node](/infra-partners/operators/archive-node).
+
+## L1 connection
+
+| Variable | Description |
+|---|---|
+| `OP_NODE__RPC_ENDPOINT` | Layer 1 RPC endpoint. For reliability, use a paid plan or a self-hosted node. |
+| `OP_NODE__L1_BEACON` | Layer 1 beacon endpoint. For reliability, use a paid plan or a self-hosted node. |
+| `OP_NODE__RPC_TYPE` | Provider type for the L1 RPC endpoint: `alchemy`, `quicknode` (ETH only), `erigon`, or `basic` for other providers. |
+| `HEALTHCHECK__REFERENCE_RPC_PROVIDER` | Public L2 RPC endpoint to compare against in the healthcheck (defaults to `https://forno.celo.org`). |
+
+## Historical state (pre-hardfork)
+
+An L2 archive node serves pre-hardfork state by proxying to a legacy Celo L1 archive node.
+
+| Variable | Description |
+|---|---|
+| `HISTORICAL_RPC_DATADIR_PATH` | Path to a pre-hardfork archive datadir. If set, a Celo L1 node runs in archive mode and op-geth proxies pre-migration requests to it. |
+| `OP_GETH__HISTORICAL_RPC` | RPC endpoint of a running legacy archive node. If set, this overrides `HISTORICAL_RPC_DATADIR_PATH` and no local Celo L1 node is started. |
+
+See [Running an archive node](/infra-partners/operators/archive-node) for the full setup.
+
+## Networking (P2P)
+
+Configure these so other nodes can discover and reach yours. If they are wrong, your node may fail to stay connected and synced.
+
+| Variable | Description |
+|---|---|
+| `OP_NODE__P2P_ADVERTISE_IP` | Public IP that op-node advertises via discovery. If unset, other nodes cannot discover yours. |
+| `OP_GETH__NAT` | How op-geth determines its public IP for discovery. One of `any`, `none`, `upnp`, `pmp`, `pmp:<IP>`, `extip:<IP>`, `stun:<IP:PORT>`. The default `any` auto-detects; the most reliable option is `extip:<your-public-ip>`. |
+
+## Ports
+
+Each `PORT__*` variable overrides a default exposed in `docker-compose.yml`. Defaults:
+
+| Variable | Default | Service |
+|---|---|---|
+| `PORT__OP_GETH_HTTP` | `9993` | op-geth JSON-RPC (HTTP) |
+| `PORT__OP_GETH_WS` | `9994` | op-geth JSON-RPC (WebSocket) |
+| `PORT__OP_GETH_P2P` | `30303` | op-geth P2P |
+| `PORT__OP_NODE_HTTP` | `9545` | op-node RPC |
+| `PORT__OP_NODE_P2P` | `9222` | op-node P2P |
+| `PORT__HEALTHCHECK_METRICS` | `7300` | Healthcheck metrics |
+| `PORT__PROMETHEUS` | `9090` | Prometheus |
+| `PORT__GRAFANA` | `3000` | Grafana |
+| `PORT__INFLUXDB` | `8086` | InfluxDB |
+| `PORT__HISTORICAL_RPC_NODE_HTTP` | `9991` | Legacy L1 archive node (HTTP) |
+| `PORT__HISTORICAL_RPC_NODE_WS` | `9992` | Legacy L1 archive node (WebSocket) |
+| `PORT_EIGENDA_PROXY` | `4242` | EigenDA proxy |
+
+## Data directory
+
+| Variable | Description |
+|---|---|
+| `DATADIR_PATH` | Datadir location (defaults to `./envs/<network>/datadir`). If empty, a new datadir is initialised at that path. |
+| `IPC_PATH` | Alternative location for the geth IPC file, if the datadir disk does not support unix domain sockets. |
+
+## Key client flags
+
+These flags are set for you by the compose start scripts; they are listed here because they are the Celo-specific ones operators most often need to know about.
+
+- **`--rollup.sequencerhttp`** (op-geth) — the sequencer endpoint transactions are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
+- **`--history.transactions=0`** (op-geth) — index the full transaction history so all transactions are retrievable by hash. Set by default; required if you run a public RPC node.
+- **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
+- **`--l2.enginekind`** (op-node) — tells op-node which execution client it is driving. It must match your execution client: keep it set to **`geth`** while you run op-geth, which is the current Celo setup. Upstream op-node is moving this default to `reth` as part of the op-reth transition, so if you build a newer op-node yourself, set `--l2.enginekind=geth` explicitly until you have migrated to op-reth.
+- **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/infra-partners/operators/monitoring).
+
+For every other op-geth/op-node flag, see the Optimism [op-geth config](https://docs.optimism.io/node-operators/reference/op-geth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
+
+## Monitoring
+
+Set `MONITORING_ENABLED=true` to start the Grafana, Prometheus, InfluxDB, and healthcheck stack. See [Monitoring & metrics](/infra-partners/operators/monitoring).

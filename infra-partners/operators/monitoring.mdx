@@ -1,0 +1,65 @@
+---
+title: "Monitoring & Metrics"
+sidebarTitle: "Monitoring"
+---
+
+The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup ships with a monitoring stack so you can watch your node's health and sync status.
+
+## Enable monitoring
+
+Set the following in your `.env` file and restart:
+
+```text
+MONITORING_ENABLED=true
+```
+
+This starts four services alongside your node: **Healthcheck**, **Prometheus**, **Grafana**, and **InfluxDB**.
+
+## Grafana dashboards
+
+With monitoring enabled, Grafana is available at [http://localhost:3000](http://localhost:3000) (configurable via `PORT__GRAFANA`).
+
+- **Username:** `admin`
+- **Password:** `optimism`
+
+The **Simple Node Dashboard** (Dashboards → Manage → Simple Node Dashboard) shows basic node information and sync status. If you run the challenger, the **Succinct Challenger** dashboard shows challenger activity.
+
+## Where metrics come from
+
+- **op-node** exposes Prometheus metrics on port `7300` (`--metrics.enabled`). Prometheus (port `9090`, configurable via `PORT__PROMETHEUS`) scrapes op-node, the healthcheck, and the challenger.
+- **op-geth** pushes its metrics to InfluxDB (port `8086`, database `opgeth`).
+- Grafana reads from both Prometheus and InfluxDB.
+
+## Key metrics to watch
+
+From **op-node** (Prometheus, `http://localhost:7300/metrics`):
+
+- **`op_node_default_refs_number`** — the op-node's current L1/L2 reference block numbers. If it stops increasing, your node is not syncing; if it goes backwards, your node is reorging.
+- **`op_node_default_peer_count`** — how many peers op-node is connected to. Without peers, op-node cannot sync unsafe blocks and your node will lag behind the sequencer.
+- **`op_node_default_rpc_client_request_duration_seconds`** — latency of the RPC calls op-node makes to L1 and to the execution client; useful for finding sync bottlenecks.
+
+From the **healthcheck** service:
+
+- **`healthcheck_reference_height - healthcheck_target_height`** — how far your node lags the reference RPC (`HEALTHCHECK__REFERENCE_RPC_PROVIDER`, default `https://forno.celo.org`).
+- **`healthcheck_is_currently_diverged`** — non-zero if your node has diverged from the reference chain.
+
+For the full op-node metrics catalog, see the Optimism [Node Metrics and Monitoring](https://docs.optimism.io/node-operators/guides/monitoring/metrics) reference.
+
+## What healthy sync looks like
+
+Even without the Grafana stack, you can confirm your node is syncing:
+
+```sh
+# Follow op-geth logs — look for the sync percentage increasing
+docker compose logs -n 50 -f op-geth
+
+# Check sync progress (requires foundry)
+./progress.sh
+
+# Once synced, the head block number increases over time
+cast block-number --rpc-url http://localhost:9993
+```
+
+In the logs, a syncing node shows `Syncing beacon headers downloaded=...` (increasing) and later `"Syncing: chain download in progress","synced":"21.07%"` (percentage increasing). Until fully synced, the RPC API returns `0` for the head block number.
+
+If your node is not syncing or has no peers, see [Troubleshooting](/infra-partners/operators/troubleshooting).
