@@ -9,11 +9,11 @@ sidebarTitle: "Run an Archive Node"
 This guide covers running a **full archive node**, which serves every historical-state RPC call (such as `eth_getBalance` or `eth_call`) at any block and requires terabytes of storage. Celo also supports a narrower **historical proofs** feature for serving historical data without keeping full archive state; a dedicated guide for it is forthcoming.
 </Info>
 
-<Warning>
-**op-geth is being deprecated**
+<Info>
+**Execution client: op-reth**
 
-These instructions use `op-geth`, which is supported only until your network's switch to `op-reth`. Celo is transitioning to `op-reth` as the primary execution client. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates; archive-node guidance for `op-reth` will follow once a Celo-compatible release is published.
-</Warning>
+These instructions use `op-reth`, Celo's primary execution client. `op-geth` is supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation).
+</Info>
 
 ## Overview
 
@@ -24,12 +24,12 @@ To run an L2 archive node, you need to start the L2 execution client in archive 
 <Info>
 **Prerequisites**
 
-These instructions assume you already have
+An L2 archive node starts from an empty datadir, like a full node — no migrated L1 data is required. To serve pre-L2 historical state, you additionally need one of:
 
-1. A migrated full node datadir that has been synced to the migration block. See [Migrating an L1 Node](/infra-partners/operators/migrate-node) if you do not have this.
-2. A non-migrated Celo L1 archive node datadir. Do not attempt to migrate an archive datadir.
+1. A non-migrated Celo L1 archive node datadir (the compose setup runs a legacy archive node from it). Do not attempt to migrate an archive datadir.
+2. The RPC endpoint of a running legacy Celo L1 archive node.
 
-Please ensure neither datadir is being used by a running node before proceeding.
+Ensure any datadir you supply is not in use by a running node before proceeding.
 </Info>
 
 1. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
@@ -50,17 +50,6 @@ Please ensure neither datadir is being used by a running node before proceeding.
     cp $NETWORK.env .env
     ```
 
-    #### Configure sync mode
-
-    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. While `archive` nodes can technically run with `snap` sync, they will only store archive data from the point that `snap` sync completes. This will leave a gap in the archive data after the hardfork, so we recommend running archive nodes with `full` sync and a migrated pre-hardfork datadir.
-
-    To use `full` sync, configure `.env` as follows:
-
-    ```text
-    OP_GETH__SYNCMODE=full
-    DATADIR_PATH=<path to a migrated L1 full node datadir>
-    ```
-
     #### Configure node type
 
     To enable `archive` mode, configure `.env` as follows:
@@ -68,6 +57,16 @@ Please ensure neither datadir is being used by a running node before proceeding.
     ```text
     NODE_TYPE=archive
     ```
+
+    #### Bootstrap your datadir
+
+    `op-reth` has no snap sync, so an archive node syncs by executing every block from genesis into an **empty** datadir. To skip the long initial sync, bootstrap from a published archive snapshot:
+
+    ```text
+    OP_RETH__SNAPSHOT=true
+    ```
+
+    With `NODE_TYPE=archive`, this downloads the archive snapshot. Leave `OP_RETH__SNAPSHOT=false` to execute every block from genesis instead. Either way, `DATADIR_PATH` must be empty on first start — a datadir written by `op-geth` cannot be reused.
 
     #### Configure Historical RPC Service
 
@@ -85,7 +84,7 @@ Please ensure neither datadir is being used by a running node before proceeding.
     2. Start the legacy archive node yourself and configure `.env` as follows:
 
         ```text
-        OP_GETH__HISTORICAL_RPC=<RPC endpoint of a running legacy archive node>
+        OP_RETH__HISTORICAL_RPC=<RPC endpoint of a running legacy archive node>
         ```
 
         This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored. The tool will not start a legacy archive node when it starts your L2 archive node.
@@ -100,10 +99,10 @@ Please ensure neither datadir is being used by a running node before proceeding.
         If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network. This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     </Warning>
 
-    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via  discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset, other nodes on the network will not be able to discover and connect to your op-node.
     - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
-    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
+    - `OP_RETH__NAT` - Controls how op-reth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|publicip|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_RETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node(s).
 
@@ -114,23 +113,38 @@ Please ensure neither datadir is being used by a running node before proceeding.
 4. Check the progress of your L2 archive node as it syncs.
 
     ```bash
-    docker-compose logs -n 50 -f op-geth
+    docker-compose logs -n 50 -f op-reth
     ```
 
-    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
+    This will display and follow the last 50 lines of logs. As the node syncs you will see `op-reth` executing blocks and its head advancing toward the network's latest block.
 
 5. Check that node is fully synced.
 
-   Once the node is fully synced, you can validate that it's following the network by fetching the current block number via the RPC API and seeing that it's increasing as expected.
+   You can validate that your node is following the network by fetching the current block number via the RPC API and seeing that it climbs as the node syncs and then tracks the network's latest block.
 
    ```bash
    cast block-number --rpc-url http://localhost:9993
    ```
-
-   Note that until fully synced, the RPC API will return 0 for the head block number.
 
 6. Try querying historical state to test archive functionality.
 
    ```bash
    cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993
    ```
+
+<Accordion title="Still running op-geth? (until your switch date)">
+
+Until your network's [switch date](/infra-partners/notices/op-geth-deprecation), you can keep running an `op-geth` archive node from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). The flow above is the same, with these differences:
+
+- **Sync mode instead of a snapshot.** `op-geth` archive nodes should run `full` sync against a migrated pre-hardfork datadir — `snap` sync only stores archive data from the point it completes, leaving a gap after the hardfork:
+
+    ```text
+    OP_GETH__SYNCMODE=full
+    DATADIR_PATH=<path to a migrated L1 full node datadir>
+    ```
+
+- **Historical RPC variable.** Use `OP_GETH__HISTORICAL_RPC` in place of `OP_RETH__HISTORICAL_RPC`.
+- **P2P variables.** Use `OP_GETH__NAT` (values `any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>`) and `PORT__OP_GETH_P2P` (default `30303`).
+- **Logs.** Follow `docker-compose logs -n 50 -f op-geth`; a syncing node shows `Syncing beacon headers downloaded=...` and later `"Syncing: chain download in progress","synced":"21.07%"`.
+
+</Accordion>
