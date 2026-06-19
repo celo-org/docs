@@ -23,12 +23,12 @@ See [Architecture](/infra-partners/operators/architecture) for how these fit tog
 ## Execution client
 
 - **op-reth** — the execution client Celo is adopting as the primary client going forward, built on `reth`. A Celo-compatible release and migration guide are coming.
-- **op-geth** — the execution client used today. It is being deprecated ahead of the Ethereum Glamsterdam hardfork but remains fully supported until then. All current guides use `op-geth`.
+- **op-geth** — the execution client used today. It is being deprecated in favor of `op-reth` and remains fully supported until your network's switch date. All current guides use `op-geth`.
 
 <Warning>
 **op-geth is being deprecated**
 
-`op-geth` will not support the Ethereum Glamsterdam hardfork. All node operators must migrate to `op-reth` before that upgrade. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for details and follow the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for release updates.
+Celo is switching its execution client from `op-geth` to `op-reth`. All node operators must migrate to `op-reth` by their network's switch date. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates and details, and follow the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for release updates.
 </Warning>
 
 ## Guides
