@@ -3,7 +3,7 @@ title: "Configuration Reference"
 sidebarTitle: "Configuration"
 ---
 
-This page documents the `.env` variables and the key client flags used by the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup. For the exhaustive op-node command-line flag reference, see the Optimism [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) docs; for `op-reth`, the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start scripts are the best reference.
+This page documents the `.env` variables and the key client flags used by the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup. For the exhaustive command-line flag references, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) docs.
 
 <Info>
 **Execution client: op-reth**
@@ -16,7 +16,7 @@ The variables below configure `op-reth`, Celo's primary execution client. The `o
 | Variable | Values | Description |
 |---|---|---|
 | `NODE_TYPE` | `full` (default), `archive` | A `full` node stores historical state only for recent blocks. An `archive` node stores historical state for the entire chain (roughly 10x the storage). |
-| `OP_RETH__SNAPSHOT` | `true`, `false` (default) | When `true`, an empty datadir is bootstrapped from a published snapshot (`snapshots.celo.org`) instead of syncing from scratch. Ignored once the datadir holds data. |
+| `OP_RETH__SNAPSHOT` | `true`, `false` (default) | When `true`, an empty datadir is bootstrapped from a published snapshot (`snapshots.celo.org`). Required on mainnet, which needs the pre-L2 history; optional on Celo Sepolia, which can sync from genesis. Ignored once the datadir holds data. |
 
 `op-reth` syncs by executing every block. A new node starts from an empty datadir (see [Run a node with Docker](/infra-partners/operators/run-node)); datadirs written by `op-geth` cannot be reused. For archive nodes, see [Running an archive node](/infra-partners/operators/archive-node).
 
@@ -80,10 +80,10 @@ These flags are set for you by the compose start scripts; they are listed here b
 
 - **Sequencer endpoint** (op-reth, set via `OP_RETH__SEQUENCER_URL`) — the sequencer that transactions submitted to your node are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
 - **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
-- **`--l2.enginekind=reth`** (op-node) — tells op-node which execution client it is driving. It is set to `reth` for `op-reth`, the current Celo setup.
+- **`--l2.enginekind=reth`** (op-node) — tells op-node which execution client it is driving. It is set to `reth` for `op-reth`.
 - **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/infra-partners/operators/monitoring).
 
-For every other op-node flag, see the Optimism [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) reference.
+For every other op-reth/op-node flag, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
 
 <Accordion title="op-geth variables (until your switch date)">
 

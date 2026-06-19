@@ -26,7 +26,7 @@ Node operators must complete migration to `op-reth` by the switch date for their
 
 A Celo-compatible `op-reth` release is available, and the node-operator guides now use it:
 
-- Follow [Run a node with Docker](/infra-partners/operators/run-node) to run `op-reth`. A new node starts from an empty datadir — bootstrap it from a published snapshot (`OP_RETH__SNAPSHOT=true`) or sync from scratch; no L1 data migration is required.
+- Follow [Run a node with Docker](/infra-partners/operators/run-node) to run `op-reth`. A new node starts from an empty datadir — bootstrap it from a published snapshot (`OP_RETH__SNAPSHOT=true`, required on mainnet) or, on Celo Sepolia, sync from genesis; no L1 data migration is required.
 - A migrated `op-geth` datadir cannot be reused — `op-reth` uses a different on-disk format. Start `op-reth` with an empty `DATADIR_PATH`.
 - For archive nodes and pre-L2 historical state, see [Running an archive node](/infra-partners/operators/archive-node).
 - See the [Configuration reference](/infra-partners/operators/configuration) for the `OP_RETH__*` variables, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for the latest images.

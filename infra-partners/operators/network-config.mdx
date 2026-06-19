@@ -7,7 +7,7 @@ Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 
 
 ## Mainnet
 
-- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); enable with `OP_RETH__SNAPSHOT=true` (see [Run a node](/infra-partners/operators/run-node))
+- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); a mainnet node must bootstrap from one (`OP_RETH__SNAPSHOT=true`) for the pre-L2 history (see [Run a node](/infra-partners/operators/run-node))
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
@@ -58,7 +58,7 @@ Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 
 
 ## Celo Sepolia
 
-- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); enable with `OP_RETH__SNAPSHOT=true` (see [Run a node](/infra-partners/operators/run-node))
+- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); optional, enable with `OP_RETH__SNAPSHOT=true` to skip syncing from genesis (see [Run a node](/infra-partners/operators/run-node))
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
 - [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json)

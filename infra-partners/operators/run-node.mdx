@@ -8,7 +8,7 @@ This guide is designed to help node operators run a Celo L2 node with Docker.
 <Info>
 **Execution client: op-reth**
 
-These instructions use `op-reth`, the execution client Celo is adopting as its primary client. A fresh node starts from an empty datadir and either downloads a published snapshot or syncs by executing every block — no L1 data migration required.
+These instructions use `op-reth`, the execution client Celo is adopting as its primary client. A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
 
 `op-geth` remains supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide, and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates.
 </Info>
@@ -65,15 +65,17 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     #### Bootstrap your datadir
 
-    `op-reth` syncs by executing every block. A new node starts from an **empty** datadir, and you have two ways to populate it:
+    `op-reth` syncs by executing every block. A new node starts from an **empty** datadir, populated in one of two ways depending on your network:
 
-    - **From a snapshot (fastest).** Set `OP_RETH__SNAPSHOT=true` in `.env`. On first start with an empty datadir, your node downloads a recent published snapshot (from `snapshots.celo.org`) and continues from there. Once the datadir holds data, the snapshot step is skipped.
+    - **From a snapshot.** Set `OP_RETH__SNAPSHOT=true` in `.env`. On first start with an empty datadir, your node downloads a recent published snapshot (from `snapshots.celo.org`) and continues from there. Once the datadir holds data, the snapshot step is skipped.
 
         ```text
         OP_RETH__SNAPSHOT=true
         ```
 
-    - **From scratch.** Leave `OP_RETH__SNAPSHOT=false` (the default). Your node executes every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
+        **On mainnet a snapshot is required** — it provides the pre-L2 (Celo L1) history, which `op-reth` cannot reproduce by executing blocks.
+
+    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can leave `OP_RETH__SNAPSHOT=false` (the default) and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
 
     <Warning>
     **Datadirs from op-geth cannot be reused**

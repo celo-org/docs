@@ -6,7 +6,7 @@ sidebarTitle: "Migrating an L1 Node"
 <Warning>
 **Legacy path — not needed for op-reth**
 
-`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead: bootstrap it from a published snapshot or sync from scratch (see [Run a node with Docker](/infra-partners/operators/run-node)), and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/infra-partners/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/infra-partners/notices/op-geth-deprecation).
+`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/infra-partners/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/infra-partners/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/infra-partners/notices/op-geth-deprecation).
 </Warning>
 
 <Tip>
@@ -18,7 +18,7 @@ This guide helps Celo L1 node operators migrate their nodes to Celo L2. It descr
 
 **Alternative options:**
 
-- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) — a new `op-reth` node starts from an empty datadir and syncs by executing blocks (bootstrap from a snapshot to speed it up)
+- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) — a new `op-reth` node starts from an empty datadir and bootstraps from a published snapshot (or syncs from genesis on Celo Sepolia)
 - **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/infra-partners/operators/network-config)
 
 <Info>
