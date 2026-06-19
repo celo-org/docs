@@ -65,7 +65,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     #### Bootstrap your datadir
 
-    `op-reth` has no snap sync; it syncs by executing every block. A new node must start from an **empty** datadir, and you have two ways to populate it:
+    `op-reth` syncs by executing every block. A new node starts from an **empty** datadir, and you have two ways to populate it:
 
     - **From a snapshot (fastest).** Set `OP_RETH__SNAPSHOT=true` in `.env`. On first start with an empty datadir, your node downloads a recent published snapshot (from `snapshots.celo.org`) and continues from there. Once the datadir holds data, the snapshot step is skipped.
 

@@ -60,13 +60,13 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
 
     #### Bootstrap your datadir
 
-    `op-reth` has no snap sync, so an archive node syncs by executing every block from genesis into an **empty** datadir. To skip the long initial sync, bootstrap from a published archive snapshot:
+    An archive node syncs by executing every block from genesis into an **empty** datadir, building the full historical state. To skip the long initial sync, bootstrap from a published snapshot:
 
     ```text
     OP_RETH__SNAPSHOT=true
     ```
 
-    With `NODE_TYPE=archive`, this downloads the archive snapshot. Leave `OP_RETH__SNAPSHOT=false` to execute every block from genesis instead. Either way, `DATADIR_PATH` must be empty on first start — a datadir written by `op-geth` cannot be reused.
+    On first start this downloads the snapshot matching your `NODE_TYPE` and continues from there — it only speeds up the initial sync. `NODE_TYPE=archive` is what keeps the full historical state available, independent of whether you use a snapshot. `DATADIR_PATH` must be empty on first start — a datadir written by `op-geth` cannot be reused.
 
     #### Configure Historical RPC Service
 
