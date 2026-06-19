@@ -11,10 +11,10 @@ A public RPC endpoint should return any transaction by its hash. op-reth exposes
 
 ## Forward transactions to the sequencer
 
-op-reth forwards transactions submitted to your endpoint to the sequencer so they are executed. The sequencer endpoint is set for you by the compose setup (via `OP_RETH__SEQUENCER_URL`):
+op-reth forwards transactions submitted to your endpoint to the sequencer so they are executed, via the `--rollup.sequencer` flag. The sequencer endpoint is set for you by the compose setup (from `OP_RETH__SEQUENCER_URL`):
 
-- Mainnet: `https://cel2-sequencer.celo.org`
-- Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`
+- Mainnet: `--rollup.sequencer=https://cel2-sequencer.celo.org`
+- Celo Sepolia: `--rollup.sequencer=https://sequencer.celo-sepolia.celo-testnet.org`
 
 If it is missing or wrong, transactions submitted to your node are accepted but never executed.
 
