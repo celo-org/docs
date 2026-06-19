@@ -5,22 +5,22 @@ sidebarTitle: "Run a Public RPC Node"
 
 A public RPC node serves JSON-RPC requests to external clients. This page covers the settings specific to operating one; to get a node running first, see [Run a node with Docker](/infra-partners/operators/run-node).
 
-## Index all transactions
+## Serve transaction lookups by hash
 
-Set `--history.transactions=0` on op-geth so the full transaction history is indexed and every transaction is retrievable by hash. The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup sets this by default. Without it, transactions cannot be looked up by hash.
+A public RPC endpoint should return any transaction by its hash. op-reth exposes the standard `eth` namespace, so transactions are retrievable by hash within the node's retained history, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup needs no extra configuration for this. (On the legacy op-geth setup this instead requires `--history.transactions=0`, which the compose setup sets for you.)
 
 ## Forward transactions to the sequencer
 
-Set `--rollup.sequencerhttp` so transactions submitted to your endpoint are forwarded to the sequencer and executed:
+op-reth forwards transactions submitted to your endpoint to the sequencer so they are executed. The sequencer endpoint is set for you by the compose setup (via `OP_RETH__SEQUENCER_URL`):
 
 - Mainnet: `https://cel2-sequencer.celo.org`
 - Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`
 
-This is set for you by the compose setup. If it is missing or wrong, transactions submitted to your node are accepted but never executed.
+If it is missing or wrong, transactions submitted to your node are accepted but never executed.
 
 ## Exposing the endpoint
 
-op-geth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_GETH_HTTP` and `PORT__OP_GETH_WS` — see the [Configuration reference](/infra-partners/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net,engine` namespaces on the HTTP endpoint.
+op-reth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_RETH_HTTP` and `PORT__OP_RETH_WS` — see the [Configuration reference](/infra-partners/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net` namespaces on these endpoints.
 
 When exposing this publicly, put a reverse proxy or load balancer with rate limiting in front of it, and be deliberate about which RPC namespaces you expose to untrusted clients.
 

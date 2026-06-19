@@ -26,9 +26,9 @@ The **Simple Node Dashboard** (Dashboards → Manage → Simple Node Dashboard) 
 
 ## Where metrics come from
 
-- **op-node** exposes Prometheus metrics on port `7300` (`--metrics.enabled`). Prometheus (port `9090`, configurable via `PORT__PROMETHEUS`) scrapes op-node, the healthcheck, and the challenger.
-- **op-geth** pushes its metrics to InfluxDB (port `8086`, database `opgeth`).
-- Grafana reads from both Prometheus and InfluxDB.
+- **op-node** exposes Prometheus metrics on port `7300` (`--metrics.enabled`). Prometheus (port `9090`, configurable via `PORT__PROMETHEUS`) scrapes op-node, op-reth, the healthcheck, and the challenger.
+- **op-reth** exposes Prometheus metrics that Prometheus scrapes.
+- Grafana reads from Prometheus.
 
 ## Key metrics to watch
 
@@ -50,16 +50,16 @@ For the full op-node metrics catalog, see the Optimism [Node Metrics and Monitor
 Even without the Grafana stack, you can confirm your node is syncing:
 
 ```sh
-# Follow op-geth logs — look for the sync percentage increasing
-docker compose logs -n 50 -f op-geth
+# Follow op-reth logs — watch it execute blocks toward the chain tip
+docker compose logs -n 50 -f op-reth
 
 # Check sync progress (requires foundry)
 ./progress.sh
 
-# Once synced, the head block number increases over time
+# As the node syncs, the head block number climbs and then tracks the network
 cast block-number --rpc-url http://localhost:9993
 ```
 
-In the logs, a syncing node shows `Syncing beacon headers downloaded=...` (increasing) and later `"Syncing: chain download in progress","synced":"21.07%"` (percentage increasing). Until fully synced, the RPC API returns `0` for the head block number.
+In the logs, a syncing node shows `op-reth` importing and executing blocks, with its head advancing toward the network's latest block.
 
 If your node is not syncing or has no peers, see [Troubleshooting](/infra-partners/operators/troubleshooting).

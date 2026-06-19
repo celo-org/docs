@@ -7,14 +7,15 @@ Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 
 
 ## Mainnet
 
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/celo/celo-mainnet-migrated-chaindata.tar.zst)
+- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); enable with `OP_RETH__SNAPSHOT=true` (see [Run a node](/infra-partners/operators/run-node))
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
-- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json) used for snap syncing
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json)
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/celo/celo-mainnet-migrated-chaindata.tar.zst) — geth-format, for legacy `op-geth` full/archive sync
 - P2P peers
-  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`) and op-geth (`--bootnodes`):
 
     ```text
     enode://28f4fcb7f38c1b012087f7aef25dcb0a1257ccf1cdc4caa88584dc25416129069b514908c8cead5d0105cb0041dd65cd4ee185ae0d379a586fb07b1447e9de38@34.169.39.223:30303
@@ -49,18 +50,20 @@ Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 
     ```
 
 - Container images:
-  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0)
+  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v0.0.1-rc.1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0) — legacy, until the switch date
+  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9) — legacy archive / historical RPC service
 
 ## Celo Sepolia
 
+- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); enable with `OP_RETH__SNAPSHOT=true` (see [Run a node](/infra-partners/operators/run-node))
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/deployment-l1.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
-- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json) used for snap syncing
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json)
 - P2P peers:
-  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`) and op-geth (`--bootnodes`):
 
     ```text
     enode://7fd35dfea27042fe008c74ea97c7a41254b293152730419a6e9bcd84bb03c7ced418c1043e2ef6ad63d2facca6fbdacfbf7c4bfcf33ee7e9a0e6b7eb0617595d@34.169.104.197:30303
@@ -79,6 +82,7 @@ Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 
     ```
 
 - Container images:
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.2)
+  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v0.0.1-rc.1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.2) — legacy, until the switch date
