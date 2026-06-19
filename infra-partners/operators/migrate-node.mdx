@@ -3,6 +3,12 @@ title: Migrating a Celo L1 Node
 sidebarTitle: "Migrating an L1 Node"
 ---
 
+<Warning>
+**Legacy path — not needed for op-reth**
+
+`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead: bootstrap it from a published snapshot or sync from scratch (see [Run a node with Docker](/infra-partners/operators/run-node)), and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/infra-partners/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/infra-partners/notices/op-geth-deprecation).
+</Warning>
+
 <Tip>
 Unless you need to migrate your own Celo L1 data, we recommend using a snapshot instead.
 You can find the latest snapshot in the [Network Config & Assets](/infra-partners/operators/network-config) section.
