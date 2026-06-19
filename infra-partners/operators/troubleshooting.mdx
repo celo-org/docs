@@ -5,10 +5,10 @@ sidebarTitle: "Troubleshooting"
 
 ## Transactions Are Not Being Executed When Submitted to a Node
 
-If your node is synced but transactions submitted to it are not executed, make sure the sequencer endpoint is correctly set. The compose setup configures it for you via `OP_RETH__SEQUENCER_URL`:
+If your node is synced but transactions submitted to it are not executed, make sure the sequencer endpoint is correctly set. op-reth forwards transactions to the sequencer via the `--rollup.sequencer` flag, which the compose setup sets for you from `OP_RETH__SEQUENCER_URL`:
 
-- Mainnet: `https://cel2-sequencer.celo.org`
-- Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`
+- Mainnet: `--rollup.sequencer=https://cel2-sequencer.celo.org`
+- Celo Sepolia: `--rollup.sequencer=https://sequencer.celo-sepolia.celo-testnet.org`
 
 If you are hosting a public RPC node, see [Run a public RPC node](/infra-partners/operators/public-rpc-node) for serving transaction lookups by hash.
 
