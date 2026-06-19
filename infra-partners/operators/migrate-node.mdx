@@ -18,7 +18,7 @@ This guide helps Celo L1 node operators migrate their nodes to Celo L2. It descr
 
 **Alternative options:**
 
-- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) for `snap` sync from scratch
+- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) — a new `op-reth` node starts from an empty datadir and syncs by executing blocks (bootstrap from a snapshot to speed it up)
 - **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/infra-partners/operators/network-config)
 
 <Info>
@@ -255,7 +255,7 @@ Both the `pre` and `full` migration commands will first run a script to check wh
 To resolve this:
 
 - Try re-running the migration with a different source datadir if available.
-  - We will post a full pre-hardfork database snapshot in the [Network config & Assets](/infra-partners/operators/network-config) section shortly after the hardfork, but we recommend having your own backup datadir available as well.
+  - A full pre-hardfork database snapshot is available in the [Network config & Assets](/infra-partners/operators/network-config) section; we still recommend having your own backup datadir available as well.
 - Ensure the datadir is fully synced to just before the hardfork block.
 
 To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.
