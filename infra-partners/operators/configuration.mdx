@@ -78,7 +78,7 @@ Each `PORT__*` variable overrides a default exposed in `docker-compose.yml`. Def
 
 These flags are set for you by the compose start scripts; they are listed here because they are the Celo-specific ones operators most often need to know about.
 
-- **Sequencer endpoint** (op-reth, set via `OP_RETH__SEQUENCER_URL`) — the sequencer that transactions submitted to your node are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
+- **`--rollup.sequencer`** (op-reth, set via `OP_RETH__SEQUENCER_URL`) — the sequencer that transactions submitted to your node are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
 - **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
 - **`--l2.enginekind=reth`** (op-node) — tells op-node which execution client it is driving. It is set to `reth` for `op-reth`.
 - **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/infra-partners/operators/monitoring).
