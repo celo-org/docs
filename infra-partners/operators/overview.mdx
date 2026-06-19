@@ -1,12 +1,48 @@
 ---
-title: "Node Operators & Validators"
+title: "Node Operators"
 sidebarTitle: "Overview"
 ---
 
-While most applications should remain unaffected, node operators, validators, and RPC providers must ensure their systems are prepared for the transition to maintain seamless operations.
+This section helps you run and operate a Celo L2 node. If you are starting fresh, the fastest path is to [run a full node with Docker](/infra-partners/operators/run-node) and `snap` sync from scratch — no L1 data migration required.
 
-See the following document for more details:
+## What is a Celo L2 node?
 
-* [Celo L2 migration](/infra-partners/notices/l2-migration)
+A Celo L2 node is made up of two core services, plus an optional third:
 
-See the guides for [running a node](/infra-partners/operators/run-node) or the guide on [how to migrate a L1 node](/infra-partners/operators/migrate-node).
+- **Rollup node** (`op-node`) — derives L2 blocks from L1 data, analogous to a consensus client.
+- **Execution client** — executes those blocks and exposes the standard Ethereum JSON-RPC API.
+- **Legacy L1 (optional)** — serves stateful queries for blocks and transactions from before the L2 transition.
+
+See [Architecture](/infra-partners/operators/architecture) for how these fit together.
+
+## Node types
+
+- **Full node** — follows the chain and serves recent state. Runs with `snap` sync by default, so it can start without a migrated L1 datadir. This is the right choice for most operators.
+- **Archive node** — additionally preserves all historical state, at the cost of terabytes of storage. See [Running an archive node](/infra-partners/operators/archive-node).
+
+## Execution client
+
+- **op-reth** — the execution client Celo is adopting as the primary client going forward, built on `reth`. A Celo-compatible release and migration guide are coming.
+- **op-geth** — the execution client used today. It is being deprecated ahead of the Ethereum Glamsterdam hardfork but remains fully supported until then. All current guides use `op-geth`.
+
+<Warning>
+**op-geth is being deprecated**
+
+`op-geth` will not support the Ethereum Glamsterdam hardfork. All node operators must migrate to `op-reth` before that upgrade. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for details and follow the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for release updates.
+</Warning>
+
+## Guides
+
+- [Run a node with Docker](/infra-partners/operators/run-node) — the fastest way to get a full node syncing (also covers building from source).
+- [Run an archive node](/infra-partners/operators/archive-node) — preserve access to all historical state.
+- [Run a public RPC node](/infra-partners/operators/public-rpc-node) — operate a public JSON-RPC endpoint (and optionally earn rewards).
+- [Monitoring & metrics](/infra-partners/operators/monitoring) — enable the Grafana/Prometheus stack and watch sync health.
+- [Upgrades & maintenance](/infra-partners/operators/maintenance) — upgrade clients, restart safely, and back up your data.
+- [Troubleshooting](/infra-partners/operators/troubleshooting) — fixes for common node issues.
+- [Configuration reference](/infra-partners/operators/configuration) — the `.env` variables and key client flags.
+- [Network Config & Assets](/infra-partners/operators/network-config) — bootnodes, container images, and downloadable artifacts.
+- [Migrate an L1 node](/infra-partners/operators/migrate-node) — for operators moving existing Celo L1 data to L2 (legacy path).
+
+## Getting help
+
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.

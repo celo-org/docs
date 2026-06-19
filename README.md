@@ -37,7 +37,7 @@ mint dev
 
 - **Dev environment not running:** Run `mint update` to ensure you have the most recent version of the CLI
 - **Page loads as 404:** Make sure you are running in a folder with a valid `docs.json`
-- **Validation fails:** Run `./scripts/validate-docs.sh` and review the output for specific errors
+- **Validation fails:** Run `mint broken-links` and review the output for specific errors
 - **Broken links detected:** Review the validation output and fix referenced files or URLs
 
 ### Resources
