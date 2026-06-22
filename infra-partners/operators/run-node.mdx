@@ -103,13 +103,13 @@ Follow these steps to run a full node. If you would like to run an archive node,
 3. Start the node.
 
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
 
 4. Check the progress of the node as it syncs.
 
     ```bash
-    docker-compose logs -n 50 -f op-reth
+    docker compose logs -n 50 -f op-reth
     ```
 
     This will display and follow the last 50 lines of logs. As the node syncs you will see `op-reth` executing blocks and its head advancing toward the network's latest block.
@@ -134,7 +134,7 @@ Until your network's [switch date](/infra-partners/notices/op-geth-deprecation),
     ```
 
 - **P2P variables.** Use `OP_GETH__NAT` (values `any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>`) and `PORT__OP_GETH_P2P` (default `30303`) in place of their `OP_RETH__` equivalents.
-- **Logs.** Follow `docker-compose logs -n 50 -f op-geth`. A syncing node shows `Syncing beacon headers downloaded=...` and later `"Syncing: chain download in progress","synced":"21.07%"`; until fully synced the RPC API returns `0` for the head block number.
+- **Logs.** Follow `docker compose logs -n 50 -f op-geth`. A syncing node shows `Syncing beacon headers downloaded=...` and later `"Syncing: chain download in progress","synced":"21.07%"`; until fully synced the RPC API returns `0` for the head block number.
 
 After your network's switch date, `op-geth` will no longer follow the chain — migrate to `op-reth` before then.
 
