@@ -142,9 +142,7 @@ const thirdwebFacilitator = facilitator({
 });
 
 export async function GET(request: Request) {
-  const paymentData =
-    request.headers.get("PAYMENT-SIGNATURE") ||
-    request.headers.get("X-PAYMENT");
+  const paymentData = request.headers.get("X-PAYMENT");
 
   const result = await settlePayment({
     resourceUrl: "https://your-api.com/premium-content",
