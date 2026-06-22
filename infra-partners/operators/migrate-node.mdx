@@ -3,6 +3,12 @@ title: Migrating a Celo L1 Node
 sidebarTitle: "Migrating an L1 Node"
 ---
 
+<Warning>
+**Legacy path — not needed for op-reth**
+
+`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/infra-partners/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/infra-partners/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/infra-partners/notices/op-geth-deprecation).
+</Warning>
+
 <Tip>
 Unless you need to migrate your own Celo L1 data, we recommend using a snapshot instead.
 You can find the latest snapshot in the [Network Config & Assets](/infra-partners/operators/network-config) section.
@@ -12,7 +18,7 @@ This guide helps Celo L1 node operators migrate their nodes to Celo L2. It descr
 
 **Alternative options:**
 
-- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) for `snap` sync from scratch
+- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) — a new `op-reth` node starts from an empty datadir and bootstraps from a published snapshot (or syncs from genesis on Celo Sepolia)
 - **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/infra-partners/operators/network-config)
 
 <Info>
@@ -249,7 +255,7 @@ Both the `pre` and `full` migration commands will first run a script to check wh
 To resolve this:
 
 - Try re-running the migration with a different source datadir if available.
-  - We will post a full pre-hardfork database snapshot in the [Network config & Assets](/infra-partners/operators/network-config) section shortly after the hardfork, but we recommend having your own backup datadir available as well.
+  - A full pre-hardfork database snapshot is available in the [Network config & Assets](/infra-partners/operators/network-config) section; we still recommend having your own backup datadir available as well.
 - Ensure the datadir is fully synced to just before the hardfork block.
 
 To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.

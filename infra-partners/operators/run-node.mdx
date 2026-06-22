@@ -6,15 +6,11 @@ sidebarTitle: "Run a Node with Docker"
 This guide is designed to help node operators run a Celo L2 node with Docker.
 
 <Info>
-**L1 to L2 data migration**
+**Execution client: op-reth**
 
-If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](/infra-partners/operators/migrate-node) before continuing. Alternatively, you can `snap` sync from scratch without migrating existing L1 data.
-</Info>
+These instructions use `op-reth`, the execution client Celo is adopting as its primary client. A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
 
-<Info>
-**Execution client: op-geth today, op-reth next**
-
-These instructions use `op-geth`. Celo is transitioning to `op-reth` as the primary execution client; `op-geth` remains fully supported until your network's switch date. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates.
+`op-geth` remains supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide, and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates.
 </Info>
 
 ## Recommended Hardware
@@ -67,22 +63,29 @@ Follow these steps to run a full node. If you would like to run an archive node,
     cp $NETWORK.env .env
     ```
 
-    #### Configure sync mode
+    #### Bootstrap your datadir
 
-    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. This allows your node to start without a migrated L1 datadir, as pre-hardfork block data will be automatically downloaded from peers during syncing. This is the easiest way to start an L2 node.
+    `op-reth` syncs by executing every block. A new node starts from an **empty** datadir, populated in one of two ways depending on your network:
 
-    Alternatively, you can start your node with `full` sync if you have a migrated L1 datadir. For instructions on obtaining a migrated L1 datadir, please see [Migrating an L1 Node](/infra-partners/operators/migrate-node).
+    - **From a snapshot.** Set `OP_RETH__SNAPSHOT=true` in `.env`. On first start with an empty datadir, your node downloads a recent published snapshot (from `snapshots.celo.org`) and continues from there. Once the datadir holds data, the snapshot step is skipped.
 
-    To use `full` sync, configure `.env` as follows:
+        ```text
+        OP_RETH__SNAPSHOT=true
+        ```
 
-    ```text
-    OP_GETH__SYNCMODE=full
-    DATADIR_PATH=<path to a migrated L1 datadir>
-    ```
+        **On mainnet a snapshot is required** — it provides the pre-L2 (Celo L1) history, which `op-reth` cannot reproduce by executing blocks.
+
+    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can leave `OP_RETH__SNAPSHOT=false` (the default) and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
+
+    <Warning>
+    **Datadirs from op-geth cannot be reused**
+
+    `op-reth` uses a different on-disk format. A datadir written by `op-geth` — including one produced by the [L1→L2 migration](/infra-partners/operators/migrate-node) — cannot be used with `op-reth`. Start from an empty `DATADIR_PATH`. Pre-L2 historical state is served separately; see [Running an archive node](/infra-partners/operators/archive-node).
+    </Warning>
 
     #### Configure node type
 
-    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See [Running an archive node](/infra-partners/operators/archive-node) for more information.
+    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. See [Running an archive node](/infra-partners/operators/archive-node) for more information.
 
     #### Configure P2P for external network access
 
@@ -92,34 +95,50 @@ Follow these steps to run a full node. If you would like to run an archive node,
         If the following options are not configured correctly, your node will not be discoverable or reachable to other nodes on the network. This is likely to impair your node's ability to stay reliably connected to and synced with the network.
     </Warning>
 
-    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset op-node other nodes on the network will not be able to discover and connect to your node.
+    - `OP_NODE__P2P_ADVERTISE_IP` - Specifies the public IP to be shared via discovery so that other nodes can connect to your node. If unset, other nodes on the network will not be able to discover and connect to your op-node.
     - `PORT__OP_NODE_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 9222.
-    - `OP_GETH__NAT` - Controls how op-geth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>)`.
-    - `PORT__OP_GETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
+    - `OP_RETH__NAT` - Controls how op-reth determines its public IP that is shared via the discovery mechanism. If the public IP is not correctly configured then other nodes on the network will not be able to discover and connect to your node. The default value of `any` will try to automatically determine the public IP, but the most reliable approach is to explicitly set the public IP using `extip:<your-public-ip>`. Other acceptable values are `(any|none|upnp|publicip|extip:<IP>|stun:<IP:PORT>)`.
+    - `PORT__OP_RETH_P2P` - Specifies the port to be shared via discovery so that other nodes can connect to your node. Defaults to 30303.
 
 3. Start the node.
 
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
 
 4. Check the progress of the node as it syncs.
 
     ```bash
-    docker-compose logs -n 50 -f op-geth
+    docker compose logs -n 50 -f op-reth
     ```
 
-    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
+    This will display and follow the last 50 lines of logs. As the node syncs you will see `op-reth` executing blocks and its head advancing toward the network's latest block.
 
 5. Check that node is fully synced.
 
-   Once the node is fully synced, you can validate that it's following the network by fetching the current block number via the RPC API and seeing that it's increasing as expected.
+   You can validate that your node is following the network by fetching the current block number via the RPC API and seeing that it climbs as the node syncs and then tracks the network's latest block.
 
    ```bash
    cast block-number --rpc-url http://localhost:9993
    ```
 
-   Note that until fully synced, the RPC API will return 0 for the head block number.
+<Accordion title="Still running op-geth? (until your switch date)">
+
+Until your network's [switch date](/infra-partners/notices/op-geth-deprecation), you can keep running `op-geth` from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) (the latest version runs `op-reth` only). The steps above are the same, with these differences:
+
+- **Sync mode instead of a snapshot.** `op-geth` starts with `snap` sync by default, which downloads pre-hardfork block data from peers — no migrated L1 datadir required. To run `full` sync against a migrated L1 datadir instead, set:
+
+    ```text
+    OP_GETH__SYNCMODE=full
+    DATADIR_PATH=<path to a migrated L1 datadir>
+    ```
+
+- **P2P variables.** Use `OP_GETH__NAT` (values `any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>`) and `PORT__OP_GETH_P2P` (default `30303`) in place of their `OP_RETH__` equivalents.
+- **Logs.** Follow `docker compose logs -n 50 -f op-geth`. A syncing node shows `Syncing beacon headers downloaded=...` and later `"Syncing: chain download in progress","synced":"21.07%"`; until fully synced the RPC API returns `0` for the head block number.
+
+After your network's switch date, `op-geth` will no longer follow the chain — migrate to `op-reth` before then.
+
+</Accordion>
 
 ## Build from source
 

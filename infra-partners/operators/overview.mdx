@@ -3,7 +3,7 @@ title: "Node Operators"
 sidebarTitle: "Overview"
 ---
 
-This section helps you run and operate a Celo L2 node. If you are starting fresh, the fastest path is to [run a full node with Docker](/infra-partners/operators/run-node) and `snap` sync from scratch — no L1 data migration required.
+This section helps you run and operate a Celo L2 node. If you are starting fresh, the fastest path is to [run a full node with Docker](/infra-partners/operators/run-node) — a new node bootstraps from a published snapshot (or, on Celo Sepolia, syncs from genesis), with no L1 data migration required.
 
 ## What is a Celo L2 node?
 
@@ -17,13 +17,13 @@ See [Architecture](/infra-partners/operators/architecture) for how these fit tog
 
 ## Node types
 
-- **Full node** — follows the chain and serves recent state. Runs with `snap` sync by default, so it can start without a migrated L1 datadir. This is the right choice for most operators.
+- **Full node** — follows the chain and serves recent state. Starts from an empty datadir — bootstrap it from a published snapshot (or sync from genesis on Celo Sepolia), with no migrated L1 datadir required. This is the right choice for most operators.
 - **Archive node** — additionally preserves all historical state, at the cost of terabytes of storage. See [Running an archive node](/infra-partners/operators/archive-node).
 
 ## Execution client
 
-- **op-reth** — the execution client Celo is adopting as the primary client going forward, built on `reth`. A Celo-compatible release and migration guide are coming.
-- **op-geth** — the execution client used today. It is being deprecated in favor of `op-reth` and remains fully supported until your network's switch date. All current guides use `op-geth`.
+- **op-reth** — Celo's primary execution client, built on `reth`. The guides in this section use `op-reth`.
+- **op-geth** — the previous execution client. It is deprecated in favor of `op-reth` and remains supported only until your network's switch date.
 
 <Warning>
 **op-geth is being deprecated**

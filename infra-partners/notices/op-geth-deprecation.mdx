@@ -16,7 +16,7 @@ Celo is switching its execution client from `op-geth` to `op-reth`. All node ope
 
 Following [Optimism's](https://docs.optimism.io/notices/op-geth-deprecation) deprecation of op-geth, Celo will also discontinue support for `op-geth` and adopt `op-reth` as the primary execution client.
 
-- **`op-geth`**: Supported only until the switch date for each network. After that, it will no longer be compatible with the network.
+- **`op-geth`**: Supported only until the switch date for each network. After that, it might follow the wrong chain.
 - **`op-reth`**: The new supported execution client built on `reth`.
 - **`op-node`**: No changes. It remains fully supported.
 
@@ -24,14 +24,15 @@ Following [Optimism's](https://docs.optimism.io/notices/op-geth-deprecation) dep
 
 Node operators must complete migration to `op-reth` by the switch date for their network (see above).
 
-A Celo-compatible `op-reth` release and migration guide will be published shortly. In the meantime:
+A Celo-compatible `op-reth` release is available, and the node-operator guides now use it:
 
-- Review `op-reth` and its configuration.
-- Begin planning your migration timeline
-- Monitor updates in the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository and this page for release details and instructions.
+- Follow [Run a node with Docker](/infra-partners/operators/run-node) to run `op-reth`. A new node starts from an empty datadir — bootstrap it from a published snapshot (`OP_RETH__SNAPSHOT=true`, required on mainnet) or, on Celo Sepolia, sync from genesis; no L1 data migration is required.
+- A migrated `op-geth` datadir cannot be reused — `op-reth` uses a different on-disk format. Start `op-reth` with an empty `DATADIR_PATH`.
+- For archive nodes and pre-L2 historical state, see [Running an archive node](/infra-partners/operators/archive-node).
+- See the [Configuration reference](/infra-partners/operators/configuration) for the `OP_RETH__*` variables, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for the latest images.
 
 ## RPC Providers and Bridge Operators
 
 For most RPC users, this transition should be seamless. `op-reth` supports the same JSON-RPC interface as `op-geth`.
 
-However, some differences may exist in non-standard or debug RPC methods. We recommend validating your integrations against `op-reth` once test environments are available.
+However, some differences may exist in non-standard or debug RPC methods. We recommend validating your integrations against `op-reth` on Celo Sepolia, which switches first (see the dates above).
