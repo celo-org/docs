@@ -5,6 +5,12 @@ sidebarTitle: "Network Config & Assets"
 
 Bootnodes, container images, and downloadable artifacts needed to run a Celo L2 node on each network.
 
+<Info>
+**You don't need to supply `genesis.json` or `rollup.json`**
+
+The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup selects the chain by name: op-node loads the rollup config from the superchain registry with `--network` (`celo-mainnet` / `celo-sepolia`), and op-reth loads the chain spec — genesis included — with `--chain` (`celo` / `celo-sepolia`). The `genesis.json` and `rollup.json` files below are listed for reference and for custom or from-source setups.
+</Info>
+
 ## Mainnet
 
 - op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); a mainnet node must bootstrap from one (`OP_RETH__SNAPSHOT=true`) for the pre-L2 history (see [Run a node](/infra-partners/operators/run-node))
