@@ -6,7 +6,7 @@ sidebarTitle: "Run an Archive Node"
 <Info>
 **Archive node vs. historical proofs**
 
-This guide covers running a **full archive node**, which serves every historical-state RPC call (such as `eth_getBalance` or `eth_call`) at any block and requires terabytes of storage. Celo also supports a narrower **historical proofs** feature for serving historical data without keeping full archive state; a dedicated guide for it is forthcoming.
+This guide covers running a **full archive node**, which serves every historical-state RPC call (such as `eth_getBalance` or `eth_call`) at any block and requires terabytes of storage. Celo also supports a narrower **historical proofs** feature for serving deep `eth_getProof` within a bounded window without keeping full archive state; see [Serving historical proofs](/infra-partners/operators/historical-proofs).
 </Info>
 
 <Info>

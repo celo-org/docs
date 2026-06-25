@@ -1,0 +1,257 @@
+---
+title: "Serving Historical Proofs"
+sidebarTitle: "Historical Proofs"
+---
+
+<Info>
+**An op-reth feature**
+
+Historical proofs is an `op-reth` capability. `op-geth` served deep `eth_getProof`
+from full archive state; on `op-reth` it is configured separately, as described
+here. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation)
+for the migration timeline.
+</Info>
+
+## Overview
+
+Some workloads need `eth_getProof` (and `debug_executePayload` /
+`debug_executionWitness`) for blocks that are no longer at the chain tip:
+
+- **Withdrawal proving.** Proving an L2 withdrawal calls `eth_getProof` on the L2
+  block where the withdrawal was included, regardless of the dispute-game model.
+- **Fault proofs and challenges.** Constructing or verifying proofs over the
+  dispute-game window needs historical state for blocks within that window.
+
+On `op-reth`, serving `eth_getProof` for an older block rebuilds that block's
+state by reverting state diffs backward from the chain tip. Retrieval time is
+**linear in the age of the block**: queries a few days back load many changesets,
+which is slow and can crash the node with out-of-memory (OOM) errors. This makes
+deep historical proofs impractical on a standard node.
+
+The **historical proofs** sidecar fixes this. It maintains a separate database of
+versioned Merkle-trie nodes and serves `eth_getProof` for any block inside a
+configured window directly from that store: bounded response time and bounded
+memory, instead of linear-in-age reverts. This benefits any node that answers
+deep `eth_getProof` (public RPC providers, bridge and withdrawal services,
+fault-proof proposers), **including archive nodes**: an archive node keeps
+historical state but still pays the slow revert to build a proof.
+
+## Two ways to serve historical proofs
+
+| | `--rpc.eth-proof-window` | `--proofs-history` (v2) |
+| --- | --- | --- |
+| Extra database | No | Yes (separate MDBX store) |
+| Retrieval cost | Grows with query depth (in-memory revert) | Bounded within the window |
+| Memory | Grows with depth (OOM risk deep) | Bounded |
+| Storage | None | Window-sized, can be large |
+| Best for | Short lookback (hours) | Full dispute / withdrawal window (days) |
+
+- **`--rpc.eth-proof-window <blocks>`** widens the in-memory revert window
+  without a separate database. It is the lighter option when you only need a few
+  hours of lookback, but cost and memory still grow the further back you query,
+  and it is capped at roughly two weeks of 1-second blocks.
+- **`--proofs-history` with `--proofs-history.storage-version=v2`** adds the
+  sidecar database. `v2` is the current, more performant on-disk format, built on
+  reth's v2 storage layout, and the version the Celo node setup uses by default.
+  It is the option that covers Celo's full dispute and withdrawal window with
+  bounded cost, at the price of extra disk. The rest of this guide configures it.
+
+## Window sizing for Celo
+
+The window is a **time** requirement (the dispute-game lifecycle plus your
+withdrawal-proving lookback), so size it in blocks from Celo's **1-second** block
+time:
+
+```
+--proofs-history.window = retention_seconds / 1
+```
+
+Celo's op-succinct dispute-game lifecycle (max challenge + max prove + finality
+delay, plus proposal cadence and margin) lands on the order of **8 to 15 days**.
+The default `--proofs-history.window=1296000` is about **15 days at 1-second
+blocks** and covers that comfortably. Note this differs from Optimism's
+documentation, whose `1296000` default is ~30 days because it assumes 2-second
+blocks: on Celo the same block count is half the time, so size from Celo's
+1-second block time rather than copying a day count.
+
+## Enable with Docker Compose (recommended)
+
+The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
+setup wires historical proofs behind a single opt-in variable. It is **off by
+default**.
+
+1. Follow [Run a node with Docker](/infra-partners/operators/run-node) to get a
+   node configured and syncing.
+
+2. Enable historical proofs in your `.env`:
+
+    ```text
+    OP_RETH__PROOFS_HISTORY_ENABLED=true
+    ```
+
+    Optionally tune the retention window and the database location (defaults
+    shown):
+
+    ```text
+    OP_RETH__PROOFS_HISTORY_WINDOW=1296000
+    PROOFS_HISTORY_DATADIR_PATH=./envs/<network>/proofs
+    ```
+
+    Keep `PROOFS_HISTORY_DATADIR_PATH` on a **separate volume** from the
+    chaindata datadir.
+
+3. Start (or restart) the node:
+
+    ```bash
+    docker compose up -d --build
+    ```
+
+When enabled, `op-reth` initializes the proofs store **once**, before it starts
+following the chain, by anchoring it at the datadir's current head, then fills
+proofs forward up to the window as new blocks arrive.
+
+<Warning>
+**The datadir must be synced past genesis before proofs are initialized**
+
+The proofs store is anchored at the datadir's head. Anchoring it at the genesis
+block (block 0 on Celo Sepolia, the L2 migration block on Mainnet) wedges the
+node with repeated `StateRootMismatch` errors, so the startup script refuses to
+initialize a datadir that is still at genesis: it logs a warning and starts
+**without** proofs. This gives three cases:
+
+- **Bootstrapped from a snapshot (`OP_RETH__SNAPSHOT=true`, the default):** the
+  datadir is already synced, so proofs initialize automatically on first start.
+- **An existing synced datadir:** point `DATADIR_PATH` at it and enable proofs;
+  the store initializes on the next start.
+- **Syncing from scratch (`OP_RETH__SNAPSHOT=false`):** the first start has
+  nothing to anchor, so proofs are skipped with a warning and the node syncs
+  without them. Once it has caught up, run `docker compose up -d` again to
+  initialize proofs against the now-synced datadir.
+</Warning>
+
+## Enable from source
+
+If you run `op-reth` (`celo-reth`) directly instead of through the compose setup,
+configure it in two steps. The proofs store must be initialized **before** the
+node starts with `--proofs-history`.
+
+1. With the node **stopped** and the datadir synced past genesis, initialize the
+   proofs store at the current head. It is idempotent: re-running is a no-op
+   once initialized, so it is safe to run on every start.
+
+    ```bash
+    celo-reth proofs init \
+      --datadir=<datadir> \
+      --chain=<celo or celo-sepolia> \
+      --proofs-history.storage-path=<proofs-db-path> \
+      --proofs-history.storage-version=v2
+    ```
+
+    The first run takes minutes to hours; later runs take seconds. It does **not**
+    backfill: it marks the current head as the starting point and fills forward.
+
+2. Start the node with the proofs-history flags:
+
+    ```bash
+    celo-reth node \
+      --chain=<celo or celo-sepolia> \
+      --datadir=<datadir> \
+      --proofs-history \
+      --proofs-history.storage-path=<proofs-db-path> \
+      --proofs-history.storage-version=v2 \
+      --proofs-history.window=1296000
+    ```
+
+| Flag | Default | Description |
+| --- | --- | --- |
+| `--proofs-history` | off | Enable the historical-proofs sidecar. |
+| `--proofs-history.storage-path` | required | Path to the proofs database. Keep it on a separate volume from chaindata. |
+| `--proofs-history.storage-version` | `v1` | On-disk format. Use **`v2`** (more performant; incompatible with `v1`). Must match between `proofs init` and the node. |
+| `--proofs-history.window` | `1296000` | Retention window, in blocks. About 15 days at 1-second blocks. |
+| `--proofs-history.verification-interval` | `0` | Advanced/testing. `0` trusts the ExEx; `1` re-executes every block to verify (much slower). |
+
+## Verify
+
+With proofs history running, the startup log shows the override being installed:
+
+```
+INFO Installing proofs-history RPC overrides (eth_getProof, debug_executePayload)
+```
+
+Check the window that is currently served with `debug_proofsSyncStatus` (the
+`debug` RPC namespace is enabled in the compose setup):
+
+```bash
+curl -s http://localhost:9993 \
+  -H 'Content-Type: application/json' \
+  --data '{"jsonrpc":"2.0","method":"debug_proofsSyncStatus","params":[],"id":1}'
+```
+
+It returns the earliest and latest blocks held in the store:
+
+```json
+{ "jsonrpc": "2.0", "id": 1, "result": { "earliest": 27026987, "latest": 28411347 } }
+```
+
+Right after `proofs init` both values equal the head; the window then grows
+forward until it spans `--proofs-history.window` blocks. `eth_getProof` is served
+from the sidecar for any block in `[earliest, latest]`; requests outside that
+range fall back to the standard (slow) path or error. A historical
+`eth_getProof` inside the window should return promptly:
+
+```bash
+cast proof <address> --block <block-in-window> --rpc-url http://localhost:9993
+```
+
+If [monitoring](/infra-partners/operators/monitoring) is enabled, the same window
+is exported as Prometheus gauges on op-reth's metrics port:
+
+- `reth_optimism_trie_proof_window_earliest`
+- `reth_optimism_trie_proof_window_latest`
+
+## Maintenance
+
+- **Pruning is automatic.** A background task drops blocks that fall outside the
+  window. If the store ever holds more than ~1000 blocks beyond the window,
+  `op-reth` refuses to start; prune once, then restart:
+
+    ```bash
+    celo-reth proofs prune \
+      --datadir=<datadir> \
+      --proofs-history.storage-path=<proofs-db-path> \
+      --proofs-history.storage-version=v2 \
+      --proofs-history.window=1296000
+    ```
+
+- **Recover from a corrupted store.** `celo-reth proofs unwind` is planned but
+  not yet available. To recover, stop the node, remove the proofs database
+  directory, and start again: the store re-anchors at the current head and
+  refills forward.
+
+- **Disk.** Storage scales with the window (and with per-block activity), not
+  with the node's prune tier. As a reference point, a ~15-day window measured
+  about **73 GB** on a celo-sepolia full node (a low-traffic testnet, ~53
+  bytes/block); a busier network such as mainnet is proportionally larger. Put
+  the proofs database on its own volume and size capacity from your chosen
+  window.
+
+## Limitations
+
+- **Forward-only.** The store records from its initialization point onward and
+  cannot backfill earlier blocks. After initialization the window grows forward
+  as new blocks arrive and reaches full depth once the node has been running for
+  about the window duration. Bootstrapping from a snapshot whose tip is old
+  enough to already span the window (so catching up to live re-fills it) lets you
+  reach a full window much faster; such older-tip snapshots are planned but not
+  yet available. Blocks before the initialization point, or older than the
+  window, are not served from the sidecar.
+- **op-reth only.** This feature does not exist on `op-geth`, which relied on
+  full archive state instead.
+
+## Reference
+
+- Optimism: [Historical proofs tutorial](https://docs.optimism.io/node-operators/tutorials/reth-historical-proofs)
+  (sizing and flags in detail; note its day counts assume 2-second blocks).
+- [Running an archive node](/infra-partners/operators/archive-node): the
+  full-archive alternative when you need every historical-state call, not just
+  proofs.
