@@ -23,10 +23,7 @@ One of Celo's key features is the ability to associate a phone number to a Celo 
 ODIS requests are rate-limited based on transaction history and balance. Ensure the account that is performing the queries has a balance and has performed transactions on the network. If an out of quota error is hit, this indicates that more transactions need to be sent from the querying account.
 </Note>
 
-There are two methods for ODIS:
-
-1. `getPhoneNumberIdentifier` - Query and compute the identifier for a phone number
-2. `getContactMatches` - Find mutual connections between users
+The main ODIS method is `getObfuscatedIdentifier`, which queries and computes the on-chain identifier for an off-chain identifier such as a phone number.
 
 <Tip>
 See [this overview document](/legacy/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS.
@@ -87,28 +84,22 @@ This call consumes quota. When the user runs out of quota, it's recommended to p
 
 ### BLS Blinding Client
 
-It's important for user privacy that the ODIS servers don't have the ability to view the raw phone number. Before making the request, the library first blinds the phone number using a BLS library. This prevents the ODIS from being able to see the phone number but still makes the resulting signature recoverable to the original phone number. The blinding client is written in [Rust](https://github.com/celo-org/celo-threshold-bls-rs) and compiled to Web Assembly, which is not compatible with React native. If you choose not to pass in a `BLSBlindingClient` it will default to the Web Assembly version. You may create a `ReactBlindingClient` by calling the constructor with the ODIS public key:
+It's important for user privacy that the ODIS servers don't have the ability to view the raw phone number. Before making the request, the library first blinds the phone number using a BLS library. This prevents ODIS from seeing the phone number while still making the resulting signature recoverable to the original phone number. The blinding client is written in [Rust](https://github.com/celo-org/celo-threshold-bls-rs) and compiled to WebAssembly.
 
-```ts
-const blsBlindingClient = new ReactBlsBlindingClient(odisPubKey);
-```
-
-Or use the `WasmBlsBlindingClient` if your runtime environment supports Web Assembly:
+The SDK ships a `WasmBlsBlindingClient`. If you don't pass a blinding client, `getObfuscatedIdentifier` defaults to it:
 
 ```ts
 const blsBlindingClient = new WasmBlsBlindingClient(odisPubKey);
 ```
 
-Now you're ready to get the phone number identifier. `OdisUtils.PhoneNumberIdentifier.getPhoneNumberIdentifier` [documentation can be found here](https://github.com/celo-org/social-connect/blob/main/packages/identity/src/odis/phone-number-identifier.ts).
+`WasmBlsBlindingClient` only runs in a Node.js environment: its constructor throws in React Native and in the browser. For browser or React Native runtimes, pass your own web blinding client. See the [example web blinding client](https://github.com/celo-org/social-connect/blob/d013ed9/docs/examples/blinding/webBlindingClient.ts) in the social-connect repo.
 
-The response will be [an object](https://github.com/celo-org/social-connect/blob/main/packages/identity/src/odis/phone-number-identifier.ts) with the original phone number, the on-chain identifier (phoneHash), and the phone number's pepper.
+Now you're ready to get the on-chain identifier. `OdisUtils.Identifier.getObfuscatedIdentifier` [documentation can be found here](https://github.com/celo-org/social-connect/blob/d013ed9/packages/identity/src/odis/identifier.ts#L105).
 
-You can view an example of this call in [the social-connect identity SDK here](https://github.com/celo-org/social-connect/tree/main/packages/identity/src/odis).
+The response will be [an `IdentifierHashDetails` object](https://github.com/celo-org/social-connect/blob/d013ed9/packages/identity/src/odis/identifier.ts#L74) with the plaintext identifier, the on-chain identifier (`obfuscatedIdentifier`), and the pepper.
 
-## Matchmaking
+<Note>
+The older `OdisUtils.PhoneNumberIdentifier.getPhoneNumberIdentifier` (which returns a `phoneHash`) is deprecated in favor of `getObfuscatedIdentifier`.
+</Note>
 
-Instead of querying for all the user's contact's peppers and consuming the user's quota, it's recommended to only query the pepper before it's actually used (ex. just before sending funds). However, sometimes it's helpful to let your users know that they have contacts already using the Celo network. To do this, you can make use of the matchmaking interface. Given two phone numbers, it will let you know whether the other party has also registered on the Celo network with this identifier. `OdisUtils.Matchmaking.getContactMatches` [documentation can be found here](https://github.com/celo-org/social-connect/tree/main/packages/identity/src/odis).
-
-The response will be a subset of the input `e164NumberContacts` that are matched by the matchmaking service.
-
-You can view an example of this call in [the social-connect identity SDK here](https://github.com/celo-org/social-connect/tree/main/packages/identity/src/odis).
+You can view an example of this call in the [SocialConnect Twitter sample app](https://github.com/celo-org/SocialConnect-Twitter/blob/f5d398f/packages/react-app/pages/index.tsx).
