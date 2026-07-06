@@ -3,7 +3,7 @@ title: "Attribution Tags"
 og:description: "Credit on-chain activity back to your app on Celo using ERC-8021 attribution tags."
 ---
 
-Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like [Proof of Ship](/build-on-celo/fund-your-project), MiniPay leaderboards, and hackathon tracking. This is Celo's implementation of [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution), the same standard behind [Base's Builder Codes](https://docs.base.org/apps/builder-codes/builder-codes).
+Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like [Proof of Ship](/build-on-celo/fund-your-project), MiniPay leaderboards, and hackathon tracking. Celo's implementation follows [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution).
 
 ## How It Works
 
@@ -30,25 +30,7 @@ fromDataSuffix(data)           // → { codes, schemaId } | null
 verifyTx({ client, hash })     // → { codes, schemaId } | null
 ```
 
-## Quickstart: MiniPay Mini Apps
-
-If you're shipping a [MiniPay Mini App](/build-on-celo/build-on-minipay/overview), you don't need to register or be issued a code. The SDK derives a deterministic code from your app's hostname — same hostname, same code, every time:
-
-```ts
-import { toDataSuffix, codeFromHostname } from "@celo/attribution-tags";
-
-const tag = toDataSuffix(codeFromHostname(location.hostname));
-
-await wallet.sendTransaction({ to, value, data: tag });
-```
-
-That's the entire integration — no backend, no key, no registration form.
-
-<Warning>
-  `codeFromHostname` reads `window.location`, so it's browser-only. In server-rendered frameworks (Next.js, Remix, SvelteKit), guard it with a `typeof window === "undefined"` check or call it from inside an event handler / effect — never at module top level in a `"use client"` file, since those still execute during SSR.
-</Warning>
-
-## Quickstart: Issued or Custom Codes
+## Quickstart
 
 If you've been issued a code (`celo_xxxxxxxx`) — for example through Proof of Ship onboarding or a hackathon registration — pass it directly:
 
@@ -131,6 +113,6 @@ console.log(result); // { codes: ["celo_b7k3p9da"], schemaId: 0 }
 
 ## Related
 
-- [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — attribution for x402 payments is a proposed next step, see that page for details
+- [x402: Agent Payments](/build-on-celo/build-with-ai/x402)
 - [Fund your Project](/build-on-celo/fund-your-project) — Proof of Ship progress tracking uses attribution tags
 - [Launch Checklist](/build-on-celo/launch-checklist)

@@ -268,16 +268,6 @@ app.listen(3000);
   USDT has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in `asset.eip712` or signature verification fails.
 </Warning>
 
-### Attribution for x402 Payments (Proposed)
-
-There's no built-in way yet to credit an x402 payment on Celo back to the app that drove it — the equivalent of [Base's builder-code x402 extension](https://docs.cdp.coinbase.com/x402/builder-code.skill), which embeds a builder code into the facilitator's settlement transaction so payments are attributable on-chain.
-
-Celo's facilitator already submits the settlement transaction itself (the `transferWithAuthorization` call), so the same pattern could apply directly: the facilitator would accept an [attribution tag](/build-on-celo/attribution-tags) alongside the payment payload and append it as an ERC-8021 suffix — via `@celo/attribution-tags`'s `toDataSuffix` — to the settlement tx it submits. Client and resource server could then both verify the code post-settlement, the same way `verifyTx` works for ordinary transactions today.
-
-<Warning>
-  This is a proposed integration, not a shipped feature — `celo-org/x402-facilitator`'s `/settle` endpoint has no attribution parameter today.
-</Warning>
-
 ## x402 on Celo
 
 Celo is an ideal network for x402 due to:
