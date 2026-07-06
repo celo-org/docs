@@ -35,6 +35,8 @@ state branch ◀── cursor updates                                           
 | New repos in the celo-org GitHub org (DevRel tools, templates, new projects) | `gh api orgs/celo-org/repos?sort=created` — filter: not a fork, not archived, has a description, ≥7 days old (quiet period) | `contribute-to-celo/builders.mdx`, tooling pages |
 | **Program pages: Prezenti, CeloPG programs page (incl. Proof of Ship), other grant/accelerator pages** | `curl` + content hash of extracted text; alert on change, HTTP 4xx/5xx, or redirect-to-home | `contribute-to-celo/builders.mdx`, `contribute-to-celo/index.mdx`, MiniPay "Opportunities" section |
 | **Celopedia (celo-org/celopedia-skills repo)** — program/grant/ecosystem data updated there | releases/commits on the repo's data files | program listings, ecosystem references — keeps docs and Celopedia telling the same story |
+| **Dev-tooling sync: every documented tool** — Celo Composer, Celopedia, the x402 stack, Celo MCP server, the agent skills repos | **merged PRs** and releases on each repo (`gh api repos/{r}/pulls?state=closed&base=main` against a cursor, filtered to merged) → prompt: "verify the docs pages documenting this tool still match its current behavior/CLI/flags/APIs; draft corrections if not" | each tool's docs page(s) — e.g. `build-on-celo/quickstart.mdx` (Composer), `build-with-ai/x402.mdx`, `build-with-ai/celopedia.mdx`, `build-with-ai/mcp/*` |
+| **Official MiniPay docs (docs.minipay.xyz)** | content hash of its `llms.txt` — a precise, cheap change signal (their page inventory + descriptions in one file) | Celo's MiniPay overview and any page linking into MiniPay docs — verify links still resolve and the overview still reflects what the official docs cover |
 | Contract addresses | existing `update_contracts.py` (deterministic, no LLM) | `tooling/contracts/*` |
 
 > Open item: one more program source was requested but the name didn't come through clearly ("PDA scale"). CeloPG's programs page and Proof of Ship are included above as the likely candidates — to be confirmed and adjusted in `watch-targets.yml`.
@@ -91,6 +93,23 @@ targets:
     kind: releases
     repo: celo-org/celopedia-skills
     pages: [contribute-to-celo/builders.mdx, build-on-celo/build-with-ai/celopedia.mdx]
+  - id: celo-composer-sync
+    kind: merged-prs
+    repo: celo-org/celo-composer
+    pages: [build-on-celo/quickstart.mdx]
+    prompt: >
+      PRs were merged in celo-org/celo-composer since the last run: {pr_list}.
+      Verify the quickstart still matches the current CLI (commands, flags,
+      templates, prerequisites). Draft corrections if anything drifted.
+  - id: minipay-docs
+    kind: url-watch
+    url: https://docs.minipay.xyz/llms.txt
+    pages: [build-on-celo/build-on-minipay/]
+    prompt: >
+      The official MiniPay docs changed. Verify Celo's MiniPay pages still
+      link to valid targets and the overview still matches what the official
+      docs cover; the official docs are canonical for mini-app lifecycle
+      content — prefer removing duplication over restating it.
   - id: new-org-repos
     kind: new-repos
     org: celo-org
@@ -130,8 +149,8 @@ Roll out incrementally: start with the ~15 known stale-prone pages (programs, DA
 ## 5. Phasing
 
 - **Phase 0 (day one, no LLM):** schedule `update_contracts.py` weekly; open a PR only when `git diff` is non-empty. Proves out the whole draft-PR/label/secret plumbing every later loop reuses. (Runner needs `celocli`, Foundry's `cast`, Python 3.12, `TENDERLY_API_KEY` — pin versions.)
-- **Phase 1 (MVP):** `freshness-watch.yml` with 2–3 release targets (op-geth, optimism → upgrade notices and node pages — the content whose staleness has real operational cost), **plus the program URL-watch targets (Prezenti, CeloPG) with removal handling**, plus the LLM-free stale-page report with metadata on the known stale pages.
-- **Phase 2:** new-repo detector for the celo-org org, Celopedia data watcher, DevRel template repos.
+- **Phase 1 (MVP):** `freshness-watch.yml` with 2–3 release targets (op-geth, optimism → upgrade notices and node pages — the content whose staleness has real operational cost), **plus the URL-watch targets (Prezenti, CeloPG, docs.minipay.xyz llms.txt) with removal handling**, plus the LLM-free stale-page report with metadata on the known stale pages.
+- **Phase 2:** dev-tooling sync loop — merged-PR watchers on every documented tool (Celo Composer, x402 stack, Celopedia, Celo MCP, agent skills repos) verifying the corresponding docs pages after each merge; new-repo detector for the celo-org org; DevRel template repos.
 - **Phase 3:** `repository_dispatch` from source repos for near-real-time triggers, full metadata rollout post-restructure, optional `/verified` PR-comment command to bump `last_verified`.
 
 ## Files this would add (when implemented)

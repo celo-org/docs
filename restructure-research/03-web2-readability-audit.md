@@ -54,7 +54,7 @@ Searching the docs for identity leads to `build-on-celo/build-with-self.mdx`. Th
 
 ### What the Self section should say (concrete fix for `build-with-self.mdx`)
 
-Add an "Identity for AI agents" section covering: Agent ID is live on Celo mainnet (registry `0xaC3DF9ABf80d0F5c020C06B04Cced27763355944`, chain 42220; Sepolia `0x043DaCac...`, chain 11142220 — warn that this is *not* the old Alfajores 44787); the wallet-free CLI registration quickstart (`self-agent register init --mode wallet-free --network testnet` → QR scan → export); `agent.fetch()` auto-signing on the agent side and the Express-middleware verifier (`requireAge(18).sybilLimit(3)`) on the service side; the ERC-8004 relationship (cross-link both directions); and Celo Agent Visa (gasless, tiered agent-activity NFT). Links: docs.self.xyz/self-agent-id/overview, the agent-builder guide, github.com/selfxyz/self-agent-id.
+Add an "Identity for AI agents" section covering: Agent ID is live on Celo mainnet (registry `0xaC3DF9ABf80d0F5c020C06B04Cced27763355944`, chain 42220; Sepolia `0x043DaCac...`, chain 11142220 — warn that this is *not* the old Alfajores 44787); the wallet-free CLI registration quickstart (`self-agent register init --mode wallet-free --network testnet` → QR scan → export); `agent.fetch()` auto-signing on the agent side and the Express-middleware verifier (`requireAge(18).sybilLimit(3)`) on the service side; the ERC-8004 relationship (cross-link both directions); and Celo Agent Visa (gasless, tiered agent-activity NFT). Links: https://docs.self.xyz/docs/agent-id/overview/ (canonical — the same page the official MiniPay docs link to), the agent-builder guide, github.com/selfxyz/self-agent-id.
 
 ---
 
