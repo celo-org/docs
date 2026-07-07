@@ -1,0 +1,118 @@
+---
+title: "Attribution Tags"
+og:description: "Credit on-chain activity back to your app on Celo using ERC-8021 attribution tags."
+---
+
+Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like [Proof of Ship](/build-on-celo/fund-your-project), MiniPay leaderboards, and hackathon tracking. Celo's implementation follows [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution).
+
+## How It Works
+
+ERC-8021 appends a small suffix to a transaction's calldata. The suffix is invisible to the contract being called — the EVM discards trailing bytes — so adding it never changes execution semantics. It just makes the transaction identifiable as having come through your app to anyone reading calldata off-chain.
+
+<Note>
+  Tagging a transaction is open to everyone. Whether a code gets *credited* on a leaderboard or rewards program is resolved at the registry/indexer layer, not at the tagging step.
+</Note>
+
+## Install
+
+```bash
+npm install @celo/attribution-tags viem
+```
+
+`viem` is an optional peer dependency — only required if you call `verifyTx` to decode a tag from a transaction hash.
+
+The SDK exports four functions:
+
+```ts
+toDataSuffix(code | [codes])   // → encoded suffix (Hex)
+codeFromHostname(hostname)     // → "celo_" + 12 hex chars, derived from a hostname
+fromDataSuffix(data)           // → { codes, schemaId } | null
+verifyTx({ client, hash })     // → { codes, schemaId } | null
+```
+
+## Quickstart
+
+If you've been issued a code (`celo_xxxxxxxx`) — for example through Proof of Ship onboarding or a hackathon registration — pass it directly:
+
+```ts
+import { toDataSuffix } from "@celo/attribution-tags";
+
+const tag = toDataSuffix("celo_b7k3p9da"); // issued code, or any custom string
+
+await wallet.sendTransaction({ to, value, data: tag });
+```
+
+Any string matching `[a-z0-9_]` (1–32 characters) is a valid code. If a program assigned you a code, it must be present in the suffix — leaderboards and reward programs only credit the assigned code, not one you derive yourself with `codeFromHostname`. You can include both:
+
+```ts
+const tag = toDataSuffix(["your_own_code", "celo_assigned1234"]);
+```
+
+## Tagging a Contract Call
+
+Concatenate your encoded calldata with the suffix:
+
+```ts
+import { encodeFunctionData, concat } from "viem";
+
+const callData = encodeFunctionData({ abi, functionName: "transfer", args });
+const taggedData = concat([callData, tag]);
+
+await wallet.sendTransaction({ to: tokenAddress, data: taggedData });
+```
+
+With [wagmi](/tooling/dev-environments/thirdweb/overview), pass `dataSuffix` directly and wagmi handles the concatenation:
+
+```ts
+const { writeContract } = useWriteContract();
+
+writeContract({
+  address,
+  abi,
+  functionName: "transfer",
+  args,
+  dataSuffix: tag,
+});
+```
+
+## The Layering Rule
+
+ERC-8021 suffixes can carry multiple codes, but **each code should only be added by the entity it represents**:
+
+- **Your app code** — added by your app, as shown above.
+- **A platform code** like `minipay` — added by the platform itself (the wallet or cohort layer), never by your app.
+
+Adding a platform code from your own app would falsely claim every transaction ran inside that platform, polluting attribution data.
+
+## Verifying It Worked
+
+```ts
+import { verifyTx } from "@celo/attribution-tags";
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
+
+const client = createPublicClient({ chain: celo, transport: http() });
+
+const result = await verifyTx({ client, hash: "0x..." });
+console.log(result); // { codes: ["celo_b7k3p9da"], schemaId: 0 }
+```
+
+`verifyTx` returns `null` (never throws) if no tag is found. For offline decoding without an RPC call, use `fromDataSuffix(rawCalldata)` instead.
+
+<Warning>
+  Some smart-account / bundler flows (ERC-4337 bundlers, meta-tx relayers) rewrite calldata and can strip trailing bytes. Verify on-chain with `verifyTx` before relying on tags in production.
+</Warning>
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| Source & full docs | [github.com/celo-org/attribution-tags](https://github.com/celo-org/attribution-tags) |
+| npm package | [@celo/attribution-tags](https://www.npmjs.com/package/@celo/attribution-tags) |
+| ERC-8021 standard | [oxlib.sh/ercs/erc8021](https://oxlib.sh/ercs/erc8021/Attribution) |
+
+## Related
+
+- [x402: Agent Payments](/build-on-celo/build-with-ai/x402)
+- [Fund your Project](/build-on-celo/fund-your-project) — Proof of Ship progress tracking uses attribution tags
+- [Launch Checklist](/build-on-celo/launch-checklist)
