@@ -255,8 +255,8 @@ export default function Header() {
 - Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the MiniPay wallet.
 - When using `ngrok`, remember that the tunneling URL is temporary. You'll get a new URL every time you restart ngrok.
 - Be cautious about exposing sensitive information or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
-- MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `USDm`. More currencies might be supported in future.
-- MiniPay only accepts legacy transactions at the moment. EIP-1559 properties won't be considered when handling requests.
+- MiniPay manages gas fees for you. You can set the `feeCurrency` property when running `eth_sendTransaction`, but MiniPay may ignore it and pay gas in the stablecoin the user holds the most of. Supported gas tokens include `USDT`, `USDC`, and `USDm` (as well as other Mento stablecoins).
+- Use viem or wagmi to build and send transactions, as they provide native support for Celo's fee-currency transactions.
 
 ## Testing Local Development with MiniPay
 
