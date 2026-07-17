@@ -3,11 +3,30 @@ title: "Celo"
 description: "Celo is a leading Ethereum L2. As the frontier chain for global impact, we're scaling real-world solutions for all."
 ---
 
-<Card title="Start Building" icon="rocket" href="/build-on-celo/quickstart">
+import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
+
+<Card title="Start Building" icon="rocket" href="/build-on-celo/build-with-ai/celopedia">
   Build your first app on Celo. No coding experience required.
 </Card>
 
 ---
+
+## AI Agent Infrastructure
+
+<CardGroup cols={2}>
+  <Card title="ERC-8004: Agent Trust" icon="shield-check" href="/build-on-celo/build-with-ai/8004">
+    Establish trust infrastructure for autonomous AI agents with identity, reputation, and validation registries.
+  </Card>
+  <Card title="x402: Agent Payments" icon="money-bill-transfer" href="/build-on-celo/build-with-ai/x402">
+    Enable instant, permissionless micropayments for AI agents using stablecoins via HTTP 402.
+  </Card>
+  <Card title="MPP: Machine Payments" icon="credit-card" href="/build-on-celo/build-with-ai/mpp">
+    Charge USDC per API request over HTTP — gasless for the buyer, settled on-chain via a hosted facilitator.
+  </Card>
+  <Card title="Celopedia: Celo Skill" icon="book-open" href="https://celopedia.celo.org/">
+    Give your coding assistant Celo ecosystem knowledge — contract addresses, MiniPay, DeFi, grants, and agent infrastructure.
+  </Card>
+</CardGroup>
 
 ## Real World Use Cases
 
@@ -26,20 +45,6 @@ description: "Celo is a leading Ethereum L2. As the frontier chain for global im
   </Card>
 </CardGroup>
 
-## AI Agent Infrastructure
-
-<CardGroup cols={2}>
-  <Card title="ERC-8004: Agent Trust" icon="shield-check" href="/build-on-celo/build-with-ai/8004">
-    Establish trust infrastructure for autonomous AI agents with identity, reputation, and validation registries.
-  </Card>
-  <Card title="x402: Agent Payments" icon="money-bill-transfer" href="/build-on-celo/build-with-ai/x402">
-    Enable instant, permissionless micropayments for AI agents using stablecoins via HTTP 402.
-  </Card>
-  <Card title="MPP: Machine Payments" icon="credit-card" href="/build-on-celo/build-with-ai/mpp">
-    Charge USDC per API request over HTTP — gasless for the buyer, settled on-chain via a hosted facilitator.
-  </Card>
-</CardGroup>
-
 ## Builder Support
 
 <CardGroup cols={2}>
@@ -50,6 +55,15 @@ description: "Celo is a leading Ethereum L2. As the frontier chain for global im
     Discover grant opportunities and funding sources available in the Celo ecosystem.
   </Card>
 </CardGroup>
+
+## Add Celo to your wallet
+
+Connect your browser wallet to Celo in one click. See all network details on the [Network Information](/build-on-celo/network-overview) page.
+
+<div className="grid gap-x-4 gap-y-2 sm:grid-cols-2 mt-4">
+  <AddNetworkButton network="mainnet" />
+  <AddNetworkButton network="sepolia" />
+</div>
 
 ## Explore Developer Tools & Resources
 
@@ -74,7 +88,7 @@ description: "Celo is a leading Ethereum L2. As the frontier chain for global im
 
   <Accordion title="Build with Celo">
     <CardGroup cols={2}>
-      <Card title="Quickstart" icon="bolt" href="/build-on-celo/quickstart">
+      <Card title="Quickstart" icon="bolt" href="/build-on-celo/build-with-ai/celopedia">
         Build & Deploy your dApps in under 5 minutes
       </Card>
       <Card title="Tutorials" icon="graduation-cap" href="/build-on-celo">

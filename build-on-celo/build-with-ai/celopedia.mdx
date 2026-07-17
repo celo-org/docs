@@ -1,79 +1,64 @@
 ---
 title: "Celopedia"
 sidebarTitle: "Celopedia (Skill)"
-description: "Use Celopedia to query Celo ecosystem data, protocol references, contract addresses, MiniPay guidance, DeFi protocols, grants, and AI agent infrastructure from your coding assistant."
+og:description: "Celopedia gives your AI coding assistant deep Celo knowledge — so you can find an idea, shape it, get feedback, and ship on Celo without leaving your editor."
 ---
 
-Celopedia is a builder-focused knowledge skill for Celo. It packages Celo ecosystem intelligence, protocol references, verified contract addresses, MiniPay guidance, DeFi protocol context, grant information, and AI agent infrastructure into a skill that coding assistants can use while you build.
+**Your AI coding assistant, now fluent in Celo.** Celopedia is a knowledge skill that plugs verified Celo intelligence — contract addresses, protocols, MiniPay, grants, and agent infrastructure — straight into the tools you already build with.
 
-Use it when you want your AI coding agent to answer Celo-specific questions, compare ecosystem opportunities, find contract addresses, scaffold common development patterns, or reason about MiniPay, DeFi, stablecoins, governance, and agentic applications on Celo.
+Go from "what should I build?" to a live dApp without tab-hopping through docs.
 
-## What you can do with Celopedia
+<CardGroup cols={2}>
+  <Card title="Find your idea" icon="lightbulb">
+    Search live ecosystem data to spot the gaps and opportunities worth building.
+  </Card>
+  <Card title="Shape your idea" icon="compass-drafting">
+    Compare verticals, pick the right protocols, and scope an architecture that fits Celo.
+  </Card>
+  <Card title="Get feedback" icon="comments">
+    Pressure-test as you go — how saturated is this market, how does my approach compare?
+  </Card>
+  <Card title="Go live fast" icon="rocket">
+    Grab contract addresses, MiniPay and fee-abstraction patterns, and deploy — all in your editor.
+  </Card>
+</CardGroup>
 
-- **Research ecosystem opportunities**: Search ecosystem data, compare verticals, and identify gaps before you build.
-- **Find contract addresses**: Look up verified addresses for core protocol contracts, Mento stablecoins, Uniswap, Aave, Morpho, bridge contracts, and more.
-- **Build MiniPay apps**: Get MiniPay wallet detection, payment, testing, and submission guidance.
-- **Integrate DeFi protocols**: Ask for Celo-specific patterns for protocols such as Uniswap, Aave, Morpho, Mento, Velodrome, Curve, Ubeswap, and stCELO.
-- **Explore grants and funding**: Match a project idea to relevant Celo grant programs and builder support options.
-- **Build AI agents on Celo**: Use references for ERC-8004, x402, the Celo MCP Server, and agent skills.
+## Install Celopedia
 
-## Install
-
-Install Celopedia with `npx skills`:
+Add it to your coding assistant with one command:
 
 ```bash
 npx skills add celo-org/celopedia-skills
 ```
 
-After installing, restart your coding assistant if it does not discover new skills during an active session.
-
 <Note>
-  Celopedia supports agent environments that use file-based skills, including Codex, Claude Code, and OpenClaw. See the GitHub repository for tool-specific install notes.
+  Restart your coding assistant afterward if it doesn't discover new skills mid-session. Celopedia works with file-based skill environments including Codex, Claude Code, and OpenClaw — see the [GitHub repository](https://github.com/celo-org/celopedia-skills) for tool-specific install notes.
 </Note>
 
-## Example prompts
+## Try it
 
-Once installed, ask your coding assistant questions like:
-
-```text
-What lending protocols exist on Celo?
-```
+Once installed, ask your assistant things like:
 
 ```text
+What lending protocols exist on Celo, and which vertical is least saturated?
 Give me the Uniswap V4 contract addresses on Celo mainnet.
-```
-
-```text
-I want to build a payments Mini App. Show me the recommended architecture.
-```
-
-```text
-What grants can I apply to for a DeFi project on Celo?
-```
-
-```text
+Scaffold a payments Mini App with the recommended architecture.
 Set up a Foundry project for Celo with fee abstraction.
 ```
 
-```text
-How saturated is the DEX vertical on Celo compared with other EVM chains?
-```
+## What's inside
 
-## What's included
+| Area | What you get |
+|------|--------------|
+| Network & contracts | Chain IDs, RPCs, explorers, fee currencies, and verified contract addresses |
+| Ecosystem intelligence | Product discovery, competitor scans, and vertical analysis |
+| Builder setup | Foundry, Hardhat, Viem, Wagmi, fee abstraction, and deploy & verify patterns |
+| DeFi | References for Uniswap, Aave, Morpho, Mento, Velodrome, Curve, Ubeswap, and stCELO |
+| MiniPay | Wallet detection, stablecoin payments, ODIS, templates, and listing guidance |
+| AI agents | ERC-8004, x402, the Celo MCP Server, and agent skill references |
+| Grants | Funding programs and grant matchmaking |
 
-| Area | Included references |
-|------|---------------------|
-| Network and contracts | Chain IDs, RPCs, explorers, fee currencies, RPC limits, and verified contract addresses |
-| Ecosystem intelligence | Product discovery, competitor scans, vertical analysis, and Celo ecosystem context |
-| Builder setup | Foundry, Hardhat, Viem, Wagmi, fee abstraction, deployment, and verification patterns |
-| DeFi | Protocol references for Uniswap, Aave, Morpho, Mento, Velodrome, Curve, Ubeswap, and stCELO |
-| MiniPay | Mini App development, wallet detection, stablecoin payments, ODIS, templates, and listing guidance |
-| AI agents | ERC-8004, x402, Celo MCP Server, and agent skill references |
-| Grants | Funding programs and grant matchmaking guidance |
-
-## Data sources
-
-Celopedia is curated from official Celo documentation, protocol references, ecosystem data sources, and live public APIs where applicable. Its sources include Celo Docs, The Grid, DefiLlama, Celoscan, MiniPay references, and protocol documentation from teams across the Celo ecosystem.
+Celopedia is curated from official Celo documentation, protocol references, and live public data sources including Celo Docs, The Grid, DefiLlama, and Celoscan.
 
 ## Resources
 
