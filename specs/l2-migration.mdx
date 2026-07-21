@@ -41,7 +41,7 @@ This means that the geth client is no longer responsible for processing epochs. 
 
 Any contract supporting the use of precompiles will now revert on Celo as a L2. This includes the `UsingPrecompiles` contract. More details [here](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/12/packages/protocol/contracts/common/UsingPrecompiles.sol)
 
-To keep costs of processing epochs low, only the following key functions (used for querying the current epoch or elected validators) have been ported over to the [EpochManager] contract.
+To keep costs of processing epochs low, only the following key functions (used for querying the current epoch or elected validators) have been ported over to the `EpochManager` contract.
 
 - `getEpochNumberOfBlock(uint256)`
 - `getEpochNumber()`
