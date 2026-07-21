@@ -460,14 +460,9 @@
         "tab": "Specs",
         "groups": [
           {
-            "group": "Introduction",
-            "pages": [
-              "specs/index"
-            ]
-          },
-          {
             "group": "Specs",
             "pages": [
+              "specs/index",
               {
                 "group": "Deployments",
                 "pages": [
