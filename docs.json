@@ -702,10 +702,6 @@
   },
   "redirects": [
     {
-      "source": "/infra-partners/specs",
-      "destination": "/specs"
-    },
-    {
       "source": "/blog/2022/01/08/valora-wc-v1",
       "destination": "/"
     },
@@ -2904,6 +2900,10 @@
     {
       "source": "/infra-partners/notices/l2-migration",
       "destination": "/infra-partners/notices/archive/l2-migration"
+    },
+    {
+      "source": "/infra-partners/specs",
+      "destination": "/specs"
     },
     {
       "source": "/cel2/operators/architecture",
