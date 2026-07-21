@@ -460,7 +460,7 @@
         "tab": "Specs",
         "groups": [
           {
-            "group": "Specs",
+            "group": "Specification",
             "pages": [
               "specs/index",
               {
@@ -476,21 +476,21 @@
               "specs/transaction-types",
               "specs/native-bridge",
               "specs/eigenda",
-              "specs/finality",
+              "specs/finality"
+            ]
+          },
+          {
+            "group": "Protocol Upgrades",
+            "pages": [
+              "specs/upgrades/jovian",
+              "specs/upgrades/jello",
+              "specs/upgrades/ice-cream",
+              "specs/upgrades/isthmus",
               {
-                "group": "Protocol Upgrades",
+                "group": "L2 Migration",
                 "pages": [
-                  "specs/upgrades/jovian",
-                  "specs/upgrades/jello",
-                  "specs/upgrades/ice-cream",
-                  "specs/upgrades/isthmus",
-                  {
-                    "group": "L2 Migration",
-                    "pages": [
-                      "specs/l2-migration",
-                      "specs/smart-contract-updates-from-l1"
-                    ]
-                  }
+                  "specs/l2-migration",
+                  "specs/smart-contract-updates-from-l1"
                 ]
               }
             ]
