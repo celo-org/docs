@@ -1,0 +1,53 @@
+---
+title: "Isthmus Upgrade"
+sidebarTitle: "Isthmus"
+---
+
+## Overview
+
+The Isthmus upgrade for the Celo network adopts features from the **Holocene** and **Isthmus** upgrades of Optimism, incorporating important improvements.
+
+This upgrade aligns Celo architecture closely with the Optimism ecosystem, bringing established and tested improvements to our network.
+
+## Specifications
+
+The Celo Isthmus upgrade brings in all consensus and execution changes from Optimism’s Holocene and Isthmus hardforks. For full technical details, see the Optimism specs linked below.
+
+- [Optimism's Holocene Upgrade Specifications](https://specs.optimism.io/protocol/holocene/overview.html)
+- [Optimism's Isthmus Upgrade Specifications](https://specs.optimism.io/protocol/isthmus/overview.html)
+
+### Holocene Highlights
+
+- Upgraded derivation pipeline – A stricter, simpler derivation pipeline enhances the Fault Proof System's worst-case behaviour and compatibility.
+- EIP-1559 configurability - The `SystemConfig` L1 contract lets operators adjust the elasticity and denominator parameters, so the gas target and gas limit can be tuned independently.
+
+### Isthmus Highlights
+
+Isthmus incorporates the execution-layer EIPs from Ethereum’s Prague upgrade, along with several Optimism-specific enhancements.
+
+#### Ethereum Prague's EIPs
+
+- [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702): Allows an EOA to function as a smart-contract wallet for a single transaction.
+- [EIP-2537](https://eips.ethereum.org/EIPS/eip-2537): Adds operations on BLS12-381 curve as a precompile.
+- [EIP-2935](https://eips.ethereum.org/EIPS/eip-2935): Introduces a system contract that stores the last 8,191 block hashes.
+- [EIP-7623](https://eips.ethereum.org/EIPS/eip-7623): Increases the calldata gas cost, making calldata-intensive transactions more expensive.
+- [EIP-7685](https://eips.ethereum.org/EIPS/eip-7685): Extends the block header with a 32-byte `requests_hash` commitment for conveying execution-layer requests to the consensus layer. **In Celo, this field is always `sha256("")`.**
+
+> **Note:** Although **EIP-6110**, **EIP-7002**, and **EIP-7251** exist in the execution-layer codebase, they remain **disabled** in the Isthmus upgrade.
+
+#### Optimism-Specific Improvements
+
+- Updated `withdrawalsRoot`: The `withdrawalsRoot` in block header points to the storage root of `L2ToL1MessagePasser`, simplifying proof generation.
+- Operator Fee: A flexible surcharge that can be tuned to cover chain-specific costs such as Alt-DA storage, ZK proving, or custom gas-token overhead. **In Celo, as with the L1 data fee, the Operator Fee is set to zero by setting `operatorFeeScalar` and `operatorFeeConstant` in `SystemConfig` contract to 0.**
+
+## Upgrade Timelines
+
+The Isthmus upgrade was activated on Mainnet, Alfajores, and Baklava, with the activation process for each network occurring independently.
+
+The table below shows the UNIX timestamp at which the Isthmus upgrade activated for each network, the accompanying UTC date and time, and the approximate L2 block height.
+
+| Network   | Unix Timestamp |    Date & Time (UTC)     | Block Height |
+| --------- | :------------: | :----------------------: | -----------: |
+| Mainnet   |   1752073200   | Wed Jul 09 2025 15:00:00 | ~ 40,172,440 |
+| Alfajores |   1750863600   | Wed Jun 25 2025 15:00:00 | ~ 49,908,280 |
+| Baklava   |   1749654000   | Wed Jun 11 2025 15:00:00 | ~ 37,881,140 |

@@ -1,0 +1,29 @@
+---
+title: "Token Duality"
+---
+
+## What is token duality?
+
+Token duality means that the CELO token is both the native currency of the Celo blockchain as well as an ERC20 compatible token.
+This means CELO tokens can be moved both by doing a native transfer as well as ERC20 transfers and will show up in both in the native account balance and the ERC20 balance, no matter how they were transferred. In contrast to ETH/WETH, no token wrapping or unwrapping is necessary.
+
+## Implementation
+
+The native transfers and balances behave exactly as on Ethereum and are stored in the same way. The CELO contract reads native balances and triggers native transfers via its ERC20 interface.
+
+### Reading balances via ERC20
+
+The ERC20 token does not store the balances in the contract storage, it uses the native balance as the source of truth. The `balanceOf` function just passes through the native balance.
+
+### Transfers via ERC20
+
+Similarly, the ERC20 `transfer` and `transferFrom` functions do not change the contract storage, but initiate a native transfer instead. Since there is no way to trigger native transfers from within a contract in Ethereum, Celo adds a `transfer` precompile for this purpose. This precompile can only be called by the CELO token.
+
+### The `transfer` precompile
+
+The precompile directly manipulates the account balances in the EVM’s statedb. It checks the caller address to verify that it has been called by the CELO token. Since the [Jovian hardfork](/specs/upgrades/jovian), the `from` and `to` addresses get warmed (added to the access list) during precompil execution. Before Jovian, warmness stayed unchanged.
+
+Precompile address: `0xff - 2` == `253`  
+Parameters (abi-encoded): `address from, address to, uint256 value`  
+Gas costs: 9000  
+No return value

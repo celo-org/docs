@@ -1,0 +1,29 @@
+---
+title: "Ice Cream Upgrade"
+sidebarTitle: "Ice Cream"
+---
+
+## Overview
+
+The Ice Cream upgrade for the Celo network upgrades the DA layer to use EigenDA v2, also known as Blazar, to further innovate and strengthen the network’s data availability layer.
+
+Blazar represents a major architectural upgrade to the EigenDA protocol, introducing improved system throughput and stability, alongside new capabilities like permissionless DA payments and enhanced resource throttling.
+
+Most notably for Celo:
+
+- End-to-end confirmation latency is significantly reduced, moving from minutes to near real-time. Blazar’s design enables rollups to reference blocks in their own logic without waiting for L1 confirmations.
+- System throughput and network stability are greatly improved through more efficient chunk distribution, optimized request routing, and horizontal scalability of DA nodes. Support for decentralized dispersal is unlocked by eliminating DDoS attack surfaces inherent in the original push-based mode.
+
+## Specifications
+
+After the Celo Ice Cream update, the Celo sequencer will use EigenDA v2 for distributing transaction data. Therefore, any node following the network must upgrade it's EigenDA proxy to a version compatible with EigenDA v2. For more details see the [Upgrade notice](/infra-partners/notices/archive/eigenda-v2-upgrade).
+
+## Upgrade Timelines
+
+The Ice Cream upgrade was activated on Mainnet, Alfajores, and Baklava, with the activation process for each network occurring independently. As this upgrade was activated on the sequencer, no detailed activation times can be given.
+
+| Network   |    Date & Time (UTC)     |
+| --------- | :----------------------: |
+| Mainnet   | Wed Sep 10 2025 15:00:00 |
+| Alfajores | Wed Aug 20 2025 15:00:00 |
+| Baklava   | Wed Jul 30 2025 15:00:00 |

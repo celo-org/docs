@@ -453,10 +453,47 @@
               "infra-partners/operators/configuration",
               "infra-partners/operators/network-config"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Specs",
+        "groups": [
+          {
+            "group": "Specification",
+            "pages": [
+              "specs/index",
+              {
+                "group": "Deployments",
+                "pages": [
+                  "specs/deployments",
+                  "specs/l1-smart-contract-verification"
+                ]
+              },
+              "specs/token-duality",
+              "specs/transaction-fees",
+              "specs/fee-abstraction",
+              "specs/transaction-types",
+              "specs/native-bridge",
+              "specs/eigenda",
+              "specs/finality"
+            ]
           },
           {
-            "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
+            "group": "Protocol Upgrades",
+            "pages": [
+              "specs/upgrades/jovian",
+              "specs/upgrades/jello",
+              "specs/upgrades/ice-cream",
+              "specs/upgrades/isthmus",
+              {
+                "group": "L2 Migration",
+                "pages": [
+                  "specs/l2-migration",
+                  "specs/smart-contract-updates-from-l1"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -2863,6 +2900,10 @@
     {
       "source": "/infra-partners/notices/l2-migration",
       "destination": "/infra-partners/notices/archive/l2-migration"
+    },
+    {
+      "source": "/infra-partners/specs",
+      "destination": "/specs"
     },
     {
       "source": "/cel2/operators/architecture",

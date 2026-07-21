@@ -1,0 +1,51 @@
+---
+title: "Jovian Upgrade"
+sidebarTitle: "Jovian"
+---
+
+<Warning>
+The Celo Jovian hardfork is still being worked on. This information is preliminary.
+</Warning>
+
+## Overview
+
+The Jovian upgrade for the Celo network adopts features from Optimism's Jovian hardfork, along with Celo-specific improvements to the transfer precompile and gas pricing mechanism.
+
+## Specifications
+
+The Celo Jovian upgrade brings in consensus and execution changes from Optimism's Jovian hardfork. For full technical details, see the Optimism documentation linked below.
+
+- [Optimism's Jovian Upgrade Notice](https://docs.optimism.io/notices/archive/upgrade-17)
+
+### Optimism Jovian Features
+
+- **Cannon Go 1.24 Support**: The on-chain fault proof virtual machine implementation is upgraded to support Go 1.24.
+- **Configurable Minimum Base Fee**: Allows chain operators to specify a minimum base fee to shorten the length of priority fee auctions (disabled by default).
+- **Data Availability Footprint Block Limit**: An in-protocol limit on estimated DA usage prevents spam and priority fee auctions. The `blobGasUsed` property now stores DA footprint values instead of remaining zero. **Celo does not make use of this feature.**
+
+### Celo-Specific Changes
+
+#### Transfer Precompile Address Warming
+
+The [transfer precompile](/specs/token-duality) now warms the `from` and `to` addresses during execution. This aligns with standard EVM behavior where address accesses during value transfers are warmed, ensuring correct gas accounting for subsequent operations on the same address.
+
+Related implementation:
+- [op-geth #433](https://github.com/celo-org/op-geth/pull/433)
+- [op-geth #435](https://github.com/celo-org/op-geth/pull/435) (tracing improvements)
+- [celo-kona #115](https://github.com/celo-org/celo-kona/pull/115)
+
+#### Minimum Base Fee
+
+Celo transitions from its Celo-specific gas price floor mechanism to Optimism's Minimum Base Fee. This aligns Celo's gas pricing with the OP Stack standard while maintaining the ability to set a floor on transaction costs.
+
+Related implementation:
+- [op-geth #445](https://github.com/celo-org/op-geth/pull/445)
+
+## Upgrade Timelines
+
+The Jovian upgrade is scheduled for activation on Mainnet and Celo Sepolia, with the activation process for each network occurring independently.
+
+| Network      | Unix Timestamp | Date & Time (UTC) | Block Height |
+| ------------ | -------------: | ----------------: | -----------: |
+| Mainnet      |      TBD       |        Q1 2026    |          TBD |
+| Celo Sepolia |      TBD       |        Q1 2026    |          TBD |

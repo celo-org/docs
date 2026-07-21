@@ -1,0 +1,48 @@
+---
+title: "Transaction Types On Celo L2"
+sidebarTitle: "Transaction Types"
+---
+
+Different categories of transaction types are relevant to Celo. Some are inherited from Ethereum, others were added to support Celo's Fee Abstraction feature, and some older ones have been superseded and are no longer supported. When developing new applications, please use the tx types marked as "recommended" below.
+
+The [docs.celo.org page about tx types](/home/protocol/transactions/transaction-types) contains additional information on how to handle different tx types, their differences and tooling support.
+
+## Ethereum Compatible Tx Types
+
+To achieve its high level of Ethereum compatibility, Celo supports all Ethereum tx types relevant for an L2. The following transaction types can be used in exactly the same way as on Ethereum and don't require any changes to client libraries or other tooling.
+
+- [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) (recommended), type 2
+- [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930), type 1
+- [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702), type 4 (available post-Isthmus)
+- Legacy Ethereum transaction as described in the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf), type 0
+
+The [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) tx type 3, which provides blobs for data availability on Ethereum, is not supported.
+
+## OP Stack Specific Tx Types
+
+OP Stack has deposited transactions, which are L2 transactions derived from L1 and included in an L2 block. Celo also utilizes this transaction type and introduces the following additional transaction type.
+
+- [Deposited transaction](https://specs.optimism.io/glossary.html#deposited-transaction), type 126
+
+## Celo-Specific Tx Types
+
+The following tx type is an essential part of Celo's Fee Abstraction feature. For more details, read the CIP linked below, and the [Fee Abstraction section](/specs/fee-abstraction).
+
+- [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) (recommended), type 123
+
+## Older, Unsupported Tx Types
+
+These tx types won't be accepted anymore, but transactions in blocks before the L2 migration can still contain transactions of these types.
+
+- [CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md), type 124
+- Legacy Celo transaction, type 0, but with different fields than the Ethereum legacy tx
+
+### Details on Celo Legacy Transactions
+
+For historic reasons, the Celo legacy txs are not prefixed with a tx type number, just like Ethereum legacy txs. To tell these two legacy tx types apart, you have to look at the tx content, which contains additional `feeCurrency`, `gatewayFeeRecipient`, and `gatewayFee` fields for Celo legacy txs:
+
+```text
+RLP([nonce, gasPrice, gasLimit, feeCurrency, gatewayFeeRecipient, gatewayFee, recipient, amount, data, v, r, s])
+```
+
+There is no CIP number for this tx type because it was included in version 1 of the Celo blockchain and CIPs only describe changes introduced after that point in time.
