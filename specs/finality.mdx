@@ -1,0 +1,63 @@
+---
+title: "Finality"
+---
+
+## Overview
+
+The Celo L2 provides two layers of economic security — Celo-economic security and Ethereum-economic security. Celo-economic security is the security the L2 blockchain provides until data has been written to an L1 block and that block has been finalized. In order to provide reorg resistance at Celo-economic security in the L2 design, we need to address two sources of possible reorgs:
+
+1. Avoid discrepancies in what the sequencer shares over the p2p network and posts to the L1.
+2. Avoid those caused by Ethereum reorgs.
+
+The first section below describes the standard OP Stack finality model and where reorgs can occur. The second section describes the modifications Celo L2 makes on top of the OP Stack to mitigate these reorgs.
+
+## Finality and Reorgs in Optimism (Baseline)
+
+Optimism L2 blocks have three levels of finality:
+
+- **Unsafe:** Blocks are shared by the sequencer over the p2p network and can be reorged with no penalty.
+- **Safe:** Blocks are deterministically derived from inputs and L2 data posted to not-yet-finalized Ethereum blocks. These blocks are susceptible to Ethereum reorgs.
+- **Finalized:** Blocks are derived from finalized blocks on Ethereum and can practically not be reorged without massive economic costs. This is Ethereum-economic security.
+
+Once an L2 block is finalized, it has the same security guarantees as the underlying L1 and is highly unlikely to be reorged. Therefore, our focus lies on avoiding reorgs at the unsafe and safe levels.
+
+**Unsafe head reorgs** could happen in the following scenarios:
+
+- The sequencer shares an unsafe block on the p2p network but misses the sequencing window to post the corresponding transaction data to Ethereum. As a result, there won't be valid block data for that height, and the unsafe head will reorg to use a generated empty block.
+- The sequencer distributes an unsafe block on the p2p network but posts different transaction data for the same block height to Ethereum. The unsafe head will reorg to use the data on Ethereum.
+
+These cases are controlled by the sequencer. If the user trusts the sequencer and its actions, it can follow unsafe blocks. If not, it can completely avoid those by only following safe blocks.
+
+**Safe head reorgs** can occur in the following situations:
+
+- An L1 block is reorged, then the corresponding sequencing epoch's blocks will need to be updated to account for the changes in the L1 origin (specifically, deposit transactions). This situation can also cause an unsafe head reorg.
+- If Ethereum reorgs such that transaction data posted either no longer exists or now falls outside of the sequencing window, then the corresponding (previously safe) L2 block will become an empty block.
+
+## Celo L2 Changes to the OP Stack
+
+The following describes modifications Celo L2 makes to the standard OP Stack derivation pipeline to achieve safe-head reorg resistance. In the standard OP Stack, the sequencer follows the unsafe L1 head, which leaves safe blocks susceptible to Ethereum reorgs. Celo L2 changes this behavior.
+
+### 1. Sequencer Uses Finalized L1 Origin
+
+Celo L2 configures the sequencer to follow only finalized blocks on Ethereum by enabling the `--sequencer.use-finalized` flag on the op-node. In the standard OP Stack, the sequencer follows the unsafe L1 head; by contrast, Celo L2 restricts the L1 origin to finalized blocks only. The L1 origin is still incremented in steps of one, so that all invariants relying on this behavior in the Optimism codebase are preserved.
+
+**Trade-off:** This increases the time for user-deposited and (native) bridging transactions to be included in the L2 from the standard ~4 blocks (48 seconds) to at least 2 Ethereum epochs (64 slots, ~12.8 minutes).
+
+### 2. Sequencer Stalling on L1 Finalization Lag
+
+If the Ethereum L1 fails to finalize blocks, the sequencer would continue to create unsafe L2 blocks without a finalized L1 origin to anchor to. To handle this, Celo L2 introduces a safeguard: the sequencer must stall and avoid producing blocks until L1 finalization catches up to below some threshold.
+
+### 3. Fast Finality via Espresso (In Progress)
+
+We are actively working with [Espresso](https://www.espressosys.com/) to provide 1–5 second finality backed by Espresso's economic security guarantees. This will allow Celo L2 users to receive fast confirmation of transactions with meaningful economic backing, significantly improving on the current trade-off between finality speed and reorg resistance.
+
+---
+
+### Summary of Changes
+
+| Change | Standard OP Stack Behavior | Celo L2 Behavior |
+|---|---|---|
+| **L1 origin for sequencing** | Follows the unsafe L1 head | Follows only finalized L1 blocks (`--sequencer.use-finalized`) |
+| **L1 finalization failure** | Sequencer continues producing blocks | Sequencer stalls until finalization catches up |
+| **Deposit inclusion latency** | ~48 seconds (4 blocks) | ~12.8 minutes (2 epochs) |
+| **Fast finality** | None | 1–5s finality via Espresso (in progress) |

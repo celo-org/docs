@@ -1,0 +1,331 @@
+---
+title: "L1 Deploy Verification"
+sidebarTitle: "L1 Contracts Verification"
+---
+
+This guide walks through verifying Celo L1 (Ethereum) smart contracts deployment. It contains steps to verify contracts in the `packages/contracts-bedrock` folder. L2 (Celo) contracts will be available after the [transition](https://x.com/cLabs/status/1900625559090328062).
+
+## 1. Prerequisites
+
+- **Foundry Installed:** Ensure you have Foundry installed and updated (via [foundryup](https://github.com/foundry-rs/foundry)).
+- **JQ Installed:** jq cli tool for handling json files is required later.
+- **API Key:** Obtain an Etherscan (or corresponding block explorer) API key.
+
+## 2. Verify Smart Contracts bytecode
+
+Check that on chain bytecode correspond to compiled bytecode from smart contract release.
+
+Smart contract release is: https://github.com/celo-org/optimism/releases/tag/celo-contracts.L1%2Fv1.8.0--1
+
+Clone the `celo-org/optimism` repository and checkout release tag
+
+```bash
+    git clone https://github.com/celo-org/optimism
+    cd optimism
+    git checkout celo-contracts.L1/v1.8.0--1
+```
+
+Enter the contract folder & compile contracts
+Navigate to the Contracts Folder
+
+```bash
+    cd packages/contracts-bedrock
+    forge build
+```
+
+To verify contract, will compare onchain bytecode with compiled one using a script.
+
+For that, create `scripts/compare_bytecode.sh` with following content:
+
+```bash
+#!/bin/bash
+# Usage: ./compare_bytecode_ignore_immutables.sh <contract-address> <artifact-file>
+
+if [ "$#" -lt 2 ]; then
+  echo "Usage: $0 <contract-address> <artifact-file>"
+  exit 1
+fi
+
+CONTRACT_ADDRESS=$1
+ARTIFACT_FILE=$2
+
+# Fetch deployed bytecode from chain
+DEPLOYED_BYTECODE=$(cast code "$CONTRACT_ADDRESS" --rpc-url https://eth.llamarpc.com | tr -d '\n')
+
+if [ -z "$DEPLOYED_BYTECODE" ]; then
+  echo "Error: Failed to fetch bytecode."
+  exit 1
+fi
+
+# Get local bytecode
+LOCAL_BYTECODE=$(jq -r '.deployedBytecode.object' "$ARTIFACT_FILE" | tr -d '\n')
+
+if [ -z "$LOCAL_BYTECODE" ]; then
+  echo "Error: Failed to extract local bytecode."
+  exit 1
+fi
+
+# Special exception for SuperchainConfig version diff
+if grep -q "SuperchainConfig" "$ARTIFACT_FILE"; then
+  # Replace metadata version "1.1.1-beta.1" with "1.1.0" since SuperchainConfig was deployed with version "1.1.0" instead of "1.1.1-beta.1" (no other changes)
+  LOCAL_BYTECODE=$(echo "$LOCAL_BYTECODE" | sed 's/600c81526020017f312e312e312d626574612e31/600581526020017f312e312e3000000000000000/g')
+fi
+
+# Replace immutables with 0000
+IMMUTABLES=$(jq -c '.deployedBytecode.immutableReferences' "$ARTIFACT_FILE")
+
+replace_with_zeros() {
+  local BYTECODE=$1
+  local START=$2
+  local LENGTH=$3
+  local PREFIX=${BYTECODE:0:START}
+  local SUFFIX=${BYTECODE:START+LENGTH}
+  local ZEROS=$(printf '%*s' "$LENGTH" '' | tr ' ' '0')
+  echo "$PREFIX$ZEROS$SUFFIX"
+}
+
+if [ "$IMMUTABLES" != "null" ]; then
+  for entry in $(echo "$IMMUTABLES" | jq -c '.[] | .[]'); do
+    START=$(($(echo "$entry" | jq '.start * 2')))
+    LENGTH=$(($(echo "$entry" | jq '.length * 2')))
+
+    DEPLOYED_BYTECODE=$(replace_with_zeros "$DEPLOYED_BYTECODE" "$((START + 2))" "$LENGTH")
+  done
+fi
+
+# Now compare ignoring immutables and version diff
+if [ "$DEPLOYED_BYTECODE" = "$LOCAL_BYTECODE" ]; then
+  echo "$ARTIFACT_FILE Success: Deployed bytecode matches local artifact (excluding immutables/version diff)."
+else
+  echo "$ARTIFACT_FILE Mismatch: Bytecode differs beyond immutables/version diff."
+  echo "Deployed: $DEPLOYED_BYTECODE"
+  echo "Local:    $LOCAL_BYTECODE"
+fi
+
+```
+
+And make sure can be executed:
+
+```bash
+chmod +x scripts/compare_bytecode.sh
+```
+
+Then to verify each contract:
+
+```bash
+./scripts/compare_bytecode.sh 0xde47b113e4157ed15fa46c5572562ac11146c5ea forge-artifacts/L1CrossDomainMessenger.sol/L1CrossDomainMessenger.json
+./scripts/compare_bytecode.sh 0x783A434532Ee94667979213af1711505E8bFE374 forge-artifacts/ProxyAdmin.sol/ProxyAdmin.json
+./scripts/compare_bytecode.sh 0x55093104b76FAA602F9d6c35A5FFF576bE78d753 forge-artifacts/AddressManager.sol/AddressManager.json
+./scripts/compare_bytecode.sh 0x693cfd911523ccae1a14ade2501ae4a0a463b446 forge-artifacts/CeloSuperchainConfig.sol/CeloSuperchainConfig.json
+./scripts/compare_bytecode.sh 0x64fe3f9201e6534d2d744c7c57d134e709131a6e forge-artifacts/CeloTokenL1.sol/CeloTokenL1.0.8.15.json
+./scripts/compare_bytecode.sh 0xe8b013bee7bd603e2f0b4825638559d645a4c4cb forge-artifacts/DisputeGameFactory.sol/DisputeGameFactory.json
+./scripts/compare_bytecode.sh 0xde47b113e4157ed15fa46c5572562ac11146c5ea forge-artifacts/L1CrossDomainMessenger.sol/L1CrossDomainMessenger.json
+./scripts/compare_bytecode.sh 0xad5d111e961a5e451c8172034115bcc0551b6551 forge-artifacts/L1ERC721Bridge.sol/L1ERC721Bridge.json
+./scripts/compare_bytecode.sh 0x5e21245e97A7BB4733f72c412DcdDCED1f408587 forge-artifacts/L1StandardBridge.sol/L1StandardBridge.json
+./scripts/compare_bytecode.sh 0xff53e1a6885b5a90b24327e13b04b95e2b97bd6c forge-artifacts/ProtocolVersions.sol/ProtocolVersions.json
+./scripts/compare_bytecode.sh 0x6322C2f2D6a4305Fc033754d486A5A067Ee5F9b1 forge-artifacts/StorageSetter.sol/StorageSetter.json
+./scripts/compare_bytecode.sh 0x7b5a84f818b6fc3f079ee87c214f369062188d2a forge-artifacts/SystemConfig.sol/SystemConfig.json
+./scripts/compare_bytecode.sh 0x53c165169401764778f780a69701385eb0ff19b7 forge-artifacts/SuperchainConfig.sol/SuperchainConfig.json
+./scripts/compare_bytecode.sh 0xfaB0F466955D87e596Ca87E20c505bB6470D0DC4 forge-artifacts/PreimageOracle.sol/PreimageOracle.json
+./scripts/compare_bytecode.sh 0x8A12E1754f729C0856E2E32D4821577f0B245bfA forge-artifacts/Mips.sol/Mips.json
+./scripts/compare_bytecode.sh 0xDFBB69681F217aB3221E94AFCA4fEa51f5c6a779 forge-artifacts/DelayedWETH.sol/DelayedWETH.json
+./scripts/compare_bytecode.sh 0x3Da872782f9fB696fD72Af2ec9313a56bDA6f06d forge-artifacts/OptimismPortal2.sol/OptimismPortal2.json
+```
+
+## 3. Verify Contract are correctly configured
+
+**Preliminary**. On a terminal set up RPC and Etherscan variables:
+
+```bash
+export ETH_RPC_URL="https://mainnet.infura.io/v3/<<YOURAPIKEY>>"
+export ETHERSCAN_API_KEY="<<YOURAPIKEY>>"
+```
+
+### 3.1 ProxyAdmin is owned by SystemOwnerSafe
+
+```bash
+$ cast call 0x783A434532Ee94667979213af1711505E8bFE374 "owner() (address)"
+0x4092A77bAF58fef0309452cEaCb09221e556E112
+```
+
+This mean every proxy is indirectly owned by SystemOwnerSafe
+
+### 3.2 Check SystemConfigProxy is correctly configured
+
+SystemConfigProxy is `0x89E31965D844a309231B1f17759Ccaf1b7c09861`
+
+```bash
+# Check its owned by SystemOwnerSafe
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "owner() (address)"
+0x4092A77bAF58fef0309452cEaCb09221e556E112
+
+# Check all bridge addresses are correctly configured
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "l1CrossDomainMessenger() (address)"
+0x1AC1181fc4e4F877963680587AEAa2C90D7EbB95
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "l1ERC721Bridge() (address)"
+0x3C519816C5BdC0a0199147594F83feD4F5847f13
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "l1StandardBridge() (address)"
+0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "optimismPortal() (address)"
+0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC #should match the optimismPortalProxy
+```
+
+### 3.3 Check SuperChainConfig correctly configured
+
+CeloSuperChainConfig is `0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33`
+
+```bash
+#CeloSuperChainConfig managed by ProxyAdmin
+$ cast call 0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33 "admin() (address)"
+0x783A434532Ee94667979213af1711505E8bFE374
+
+#CeloSuperChainConfig depends on OP SuperChainConfig
+$ cast call 0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33 "superchainConfig() (address)"
+0x95703e0982140D16f8ebA6d158FccEde42f04a4C
+
+#OP's SuperChainConfig managed by their ProxyAdmin
+$ cast call 0x95703e0982140D16f8ebA6d158FccEde42f04a4C "admin() (address)"
+0x543bA4AADBAb8f9025686Bd03993043599c6fB04
+
+#Bridge is not paused
+cast call 0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33 "paused() (bool)"
+false
+
+#Guardian for SuperChain Bridge Status is a address controlled by cLabs
+$ cast call 0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33 "guardian() (address)"
+0x6E226fa22e5F19363d231D3FA048aaBa73CC1f47
+```
+
+### 3.4 Bridge Contracts are correctly configured
+
+Bridge Contracts:
+
+- L1CrossDomainMessengerProxy `0x1AC1181fc4e4F877963680587AEAa2C90D7EbB95`
+- L1ERC721BridgeProxy `0x3C519816C5BdC0a0199147594F83feD4F5847f13`
+- L1StandardBridgeProxy `0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe`
+- OptimismPortalProxy `0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC`
+- OptimismPortal2 `0x3Da872782f9fB696fD72Af2ec9313a56bDA6f06d`
+
+Note: L1CrossDomainMessengerProxy is old kind of proxy that depends on AddressManager, it does not have an owner that can be queried.
+
+```bash
+# Check L1ERC721BridgeProxy is owned by ProxyAdmin
+$ cast call 0x3C519816C5BdC0a0199147594F83feD4F5847f13 "admin() (address)"
+0x783A434532Ee94667979213af1711505E8bFE374
+# Check it uses the right SuperChainConfig
+$ cast call 0x3C519816C5BdC0a0199147594F83feD4F5847f13 "superchainConfig() (address)"
+0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33
+
+# Check L1StandardBridgeProxy is owned by ProxyAdmin
+# The L1StandardBridgeProxy uses a L1ChugSplashProxy
+# To check the owner one must check the storage key 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103
+$ cast storage 0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103
+0x000000000000000000000000783a434532ee94667979213af1711505e8bfe374
+$ cast parse-bytes32-address 0x000000000000000000000000783a434532ee94667979213af1711505e8bfe374
+0x783A434532Ee94667979213af1711505E8bFE374
+
+# Check it uses the right SuperChainConfig
+$ cast call 0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe "superchainConfig() (address)"
+0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33
+# Check it uses the right SystemConfig
+$ cast call 0x9C4955b92F34148dbcfDCD82e9c9eCe5CF2badfe "systemConfig() (address)"
+0x89E31965D844a309231B1f17759Ccaf1b7c09861
+
+# Check OptimismPortalProxy is managed by ProxyAdmin
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "admin() (address)"
+0x783A434532Ee94667979213af1711505E8bFE374
+# Check it points to OptimismPortal2
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "implementation() (address)"
+0x3Da872782f9fB696fD72Af2ec9313a56bDA6f06d
+# Check it has a 7 days delay window
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "proofMaturityDelaySeconds() (uint256)"
+604800
+# Check it uses the right SuperChainConfig
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "superchainConfig() (address)"
+0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33
+# Check it uses the right SystemConfig
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "systemConfig() (address)"
+0x89E31965D844a309231B1f17759Ccaf1b7c09861
+# Check is has a cLabs Managed Account as guardian
+$ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "guardian() (address)"
+0x6E226fa22e5F19363d231D3FA048aaBa73CC1f47
+```
+
+## 4 Verify CELO L1 Token is correctly deployed
+
+Start by checking on `SystemConfig` that customGasToken is enabled and pointing to CELO ERC20
+
+```bash
+# Check custom gas token is enabled
+$ cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "isCustomGasToken() (bool)"
+true
+# Check ERC20 Address points to CELO with right number of decimals
+cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "gasPayingToken() (address,uint8)"
+0x057898f3C43F129a17517B9056D23851F124b19f
+18
+# Check the symbol
+cast call 0x89E31965D844a309231B1f17759Ccaf1b7c09861 "gasPayingTokenSymbol() (string)"
+"CELO"
+```
+
+Check the ERC20 has correct ownership and all supply is locked on the bridge
+
+```bash
+# CELO is implemented as a proxy managed by the ProxyAdmin
+$ cast call 0x057898f3C43F129a17517B9056D23851F124b19f "admin() (address)"
+0x783A434532Ee94667979213af1711505E8bFE374
+
+# check the totalSupply is 1Billion
+$ cast call 0x057898f3C43F129a17517B9056D23851F124b19f "totalSupply() (uint256)"
+1000000000000000000000000000 [1e27]
+# 1e27 / 1e18 = 1e9 = 1billion CELO
+# check balance of OptimismPortalProxy to be total supply (only true before first withdrawal on Celo L2)
+$ cast call 0x057898f3C43F129a17517B9056D23851F124b19f "balanceOf(address) (uint256)" 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC
+1000000000000000000000000000 [1e27]
+```
+
+## 5. Verifying SecurityCouncil Configuration
+
+Based on [this forum post](https://forum.celo.org/t/proposing-celo-l2s-security-council/10578), tied to [CGP-171](https://mondo.celo.org/governance/cgp-171); the security council is a 2/2 multisig whose members are a cLabsMultisig and "Celo Community Security Council"
+
+### 5.1 Verify the SystemOwnerSafe multisig
+
+During migration, this will be a 1/3 multisig, later becomes a 2/2. The third member is a cLabs managed account used during migraiton
+
+```bash
+# Check members
+$ cast call 0x4092A77bAF58fef0309452cEaCb09221e556E112 "getOwners()(address[])"
+[0xC03172263409584f7860C25B6eB4985f0f6F4636, 0x9Eb44Da23433b5cAA1c87e35594D15FcEb08D34d, 0xbcA67eE5188efc419c42C91156EcC888b20664f3]
+
+# Check threshold
+$ cast call 0x4092A77bAF58fef0309452cEaCb09221e556E112 "getThreshold()(uint256)"
+1
+```
+
+### 5.2 Verify the cLabs Multisig
+
+cLabs Multisig is a 6/8 multisig, and is a member of the SystemOwnerSafe multisig
+
+```bash
+# Check members
+$ cast call 0x9Eb44Da23433b5cAA1c87e35594D15FcEb08D34d "getOwners()(address[])"
+[0x0Bd06B2b192BD9eC316f2880A0c296D9Bc3225e0, 0x21e595451bDD69a85cf946f37f5A6A356C3F875D, 0x09c0B069100F5d880a596605b94Cc9493D96e797, 0x326b764CEb4FE11e70af538D3CB997Bb2e16659d, 0x48139512241D32047760E7481eBf0b6BF3390f8F, 0x4D89adf3a4a71b25FB1a6D702Cf059CF5BebD02d, 0x8b4b85f78F799F8364198FFEd2266d3cb3EA0daE, 0xE0024dCadff414fCb0AAfBB475e92Ccc367E1A84]
+
+# Check threshold
+$ cast call 0x9Eb44Da23433b5cAA1c87e35594D15FcEb08D34d "getThreshold()(uint256)"
+6
+```
+
+### 5.3 Verify the Celo Community Security Council
+
+Celo Community Security Council is a 6/8 multisig, and is a member of the SystemOwnerSafe multisig
+
+```bash
+# Check members
+$ cast call 0xC03172263409584f7860C25B6eB4985f0f6F4636 "getOwners()(address[])"
+[0xB963047c5D875b7FE777339B1E6B61ac4df1f3e2, 0x6FDb3eA186981aA32DD8e7B782d95733Ca3c13A1, 0xd0cE4D055d04bDA69b20815A3F796019bB68c6Db, 0x148dfaC5dF51Ab1D7b02a3B53f1e2Da1F0A6B5Ca, 0x5f70938aA8d2fd91EE3959998E5DdaACFb6Ffb85, 0xD1C635987B6Aa287361d08C6461491Fa9df087f2, 0x2BE5E223E368E8c0f404a1f3Eb4eB09f99C8FaD8, 0xc3E966E79eF1aA4751221F55fB8A36589C24C0cA]
+
+# Check threshold
+$ cast call 0xC03172263409584f7860C25B6eB4985f0f6F4636  "getThreshold()(uint256)"
+6
+```

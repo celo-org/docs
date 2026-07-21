@@ -1,0 +1,164 @@
+---
+title: "Smart Contract Updates From L1"
+sidebarTitle: "Contract Updates"
+---
+
+Smart contract changes that will be deployed to Celo before the transition can be seen in this diff: [https://github.com/celo-org/celo-monorepo/pull/11035/files](https://github.com/celo-org/celo-monorepo/pull/11035/files)
+
+## Epochs And rewards
+
+### Overview of rewards and epochs in L1
+
+The Celo L1 produces a special block ("epoch block”) every 17280 blocks (approximately one day). This blocks includes "epoch transactions” that are triggered by the blockchain itself.
+
+During these epoch transactions, the protocol does:
+
+- Updates target voting yield
+- Calculates validator rewards
+- Update validators' scores
+- Mints Celo:
+  - For validator rewards (then exchanged for cUSD using Mento)
+  - For voter rewards
+  - For CarbonOffsetting fund
+  - For Community Fund (Celo Governance)
+- Distributing validator rewards to the validators, groups and delegator (in cUSD)
+- Distributing voter rewards
+- Running validator elections (the result is the addresses of the signers, then stored in the blockchain storage and accessed via a precompile)
+
+### Overview of rewards and epochs in L2
+
+In the L2 "epoch blocks” no longer exist. There are no transactions triggered by the blockchain itself. Precompiles that were used to query epoch state are also not longer available.
+
+The concept for epochs still remains, but they are determined to be at least as long as "epoch duration” (targeted to be set as one day on mainnet), but there's no guaranteed limit of the maximal duration. The size of an epoch can no longer be deterministically calculated based on block numbers alone.
+
+The logic for processing epochs is now fully implemented in Solidity in the [EpochManager contract](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/12/packages/protocol/contracts-0.8/common/EpochManager.sol) introduced in Contract Release 12. cLabs is intended to run a bot to call the functions to trigger the epoch change and rewards distributions as soon as they are ready to do so, in a best-effort way.
+
+Epochs are now processed using multiple calls, as the gas consumption of the process involved uses is relatively high.
+
+Celo is no longer minted when processing the epoch, it is now transferred from the `CeloUnreleasedTreasury`. The contract `CeloUnreleasedTreasury` is allocated the full amount of unminted Celo at the time of the transition to L2.
+
+When "epoch duration" has elapsed since the current epoch started, the function `startNextEpochProcess` can be called. This function:
+
+1. Is permissionless, every EOA or contract can call it given that certain conditions are met:
+    1. Enough time has elapsed after the beginning of the epoch.
+    2. The epoch is not currently processing.
+2. Updates target voting yield
+3. Calculates epoch rewards (`EpochRewards.calculateTargetEpochRewards()`)
+4. Allocates validator rewards:
+    1. mints CELO and exchanges it to cUSD
+    2. Sets an internal mapping with the allocation for each validator. Validators can later claim it calling `sendValidatorPayment`
+5. Starts a block that prevents certain actions to be performed, notable lock Celo, unlock Celo and change validator locks.
+6. Emits events:
+    1. EpochRewards: `TargetVotingYieldUpdated(uint256 fraction)`
+    2. CeloUnreleasedTreasury: `Released(address indexed to, uint256 amount)`
+    3. cUSD: `Transfer(address indexed from, address indexed to, uint256 value)`
+    4. EpochManager `EpochProcessingStarted(uint256 indexed epochNumber)`
+
+After `startNextEpochProcess` is called, the epoch can be fully finished by calling `finishNextEpochProcess` . This function:
+
+1. Is permissionless, every EOA or contract can call it given that certain conditions are met:
+    1. `startNextEpochProcess`  has been called before.
+2. Distributes rewards to voters (Celo)
+3. Elects validators (the result is stored as an array of accounts of the elected validators, signers are also stored for backwards compatibility purposes)
+4. Unblocks all actions blocked in `startNextEpochProcess` .
+5. Updates the Epoch state.
+6. Emits events:
+    1. Election: `EpochRewardsDistributedToVoters(address indexed group, uint256 value)`
+    2. CeloUnreleasedTreasury: `Released(address indexed to, uint256 amount)`
+    3. EpochManager: `EpochProcessingEnded(uint256 indexed epochNumber)`
+
+> In the unlikely case that `startNextEpochProcess`  needs to use more gas than available in a block, the same result can be achieved using multiple calls to `processGroup` .
+
+### Scoring
+
+The rewards for a validator, its group and its voters were previously based on the score of the validator, and the downtime the validator. The score itsef was defined by the downtime the validator had over multiple epochs.
+
+The scoring is now managed by a contract called `ScoreManager`. This contract is a placeholder for a more complex implementation, meanwhile Governance and [a multisig](https://mondo.celo.org/governance/cgp-169) has the power to change the score of a validator. The score is now fully proportional to the rewards the validator and its voters will get at the end of the epoch.
+
+## Celo minting
+
+In the L1 Celo used to be minted using the well known `mint` function, that was using the `transfer` precompile under the hood.
+
+In the L2, the Celo in the L2 is a bridged token from the L1. At the moment of the transition the whole total supply of Celo (1 billion tokens) is allocated to the bridge contract in the L1. In the L2, all holders (contracts and EOAs) will remain with their balance in their account, but tokens that were previously unallocated in Celo as a L1 will now be allocated to a new contract called `CeloUnreleasedTreasury`.
+
+This comes with the implication that the `totalSuply()` function of the Celo Token (contract name `GoldToken`) will return 1 billion Celo after the L2 transition.
+
+This means that the Celo token is now an ERC20 on the Ethereum network, and the tokens available on the Celo chain are a bridged representation of the tokens in the L1. This is achieved by using the custom gas token functionality of the OP stack.
+
+## Governance Hotfix
+
+The hot fix mechanism has been changed from a consensus of validators to a security council multisig. The current setup will be available until the transition.
+
+## FeeCurrencyDirectory
+
+The contract `FeeCurrencyWhitelist` is now deprecated. Fee currencies are now stored in a new contract called `FeeCurrencyDirectory`. To add a new token to the directory, an address for an oracle needs to be provided, as well as the intrinsic gas for transactions paid with this token as fee. Changes can only be made by Celo Governance.
+
+The intrinsic gas is the amount of gas that it will be added to all transactions paying for fees with this token. It is meant to accurately represent the cost of the functions `debitGasFees`and `creditGasFees`, that were used to collect the fees involved while validating the transaction.
+
+## FeeHandler
+
+The [FeeHandler](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0052.md) was extended to support multiple beneficiaries. As it works in the L1 right now, only a carbon fund beneficiary and the burn fraction can be set.
+
+After Contract Release 12 is deployed, many beneficiaries can be set, and the burn fraction would be the reminding of all the allocations of the beneficiaries.
+
+## Slashing
+
+DowntimeSlasher and DoubleSigningSlasher will be deprecated after L2 transition, as the validators get replaced for RPC prividers. GovernanceSlasher will still be available and now supports removing members of a validator group and changing the slash multiplier. Governance slasher now supports to enable a multisig with the slasher role.
+
+## Deprecated contracts
+
+The following contracts have been deprecated:
+
+1. Attestations (withdraws still enabled).
+2. FeeCurrencyWhitelist
+3. GasPriceMinimum
+4. BlockChainParameters
+5. DowntimeSlasher
+6. DoubleSigningSlasher
+7. Random
+8. UsingPrecompiles
+
+Deprecation means that they do not fulfill any purpose as a required primitive to run the chain. Deprecated contracts still remain on-chain, although their functions are supposed to revert with a [L2 check](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/12/packages/protocol/contracts-0.8/common/IsL2Check.sol).
+
+They still remain in the Celo Registry, but are scheduled for deletion after the L2 fully activates.
+
+Some functionality that was provided by  precompiles (notably epoch number and elected validators) can be found in the EpochManager contract.
+
+Some contracts had function that exposed precompiles will begin to revert in L2, at least this contract still internally uses those functions. For more details, please refer to this [forum post](https://forum.celo.org/t/upcoming-changes-deprecation-of-celo-precompiles-and-usingprecompilescontract-functions-in-l2-migration/9421/2).
+
+### Deprecated Contract Methods with Replacements Table
+
+| Deprecated Contract Method | Replacement  |
+|--------|--------|
+| BlockchainParams#getEpochNumberOfBlock | EpochManager#getEpochNumberOfBlock |
+| BlockchainParams#getFirstBlockNumberForEpoch | EpochManager#getFirstBlockAtEpoch|
+| FeeCurrencyWhitelist#getAddresses | FeeCurrencyDirectory#getAddresses |
+| Election#getCurrentValidatorSigners |  EpochManager#getElectedSigners |
+| Election#getGroupEpochRewards | Election#getGroupEpochRewardsBasedOnScore |
+| GovernanceSlasher#slash |  GovernanceSlasher#slashL2 |
+| Validators#registerValidator | Validators#registerValidatorNoBLS |
+
+## Precompiles deprecation
+
+On the L2, the `transfer` precompile is the only supported Celo-specific precompile.
+Also, the `transfer` precompile can no longer mint Celo. There's an ongoing effort to push the transfer precompile upstream to the OP stack to guarantee full Superchain compatibility.
+
+All other Celo-specific precompiles are deprecated, so the L2 migration removes support for the following precompiles:
+
+- `fractionMulExp`
+- `proofOfPossession`
+- `getValidator`
+- `numberValidators`
+- `epochSize`
+- `blockNumberFromHeader`
+- `hashHeader`
+- `getParentSealBitmap`
+- `getVerifiedSealBitmap`
+
+## Transition
+
+Contracts for the L2 will be deployed before the transition, with Celo as L1. The contracts change behaviour automatically at the time of the transition.
+
+## Update March 24th 2025
+
+Contract Release 12 has been [sucessfully deployed](https://mondo.celo.org/governance/cgp-166) to Celo Mainnet.

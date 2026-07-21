@@ -453,10 +453,52 @@
               "infra-partners/operators/configuration",
               "infra-partners/operators/network-config"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Specs",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "specs/index"
+            ]
           },
           {
-            "group": "Celo L2 Specs",
-            "pages": ["infra-partners/specs"]
+            "group": "Specs",
+            "pages": [
+              {
+                "group": "Deployments",
+                "pages": [
+                  "specs/deployments",
+                  "specs/l1-smart-contract-verification"
+                ]
+              },
+              "specs/token-duality",
+              "specs/transaction-fees",
+              "specs/fee-abstraction",
+              "specs/transaction-types",
+              "specs/native-bridge",
+              "specs/eigenda",
+              "specs/finality",
+              {
+                "group": "Protocol Upgrades",
+                "pages": [
+                  "specs/upgrades/jovian",
+                  "specs/upgrades/jello",
+                  "specs/upgrades/ice-cream",
+                  "specs/upgrades/isthmus",
+                  {
+                    "group": "L2 Migration",
+                    "pages": [
+                      "specs/l2-migration",
+                      "specs/smart-contract-updates-from-l1"
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -664,6 +706,10 @@
     "dark": "/images/CeloDocs_LogoDark.svg"
   },
   "redirects": [
+    {
+      "source": "/infra-partners/specs",
+      "destination": "/specs"
+    },
     {
       "source": "/blog/2022/01/08/valora-wc-v1",
       "destination": "/"

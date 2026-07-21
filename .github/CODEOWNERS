@@ -21,6 +21,9 @@
 # Legacy section - Blockchain team (L1 content)
 /legacy/ @celo-org/blockchain
 
+# Specs section (was specs.celo.org) - Blockchain team
+/specs/ @celo-org/blockchain
+
 # Tooling section
 /tooling/ @celo-org/devrel
 

@@ -1,0 +1,27 @@
+---
+title: "Native Bridge"
+---
+
+With the L2 migration, the Celo blockchain gained a native bridge to Ethereum based on [OP Stack's Standard Bridge](https://docs.optimism.io/app-developers/guides/bridging/standard-bridge). Specifically we use Custom Gas Token feature. This page describes the process of bridging assets between L1 and L2.
+
+The Celo token now exists in both L1 and L2 versions. The L1 version is a standard ERC20 token with a total supply of 1 billion, fully minted to the `OptimismPortal` smart contract, which is part of the bridge (this setup allows any Celo token holder on L2 to bridge their tokens to L1). The L2 version is the native token on the L2 Celo chain, preserving the balances from the Celo L1 chain. Tokens that have not yet been minted on the Celo L1 chain, such as tokens for Community Fund, are now minted to the `CeloDistributionSchedule`, which manages further distribution.
+
+## Bridging CELO from L1 to L2
+
+To deposit ERC20 Celo tokens onto the chain, users should use the `OptimismPortalProxy.depositERC20Transaction` method. Before depositing tokens with `depositERC20Transaction`, users must first call `approve()` on the `OptimismPortal`. After the deposit is made, L1 tokens are bridged, and an equivalent amount of tokens is minted as native Celo tokens in the user's account on Layer 2 (L2).
+
+## Bridging CELO from L2 to L1
+
+To withdraw Celo from the L2 chain, users should use the `L2ToL1MessagePasser.initiateWithdrawal` method. The process for proving and finalizing withdrawals is the [same](https://docs.optimism.io/op-stack/bridging/withdrawal-flow) as it is on OP chains that use ETH as the native token.
+
+## Bridging ETH
+
+Native ETH bridging is not supported for now since L1 bridge considers L1 Celo ERC20 as native token for Celo L2 and actively rejects any native ETH sent to the bridge. It is possible to bridge WETH (wrapped ETH) which behaves as standard ERC20 token both on L1 and L2.
+
+## Bridged ERC20 Tokens
+
+ERC20 tokens can be bridged the same way as in the unmodified OP Stack, see [Bridging ERC-20 Tokens to OP Mainnet With the Optimism SDK](https://docs.optimism.io/app-developers/tutorials/bridging/cross-dom-bridge-erc20) for a tutorial on this.
+
+## Using Bridged Tokens as Fee Abstraction
+
+The `OptimismMintableERC20` (used to represent ERC20 tokens from L1 on L2) supports the [`IFeeCurrency`](https://github.com/celo-org/fee-currency-example/blob/master/src/IFeeCurrency.sol) interface, which is a requirement to use them as a Fee Abstraction token. Before a new `OptimismMintableERC20` instance can actually be used as Fee Abstraction, it still has to be added to the `FeeCurrencyDirectory` (`0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685`) by Celo governance. This is currently only the case for `WETH`.
