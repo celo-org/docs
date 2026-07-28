@@ -4,7 +4,7 @@ title: "Native Bridge"
 
 With the L2 migration, the Celo blockchain gained a native bridge to Ethereum based on [OP Stack's Standard Bridge](https://docs.optimism.io/app-developers/guides/bridging/standard-bridge). Specifically we use Custom Gas Token feature. This page describes the process of bridging assets between L1 and L2.
 
-The Celo token now exists in both L1 and L2 versions. The L1 version is a standard ERC20 token with a total supply of 1 billion, fully minted to the `OptimismPortal` smart contract, which is part of the bridge (this setup allows any Celo token holder on L2 to bridge their tokens to L1). The L2 version is the native token on the L2 Celo chain, preserving the balances from the Celo L1 chain. Tokens that have not yet been minted on the Celo L1 chain, such as tokens for Community Fund, are now minted to the `CeloDistributionSchedule`, which manages further distribution.
+The Celo token now exists in both L1 and L2 versions. The L1 version is a standard ERC20 token with a total supply of 1 billion, fully minted to the `OptimismPortal` smart contract, which is part of the bridge (this setup allows any Celo token holder on L2 to bridge their tokens to L1). The L2 version is the native token on the L2 Celo chain, preserving the balances from the Celo L1 chain. Tokens that have not yet been minted on the Celo L1 chain, such as tokens for Community Fund, are now minted to the `CeloUnreleasedTreasury`, which manages further distribution.
 
 ## Bridging CELO from L1 to L2
 
