@@ -60,158 +60,9 @@ sequenceDiagram
 5. **Server verifies and settles** - Payment is verified and settled on-chain
 6. **Server delivers resource** - Requested content returned with payment receipt
 
-## Using thirdweb SDK
+## Get Started with the Celo Facilitator
 
-[thirdweb](https://thirdweb.com) provides a complete x402 implementation that supports Celo and 170+ EVM chains. The SDK handles wallet connection, payment signing, and error handling automatically.
-
-### Client Side (React)
-
-Use the `useFetchWithPayment` hook for automatic payment handling:
-
-```typescript
-import { useFetchWithPayment } from "thirdweb/react";
-import { createThirdwebClient } from "thirdweb";
-
-const client = createThirdwebClient({ clientId: "your-client-id" });
-
-function PaidAPIComponent() {
-  const { fetchWithPayment, isPending } = useFetchWithPayment(client);
-
-  const handleApiCall = async () => {
-    // Automatically handles:
-    // - Wallet connection prompts
-    // - Payment signing
-    // - Insufficient funds UI
-    // - Retry logic
-    const data = await fetchWithPayment(
-      "https://api.example.com/paid-endpoint"
-    );
-    console.log(data);
-  };
-
-  return (
-    <button onClick={handleApiCall} disabled={isPending}>
-      {isPending ? "Processing..." : "Access Premium Content"}
-    </button>
-  );
-}
-```
-
-### Client Side (TypeScript)
-
-For non-React applications, use `wrapFetchWithPayment`:
-
-```typescript
-import { wrapFetchWithPayment } from "thirdweb/x402";
-import { createThirdwebClient } from "thirdweb";
-import { privateKeyToAccount } from "thirdweb/wallets";
-
-const client = createThirdwebClient({ clientId: "your-client-id" });
-const account = privateKeyToAccount({ client, privateKey: "0x..." });
-
-const fetchWithPayment = wrapFetchWithPayment({
-  client,
-  account,
-  paymentOptions: {
-    maxValue: "1000000", // Max payment in base units
-  },
-});
-
-// Use like regular fetch - payments handled automatically
-const response = await fetchWithPayment("https://api.example.com/premium");
-const data = await response.json();
-```
-
-### Server Side (Next.js)
-
-Accept x402 payments in your API endpoints:
-
-```typescript
-// app/api/premium-content/route.ts
-import { settlePayment, facilitator } from "thirdweb/x402";
-import { createThirdwebClient } from "thirdweb";
-import { celo } from "thirdweb/chains";
-
-const client = createThirdwebClient({
-  secretKey: process.env.THIRDWEB_SECRET_KEY,
-});
-
-const thirdwebFacilitator = facilitator({
-  client,
-  serverWalletAddress: "0xYourServerWalletAddress",
-});
-
-export async function GET(request: Request) {
-  const paymentData = request.headers.get("X-PAYMENT");
-
-  const result = await settlePayment({
-    resourceUrl: "https://your-api.com/premium-content",
-    method: "GET",
-    paymentData,
-    payTo: "0xYourWalletAddress",
-    network: celo, // Use Celo chain
-    price: "$0.01", // Price in USD
-    facilitator: thirdwebFacilitator,
-    routeConfig: {
-      description: "Access to premium API content",
-      mimeType: "application/json",
-    },
-  });
-
-  if (result.status === 200) {
-    return Response.json({ data: "premium content" });
-  } else {
-    return Response.json(result.responseBody, {
-      status: result.status,
-      headers: result.responseHeaders,
-    });
-  }
-}
-```
-
-### Server Side (Express)
-
-```typescript
-import express from "express";
-import { settlePayment, facilitator } from "thirdweb/x402";
-import { createThirdwebClient } from "thirdweb";
-import { celo } from "thirdweb/chains";
-
-const app = express();
-
-const client = createThirdwebClient({
-  secretKey: process.env.THIRDWEB_SECRET_KEY,
-});
-
-const thirdwebFacilitator = facilitator({
-  client,
-  serverWalletAddress: "0xYourServerWalletAddress",
-});
-
-app.get("/api/premium", async (req, res) => {
-  const paymentData = req.headers["payment-signature"] || req.headers["x-payment"];
-
-  const result = await settlePayment({
-    resourceUrl: `${req.protocol}://${req.get("host")}${req.originalUrl}`,
-    method: "GET",
-    paymentData,
-    payTo: "0xYourWalletAddress",
-    network: celo,
-    price: "$0.05",
-    facilitator: thirdwebFacilitator,
-  });
-
-  if (result.status === 200) {
-    res.json({ data: "premium content" });
-  } else {
-    res.status(result.status).set(result.responseHeaders).json(result.responseBody);
-  }
-});
-```
-
-## Celo x402 Facilitator
-
-Celo runs its own self-hosted x402 facilitator at [x402.celo.org](https://x402.celo.org/), built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation, as an alternative to thirdweb's facilitator. It accepts **USDC** and **USDT** on Celo via the gasless EIP-3009 `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+Celo runs its own hosted x402 facilitator at [x402.celo.org](https://x402.celo.org/), built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless EIP-3009 `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
 
 <Note>
   Source: `celo-org/x402-facilitator` (private repo). The endpoints below are live at [x402.celo.org](https://x402.celo.org/).
@@ -226,9 +77,6 @@ Celo runs its own self-hosted x402 facilitator at [x402.celo.org](https://x402.c
 | `GET`  | `/supported` | List supported `(network, scheme)` pairs.                          |
 | `GET`  | `/health`    | Liveness probe.                                                    |
 
-<Warning>
-  cUSD / USDm are **not** supported by this facilitator — Mento's `StableTokenV2` implements only EIP-2612 `permit`, not EIP-3009.
-</Warning>
 
 ### Pointing a Resource Server at It
 
@@ -274,33 +122,32 @@ Celo is an ideal network for x402 due to:
 
 - **Low fees**: Gas costs under $0.001 per transaction
 - **Fast finality**: ~1 second block times
-- **Stablecoin support**: Native USDC, USDT, USDm for predictable pricing
+- **Stablecoin support**: Native USDC and USDT for predictable pricing
 - **Fee abstraction**: Agents can pay gas in the same stablecoins used for x402 payments — no separate CELO balance needed. See [Fee Abstraction for Agents](/build-on-celo/build-with-ai/overview#fee-abstraction-for-agents)
 
 ### Supported Payment Tokens on Celo
 
-The thirdweb facilitator supports tokens with ERC-2612 permit or ERC-3009 authorization:
+The Celo facilitator settles **USDC** and **USDT** via EIP-3009 `transferWithAuthorization`:
 
 | Token | Address | Decimals |
 |-------|---------|----------|
-| USDC | `0xcebA9300f2b948710d2653dD7B07f33A8B32118C` | 6 |
+| USDC | `0xcEBA9300f2b948710d2653dD7B07f33A8B32118C` | 6 |
 | USDT | `0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e` | 6 |
-| USDm | `0x765DE816845861e75A25fCA122bb6898B8B1282a` | 18 |
 
 ### Celo Configuration
 
-```typescript
-import { celo, celoSepolia } from "thirdweb/chains";
+Standard x402 middleware targets Celo by its CAIP-2 network identifier:
 
+```typescript
 // Mainnet
 const mainnetConfig = {
-  network: celo,
+  network: "eip155:42220",
   price: "$0.01",
 };
 
-// Testnet (Sepolia)
+// Testnet (Celo Sepolia)
 const testnetConfig = {
-  network: celoSepolia,
+  network: "eip155:11142220",
   price: "$0.01",
 };
 ```
@@ -309,76 +156,19 @@ const testnetConfig = {
 
 ### AI Agent API Access
 
-In this example, an AI agent uses its own wallet to pay for API calls autonomously. The agent doesn't need API keys or pre-registered accounts—it simply pays per request using the x402 protocol. This enables truly permissionless agent commerce:
-
-```typescript
-// AI agent paying for API calls autonomously
-const agent = {
-  wallet: agentWallet,
-  fetchWithPayment: wrapFetchWithPayment({ client, account: agentWallet }),
-};
-
-// Agent pays per API call - no API keys needed
-const marketData = await agent.fetchWithPayment("https://api.market.com/prices");
-const analysis = await agent.fetchWithPayment("https://api.ai.com/analyze");
-```
+An AI agent uses its own wallet to pay for API calls autonomously. The agent doesn't need API keys or pre-registered accounts—it simply pays per request using the x402 protocol. Each call attaches an `X-PAYMENT` header signed by the agent's wallet, enabling truly permissionless agent commerce without accounts or onboarding.
 
 ### Pay-Per-Use AI Inference
 
-This server-side example demonstrates dynamic pricing using the `upto` scheme. Instead of charging a fixed price upfront, the server:
-1. Verifies the payment authorization is valid for up to the maximum amount
-2. Runs the inference and measures actual token usage
-3. Charges only for what was used (respecting the minimum price)
-
-This is ideal for AI inference where costs vary based on prompt length and output tokens:
-
-```typescript
-// Server: Charge based on actual token usage with "upto" scheme
-const result = await settlePayment({
-  resourceUrl: request.url,
-  method: "POST",
-  paymentData,
-  payTo: "0xYourWallet",
-  network: celo,
-  scheme: "upto",           // Dynamic pricing
-  price: "$1.00",           // Maximum amount
-  minPrice: "$0.01",        // Minimum amount
-  facilitator: thirdwebFacilitator,
-});
-
-// Verify first, then charge based on actual usage
-const { tokens } = await runAIInference(prompt);
-const actualPrice = tokens * 0.0001; // $0.0001 per token
-
-await settlePayment({
-  ...paymentArgs,
-  price: actualPrice,
-});
-```
+Instead of charging a fixed price upfront, a server can price each request by actual usage: verify that the buyer's authorization covers up to a maximum amount, run the inference, measure real token consumption, and settle only for what was used. This is ideal for AI inference, where cost varies with prompt length and output tokens. Support for usage-based or "up-to" pricing depends on the x402 middleware and facilitator you use.
 
 ### Micropayments for Content
 
-Publishers can monetize individual articles instead of requiring subscriptions. Each request is checked for a valid x402 payment—if missing, the server returns `402 Payment Required` with pricing details. If present, the payment is settled and content is delivered:
+Publishers can monetize individual articles instead of requiring subscriptions. Each request is checked for a valid x402 payment—if missing, the server returns `402 Payment Required` with pricing details; if present, the payment is settled and the content is delivered. This unlocks true pay-per-article pricing at amounts too small for card-based payments.
 
-```typescript
-// Pay-per-article instead of subscriptions
-app.get("/articles/:id", async (req, res) => {
-  const result = await settlePayment({
-    resourceUrl: req.url,
-    method: "GET",
-    paymentData: req.headers["x-payment"],
-    payTo: publisherWallet,
-    network: celo,
-    price: "$0.10",
-    facilitator: thirdwebFacilitator,
-    routeConfig: {
-      description: "Premium article access",
-    },
-  });
-  // ...
-});
-```
+## Alternative: thirdweb facilitator
 
+[thirdweb](https://thirdweb.com) offers a hosted x402 facilitator and SDK supporting Celo and 170+ EVM chains. It provides React hooks (`useFetchWithPayment`), a `wrapFetchWithPayment` helper for non-React clients, and a `settlePayment` helper for servers, handling wallet connection, payment signing, and retries. See the [thirdweb x402 docs](https://portal.thirdweb.com/x402) and [playground](https://playground.thirdweb.com/x402) to get started.
 
 ## Resources
 
