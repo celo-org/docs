@@ -56,65 +56,125 @@ sequenceDiagram
 1. **Client requests resource** - AI agent or app sends HTTP request to API
 2. **Server returns 402** - If no payment attached, server responds with `HTTP 402 Payment Required` and payment details in headers
 3. **Client signs payment** - Client signs payment authorization using their wallet
-4. **Client retries with payment** - Request sent again with `X-PAYMENT` header
+4. **Client retries with payment** - Request sent again with a `PAYMENT-SIGNATURE` header
 5. **Server verifies and settles** - Payment is verified and settled on-chain
 6. **Server delivers resource** - Requested content returned with payment receipt
 
 ## Get Started with the Celo Facilitator
 
-Celo runs its own hosted x402 facilitator at [x402.celo.org](https://x402.celo.org/), built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless EIP-3009 `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+Celo runs its own hosted x402 facilitator, built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless EIP-3009 `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+
+Two hosts are involved, and they are not interchangeable:
+
+- **Dashboard** — [x402.celo.org](https://x402.celo.org/) serves the web dashboard (a single-page app). Do not point a resource server at it.
+- **Payment API** — `https://api.x402.celo.org` (mainnet) is the facilitator endpoint your resource server talks to for `/verify`, `/settle`, and `/supported`. Celo Sepolia is at `https://api.x402.sepolia.celo.org`.
 
 <Note>
-  Source: `celo-org/x402-facilitator` (private repo). The endpoints below are live at [x402.celo.org](https://x402.celo.org/).
+  Source: `celo-org/x402-facilitator` (private repo). The endpoints below are live at `https://api.x402.celo.org` (mainnet) and `https://api.x402.sepolia.celo.org` (Celo Sepolia).
 </Note>
 
 ### Endpoints
 
-| Method | Path         | Purpose                                                           |
-|--------|--------------|--------------------------------------------------------------------|
-| `POST` | `/verify`    | Off-chain signature and simulation check of a payment payload.     |
-| `POST` | `/settle`    | Submit the buyer's authorization on-chain (facilitator pays gas).  |
-| `GET`  | `/supported` | List supported `(network, scheme)` pairs.                          |
-| `GET`  | `/health`    | Liveness probe.                                                    |
+Base URLs:
+
+- **Mainnet** — `https://api.x402.celo.org`
+- **Celo Sepolia** — `https://api.x402.sepolia.celo.org`
+
+| Method | Path         | Auth        | Purpose                                                           |
+|--------|--------------|-------------|--------------------------------------------------------------------|
+| `POST` | `/verify`    | Open        | Off-chain signature and simulation check of a payment payload.     |
+| `POST` | `/settle`    | **API key** | Submit the buyer's authorization on-chain (facilitator pays gas).  |
+| `GET`  | `/supported` | Open        | List supported `(network, scheme)` pairs.                          |
+| `GET`  | `/health`    | Open        | Liveness probe.                                                    |
+
+Only `/settle` requires an API key — so `/verify` and `/supported` succeed and an integration looks healthy right up until its first settlement, which fails with `401` if no key is attached. See [Getting an API Key](#getting-an-api-key).
 
 
 ### Pointing a Resource Server at It
 
-Any standard x402 middleware that accepts a custom facilitator URL can use the Celo facilitator. Example with `x402-express`:
+The x402 v2 middleware wires a resource server to the Celo facilitator. Install the scoped packages:
+
+```bash
+npm i @x402/express @x402/core @x402/evm
+```
 
 ```ts
 import express from "express";
-import { paymentMiddleware } from "x402-express";
+import { paymentMiddleware, x402ResourceServer } from "@x402/express";
+import { HTTPFacilitatorClient, type RoutesConfig } from "@x402/core/server";
+import { ExactEvmScheme } from "@x402/evm/exact/server";
+
+// Celo's hosted facilitator — note the api. subdomain
+const facilitator = new HTTPFacilitatorClient({
+  url: "https://api.x402.celo.org",
+  // Attaches your metering key to every facilitator request. /settle is
+  // key-gated; without a valid key it returns 401 Missing X-API-Key.
+  createAuthHeaders: async () => {
+    const h = { "X-API-Key": process.env.X402_API_KEY! };
+    return { verify: h, settle: h, supported: h };
+  },
+});
+
+const server = new x402ResourceServer(facilitator);
+server.register("eip155:*", new ExactEvmScheme());
+
+// The RoutesConfig annotation is load-bearing: without it `network` widens to
+// `string` and no longer satisfies the CAIP-2 `${string}:${string}` type.
+const routes: RoutesConfig = {
+  "GET /premium": {
+    accepts: [
+      {
+        scheme: "exact",
+        network: "eip155:42220", // Celo mainnet
+        payTo: "0xYourSellerPayoutAddress", // your wallet — receives the USDC
+        price: {
+          amount: "10000", // $0.01 — USDC has 6 decimals; always a string
+          asset: "0xcEBA9300f2b948710d2653dD7B07f33A8B32118C",
+          extra: { name: "USDC", version: "2" }, // EIP-712 domain, must match the token
+        },
+      },
+    ],
+    description: "Premium content",
+  },
+};
 
 const app = express();
-
-app.use(
-  paymentMiddleware(
-    "0xYourSellerPayoutAddress", // where buyer funds land — not the facilitator's wallet
-    {
-      "GET /premium": {
-        price: {
-          amount: "10000", // smallest unit — USDC/USDT have 6 decimals, so 10000 = 0.01
-          asset: {
-            address: "0xcEBA9300f2b948710d2653dD7B07f33A8B32118C", // Celo mainnet USDC
-            decimals: 6,
-            eip712: { name: "USDC", version: "2" }, // must match the token exactly
-          },
-        },
-        network: "eip155:42220", // Celo mainnet
-      },
-    },
-    { url: "https://x402.celo.org" }, // point at the Celo facilitator
-  ),
-);
-
+app.use(paymentMiddleware(routes, server)); // routes first, then server
 app.get("/premium", (_req, res) => res.json({ data: "paid content" }));
 app.listen(3000);
 ```
 
+Using Hono instead of Express? Swap `@x402/express` → `@x402/hono`; the body is identical.
+
 <Warning>
-  USDT has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in `asset.eip712` or signature verification fails.
+  On Celo, use the explicit `price` object shown above. The `price: "$0.01"` dollar shorthand type-checks but currently throws `No default asset configured for network eip155:42220` at request time — it will work once the release carrying Celo's default-asset registry entry ships.
 </Warning>
+
+<Warning>
+  USDT has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in the `extra` field or signature verification fails.
+</Warning>
+
+### Getting an API Key
+
+`/settle` is metered, so accepting real payments requires an API key. To create one:
+
+1. Open the [dashboard](https://x402.celo.org) and connect your wallet.
+2. Click **Create API key** and sign the message. This is an off-chain signature — no gas, no transaction.
+3. The key is shown once. Copy it and set it as `X402_API_KEY` in your server environment.
+
+<Warning>
+  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement credits.
+</Warning>
+
+New accounts get free credits on both networks. Beyond that, credits are bought by depositing USDC on the dashboard, priced at $0.001 per settlement.
+
+If a call to `/settle` fails, the status code tells you why:
+
+| Status | Meaning                                                        |
+|--------|---------------------------------------------------------------|
+| `401`  | Missing or invalid API key.                                   |
+| `402`  | Out of credits — top up on the dashboard.                     |
+| `429`  | Free-tier rate limit reached.                                 |
 
 ## x402 on Celo
 
@@ -136,19 +196,31 @@ The Celo facilitator settles **USDC** and **USDT** via EIP-3009 `transferWithAut
 
 ### Celo Configuration
 
-Standard x402 middleware targets Celo by its CAIP-2 network identifier:
+Each route lists what it accepts by CAIP-2 network identifier. Use the flat `price` object with an explicit asset address on both networks:
 
 ```typescript
 // Mainnet
-const mainnetConfig = {
+const mainnetAccepts = {
+  scheme: "exact",
   network: "eip155:42220",
-  price: "$0.01",
+  payTo: "0xYourSellerPayoutAddress",
+  price: {
+    amount: "10000", // $0.01 — USDC has 6 decimals
+    asset: "0xcEBA9300f2b948710d2653dD7B07f33A8B32118C", // Celo mainnet USDC
+    extra: { name: "USDC", version: "2" },
+  },
 };
 
 // Testnet (Celo Sepolia)
-const testnetConfig = {
+const testnetAccepts = {
+  scheme: "exact",
   network: "eip155:11142220",
-  price: "$0.01",
+  payTo: "0xYourSellerPayoutAddress",
+  price: {
+    amount: "10000", // $0.01 — USDC has 6 decimals
+    asset: "0x01C5C0122039549AD1493B8220cABEdD739BC44E", // Celo Sepolia USDC
+    extra: { name: "USDC", version: "2" },
+  },
 };
 ```
 
@@ -156,7 +228,7 @@ const testnetConfig = {
 
 ### AI Agent API Access
 
-An AI agent uses its own wallet to pay for API calls autonomously. The agent doesn't need API keys or pre-registered accounts—it simply pays per request using the x402 protocol. Each call attaches an `X-PAYMENT` header signed by the agent's wallet, enabling truly permissionless agent commerce without accounts or onboarding.
+An AI agent uses its own wallet to pay for API calls autonomously. The agent doesn't need API keys or pre-registered accounts—it simply pays per request using the x402 protocol. Each call attaches a `PAYMENT-SIGNATURE` header signed by the agent's wallet, enabling truly permissionless agent commerce without accounts or onboarding.
 
 ### Pay-Per-Use AI Inference
 
@@ -175,7 +247,8 @@ Publishers can monetize individual articles instead of requiring subscriptions. 
 | Resource | Link |
 |----------|------|
 | x402 Official Website | [x402.org](https://www.x402.org) |
-| Celo x402 Facilitator | [x402.celo.org](https://x402.celo.org/) |
+| Celo x402 Dashboard | [x402.celo.org](https://x402.celo.org/) |
+| Celo x402 Facilitator API | `https://api.x402.celo.org` |
 | thirdweb x402 Docs | [portal.thirdweb.com/x402](https://portal.thirdweb.com/x402) |
 | thirdweb Playground | [playground.thirdweb.com/x402](https://playground.thirdweb.com/x402) |
 | GitHub | [github.com/coinbase/x402](https://github.com/coinbase/x402) |
