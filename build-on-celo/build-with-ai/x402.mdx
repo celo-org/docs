@@ -80,12 +80,14 @@ Base URLs:
 - **Mainnet** — `https://api.x402.celo.org`
 - **Celo Sepolia** — `https://api.x402.sepolia.celo.org`
 
-| Method | Path         | Purpose                                                           |
-|--------|--------------|--------------------------------------------------------------------|
-| `POST` | `/verify`    | Off-chain signature and simulation check of a payment payload.     |
-| `POST` | `/settle`    | Submit the buyer's authorization on-chain (facilitator pays gas).  |
-| `GET`  | `/supported` | List supported `(network, scheme)` pairs.                          |
-| `GET`  | `/health`    | Liveness probe.                                                    |
+| Method | Path         | Auth        | Purpose                                                           |
+|--------|--------------|-------------|--------------------------------------------------------------------|
+| `POST` | `/verify`    | Open        | Off-chain signature and simulation check of a payment payload.     |
+| `POST` | `/settle`    | **API key** | Submit the buyer's authorization on-chain (facilitator pays gas).  |
+| `GET`  | `/supported` | Open        | List supported `(network, scheme)` pairs.                          |
+| `GET`  | `/health`    | Open        | Liveness probe.                                                    |
+
+Only `/settle` requires an API key — so `/verify` and `/supported` succeed and an integration looks healthy right up until its first settlement, which fails with `401` if no key is attached. See [Getting an API Key](#getting-an-api-key).
 
 
 ### Pointing a Resource Server at It
@@ -103,13 +105,21 @@ import { HTTPFacilitatorClient, type RoutesConfig } from "@x402/core/server";
 import { ExactEvmScheme } from "@x402/evm/exact/server";
 
 // Celo's hosted facilitator — note the api. subdomain
-const facilitator = new HTTPFacilitatorClient({ url: "https://api.x402.celo.org" });
+const facilitator = new HTTPFacilitatorClient({
+  url: "https://api.x402.celo.org",
+  // Attaches your metering key to every facilitator request. /settle is
+  // key-gated; without a valid key it returns 401 Missing X-API-Key.
+  createAuthHeaders: async () => {
+    const h = { "X-API-Key": process.env.X402_API_KEY! };
+    return { verify: h, settle: h, supported: h };
+  },
+});
 
 const server = new x402ResourceServer(facilitator);
 server.register("eip155:*", new ExactEvmScheme());
 
-// the RoutesConfig annotation is load-bearing: without it, "eip155:42220"
-// widens to string and no longer satisfies the CAIP-2 network type
+// The RoutesConfig annotation is load-bearing: without it `network` widens to
+// `string` and no longer satisfies the CAIP-2 `${string}:${string}` type.
 const routes: RoutesConfig = {
   "GET /premium": {
     accepts: [
@@ -143,6 +153,28 @@ Using Hono instead of Express? Swap `@x402/express` → `@x402/hono`; the body i
 <Warning>
   USDT has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in the `extra` field or signature verification fails.
 </Warning>
+
+### Getting an API Key
+
+`/settle` is metered, so accepting real payments requires an API key. To create one:
+
+1. Open the [dashboard](https://x402.celo.org) and connect your wallet.
+2. Click **Create API key** and sign the message. This is an off-chain signature — no gas, no transaction.
+3. The key is shown once. Copy it and set it as `X402_API_KEY` in your server environment.
+
+<Warning>
+  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement credits.
+</Warning>
+
+New accounts get free credits on both networks. Beyond that, credits are bought by depositing USDC on the dashboard, priced at $0.001 per settlement.
+
+If a call to `/settle` fails, the status code tells you why:
+
+| Status | Meaning                                                        |
+|--------|---------------------------------------------------------------|
+| `401`  | Missing or invalid API key.                                   |
+| `402`  | Out of credits — top up on the dashboard.                     |
+| `429`  | Free-tier rate limit reached.                                 |
 
 ## x402 on Celo
 
