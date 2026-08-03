@@ -1,0 +1,64 @@
+---
+title: "Deployments"
+---
+
+## Mainnet
+
+Celo Mainnet was migrated to an L2 on March 26, 2025, around 3:00 AM UTC, at block *31056500*. For this, the L1 chain was stopped at a block height of *31056499* and the existing state was migrated to work with the L2 nodes. The migration process preserved the full L1 history while updating it to work with the Celo L2 stack. More technical details are available in the [migration docs](/specs/l2-migration).
+
+The Celo L2 network has the following chain properties:
+
+- Block period: 1 second
+- Block gas limit: 30,000,000 gas
+- Block gas target: 6,000,000 gas (see EIP-1559 elasticity multiplier)
+- EIP-1559 elasticity multiplier: 5
+- EIP-1559 denominator: 400
+- EIP-1559 floor: 25 Gwei
+
+### Parameters
+
+- [ProxyOwner owner](https://mondo.celo.org/governance/cgp-171): [`0x4092A77bAF58fef0309452cEaCb09221e556E112`](https://app.safe.global/home?safe=eth:0x4092A77bAF58fef0309452cEaCb09221e556E112)
+- Guardian address (can pause/unpause the bridge): `0x6E226fa22e5F19363d231D3FA048aaBa73CC1f47`
+
+### Contract addresses
+
+L1 and L2 contract addresses are listed in the documentation.
+
+- [L1 contracts](/tooling/contracts/l1-contracts#celo-mainnet)
+- [Core contracts](/tooling/contracts/core-contracts#celo-mainnet)
+- [Fee Abstraction contracts](/tooling/contracts/token-contracts#celo-mainnet)
+
+## Celo Sepolia testnet
+
+The Celo Sepolia testnet has the same chain properties as Celo Mainnet:
+
+- Block period: 1 second
+- Block gas limit: 30,000,000 gas
+- Block gas target: 6,000,000 gas (see EIP-1559 elasticity multiplier)
+- EIP-1559 elasticity multiplier: 5
+- EIP-1559 denominator: 400
+- EIP-1559 floor: 25 Gwei
+
+### Contract addresses
+
+L1 and L2 contract addresses are listed in the documentation.
+
+- [L1 contracts](/tooling/contracts/l1-contracts#celo-sepolia-testnet)
+- [Core contracts](/tooling/contracts/core-contracts#celo-sepolia-testnet)
+- [Fee Abstraction contracts](/tooling/contracts/token-contracts#celo-sepolia-testnet)
+
+## OP stack config
+
+| Config                            | Celo        | OP     |
+|-----------------------------------|-------------|--------|
+| `maxSequencerDrift`               | 2892        | 1800   |
+| `sequencerWindowSize`             | 3600        | 3600   |
+| `channelTimeout`                  | 300         | 300    |
+| `finalizationPeriodSeconds`       | 12          | 12     |
+| `enableGovernance`                | `false`     | `true` |
+| `eip1559Denominator`              | 400         | 50     |
+| `eip1559DenominatorCanyon`        | 400         | 250    |
+| `eip1559Elasticity`               | 5           | 6      |
+| `eip1559BaseFeeFloor`             | 25000000000 | -      |
+| `gasPriceOracleBaseFeeScalar`     | 0           | 1368   |
+| `gasPriceOracleBlobBaseFeeScalar` | 0           | 810949 |

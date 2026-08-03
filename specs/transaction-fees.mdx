@@ -1,0 +1,35 @@
+---
+title: "Transaction Fees"
+---
+
+## Overview
+
+While you can send transactions on Celo as you do on any Ethereum or OP-Stack chain, there are some key differences that are relevant if you want a deeper understanding:
+
+- **[Fee Abstraction](/specs/fee-abstraction)**, which allows users to pay for transaction fees in ERC20 tokens instead of CELO and is covered in its own chapter
+- **[Zero L1 & Operator Fees](#zero-l1--operator-fees)**, meaning that the OP-Stack L1 & Operator fees are configured to always be zero, so that Celo chains don't incur any fees on top of the normal Ethereum transaction fees
+- The **[base fee floor](#base-fee-floor)**, which sets a lower limit for a block's base fee
+- The **[FeeHandler](#feehandler)** contract that decides what to do with the collected base fees
+
+## Zero L1 & Operator Fees
+
+OP-Stack supports charging transaction senders an [L1 data fee](https://docs.optimism.io/stack/transactions/fees#l1-data-fee), which is added on top of the normal transaction fees and can't be directly influenced or limited by the tx sender. The fee is meant to cover the cost of L1 transactions, especially for data availability. Since CELO uses EigenDA, the data availability costs are low and predictable, so that this mechanism is not needed.
+
+The L1 fees are configured to zero by setting the `gasPriceOracleBaseFeeScalar` and `gasPriceOracleBlobBaseFeeScalar` to zero, so that the L1 fee formula always returns zero. The `GasPriceOracle` will also correctly return zero as a result, so that you don't have to change your code if you are already relying on the `GasPriceOracle` due to supporting other OP-Stack chains.
+
+The [Isthmus](/specs/upgrades/isthmus) upgrade also introduces an [Operator fee](https://specs.optimism.io/protocol/isthmus/exec-engine.html#operatorfees), which is a configurable cost designed to price chain-specific resources such as Alt-DA storage or ZK proving. Celo disables this charge as well by setting both `operatorFeeScalar` and `operatorFeeConstant` to `0`.
+
+If you are coming from Ethereum, not having L1 data and operator fees is what you are used to, and you will feel right at home on Celo.
+
+## Base Fee Floor
+
+Celo follows the usual [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) rules to determine a block's base fee with on modification: The base fee can't fall below a certain limit, the base fee floor. This prevents the chain to be spammed with unimportant transactions that will make the chain state grow rapidly and make future scaling harder. The floor is set sufficiently low to still keep average transactions below 0.01 USD.
+
+The base fee floor is set in the `eip1559BaseFeeFloor` rollup configuration variable and is denominated in native CELO token. If Fee Abstraction is used to pay in other tokens, the base fee is converted to the token's value at the current exchange rate.
+
+## FeeHandler
+
+All base fees are sent to the FeeHandler contract, which is responsible for deciding what to eventually do with the fees. The final behavior for Celo L2 mainnet has not been confirmed yet (as of 2024-11-15). On Celo L1, the FeeHandler:
+
+- burns 80% of the fees (after converting non-CELO fees to CELO)
+- sends 20% of the fees to carbon offsetting projects as part of the Ultragreen Money initiative.

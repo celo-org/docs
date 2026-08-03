@@ -1,0 +1,479 @@
+---
+title: "L1 to L2 Migration"
+sidebarTitle: "L2 Migration"
+---
+
+The switch from the Celo L1 blockchain to the Celo L2 introduces a variety of changes, most of which are not visible to the majority of developers and even less to the end users. However, tool developers, infrastructure operators and some developers will have to take a few of these changes into account. This page contains all information to check if this is the case for you or not.
+
+## Changes for Contracts Developers
+
+- [Removed precompiles](/specs/smart-contract-updates-from-l1#precompiles-deprecation) (all except the `transfer` precompile)
+- During the migration the following hardforks are enabled:
+  - [Berlin](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/berlin/__init__.py)
+  - [London](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/london/__init__.py)
+  - [Arrow Glacier](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/arrow_glacier/__init__.py)
+  - [Gray Glacier](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/gray_glacier/__init__.py)
+  - [Shanghai](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/shanghai/__init__.py)
+  - [Cancun](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/cancun/__init__.py)
+- The following Optimism specific hardforks are enabled:
+  - [Canyon](https://specs.optimism.io/protocol/canyon/overview.html)
+  - [Delta](https://specs.optimism.io/protocol/delta/overview.html)
+  - [Ecotone](https://specs.optimism.io/protocol/ecotone/overview.html)
+  - [Fjord](https://specs.optimism.io/fjord/overview.html)
+    - Notably, this hardfork also enables the [`P256VERIFY`](https://specs.optimism.io/protocol/precompiles.html#p256verify) precompile, which performs signature verification for the secp256r1 elliptic curve. This curve has widespread adoption. It's used by Passkeys, Apple Secure Enclave and many other systems.
+  - [Granite](https://specs.optimism.io/protocol/granite/overview.html)
+
+### Precompile Deprecation and Epoch Management
+
+As part of Celo's transition to a L2 network, the following Celo precompiles, except the `Transfer` precompile, will be deprecated.
+
+- `FRACTION_MUL`
+- `PROOF_OF_POSSESSION`
+- `GET_VALIDATOR`
+- `NUMBER_VALIDATORS`
+- `EPOCH_SIZE`
+- `BLOCK_NUMBER_FROM_HEADER`
+- `HASH_HEADER`
+- `GET_PARENT_SEAL_BITMAP`
+- `GET_VERIFIED_SEAL_BITMAP`
+
+This means that the geth client is no longer responsible for processing epochs. Instead, processing of epochs, rewards distribution and storage of currently elected validators is now handled by the `EpochManager` contract.
+
+Any contract supporting the use of precompiles will now revert on Celo as a L2. This includes the `UsingPrecompiles` contract. More details [here](https://github.com/celo-org/celo-monorepo/blob/release/core-contracts/12/packages/protocol/contracts/common/UsingPrecompiles.sol)
+
+To keep costs of processing epochs low, only the following key functions (used for querying the current epoch or elected validators) have been ported over to the `EpochManager` contract.
+
+- `getEpochNumberOfBlock(uint256)`
+- `getEpochNumber()`
+- `validatorSignerAddressFromCurrentSet()`
+- `numberValidatorsInCurrentSet()`
+
+Read more on new [epoch management and reward distribution](/specs/smart-contract-updates-from-l1#epochs-and-rewards) or [deprecated precompiles](/specs/smart-contract-updates-from-l1#precompiles-deprecation).
+
+### FeeCurrencyDirectory
+
+We introduced a new contract, `FeeCurrencyDirectory`, which is responsible for managing the fee currencies used in the Celo network. This contract is replacement for `FeeCurrencyWhitelist` and keeps track of ERC-20 tokens that can be used as gas currencies on Celo network with additional setup of intrinsic gas cost of transactions for these fee currencies.
+
+### FeeCurrencyWhitelist
+
+The `FeeCurrencyWhitelist` contract has been replaced by the `FeeCurrencyDirectory` contract.
+
+### Deactivated Random Contract
+
+The `Random` core contract has been deactivated. The [EIP-4399](https://eips.ethereum.org/EIPS/eip-4399) `PREVRANDAO` opcode provide some pseudo-randomness now. Please be aware of the limitations mentioned in the EIP, as well as the following OP Stack specific limitations:
+
+- The randao value is read from the L1, it is known a longer time in advance.
+- Since multiple L2 blocks are derived from the same L1 block, the `PREVRANDAO` value will not change with every L2 block, but only with the L1 block.
+
+### Deactivated BlockchainParameters Contract
+
+The `BlockchainParameters` core contract has been deactivated.
+
+The `blockGasLimit` can now be found by querying the Optimism L1 `SystemConfig` contract and calling the `gasLimit()` getter.
+
+The `intrinsicGasForAlternativeFeeCurrency` can now be found by querying the [FeeCurrencyDirectory contract](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts-0.8/common/FeeCurrencyDirectory.sol) function `getCurrencyConfig(token).intrinsicGas`.
+
+### Updated Governance Hotfix
+
+The Governance Hotfix process has undergone several changes due to the absence of validators on L2, now using a multisig approach. Here’s a detailed explanation of these changes:
+
+#### Original Hotfix Process
+
+Previously, the hotfix process relied heavily on a set of validators:
+
+1. **Validator Approval**: A byzantine quorum of validators was needed to whitelist a hotfix. Validators had financial incentives to act in the network's best interest, ensuring that any approved hotfix had been vetted by a trustworthy group.
+2. **Dynamic Validator Set**: The list of validators who approved the hotfix changed with each epoch. This dynamic nature made it difficult for validators to collude and approve a malicious hotfix.
+3. **Epoch-Dependent**: If a hotfix was not executed within the same epoch it was approved, it needed to be reapproved by the new set of validators in the next epoch.
+4. **Prepare Step**: The hotfix required a "prepare" step, ensuring that the current set of validators had approved the hotfix before it could be executed.
+
+#### Updated Hotfix Process
+
+Due to the absence of validators on L2, the process now incorporates a multisig approach:
+
+1. **Multisig Approval**: The new process requires the approval of an approver multisig, but now also includes the Security Council multisig.
+2. **Fixed Signers**: Unlike the previous dynamic set of validators, the list of Security Council signers remains fixed. This change simplifies the approval process but also increases the risk of collusion among the fixed set of signers.
+3. **Execution Time Limit**: If a hotfix is not executed within the specified `executionTimeLimit`, it must be reset and re-approved. This keeps the time constraint but no longer depends on epoch changes.
+4. **Collusion Risk**: The fixed list of Security Council signers introduces a new risk factor. Without clear incentives for the signers to act in the network's best interest, there is a higher risk of collusion and the potential for malicious hotfixes being approved.
+
+## Changes for JSON-RPC Users
+
+### Removed Tx Types
+
+New transactions can't be submitted using the following transaction types, see also the [tx types page](/specs/transaction-types):
+
+- Celo legacy tx
+- CIP-42
+
+Information about existing transactions of these types can still be retrieved via RPC.
+
+### Block and Tx changes in RPC Responses
+
+To match the Ethereum and OP-Stack responses more closely, the RPC responses for historical blocks and transactions have been updated.
+The following examples show the difference between the old (Celo L1) and the new (Celo L2) responses.
+
+#### Blocks
+
+##### Pre Gingerbread Block
+
+The new representation will lack the no longer needed `randomness` and `epochSnarkData` fields and gain `sha3Uncles`, `uncles`, `mixHash` and `nonce`.
+The choice was taken to add `sha3Uncles`, `uncles`, `mixHash` and `nonce` even though they have zero values or are empty, in order to align better with the
+ethereum block structure and increase compatibility with ethereum tooling. For example foundry's cast does not support fetching blocks that lack `sha3Uncles`.
+
+The `extraData` does not include the validator signatures ("Istanbul aggregated seal") anymore. That data has never been included when calculating the block hash, so removing it from the response makes it easier to reproduce the block hash.
+
+Note that the `size` will be different because of the missing `epochSnarkData` and `randomness` fields and also the underlying RLP datastructure in CeL2 differs from the RLP datastructure in Celo.
+
+```diff
+ {
++  "baseFeePerGas": "0x5f5e100",
+   "difficulty": "0x0",
+-  "epochSnarkData": null,
+-  "extraData": "0xd983010000846765746889676f312e31332e3130856c696e7578000000000000f8b6c0c080b841d97776193d6a3e3bf8319a47ac44e4489212e02a584035f58adb153e1da2a49215bdf6983d8b08c53e22dbe776fb489063eaf3a4e581d9c124b1745154ec875e01f78427da3f2fb01b4d9a10b3ff2c620b0b5dc4e3fbee3210c082012524fe8347e8369943ab5d68b43d1874af789493e974eb43bd47698180f7843fffffffb0aa91da2fe7d6b89d3e7c5f8d812c9e20f4dde29404975a5a4d68476c2cb0ff5500788d239a8729413c3adb43d9fb878180",
++  "extraData": "0xd983010000846765746889676f312e31332e3130856c696e7578000000000000f882c0c080b841d97776193d6a3e3bf8319a47ac44e4489212e02a584035f58adb153e1da2a49215bdf6983d8b08c53e22dbe776fb489063eaf3a4e581d9c124b1745154ec875e01c3808080f7843fffffffb0aa91da2fe7d6b89d3e7c5f8d812c9e20f4dde29404975a5a4d68476c2cb0ff5500788d239a8729413c3adb43d9fb878180",
+   "gasLimit": "0x989680",
+   "gasUsed": "0x9a972",
+   "hash": "0x4ef93291167de948057e6644016b4270aa922a04ae97f37ea471852cc13046e0",
+   "logsBloom": "0x00000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000010000000400000000000000000000000000000000100000000000000000000000000080000000008000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000080000000000000000000008000000000000001000000000000000000010000000000000000000080000000000000000000000000000000000000000000000",
+   "miner": "0xef0186b8eda17be7d1230eeb8389fa85e157e1fb",
++  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
++  "nonce": "0x0000000000000000",
+   "number": "0xb8d",
+   "parentHash": "0x48e4a4ba167e5b9a9af46b07882cac5d514b3d38bfec5f8f0cf09bc50c574876",
+-  "randomness": {
+-    "committed": "0x3654af1e4c47b230e06c37f3f49163f1ae3284b127d977bcadae6c8b809df86c",
+-    "revealed": "0xeec3298014c360628da382013379c53b58b339a89bb4c1437db7446250472f57"
+-  },
+   "receiptsRoot": "0xffc520613572e5e655a13b5bb74a0dabcc4e5fc132cce6c193d1f9c419eb05f5",
++  "sha3Uncles": "0x0000000000000000000000000000000000000000000000000000000000000000",
+-  "size": "0xea0",
++  "size": "0xe26",
+   "stateRoot": "0x57f9dd4504d6142b099da5b0e7a8b1fc911af9293a48cdd0750111d7c19ed943",
+   "timestamp": "0x5ef3ab5e",
+   "totalDifficulty": "0xb8e",
+   "transactions": [
+     "0xea2d6ace4848a91065f029f2cf403d6d3c4a3835ca3cb7e9f3c943f00cbfa759"
+   ],
+   "transactionsRoot": "0xbb3c1f1fe49abff6b98de7b3629fa1d94ad1fa01f2b0c85e22e4f69c419e5dfe",
++  "uncles": []
+ }
+```
+
+##### Post Gingerbread, Pre CeL2 Block
+
+In this case, the new representation will lack the no longer needed `randomness` and `epochSnarkData` fields.
+
+The `extraData` does not include the validator signatures ("Istanbul aggregated seal") anymore. That data has never been included when calculating the block hash, so removing it from the response makes it easier to reproduce the block hash.
+
+Note that the `size` will be different because of the missing `epochSnarkData` and `randomness` fields and also the underlying RLP datastructure in CeL2 differs from the RLP datastructure in Celo.
+
+```diff
+ {
+   "baseFeePerGas": "0x12a05f200",
+   "difficulty": "0x0",
+-  "epochSnarkData": null,
+-  "extraData": "0xd983010804846765746889676f312e31392e3133856c696e7578000000000000f8b2c0c080b8412ba9e02862ac252968922b40998bf81ad3365573eb1022d6299fb4fc0556258d62369eaa1dbefa22537d78d1be4a75bdb182d7dd36d314ab13ac9933a3ae657b01f58202f9b0b125dcff9f90b02acffcd7a2a2c1b5855bcaea233aac4242659dbf217e23cd72a43626efc0f145191fdf298734c53f8080f58203ffb09fe8e166bcd22854dece60b93a2e59eb964778647fb5ba375386c9051f009b394aa46be3e039dbd78b9fa6e7e048d78080",
++  "extraData": "0xd983010804846765746889676f312e31392e3133856c696e7578000000000000f880c0c080b8412ba9e02862ac252968922b40998bf81ad3365573eb1022d6299fb4fc0556258d62369eaa1dbefa22537d78d1be4a75bdb182d7dd36d314ab13ac9933a3ae657b01c3808080f58203ffb09fe8e166bcd22854dece60b93a2e59eb964778647fb5ba375386c9051f009b394aa46be3e039dbd78b9fa6e7e048d78080",
+   "gasLimit": "0x2160ec0",
+   "gasUsed": "0x4468e",
+   "hash": "0x9374dd975e7a59cdf89e4fb1f6e75b168a5d5d95c2ce1c11209578a7561ef1bd",
+   "logsBloom": "0x00800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000040000000000000002000000000000000000000000000100000000000004000000000000000000000000000000000000000000000000008000000000000000400000000000000000000000000000000000400000000000000000000000000000000000000000000000000000800000000000000000008000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "miner": "0xa910ffc6294e96c6a7cac175621d4b1991f53120",
+   "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+   "nonce": "0x0000000000000000",
+   "number": "0x186f055",
+   "parentHash": "0x6fd1b8122bbbdcab8ec82e44397929ab164584dce061d50f657d6f21962fd13a",
+-  "randomness": {
+-    "committed": "0xafb35e688710867bef9bf982ecff9cdbd9e8c19a687fa9bb2bdbb9341b79b237",
+-    "revealed": "0x6d6c35073bc7bee1f037c1f8225a4fbffbfdcf978c6af85c56f3e7b4a0ecf0f1"
+-  },
+   "receiptsRoot": "0xf6193f8bea9c51a5ec6f65e644d3bc30df7414d08914b17f3543e0463aee4abb",
+   "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+-  "size": "0x418",
++  "size": "0x3a0",
+   "stateRoot": "0x4ce545e412947838ab85b0e560b339cc4a903dc3b0364ee39d382c04a79c4df4",
+   "timestamp": "0x66babd40",
+   "totalDifficulty": "0x186f056",
+   "transactions": [
+     "0xafb85e106fceea010ed9b1f9f50fbbdcfa4308f3a398aa4f31d35370e9cea300"
+   ],
+   "transactionsRoot": "0x392de6ef9cfb6047bad717b943c6397666c1cca2321c3d9fadd76ceaca0d1e57",
+   "uncles": []
+ }
+```
+
+##### Post Cel2 Block
+
+Since the blocks after the migration are not available in a Celo L1 node, we can't show the diff between the response of a Celo L1 and a Celo L2 node. Instead, the following is a fictional diff between an L1 block right before the L2 migration and the same block if it was an L2 block instead. This illustrates the following changes for new blocks after the migration:
+
+- The `extraData` field is empty
+- `mixHash` is used to provide pseudo-randomness for the `PREVRANDAO` opcode and is not empty anymore
+- `parentBeaconBlockRoot` field added
+- `totalDifficulty` removed
+- `withdrawals` and `withdrawalsRoot` fields added
+
+Note that `withdrawals` will be empty for the foreseeable future, because there is no staking mechanism or beacon chain in the celo L2.
+
+```diff
+{
+   "baseFeePerGas": "0x5d21dba00",
+   "blobGasUsed": "0x0",
+   "difficulty": "0x0",
+   "excessBlobGas": "0x0",
+-  "extraData": "0xd983010804846765746889676f312e31392e3133856c696e7578000000000000f880c0c080b8412ba9e02862ac252968922b40998bf81ad3365573eb1022d6299fb4fc0556258d62369eaa1dbefa22537d78d1be4a75bdb182d7dd36d314ab13ac9933a3ae657b01c3808080f58203ffb09fe8e166bcd22854dece60b93a2e59eb964778647fb5ba375386c9051f009b394aa46be3e039dbd78b9fa6e7e048d78080",
++  "extraData": "0x",
+   "gasLimit": "0x1c9c380",
+   "gasUsed": "0xaaee",
+   "hash": "0xa2f404d653c22969acb3785db12df02604c2f6bc767f22b2c4ff8662f03ba305",
+   "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "miner": "0x4200000000000000000000000000000000000011",
+-  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
++  "mixHash": "0x08229a0e20d3896f829595d4e5c9eece4279ba7e45e38b492a3d99003c47c32b",
+   "nonce": "0x0000000000000000",
+   "number": "0x2549326",
++  "parentBeaconBlockRoot": "0x7606b339839b9ab700cfadc9cb0b105d33388f4f2755c2c7c7168af0c37a429f",
+   "parentHash": "0x914bda6eb9cb5866fa76607df3483d442f5d28d517245f592780aaf0ab2c6065",
+   "receiptsRoot": "0x766157eaef643639c1b76e03f157ffdd1ec6c7583ee2c85561916161ac964e3e",
+   "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+   "size": "0x34c",
+   "stateRoot": "0x4723c7d986d7e7bb91818048b5ebcb64101db4395d9401d6a25901808ff33816",
+   "timestamp": "0x67b717df",
+-  "totalDifficulty": "0x186f056",
+   "transactions": [
+     "0x246cb5812aab652a205e5d05145cdc8a5bbaa5d8e1eeae9fef43397c011666d9"
+   ],
+   "transactionsRoot": "0x8ef09de185b4ae02e2c42fe9b8dc1ff58fff9dffd91a8940197374005ccba057",
+   "uncles": [],
++  "withdrawals": [],
++  "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+}
+```
+
+#### Transactions
+
+See [this page](/home/protocol/transactions/transaction-types#summary) for a summary of transaction types in Celo.
+
+At genesis, type 0 transactions on Celo contained 3 extra fields compared to Ethereum. Those were `feeCurrency`, `gatewayFee` and `gatewayFeeRecipient`. These extra fields rendered Celo transactions incompatible with any existing Ethereum wallets. To mitigate this and allow use of existing ethereum wallets we extended the definition of type 0 transactions to support the original ethereum transaction format (i.e. without the 3 extra fields).
+
+Since it was valid for the celo type 0 transaction to not set the three extra fields in order to distinguish between the two forms of type 0 transaction an extra field (`ethCompatible`) was added to RPC API responses for type 0 transactions.
+
+Historically, we would return these 3 extra fields and `ethCompatible` on RPC API responses for all transaction types. But this was leading to some confusion since those fields were only relevant for some transaction types.
+
+In CeL2, we have updated the RPC API to omit the `feeCurrency`, `gatewayFee` and `gatewayFeeRecipient` fields when `ethCompatible` is true, meaning that ethereum compatible transactions should have no additional fields.
+
+In addition to the previous data, the CeL2 node will return `yParity` for all non 0 transaction types.
+
+##### Type 0 Eth Compatible
+
+```diff
+ {
+   "blockHash": "0x06613bb2a5c75748035e20c06c577669cd4d78f9a1d36ae79eb26ce72dda9c18",
+   "blockNumber": "0x16b8f4a",
+-  "ethCompatible": true,
+   "chainId": "0xaef3",
+   "from": "0x994532b8f186949d7217d7b843509c19e78b9584",
+   "gas": "0xa5c6",
+   "gasPrice": "0x2540be400",
+-  "gatewayFee": "0x0",
+   "hash": "0xe152376f4b2d3a81f3631cf5830fb820118de3cb3ef5ddb068978829c2712b08",
+   "input": "0x3798c7f2000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000066318fd2000000000000000000000000000000000000000000000000000000000160543a00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000345555200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000003f8e3083",
+   "nonce": "0x2b714",
+   "r": "0x1cbba1e5b0c6d9155a56f7f690d59ca46a7deab2bc6aefa4fe89542dbc779c5f",
+   "s": "0x66aff5220a9228352bee2a7ac07e9c723bc6bc00311d02338d15ed106b07a608",
+   "to": "0x3d00dea966314e47ac3d4acd2f00121351cec1c5",
+   "transactionIndex": "0x0",
+   "type": "0x0",
+   "v": "0x15e09",
+   "value": "0x0"
+ }
+ ```
+
+##### Type 0 Not Eth Compatible With No Fee Currency And Gateway Fee Recipeint
+
+```diff
+ {
+   "blockHash": "0x11d497cf96f94c62db173e27a9aebe7db559d9675e58a9ac268c5c934bffe441",
+   "blockNumber": "0x16b8efc",
+   "chainId": "0xaef3",
+   "ethCompatible": false,
+   "from": "0x473a3be7c2a42452ed0b521614b3b76bc59d2d1d",
+   "gas": "0x8160d",
+   "gasPrice": "0x1bf08eb00",
+   "gatewayFee": "0x0",
+   "hash": "0x6ba6fb0f75a38112bada3a8d3e789d9a5fdce4ea11f35a7ef8b550bcc356d202",
+   "input": "0x80e50744000000000000000000000000874069fa1eb16d44d622f2e0ca25eea172369bc1000000000000000000000000000000000000000000009fc8476fe32ad9dd7cd0000000000000000000000000dd5cb02066fde415dda4f04ee53fbb652066afee0000000000000000000000000000000000000000000000000000000000000000",
+   "nonce": "0x72ce1",
+   "r": "0x28ec2e7d544ad737ce7ee4c7d756f00335a764451b5036b44a5bd06cf50262af",
+   "s": "0x1d62168d50945e7457d74c095ccca0fbcafb6e5f86d30d1725fad089d1a4c435",
+   "to": "0xfdd8bd58115ffbf04e47411c1d228ecc45e93075",
+   "transactionIndex": "0x0",
+   "type": "0x0",
+   "v": "0x15e0a",
+   "value": "0x0"
+ }
+```
+
+##### Type 0 Not Eth Compatible With Fee Currency
+
+```diff
+ {
+   "blockHash": "0x3cd3ee79cd8e1a97e8979ee4d896256a5e369d6c7e3f66e631c8387f561bbbe8",
+   "blockNumber": "0x16b8ef1",
+   "chainId": "0xaef3",
+   "ethCompatible": false,
+   "feeCurrency": "0x874069fa1eb16d44d622f2e0ca25eea172369bc1",
+   "from": "0x0ac70692e0146522dd89dbf99831beaddcd57e8c",
+   "gas": "0x31e9e",
+   "gasPrice": "0x464abf343",
+   "gatewayFee": "0x0",
+   "hash": "0x86ba696a70eaf0f973313b0877f611f6500d9673eb51952a4a99c3200af0d249",
+   "input": "0xe1d6aceb000000000000000000000000e5f5363e31351c38ac82dbadead91fd5a7b08846000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000",
+   "nonce": "0x1",
+   "r": "0xb3fdfa10b8faaf1642e7e6e7c04f8e1d3051e61a4e79c4da1bb1f112e72607d2",
+   "s": "0x6114be273d1dcb45e485a8f7731666e3c36bfde385c8b47439c92b92d8ceb47f",
+   "to": "0x874069fa1eb16d44d622f2e0ca25eea172369bc1",
+   "transactionIndex": "0x0",
+   "type": "0x0",
+   "v": "0x15e09",
+   "value": "0x0"
+ }
+```
+
+##### Type 2 (dynamic fee transaction)
+
+```diff
+ {
+   "accessList": [],
+   "blockHash": "0x5b77a681e7ff2fc015e074ece54877c50a6ed1e093cc76aabb109846e4544420",
+   "blockNumber": "0x16b8f3f",
+   "chainId": "0xaef3",
+   "from": "0x48cc4c4133cbf40def64b95b002d4ee4d24df846",
+   "gas": "0x1ff04",
+   "gasPrice": "0x1a13b8600",
+-  "gatewayFee": "0x0",
+   "hash": "0x169500202b491733092159a496f535a9364f69d4059b9b26f39ea8896364ab26",
+   "input": "0xa87a20ce0000000000000000000000000000000000000000000000000000000000000068",
+   "maxFeePerGas": "0x1dcd65000",
+   "maxPriorityFeePerGas": "0x77359400",
+   "nonce": "0x6779",
+   "r": "0xe76c97eb3184a45d96563bfeca470e9c5f4410f6815a81e1df42ecc2f84d9f7c",
+   "s": "0x550fede7177a20024a76cc02dc5fbd6cdefa163ff861441cd9617afceee824",
+   "to": "0x4330b35a355c24ac8e544ade2d531050b5b9be7b",
+   "transactionIndex": "0x0",
+   "type": "0x2",
+   "v": "0x1",
+   "value": "0x0",
+   "yParity": "0x1"
+ }
+```
+
+##### Type 123 (Celo dynamic fee transaction v2)
+
+```diff
+ {
+   "accessList": [],
+   "blockHash": "0x9abe488547e2e3195dc6e69fbf7e378056f98b3608b69309ef99c358a825cf37",
+   "blockNumber": "0x16b8f03",
+   "chainId": "0xaef3",
+   "feeCurrency": "0x874069fa1eb16d44d622f2e0ca25eea172369bc1",
+   "from": "0x06502700eac7123676a7332ba2015dffba021af6",
+   "gas": "0x1ec78",
+   "gasPrice": null,
+-  "gatewayFee": "0x0",
+   "hash": "0xbe98d102295d6a5c7a26487a6ed7a5d2278cc30c2c8fb065f46bb78a6258090e",
+   "input": "0xe1d6aceb0000000000000000000000005fe1407f47b1310ff232a8d368b36099eff61604000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001cc4242484b6e2f42695479437171736a47646f6a686c687631456654617035786177577453447476412f784172695a6d7557774b6f6273735a6344356b4c414f7141436965737474516732616c4e7a6d68673866714f776a5651483761513273594968482b6f4d384669486364746768304e4f6a6e2b59365345306c434c62695a7a6a667143763277426878636834524634384d6639446530436a4e2b65704e4f52414431622f544d4d682b47424e4472736a3642724e43506f6c3432366375424f6273383578633378704938632f7144576c526f554d6c4456774c4370446a79505578746c2b4b515170415a70567a414a664d783867635257727a505936546644545554374b4b3954444979783461657558576a50765776442f46584b72414f546e6f394c3050427061582b7162734d3147394e2b39497274426133486476566f396b5744364454622f567767727752636d4b41656970416551346a6c415850556979376656623373324c5839655462626937654a2b514e616c78314d75522f4d38554f3178756547793330474c672b71695370434c4451626167314d74576565555645625269517a4b58484c6f4348704f357a4a6f4b2f5a50452b635558392f44354479513258557a453d0000000000000000000000000000000000000000",
+   "maxFeePerGas": "0x21b83c7d5",
+   "maxPriorityFeePerGas": "0x59eb4bf9",
+   "nonce": "0x1f9b",
+   "r": "0x68940dd91c0574638344927b53015752c78bc9cf67387f0d0c1f6d22559eeec3",
+   "s": "0x412aa02bd215cd0353dd1ffa1f99bbe2ee218e9e7ae3c5b462a568b705534f46",
+   "to": "0x874069fa1eb16d44d622f2e0ca25eea172369bc1",
+   "transactionIndex": "0x1",
+   "type": "0x7b",
+   "v": "0x1",
+   "value": "0x0",
++  "yParity": "0x1"
+ }
+```
+
+## State Changes during the Migration
+
+The migration is the process of converting the Celo L1 chain into an L2 based on Ethereum.
+This migration involves different steps and requires the blockchain to shortly pause block production.
+
+During the migration the following things are done:
+
+- Historic blockchain data such as blocks, headers and transactions are transformed into a version readable by the updated execution client. During this process some data, such as data required for the Istanbul consensus algorithm, is removed as it is no longer required.
+- OP Stack L2 contracts are deployed.
+- The new Celo unreleased treasury core contract is initialized.
+
+### Historical data migration
+
+Celo started as a fork of `go-ethereum` but initially some significant changes to the structure of headers and blocks were made because it was operating with a Proof of Stake consensus mechanism.
+
+At the outset Celo blocks lacked the following fields that Ethereum blocks had:
+
+- `sha3Uncles`
+- `uncles`
+- `difficulty`
+- `gasLimit` (the `gasLimit` was defined by a contract and so had to be retrieved from state)
+- `mixHash`
+- `nonce`
+
+Later in the [Espresso hardfork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0041.md), dynamic fee transactions were introduced. Instead of relying on the `baseFeePerGas` field on the block header, the `baseFeePerGas` was also retrieved from state via a contract call similar to `gasLimit`.
+
+In the [Gingerbread hardfork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0062.md) (block `21616000`) all the fields listed above plus `baseFeePerGas` were added to the internal block representation to bring future blocks into alignment with Ethereum.
+A constant difficulty field of `0x0` was added to all pre-Gingerbread RPC API block responses.
+
+Celo added the following fields to block bodies:
+
+- `randomness`
+- `epochSnarkData`
+
+As additions they do not damage compatibility at the RPC API level as API clients would generally ignore them. However, in the transition to L2 these fields are planned for removal because they will no longer be needed.
+
+In the transition to L2 as an attempt to improve the situation with RPC API compatibility for historical blocks, all post-Gingerbread fields will be returned for **all** blocks.
+Both pre-Gingerbread and post-Gingerbread blocks retrieved from the L2 RPC API would look the same with the exception of `baseFeePerGas` which for now will not be returned for pre-Gingerbread blocks.
+
+#### L2 Block Structure
+
+Going forward, blocks occurring after the transition point will gain an extra field, `parentBeaconBlockRoot`, which will bring our block structure fully up to date with Ethereum’s block structure.
+
+As Ethereum evolves in the time before we make the transition to L2 we could end up with additional fields being added to the L2 Block Structure, and this document will be updated accordingly.
+
+### State migration
+
+The OP stack requires a number of contracts to be available on the L2. Those contracts have predefined addresses and cannot be deployed like normal contracts. Instead they are written to the state during the migration.
+
+As this process touches the blockchain state, it is important that it is transparent and can be verified by every node operator and user. Therefore, every node operator can do the migration locally and check the resulting state against Celo L2 state.
+
+#### OP predeploys
+
+The predeploys to be added to the state are supplied in form of an allocation file which contains a mapping of account addresses to their state. In the state migration tool this file is read and every account copied into the Celo L1 state.
+
+There's a number of checks to make sure this doesn't end up causing problems.
+
+- If an account to be written to the state already has a balance, this balance is added to the copied account balance. This makes sure the total amount of Celo doesn't change.
+- If an account already contains code, it is checked that the code is the same.
+
+#### `CeloUnreleasedTreasury` set up
+
+The `CeloUnreleasedTreasury` is a new contract available on the migrated Celo L2. See [the spec](/specs/smart-contract-updates-from-l1#celo-minting) for more information.
+
+During the migration it needs to be setup with the remaining unminted Celo.
+
+This is done by first reading the total supply of Celo tokens at the time of the migration. This value is then subtracted from the max supply of Celo tokens, which is *1,000,000,000*. This difference is the remaining amount of tokens that gets set as the balance of the distribution schedule contract.
+
+## Other Changes
+
+### Validators
+
+Until Celo has decentralized sequencing, validators will no longer validate blocks, but instead operate community RPC nodes.
+Refer to the [proposal](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700) in the context of [The Great Celo Halvening Temperature Check](https://mondo.celo.org/governance/cgp-164).
+
+### CIP-64 Receipts Now Contain the `baseFee`
+
+For the Celo L1, the `effectiveGasPrice` for CIP-64 txs is only available until the block state is pruned. Afterwards, the blockchain client is unable to get the `baseFee` for the relevant `feeCurrency`, which is required to calculate the `effectiveGasPrice`. To avoid this and make the `effectiveGasPrice` available permanently, the `baseFee` is [included as the last field in the RLP-encoded CIP-64 receipt](https://github.com/celo-org/op-geth/commit/6a1996f17b2ae22fcb3c24b82acbaffa1753f667) for CIP-64 txs submitted after the L2 migration. The EIP-2718 `ReceiptPayload` for this transaction type is now `rlp([status, cumulativeGasUsed, logsBloom, logs, baseFee])`.
+
+### CIP diff
+
+For a full list of changes by CIP, refer to the forum post: [Executed CIPs and Key Changes in Celo’s transition to L2](https://forum.celo.org/t/executed-cips-and-key-changes-in-celo-s-transition-to-l2/10664).

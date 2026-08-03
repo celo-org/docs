@@ -1,0 +1,11 @@
+---
+title: "EigenDA"
+---
+
+In contrast to OP Mainnet sequencer which writes TX batches to Ethereum in the form of calldata or, more recently, EIP-4844 blobs to commit to the transactions included in the canonical L2 chain, Celo uses [EigenDA](https://docs.eigenlayer.xyz/eigenda/overview) as an alternative data availability layer in order to minimize the TX fees. EigenDA is a data availability store made by [EigenLabs](https://www.eigenlabs.org) and built on top of [EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/). With EigenDA, TX data is stored by EigenDA operators off-chain, only DA commitments used for verficiation and subsequent data retrieval are stored On Ethereum which significantly reduces DA costs and L2 TX fees.
+
+The integration is done in accordance with the [Optimism's Alt-DA spec](https://specs.optimism.io/experimental/alt-da.html) which contains a more in-depth description of this interface.
+
+## Testnet and Contract Addresses
+
+The Celo Sepolia testnet uses the [EigenDA Sepolia testnet](https://docs.eigencloud.xyz/products/eigenda/networks/sepolia).

@@ -1,0 +1,29 @@
+---
+title: "Celo L2 Specification"
+sidebarTitle: "Introduction"
+---
+
+This document describes the differences between the Celo L2 implementation and [Optimism's](https://optimism.io) OP Stack, on which it is based. Refer to the [OP Stack specs](https://specs.optimism.io/) for details on the unmodified OP Stack.
+
+The [L1→L2 migration changes page](/specs/l2-migration) details the differences compared to the Celo L1 blockchain. The Celo L2 is a continuation of the L1 by using its state and providing a high level of compatibility with it.
+
+## Background
+
+Since May 2024, the Celo Community has decided to transition from an L1 blockchain to a L2 solution using the OP Stack. This move, detailed and [approved](https://mondo.celo.org/governance/cgp-133) in [CGP-133](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0133.md), aims to enhance scalability, security, and interoperability with Ethereum. The proposal aligns with Celo's mission to create a more accessible and inclusive financial system. By leveraging the OP Stack, Celo L2 will retain the benefits of the existing ecosystem while integrating with Ethereum's robust infrastructure, fostering greater innovation and user engagement.
+
+## New Features
+
+- [Token duality](/specs/token-duality), access native tokens via ERC20
+- [Fee Abstraction](/specs/fee-abstraction), pay gas with ERC20 tokens
+
+## Technical Differences
+
+- New [transaction types](/specs/transaction-types) to support Fee Abstraction
+- [One new precompile](/specs/token-duality#the-transfer-precompile) to support token duality
+- [Changes to finality](/specs/finality)
+- The `MaxCodeSize` for newly deployed contracts is increased from 24576 to 65536.
+
+## Deployments
+
+- [Mainnet](/specs/deployments#mainnet)
+- [Celo Sepolia testnet](/specs/deployments#celo-sepolia-testnet)
