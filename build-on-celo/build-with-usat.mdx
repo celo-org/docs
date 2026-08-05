@@ -21,18 +21,18 @@ Celo is the first chain outside Ethereum to host USA₮, launched on March 31, 2
 | Explorer | [Celoscan](https://celoscan.io/token/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771) |
 | Official site | [usat.io](https://usat.io/) |
 
-## USA₮ vs USDT
+## USA₮ vs USD₮
 
-USA₮ and USDT are separate assets from different issuers with different trust profiles:
+USA₮ and USD₮ are separate assets from different issuers with different trust profiles:
 
-| | USA₮ | USDT |
+| | USA₮ | USD₮ |
 |-|------|------|
 | Issuer | Anchorage Digital Bank (US federal charter) | Tether (offshore) |
 | Regulatory framework | GENIUS Act compliant | No equivalent US regulation |
 | Reserves custodian | Cantor Fitzgerald | Tether-managed |
 | Primary use case | Compliant-dollar applications, institutional flows | General-purpose, high-liquidity stablecoin |
 
-Both are available on Celo Mainnet. Use USDT for general stablecoin flows; use USA₮ when compliance, regulatory clarity, or institutional credibility matters to your use case.
+Both are available on Celo Mainnet. Use USD₮ for general stablecoin flows; use USA₮ when compliance, regulatory clarity, or institutional credibility matters to your use case.
 
 ## Fee Abstraction
 
@@ -51,18 +51,6 @@ const tx = {
 > Passing the token address instead of the adapter address is a common bug. Always use the adapter for 6-decimal tokens.
 
 For a full implementation guide, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction).
-
-## Distribution via Self + Google Cloud
-
-Alongside launch, [Self](https://self.xyz/) and Google Cloud built a mainnet faucet that distributes USA₮ to verified real humans. Users verify their identity through the Self app using a biometric passport or national ID. Self confirms humanity (including OFAC sanctions clearance) using zero-knowledge proofs — no raw personal data is transmitted.
-
-This is the first time a regulated USD stablecoin has been distributed through a privacy-preserving identity layer at the protocol level.
-
-Builders can integrate the same faucet pattern using the [Self SDK](https://docs.self.xyz/).
-
-## Builder Note — Wallet Display
-
-Some wallets derived from Valora may currently display `priceUsd: NaN` for USA₮. This is a display issue only — transactions work correctly. Price oracle coverage for the Celo contract address is still expanding.
 
 ## What to Build
 
