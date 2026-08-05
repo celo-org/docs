@@ -4,13 +4,22 @@ sidebarTitle: "Adding Fee Currencies"
 og:description: How to implement and register a new ERC20 token as a fee currency on Celo
 ---
 
-Any ERC20 token can become a fee currency on Celo by implementing the `IFeeCurrency` interface and being added to the on-chain allowlist through governance. This guide explains the interface requirements and walks through an example implementation.
+Any ERC20 token can become a fee currency on Celo. Two steps are required:
+
+1. **Implement the `IFeeCurrency` interface** — the token must extend ERC20 with the functions the Celo blockchain uses to debit and credit gas fees. This step is the responsibility of the token issuer.
+2. **Register the token through governance** — the token must be added to the on-chain allowlist via a governance proposal. The Celo team can support you through this step.
+
+This guide walks through both steps.
 
 For background on how fee abstraction works, see the [Overview](/build-on-celo/fee-abstraction/overview).
 
 ---
 
-## The IFeeCurrency Interface
+## Step 1: Implement the IFeeCurrency Interface
+
+This step must be completed by the token issuer — every project implements and maintains its own fee currency token.
+
+### The IFeeCurrency Interface
 
 Fee currencies must implement the [IFeeCurrency](https://github.com/celo-org/fee-currency-example/blob/92e2fcb/src/IFeeCurrency.sol) interface, which extends ERC20 with two additional functions used by the Celo blockchain to debit and credit gas fees.
 
@@ -19,7 +28,7 @@ When a [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-
 1. **Before execution** — the blockchain calls `debitGasFees` to reserve the maximum gas the transaction can spend
 2. **After execution** — the blockchain calls `creditGasFees` to refund unused gas and distribute fees to the appropriate recipients
 
-### debitGasFees
+#### debitGasFees
 
 ```solidity
 function debitGasFees(address from, uint256 value) external;
@@ -30,7 +39,7 @@ Called before transaction execution to reserve the maximum gas amount.
 - Must deduct `value` from `from`'s balance
 - Must revert if `msg.sender` is not `address(0)` (only the VM may call this)
 
-### creditGasFees
+#### creditGasFees
 
 There are two versions of `creditGasFees`. Both should be implemented for compatibility.
 
@@ -62,7 +71,7 @@ function creditGasFees(
 
 ---
 
-## Example Implementation
+### Example Implementation
 
 The following example from [celo-org/fee-currency-example](https://github.com/celo-org/fee-currency-example) shows a minimal fee currency token using OpenZeppelin's ERC20 with burn/mint mechanics for gas fee handling:
 
@@ -123,7 +132,7 @@ This implementation uses `_burn` in `debitGasFees` and `_mint` in `creditGasFees
 
 ---
 
-## Testing
+### Testing
 
 Use [Foundry](https://book.getfoundry.sh/) to test your fee currency implementation. The [fee-currency-example](https://github.com/celo-org/fee-currency-example) repository includes a test suite you can use as a starting point:
 
@@ -144,8 +153,10 @@ Key things to test:
 
 ---
 
-## Registering a Fee Currency
+## Step 2: Register Through Governance
 
 Once your token implements `IFeeCurrency`, it must be added to the on-chain allowlist in [**FeeCurrencyDirectory.sol**](/tooling/contracts/core-contracts) through a governance proposal. The governance process ensures that fee currencies meet the necessary requirements for network stability.
+
+Unlike step 1, you don't have to navigate this step alone — the Celo team can support you through the governance process. Reach out on the [Celo Discord server](https://discord.com/invite/celo) to get started.
 
 If your token uses decimals other than 18, you will also need to deploy an adapter contract. See [Adapters for Non-18-Decimal Tokens](/build-on-celo/fee-abstraction/overview#adapters-for-non-18-decimal-tokens) for details.
