@@ -32,9 +32,9 @@ You can run the `getCurrencies()` method on the `FeeCurrencyDirectory` contract 
 
 ### Tokens using FeeCurrencyAdapter
 
-Tokens with a low number of `decimals` (USDC and USDT) would cause problems during the gas calculation, because the cost per gas can only be accurately given in fractions and not integers. To avoid this issue, the tokens are not directly added to the `FeeCurrencyDirectory`. Instead, a `FeeCurrencyAdapter` contracts wraps these tokens, calculates the costs per gas in a higher accuracy and only converts it back to the lower accuracy once the total gas costs for a transaction is determined.
+Tokens with a low number of `decimals` (USDC, USDT, and USA₮) would cause problems during the gas calculation, because the cost per gas can only be accurately given in fractions and not integers. To avoid this issue, the tokens are not directly added to the `FeeCurrencyDirectory`. Instead, a `FeeCurrencyAdapter` contracts wraps these tokens, calculates the costs per gas in a higher accuracy and only converts it back to the lower accuracy once the total gas costs for a transaction is determined.
 
-This only really impacts the user in a single way: Instead of using the USDC and USDT token addresses, you have to pass their `FeeCurrencyAdapter` addresses in the `feeCurrency` field for CIP-64 txs.
+This only really impacts the user in a single way: Instead of using the USDC, USDT, or USA₮ token addresses, you have to pass their `FeeCurrencyAdapter` addresses in the `feeCurrency` field for CIP-64 txs.
 
 ## For Token Authors
 

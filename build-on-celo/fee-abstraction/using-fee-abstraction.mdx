@@ -43,6 +43,7 @@ For more on gas pricing, see [Gas Pricing](/legacy/protocol/transaction/gas-pric
 | ------ | ------------- | --------------- |
 | `USDC` | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C#code) | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B#code) |
 | `USDT` | [`0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e`](https://celoscan.io/address/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e#code) | [`0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72`](https://celoscan.io/address/0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72#code) |
+| `USA₮` | [`0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771`](https://celoscan.io/address/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771#code) | [`0x0357EE22278c922e1D36cFe6b899269b161880C4`](https://celoscan.io/address/0x0357EE22278c922e1D36cFe6b899269b161880C4#code) |
 
 #### Celo Sepolia (Testnet)
 
@@ -65,7 +66,7 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
-When using USDC or USDT, use the **adapter address** (not the token address) as `--gasCurrency`. Both tokens use 6 decimals — pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC).
+When using USDC, USDT, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals — pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC/USA₮).
 
 Transfer 1 USDT using USDT as the fee currency:
 ```bash
@@ -92,7 +93,7 @@ Before sending, estimate the transaction fee so the UI can reserve that amount a
 The gas price returned from the RPC is always expressed in 18 decimals, regardless of the fee currency.
 </Note>
 
-Use the adapter address (for USDC/USDT) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
+Use the adapter address (for USDC/USDT/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
 ```js
 import { createPublicClient, hexToBigInt, http } from "viem";
 import { celo } from "viem/chains";
@@ -139,7 +140,7 @@ async function main() {
 
 ### 2. Prepare the Transaction
 
-Set `feeCurrency` to the adapter address (USDC/USDT) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/legacy/protocol/transaction/transaction-types) compliant.
+Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/legacy/protocol/transaction/transaction-types) compliant.
 ```js
 let tx = {
   // ... other transaction fields
