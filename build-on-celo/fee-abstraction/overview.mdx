@@ -30,6 +30,20 @@ To use an alternate fee currency, set its token or adapter address as the `feeCu
 
 For implementation details, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction). To add a new fee currency to the protocol, see [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency).
 
+## Whitelisted Fee Currencies (Mainnet)
+
+The following tokens are currently whitelisted as fee currencies on Celo Mainnet. Tokens with non-18 decimals require an adapter contract — use the adapter address (not the token address) in the `feeCurrency` field.
+
+| Token | Token Address | feeCurrency Address | Decimals | Notes |
+|-------|--------------|-------------------|----------|-------|
+| CELO | native | native | 18 | Native gas token |
+| USDm (cUSD) | `0x765DE816845861e75A25fCA122bb6898B8B1282a` | same | 18 | Mento Dollar |
+| USDC | `0xcebA9300f2b948710d2653dD7B07f33A8B32118C` | `0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B` | 6 | Use adapter |
+| USDT | `0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e` | `0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72` | 6 | Use adapter |
+| USA₮ | `0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771` | `0x0357EE22278c922e1D36cFe6b899269b161880C4` | 6 | Use adapter. US-regulated, issued by Anchorage Digital Bank |
+
+> **Note for USA₮:** some wallets derived from Valora may display `priceUsd: NaN` until price oracles index the Celo contract address. Transactions work correctly regardless.
+
 ---
 
 ## Related

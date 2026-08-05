@@ -1,0 +1,88 @@
+---
+title: Build with USA₮
+og:description: Integrate USA₮ — the US-regulated dollar stablecoin issued by Anchorage Digital Bank — into your Celo app.
+---
+
+USA₮ (Tether America USD) is a US-regulated dollar stablecoin issued by [Anchorage Digital Bank, N.A.](https://usat.io/) — the first federally chartered digital asset bank in the United States. Reserves are custodied by Cantor Fitzgerald. USA₮ is designed to meet GENIUS Act standards, the US federal framework for regulated stablecoins.
+
+Celo is the first chain outside Ethereum to host USA₮, launched on March 31, 2026.
+
+## Contract Details
+
+| Field | Value |
+|-------|-------|
+| Token | USA₮ (Tether America USD) |
+| Network | Celo Mainnet |
+| Contract address | `0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771` |
+| Decimals | 6 |
+| `feeCurrency` adapter | `0x0357EE22278c922e1D36cFe6b899269b161880C4` |
+| Issuer | Anchorage Digital Bank, N.A. |
+| Reserves custodian | Cantor Fitzgerald |
+| Explorer | [Celoscan](https://celoscan.io/token/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771) |
+| Official site | [usat.io](https://usat.io/) |
+
+## USA₮ vs USDT
+
+USA₮ and USDT are separate assets from different issuers with different trust profiles:
+
+| | USA₮ | USDT |
+|-|------|------|
+| Issuer | Anchorage Digital Bank (US federal charter) | Tether (offshore) |
+| Regulatory framework | GENIUS Act compliant | No equivalent US regulation |
+| Reserves custodian | Cantor Fitzgerald | Tether-managed |
+| Primary use case | Compliant-dollar applications, institutional flows | General-purpose, high-liquidity stablecoin |
+
+Both are available on Celo Mainnet. Use USDT for general stablecoin flows; use USA₮ when compliance, regulatory clarity, or institutional credibility matters to your use case.
+
+## Fee Abstraction
+
+USA₮ is a whitelisted fee currency on Celo from day one. Users can pay gas fees directly in USA₮ — no CELO required.
+
+Because USA₮ has 6 decimals, you must use the **adapter address** (not the token address) in the `feeCurrency` field:
+
+```js
+const tx = {
+  to: recipientAddress,
+  value: amount,
+  feeCurrency: "0x0357EE22278c922e1D36cFe6b899269b161880C4", // adapter, not token
+};
+```
+
+> Passing the token address instead of the adapter address is a common bug. Always use the adapter for 6-decimal tokens.
+
+For a full implementation guide, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction).
+
+## Distribution via Self + Google Cloud
+
+Alongside launch, [Self](https://self.xyz/) and Google Cloud built a mainnet faucet that distributes USA₮ to verified real humans. Users verify their identity through the Self app using a biometric passport or national ID. Self confirms humanity (including OFAC sanctions clearance) using zero-knowledge proofs — no raw personal data is transmitted.
+
+This is the first time a regulated USD stablecoin has been distributed through a privacy-preserving identity layer at the protocol level.
+
+Builders can integrate the same faucet pattern using the [Self SDK](https://docs.self.xyz/).
+
+## Builder Note — Wallet Display
+
+Some wallets derived from Valora may currently display `priceUsd: NaN` for USA₮. This is a display issue only — transactions work correctly. Price oracle coverage for the Celo contract address is still expanding.
+
+## What to Build
+
+**Wallet integration** — Send, receive, and display USA₮ balances. Implement fee abstraction using the adapter address so users never need CELO.
+
+**Self faucet client** — Walk through the ZK proof-of-humanity flow: verify through the Self SDK, clear the check, claim USA₮. Useful reference for any app integrating the same pattern.
+
+**AI agent payments** — Use [x402](/build-on-celo/build-with-ai/x402) (HTTP-native micropayments) to build an agent that settles in USA₮ — a regulated dollar as the settlement asset for agentic flows.
+
+**DeFi integration** — Build USA₮ liquidity pools on Aave V3, Uniswap V3, Velodrome, or Morpho Blue on Celo. Pool creation is permissionless on all three. Morpho Blue allows permissionless isolated lending markets — no governance approval needed to create a USA₮ lending or collateral market.
+
+**Compliant remittance** — Use USA₮ as the regulated on-ramp leg, then convert to a local stablecoin via Mento (USDm, BRLm, KESm, NGNm, and more), Ripio wFIAT (wBRL, wARS, wMXN, wCOP), or VNX (VEUR, VGBP, VCHF) depending on the destination corridor.
+
+**MiniPay Mini App** — USA₮ launched with MiniPay as a Day One integration partner. MiniPay has 18M+ wallet activations across 66+ countries — a built-in distribution channel for any USA₮-denominated Mini App.
+
+## Related
+
+- [Build with Local Stablecoins](/build-on-celo/build-with-local-stablecoin) — Full list of stablecoins on Celo
+- [Fee Abstraction Overview](/build-on-celo/fee-abstraction/overview) — How fee abstraction works and whitelisted fee currencies
+- [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction) — Implementation guide
+- [Build with Self](/build-on-celo/build-with-self) — ZK proof-of-humanity integration
+- [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — HTTP-native stablecoin payments
+- [Celopedia](https://celopedia.celo.org/) — Celo's builder knowledge base
