@@ -3,43 +3,70 @@ title: Build with Local Stablecoins
 og:description: An overview of all stablecoins on Celo
 ---
 
-### Celo Stablecoin Ecosystem  
+Celo supports more than 30 fiat-referenced stablecoins: 7 USD-pegged assets, 26 pegged to regional currencies, and GoodDollar's UBI token. Most chains give builders a dollar and little else. On Celo, a payments app in Nairobi can settle in KESm, a remittance corridor into Brazil can settle in BRLm, and neither has to route through a dollar first.
 
-Celo supports a diverse range of fiat-referenced stablecoins designed for different regions and use cases, 6 USD-pegged and 27 regional currency-pegged stablecoins. The table below outlines their issuers and contract addresses across Celo Mainnet and Celo Sepolia.
+<Card title="Stablecoin Contracts" icon="file-contract" href="/tooling/contracts/stablecoin-contracts" arrow>
+  Contract addresses for every stablecoin on Celo Mainnet and the Celo Sepolia Testnet.
+</Card>
 
-| Stablecoin       | Issuer                                                                  | Use Case                                          |Contract Address Mainnet|Contract Address Celo Sepolia Testnet|
-| ---------------- | ----------------------------------------------------------------------- | ------------------------------------------------- |-------------|---------|
-| **USDm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | US Dollar-pegged stablecoin (Mento Dollar)        | [0x765de816845861e75a25fca122bb6898b8b1282a](https://celoscan.io/address/0x765de816845861e75a25fca122bb6898b8b1282a)  | [0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b](https://sepolia.celoscan.io/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b)  |
-| **EURm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Euro-pegged stablecoin (Mento Euro)               | [0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73](https://celoscan.io/address/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73)  | [0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a](https://sepolia.celoscan.io/address/0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a)  |
-| **BRLm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Brazilian Real-pegged stablecoin (Mento Brazilian Real) | [0xe8537a3d056da446677b9e9d6c5db704eaab4787](https://celoscan.io/address/0xe8537a3d056da446677b9e9d6c5db704eaab4787)  | [0x2294298942fdc79417DE9E0D740A4957E0e7783a](https://sepolia.celoscan.io/address/0x2294298942fdc79417DE9E0D740A4957E0e7783a)  |
-| **XOFm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | CFA Franc-pegged stablecoin (Mento West African CFA Franc) | [0x73F93dcc49cB8A239e2032663e9475dd5ef29A08](https://celoscan.io/address/0x73F93dcc49cB8A239e2032663e9475dd5ef29A08)  |  [0x5505b70207aE3B826c1A7607F19F3Bf73444A082](https://sepolia.celoscan.io/address/0x5505b70207aE3B826c1A7607F19F3Bf73444A082) |
-| **KESm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Kenyan Shilling-pegged stablecoin (Mento Kenyan Shilling) |  [0x456a3D042C0DbD3db53D5489e98dFb038553B0d0](https://celoscan.io/address/0x456a3D042C0DbD3db53D5489e98dFb038553B0d0) | [0xC7e4635651E3e3Af82b61d3E23c159438daE3BbF](https://sepolia.celoscan.io/address/0xC7e4635651E3e3Af82b61d3E23c159438daE3BbF)  |
-| **PHPm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Philippine Peso-pegged stablecoin (Mento Philippine Peso) |  [0x105d4A9306D2E55a71d2Eb95B81553AE1dC20d7B](https://celoscan.io/address/0x105d4A9306D2E55a71d2Eb95B81553AE1dC20d7B) | [0x0352976d940a2C3FBa0C3623198947Ee1d17869E](https://sepolia.celoscan.io/address/0x0352976d940a2C3FBa0C3623198947Ee1d17869E)  |
-| **COPm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Colombian Peso-pegged stablecoin (Mento Colombian Peso) | [0x8a567e2ae79ca692bd748ab832081c45de4041ea](https://celoscan.io/address/0x8a567e2ae79ca692bd748ab832081c45de4041ea)  |  [0x5F8d55c3627d2dc0a2B4afa798f877242F382F67](https://sepolia.celoscan.io/address/0x5F8d55c3627d2dc0a2B4afa798f877242F382F67) |
-| **GBPm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | British Pound-pegged stablecoin (Mento British Pound) | [0xCCF663b1fF11028f0b19058d0f7B674004a40746](https://celoscan.io/address/0xCCF663b1fF11028f0b19058d0f7B674004a40746)  | [0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3](https://sepolia.celoscan.io/address/0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3)  |
-| **CADm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Canadian Dollar-pegged stablecoin (Mento Canadian Dollar) |  [0xff4Ab19391af240c311c54200a492233052B6325](https://celoscan.io/address/0xff4Ab19391af240c311c54200a492233052B6325) |  [0xF151c9a13b78C84f93f50B8b3bC689fedc134F60](https://sepolia.celoscan.io/address/0xF151c9a13b78C84f93f50B8b3bC689fedc134F60) |
-| **AUDm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Australian Dollar-pegged stablecoin (Mento Australian Dollar) | [0x7175504C455076F15c04A2F90a8e352281F492F9](https://celoscan.io/address/0x7175504C455076F15c04A2F90a8e352281F492F9)  |  [0x5873Faeb42F3563dcD77F0fbbdA818E6d6DA3139](https://sepolia.celoscan.io/address/0x5873Faeb42F3563dcD77F0fbbdA818E6d6DA3139) |
-| **ZARm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | South African Rand-pegged stablecoin (Mento South African Rand) | [0x4c35853A3B4e647fD266f4de678dCc8fEC410BF6](https://celoscan.io/address/0x4c35853A3B4e647fD266f4de678dCc8fEC410BF6)  | [0x10CCfB235b0E1Ed394bACE4560C3ed016697687e](https://sepolia.celoscan.io/address/0x10CCfB235b0E1Ed394bACE4560C3ed016697687e)  |
-| **GHSm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Ghanaian Cedi-pegged stablecoin (Mento Ghanaian Cedi) | [0xfAeA5F3404bbA20D3cc2f8C4B0A888F55a3c7313](https://celoscan.io/address/0xfAeA5F3404bbA20D3cc2f8C4B0A888F55a3c7313)  | [0x5e94B8C872bD47BC4255E60ECBF44D5E66e7401C](https://sepolia.celoscan.io/address/0x5e94B8C872bD47BC4255E60ECBF44D5E66e7401C)  |
-| **NGNm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Nigerian Naira-pegged stablecoin (Mento Nigerian Naira) |  [0xE2702Bd97ee33c88c8f6f92DA3B733608aa76F71](https://celoscan.io/address/0xE2702Bd97ee33c88c8f6f92DA3B733608aa76F71) | [0x3d5ae86F34E2a82771496D140daFAEf3789dF888](https://sepolia.celoscan.io/address/0x3d5ae86F34E2a82771496D140daFAEf3789dF888)  |
-| **JPYm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Japanese Yen-pegged stablecoin (Mento Japanese Yen) | [0xc45eCF20f3CD864B32D9794d6f76814aE8892e20](https://celoscan.io/address/0xc45eCF20f3CD864B32D9794d6f76814aE8892e20)  | [0x85Bee67D435A39f7467a8a9DE34a5B73D25Df426](https://sepolia.celoscan.io/address/0x85Bee67D435A39f7467a8a9DE34a5B73D25Df426)  |
-| **CHFm**         | [Mento](https://www.mentolabs.xyz/blog/3-new-decentralized-stablecoins) | Swiss Franc-pegged stablecoin (Mento Swiss Franc) |  [0xb55a79F398E759E43C95b979163f30eC87Ee131D](https://celoscan.io/address/0xb55a79F398E759E43C95b979163f30eC87Ee131D) | [0x284E9b7B623eAE866914b7FA0eB720C2Bb3C2980](https://sepolia.celoscan.io/address/0x284E9b7B623eAE866914b7FA0eB720C2Bb3C2980)  |
-| **USDT**         | [Tether](https://tether.to/en/)                                         | Popular stablecoin on multiple blockchains        | [0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e](https://celoscan.io/token/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e)  | [0xd077A400968890Eacc75cdc901F0356c943e4fDb](https://celo-sepolia.blockscout.com/address/0xd077A400968890Eacc75cdc901F0356c943e4fDb)  |
-| **USA₮**         | [Anchorage Digital Bank](https://usat.io/)                              | US-regulated dollar stablecoin (GENIUS Act compliant, first federally chartered digital asset bank) | [0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771](https://celoscan.io/token/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771)  | -  |
-| **USDC**         | [Circle](https://www.circle.com/usdc)                                   | Widely used stablecoin with high liquidity        | [0xceba9300f2b948710d2653dd7b07f33a8b32118c](https://celoscan.io/token/0xceba9300f2b948710d2653dd7b07f33a8b32118c)  | -  |
-| **vGBP**         | [VNX](https://vnx.li/)                                                  | British Pound-pegged stablecoin                   | [0x7ae4265ecfc1f31bc0e112dfcfe3d78e01f4bb7f](https://celoscan.io/token/0x7ae4265ecfc1f31bc0e112dfcfe3d78e01f4bb7f)  |  - |
-| **vCHF**         | [VNX](https://vnx.li/)                                                  | Swiss Franc-pegged stablecoin                     | [0xc5ebea9984c485ec5d58ca5a2d376620d93af871](https://celoscan.io/token/0xc5ebea9984c485ec5d58ca5a2d376620d93af871)  |  - |
-| **USDM**         | [Mountain Protocol](https://mountainprotocol.com/)                      | Yield-bearing stablecoin                          | [0x59D9356E565Ab3A36dD77763Fc0d87fEaf85508C](https://celoscan.io/token/0x59D9356E565Ab3A36dD77763Fc0d87fEaf85508C)  |  - |
-| **USDA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing USD stablecoin                      | [0x0000206329b97DB379d5E1Bf586BbDB969C63274](https://celoscan.io/address/0x0000206329b97DB379d5E1Bf586BbDB969C63274)  | -  |
-| **EURA**         | [Angle](https://www.angle.money/)                                       | Yield-bearing Euro stablecoin                     | [0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049](https://celoscan.io/address/0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049)  | -  |
-| **USDGLO**       | [Glo Foundation](https://www.glodollar.org/)                            | Impact-driven stablecoin supporting global causes | [0x4f604735c1cf31399c6e711d5962b2b3e0225ad3](https://celoscan.io/address/0x4f604735c1cf31399c6e711d5962b2b3e0225ad3)  | -  |
-| **BRLA Digital** | [BRLA](https://brla.digital/)                                           | Brazil-based stablecoin                           | [0xfecb3f7c54e2caae9dc6ac9060a822d47e053760](https://celoscan.io/token/0xfecb3f7c54e2caae9dc6ac9060a822d47e053760)  |  - |
-| **COPM**         | [Minteo](https://minteo.com/)                                           | Fiat-backed Colombian Peso Stablecoin             |  [0xC92E8Fc2947E32F2B574CCA9F2F12097A71d5606](https://celoscan.io/token/0xC92E8Fc2947E32F2B574CCA9F2F12097A71d5606) | -  |
-| **cNGN**         | [Africa Stablecoin Consortium](https://cngn.co/)                        | Nigerian Naira-pegged stablecoin (regulated by Nigeria SEC) | [0xF6829D7393dAe24509eb1E52eE8e572e2E271a4f](https://celoscan.io/token/0xF6829D7393dAe24509eb1E52eE8e572e2E271a4f) | -  |
-| **wARS**         | [Ripio](https://ripio.com/)                                             | Argentine Peso-pegged stablecoin                  | [0x0dc4f92879b7670e5f4e4e6e3c801d229129d90d](https://celoscan.io/token/0x0dc4f92879b7670e5f4e4e6e3c801d229129d90d)  | -  |
-| **wBRL**         | [Ripio](https://ripio.com/)                                             | Brazilian Real-pegged stablecoin                  | [0xd76f5faf6888e24d9f04bf92a0c8b921fe4390e0](https://celoscan.io/token/0xd76f5faf6888e24d9f04bf92a0c8b921fe4390e0)  | -  |
-| **wMXN**         | [Ripio](https://ripio.com/)                                             | Mexican Peso-pegged stablecoin                    | [0x337e7456b420bd3481e7fa61fa9850343d610d34](https://celoscan.io/token/0x337e7456b420bd3481e7fa61fa9850343d610d34)  | -  |
-| **wCOP**         | [Ripio](https://ripio.com/)                                             | Colombian Peso-pegged stablecoin                  | [0x8a1d45e102e886510e891d2ec656a708991e2d76](https://celoscan.io/token/0x8a1d45e102e886510e891d2ec656a708991e2d76)  | -  |
-| **wPEN**         | [Ripio](https://ripio.com/)                                             | Peruvian Sol-pegged stablecoin                    | [0x4F34c8b3b5FB6D98Da888F0feA543d4d9C9F2eBE](https://celoscan.io/token/0x4F34c8b3b5FB6D98Da888F0feA543d4d9C9F2eBE)  | -  |
-| **wCLP**         | [Ripio](https://ripio.com/)                                             | Chilean Peso-pegged stablecoin                    | [0x61D450a098b6a7f69fC4b98CE68198fe59768651](https://celoscan.io/token/0x61D450a098b6a7f69fC4b98CE68198fe59768651)  | -  |
-| **G$**           | [GoodDollar](https://www.gooddollar.org/)                               | UBI-focused stablecoin for financial inclusion    | [0x62b8b11039fcfe5ab0c56e502b1c372a3d2a9c7a](https://celoscan.io/token/0x62b8b11039fcfe5ab0c56e502b1c372a3d2a9c7a)  | -  |
+## Why Local Stablecoins Matter
+
+- **Price stability** — unlike volatile cryptocurrencies, stablecoins hold a predictable value.
+- **Local denomination** — users hold and spend in their own currency instead of converting to and from dollars.
+- **Low-cost transactions** — sub-cent fees make small transfers and micropayments practical.
+- **Borderless access** — send and receive globally without a bank account.
+- **Programmability** — use them in smart contracts for lending, savings, payroll, and remittances.
+- **Onchain FX** — swap directly between currency pairs through [Mento](https://www.mento.org/).
+
+## Mento Stablecoins
+
+[Mento](https://www.mento.org/) is a decentralized stablecoin platform built on Celo. It issues 15 stablecoins that are algorithmically stabilized and backed by crypto collateral, spanning both major reserve currencies and local ones:
+
+| Region | Stablecoins |
+| ------ | ----------- |
+| Americas | USDm, BRLm, CADm, COPm |
+| Europe | EURm, GBPm, CHFm |
+| Africa | KESm, NGNm, GHSm, ZARm, XOFm |
+| Asia-Pacific | JPYm, PHPm, AUDm |
+
+Because Mento holds a diversified reserve, these assets can be swapped directly against one another — a Kenyan Shilling to West African CFA franc trade settles onchain without a dollar leg.
+
+## Other Issuers
+
+Alongside Mento, independent issuers have deployed stablecoins on Celo:
+
+| Issuer | Assets |
+| ------ | ------ |
+| [Circle](https://www.circle.com/usdc) | USDC |
+| [Tether](https://tether.to/en/) | USD₮ |
+| [Anchorage Digital Bank](https://usat.io/) | [USA₮](/build-on-celo/build-with-usat) |
+| [Ripio](https://ripio.com/) | wARS, wBRL, wMXN, wCOP, wPEN, wCLP |
+| [VNX](https://vnx.li/) | vGBP, vCHF |
+| [Africa Stablecoin Consortium](https://cngn.co/) | cNGN |
+| [Angle](https://www.angle.money/) | USDA, EURA |
+| [Mountain Protocol](https://mountainprotocol.com/) | USDM |
+| [Glo Foundation](https://www.glodollar.org/) | USDGLO |
+| [BRLA](https://brla.digital/) | BRLA |
+| [Minteo](https://minteo.com/) | COPM |
+| [GoodDollar](https://www.gooddollar.org/) | G$ |
+
+## Paying Gas in Stablecoins
+
+Users don't need to hold CELO to transact. Celo's [fee abstraction](/build-on-celo/fee-abstraction/overview) lets them pay gas in ERC20 tokens, and every Mento stablecoin plus USDC, USD₮ and USA₮ is on the allowlist — so a wallet holding only KESm can still send a transaction. See [Fee Currencies](/tooling/contracts/token-contracts) for the current list.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Stablecoin Contracts" icon="file-contract" href="/tooling/contracts/stablecoin-contracts">
+    Contract addresses on Celo Mainnet and the Celo Sepolia Testnet.
+  </Card>
+  <Card title="Fee Abstraction" icon="gas-pump" href="/build-on-celo/fee-abstraction/overview">
+    Let users pay gas fees in the stablecoin they already hold.
+  </Card>
+  <Card title="Build for MiniPay" icon="mobile" href="/build-on-celo/build-on-minipay/overview">
+    Reach mobile users of a stablecoin wallet built into Opera Mini.
+  </Card>
+  <Card title="Build with DeFi" icon="chart-line" href="/build-on-celo/build-with-defi">
+    Integrate swaps, lending, and oracles on top of these assets.
+  </Card>
+</CardGroup>
