@@ -1,1 +1,4 @@
 *.json
+
+# Curated generator input, not scratch output.
+!data/*.json

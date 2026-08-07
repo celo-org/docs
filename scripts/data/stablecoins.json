@@ -1,0 +1,132 @@
+{
+  "_note": "Curated input for tooling/contracts/stablecoin-contracts.mdx. Mento tokens plus USDC and USDT are read from the on-chain fee-currency allowlist by scripts/update_contracts.py; everything in this file has no registry to read from and must be maintained by hand.",
+
+  "issuers": {
+    "_note": "Issuer attribution for the allowlisted stablecoins. _default covers the Mento tokens.",
+    "_default": { "name": "Mento", "url": "https://www.mento.org/" },
+    "USDC": { "name": "Circle", "url": "https://www.circle.com/usdc" },
+    "USD₮": { "name": "Tether", "url": "https://tether.to/en/" },
+    "USA₮": { "name": "Anchorage Digital Bank", "url": "https://usat.io/" }
+  },
+
+  "symbol_overrides": {
+    "_note": "Display symbols that differ from the token's on-chain symbol() value. USA₮ reports as USAT on-chain but is branded with the U+20AE glyph everywhere else in these docs.",
+    "USAT": "USA₮"
+  },
+
+  "third_party": [
+    {
+      "symbol": "cNGN",
+      "name": "Compliant Naira",
+      "issuer": "Africa Stablecoin Consortium",
+      "issuer_url": "https://cngn.co/",
+      "mainnet_address": "0xF6829D7393dAe24509eb1E52eE8e572e2E271a4f"
+    },
+    {
+      "symbol": "vGBP",
+      "name": "VNX British Pound",
+      "issuer": "VNX",
+      "issuer_url": "https://vnx.li/",
+      "mainnet_address": "0x7ae4265ecfc1f31bc0e112dfcfe3d78e01f4bb7f"
+    },
+    {
+      "symbol": "vCHF",
+      "name": "VNX Swiss Franc",
+      "issuer": "VNX",
+      "issuer_url": "https://vnx.li/",
+      "mainnet_address": "0xc5ebea9984c485ec5d58ca5a2d376620d93af871"
+    },
+    {
+      "symbol": "USDM",
+      "name": "Mountain Protocol USD",
+      "issuer": "Mountain Protocol",
+      "issuer_url": "https://mountainprotocol.com/",
+      "mainnet_address": "0x59D9356E565Ab3A36dD77763Fc0d87fEaf85508C"
+    },
+    {
+      "symbol": "USDA",
+      "name": "Angle USD",
+      "issuer": "Angle",
+      "issuer_url": "https://www.angle.money/",
+      "mainnet_address": "0x0000206329b97DB379d5E1Bf586BbDB969C63274"
+    },
+    {
+      "symbol": "EURA",
+      "name": "Angle Euro",
+      "issuer": "Angle",
+      "issuer_url": "https://www.angle.money/",
+      "mainnet_address": "0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049"
+    },
+    {
+      "symbol": "USDGLO",
+      "name": "Glo Dollar",
+      "issuer": "Glo Foundation",
+      "issuer_url": "https://www.glodollar.org/",
+      "mainnet_address": "0x4f604735c1cf31399c6e711d5962b2b3e0225ad3"
+    },
+    {
+      "symbol": "BRLA",
+      "name": "BRLA Digital",
+      "issuer": "BRLA",
+      "issuer_url": "https://brla.digital/",
+      "mainnet_address": "0xfecb3f7c54e2caae9dc6ac9060a822d47e053760"
+    },
+    {
+      "symbol": "COPM",
+      "name": "Minteo Colombian Peso",
+      "_note": "Distinct from Mento's COPm, which differs only in the case of the final letter.",
+      "issuer": "Minteo",
+      "issuer_url": "https://minteo.com/",
+      "mainnet_address": "0xC92E8Fc2947E32F2B574CCA9F2F12097A71d5606"
+    },
+    {
+      "symbol": "wARS",
+      "name": "Wrapped Argentine Peso",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0x0dc4f92879b7670e5f4e4e6e3c801d229129d90d"
+    },
+    {
+      "symbol": "wBRL",
+      "name": "Wrapped Brazilian Real",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0xd76f5faf6888e24d9f04bf92a0c8b921fe4390e0"
+    },
+    {
+      "symbol": "wMXN",
+      "name": "Wrapped Mexican Peso",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0x337e7456b420bd3481e7fa61fa9850343d610d34"
+    },
+    {
+      "symbol": "wCOP",
+      "name": "Wrapped Colombian Peso",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0x8a1d45e102e886510e891d2ec656a708991e2d76"
+    },
+    {
+      "symbol": "wPEN",
+      "name": "Wrapped Peruvian Sol",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0x4F34c8b3b5FB6D98Da888F0feA543d4d9C9F2eBE"
+    },
+    {
+      "symbol": "wCLP",
+      "name": "Wrapped Chilean Peso",
+      "issuer": "Ripio",
+      "issuer_url": "https://ripio.com/",
+      "mainnet_address": "0x61D450a098b6a7f69fC4b98CE68198fe59768651"
+    },
+    {
+      "symbol": "G$",
+      "name": "GoodDollar",
+      "issuer": "GoodDollar",
+      "issuer_url": "https://www.gooddollar.org/",
+      "mainnet_address": "0x62b8b11039fcfe5ab0c56e502b1c372a3d2a9c7a"
+    }
+  ]
+}

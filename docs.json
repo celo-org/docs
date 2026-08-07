@@ -210,7 +210,8 @@
             "pages": [
               "tooling/contracts/l1-contracts",
               "tooling/contracts/core-contracts",
-              "tooling/contracts/token-contracts",
+              "tooling/contracts/stablecoin-contracts",
+              "tooling/contracts/fee-currencies",
               "tooling/contracts/uniswap-contracts"
             ]
           },
@@ -2287,7 +2288,15 @@
     },
     {
       "source": "/token-addresses",
-      "destination": "/contracts/token-contracts"
+      "destination": "/tooling/contracts/stablecoin-contracts"
+    },
+    {
+      "source": "/tooling/contracts/token-contracts",
+      "destination": "/tooling/contracts/fee-currencies"
+    },
+    {
+      "source": "/contracts/token-contracts",
+      "destination": "/tooling/contracts/fee-currencies"
     },
     {
       "source": "/v/master/developer-guide/overview",
