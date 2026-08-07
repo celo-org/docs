@@ -16,11 +16,11 @@
 
   "third_party": [
     {
-      "symbol": "vEUR",
-      "name": "VNX Euro",
-      "issuer": "VNX",
-      "issuer_url": "https://vnx.li/",
-      "mainnet_address": "0x9346f43c1588b6df1d52bdd6bf846064f92d9cba"
+      "symbol": "cNGN",
+      "name": "Compliant Naira",
+      "issuer": "Africa Stablecoin Consortium",
+      "issuer_url": "https://cngn.co/",
+      "mainnet_address": "0xF6829D7393dAe24509eb1E52eE8e572e2E271a4f"
     },
     {
       "symbol": "vGBP",
