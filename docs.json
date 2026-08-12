@@ -697,7 +697,7 @@
   "redirects": [
     {
       "source": "/tooling/overview/faucet",
-      "destination": "/tooling/testnets/celo-sepolia/index"
+      "destination": "https://faucet.celo.org/celo-sepolia"
     },
     {
       "source": "/tooling/nodes/run-a-celo-node",
