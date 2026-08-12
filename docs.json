@@ -713,19 +713,19 @@
     },
     {
       "source": "/contribute-to-celo/code-of-conduct",
-      "destination": "/contribute-to-celo/index"
+      "destination": "https://celo.org/code-of-conduct"
     },
     {
       "source": "/legacy/whitepapers",
-      "destination": "/legacy/overview"
+      "destination": "https://celo.org/papers"
     },
     {
       "source": "/legacy/validator/celo-website",
-      "destination": "/legacy/validator/index"
+      "destination": "https://celo.org"
     },
     {
       "source": "/legacy/validator/discord",
-      "destination": "/legacy/validator/index"
+      "destination": "https://discord.com/invite/celo"
     },
     {
       "source": "/blog/2022/01/08/valora-wc-v1",
