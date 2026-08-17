@@ -1,7 +1,7 @@
 # CLAUDE.md — docs
 
-<!-- Repo-owned. Keep it LEAN: a router. Shared rules are imported below and synced from pm-kit —
-     don't restate them here. Every Claude session (local, Cowork, CI action) reads this. -->
+> Repo-owned. Keep it lean: a router. Shared rules are imported below and synced from pm-kit —
+> don't restate them here. Every Claude session (local, Cowork, CI action) reads this.
 
 ## What this project is
 
