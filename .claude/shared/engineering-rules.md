@@ -35,7 +35,7 @@ The two rules that hold everything else together:
 
 **When your issue turns out wrong, correct it in-thread:** what was wrong, what's true, and who downstream inherited it — name the affected PRs. Retitle when scope narrows. One home per work item.
 
-**Priority lives in labels** — `priority:critical|high|medium|low` — not board fields. `priority:critical` = money correctness, security, or user-visible wrong data. Don't inflate it. Add every new issue to the board when filed, not in batches.
+**Priority lives in labels** — `priority:critical|high|medium|low` — not board fields. `priority:critical` = money correctness, security, or user-visible wrong data. Don't inflate it. The same label set exists in every repo (created by `pm-kit/protection/create-labels.sh`; never invent labels or alternative schemes like `P0`/bare `high`). The issue forms make Priority a required dropdown, and the `issue-priority-label` workflow converts the selection into the label automatically — so a filed issue carries its priority from minute one; if you file an issue without the form, add the label yourself. **Every issue lands on the team project board automatically** (the board's auto-add workflow watches these repos) — never file-and-forget an issue off the board; if you see one without a board entry or priority label, that's a defect in the process, fix it and say so.
 
 ---
 
