@@ -1,0 +1,229 @@
+---
+title: "Use Celo Docs with AI Tools"
+sidebarTitle: "Docs for AI Tools"
+description: "Connect docs.celo.org to Claude Code, Cursor, VS Code, and ChatGPT using the docs MCP server, llms.txt, and per-page Markdown."
+---
+
+**Point your AI assistant at the docs instead of its training data.** Everything on docs.celo.org is available in machine-readable form — a hosted MCP server your editor can query live, a full-text index for pasting into a chat, and a Markdown version of every page.
+
+This matters because model training data goes stale. Celo became an Ethereum L2 in March 2025, contract addresses change, and assistants confidently repeat outdated L1 details. Connecting your tool to these endpoints means answers come from the current docs.
+
+| Entry point | URL | Best for |
+|-------------|-----|----------|
+| MCP server | `https://docs.celo.org/mcp` | Editors and agents — live search, no copy-paste |
+| Docs index | [`/llms.txt`](https://docs.celo.org/llms.txt) | Giving a chat a map of every docs page |
+| Full corpus | [`/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Long-context models that can hold the whole docs set |
+| Any page as Markdown | append `.md` to any docs URL | Quoting one page as context |
+
+## Connect the docs MCP server
+
+The [Model Context Protocol](/build-on-celo/build-with-ai/mcp/index) lets an AI tool call external tools directly. Celo Docs hosts an MCP server at:
+
+```
+https://docs.celo.org/mcp
+```
+
+It uses streamable HTTP, needs no authentication, and exposes three tools:
+
+| Tool | What it does |
+|------|--------------|
+| `search_celo_docs` | Searches the docs for guides, references, and code examples |
+| `query_docs_filesystem_celo_docs` | Runs read-only queries against an in-memory filesystem of every docs page |
+| `submit_feedback` | Reports a problem with a page straight to the docs team |
+
+It also serves a **Celo Developer Playbook** skill resource — condensed guidance on deploying contracts, integrating wallets, fee abstraction, running nodes, and governance — which supporting clients load automatically.
+
+<Note>
+  This server answers questions about the **documentation**. To let an assistant read **live chain data** — balances, blocks, governance proposals — use the [Celo MCP Server](/build-on-celo/build-with-ai/mcp/celo-mcp) instead. The two are complementary, and you can run both.
+</Note>
+
+<Tabs>
+  <Tab title="Claude Code">
+    Add the server from your terminal:
+
+    ```bash
+    claude mcp add --transport http celo-docs https://docs.celo.org/mcp
+    ```
+
+    That registers it for the current project. To make it available everywhere, add `--scope user`:
+
+    ```bash
+    claude mcp add --transport http celo-docs --scope user https://docs.celo.org/mcp
+    ```
+
+    Confirm it connected with `/mcp` inside Claude Code.
+
+    **Try it:**
+
+    ```text
+    Using the Celo docs MCP server, which adapter address do I pass as
+    feeCurrency to pay gas in USDC on Celo mainnet?
+    ```
+
+    <Warning>
+      If you write `.mcp.json` by hand instead, the `type` field is required. An entry with a `url` but no `type` is read as a stdio server and skipped:
+
+      ```json
+      {
+        "mcpServers": {
+          "celo-docs": {
+            "type": "http",
+            "url": "https://docs.celo.org/mcp"
+          }
+        }
+      }
+      ```
+    </Warning>
+  </Tab>
+
+  <Tab title="Claude Desktop & claude.ai">
+    Remote MCP servers are added as **custom connectors**, not through a config file.
+
+    1. Open **Settings** → **Connectors**.
+    2. Click **Add** → **Add custom connector**.
+    3. Paste `https://docs.celo.org/mcp` and finish setup.
+
+    On Team and Enterprise plans an owner adds it under **Organization settings** → **Connectors** instead. Custom connectors are available on Free, Pro, Max, Team, and Enterprise plans; Free accounts are limited to one.
+
+    Claude connects from Anthropic's infrastructure rather than your machine, so the server has to be reachable on the public internet — `docs.celo.org` is.
+
+    **Try it:**
+
+    ```text
+    Search the Celo docs and summarize how transaction types on Celo
+    differ from standard Ethereum transactions.
+    ```
+  </Tab>
+
+  <Tab title="Cursor">
+    Add the server to `~/.cursor/mcp.json` to use it in every project, or to `.cursor/mcp.json` to scope it to one repo:
+
+    ```json
+    {
+      "mcpServers": {
+        "celo-docs": {
+          "url": "https://docs.celo.org/mcp"
+        }
+      }
+    }
+    ```
+
+    You can also reach the file from the command palette (<kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) with **Open MCP settings** → **Add custom MCP**. The server then shows up under Settings → MCP; toggle it on if it isn't already.
+
+    **Try it:**
+
+    ```text
+    Check the Celo docs MCP server for the current Celo Sepolia chain ID
+    and RPC URL, then add the network to my viem config.
+    ```
+  </Tab>
+
+  <Tab title="VS Code">
+    GitHub Copilot in VS Code uses a different key (`servers`, not `mcpServers`) and does require `type`. Add to `.vscode/mcp.json`:
+
+    ```json
+    {
+      "servers": {
+        "celo-docs": {
+          "type": "http",
+          "url": "https://docs.celo.org/mcp"
+        }
+      }
+    }
+    ```
+
+    Open Copilot Chat in agent mode and the server's tools appear in the tool picker.
+
+    **Try it:**
+
+    ```text
+    Using the Celo docs, show me how to verify a contract on Celoscan
+    with Foundry.
+    ```
+  </Tab>
+
+  <Tab title="Codex">
+    Add the server to `~/.codex/config.toml`:
+
+    ```toml
+    [mcp_servers.celo-docs]
+    url = "https://docs.celo.org/mcp"
+    ```
+
+    **Try it:**
+
+    ```text
+    Look up in the Celo docs which stablecoins can be used as fee currencies
+    on mainnet, then list their addresses.
+    ```
+  </Tab>
+
+  <Tab title="ChatGPT">
+    ChatGPT has no one-click way to add an arbitrary MCP server, so start with the two paths that need no setup:
+
+    **Open a page in ChatGPT.** Every page in the docs has a contextual menu next to the page title with an **Open in ChatGPT** option. It starts a conversation with that page already loaded as context.
+
+    **Paste the docs index.** Give ChatGPT the index and let it pull the pages it needs:
+
+    ```text
+    Read https://docs.celo.org/llms.txt — it indexes every page of the Celo
+    documentation. Use it to find the pages covering fee abstraction, then
+    answer from those pages: how do I pay gas in USDC on Celo?
+    ```
+
+    <Info>
+      **Advanced:** ChatGPT's developer mode can connect arbitrary remote MCP servers, which would let you add `https://docs.celo.org/mcp` directly. OpenAI's documentation is inconsistent about which plans include it, availability has rolled out unevenly, and workspace admins can disable it — so check your own account under **Settings** → **Connectors** before relying on it. Note that ChatGPT's deep research connectors require an MCP server to expose tools named `search` and `fetch`; this server does not, so the deep research path will not work.
+    </Info>
+  </Tab>
+</Tabs>
+
+## llms.txt and llms-full.txt
+
+Two plain-text files make the whole documentation set readable by any model, with or without MCP support.
+
+<CardGroup cols={2}>
+  <Card title="llms.txt" icon="list" href="https://docs.celo.org/llms.txt">
+    An index of every page with its title and a link. Small enough to paste into any chat — the model reads it, then fetches only the pages it needs.
+  </Card>
+  <Card title="llms-full.txt" icon="book" href="https://docs.celo.org/llms-full.txt">
+    The entire documentation set concatenated into one file (~1.5 MB). Use it with long-context models when you want everything available at once.
+  </Card>
+</CardGroup>
+
+Reach for `llms.txt` by default. It costs a fraction of the tokens, and any tool that can follow a link will retrieve the specific pages it needs. Save `llms-full.txt` for when you genuinely want the full corpus in context and have the window to spare.
+
+[`llms.txt` follows the llmstxt.org convention](https://llmstxt.org/), a proposed standard for exposing site content to language models. `llms-full.txt` is a common companion file rather than part of that spec. The index is also served at [`/.well-known/llms.txt`](https://docs.celo.org/.well-known/llms.txt) for tools that look there.
+
+Both files are generated from the live site, so they never go stale.
+
+## Copy any page as Markdown
+
+Every page has a contextual menu beside its title:
+
+- **Copy page** — copies the page as Markdown, ready to paste as context.
+- **View as Markdown** — opens the raw Markdown source.
+- **Open in ChatGPT / Claude / Cursor / VS Code** — starts a session with the page as context, or installs the docs MCP server.
+- **Copy MCP server URL** — copies `https://docs.celo.org/mcp` to your clipboard.
+
+You can also skip the menu: **append `.md` to any docs URL** to get the Markdown directly. For example, [`docs.celo.org/build-on-celo/quickstart.md`](https://docs.celo.org/build-on-celo/quickstart.md). This works well in scripts and agent tooling that fetches URLs.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Celo MCP Server" icon="server" href="/build-on-celo/build-with-ai/mcp/celo-mcp">
+    Query live chain data — balances, blocks, tokens, NFTs, and governance proposals — from your editor.
+  </Card>
+  <Card title="Celopedia" icon="graduation-cap" href="/build-on-celo/build-with-ai/celopedia">
+    A skill that gives your coding assistant curated Celo knowledge: contract addresses, protocols, MiniPay, and grants.
+  </Card>
+  <Card title="What is MCP?" icon="plug" href="/build-on-celo/build-with-ai/mcp/index">
+    How the Model Context Protocol works and why AI tools use it.
+  </Card>
+  <Card title="Vibe Coding Tools" icon="wand-magic-sparkles" href="/build-on-celo/build-with-ai/vibe-coding">
+    AI-assisted development tools that work well for building on Celo.
+  </Card>
+</CardGroup>
+
+<Note>
+  Spotted something wrong on a page? Ask your assistant to use the `submit_feedback` tool — it reports the problem straight to the docs team. You can also [open an issue](https://github.com/celo-org/docs/issues).
+</Note>
