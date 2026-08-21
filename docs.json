@@ -153,21 +153,7 @@
           {
             "group": "Use Cases",
             "pages": [
-              {
-                "group": "Build for MiniPay",
-                "pages": [
-                  "build-on-celo/build-on-minipay/overview",
-                  "build-on-celo/build-on-minipay/quickstart",
-                  {
-                    "group": "Prerequisites",
-                    "pages": [
-                      "build-on-celo/build-on-minipay/prerequisites/ngrok-setup"
-                    ]
-                  },
-                  "build-on-celo/build-on-minipay/code-library",
-                  "build-on-celo/build-on-minipay/deeplinks"
-                ]
-              },
+              "build-on-celo/build-on-minipay/overview",
               "build-on-celo/build-with-farcaster",
               "build-on-celo/build-with-self",
               "build-on-celo/build-with-local-stablecoin",
@@ -1793,27 +1779,67 @@
     },
     {
       "source": "/developer/build-on-minipay",
-      "destination": "/build/build-on-minipay"
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-on-minipay/code-library",
-      "destination": "/build/build-on-minipay/code-library"
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-on-minipay/deeplinks",
-      "destination": "/build/build-on-minipay/deeplinks"
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-on-minipay/overview",
-      "destination": "/build/build-on-minipay/overview"
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-on-minipay/prerequisites/ngrok-setup",
-      "destination": "/build/build-on-minipay/prerequisites/ngrok-setup"
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-on-minipay/quickstart",
-      "destination": "/build/build-on-minipay/quickstart"
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build-on-celo/build-on-minipay/quickstart",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build-on-celo/build-on-minipay/code-library",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build-on-celo/build-on-minipay/deeplinks",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build-on-celo/build-on-minipay/prerequisites/ngrok-setup",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay/quickstart",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay/code-library",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay/deeplinks",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay/prerequisites/ngrok-setup",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build/build-on-minipay/overview",
+      "destination": "/build-on-celo/build-on-minipay/overview"
     },
     {
       "source": "/developer/build-with-ai/overview",
