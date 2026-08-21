@@ -1,34 +1,222 @@
 ---
-title: Build on MiniPay
-description: A guide  for building on MiniPay and Celo.
-sidebarTitle: "Overview"
+title: Build for MiniPay
+sidebarTitle: "MiniPay"
+description: What is Celo-specific about building a MiniPay Mini App — stablecoins, gas paid in stablecoins, detecting MiniPay, phone-number lookup — plus the index of the MiniPay developer docs for everything else
 ---
 
-## Create a Mini App for the MiniPay Stablecoin Wallet
+This page is for developers building a Mini App for [MiniPay](https://www.opera.com/products/minipay), the stablecoin wallet from Opera. It covers only what is specific to Celo. The build, test and submit lifecycle is documented by the MiniPay team at [docs.minipay.xyz](https://docs.minipay.xyz/); the index at the end of this page lists every page there so you — or your coding agent — can see what is available without leaving this site.
 
----
+MiniPay runs only on Celo (mainnet) and Celo Sepolia (testnet). It has more than 10M activations, a built-in Mini App discovery page, and ships inside the Opera Mini Android browser and as a standalone app for [Android](https://play.google.com/store/apps/details?id=com.opera.minipay) and [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB). Balances are shown in the user's local currency, the wallet is 2 MB, and phone numbers can stand in for addresses.
 
-[MiniPay](https://www.opera.com/products/minipay) is a stablecoin wallet with a built-in Mini App discovery page, integrated directly within the popular Opera Mini Android browser and also available as a standalone application on Android and iOS.
+## Prerequisites
 
-Since launching, MiniPay is the fastest growing non-custodial wallet in the Global South with more than 10M+ activations.
+- A web app (any framework) reachable over HTTPS; for local development use `ngrok http 3000` to expose `localhost`
+- [viem](/tooling/libraries-sdks/viem/index) or [wagmi](https://wagmi.sh/) — both support Celo's fee-currency transactions natively
+- Testnet funds: CELO from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia), swapped to a stablecoin in the [Mento app](https://app.mento.org/)
+- To scaffold: `npx @celo/celo-composer@latest create -t minipay` (the [MiniPay template](https://github.com/celo-org/minipay-template)), or follow the [MiniPay quick start](https://docs.minipay.xyz/getting-started/quick-start.html)
 
-<Note>
-Install the new MiniPay standalone app for [Android](https://play.google.com/store/apps/details?id=com.opera.minipay) or [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB) now! 🎉 📥 
-</Note>
+## What is Celo-specific
 
-## Why Build on MiniPay?
+### Stablecoins are the only assets
 
-- **Useful Applications:** MiniPay focuses on practical uses in everyday life, especially in emerging markets, where most of their users are located.
-- **Integrated App Discovery:** MiniPay includes a built-in app discovery page, allowing users to interact with selected Mini Apps directly within their wallet, without needing to switch to other platforms.
-- **Access to Opera’s Large User Base** Developers can tap into MiniPay’s growing user base (10 Million activated addresses) and Opera browser distribution.
+MiniPay holds USDm, USDC and USDT — no CELO balance is shown to the user. Price and settle in one of these.
 
-## Key Features of MiniPay
+| Token | Celo mainnet (42220) | Decimals |
+|---|---|---|
+| USDm | [`0x765DE816845861e75A25fCA122bb6898B8B1282a`](https://celoscan.io/address/0x765DE816845861e75A25fCA122bb6898B8B1282a) | 18 |
+| USDC | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) | 6 |
+| USDT | [`0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`](https://celoscan.io/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) | 6 |
 
-- **Phone Number mapping:** Uses mobile phone numbers as wallet addresses.
-- **Fast, Low-Cost Transactions:** Offers fast P2P stablecoin transactions with sub-cent fees.
-- **Lightweight Design:** At just 2MB, users can use the wallet with limited data.
+<Warning>
+USDC and USDT use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a USDC transfer sends 10¹² times the intended amount. Pass the token's decimals explicitly.
+</Warning>
 
-## Opportunities for MiniPay Builders
+```ts
+import { parseUnits, encodeFunctionData } from "viem";
+import { stableTokenABI } from "@celo/abis";
 
-- **Raising Funding?** Reach out to team@verda.ventures with a deck and/or product demo.
-- **Still Building?** Register your project for [Build With Celo: Proof-of-Ship](https://www.celopg.eco/programs/proof-of-ship-s1) for monthly rewards.
+// USDC on Celo mainnet (42220): 6 decimals
+const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+const hash = await walletClient.sendTransaction({
+  to: USDC,
+  data: encodeFunctionData({
+    abi: stableTokenABI,
+    functionName: "transfer",
+    args: [receiver, parseUnits("1.50", 6)], // 1.50 USDC
+  }),
+});
+```
+
+Testnet addresses are on [Fee currency contracts](/tooling/contracts/fee-currencies).
+
+### Gas is paid in the user's stablecoin
+
+MiniPay uses [fee abstraction](/build-on-celo/fee-abstraction/overview): the user never holds CELO, and the wallet pays gas in the stablecoin the user holds the most of. You may set `feeCurrency` on `eth_sendTransaction`, but MiniPay can override it. Do not build flows that assume a CELO balance, and do not show a "buy CELO for gas" step.
+
+To show a fee estimate in the user's currency, estimate gas and gas price in that token. The JSON-RPC methods accept the fee currency directly:
+
+```ts
+// Celo mainnet (42220); USDm has 18 decimals. For USDC/USDT use the *adapter* address, see fee abstraction.
+const USDM = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
+
+const gasLimit = await publicClient.request({
+  method: "eth_estimateGas",
+  params: [{ from: account, to, value: "0x0", data: "0x", feeCurrency: USDM }],
+});
+const gasPrice = await publicClient.request({
+  method: "eth_gasPrice",
+  params: [USDM],
+});
+const feeInUsdm = formatUnits(BigInt(gasLimit) * BigInt(gasPrice), 18);
+```
+
+In the UI, label this "network fee", not "gas" — see the MiniPay [design standards](https://docs.minipay.xyz/design-standards/).
+
+### Detect MiniPay and skip the connect button
+
+Inside MiniPay the wallet is already connected through the injected provider, and `window.ethereum.isMiniPay` is `true`. Hide your connect-wallet UI and connect the injected connector on load:
+
+```tsx
+import { useEffect, useState } from "react";
+import { useConnect } from "wagmi";
+import { injected } from "wagmi/connectors";
+
+export function useMiniPay() {
+  const [isMiniPay, setIsMiniPay] = useState(false);
+  const { connect } = useConnect();
+
+  useEffect(() => {
+    if (window.ethereum?.isMiniPay) {
+      setIsMiniPay(true);
+      connect({ connector: injected({ target: "metaMask" }) });
+    }
+  }, [connect]);
+
+  return isMiniPay; // render <ConnectButton /> only when false
+}
+```
+
+Check for `window.ethereum` before initialising any web3 library; the provider is injected by the host. Wallet-connection details and error handling: [Wallet connection](https://docs.minipay.xyz/getting-started/wallet-connection.html).
+
+### Resolve MiniPay phone numbers to addresses
+
+MiniPay maps phone numbers to addresses through [SocialConnect](/build-on-celo/build-on-socialconnect) and ODIS. To look a number up you act as an *issuer*: an account that has verified the user owns the number (for example by SMS) and that holds ODIS quota.
+
+```bash
+npm install @celo/identity
+```
+
+```ts
+import { createWalletClient, http } from "viem";
+import { celoSepolia } from "viem/chains";                 // Celo Sepolia (11142220)
+import { privateKeyToAccount } from "viem/accounts";
+import { OdisUtils } from "@celo/identity";
+import { AuthSigner, OdisContextName } from "@celo/identity/lib/odis/query";
+
+const viemClient = createWalletClient({
+  account: privateKeyToAccount(process.env.ISSUER_PRIVATE_KEY as `0x${string}`),
+  transport: http(),
+  chain: celoSepolia,
+});
+const issuerAddress = viemClient.account.address;
+
+// 1. Authenticate with ODIS as the issuer
+const authSigner: AuthSigner = {
+  authenticationMethod: OdisUtils.Query.AuthenticationMethod.WALLET_KEY,
+  sign191: ({ message, account }) => viemClient.signMessage({ message, account }),
+};
+const serviceContext = OdisUtils.Query.getServiceContext(OdisContextName.CELO_SEPOLIA);
+
+// 2. Check quota; top up by paying the OdisPayments contract if remainingQuota < 1
+const { remainingQuota } = await OdisUtils.Quota.getPnpQuotaStatus(issuerAddress, authSigner, serviceContext);
+
+// 3. Derive the obfuscated identifier for the phone number
+const { obfuscatedIdentifier } = await OdisUtils.Identifier.getObfuscatedIdentifier(
+  "+12345678910",
+  OdisUtils.Identifier.IdentifierPrefix.PHONE_NUMBER,
+  issuerAddress,
+  authSigner,
+  serviceContext,
+);
+
+// 4. Look up the addresses attested for it by the issuers you trust
+const attestations = await federatedAttestationsContract.lookupAttestations(
+  obfuscatedIdentifier,
+  [issuerAddress],
+);
+console.log(attestations.accounts);
+```
+
+Use `OdisContextName.MAINNET` and `chain: celo` in production. The MiniPay reference for this is [Phone number lookup](https://docs.minipay.xyz/technical-references/phone-number-lookup.html).
+
+### Deeplinks
+
+Deeplinks open a MiniPay screen from your Mini App or from outside (WhatsApp, a web page). The host is `link.minipay.xyz`; users without the app get an install prompt.
+
+| Action | Deeplink |
+|---|---|
+| Add cash, optionally scoped to tokens | `https://link.minipay.xyz/add_cash?tokens=USDM,USDT,USDC` |
+| Open an approved Mini App | `https://link.minipay.xyz/browse?url=https://your-app.example` |
+| Discovery page | `https://link.minipay.xyz/discover` |
+| Transaction receipt (append `&celebrate` for an animation) | `https://link.minipay.xyz/receipt?tx=0x…` |
+| User's QR code | `https://link.minipay.xyz/qr` |
+| Invite friends | `https://link.minipay.xyz/invite_friends` |
+| Balance (pockets) | `https://link.minipay.xyz/balance` |
+
+Reference: [Deeplinks](https://docs.minipay.xyz/technical-references/deeplinks.html).
+
+## Test inside MiniPay
+
+You cannot test in an Android emulator; use a phone.
+
+1. In the MiniPay app open **Settings → About** and tap the **Version** number until developer mode is confirmed.
+2. Back in **Settings → Developer Settings**, enable **Developer Mode** and, for Celo Sepolia, **Use Testnet**.
+3. Tap **Load Test Page**, enter your app's HTTPS URL (the `ngrok` URL for local development), and tap **Go**.
+
+Step-by-step with screenshots: [Test your Mini App inside MiniPay](https://docs.minipay.xyz/getting-started/test-in-minipay.html).
+
+## The MiniPay developer docs
+
+Everything below lives at docs.minipay.xyz and is maintained by the MiniPay team.
+
+**Getting started**
+- [What are Mini Apps?](https://docs.minipay.xyz/getting-started/overview.html)
+- [Quick start](https://docs.minipay.xyz/getting-started/quick-start.html) — scaffold a Mini App with the Celo agent skills
+- [Test your Mini App inside MiniPay](https://docs.minipay.xyz/getting-started/test-in-minipay.html)
+- [Project setup](https://docs.minipay.xyz/getting-started/project-setup.html) and [Setting up a React app](https://docs.minipay.xyz/getting-started/setup-react.html)
+- [FAQ](https://docs.minipay.xyz/faq.html)
+
+**Guides**
+- [Wallet connection](https://docs.minipay.xyz/getting-started/wallet-connection.html) — injected provider, auto-connect, connection state, errors
+- [UI and container integration](https://docs.minipay.xyz/getting-started/ui-and-container.html)
+- [Interacting with smart contracts](https://docs.minipay.xyz/getting-started/smart-contracts.html)
+- [Best practices](https://docs.minipay.xyz/getting-started/best-practices.html)
+- [Deployment](https://docs.minipay.xyz/getting-started/deployment.html)
+- [Submit your Mini App](https://docs.minipay.xyz/getting-started/submit-your-miniapp.html) to the discovery page
+- [Building for MiniPay](https://docs.minipay.xyz/getting-started/why-minipay.html) and [Availability](https://docs.minipay.xyz/getting-started/availability.html)
+- [Design standards](https://docs.minipay.xyz/design-standards/) — including user-facing terminology
+- [Examples](https://docs.minipay.xyz/getting-started/examples.html)
+
+**Technical reference**
+- [Retrieve balance](https://docs.minipay.xyz/technical-references/retrieve-balance.html)
+- [Send a transaction](https://docs.minipay.xyz/technical-references/send-transaction.html) — USDC, USDT, USDm with wagmi
+- [Gas estimation](https://docs.minipay.xyz/technical-references/gas-estimation.html)
+- [Transaction status](https://docs.minipay.xyz/technical-references/transaction-status.html)
+- [Phone number lookup](https://docs.minipay.xyz/technical-references/phone-number-lookup.html)
+- [Chain switching](https://docs.minipay.xyz/technical-references/chain-switching.html)
+- [Deeplinks](https://docs.minipay.xyz/technical-references/deeplinks.html)
+- Custom methods: [overview](https://docs.minipay.xyz/technical-references/custom-methods/custom-methods.html), [getExchangeRate](https://docs.minipay.xyz/technical-references/custom-methods/get-exchange-rate.html), [scanQrCode](https://docs.minipay.xyz/technical-references/custom-methods/scan-qr-code.html), [requestContact](https://docs.minipay.xyz/technical-references/custom-methods/request-contact.html)
+
+## Funding and programs
+
+- Building in public? Register for Build With Celo programs at [celopg.eco](https://www.celopg.eco/).
+- Raising? Send a deck or product demo to team@verda.ventures.
+- Grants and accelerators: [Fund your project](/build-on-celo/fund-your-project).
+
+## Related
+
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) - How gas in stablecoins works and the adapter addresses for USDC and USDT
+- [Fee currency contracts](/tooling/contracts/fee-currencies) - Token and adapter addresses per network
+- [Build with local stablecoins](/build-on-celo/build-with-local-stablecoin) - Mento stablecoins beyond USDm
+- [SocialConnect](/build-on-celo/build-on-socialconnect) - Phone-number to address mapping
+- [Celo Composer](/build-on-celo/quickstart) - Scaffold a MiniPay-ready app
