@@ -32,15 +32,14 @@ USDC and USDT use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a US
 </Warning>
 
 ```ts
-import { parseUnits, encodeFunctionData } from "viem";
-import { stableTokenABI } from "@celo/abis";
+import { erc20Abi, parseUnits, encodeFunctionData } from "viem";
 
 // USDC on Celo mainnet (42220): 6 decimals
 const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
 const hash = await walletClient.sendTransaction({
   to: USDC,
   data: encodeFunctionData({
-    abi: stableTokenABI,
+    abi: erc20Abi,
     functionName: "transfer",
     args: [receiver, parseUnits("1.50", 6)], // 1.50 USDC
   }),
