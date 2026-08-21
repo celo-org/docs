@@ -1,0 +1,173 @@
+---
+title: "Self Agent ID: Proof-of-Human Identity for Agents"
+sidebarTitle: "Self: Agent Identity"
+description: Give an AI agent a soulbound on-chain identity on Celo, backed by a zero-knowledge passport proof, and verify agent requests in your service with Self Agent ID
+---
+
+This page is for developers who build AI agents and for services that want to accept requests from agents without accepting bots. Self Agent ID is an on-chain registry on Celo that binds an agent's signing key to a zero-knowledge proof that one real, unique human stands behind it. The agent receives a soulbound ERC-721 NFT; services check it with one middleware call. It implements the [ERC-8004](/build-on-celo/build-with-ai/8004) registries and adds a proof-of-human extension.
+
+For verifying *humans* in your app (passport, EU ID, Aadhaar), see [Build with Self](/build-on-celo/build-with-self).
+
+## How it works
+
+1. A human scans their passport or ID in the Self app. The zero-knowledge proof is generated on the phone; no personal data leaves the device.
+2. The Self Hub verifies the proof on Celo and calls the registry.
+3. The registry mints a soulbound NFT that links the agent's key to the human's unique nullifier. One human can back a bounded number of agents — the default sybil limit is one.
+4. The agent signs every outbound request with its key. The service verifies the signature against the registry and reads the human-proof flags (age, OFAC, freshness) it needs.
+
+## Contracts
+
+All addresses below were checked with `eth_getCode` on 2026-08-21; the identity registry reports `name() = "Self Agent ID"`, `symbol() = "SAID"`.
+
+| Contract | Celo mainnet (42220) | Celo Sepolia (11142220) |
+|---|---|---|
+| SelfAgentRegistry (identity, proof-of-human) | [`0xaC3DF9ABf80d0F5c020C06B04Cced27763355944`](https://celoscan.io/address/0xaC3DF9ABf80d0F5c020C06B04Cced27763355944) | [`0x043DaCac8b0771DD5b444bCC88f2f8BBDBEdd379`](https://celo-sepolia.blockscout.com/address/0x043DaCac8b0771DD5b444bCC88f2f8BBDBEdd379) |
+| SelfReputationRegistry | [`0x69Da18CF4Ac27121FD99cEB06e38c3DC78F363f4`](https://celoscan.io/address/0x69Da18CF4Ac27121FD99cEB06e38c3DC78F363f4) | see [Self smart contracts](https://docs.self.xyz/docs/agent-id/smart-contracts/) |
+| SelfValidationRegistry | [`0x71a025e0e338EAbcB45154F8b8CA50b41e7A0577`](https://celoscan.io/address/0x71a025e0e338EAbcB45154F8b8CA50b41e7A0577) | see [Self smart contracts](https://docs.self.xyz/docs/agent-id/smart-contracts/) |
+| Celo Agent Visa | [`0xCa97f7586CF9De62B8ca516d7Ee25f6AEae5e109`](https://celoscan.io/address/0xCa97f7586CF9De62B8ca516d7Ee25f6AEae5e109) | [`0xf049FD6260Fce964B82728A86CF1BbEB8AB3E875`](https://celo-sepolia.blockscout.com/address/0xf049FD6260Fce964B82728A86CF1BbEB8AB3E875) |
+
+<Warning>
+Self Agent ID is deployed on **Celo Sepolia (chain ID 11142220)**, not on the retired Alfajores testnet (44787). On mainnet the Self app requires a real passport or ID document; on Celo Sepolia it accepts mock documents, so you can test the whole flow without one.
+</Warning>
+
+## Prerequisites
+
+- Node.js 18+ (TypeScript SDK) — Python (`pip install selfxyz-agent-sdk`) and Rust (`cargo add self-agent-sdk`) SDKs exist too
+- The [Self app](https://self.xyz/) on a phone, to scan the registration QR code
+- A Celo RPC endpoint: `https://forno.celo.org` (mainnet) or `https://forno.celo-sepolia.celo-testnet.org` (Celo Sepolia)
+
+## Register an agent
+
+The CLI ships with the SDK. Registration is a browser handoff: the terminal creates a session, you scan a QR code with the Self app, the proof is verified on-chain, and the agent NFT is minted.
+
+```bash
+npm install -g @selfxyz/agent-sdk
+
+# 1. Create a session on Celo Sepolia. --mode linked keeps the NFT in the human's wallet.
+#    For an agent that owns its own NFT use --mode wallet-free and drop --human-address.
+self-agent register init \
+  --mode linked \
+  --human-address 0xYourWalletAddress \
+  --network testnet \
+  --minimum-age 18 \
+  --ofac \
+  --out .self/session.json
+
+# 2. Open the QR code in your browser and scan it with the Self app
+self-agent register open --session .self/session.json
+
+# 3. Wait for the on-chain verification to complete
+self-agent register wait --session .self/session.json
+
+# 4. Export the agent address, agent ID and key. The private key is only printed with --unsafe.
+self-agent register export --session .self/session.json --unsafe --print-private-key
+```
+
+Store the exported private key in a secrets manager or an environment variable (`AGENT_PRIVATE_KEY` below). Never commit it. Use `--network mainnet` for a production agent.
+
+### Registration modes
+
+| Mode | Wallet needed | Who owns the NFT |
+|---|---|---|
+| `linked` | Yes, at registration only | The human's wallet |
+| `wallet-free` | No | The agent's own key |
+| `ed25519` | No | Address derived from an Ed25519 key |
+| `ed25519-linked` | Yes, at registration only | The human's wallet |
+| `privy` | No (social login) | An embedded wallet created for the human |
+| `smartwallet` | No (passkey) | A passkey smart wallet; gasless on mainnet |
+
+All modes work on both networks and produce the same soulbound NFT. Details: [Registration modes](https://docs.self.xyz/docs/agent-id/registration-modes/).
+
+## Call a service as an agent
+
+`agent.fetch()` is `fetch()` with three signed headers added to every request: `x-self-agent-address`, `x-self-agent-signature`, and `x-self-agent-timestamp`.
+
+```ts
+import { SelfAgent } from "@selfxyz/agent-sdk";
+
+// Celo Sepolia (11142220). For mainnet pass registryAddress and rpcUrl instead of network:
+//   { privateKey, registryAddress: "0xaC3DF9ABf80d0F5c020C06B04Cced27763355944", rpcUrl: "https://forno.celo.org" }
+const agent = new SelfAgent({
+  privateKey: process.env.AGENT_PRIVATE_KEY!,
+  network: "testnet",
+});
+
+const res = await agent.fetch("https://api.example.com/protected", {
+  method: "POST",
+  body: JSON.stringify({ action: "hello" }),
+});
+
+// Check the agent's own registration state
+const registered = await agent.isRegistered();
+const creds = await agent.getCredentials();
+```
+
+## Verify agents in your service
+
+The verifier checks the signature, looks the address up in the registry, and enforces the human-proof rules you configure. The Express middleware rejects anything that fails before your handler runs.
+
+```ts
+import express from "express";
+import { SelfAgentVerifier } from "@selfxyz/agent-sdk";
+
+const app = express();
+
+const verifier = SelfAgentVerifier.create()
+  .requireAge(18)   // proof says the human is 18 or older
+  .requireOFAC()    // proof passed the OFAC check
+  .sybilLimit(1)    // at most one agent per human may call this service
+  .build();
+
+app.use("/api", verifier.auth());
+```
+
+Without Express, call `verifier.verify({ signature, timestamp, method, url, body })` with the values from the three headers and the request.
+
+Defaults: sybil limit 1, replay protection on, and requests older than 300 seconds are rejected.
+
+## Troubleshooting
+
+- **The Self app refuses the document on mainnet.** Mainnet accepts real passports and IDs only. Develop against `--network testnet` (Celo Sepolia), where mock documents are accepted.
+- **Registration never completes.** Check the session state with `self-agent register status --session .self/session.json`; states run `initialized → handoff_opened → callback_received → onchain_verified`. If it stalls at `handoff_opened`, the QR code was not scanned or the app is on the other network.
+- **`register export` prints no private key.** Add `--unsafe --print-private-key`; the key is withheld by default.
+- **Requests are rejected by the verifier although the agent is registered.** The timestamp window is 300 seconds — keep the agent host's clock in sync. Also confirm both sides use the same network; a Celo Sepolia agent is unknown to a mainnet registry.
+- **`userDefinedData` is garbled on-chain.** The SDK passes it as a UTF-8 string; use ASCII characters, not raw bytes.
+
+## Celo Agent Visa
+
+Celo Agent Visa is a tiered soulbound NFT that records an agent's on-chain activity on Celo. Claims are gasless — the Self relayer pays. Tracked metrics are transaction count and stablecoin volume in USDT, USDC and USDm.
+
+| Tier | Requirement |
+|---|---|
+| 1 — Tourist Visa | Registered in the Self Agent Registry + 1 transaction |
+| 2 — Work Visa | Human proof + 1,000 transactions or $5,000 stablecoin volume |
+| 3 — Citizenship | Human proof + 10,000 transactions or $15,000 stablecoin volume; manual review |
+
+Flow: register → transact on Celo → check eligibility → claim (tiers 1–2 directly, tier 3 after approval). Contract addresses are in the table above; the claim API is `https://agent-api.self.xyz`. Details: [Celo Agent Visa](https://docs.self.xyz/docs/agent-id/celo-agent-visa/).
+
+## How this relates to ERC-8004
+
+Self Agent ID implements all three ERC-8004 registry roles — identity (`SelfAgentRegistry`), reputation (`SelfReputationRegistry`) and validation (`SelfValidationRegistry`) — and extends the identity registry with `registerWithHumanProof()`, `revokeHumanProof()`, proof-validity queries, and nullifier-based sybil detection. The extension is provider-agnostic through an `IHumanProofProvider` interface, so any zero-knowledge identity system can plug in.
+
+These are Self's own deployments. The reference ERC-8004 registries on Celo (`0x8004A169…` mainnet) listed on the [ERC-8004 page](/build-on-celo/build-with-ai/8004#contract-deployments) are separate contracts; an agent can be registered in both.
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Overview | [docs.self.xyz/docs/agent-id/overview](https://docs.self.xyz/docs/agent-id/overview/) |
+| Register an agent | [docs.self.xyz/docs/agent-id/register-an-agent](https://docs.self.xyz/docs/agent-id/register-an-agent/) |
+| SDK integration | [docs.self.xyz/docs/agent-id/sdk-integration](https://docs.self.xyz/docs/agent-id/sdk-integration/) |
+| CLI reference | [docs.self.xyz/docs/agent-id/cli](https://docs.self.xyz/docs/agent-id/cli/) |
+| REST / A2A API | `https://agent-api.self.xyz` — [reference](https://docs.self.xyz/docs/agent-id/rest-api/) |
+| Service operator guide | [docs.self.xyz/docs/agent-id/guides/service-operator](https://docs.self.xyz/docs/agent-id/guides/service-operator/) |
+| Troubleshooting | [docs.self.xyz/docs/agent-id/troubleshooting](https://docs.self.xyz/docs/agent-id/troubleshooting/) |
+| Source | [github.com/selfxyz/self-agent-id](https://github.com/selfxyz/self-agent-id) |
+
+## Related
+
+- [ERC-8004](/build-on-celo/build-with-ai/8004) - The trust standard Self Agent ID implements
+- [Build with Self](/build-on-celo/build-with-self) - Verify humans, not agents, with the same proofs
+- [x402](/build-on-celo/build-with-ai/x402) - Let a verified agent pay per request
+- [MPP](/build-on-celo/build-with-ai/mpp) - Charge agents per API call in USDC
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) - Pay gas in stablecoins from the agent wallet
