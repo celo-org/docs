@@ -99,37 +99,34 @@ Check for `window.ethereum` before initialising any web3 library; the provider i
 
 ### Resolve MiniPay phone numbers to addresses
 
-MiniPay maps phone numbers to addresses through [SocialConnect](/build-on-celo/build-on-socialconnect) and ODIS. To look a number up you act as an *issuer*: an account that has verified the user owns the number (for example by SMS) and that holds ODIS quota.
+MiniPay maps phone numbers to addresses through [SocialConnect](/build-on-celo/build-on-socialconnect) and ODIS. To look a number up you act as an *issuer*: an account that has verified the user owns the number (for example by SMS), has a [data encryption key (DEK)](https://github.com/celo-org/social-connect) registered on the Accounts contract, and holds ODIS quota.
 
 ```bash
-npm install @celo/identity
+npm install @celo/identity @celo/abis viem
 ```
 
 ```ts
-import { createWalletClient, http } from "viem";
-import { celoSepolia } from "viem/chains";                 // Celo Sepolia (11142220)
-import { privateKeyToAccount } from "viem/accounts";
+import { createPublicClient, http } from "viem";
+import { celo } from "viem/chains";
+import { federatedAttestationsABI } from "@celo/abis";
 import { OdisUtils } from "@celo/identity";
-import { AuthSigner, OdisContextName } from "@celo/identity/lib/odis/query";
+import type { AuthSigner } from "@celo/identity/lib/odis/query";
 
-const viemClient = createWalletClient({
-  account: privateKeyToAccount(process.env.ISSUER_PRIVATE_KEY as `0x${string}`),
-  transport: http(),
-  chain: celoSepolia,
-});
-const issuerAddress = viemClient.account.address;
+// Celo mainnet (42220). @celo/identity ships ODIS contexts for mainnet only — no Celo Sepolia.
+const FEDERATED_ATTESTATIONS = "0x0aD5b1d0C25ecF6266Dd951403723B2687d6aff2";
+const issuerAddress = "0xYourIssuerAddress";
 
-// 1. Authenticate with ODIS as the issuer
+// 1. Authenticate with ODIS using the issuer's DEK private key
 const authSigner: AuthSigner = {
-  authenticationMethod: OdisUtils.Query.AuthenticationMethod.WALLET_KEY,
-  sign191: ({ message, account }) => viemClient.signMessage({ message, account }),
+  authenticationMethod: OdisUtils.Query.AuthenticationMethod.ENCRYPTION_KEY,
+  rawKey: process.env.ISSUER_DEK_PRIVATE_KEY!,
 };
-const serviceContext = OdisUtils.Query.getServiceContext(OdisContextName.CELO_SEPOLIA);
+const serviceContext = OdisUtils.Query.getServiceContext(OdisUtils.Query.OdisContextName.MAINNET);
 
-// 2. Check quota; top up by paying the OdisPayments contract if remainingQuota < 1
+// 2. Check quota; top up by paying OdisPayments (0xAE6B29f31B96e61DdDc792f45fDa4e4F0356D0CB) if it is 0
 const { remainingQuota } = await OdisUtils.Quota.getPnpQuotaStatus(issuerAddress, authSigner, serviceContext);
 
-// 3. Derive the obfuscated identifier for the phone number
+// 3. Derive the obfuscated identifier for the phone number (one quota unit per call)
 const { obfuscatedIdentifier } = await OdisUtils.Identifier.getObfuscatedIdentifier(
   "+12345678910",
   OdisUtils.Identifier.IdentifierPrefix.PHONE_NUMBER,
@@ -138,15 +135,18 @@ const { obfuscatedIdentifier } = await OdisUtils.Identifier.getObfuscatedIdentif
   serviceContext,
 );
 
-// 4. Look up the addresses attested for it by the issuers you trust
-const attestations = await federatedAttestationsContract.lookupAttestations(
-  obfuscatedIdentifier,
-  [issuerAddress],
-);
-console.log(attestations.accounts);
+// 4. Read the accounts attested for it by the issuers you trust
+const publicClient = createPublicClient({ chain: celo, transport: http() });
+const [, accounts] = await publicClient.readContract({
+  address: FEDERATED_ATTESTATIONS,
+  abi: federatedAttestationsABI,
+  functionName: "lookupAttestations",
+  args: [obfuscatedIdentifier as `0x${string}`, [issuerAddress]],
+});
+console.log(accounts);
 ```
 
-Use `OdisContextName.MAINNET` and `chain: celo` in production. The MiniPay reference for this is [Phone number lookup](https://docs.minipay.xyz/technical-references/phone-number-lookup.html).
+Contract addresses are from the on-chain registry (`FederatedAttestations`, `OdisPayments`) and listed on [Core contracts](/tooling/contracts/core-contracts). The MiniPay reference for this is [Phone number lookup](https://docs.minipay.xyz/technical-references/phone-number-lookup.html).
 
 ### Deeplinks
 
