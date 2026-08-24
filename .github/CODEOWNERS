@@ -18,9 +18,6 @@
 # Infrastructure Partners section - Blockchain team (was cel2)
 /infra-partners/ @celo-org/blockchain
 
-# Legacy section - Blockchain team (L1 content)
-/legacy/ @celo-org/blockchain
-
 # Specs section (was specs.celo.org) - Blockchain team
 /specs/ @celo-org/blockchain
 
