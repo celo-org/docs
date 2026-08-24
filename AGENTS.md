@@ -123,6 +123,10 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Phone-number mapping | `/build-on-celo/build-on-socialconnect` | SocialConnect / ODIS |
 | AI tooling | `/build-on-celo/build-with-ai/use-docs-with-ai`, `/build-on-celo/build-with-ai/celopedia`, `/build-on-celo/build-with-ai/mcp/index` | docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
 
+### Partner contract addresses
+
+Third-party (partner) contract addresses are not listed in these docs — link to the provider's canonical address page instead. Nothing here watches on-chain activity, and listed partner addresses have gone quiet in place before (#2277). Celo-core contracts — the registry, fee-currency directory entries, the CELO token, our spec deployments — keep their tables here. Example addresses in code snippets are labelled `// example` so nobody funds them.
+
 ### Names
 
 - `USDm`, `EURm`, `BRLm` … — Mento stablecoins, lowercase `m`. `USDM` (capital M) is Mountain Protocol's token, a different asset. Never use one for the other.
