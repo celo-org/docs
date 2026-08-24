@@ -46,6 +46,7 @@
             "pages": [
               "home/index",
               "home/history",
+              "home/celo-l1",
               "home/wallets",
               "home/exchanges",
               "home/gas-fees",
@@ -54,7 +55,9 @@
                 "group": "Bridging",
                 "pages": [
                   "home/bridged-tokens/bridges",
-                  "home/bridged-tokens/native-ETH-bridging"
+                  "home/bridged-tokens/native-ETH-bridging",
+                  "home/bridged-tokens/bridging-celo-from-ethereum",
+                  "home/bridged-tokens/withdrawing-celo-to-ethereum"
                 ]
               }
             ]
@@ -66,7 +69,8 @@
               "home/protocol/security-council",
               "home/protocol/celo-token",
               "home/protocol/escrow",
-              "home/protocol/challengers"
+              "home/protocol/challengers",
+              "home/protocol/metadata"
             ]
           },
           {
@@ -87,6 +91,24 @@
               "home/protocol/transactions/overview",
               "home/protocol/transactions/tx-comment-encryption",
               "home/protocol/transactions/transaction-types"
+            ]
+          },
+          {
+            "group": "Staking",
+            "pages": [
+              "home/protocol/staking/index",
+              "home/protocol/staking/locked-celo",
+              "home/protocol/staking/validator-elections",
+              "home/protocol/staking/validator-groups",
+              "home/protocol/staking/voting",
+              {
+                "group": "Key Management",
+                "pages": [
+                  "home/protocol/staking/key-management/summary",
+                  "home/protocol/staking/key-management/detailed",
+                  "home/protocol/staking/key-management/key-rotation"
+                ]
+              }
             ]
           },
           {
@@ -421,7 +443,8 @@
             "pages": [
               "infra-partners/operators/overview",
               "infra-partners/operators/architecture",
-              "infra-partners/operators/run-node"
+              "infra-partners/operators/run-node",
+              "infra-partners/operators/faq"
             ]
           },
           {

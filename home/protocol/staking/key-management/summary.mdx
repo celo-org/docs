@@ -1,0 +1,35 @@
+---
+title: "Key Management"
+sidebarTitle: "Summary"
+description: The account roles and authorized signer keys used for locking CELO, voting, and managing validators on Celo
+---
+
+This page is for CELO holders and node operators who manage staking keys. The Celo protocol was designed with the understanding that there is often an inherent tradeoff between the convenience of accessing a private key and the security with which that private key can be custodied. In general Celo is unopinionated about how keys are custodied, but also allows users to authorize private keys with specific, limited privileges. This allows users to custody each private key according to its sensitivity (i.e. what is the impact of this key being lost or stolen?) and usage patterns (i.e. how often and under which circumstances will this key need to be accessed).
+
+## Summary
+
+The table below outlines a summary of the various account roles in the Celo protocol. Note that these roles are often _mutually exclusive_. An account that has been designated as one role can often not be used for a different purpose. Also note that under the hood, all of these accounts are based on secp256k1 ECDSA private keys. The different account roles are simply a concept encoded into the Celo staking smart contracts, specifically [Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol).
+
+For more details on a specific key type, please see the [detailed role descriptions](/home/protocol/staking/key-management/detailed).
+
+| Role                                | Description                                                                                      | Ledger compatible |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------- |
+| Celo Account                        | An account used to send transactions in the Celo protocol                                        | Yes               |
+| Locked CELO Account                 | Used to lock and unlock CELO and authorize signers                                               | Yes               |
+| Authorized vote signer              | Can vote on behalf of a Locked CELO Account                                                      | Yes               |
+| Authorized validator (group) signer | Can register and manage a validator group on behalf of a Locked CELO Account                     | Yes               |
+| Authorized validator signer         | Can register and manage a validator on behalf of a Locked CELO Account                           | Yes               |
+
+<Note>
+Two further signer roles exist in `Accounts.sol` but had duties that ended with the Celo L1: the validator BLS signer (consensus block signing) and the attestation signer (the retired Attestation Service). See [About Celo L1](/home/celo-l1).
+</Note>
+
+<Warning>
+A Locked CELO Account may have at most one authorized signer of each type at any time. Once a signer is authorized, the only way to deauthorize that signer is to authorize a new signer that has never previously been used as an authorized signer or Locked CELO Account. It follows then that a newly deauthorized signer cannot be reauthorized.
+</Warning>
+
+## Related
+
+- [Detailed role descriptions](/home/protocol/staking/key-management/detailed) - each role with the commands to designate it
+- [Key rotation](/home/protocol/staking/key-management/key-rotation) - replacing an authorized signer safely
+- [Registering a community RPC provider](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node) - the keys in use during registration
