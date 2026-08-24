@@ -709,15 +709,15 @@
     },
     {
       "source": "/celo-codebase/protocol/identity",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/identity/encrypted-cloud-backup",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/identity/index",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/identity/metadata",
@@ -725,7 +725,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/phone-number-privacy",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/identity/privacy-research",
@@ -745,7 +745,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity#using-the-mapping-for-payment",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/index",
@@ -753,31 +753,31 @@
     },
     {
       "source": "/celo-codebase/protocol/odis",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/domains",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/domains/index",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/domains/sequential-delay-domain",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/index",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/use-cases/key-hardening",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/odis/use-cases/phone-number-privacy",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/celo-codebase/protocol/optics",
@@ -3245,31 +3245,31 @@
     },
     {
       "source": "/legacy/protocol/identity/index",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/odis",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/odis-domain",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/odis-domain-sequential-delay-domain",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/odis-use-case-phone-number-privacy",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/odis-use-case-key-hardening",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/encrypted-cloud-backup",
-      "destination": "/build-on-celo/build-on-socialconnect"
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
     },
     {
       "source": "/legacy/protocol/identity/smart-contract-accounts",
