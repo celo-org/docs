@@ -22,8 +22,7 @@ The ***WitnetPriceRouter*** smart contract is deployed in all the [supported cha
 
 **WitnetProxy**
 
-- *Alfajores*: [0x1111AbA2164AcdC6D291b08DfB374280035E1111](https://alfajores.celoscan.io/address/0x1111AbA2164AcdC6D291b08DfB374280035E1111)
-- *Mainnet*: [0x1111AbA2164AcdC6D291b08DfB374280035E1111](https://celo.blockscout.com/address/0x1111AbA2164AcdC6D291b08DfB374280035E1111)
+Copy the current `WitnetProxy` address for your network from Witnet's [Celo price feeds page](https://docs.witnet.io/smart-contracts/witnet-data-feeds/addresses/celo-price-feeds); live feeds and their update history are on [feeds.witnet.io/celo](https://feeds.witnet.io/celo). Witnet rotates these contracts, so always read the address from their catalog rather than hardcoding one.
 
 
 The Witnet Proxy contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](https://docs.witnet.io/smart-contracts/supported-chains).
@@ -75,7 +74,7 @@ You may also read the latest price of supported currency pairs from your **Web3*
 ```javascript
 web3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 abi = '[{ "inputs": [{ "internalType": "bytes32", "name": "_id", "type": "bytes32" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
-addr = '0x1111AbA2164AcdC6D291b08DfB374280035E1111'
+addr = '<WitnetProxy address for Celo>' // copy from docs.witnet.io -> Celo price feeds
 contract = web3.eth.contract(address=addr, abi=abi)
 // get last value for "Price-CELO/USD-6"
 valueFor = contract.functions.valueFor().call("0x9ed884be")
@@ -98,9 +97,7 @@ Crowd‑witnessed random seed generation
 A randomized subset of Witnet nodes each generate secret random bytes, commit and later reveal them. These are deterministically aggregated into a tamper‑proof seed—unbiased and unpredictable as long as at least one witness is honest.
 
 The WitnetRandomness contract is already deployed on Celo and other supported chains. It exposes a simple interface via IWitnetRandomness, available in the witnet‑solidity‑bridge npm package
-- Alfajores: [0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB](https://alfajores.celoscan.io/address//0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
-
-- Mainnet: [0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB](https://celo.blockscout.com/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
+Copy the current randomness-contract address for your network from Witnet's [contract addresses page](https://docs.witnet.io/smart-contracts/witnet-randomness-oracle/contract-addresses).
 
 This very basic example shows how easy is to source random uint32 values into your own contracts:
 
