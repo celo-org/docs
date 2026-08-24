@@ -5,6 +5,12 @@ description: Lock CELO to vote in validator elections and governance while keepi
 
 This page is for CELO holders who want to participate in validator elections and on-chain governance. To take part, you first lock CELO; the same locked balance can vote and stake concurrently.
 
+<Note>
+**Terminology**
+
+The term "validator" is used in the code and corresponding explanation due to historical reasons, but refers to the community RPC providers.
+</Note>
+
 <Info>
 **Terminology**
 
@@ -37,7 +43,7 @@ The flow is as follows:
 
 - An account calls `lock`, transferring an amount of CELO from their balance to the `LockedGold` smart contract. This increments the account's 'non-voting' balance by the same amount.
 
-- Then the account calls `vote`, passing in an amount and the address of the group to vote for. This decrements the account's 'non-voting' balance and increments the 'pending' balance associated with that group by the same amount. This counts immediately towards electing validators. Note that the vote may be rejected if it would mean that the account would be voting for more than 3 distinct groups, or that the [voting cap](/home/protocol/staking/validator-elections#group-voting-caps) for the group would be exceeded.
+- Then the account calls `vote`, passing in an amount and the address of the group to vote for. This decrements the account's 'non-voting' balance and increments the 'pending' balance associated with that group by the same amount. This counts immediately towards electing validators. Note that the vote may be rejected if it would mean that the account would be voting for more than 10 distinct groups, or that the [voting cap](/home/protocol/staking/validator-elections#group-voting-caps) for the group would be exceeded.
 
 - At the end of the current epoch (approximately every 24 hours), the protocol first delivers [epoch rewards](/home/protocol/epoch-rewards/index) to validators, groups and voters based on the current epoch (pending votes do not count for these purposes), and then runs an [election](/home/protocol/staking/validator-elections) to select the active validator set for the following epoch.
 

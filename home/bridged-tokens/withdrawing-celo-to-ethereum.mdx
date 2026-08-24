@@ -112,7 +112,8 @@ The following example demonstrates how to configure a file with all the details 
       console.log(`Withdrawal Proved: ${proveReceipt}`);
 
       /**
-       * The below step can take a few minutes, ideally 2 minutes.
+       * The fault challenge period is 7 days (proofMaturityDelaySeconds
+       * is 604800 on Celo mainnet and Celo Sepolia).
        *
        * Hence, you may want to use viem's `getTimeToFinalize`.
        *
