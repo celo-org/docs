@@ -728,7 +728,7 @@
     },
     {
       "source": "/blog/2022/03/04/Celo%20CLI:%20A%20Practical%20Guide%20to%20Energize%20your%20Celo%20Toolkit",
-      "destination": "/cli"
+      "destination": "/tooling/libraries-sdks/cli"
     },
     {
       "source": "/blog/2022/03/04/Celo%20Composer%20-%20Easily%20Build%20Full-Stack%20Mobile%20dApps%20on%20Celo",
@@ -908,7 +908,7 @@
     },
     {
       "source": "/celo-codebase/protocol/oracles/oracles-on-celo",
-      "destination": "/developer/oracles"
+      "destination": "/tooling/oracles"
     },
     {
       "source": "/celo-codebase/protocol/oracles/redstone-protocol-how-to",
@@ -1064,31 +1064,31 @@
     },
     {
       "source": "/celo-codebase/wallet",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/invitations",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/README",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/verification",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-codebase/wallet/intro",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/celo-gold-holder-guide/ledger",
@@ -1212,15 +1212,15 @@
     },
     {
       "source": "/celo-sdk",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/celo-sdk/celo-dapp-gallery",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/celo-sdk/contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/celo.org",
@@ -1376,7 +1376,7 @@
     },
     {
       "source": "/command-line-interface/introduction",
-      "destination": "/cli"
+      "destination": "/tooling/libraries-sdks/cli"
     },
     {
       "source": "/command-line-interface/lockedgold",
@@ -1432,7 +1432,7 @@
     },
     {
       "source": "/blog/2022/05/10/A%20Boilerplate%20guide%20to%20Airdropping%20on%20Celo",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/blog/2022/05/10/Getting%20started%20with%20DAOs%20on%20Celo",
@@ -1444,11 +1444,11 @@
     },
     {
       "source": "/blog/2022/05/19/3%20Simple%20Steps%20to%20Get%20Started%20with%20Valora%20on%20Celo",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/blog/2022/05/20/ContractKit%20-%20A%20Practical%20Guide%20to%20Interacting%20with%20the%20Celo%20Core%20Contracts",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/blog/2022/05/24/Celo%20Dappstarter:%20Extend%20and%20Customize%20your%20Full-Stack%20Mobile%20dApps",
@@ -1456,7 +1456,7 @@
     },
     {
       "source": "/blog/2022/06/14/How%20to%20quickly%20build%20an%20NFT%20collection%20on%20Celo",
-      "destination": "/build/build-with-thirdweb/celo-nft-drop-tutorial"
+      "destination": "/tooling/dev-environments/thirdweb/thirdweb"
     },
     {
       "source": "/blog/tags/celo.org",
@@ -1500,11 +1500,11 @@
     },
     {
       "source": "/developer-guide",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/celo-dapp-gallery",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/celo-for-eth-devs",
@@ -1512,7 +1512,7 @@
     },
     {
       "source": "/developer-guide/contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/developer-guide/contractkit/contracts-wrappers-registry",
@@ -1580,11 +1580,11 @@
     },
     {
       "source": "/developer-guide/overview",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/overview/celo-dapp-gallery",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/overview/celo-for-eth-devs",
@@ -1596,11 +1596,11 @@
     },
     {
       "source": "/developer-guide/overview/introduction",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/overview/introduction/contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/developer-guide/sdk-code-reference/summary-2/classes/_wrappers_reserve_.reservewrapper",
@@ -1608,7 +1608,7 @@
     },
     {
       "source": "/developer-guide/start",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-guide/start/develop-on-windows",
@@ -1624,11 +1624,11 @@
     },
     {
       "source": "/developer-guide/start/web-dapp",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-resources/celo-dapp-gallery",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-resources/celo-for-eth-devs",
@@ -1644,7 +1644,7 @@
     },
     {
       "source": "/developer-resources/contractkit/index",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/developer-resources/contractkit/migrating-to-contractkit-v1",
@@ -1672,7 +1672,7 @@
     },
     {
       "source": "/developer-resources/deploy-dapp",
-      "destination": "/developer/deploy"
+      "destination": "/tooling/dev-environments"
     },
     {
       "source": "/developer-resources/deploy-hardhat",
@@ -1688,7 +1688,7 @@
     },
     {
       "source": "/developer-resources/deploy-truffle",
-      "destination": "/developer/deploy"
+      "destination": "/tooling/dev-environments"
     },
     {
       "source": "/developer-resources/develop-on-windows",
@@ -1696,7 +1696,7 @@
     },
     {
       "source": "/developer-resources/ethers-js-wrapper",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-resources/forno/index",
@@ -1744,7 +1744,7 @@
     },
     {
       "source": "/developer-resources/overview",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer-resources/testnet-wallet",
@@ -1752,7 +1752,7 @@
     },
     {
       "source": "/developer-resources/use-contractkit",
-      "destination": "/developer/contractkit"
+      "destination": "/tooling/libraries-sdks/contractkit"
     },
     {
       "source": "/developer-resources/using-mac",
@@ -1764,23 +1764,23 @@
     },
     {
       "source": "/developer-resources/walkthroughs/no-code-erc20",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/developer-resources/walkthroughs/no-code-erc721",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/developer-resources/walkthroughs/hello-celo",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/developer-resources/walkthroughs/web-dapp",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/developer-resources/walkthroughs/valora-wc-v1",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/developer/build-on-minipay",
@@ -1852,7 +1852,7 @@
     },
     {
       "source": "/developer/evm-tools",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/developer/fee-currency",
@@ -1888,7 +1888,7 @@
     },
     {
       "source": "/es/learn/evm-compatible-tooling",
-      "destination": "/developer"
+      "destination": "/tooling/overview"
     },
     {
       "source": "/faqs",
@@ -2040,11 +2040,11 @@
     },
     {
       "source": "/getting-started/using-the-cli",
-      "destination": "/cli"
+      "destination": "/tooling/libraries-sdks/cli"
     },
     {
       "source": "/getting-started/using-the-mobile-wallet",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/getting-started/validator-troubleshooting-faq",
@@ -2052,11 +2052,11 @@
     },
     {
       "source": "/getting-started/wallets",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/getting-started/wallets/index",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo",
@@ -2092,15 +2092,15 @@
     },
     {
       "source": "/getting-started/wallets#celo-compatible-wallets",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/getting-started/wallets#celo-native-wallets",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/getting-started/wallets#celowalletapp",
-      "destination": "/wallet"
+      "destination": "/tooling/wallets"
     },
     {
       "source": "/holder/asset",
@@ -2376,11 +2376,11 @@
     },
     {
       "source": "/v/master/developer-guide/start/hello-mobile-dapp",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/v/master/developer-guide/start/hellocelo",
-      "destination": "/build"
+      "destination": "/build-on-celo"
     },
     {
       "source": "/v/master/getting-started/baklava-testnet",
