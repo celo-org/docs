@@ -475,6 +475,10 @@ Refer to the [proposal](https://forum.celo.org/t/proposal-validator-engagement-d
 
 For the Celo L1, the `effectiveGasPrice` for CIP-64 txs is only available until the block state is pruned. Afterwards, the blockchain client is unable to get the `baseFee` for the relevant `feeCurrency`, which is required to calculate the `effectiveGasPrice`. To avoid this and make the `effectiveGasPrice` available permanently, the `baseFee` is [included as the last field in the RLP-encoded CIP-64 receipt](https://github.com/celo-org/op-geth/commit/6a1996f17b2ae22fcb3c24b82acbaffa1753f667) for CIP-64 txs submitted after the L2 migration. The EIP-2718 `ReceiptPayload` for this transaction type is now `rlp([status, cumulativeGasUsed, logsBloom, logs, baseFee])`.
 
+### Contract Code Size Limit
+
+The hardcoded protocol parameter `MaxCodeSize` is raised from 24576 to 65536.
+
 ### CIP diff
 
 For a full list of changes by CIP, refer to the forum post: [Executed CIPs and Key Changes in Celo’s transition to L2](https://forum.celo.org/t/executed-cips-and-key-changes-in-celo-s-transition-to-l2/10664).
