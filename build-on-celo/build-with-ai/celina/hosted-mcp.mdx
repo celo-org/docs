@@ -1,0 +1,81 @@
+---
+title: "Celina Hosted MCP"
+sidebarTitle: "Hosted MCP"
+description: "Connect to a public, keyless Streamable HTTP MCP endpoint for Celo mainnet reads, quotes, and governance/staking data"
+---
+
+**Celina Hosted MCP** is a public Streamable HTTP deployment of the Celina [MCP server](/build-on-celo/build-with-ai/celina/mcp), for anyone who wants read and quote access to Celo mainnet with no installation and no private key.
+
+<Note>
+  The hosted endpoint cannot sign transactions. For sends, swaps, staking, or governance writes, run the [local MCP server](/build-on-celo/build-with-ai/celina/mcp) with your own key instead.
+</Note>
+
+## Prerequisites
+
+- An MCP client that supports Streamable HTTP servers (Cursor, Claude Desktop), or [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) to bridge a stdio-only client
+
+## How it works
+
+The endpoint runs the same `createServer()` factory as the local MCP server, with `serverKeyToolsEnabled: false` and `estimateToolsEnabled: false` — no wallet, no gas estimation, and Self session tools disabled because sessions can't persist on a stateless deployment. Around 48 read/quote tools remain registered.
+
+## Connect your MCP client
+
+```text
+https://mcp.usecelina.xyz/api/mcp
+```
+
+An [A2A](https://a2aproject.github.io/A2A/) agent card is also available at `https://mcp.usecelina.xyz/api/a2a`, and a health check at `https://mcp.usecelina.xyz/api/health`.
+
+For MCP hosts that support Streamable HTTP servers directly:
+
+```json
+{
+  "mcpServers": {
+    "celina-mcp": {
+      "url": "https://mcp.usecelina.xyz/api/mcp"
+    }
+  }
+}
+```
+
+For stdio-only clients, bridge through `mcp-remote`:
+
+```json
+{
+  "mcpServers": {
+    "celina-mcp": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.usecelina.xyz/api/mcp"]
+    }
+  }
+}
+```
+
+## Available tools
+
+- Chain reads: network status, blocks, transactions, accounts, ENS
+- Balances: CELO, stablecoins, registry tokens, NFTs
+- Quotes: Mento FX, Uniswap v4, Aave balances, GoodDollar reserve
+- Governance & staking reads: proposals, votes, validator groups, delegates, staking eligibility
+- Humanness check, Self Agent ID lookups, AgentKarma reputation
+- Attribution tag verification
+
+## Troubleshooting
+
+| Symptom | Cause | What to do |
+|---|---|---|
+| MCP call to a write tool (e.g. `send_token`, `execute_lock_celo`) fails with JSON-RPC error `-32602`: `Tool ${name} not found` | Write tools aren't registered on the hosted deployment (`serverKeyToolsEnabled: false`) | Run the [local MCP server](/build-on-celo/build-with-ai/celina/mcp) with `CELO_PRIVATE_KEY` set instead |
+| A2A `message/send` on a write tool returns `Tool "${tool}" is not available on hosted A2A (read-only profile).` | Same read-only filtering applies to the A2A endpoint | Use the local MCP server, or call a read/quote tool over A2A instead |
+| `get_wallet_address` isn't available, or a tool errors asking for an address | The hosted deployment has no server wallet | Pass an explicit `address` argument to any tool that needs one |
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| GitHub repository | [andrewkimjoseph/celina-mcp-remote](https://github.com/andrewkimjoseph/celina-mcp-remote) |
+| Health check | [mcp.usecelina.xyz/api/health](https://mcp.usecelina.xyz/api/health) |
+
+## Related
+
+- [Celina MCP Server](/build-on-celo/build-with-ai/celina/mcp) — the local stdio server with writes
+- [Celina API](/build-on-celo/build-with-ai/celina/api) — the same read catalog over plain REST instead of MCP

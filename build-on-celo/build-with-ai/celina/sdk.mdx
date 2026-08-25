@@ -1,0 +1,74 @@
+---
+title: "Celina SDK"
+sidebarTitle: "SDK"
+description: "Add Celo mainnet reads, unsigned transaction preparation, and ERC-4337 account abstraction to a TypeScript backend"
+---
+
+**`@andrewkimjoseph/celina-sdk`** is a TypeScript library for app and agent developers building a custom backend on Celo mainnet — Node.js API routes, workers, or CLIs. It provides chain reads, methods that prepare unsigned transactions for wallet signing, and an optional ERC-4337 client for sponsored account abstraction. It also ships the shared tool catalog used by the Celina [MCP server](/build-on-celo/build-with-ai/celina/mcp), [hosted MCP](/build-on-celo/build-with-ai/celina/hosted-mcp), and [API](/build-on-celo/build-with-ai/celina/api).
+
+## Prerequisites
+
+- Node.js 20 or later
+- The SDK is server-side only — it pulls in Node-only dependencies and is not meant to be bundled into a browser app
+
+```bash
+npm i @andrewkimjoseph/celina-sdk
+```
+
+## How it works
+
+`createCelinaClient()` exposes one namespace per domain (`token`, `governance`, `staking`, `gooddollar`, `mentoFx`, `uniswap`, `aave`, `nft`, `contract`, `self`, `agentKarma`, `ens`, `humanness`, `blockchain`, `account`, `transaction`). Read methods return data directly; write flows go through a `prepare*` method that returns a `SerializedPreparedFlow` (`chainId: 42220`) for a wallet (wagmi/viem) to simulate and sign — the SDK itself never holds a private key.
+
+## Read balances and chain data
+
+```ts
+import { createCelinaClient } from "@andrewkimjoseph/celina-sdk";
+
+const celina = createCelinaClient({
+  // ERC-8021 attribution: codes celina, celo_862c21dd97a7, my_app
+  attributionTags: ["celo_862c21dd97a7", "my_app"],
+});
+
+await celina.token.getStablecoinBalances("0xYourAddress");
+const proposals = await celina.governance.getProposals({ stage: "Queued" });
+```
+
+## Prepare and simulate a transaction
+
+Prepared flows return unsigned steps for the caller's wallet to sign — simulate each step first so failures surface before the wallet prompt:
+
+```ts
+import { simulatePreparedStep } from "@andrewkimjoseph/celina-sdk/simulation";
+
+const flow = await celina.transaction.prepareSend("0xFrom", "0xTo", "USDm", "10");
+
+for (const step of flow.steps) {
+  await simulatePreparedStep(step); // dry-run before the wallet signs
+}
+// flow.steps -> sendTransactionAsync from the caller's wallet
+```
+
+## Troubleshooting
+
+| Symptom | Cause | What to do |
+|---|---|---|
+| `Unknown token "${token}" on Celo mainnet. Use ${...}.` | Token symbol isn't in the registry (`token.service.ts`) | Use one of the listed symbols — the error names them |
+| `Insufficient ${symbol} balance. Required ${amount} ${symbol}, available ${available}.` | Wallet balance below the amount requested (`token.service.ts`) | Fund the wallet or lower the amount |
+| `Simulation failed for "${step.description}": ...` | `simulatePreparedStep` caught a revert before broadcast (`simulation/simulate-prepared-step.ts`) | Read the appended reason — usually insufficient balance or allowance |
+| `Mento FX market is currently closed. FX quotes and execution are unavailable until the market reopens.` | Mento FX has scheduled market hours (`mento-fx.service.ts`) | Retry when the market reopens; use Uniswap v4 for an alternative route |
+| `No Uniswap v4 route for ${tokenIn} → ${tokenOut}.` | No pool exists for that pair (`uniswap.service.ts`) | Try a different token pair, or route through Mento FX / GoodDollar reserve |
+| Build fails when bundling for a browser | The SDK imports Node-only modules (`node:fs`, `@agentkarma/sdk`, `@celo/attribution-tags`) | Keep the SDK server-side; use `@andrewkimjoseph/celina-sdk/simulation` (browser-safe) or wagmi/viem directly in the browser |
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| GitHub repository | [andrewkimjoseph/celina-sdk](https://github.com/andrewkimjoseph/celina-sdk) |
+| npm package | [@andrewkimjoseph/celina-sdk](https://www.npmjs.com/package/@andrewkimjoseph/celina-sdk) |
+| GitBook documentation | [andrewkimjoseph.gitbook.io/celina-sdk](https://andrewkimjoseph.gitbook.io/celina-sdk) |
+
+## Related
+
+- [Celina MCP Server](/build-on-celo/build-with-ai/celina/mcp) — runs this SDK's tool catalog locally with a signing key
+- [Celina API](/build-on-celo/build-with-ai/celina/api) — the same read catalog over plain REST, no SDK install needed
+- [Attribution tags](/build-on-celo/attribution-tags) — how the `attributionTags` option is applied on-chain

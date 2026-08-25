@@ -147,6 +147,17 @@
                   "build-on-celo/build-with-ai/mcp/celo-mcp"
                 ]
               },
+
+              {
+                "group": "Celina",
+                "pages": [
+                  "build-on-celo/build-with-ai/celina/index",
+                  "build-on-celo/build-with-ai/celina/sdk",
+                  "build-on-celo/build-with-ai/celina/mcp",
+                  "build-on-celo/build-with-ai/celina/hosted-mcp",
+                  "build-on-celo/build-with-ai/celina/api"
+                ]
+              },
               "build-on-celo/build-with-ai/usecases"
             ]
           },
