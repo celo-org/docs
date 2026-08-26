@@ -10,6 +10,7 @@ This matters because model training data goes stale. Celo became an Ethereum L2 
 
 | Entry point | URL | Best for |
 |-------------|-----|----------|
+| In-page assistant | **Ask AI** button on any page | Quick questions while reading, without leaving the docs |
 | MCP server | `https://docs.celo.org/mcp` | Editors and agents — live search, no copy-paste |
 | Docs index | [`/llms.txt`](https://docs.celo.org/llms.txt) | Giving a chat a map of every docs page |
 | Full corpus | [`/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Long-context models that can hold the whole docs set |
@@ -195,6 +196,16 @@ Reach for `llms.txt` by default. It costs a fraction of the tokens, and any tool
 [`llms.txt` follows the llmstxt.org convention](https://llmstxt.org/), a proposed standard for exposing site content to language models. `llms-full.txt` is a common companion file rather than part of that spec. The index is also served at [`/.well-known/llms.txt`](https://docs.celo.org/.well-known/llms.txt) for tools that look there.
 
 Both files are generated from the live site, so they never go stale.
+
+## Ask a question in the docs
+
+Every page has an **Ask AI** button in the bottom-right corner. It answers from the documentation and links the pages it used, so you can check the source rather than take the answer on trust.
+
+It searches the same content as the MCP server above, which means answers reflect the docs as currently published — not a model's training data.
+
+<Note>
+  Answers are AI-generated. Follow the citations before relying on anything load-bearing, especially contract addresses and code. If the docs don't cover your question, the assistant says so instead of guessing — and that gap is a signal we use to decide what to write next.
+</Note>
 
 ## Copy any page as Markdown
 
