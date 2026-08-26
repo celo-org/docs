@@ -1,5 +1,14 @@
-// Injection test for the docs AI assistant (celo-org/docs#2250).
-// Mintlify loads every .js file in the content directory on all pages;
-// this marker verifies that works on the current plan before the real
-// widget loader replaces it.
-console.log('[celo-docs-assistant] custom JS injection OK');
+// Loads the docs AI assistant widget on every page (celo-org/docs#2250).
+//
+// Mintlify includes every .js file in the content directory on all pages, but
+// does not support a raw <script src> tag in MDX, so the widget is injected
+// programmatically. The widget itself and the API it calls are served from the
+// assistant deployment; it derives its own API origin from this src.
+(function () {
+  var WIDGET_SRC = 'https://docs-ai-assistant-ten.vercel.app/widget.js';
+
+  var script = document.createElement('script');
+  script.src = WIDGET_SRC;
+  script.async = true;
+  document.head.appendChild(script);
+})();
