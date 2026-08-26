@@ -20,7 +20,7 @@
     "default": "dark"
   },
   "banner": {
-    "content": "📬 **Next agent hackathon starts Aug 28** | Subscribe to the Celo Devs newsletter for hackathon updates. [Subscribe](https://celo-devs.beehiiv.com/subscribe)",
+    "content": "🤖 **Agents at Work Hackathon** | Build agents that move real money on Celo — $5,000 in prizes, kicks off Aug 28. [Join the hackathon](https://celoplatform.notion.site/Agents-at-Work-Hackathon-3c1d5cb803de81139de7f4f3d09e55dc)",
     "dismissible": true
   },
   "fonts": {
@@ -564,7 +564,6 @@
                   {
                     "group": "ODIS",
                     "pages": [
-                      "legacy/protocol/identity/odis-use-case-phone-number-privacy",
                       {
                         "group": "Use Cases",
                         "pages": [
