@@ -1,97 +1,51 @@
 ---
 title: Build with Self
-description: A comprehensive guide to understanding and using Self identity protocol on Celo
+description: Verify that your users are real, unique humans — and prove age or nationality — with zero-knowledge proofs from passports, EU ID cards and Aadhaar, using Self on Celo
 ---
 
-Self is a leading digital identity infrastructure for Web2 and Web3. Self leverages zero-knowledge cryptography to disclose verifiable credentials without revealing any sensitive information. No third parties. No data leaks.
+This page is for app developers who need to know that a user is a real, unique human, or that they meet an age or nationality rule, without collecting their documents. [Self](https://self.xyz/) is an open-source identity protocol: the user scans a passport, EU ID card or Indian Aadhaar with their phone, a zero-knowledge proof is generated on the device, and your app receives only the facts the user chose to disclose. Attestations are recorded on Celo.
 
-<Info>
-Self is the only leader in the space that is production-ready, live across iOS and Google Play Store, and fully audited by third-party zkSecurity that doesn’t rely on additional dependencies such as biometric hardware.
-</Info>
+If you are giving an **AI agent** an identity rather than verifying a person, go to [Self Agent ID](/build-on-celo/build-with-ai/self-agent-id).
 
-By the conclusion of this guide, you will have a comprehensive understanding of Self and how to integrate it into your Celo applications.
+## How it works
 
-This document will cover:
+1. **Scan.** The user scans the NFC chip of their passport, EU ID card or Aadhaar with the Self app.
+2. **Prove.** The app generates a zero-knowledge proof over the document, disclosing only the attributes your app asked for — for example "over 18" or "not on a sanctions list", never the passport number.
+3. **Share.** The user scans your app's QR code (or taps a deeplink) and the proof is delivered to your backend or smart contract, where it is verified against Self's hub contract on Celo.
 
-- What is Self?
-- Getting Started
-- New Features (2025)
-- Technical Resources
-- Use Cases
+No personal data leaves the device. The same proof also yields a nullifier, so you can tell one human from another without knowing who they are.
 
-## What is Self?
+## What you can check
 
-[Self](https://self.xyz/) is a privacy-first, open-source identity protocol that uses zero-knowledge proofs for secure identity verification.
+| Check | Typical use |
+|---|---|
+| Proof of humanity and uniqueness | Sybil-resistant airdrops, quadratic funding, polls, one-account-per-person marketplaces |
+| Age | Age-gated products and content |
+| Nationality and sanctions status | Geo-restricted or compliance-gated services |
+| Wallet recovery | Re-link a wallet to a verified person |
 
-It enables Sybil resistance and selective disclosure using real-world attestations like passports, EU ID cards, and Indian Aadhaar. With a few lines of code, developers can easily check if their users are humans, while preserving their privacy.
+## Get started
 
-### How It Works
+1. Try the [playground](https://playground.self.xyz/) to see which attributes a proof can disclose.
+2. Follow the [Self quickstart](https://docs.self.xyz/docs/self-pass/quickstart) to add the QR-code flow to your frontend with the [QRCode SDK](https://docs.self.xyz/docs/self-pass/frontend/qrcode-sdk).
+3. Verify proofs either on-chain with the [contract integration guide](https://docs.self.xyz/docs/self-pass/contracts/basic-integration) — deployed hub addresses are in [Deployed contracts](https://docs.self.xyz/docs/self-pass/contracts/deployed-contracts) — or in your backend with the [backend integration guide](https://docs.self.xyz/docs/self-pass/backend/basic-integration).
 
-Self Protocol simplifies digital identity verification with zero-knowledge proofs in three steps:
+Self's contracts on Celo follow the same fee rules as any other contract: your users can pay gas in USDm, USDC or USDT through [fee abstraction](/build-on-celo/fee-abstraction/overview), so a verification flow never requires them to hold CELO.
 
-1. **Scan Your Identity Document**: Users scan their passport, EU ID card, or Aadhaar using the NFC reader of their phone.
-2. **Generate a Proof**: Generate a zk proof over the identity document, selecting only what you want to disclose.
-3. **Share Your Proof**: Share the zk proof with the selected application.
+## Resources
 
-## Use cases
+| Resource | Link |
+|---|---|
+| Self documentation | [docs.self.xyz](https://docs.self.xyz/) |
+| Playground | [playground.self.xyz](https://playground.self.xyz/) |
+| Staging playground | [playground.staging.self.xyz](https://playground.staging.self.xyz/) |
+| Deployed contracts | [docs.self.xyz/docs/self-pass/contracts/deployed-contracts](https://docs.self.xyz/docs/self-pass/contracts/deployed-contracts) |
+| Builder group (Telegram) | [t.me/selfprotocolbuilder](https://t.me/selfprotocolbuilder) |
+| Celo Discord, `#build-with-celo` | [discord.com/invite/celo](https://discord.com/invite/celo) |
 
-Seamlessly and securely verify your digital identity with Self. It allows you to:
+## Related
 
-- **Prove Your Humanity:** Confirm you are human without revealing personal information.
-    - Airdrop Protection
-    - Social Media & Marketplaces (add trust to user profiles)
-    - Quadratic Funding
-    - Sybil-Resistant Polling
-- **Prove Identity, Age, Nationality:** Demonstrate where you're from while maintaining privacy. Securely capture the first page data and RFID from your passport to verify your identity.
-    - Sanction List Checking
-    - Age Verification
-    - Wallet Recovery
-- **Privacy-preserving Technology:** Protect your users' private information. They will only disclose credentials and information that they allow.
-- **Streamline Verification:** Enjoy a smooth and efficient identity verification process.
-- **Optimized for Web3 and Universal Apps:** Harness zero-knowledge proofs and one-tap verifications in Web3 apps.
-
-## New Features (2025)
-
-### Expanded Identity Document Support
-
-Self now supports:
-
-- **EU Biometric ID Cards**: Scan NFC-enabled EU IDs covering 27 countries
-- **Indian Aadhaar**: Support for Aadhaar verification
-- **Passports**: Continued support for passport verification
-
-All verification leverages zero-knowledge proofs (ZKPs) and no data leaves the user's device.
-
-### Points/Rewards System
-
-Self has introduced a points program that incentivizes consistent, secure use:
-
-- Users earn points for setting up Self Pass
-- Points earned for continued use across partner platforms
-- Points can be redeemed for rewards
-- Designed to drive engagement and validate active, verified users
-
-### Major Integrations
-
-- **Google Cloud**: Integrated Self's SDK and ZKP-based proof-of-humanity in its Web3 Portal
-- **Aave**: DeFi protocol integration enabling compliance checks, sybil-resistant airdrops, and age/country-gated services
-- **Celo Blockchain**: On-chain attestations leverage the Celo blockchain for transparency and auditability
-
-
-## Technical Resources
-
-- [Self Website](https://self.xyz/)
-- [Self Documentation](https://docs.self.xyz/)
-- [Self Playground](https://playground.self.xyz/)
-- [Self Staging Playground](https://playground.staging.self.xyz/)
-- [Self Quickstart Guide](https://docs.self.xyz/docs/self-pass/quickstart)
-- [Contract Integration Guide](https://docs.self.xyz/docs/self-pass/contracts/basic-integration)
-- [Backend Integration Guide](https://docs.self.xyz/docs/self-pass/backend/basic-integration)
-- [QRCode SDK Documentation](https://docs.self.xyz/docs/self-pass/frontend/qrcode-sdk)
-- [Deployed Contracts](https://docs.self.xyz/docs/self-pass/contracts/deployed-contracts)
-
-## Support
-
-Join the [Self Builder Group](https://t.me/selfprotocolbuilder) on Telegram for community support and updates.
-
-For Celo-specific integrations, visit the [Celo Discord](https://discord.com/invite/celo) and ask in the #build-with-celo channel.
+- [Self Agent ID](/build-on-celo/build-with-ai/self-agent-id) - Proof-of-human identity for AI agents
+- [ERC-8004](/build-on-celo/build-with-ai/8004) - Agent identity, reputation and validation registries
+- [SocialConnect](/build-on-celo/build-on-socialconnect) - Map phone numbers to addresses
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) - Let users pay gas in stablecoins

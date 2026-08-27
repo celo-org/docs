@@ -1,30 +1,52 @@
 ---
 title: Celo Protocol
-description: Introduction to the Celo protocol, its implementation, and its relationship to Ethereum.
+description: How the Celo protocol works today — an Ethereum Layer 2 on the OP Stack with EigenDA, 1-second blocks, gas paid in stablecoins, and on-chain governance
 sidebarTitle: "Overview"
 ---
 
-<Warning>
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+This page is for anyone who wants to understand how Celo works — developers evaluating the chain, operators joining the network, or readers following a protocol-level question. Celo is an **Ethereum Layer 2**: an OP Stack rollup that posts its data to [EigenDA](/specs/eigenda) and settles to Ethereum, run since March 2025, when Celo completed its migration from a standalone Layer 1. What makes it distinct from other L2s is what the protocol itself guarantees: [1-second blocks](/specs/deployments), transaction fees [below a cent](/specs/transaction-fees), gas payable in stablecoins from any ordinary account, and a stablecoin system and identity layer built in at the protocol level.
 
-For the most up-to-date information, refer to our [Celo L2 documentation](/build#celo-l2-mainnet).
-</Warning>
+## How the network is built
 
----
+Celo runs the [OP Stack](https://docs.optimism.io/), the modular rollup framework, with two deliberate substitutions — described in detail in [Celo's L2 architecture](/build-on-celo/cel2-architecture):
 
-## What is the Celo Protocol?
+- **Execution.** A sequencer orders transactions into [1-second blocks](/specs/deployments). Execution is EVM-equivalent: contracts, wallets, and tooling that work on Ethereum work on Celo. The one Celo-specific precompile that survives from the L1 era implements [token duality](/specs/token-duality), which lets CELO behave as both the native token and an ERC-20 without wrapping.
+- **Data availability.** Instead of posting transaction data to Ethereum as blobs, Celo posts it to [EigenDA](/specs/eigenda); only the data-availability commitments go to Ethereum. This is what keeps fees low and predictable at 1-second block cadence.
+- **Settlement.** State roots are proposed to Ethereum, where a fault-proof system with a challenge window secures withdrawals. Independent [challengers](/home/protocol/challengers) can dispute invalid state roots during that window, and a [Security Council](/home/protocol/security-council) holds the protocol's emergency keys.
 
-Celo's blockchain reference implementation is based on go-ethereum, the Go implementation of the Ethereum protocol. The project team is indebted to the Geth community for providing these shoulders to stand on and, while recognizing that Ethereum is an independent project with its own trajectory, hopes to contribute changes where it makes sense to do so.
+The full specification of these mechanisms — transaction types, fee rules, finality, upgrade history — lives in the [Specs section](/specs/index).
 
-In addition to the blockchain client, there are some core components of the Celo protocol that are implemented at the smart contract level and even off-chain (e.g. phone number verification via SMS). Some of these core components have become their own protocol, e.g. Mento and Self.
+## Paying for transactions
 
-## Protocol Upgrades
+Celo keeps two fee properties that shape everything built on it:
 
-There are a number of substantial changes and additions have been made in service of Celo's product goals, including the following:
+- **Fees stay below a cent.** The protocol configures the OP Stack's L1 and operator fee components to zero and relies on EigenDA's low data costs, so a typical transaction costs less than $0.01 — the mechanics are specified in [Transaction fees](/specs/transaction-fees).
+- **Gas can be paid in stablecoins.** [Fee abstraction](/build-on-celo/fee-abstraction/overview) is implemented at the node level — not through paymasters or relayers — so any externally owned account can pay gas in USDm, USDC, USDT, or another allowlisted currency using a [CIP-64 transaction](/specs/transaction-types). A user or an AI agent can hold nothing but dollars and still transact.
 
-- [Consensus](/legacy/protocol/consensus/index)
-- [Governance](/home/protocol/governance/overview)
-- [Stability Mechanism - Mento](https://www.mento.org/)
-- [Transactions](/legacy/protocol/transaction/index)
-- [Identity - Self](https://self.xyz/)
+## Stablecoins
+
+Stable value is a protocol-era concern on Celo rather than an afterthought. [Mento](https://www.mento.org/), the stablecoin protocol that began as part of Celo's core contracts, issues USDm, EURm, and a family of [local-currency stablecoins](/build-on-celo/build-with-local-stablecoin), alongside third-party issues like USDC and USDT. Because of fee abstraction, these are not just assets on the chain — they are the currencies the chain itself accepts for gas.
+
+## Staking, epochs, and rewards
+
+CELO holders lock their tokens and vote for validator groups, and elections run every epoch — roughly daily — through permissionless smart-contract calls. Since the L2 migration, elected validators no longer produce blocks; they [operate community RPC nodes](/contribute-to-celo/community-rpc-nodes/how-it-works) that serve the network. Voters, groups, and operators earn [epoch rewards](/home/protocol/epoch-rewards/index), which also fund the [community fund and carbon offsetting](/home/protocol/epoch-rewards/community-fund).
+
+## Governance
+
+Every meaningful parameter of the protocol — from fee currencies to contract upgrades — is controlled by [on-chain governance](/home/protocol/governance/overview). CELO holders lock tokens to vote on proposals; approved upgrades to the core contracts execute on-chain. The [governable parameters](/home/protocol/governance/governable-parameters) page lists exactly what governance can change.
+
+## Identity
+
+Celo's original mission — payments that work on a phone — left it with an identity layer most chains lack. [SocialConnect](/build-on-celo/build-on-minipay/overview) maps phone numbers to addresses privately through ODIS, which is what lets MiniPay users send stablecoins to a contact instead of a hex string. [Self](/build-on-celo/build-with-self) brings zero-knowledge proofs of personhood, age, and nationality on-chain, and the [ERC-8004 trust registries](/build-on-celo/build-with-ai/8004) extend the same model to AI agents.
+
+## What the protocol is optimized for
+
+Put together — sub-cent fees, 1-second blocks, gas in stablecoins, phone-number identity, proof-of-human — the protocol is built for two audiences: **people using mobile-first apps** like MiniPay's 10M+ activated wallets, and **AI agents** that pay, get paid, and prove who stands behind them using [x402, ERC-8004, and the rest of the agent stack](/build-on-celo/build-with-ai/overview).
+
+## Related
+
+- [Celo's L2 architecture](/build-on-celo/cel2-architecture) - The OP Stack layout in detail
+- [Specs](/specs/index) - The normative protocol specification
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) - Pay gas in stablecoins
+- [Governance](/home/protocol/governance/overview) - How the protocol changes
+- [Network overview](/build-on-celo/network-overview) - Chain IDs, RPCs, explorers

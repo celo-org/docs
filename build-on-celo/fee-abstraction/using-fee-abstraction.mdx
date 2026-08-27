@@ -33,7 +33,7 @@ Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapter
 
 To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USD₮ and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
 
-For more on gas pricing, see [Gas Pricing](/legacy/protocol/transaction/gas-pricing).
+For more on gas pricing, see [Transaction Fees](/specs/transaction-fees).
 
 ### Adapter Addresses
 
@@ -140,7 +140,7 @@ async function main() {
 
 ### 2. Prepare the Transaction
 
-Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/legacy/protocol/transaction/transaction-types) compliant.
+Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/home/protocol/transactions/transaction-types) compliant.
 ```js
 let tx = {
   // ... other transaction fields
