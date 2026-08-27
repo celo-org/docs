@@ -9,7 +9,7 @@ This page documents the `.env` variables and the key client flags used by the [c
 <Info>
 **Execution client: op-reth**
 
-The variables below configure `op-reth`, Celo's primary execution client. The `op-geth` equivalents remain valid until your network's switch date — see the **op-geth variables** accordion below and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation).
+The variables below configure `op-reth`, Celo's primary execution client. The `op-geth` equivalents remain valid until your network's switch date — see the **op-geth variables** accordion below and [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Info>
 
 ## Node type and sync
@@ -19,7 +19,7 @@ The variables below configure `op-reth`, Celo's primary execution client. The `o
 | `NODE_TYPE` | `full` (default), `archive` | A `full` node stores historical state only for recent blocks. An `archive` node stores historical state for the entire chain (roughly 10x the storage). |
 | `OP_RETH__SNAPSHOT` | `true`, `false` (default) | When `true`, an empty datadir is bootstrapped from a published snapshot (`snapshots.celo.org`). Required on mainnet, which needs the pre-L2 history; optional on Celo Sepolia, which can sync from genesis. Ignored once the datadir holds data. |
 
-`op-reth` syncs by executing every block. A new node starts from an empty datadir (see [Run a node with Docker](/infra-partners/operators/run-node)); datadirs written by `op-geth` cannot be reused. For archive nodes, see [Running an archive node](/infra-partners/operators/archive-node).
+`op-reth` syncs by executing every block. A new node starts from an empty datadir (see [Run a node with Docker](/operate/operators/run-node)); datadirs written by `op-geth` cannot be reused. For archive nodes, see [Running an archive node](/operate/operators/archive-node).
 
 ## L1 connection
 
@@ -39,7 +39,7 @@ An L2 archive node serves pre-hardfork state by proxying to a legacy Celo L1 arc
 | `HISTORICAL_RPC_DATADIR_PATH` | Path to a pre-hardfork archive datadir. If set, a Celo L1 node runs in archive mode and op-reth proxies pre-migration requests to it. |
 | `OP_RETH__HISTORICAL_RPC` | RPC endpoint of a running legacy archive node. If set, this overrides `HISTORICAL_RPC_DATADIR_PATH` and no local Celo L1 node is started. |
 
-See [Running an archive node](/infra-partners/operators/archive-node) for the full setup.
+See [Running an archive node](/operate/operators/archive-node) for the full setup.
 
 ## Networking (P2P)
 
@@ -80,15 +80,15 @@ Each `PORT__*` variable overrides a default exposed in `docker-compose.yml`. Def
 These flags are set for you by the compose start scripts; they are listed here because they are the Celo-specific ones operators most often need to know about.
 
 - **`--rollup.sequencer`** (op-reth, set via `OP_RETH__SEQUENCER_URL`) — the sequencer that transactions submitted to your node are forwarded to. Mainnet: `https://cel2-sequencer.celo.org`; Celo Sepolia: `https://sequencer.celo-sepolia.celo-testnet.org`. If this is wrong, transactions submitted to your node are not executed.
-- **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/infra-partners/notices/req-resp-cl-sync-deprecation).
+- **`--syncmode=execution-layer`** (op-node) — op-node syncs via the execution client rather than the deprecated consensus-layer req/resp path. See [Deprecation of Req/Res CL P2P Sync](/operate/notices/req-resp-cl-sync-deprecation).
 - **`--l2.enginekind=reth`** (op-node) — tells op-node which execution client it is driving. It is set to `reth` for `op-reth`.
-- **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/infra-partners/operators/monitoring).
+- **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/operate/operators/monitoring).
 
 For every other op-reth/op-node flag, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
 
 <Accordion title="op-geth variables (until your switch date)">
 
-If you are still running `op-geth` from an older checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose), use these equivalents in place of their `OP_RETH__` counterparts. They stop working once your network reaches its [switch date](/infra-partners/notices/op-geth-deprecation).
+If you are still running `op-geth` from an older checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose), use these equivalents in place of their `OP_RETH__` counterparts. They stop working once your network reaches its [switch date](/operate/notices/op-geth-deprecation).
 
 | Variable | Description |
 |---|---|
@@ -105,4 +105,4 @@ Key op-geth flags: `--rollup.sequencerhttp` (sequencer endpoint), `--history.tra
 
 ## Monitoring
 
-Set `MONITORING_ENABLED=true` to start the Grafana, Prometheus, InfluxDB, and healthcheck stack. See [Monitoring & metrics](/infra-partners/operators/monitoring).
+Set `MONITORING_ENABLED=true` to start the Grafana, Prometheus, InfluxDB, and healthcheck stack. See [Monitoring & metrics](/operate/operators/monitoring).

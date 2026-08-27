@@ -11,7 +11,7 @@ This guide is designed to help node operators run a Celo L2 node with Docker.
 
 These instructions use `op-reth`, the execution client Celo is adopting as its primary client. A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
 
-`op-geth` remains supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide, and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation) for the switch dates.
+`op-geth` remains supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide, and [End of Support for op-geth](/operate/notices/op-geth-deprecation) for the switch dates.
 </Info>
 
 ## Recommended Hardware
@@ -35,7 +35,7 @@ These instructions use `op-reth`, the execution client Celo is adopting as its p
 
 Storage size requirements will increase over time, especially for archive nodes.
 
-If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](/infra-partners/operators/archive-node).
+If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](/operate/operators/archive-node).
 </Warning>
 
 ## Run Node with Docker
@@ -44,7 +44,7 @@ To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](ht
 
 ### Running a Full Node
 
-Follow these steps to run a full node. If you would like to run an archive node, see [Running an archive node](/infra-partners/operators/archive-node).
+Follow these steps to run a full node. If you would like to run an archive node, see [Running an archive node](/operate/operators/archive-node).
 
 1. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
 
@@ -81,12 +81,12 @@ Follow these steps to run a full node. If you would like to run an archive node,
     <Warning>
     **Datadirs from op-geth cannot be reused**
 
-    `op-reth` uses a different on-disk format. A datadir written by `op-geth` — including one produced by the [L1→L2 migration](/infra-partners/operators/migrate-node) — cannot be used with `op-reth`. Start from an empty `DATADIR_PATH`. Pre-L2 historical state is served separately; see [Running an archive node](/infra-partners/operators/archive-node).
+    `op-reth` uses a different on-disk format. A datadir written by `op-geth` — including one produced by the [L1→L2 migration](/operate/operators/migrate-node) — cannot be used with `op-reth`. Start from an empty `DATADIR_PATH`. Pre-L2 historical state is served separately; see [Running an archive node](/operate/operators/archive-node).
     </Warning>
 
     #### Configure node type
 
-    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. See [Running an archive node](/infra-partners/operators/archive-node) for more information.
+    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. See [Running an archive node](/operate/operators/archive-node) for more information.
 
     #### Configure P2P for external network access
 
@@ -125,7 +125,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
 <Accordion title="Still running op-geth? (until your switch date)">
 
-Until your network's [switch date](/infra-partners/notices/op-geth-deprecation), you can keep running `op-geth` from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) (the latest version runs `op-reth` only). The steps above are the same, with these differences:
+Until your network's [switch date](/operate/notices/op-geth-deprecation), you can keep running `op-geth` from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) (the latest version runs `op-reth` only). The steps above are the same, with these differences:
 
 - **Sync mode instead of a snapshot.** `op-geth` starts with `snap` sync by default, which downloads pre-hardfork block data from peers — no migrated L1 datadir required. To run `full` sync against a migrated L1 datadir instead, set:
 
@@ -143,10 +143,10 @@ After your network's switch date, `op-geth` will no longer follow the chain — 
 
 ## Build from source
 
-Docker images are the easiest way to run a Celo node, but you can also build from source — for example to run on a specific architecture or to inspect the code. The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase is the best reference, and the [Network Config & Assets](/infra-partners/operators/network-config) page lists everything you need to participate in the network.
+Docker images are the easiest way to run a Celo node, but you can also build from source — for example to run on a specific architecture or to inspect the code. The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase is the best reference, and the [Network Config & Assets](/operate/operators/network-config) page lists everything you need to participate in the network.
 
 ## Next steps
 
-- [Run an archive node](/infra-partners/operators/archive-node) — preserve access to all historical state.
-- [Network Config & Assets](/infra-partners/operators/network-config) — bootnodes, container images, and downloadable artifacts.
-- [Troubleshooting](/infra-partners/operators/troubleshooting) — fixes for common node issues, plus how to get help.
+- [Run an archive node](/operate/operators/archive-node) — preserve access to all historical state.
+- [Network Config & Assets](/operate/operators/network-config) — bootnodes, container images, and downloadable artifacts.
+- [Troubleshooting](/operate/operators/troubleshooting) — fixes for common node issues, plus how to get help.

@@ -38,21 +38,21 @@ The table below summarizes the technical changes involved in transitioning from 
 These L1 mechanisms were decommissioned before or during the L2 migration and no longer exist on Celo:
 
 - **BFT consensus, validator proxies, and slashing** — validators no longer produce blocks; a sequencer orders transactions, and the old validator node operations (proxies, consensus key ceremonies, downtime slashing) ended with the L1.
-- **On-chain randomness** — the `Random` contract was removed; contracts use the `PREVRANDAO` opcode instead. See [Deactivated Random Contract](/specs/l2-migration#deactivated-random-contract).
+- **On-chain randomness** — the `Random` contract was removed; contracts use the `PREVRANDAO` opcode instead. See [Deactivated Random Contract](/operate/specification/l2-migration#deactivated-random-contract).
 - **Granda Mento** — the mechanism for exchanging large amounts of CELO for stable tokens through approved exchange proposals ([CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md)) was decommissioned.
 - **The on-chain stability algorithm (CP-DOTO) and stability fees** — the constant-product mechanism that minted and burned stable assets against the reserve became [Mento](https://www.mento.org/), which now operates as its own protocol; the demurrage-style stability fee on stable-token balances was disabled and removed from the protocol.
 - **Komenci and meta-transaction wallets** — the fee-less onboarding flow used by the original Celo Wallet was discontinued.
-- **The `celo-blockchain` client** — the L1 client (docker image `us.gcr.io/celo-org/geth`) stopped syncing new blocks at the migration. To serve pre-migration state, run a [Historical RPC Service](/infra-partners/operators/archive-node).
+- **The `celo-blockchain` client** — the L1 client (docker image `us.gcr.io/celo-org/geth`) stopped syncing new blocks at the migration. To serve pre-migration state, run a [Historical RPC Service](/operate/operators/archive-node).
 
 ## Resources
 
 | Resource | Link |
 |---|---|
 | Celo whitepapers | [celo.org/papers](https://celo.org/papers) |
-| L2 migration changes in the specs | [/specs/l2-migration](/specs/l2-migration) |
+| L2 migration changes in the specs | [/operate/specification/l2-migration](/operate/specification/l2-migration) |
 
 ## Related
 
 - [Our History](/home/history) - the timeline of Celo's evolution from L1 to L2
 - [Staking](/home/protocol/staking/index) - locked CELO, validator elections, and voting, which continue on L2
-- [Node operators](/infra-partners/operators/overview) - running Celo L2 nodes today
+- [Node operators](/operate/operators/overview) - running Celo L2 nodes today

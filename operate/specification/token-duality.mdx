@@ -22,7 +22,7 @@ Similarly, the ERC20 `transfer` and `transferFrom` functions do not change the c
 
 ### The `transfer` precompile
 
-The precompile directly manipulates the account balances in the EVM’s statedb. It checks the caller address to verify that it has been called by the CELO token. Since the [Jovian hardfork](/specs/upgrades/jovian), the `from` and `to` addresses get warmed (added to the access list) during precompil execution. Before Jovian, warmness stayed unchanged.
+The precompile directly manipulates the account balances in the EVM’s statedb. It checks the caller address to verify that it has been called by the CELO token. Since the [Jovian hardfork](/operate/specification/upgrades/jovian), the `from` and `to` addresses get warmed (added to the access list) during precompil execution. Before Jovian, warmness stayed unchanged.
 
 Precompile address: `0xff - 2` == `253`  
 Parameters (abi-encoded): `address from, address to, uint256 value`  

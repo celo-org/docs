@@ -103,7 +103,7 @@ Celo includes all of the precompiled contracts in Ethereum, but also adds additi
 
 ### Core Contract Calls
 
-The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/home/protocol/epoch-rewards/index), [validator elections](/home/protocol/staking/validator-elections), etc.), but not all. For example, the [gas price minimum](/specs/transaction-fees) update can happen on any block.
+The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/home/protocol/epoch-rewards/index), [validator elections](/home/protocol/staking/validator-elections), etc.), but not all. For example, the [gas price minimum](/operate/specification/transaction-fees) update can happen on any block.
 Logs created by these contract changes are included in a single additional receipt in that block, which references the block hash as its transaction hash, even though there is no transaction with this hash. If no logs were created by such calls in that block, no receipt is added.
 
 ### Node management APIs

@@ -7,20 +7,20 @@ description: Legacy guide for migrating a Celo L1 node datadir to L2, kept for o
 <Warning>
 **Legacy path — not needed for op-reth**
 
-`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/infra-partners/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/infra-partners/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/infra-partners/notices/op-geth-deprecation).
+`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/operate/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/operate/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/operate/notices/op-geth-deprecation).
 </Warning>
 
 <Tip>
 Unless you need to migrate your own Celo L1 data, we recommend using a snapshot instead.
-You can find the latest snapshot in the [Network Config & Assets](/infra-partners/operators/network-config) section.
+You can find the latest snapshot in the [Network Config & Assets](/operate/operators/network-config) section.
 </Tip>
 
 This guide helps Celo L1 node operators migrate their nodes to Celo L2. It describes how to use the [migration tool](https://github.com/celo-org/optimism/tree/celo-rebase-12/op-chain-ops/cmd/celo-migrate) to transform pre-migration database snapshots into a format that Celo L2 nodes can use for a `full` sync.
 
 **Alternative options:**
 
-- **Fresh L2 node**: Skip to the [node operator guide](/infra-partners/operators/run-node) — a new `op-reth` node starts from an empty datadir and bootstraps from a published snapshot (or syncs from genesis on Celo Sepolia)
-- **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/infra-partners/operators/network-config)
+- **Fresh L2 node**: Skip to the [node operator guide](/operate/operators/run-node) — a new `op-reth` node starts from an empty datadir and bootstraps from a published snapshot (or syncs from genesis on Celo Sepolia)
+- **Pre-migrated data**: Download migrated datadirs from [Network Config & Assets](/operate/operators/network-config)
 
 <Info>
 **Terminology**
@@ -32,7 +32,7 @@ The terms L1 and pre-hardfork are used interchangeably to reference Celo before 
 
 Migrating a pre-hardfork datadir involves these high-level steps:
 
-1. Upgrade your L1 node to the [latest client release](/infra-partners/operators/network-config#mainnet) so it will stop producing blocks at the hardfork.
+1. Upgrade your L1 node to the [latest client release](/operate/operators/network-config#mainnet) so it will stop producing blocks at the hardfork.
 2. Restart your node and wait for the hardfork.
 3. Shut down your node once the hardfork block number is reached.
 4. Run the migration tool to migrate your L1 datadir and produce the hardfork block.
@@ -57,7 +57,7 @@ All node operators must upgrade their L1 (`celo-blockchain`) nodes to the requir
 <Warning>
 **Archive Node Limitation**
 
-Both pre-migration and full migration require **full node data only**. If you only have archive nodes, sync a full node before the hardfork. You cannot migrate archive data, even for L2 archive nodes. See [Running an archive node](/infra-partners/operators/archive-node) for details.
+Both pre-migration and full migration require **full node data only**. If you only have archive nodes, sync a full node before the hardfork. You cannot migrate archive data, even for L2 archive nodes. See [Running an archive node](/operate/operators/archive-node) for details.
 </Warning>
 
 You can use either Docker or build from source.
@@ -218,13 +218,13 @@ If you prefer not to use Docker, run the migration directly from source:
   </Tab>
 </Tabs>
 
-   You can find the required input artifacts in the [Network config & Assets](/infra-partners/operators/network-config) section.
+   You can find the required input artifacts in the [Network config & Assets](/operate/operators/network-config) section.
 
    We recommend using the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) codebase as an additional reference for running the migration from source.
 
 The full migration process will take at least 5 minutes to complete for mainnet, assuming most data has been pre-migrated. If no pre-migration was performed, it could take several hours.
 
-Congrats! Your datadir is now ready to use with a Celo L2 node. See [Running a Celo Node](/infra-partners/operators/run-node) for instructions on how to start your Celo L2 node.
+Congrats! Your datadir is now ready to use with a Celo L2 node. See [Running a Celo Node](/operate/operators/run-node) for instructions on how to start your Celo L2 node.
 
 ## Troubleshooting
 
@@ -256,7 +256,7 @@ Both the `pre` and `full` migration commands will first run a script to check wh
 To resolve this:
 
 - Try re-running the migration with a different source datadir if available.
-  - A full pre-hardfork database snapshot is available in the [Network config & Assets](/infra-partners/operators/network-config) section; we still recommend having your own backup datadir available as well.
+  - A full pre-hardfork database snapshot is available in the [Network config & Assets](/operate/operators/network-config) section; we still recommend having your own backup datadir available as well.
 - Ensure the datadir is fully synced to just before the hardfork block.
 
 To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.

@@ -9,7 +9,7 @@ description: Configure op-reth to serve deep eth_getProof requests without runni
 
 Historical proofs is an `op-reth` capability. `op-geth` served deep `eth_getProof`
 from full archive state; on `op-reth` it is configured separately, as described
-here. See [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation)
+here. See [End of Support for op-geth](/operate/notices/op-geth-deprecation)
 for the migration timeline.
 </Info>
 
@@ -81,7 +81,7 @@ The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docke
 setup wires historical proofs behind a single opt-in variable. It is **off by
 default**.
 
-1. Follow [Run a node with Docker](/infra-partners/operators/run-node) to get a
+1. Follow [Run a node with Docker](/operate/operators/run-node) to get a
    node configured and syncing.
 
 2. Enable historical proofs in your `.env`:
@@ -204,7 +204,7 @@ range fall back to the standard (slow) path or error. A historical
 cast proof <address> --block <block-in-window> --rpc-url http://localhost:9993
 ```
 
-If [monitoring](/infra-partners/operators/monitoring) is enabled, the same window
+If [monitoring](/operate/operators/monitoring) is enabled, the same window
 is exported as Prometheus gauges on op-reth's metrics port:
 
 - `reth_optimism_trie_proof_window_earliest`
@@ -253,6 +253,6 @@ is exported as Prometheus gauges on op-reth's metrics port:
 
 - Optimism: [Historical proofs tutorial](https://docs.optimism.io/node-operators/tutorials/reth-historical-proofs)
   (sizing and flags in detail; note its day counts assume 2-second blocks).
-- [Running an archive node](/infra-partners/operators/archive-node): the
+- [Running an archive node](/operate/operators/archive-node): the
   full-archive alternative when you need every historical-state call, not just
   proofs.

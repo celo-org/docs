@@ -7,7 +7,7 @@ description: How transaction fees work on Celo, including the differences from E
 
 While you can send transactions on Celo as you do on any Ethereum or OP-Stack chain, there are some key differences that are relevant if you want a deeper understanding:
 
-- **[Fee Abstraction](/specs/fee-abstraction)**, which allows users to pay for transaction fees in ERC20 tokens instead of CELO and is covered in its own chapter
+- **[Fee Abstraction](/operate/specification/fee-abstraction)**, which allows users to pay for transaction fees in ERC20 tokens instead of CELO and is covered in its own chapter
 - **[Zero L1 & Operator Fees](#zero-l1--operator-fees)**, meaning that the OP-Stack L1 & Operator fees are configured to always be zero, so that Celo chains don't incur any fees on top of the normal Ethereum transaction fees
 - The **[base fee floor](#base-fee-floor)**, which sets a lower limit for a block's base fee
 - The **[FeeHandler](#feehandler)** contract that decides what to do with the collected base fees
@@ -18,7 +18,7 @@ OP-Stack supports charging transaction senders an [L1 data fee](https://docs.opt
 
 The L1 fees are configured to zero by setting the `gasPriceOracleBaseFeeScalar` and `gasPriceOracleBlobBaseFeeScalar` to zero, so that the L1 fee formula always returns zero. The `GasPriceOracle` will also correctly return zero as a result, so that you don't have to change your code if you are already relying on the `GasPriceOracle` due to supporting other OP-Stack chains.
 
-The [Isthmus](/specs/upgrades/isthmus) upgrade also introduces an [Operator fee](https://specs.optimism.io/protocol/isthmus/exec-engine.html#operatorfees), which is a configurable cost designed to price chain-specific resources such as Alt-DA storage or ZK proving. Celo disables this charge as well by setting both `operatorFeeScalar` and `operatorFeeConstant` to `0`.
+The [Isthmus](/operate/specification/upgrades/isthmus) upgrade also introduces an [Operator fee](https://specs.optimism.io/protocol/isthmus/exec-engine.html#operatorfees), which is a configurable cost designed to price chain-specific resources such as Alt-DA storage or ZK proving. Celo disables this charge as well by setting both `operatorFeeScalar` and `operatorFeeConstant` to `0`.
 
 If you are coming from Ethereum, not having L1 data and operator fees is what you are used to, and you will feel right at home on Celo.
 

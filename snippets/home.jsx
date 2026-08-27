@@ -324,7 +324,7 @@ export const CeloDeveloperResources = ({
         {
           label: "Integrate",
           desc: "Connect Celo to your application",
-          href: "/infra-partners/integration/index",
+          href: "/operate/operators/overview",
           icon: "img/homepage/icons/ContractKit_White.svg",
         },
       ],

@@ -24,7 +24,7 @@ The Celo Jovian upgrade brings in consensus and execution changes from Optimism'
 
 #### Transfer Precompile Address Warming
 
-The [transfer precompile](/specs/token-duality) now warms the `from` and `to` addresses during execution. This aligns with standard EVM behavior where address accesses during value transfers are warmed, ensuring correct gas accounting for subsequent operations on the same address.
+The [transfer precompile](/operate/specification/token-duality) now warms the `from` and `to` addresses during execution. This aligns with standard EVM behavior where address accesses during value transfers are warmed, ensuring correct gas accounting for subsequent operations on the same address.
 
 Related implementation:
 - [op-geth #433](https://github.com/celo-org/op-geth/pull/433)

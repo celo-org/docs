@@ -8,7 +8,7 @@ The switch from the Celo L1 blockchain to the Celo L2 introduces a variety of ch
 
 ## Changes for Contracts Developers
 
-- [Removed precompiles](/specs/smart-contract-updates-from-l1#precompiles-deprecation) (all except the `transfer` precompile)
+- [Removed precompiles](/operate/specification/smart-contract-updates-from-l1#precompiles-deprecation) (all except the `transfer` precompile)
 - During the migration the following hardforks are enabled:
   - [Berlin](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/berlin/__init__.py)
   - [London](https://github.com/ethereum/execution-specs/blob/mainnet/src/ethereum/forks/london/__init__.py)
@@ -49,7 +49,7 @@ To keep costs of processing epochs low, only the following key functions (used f
 - `validatorSignerAddressFromCurrentSet()`
 - `numberValidatorsInCurrentSet()`
 
-Read more on new [epoch management and reward distribution](/specs/smart-contract-updates-from-l1#epochs-and-rewards) or [deprecated precompiles](/specs/smart-contract-updates-from-l1#precompiles-deprecation).
+Read more on new [epoch management and reward distribution](/operate/specification/smart-contract-updates-from-l1#epochs-and-rewards) or [deprecated precompiles](/operate/specification/smart-contract-updates-from-l1#precompiles-deprecation).
 
 ### FeeCurrencyDirectory
 
@@ -100,7 +100,7 @@ Due to the absence of validators on L2, the process now incorporates a multisig 
 
 ### Removed Tx Types
 
-New transactions can't be submitted using the following transaction types, see also the [tx types page](/specs/transaction-types):
+New transactions can't be submitted using the following transaction types, see also the [tx types page](/operate/specification/transaction-types):
 
 - Celo legacy tx
 - CIP-42
@@ -458,7 +458,7 @@ There's a number of checks to make sure this doesn't end up causing problems.
 
 #### `CeloUnreleasedTreasury` set up
 
-The `CeloUnreleasedTreasury` is a new contract available on the migrated Celo L2. See [the spec](/specs/smart-contract-updates-from-l1#celo-minting) for more information.
+The `CeloUnreleasedTreasury` is a new contract available on the migrated Celo L2. See [the spec](/operate/specification/smart-contract-updates-from-l1#celo-minting) for more information.
 
 During the migration it needs to be setup with the remaining unminted Celo.
 

@@ -4,7 +4,7 @@ sidebarTitle: "Run a Public RPC Node"
 description: Settings specific to operating a Celo node that serves public JSON-RPC traffic
 ---
 
-A public RPC node serves JSON-RPC requests to external clients. This page covers the settings specific to operating one; to get a node running first, see [Run a node with Docker](/infra-partners/operators/run-node).
+A public RPC node serves JSON-RPC requests to external clients. This page covers the settings specific to operating one; to get a node running first, see [Run a node with Docker](/operate/operators/run-node).
 
 ## Serve transaction lookups by hash
 
@@ -21,7 +21,7 @@ If it is missing or wrong, transactions submitted to your node are accepted but 
 
 ## Exposing the endpoint
 
-op-reth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_RETH_HTTP` and `PORT__OP_RETH_WS` — see the [Configuration reference](/infra-partners/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net` namespaces on these endpoints.
+op-reth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_RETH_HTTP` and `PORT__OP_RETH_WS` — see the [Configuration reference](/operate/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net` namespaces on these endpoints.
 
 When exposing this publicly, put a reverse proxy or load balancer with rate limiting in front of it, and be deliberate about which RPC namespaces you expose to untrusted clients.
 

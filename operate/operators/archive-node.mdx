@@ -7,13 +7,13 @@ description: Run a full Celo archive node that serves historical-state RPC calls
 <Info>
 **Archive node vs. historical proofs**
 
-This guide covers running a **full archive node**, which serves every historical-state RPC call (such as `eth_getBalance` or `eth_call`) at any block and requires terabytes of storage. Celo also supports a narrower **historical proofs** feature for serving deep `eth_getProof` within a bounded window without keeping full archive state; see [Serving historical proofs](/infra-partners/operators/historical-proofs).
+This guide covers running a **full archive node**, which serves every historical-state RPC call (such as `eth_getBalance` or `eth_call`) at any block and requires terabytes of storage. Celo also supports a narrower **historical proofs** feature for serving deep `eth_getProof` within a bounded window without keeping full archive state; see [Serving historical proofs](/operate/operators/historical-proofs).
 </Info>
 
 <Info>
 **Execution client: op-reth**
 
-These instructions use `op-reth`, Celo's primary execution client. `op-geth` is supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide and [End of Support for op-geth](/infra-partners/notices/op-geth-deprecation).
+These instructions use `op-reth`, Celo's primary execution client. `op-geth` is supported until your network's switch date — see the **Still running op-geth?** notes at the end of this guide and [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Info>
 
 ## Overview
@@ -135,7 +135,7 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
 
 <Accordion title="Still running op-geth? (until your switch date)">
 
-Until your network's [switch date](/infra-partners/notices/op-geth-deprecation), you can keep running an `op-geth` archive node from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). The flow above is the same, with these differences:
+Until your network's [switch date](/operate/notices/op-geth-deprecation), you can keep running an `op-geth` archive node from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). The flow above is the same, with these differences:
 
 - **Sync mode instead of a snapshot.** `op-geth` archive nodes should run `full` sync against a migrated pre-hardfork datadir — `snap` sync only stores archive data from the point it completes, leaving a gap after the hardfork:
 
