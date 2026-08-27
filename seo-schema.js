@@ -16,7 +16,7 @@
         "@id": "https://celo.org/#organization",
         name: "Celo",
         url: "https://celo.org",
-        logo: "https://docs.celo.org/images/CeloDocs_LogoLight.svg",
+        logo: "https://docs.celo.org/logo/celo_light.png",
         description:
           "Celo is an Ethereum Layer 2 built for real-world use: fast, low-cost payments in stablecoins, mobile-first apps, and infrastructure for AI agents.",
         sameAs: [
