@@ -5,7 +5,7 @@
 // programmatically. The widget itself and the API it calls are served from the
 // assistant deployment; it derives its own API origin from this src.
 (function () {
-  var WIDGET_SRC = 'https://docs-ai-assistant-ten.vercel.app/widget.js';
+  var WIDGET_SRC = 'https://docs-assistant.celo.org/widget.js';
 
   var script = document.createElement('script');
   script.src = WIDGET_SRC;
