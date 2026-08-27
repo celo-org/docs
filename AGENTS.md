@@ -8,7 +8,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 
 - A [Mintlify](https://mintlify.com) site. Content is MDX; navigation, redirects and theme live in `docs.json`. There is no build step beyond the Mintlify CLI.
 - `docs.json` is the single source of truth for what is reachable. **A file on disk is unreachable until it is listed under `navigation`.**
-- Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `infra-partners/`, `specs/`, `legacy/`.
+- Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `infra-partners/`, `specs/`.
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
 

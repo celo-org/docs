@@ -40,6 +40,7 @@ Regardless of the transfer method, CELO tokens **reflect in both the native acco
 - The `transfer` and `transferFrom` functions do **not** modify contract storage.
 - Instead, these functions **initiate a native transfer**.
 - Since Ethereum does not support native transfers from smart contracts, **Celo introduces a transfer precompile** to handle this. This precompile can only be called by the CELO token.
+- The address of the CELO ERC-20 contract can be looked up via the Registry smart contract, under the `GoldToken` identifier.
 
 ---
 

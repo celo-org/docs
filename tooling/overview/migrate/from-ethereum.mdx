@@ -85,7 +85,7 @@ You can [view the implementation here.](https://celo.blockscout.com/address/0xaa
 
 1)  Mnemonic seed phrases can derive different accounts depending on the key derivation path used. While Ethereum wallets typically use the path `m/44'/60'/0'/0`, Celo defines its own path as `m/44'/52752'/0'/0`. Despite this, **most Celo wallets—including Valora—default to the Ethereum derivation path**, except in the case of some legacy accounts. Ledger Wallet, when used with the **Celo Ledger app**, strictly uses the Celo path. Tools like the **Celo CLI and the Celo Ledger app**, however, offer flexibility and allow users to specify either path explicitly.
 
-2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/legacy/protocol/identity/smart-contract-accounts).
+2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/home/celo-l1).
 
 ## Deploying Ethereum Contracts to Celo
 
@@ -103,7 +103,7 @@ Celo includes all of the precompiled contracts in Ethereum, but also adds additi
 
 ### Core Contract Calls
 
-The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/legacy/protocol/pos/epoch-rewards), [validator elections](/legacy/protocol/pos/validator-elections), etc.), but not all. For example, the [gas price minimum](/legacy/protocol/transaction/gas-pricing) update can happen on any block.
+The blockchain client makes some core contract calls at the end of a block, outside of transactions. Many are done on epoch blocks ([epoch rewards](/home/protocol/epoch-rewards/index), [validator elections](/home/protocol/staking/validator-elections), etc.), but not all. For example, the [gas price minimum](/specs/transaction-fees) update can happen on any block.
 Logs created by these contract changes are included in a single additional receipt in that block, which references the block hash as its transaction hash, even though there is no transaction with this hash. If no logs were created by such calls in that block, no receipt is added.
 
 ### Node management APIs

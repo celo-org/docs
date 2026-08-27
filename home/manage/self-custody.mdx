@@ -43,7 +43,7 @@ In this guide, you will:
 - Access the `ReleaseGold` account associated with your address using your existing Ledger
 - Authorize a voting key, which you will hold on a new, second Ledger
 - Lock some of the Gold in your `ReleaseGold` account
-- Use that Locked CELO to vote for Validator Groups to operate Celo's [Proof of Stake](/legacy/protocol/pos/index/) network (and in doing so be ready to receive epoch rewards of 6% when the community enables them in a forthcoming governance proposal)
+- Use that Locked CELO to vote for Validator Groups to operate Celo's [staking](/home/protocol/staking/index) mechanism (and in doing so be ready to receive [epoch rewards](/home/protocol/epoch-rewards/index))
 
 ## Preparing Ledgers
 
@@ -149,7 +149,7 @@ Otherwise, you're all set. You don't need to take any further action right now.
 
 ## Authorize Vote Signer Keys
 
-To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](/legacy/validator/key-management/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
+To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](/home/protocol/staking/key-management/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
 
 <Note>
 A vote signer can either be another Ledger device or a cloud Hardware Security Module (HSM).
@@ -260,12 +260,12 @@ celocli lockedgold:show $CELO_RG_ADDRESS
 
 Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](/home/protocol/epoch-rewards).
 
-For more details, check out the [Voting for Validators page](/legacy/validator/voting), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
+For more details, check out the [Voting for Validators page](/home/protocol/staking/voting), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
 
 - in Celo, CELO holders vote for Validator Groups, not Validators directly
 - you only earn epoch rewards if the Validator Group you voted for gets at least 1 Validator elected
 
-Keeping this in mind, you will need to find a Validator Group to vote for and copy its address. You can find this information on community validator explorers such as the [cLabs Validator explorer](/legacy/validator/validator-explorer) and [Bi23 Labs' `thecelo` dashboard](https://thecelo.com).
+Keeping this in mind, you will need to find a Validator Group to vote for and copy its address. You can find this information on community [validator explorers](/home/protocol/staking/voting#validator-explorers) such as [Celo Mondo](https://mondo.celo.org/) and [Bi23 Labs' `thecelo` dashboard](https://thecelo.com).
 
 You can also see registered Validator Groups through the Celo CLI. This will display a list of Validator Groups, the number of votes they have received, the number of additional votes they are able to receive, and whether or not they are eligible to elect Validators:
 
@@ -354,11 +354,11 @@ Or by searching for your `ReleaseGold` address on the [Block Explorer](https://e
 
 You are now set up to participate in the Celo network!
 
-You might want to read more about [choosing a Validator Group](/legacy/validator/voting) to vote for, and how [voter rewards](/home/protocol/epoch-rewards/index) are calculated. You can vote for up to ten different Groups from a single account.
+You might want to read more about [choosing a Validator Group](/home/protocol/staking/voting) to vote for, and how [voter rewards](/home/protocol/epoch-rewards/index) are calculated. You can vote for up to ten different Groups from a single account.
 
 Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](/home/protocol/governance/voting-in-governance). You can do this without affecting any vote you have made for Validator Groups.
 
-You can also read more about how Celo's [Proof of Stake](/legacy/protocol/pos/index/) and on-chain [Governance](/home/protocol/governance/overview) mechanisms work.
+You can also read more about how Celo's [staking](/home/protocol/staking/index) and on-chain [Governance](/home/protocol/governance/overview) mechanisms work.
 
 ## Revoking Votes
 
