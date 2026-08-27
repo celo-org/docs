@@ -23,8 +23,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           # Dropdowns render as "### <Label>" followed by the selected option; options may
-          # carry a description ("critical — money ...", "S — hours"), so only the first
-          # word is the value.
+          # carry a description ("critical — money ..."), so only the first word is the value.
           pick() { printf '%s\n' "$BODY" | awk -v h="^### $1" '$0 ~ h {found=1; next} found && NF {print $1; exit}' | tr -d '\r'; }
 
           p=$(pick Priority | tr '[:upper:]' '[:lower:]')
@@ -35,14 +34,4 @@ jobs:
               done
               gh issue edit "$NUM" -R "$REPO" --add-label "priority:$p" && echo "labeled #$NUM priority:$p" ;;
             *) echo "no priority selection found (got: '$p')" ;;
-          esac
-
-          s=$(pick Size | tr '[:lower:]' '[:upper:]')
-          case "$s" in
-            S|M|L)
-              for other in S M L; do
-                [ "$other" != "$s" ] && gh issue edit "$NUM" -R "$REPO" --remove-label "size:$other" 2>/dev/null || true
-              done
-              gh issue edit "$NUM" -R "$REPO" --add-label "size:$s" && echo "labeled #$NUM size:$s" ;;
-            *) echo "no size selection found (got: '$s')" ;;
           esac
