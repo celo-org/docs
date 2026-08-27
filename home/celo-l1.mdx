@@ -1,0 +1,58 @@
+---
+title: About Celo L1
+sidebarTitle: "Celo L1"
+description: What the Celo Layer 1 blockchain was, how it worked, and what changed when Celo became an Ethereum Layer 2 in March 2025
+---
+
+This page is a historical reference for anyone who wants to understand Celo's original Layer 1 blockchain, or who followed a link to a page about a mechanism that no longer exists. Celo ran as an independent L1 from April 2020 until March 2025, when it completed its migration to an Ethereum Layer 2 at block 31,056,500.
+
+Celo launched in 2020 as a mobile-first Layer 1 blockchain designed to advance global financial inclusion through smartphone-accessible crypto payments and phone number-based addressing. Built on proof-of-stake consensus with a commitment to carbon neutrality, the L1 featured fast, low-cost transactions and native stablecoins like cUSD that powered a growing DeFi ecosystem.
+
+## The L1 architecture
+
+Celo L1 was a full-stack design. The `celo-blockchain` client, a fork of go-ethereum, replaced Proof-of-Work with a Byzantine Fault Tolerant (BFT) proof-of-stake consensus run by an elected set of validators. Most machines on the network ran as full nodes, serving light clients on user devices and forwarding their transactions in exchange for fees. The Celo Core Contracts, upgradeable through on-chain governance, implemented the platform's features in smart contracts: stable currencies, identity attestations, validator elections and staking, and governance itself.
+
+## What changed in the migration
+
+The table below summarizes the technical changes involved in transitioning from Celo's Layer 1 to Layer 2:
+
+| **Aspect**          | **Layer 1**                                                                                  | **Layer 2**                                                                                                   |
+|----------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| **Architecture**    | Single service, providing execution, consensus, and data availability.                      | Multiple services built on the op-stack with separate execution, data availability, and settlement layers.    |
+| **Bridging**        | Third-party bridges connecting to various chains.                                            | Additional native bridge with Ethereum alongside existing third-party bridges.                                |
+| **CELO Token**      | Lived on the Celo L1.                                                                        | Lives on Ethereum; CELO on L2 represents CELO bridged from Ethereum.                                          |
+| **Blocks**          | 5s long, 50M gas.                                                                           | 1s long, 30M gas.                                                                                            |
+| **Extra Fields**    | —                                                                                           | Withdrawals & withdrawalsRoot, blobGasUsed & excessBlobGas, parentBeaconBlockRoot.                           |
+| **Removed Fields**  | —                                                                                           | Randomness, epochSnarkData.                                                                                  |
+| **Validator Duties**| Operated the consensus protocol.                                                            | Validators temporarily operate community RPC nodes.                                                          |
+| **Validator Rewards**| Distributed at epoch blocks.                                                              | Distributed periodically via smart contract execution.                                                       |
+| **Sequencing**      | Determined by the output of consensus, run by validators.                                    | Initially handled by a centralized sequencer with plans for decentralized sequencing later.                  |
+| **Precompiles**     | —                                                                                           | All Celo precompiles removed except for the transfer precompile which supports token duality.                 |
+| **EIP1559**         | Governable implementation on-chain.                                                         | Upgraded implementation with modified parameters across networks.                                            |
+| **Hardforks**       | —                                                                                           | Cel2 hardfork for transition to L2 alongside other op-stack hardforks.                                       |
+| **Transactions**    | —                                                                                           | Deprecated transactions include Type 0 with feeCurrency field and Type 124.                                  |
+| **Finality**        | One block finality, instantaneous once block is produced.                                    | Finality depends on trust in sequencer, batcher, proposer, and eigenDA, or ultimately on Ethereum.            |
+
+## Retired mechanisms
+
+These L1 mechanisms were decommissioned before or during the L2 migration and no longer exist on Celo:
+
+- **BFT consensus, validator proxies, and slashing** — validators no longer produce blocks; a sequencer orders transactions, and the old validator node operations (proxies, consensus key ceremonies, downtime slashing) ended with the L1.
+- **On-chain randomness** — the `Random` contract was removed; contracts use the `PREVRANDAO` opcode instead. See [Deactivated Random Contract](/operate/specification/l2-migration#deactivated-random-contract).
+- **Granda Mento** — the mechanism for exchanging large amounts of CELO for stable tokens through approved exchange proposals ([CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md)) was decommissioned.
+- **The on-chain stability algorithm (CP-DOTO) and stability fees** — the constant-product mechanism that minted and burned stable assets against the reserve became [Mento](https://www.mento.org/), which now operates as its own protocol; the demurrage-style stability fee on stable-token balances was disabled and removed from the protocol.
+- **Komenci and meta-transaction wallets** — the fee-less onboarding flow used by the original Celo Wallet was discontinued.
+- **The `celo-blockchain` client** — the L1 client (docker image `us.gcr.io/celo-org/geth`) stopped syncing new blocks at the migration. To serve pre-migration state, run a [Historical RPC Service](/operate/operators/archive-node).
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Celo whitepapers | [celo.org/papers](https://celo.org/papers) |
+| L2 migration changes in the specs | [/operate/specification/l2-migration](/operate/specification/l2-migration) |
+
+## Related
+
+- [Our History](/home/history) - the timeline of Celo's evolution from L1 to L2
+- [Staking](/home/protocol/staking/index) - locked CELO, validator elections, and voting, which continue on L2
+- [Node operators](/operate/operators/overview) - running Celo L2 nodes today

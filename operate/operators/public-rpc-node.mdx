@@ -1,0 +1,34 @@
+---
+title: "Running a Public RPC Node"
+sidebarTitle: "Run a Public RPC Node"
+description: Settings specific to operating a Celo node that serves public JSON-RPC traffic
+---
+
+A public RPC node serves JSON-RPC requests to external clients. This page covers the settings specific to operating one; to get a node running first, see [Run a node with Docker](/operate/operators/run-node).
+
+## Serve transaction lookups by hash
+
+A public RPC endpoint should return any transaction by its hash. op-reth exposes the standard `eth` namespace, so transactions are retrievable by hash within the node's retained history, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup needs no extra configuration for this. (On the legacy op-geth setup this instead requires `--history.transactions=0`, which the compose setup sets for you.)
+
+## Forward transactions to the sequencer
+
+op-reth forwards transactions submitted to your endpoint to the sequencer so they are executed, via the `--rollup.sequencer` flag. The sequencer endpoint is set for you by the compose setup (from `OP_RETH__SEQUENCER_URL`):
+
+- Mainnet: `--rollup.sequencer=https://cel2-sequencer.celo.org`
+- Celo Sepolia: `--rollup.sequencer=https://sequencer.celo-sepolia.celo-testnet.org`
+
+If it is missing or wrong, transactions submitted to your node are accepted but never executed.
+
+## Exposing the endpoint
+
+op-reth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_RETH_HTTP` and `PORT__OP_RETH_WS` — see the [Configuration reference](/operate/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net` namespaces on these endpoints.
+
+When exposing this publicly, put a reverse proxy or load balancer with rate limiting in front of it, and be deliberate about which RPC namespaces you expose to untrusted clients.
+
+## Earning rewards
+
+If you want to earn protocol rewards for operating a public RPC endpoint, register it with the Community RPC program:
+
+- [How it works](/contribute-to-celo/community-rpc-nodes/how-it-works)
+- [Registering as an RPC node](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node)
+- [Operating a Community RPC Node](/contribute-to-celo/community-rpc-nodes/community-rpc-node) (rewards and claiming)
