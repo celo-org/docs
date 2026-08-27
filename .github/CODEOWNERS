@@ -15,11 +15,8 @@
 # Contribute to Celo section - DevRel team
 /contribute-to-celo/ @celo-org/devrel
 
-# Infrastructure Partners section - Blockchain team (was cel2)
-/infra-partners/ @celo-org/blockchain
-
-# Specs section (was specs.celo.org) - Blockchain team
-/specs/ @celo-org/blockchain
+# Operate section (node operation and protocol specification) - Blockchain team
+/operate/ @celo-org/blockchain
 
 # Tooling section
 /tooling/ @celo-org/devrel

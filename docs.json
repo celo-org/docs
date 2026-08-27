@@ -421,24 +421,24 @@
         ]
       },
       {
-        "tab": "Infra Partners",
+        "tab": "Operate",
         "groups": [
           {
             "group": "Network Notices",
             "pages": [
-              "infra-partners/notices/overview",
-              "infra-partners/notices/op-geth-deprecation",
-              "infra-partners/notices/req-resp-cl-sync-deprecation",
+              "operate/notices/overview",
+              "operate/notices/op-geth-deprecation",
+              "operate/notices/req-resp-cl-sync-deprecation",
               {
                 "group": "Archive",
                 "pages": [
-                  "infra-partners/notices/archive/jovian-upgrade",
-                  "infra-partners/notices/archive/jello-upgrade",
-                  "infra-partners/notices/archive/l1-fusaka-upgrade",
-                  "infra-partners/notices/archive/celo-sepolia-launch",
-                  "infra-partners/notices/archive/eigenda-v2-upgrade",
-                  "infra-partners/notices/archive/isthmus-upgrade",
-                  "infra-partners/notices/archive/l2-migration"
+                  "operate/notices/archive/jovian-upgrade",
+                  "operate/notices/archive/jello-upgrade",
+                  "operate/notices/archive/l1-fusaka-upgrade",
+                  "operate/notices/archive/celo-sepolia-launch",
+                  "operate/notices/archive/eigenda-v2-upgrade",
+                  "operate/notices/archive/isthmus-upgrade",
+                  "operate/notices/archive/l2-migration"
                 ]
               }
             ]
@@ -446,68 +446,63 @@
           {
             "group": "Node Operation",
             "pages": [
-              "infra-partners/operators/overview",
-              "infra-partners/operators/architecture",
-              "infra-partners/operators/run-node",
-              "infra-partners/operators/faq"
+              "operate/operators/overview",
+              "operate/operators/architecture",
+              "operate/operators/run-node",
+              "operate/operators/faq"
             ]
           },
           {
             "group": "Node Management",
             "pages": [
-              "infra-partners/operators/archive-node",
-              "infra-partners/operators/historical-proofs",
-              "infra-partners/operators/public-rpc-node",
-              "infra-partners/operators/monitoring",
-              "infra-partners/operators/maintenance",
-              "infra-partners/operators/troubleshooting",
-              "infra-partners/operators/migrate-node"
+              "operate/operators/archive-node",
+              "operate/operators/historical-proofs",
+              "operate/operators/public-rpc-node",
+              "operate/operators/monitoring",
+              "operate/operators/maintenance",
+              "operate/operators/troubleshooting",
+              "operate/operators/migrate-node"
             ]
           },
           {
             "group": "Reference",
             "pages": [
-              "infra-partners/operators/configuration",
-              "infra-partners/operators/network-config"
+              "operate/operators/configuration",
+              "operate/operators/network-config"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Specs",
-        "groups": [
+          },
           {
             "group": "Specification",
             "pages": [
-              "specs/index",
+              "operate/specification/index",
               {
                 "group": "Deployments",
                 "pages": [
-                  "specs/deployments",
-                  "specs/l1-smart-contract-verification"
+                  "operate/specification/deployments",
+                  "operate/specification/l1-smart-contract-verification"
                 ]
               },
-              "specs/token-duality",
-              "specs/transaction-fees",
-              "specs/fee-abstraction",
-              "specs/transaction-types",
-              "specs/native-bridge",
-              "specs/eigenda",
-              "specs/finality"
+              "operate/specification/token-duality",
+              "operate/specification/transaction-fees",
+              "operate/specification/fee-abstraction",
+              "operate/specification/transaction-types",
+              "operate/specification/native-bridge",
+              "operate/specification/eigenda",
+              "operate/specification/finality"
             ]
           },
           {
             "group": "Protocol Upgrades",
             "pages": [
-              "specs/upgrades/jovian",
-              "specs/upgrades/jello",
-              "specs/upgrades/ice-cream",
-              "specs/upgrades/isthmus",
+              "operate/specification/upgrades/jovian",
+              "operate/specification/upgrades/jello",
+              "operate/specification/upgrades/ice-cream",
+              "operate/specification/upgrades/isthmus",
               {
                 "group": "L2 Migration",
                 "pages": [
-                  "specs/l2-migration",
-                  "specs/smart-contract-updates-from-l1"
+                  "operate/specification/l2-migration",
+                  "operate/specification/smart-contract-updates-from-l1"
                 ]
               }
             ]
@@ -544,7 +539,7 @@
         },
         {
           "anchor": "FAQs",
-          "href": "https://docs.celo.org/infra-partners/operators/faq",
+          "href": "https://docs.celo.org/operate/operators/faq",
           "icon": "square-question"
         }
       ]
@@ -578,7 +573,7 @@
     },
     {
       "source": "/tooling/nodes/run-a-celo-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/tooling/explorers/blockscout",
@@ -638,7 +633,7 @@
     },
     {
       "source": "/cel2/l2-operator-guide",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/cel2/notices/day-1-partners",
@@ -738,7 +733,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/randomness",
-      "destination": "/specs/l2-migration#deactivated-random-contract"
+      "destination": "/operate/specification/l2-migration#deactivated-random-contract"
     },
     {
       "source": "/celo-codebase/protocol/identity/smart-contract-accounts",
@@ -930,7 +925,7 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/gas-pricing",
-      "destination": "/specs/transaction-fees"
+      "destination": "/operate/specification/transaction-fees"
     },
     {
       "source": "/celo-codebase/protocol/transactions/index",
@@ -1438,31 +1433,31 @@
     },
     {
       "source": "/developer-guide/integrations/checklist",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/cloud-hsm",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/custody",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/dapps",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/general",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/integrations",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/integrations/listings",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/overview",
@@ -1478,7 +1473,7 @@
     },
     {
       "source": "/developer-guide/overview/integrations/custody",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-guide/overview/introduction",
@@ -1590,31 +1585,31 @@
     },
     {
       "source": "/developer-resources/integrations/checklist",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/cloud-hsm",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/custody",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/dapps",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/general",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/integrations",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/integrations/listings",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
@@ -1834,7 +1829,7 @@
     },
     {
       "source": "/getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/alfajores-testnet/using-the-mobile-wallet",
@@ -1850,11 +1845,11 @@
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-full-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-full-node-in-baklava",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-validator-in-baklava",
@@ -1878,11 +1873,11 @@
     },
     {
       "source": "/getting-started/mainnet/running-a-full-node-in-mainnet",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/mainnet/running-a-validator-in-mainnet",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/rc1",
@@ -1890,31 +1885,31 @@
     },
     {
       "source": "/getting-started/rc1/running-a-full-node-in-rc1",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/rc1/running-a-validator-in-rc1",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-a-full-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-a-full-node-in-baklava",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-a-full-node-in-mainnet",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-a-validator",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-a-validator-in-mainnet",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/getting-started/running-oracles",
@@ -2026,7 +2021,7 @@
     },
     {
       "source": "/network/alfajores/run-full-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/network/alfajores/faucet",
@@ -2034,7 +2029,7 @@
     },
     {
       "source": "/network/baklava/run-full-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/network/baklava/run-validator",
@@ -2042,7 +2037,7 @@
     },
     {
       "source": "/network/mainnet/run-full-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/network/mainnet/run-validator",
@@ -2050,11 +2045,11 @@
     },
     {
       "source": "/network/node/run-alfajores",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/network/node/run-baklava",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/network/node/run-hosted",
@@ -2062,7 +2057,7 @@
     },
     {
       "source": "/network/node/run-mainnet",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/protocol/bridge",
@@ -2186,7 +2181,7 @@
     },
     {
       "source": "/protocol/randomness",
-      "destination": "/specs/l2-migration#deactivated-random-contract"
+      "destination": "/operate/specification/l2-migration#deactivated-random-contract"
     },
     {
       "source": "/protocol/socialconnect",
@@ -2754,35 +2749,35 @@
     },
     {
       "source": "/integration",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/integration/:slug*",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration/checklist",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration/cloud-hsm",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration/custody",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration/general",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/infra-partners/integration/listings",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/contracts/:slug*",
@@ -2790,7 +2785,7 @@
     },
     {
       "source": "/cel2/faq",
-      "destination": "/infra-partners/operators/faq"
+      "destination": "/operate/operators/faq"
     },
     {
       "source": "/cel2/guides/bridging-celo-from-l1-to-l2",
@@ -2802,55 +2797,55 @@
     },
     {
       "source": "/cel2/notices/celo-sepolia-launch",
-      "destination": "/infra-partners/notices/archive/celo-sepolia-launch"
+      "destination": "/operate/notices/archive/celo-sepolia-launch"
     },
     {
       "source": "/cel2/notices/eigenda-v2-upgrade",
-      "destination": "/infra-partners/notices/archive/eigenda-v2-upgrade"
+      "destination": "/operate/notices/archive/eigenda-v2-upgrade"
     },
     {
       "source": "/cel2/notices/isthmus-upgrade",
-      "destination": "/infra-partners/notices/archive/isthmus-upgrade"
+      "destination": "/operate/notices/archive/isthmus-upgrade"
     },
     {
       "source": "/cel2/notices/l2-migration",
-      "destination": "/infra-partners/notices/archive/l2-migration"
+      "destination": "/operate/notices/archive/l2-migration"
     },
     {
       "source": "/infra-partners/notices/jovian-upgrade",
-      "destination": "/infra-partners/notices/archive/jovian-upgrade"
+      "destination": "/operate/notices/archive/jovian-upgrade"
     },
     {
       "source": "/infra-partners/notices/jello-upgrade",
-      "destination": "/infra-partners/notices/archive/jello-upgrade"
+      "destination": "/operate/notices/archive/jello-upgrade"
     },
     {
       "source": "/infra-partners/notices/l1-fusaka-upgrade",
-      "destination": "/infra-partners/notices/archive/l1-fusaka-upgrade"
+      "destination": "/operate/notices/archive/l1-fusaka-upgrade"
     },
     {
       "source": "/infra-partners/notices/celo-sepolia-launch",
-      "destination": "/infra-partners/notices/archive/celo-sepolia-launch"
+      "destination": "/operate/notices/archive/celo-sepolia-launch"
     },
     {
       "source": "/infra-partners/notices/eigenda-v2-upgrade",
-      "destination": "/infra-partners/notices/archive/eigenda-v2-upgrade"
+      "destination": "/operate/notices/archive/eigenda-v2-upgrade"
     },
     {
       "source": "/infra-partners/notices/isthmus-upgrade",
-      "destination": "/infra-partners/notices/archive/isthmus-upgrade"
+      "destination": "/operate/notices/archive/isthmus-upgrade"
     },
     {
       "source": "/infra-partners/notices/l2-migration",
-      "destination": "/infra-partners/notices/archive/l2-migration"
+      "destination": "/operate/notices/archive/l2-migration"
     },
     {
       "source": "/infra-partners/specs",
-      "destination": "/specs"
+      "destination": "/operate/specification"
     },
     {
       "source": "/cel2/operators/architecture",
-      "destination": "/infra-partners/operators/architecture"
+      "destination": "/operate/operators/architecture"
     },
     {
       "source": "/cel2/operators/community-rpc-node",
@@ -2862,11 +2857,11 @@
     },
     {
       "source": "/cel2/operators/migrate-node",
-      "destination": "/infra-partners/operators/migrate-node"
+      "destination": "/operate/operators/migrate-node"
     },
     {
       "source": "/cel2/operators/overview",
-      "destination": "/infra-partners/operators/overview"
+      "destination": "/operate/operators/overview"
     },
     {
       "source": "/cel2/operators/penalties",
@@ -2878,7 +2873,7 @@
     },
     {
       "source": "/cel2/operators/run-node",
-      "destination": "/infra-partners/operators/run-node"
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/cel2/operators/validator-rpc-faq",
@@ -2890,11 +2885,11 @@
     },
     {
       "source": "/cel2/whats-changed/l1-l2",
-      "destination": "/specs/l2-migration"
+      "destination": "/operate/specification/l2-migration"
     },
     {
       "source": "/cel2/whats-changed/op-l2",
-      "destination": "/specs/l2-migration"
+      "destination": "/operate/specification/l2-migration"
     },
     {
       "source": "/cel2/whats-changed/overview",
@@ -3142,7 +3137,7 @@
     },
     {
       "source": "/legacy/faq",
-      "destination": "/infra-partners/operators/faq"
+      "destination": "/operate/operators/faq"
     },
     {
       "source": "/legacy/transition/guides/bridging-celo-from-l1-to-l2",
@@ -3210,7 +3205,7 @@
     },
     {
       "source": "/legacy/protocol/transaction/gas-pricing",
-      "destination": "/specs/transaction-fees"
+      "destination": "/operate/specification/transaction-fees"
     },
     {
       "source": "/legacy/protocol/transaction/escrow",
@@ -3318,7 +3313,7 @@
     },
     {
       "source": "/legacy/protocol/randomness",
-      "destination": "/specs/l2-migration#deactivated-random-contract"
+      "destination": "/operate/specification/l2-migration#deactivated-random-contract"
     },
     {
       "source": "/legacy/protocol/contracts/add-contract",
@@ -3326,7 +3321,7 @@
     },
     {
       "source": "/legacy/node/run-mainnet",
-      "destination": "/infra-partners/operators/archive-node"
+      "destination": "/operate/operators/archive-node"
     },
     {
       "source": "/legacy/validator/index",
@@ -3374,11 +3369,27 @@
     },
     {
       "source": "/legacy/transition/whats-changed/l1-l2",
-      "destination": "/specs/l2-migration"
+      "destination": "/operate/specification/l2-migration"
     },
     {
       "source": "/legacy/transition/optimism/op-l2",
-      "destination": "/specs/l2-migration"
+      "destination": "/operate/specification/l2-migration"
+    },
+    {
+      "source": "/infra-partners",
+      "destination": "/operate/notices/overview"
+    },
+    {
+      "source": "/infra-partners/:slug*",
+      "destination": "/operate/:slug*"
+    },
+    {
+      "source": "/specs",
+      "destination": "/operate/specification"
+    },
+    {
+      "source": "/specs/:slug*",
+      "destination": "/operate/specification/:slug*"
     }
   ],
   "footer": {

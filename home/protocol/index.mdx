@@ -4,24 +4,24 @@ description: How the Celo protocol works today — an Ethereum Layer 2 on the OP
 sidebarTitle: "Overview"
 ---
 
-This page is for anyone who wants to understand how Celo works — developers evaluating the chain, operators joining the network, or readers following a protocol-level question. Celo is an **Ethereum Layer 2**: an OP Stack rollup that posts its data to [EigenDA](/specs/eigenda) and settles to Ethereum, run since March 2025, when Celo completed its migration from a standalone Layer 1. What makes it distinct from other L2s is what the protocol itself guarantees: [1-second blocks](/specs/deployments), transaction fees [below a cent](/specs/transaction-fees), gas payable in stablecoins from any ordinary account, and a stablecoin system and identity layer built in at the protocol level.
+This page is for anyone who wants to understand how Celo works — developers evaluating the chain, operators joining the network, or readers following a protocol-level question. Celo is an **Ethereum Layer 2**: an OP Stack rollup that posts its data to [EigenDA](/operate/specification/eigenda) and settles to Ethereum, run since March 2025, when Celo completed its migration from a standalone Layer 1. What makes it distinct from other L2s is what the protocol itself guarantees: [1-second blocks](/operate/specification/deployments), transaction fees [below a cent](/operate/specification/transaction-fees), gas payable in stablecoins from any ordinary account, and a stablecoin system and identity layer built in at the protocol level.
 
 ## How the network is built
 
 Celo runs the [OP Stack](https://docs.optimism.io/), the modular rollup framework, with two deliberate substitutions — described in detail in [Celo's L2 architecture](/build-on-celo/cel2-architecture):
 
-- **Execution.** A sequencer orders transactions into [1-second blocks](/specs/deployments). Execution is EVM-equivalent: contracts, wallets, and tooling that work on Ethereum work on Celo. The one Celo-specific precompile that survives from the L1 era implements [token duality](/specs/token-duality), which lets CELO behave as both the native token and an ERC-20 without wrapping.
-- **Data availability.** Instead of posting transaction data to Ethereum as blobs, Celo posts it to [EigenDA](/specs/eigenda); only the data-availability commitments go to Ethereum. This is what keeps fees low and predictable at 1-second block cadence.
+- **Execution.** A sequencer orders transactions into [1-second blocks](/operate/specification/deployments). Execution is EVM-equivalent: contracts, wallets, and tooling that work on Ethereum work on Celo. The one Celo-specific precompile that survives from the L1 era implements [token duality](/operate/specification/token-duality), which lets CELO behave as both the native token and an ERC-20 without wrapping.
+- **Data availability.** Instead of posting transaction data to Ethereum as blobs, Celo posts it to [EigenDA](/operate/specification/eigenda); only the data-availability commitments go to Ethereum. This is what keeps fees low and predictable at 1-second block cadence.
 - **Settlement.** State roots are proposed to Ethereum, where a fault-proof system with a challenge window secures withdrawals. Independent [challengers](/home/protocol/challengers) can dispute invalid state roots during that window, and a [Security Council](/home/protocol/security-council) holds the protocol's emergency keys.
 
-The full specification of these mechanisms — transaction types, fee rules, finality, upgrade history — lives in the [Specs section](/specs/index).
+The full specification of these mechanisms — transaction types, fee rules, finality, upgrade history — lives in the [Specification section](/operate/specification/index).
 
 ## Paying for transactions
 
 Celo keeps two fee properties that shape everything built on it:
 
-- **Fees stay below a cent.** The protocol configures the OP Stack's L1 and operator fee components to zero and relies on EigenDA's low data costs, so a typical transaction costs less than $0.01 — the mechanics are specified in [Transaction fees](/specs/transaction-fees).
-- **Gas can be paid in stablecoins.** [Fee abstraction](/build-on-celo/fee-abstraction/overview) is implemented at the node level — not through paymasters or relayers — so any externally owned account can pay gas in USDm, USDC, USDT, or another allowlisted currency using a [CIP-64 transaction](/specs/transaction-types). A user or an AI agent can hold nothing but dollars and still transact.
+- **Fees stay below a cent.** The protocol configures the OP Stack's L1 and operator fee components to zero and relies on EigenDA's low data costs, so a typical transaction costs less than $0.01 — the mechanics are specified in [Transaction fees](/operate/specification/transaction-fees).
+- **Gas can be paid in stablecoins.** [Fee abstraction](/build-on-celo/fee-abstraction/overview) is implemented at the node level — not through paymasters or relayers — so any externally owned account can pay gas in USDm, USDC, USDT, or another allowlisted currency using a [CIP-64 transaction](/operate/specification/transaction-types). A user or an AI agent can hold nothing but dollars and still transact.
 
 ## Stablecoins
 
@@ -46,7 +46,7 @@ Put together — sub-cent fees, 1-second blocks, gas in stablecoins, phone-numbe
 ## Related
 
 - [Celo's L2 architecture](/build-on-celo/cel2-architecture) - The OP Stack layout in detail
-- [Specs](/specs/index) - The normative protocol specification
+- [Specification](/operate/specification/index) - The normative protocol specification
 - [Fee abstraction](/build-on-celo/fee-abstraction/overview) - Pay gas in stablecoins
 - [Governance](/home/protocol/governance/overview) - How the protocol changes
 - [Network overview](/build-on-celo/network-overview) - Chain IDs, RPCs, explorers
