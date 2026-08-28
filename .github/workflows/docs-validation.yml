@@ -24,6 +24,4 @@ jobs:
         run: npx mintlify broken-links
 
       - name: Check for orphan pages
-        # Report-only until the existing orphans are resolved (#2253 removes this).
-        continue-on-error: true
         run: bash scripts/check-orphans.sh

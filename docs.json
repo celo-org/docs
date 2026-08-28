@@ -190,6 +190,8 @@
               "build-on-celo/build-with-farcaster",
               "build-on-celo/build-with-self",
               "build-on-celo/build-with-local-stablecoin",
+              "build-on-celo/build-with-usat",
+              "build-on-celo/build-on-socialconnect",
               "build-on-celo/build-with-defi"
             ]
           },
@@ -210,6 +212,7 @@
             "group": "Overview",
             "pages": [
               "tooling/overview/index",
+              "tooling/overview/migrate/from-ethereum",
               "tooling/bridges/bridges",
               "tooling/bridges/cross-chain-messaging",
               "tooling/testnets/celo-sepolia/index"
@@ -252,7 +255,8 @@
                   "tooling/wallets/ledger/setup",
                   "tooling/wallets/ledger/to-celo-terminal",
                   "tooling/wallets/ledger/to-celo-web",
-                  "tooling/wallets/ledger/to-celo-cli"
+                  "tooling/wallets/ledger/to-celo-cli",
+                  "tooling/wallets/ledger/eip712-workaround"
                 ]
               }
             ]
@@ -287,7 +291,8 @@
               "tooling/oracles/redstone",
               "tooling/oracles/supra",
               "tooling/oracles/quex-oracles",
-              "tooling/oracles/dia"
+              "tooling/oracles/dia",
+              "tooling/oracles/wit-oracle"
             ]
           },
           {
@@ -352,7 +357,12 @@
                   "tooling/libraries-sdks/contractkit/setup",
                   "tooling/libraries-sdks/contractkit/usage",
                   "tooling/libraries-sdks/contractkit/contracts-wrappers-registry",
-                  "tooling/libraries-sdks/contractkit/odis"
+                  "tooling/libraries-sdks/contractkit/odis",
+                  "tooling/libraries-sdks/contractkit/data-encryption-key",
+                  "tooling/libraries-sdks/contractkit/migrating-to-viem",
+                  "tooling/libraries-sdks/contractkit/migrating-to-contractkit-v2",
+                  "tooling/libraries-sdks/contractkit/migrating-to-contractkit-v1",
+                  "tooling/libraries-sdks/contractkit/notes-web3-with-contractkit"
                 ]
               },
               "tooling/libraries-sdks/web3/index"
@@ -559,6 +569,46 @@
     "dark": "/images/CeloDocs_LogoDark.svg"
   },
   "redirects": [
+    {
+      "source": "/tooling/overview/setup/overview",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/tooling/overview/setup/mac",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/tooling/overview/setup/windows",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/tooling/overview/setup/wallet",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/overview/setup/replit",
+      "destination": "/tooling/dev-environments/index"
+    },
+    {
+      "source": "/tooling/overview/setup/development-chain",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/build-on-celo/support",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/tooling/contract-verification/foundry",
+      "destination": "/tooling/contract-verification/index"
+    },
+    {
+      "source": "/tooling/testnets/celo-sepolia/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/wallets/coinbase-wallet",
+      "destination": "/tooling/wallets/index"
+    },
     {
       "source": "/tooling/overview/faucet",
       "destination": "https://faucet.celo.org/celo-sepolia"

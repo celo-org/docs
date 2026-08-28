@@ -1,5 +1,7 @@
 ---
 title: "How to Use Wit/Oracle on Celo"
+sidebarTitle: "Wit/Oracle"
+description: How to read Witnet price feeds and on-chain randomness from a contract on Celo
 ---
 
 The Witnet multichain decentralized oracle enables smart contracts to realize their true potential by giving them access to all sorts of valuable data sets, and by attesting and delivering that information securely thanks to its strong cryptoeconomic guarantees.
@@ -45,7 +47,7 @@ contract MyCeloContract {
      * the network you are using! Please find available addresses here:
      * https://docs.witnet.io/smart-contracts/witnet-data-feeds/addresses
      */
-    constructor(IWitnetPriceRouter _router))
+    constructor(IWitnetPriceRouter _router) {
         router = _router;
     }
 
@@ -92,7 +94,7 @@ A complete list of publicly available Witnet data feeds on Celo can be found in 
 ## How to use WitnetRandomness
 Witnet provides secure, unbiased, on-chain randomness on EVM-compatible chains (including Celo) via its WitnetRandomness contract.
 
-### ⚙️ How It Works
+### How it works
 Crowd‑witnessed random seed generation
 A randomized subset of Witnet nodes each generate secret random bytes, commit and later reveal them. These are deterministically aggregated into a tamper‑proof seed—unbiased and unpredictable as long as at least one witness is honest.
 

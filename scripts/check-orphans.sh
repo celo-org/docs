@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Report .mdx pages that are not referenced anywhere in the docs.json
-# navigation tree. Report-only in CI for now (issue #2252); issue #2253
-# makes orphans fail CI once the existing ones are resolved.
+# Fail if any .mdx page is not referenced in the docs.json navigation tree.
+# A page on disk that is not in navigation is unreachable from the site.
+# Either add it to navigation or delete it with a redirect (see AGENTS.md section 2).
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
