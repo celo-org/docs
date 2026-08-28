@@ -10,17 +10,14 @@ thirdweb is a third-party platform for deploying contracts and building apps on 
 
 ## Celo chain configuration
 
-thirdweb v5 exports Celo Mainnet from `thirdweb/chains`. Celo Sepolia has no named export, so define it by chain ID.
+thirdweb v5 exports both Celo networks from `thirdweb/chains`.
 
 ```ts
 // thirdweb v5
-import { celo, defineChain } from "thirdweb/chains";
+import { celo, celoSepoliaTestnet } from "thirdweb/chains";
 
-// Celo Mainnet, chain ID 42220
-const mainnet = celo;
-
-// Celo Sepolia testnet, chain ID 11142220
-const testnet = defineChain(11142220);
+const mainnet = celo;                // Celo Mainnet, chain ID 42220
+const testnet = celoSepoliaTestnet;  // Celo Sepolia testnet, chain ID 11142220
 ```
 
 Pass the chain to `getContract`, `ConnectButton` and the rest of the SDK as you would for any other network. Chain IDs, RPC URLs and the faucet are on [Network information](/build-on-celo/network-overview).

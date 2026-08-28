@@ -3064,6 +3064,10 @@
       "destination": "/tooling/dev-environments/thirdweb"
     },
     {
+      "source": "/tooling/libraries-sdks/thirdweb-sdk/index",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
       "source": "/build-on-celo/build-with-thirdweb/overview",
       "destination": "/tooling/dev-environments/thirdweb"
     },
