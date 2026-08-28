@@ -154,7 +154,7 @@ function SendTransaction() {
 
   const handleSend = () => {
     sendTransaction({
-      to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8", // example recipient — replace
       value: parseEther("0.01"),
     });
   };
@@ -188,11 +188,11 @@ function BatchTransfer() {
         sendCalls({
           calls: [
             {
-              to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+              to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8", // example recipient — replace
               value: parseEther("0.01"),
             },
             {
-              to: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+              to: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC", // example recipient — replace
               value: parseEther("0.02"),
             },
           ],
@@ -225,14 +225,14 @@ function ApproveAndSwap() {
             abi: erc20Abi,
             functionName: "approve",
             args: [
-              "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D", // Router address
+              "0xYourSwapRouterAddress", // a router deployed on Celo — see /tooling/contracts/uniswap-contracts
               parseUnits("100", 6), // Amount
             ],
           }),
         },
         // Swap USDC for CELO
         {
-          to: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D", // Uniswap Router
+          to: "0xYourSwapRouterAddress", // a router deployed on Celo — see /tooling/contracts/uniswap-contracts
           data: encodeFunctionData({
             abi: uniswapAbi,
             functionName: "swapExactTokensForETH",
@@ -248,6 +248,10 @@ function ApproveAndSwap() {
   return <button onClick={handleApproveAndSwap}>Approve & Swap</button>;
 }
 ```
+
+<Warning>
+The swap example is a shape, not a recipe: the router address must be one deployed on Celo — pick it from [Uniswap contracts on Celo](/tooling/contracts/uniswap-contracts) — and the ABI must match that router (Celo has Uniswap v3/v4; the v2-style `swapExactTokensForETH` shown here will not work against them unchanged).
+</Warning>
 
 <Info>
 **Limitations:**
