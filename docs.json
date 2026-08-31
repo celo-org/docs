@@ -192,7 +192,8 @@
                 "group": "MCP Servers",
                 "pages": [
                   "build-on-celo/build-with-ai/mcp/index",
-                  "build-on-celo/build-with-ai/mcp/celo-mcp"
+                  "build-on-celo/build-with-ai/mcp/celo-mcp",
+                  "build-on-celo/build-with-ai/mcp/celina"
                 ]
               },
               "build-on-celo/build-with-ai/usecases"
@@ -310,14 +311,7 @@
             "pages": [
               "tooling/dev-environments/index",
               "tooling/dev-environments/foundry",
-              {
-                "group": "Using thirdweb",
-                "pages": [
-                  "tooling/dev-environments/thirdweb/overview",
-                  "tooling/dev-environments/thirdweb/thirdweb",
-                  "tooling/dev-environments/thirdweb/one-click-deploy"
-                ]
-              },
+              "tooling/dev-environments/thirdweb",
               {
                 "group": "Using MultiBaas",
                 "pages": [
@@ -362,7 +356,6 @@
                 ]
               },
               "tooling/libraries-sdks/viem/index",
-              "tooling/libraries-sdks/thirdweb-sdk/index",
               "tooling/libraries-sdks/ethers/index",
               "tooling/libraries-sdks/reown/index",
               "tooling/libraries-sdks/dynamic/index",
@@ -1352,7 +1345,7 @@
     },
     {
       "source": "/blog/2022/06/14/How%20to%20quickly%20build%20an%20NFT%20collection%20on%20Celo",
-      "destination": "/tooling/dev-environments/thirdweb/thirdweb"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/blog/tags/celo.org",
@@ -1776,7 +1769,7 @@
     },
     {
       "source": "/developer/deploy/thirdweb",
-      "destination": "/tooling/dev-environments/thirdweb/overview"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/docs.celo.org",
@@ -2628,7 +2621,7 @@
     },
     {
       "source": "/developer/thirdweb-sdk/:slug*",
-      "destination": "/tooling/libraries-sdks/thirdweb-sdk/:slug*"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/developer/viem/:slug*",
@@ -3040,7 +3033,7 @@
     },
     {
       "source": "/developer/thirdweb-sdk",
-      "destination": "/tooling/libraries-sdks/thirdweb-sdk"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/developer/viem",
@@ -3060,15 +3053,47 @@
     },
     {
       "source": "/build/build-with-thirdweb/celo-nft-drop-tutorial",
-      "destination": "/tooling/dev-environments/thirdweb/thirdweb"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/build/build-with-thirdweb/one-click%20quickstart",
-      "destination": "/tooling/dev-environments/thirdweb/one-click-deploy"
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/build/build-with-thirdweb/overview",
-      "destination": "/tooling/dev-environments/thirdweb/overview"
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/tooling/dev-environments/thirdweb/overview",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/tooling/dev-environments/thirdweb/thirdweb",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/tooling/dev-environments/thirdweb/one-click-deploy",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/tooling/libraries-sdks/thirdweb-sdk",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/tooling/libraries-sdks/thirdweb-sdk/index",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build-on-celo/build-with-thirdweb/overview",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build-on-celo/build-with-thirdweb/celo-nft-drop-tutorial",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build-on-celo/build-with-thirdweb/one-click%20quickstart",
+      "destination": "/tooling/dev-environments/thirdweb"
     },
     {
       "source": "/build/composer-kit",

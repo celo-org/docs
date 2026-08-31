@@ -61,7 +61,7 @@ const taggedData = concat([callData, tag]);
 await wallet.sendTransaction({ to: tokenAddress, data: taggedData });
 ```
 
-With [wagmi](/tooling/dev-environments/thirdweb/overview), pass `dataSuffix` directly and wagmi handles the concatenation:
+With [wagmi](https://wagmi.sh), pass `dataSuffix` directly and wagmi handles the concatenation:
 
 ```ts
 const { writeContract } = useWriteContract();

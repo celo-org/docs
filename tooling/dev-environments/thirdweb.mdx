@@ -1,0 +1,45 @@
+---
+title: "Deploy on Celo with thirdweb"
+sidebarTitle: "Using thirdweb"
+description: How to point thirdweb's contracts, SDK and dashboard at Celo Mainnet and Celo Sepolia
+---
+
+thirdweb is a third-party platform for deploying contracts and building apps on EVM chains. This page is for app developers who have already chosen thirdweb and need the Celo-specific configuration; thirdweb's own documentation is the source of truth for everything else.
+
+---
+
+## Celo chain configuration
+
+thirdweb v5 exports both Celo networks from `thirdweb/chains`.
+
+```ts
+// thirdweb v5
+import { celo, celoSepoliaTestnet } from "thirdweb/chains";
+
+const mainnet = celo;                // Celo Mainnet, chain ID 42220
+const testnet = celoSepoliaTestnet;  // Celo Sepolia testnet, chain ID 11142220
+```
+
+Pass the chain to `getContract`, `ConnectButton` and the rest of the SDK as you would for any other network. Chain IDs, RPC URLs and the faucet are on [Network information](/build-on-celo/network-overview).
+
+When deploying from the thirdweb dashboard, select **Celo** or **Celo Sepolia** as the network in the deploy options.
+
+## Fee abstraction
+
+Paying gas in a stablecoin instead of CELO uses Celo's `feeCurrency` transaction field, which not every EVM library sets. [viem](/tooling/libraries-sdks/viem) and [wagmi](https://wagmi.sh) support it natively — see [Fee abstraction](/build-on-celo/fee-abstraction/overview) for what the field expects, including the adapter-address rule for 6-decimal tokens.
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| thirdweb documentation | [portal.thirdweb.com](https://portal.thirdweb.com/) |
+| Celo chain page on thirdweb | [thirdweb.com/celo](https://thirdweb.com/celo) |
+| TypeScript SDK reference | [portal.thirdweb.com/references/typescript/v5](https://portal.thirdweb.com/references/typescript/v5) |
+| thirdweb support | [support.thirdweb.com](https://support.thirdweb.com) |
+
+## Related
+
+- [Using Foundry](/tooling/dev-environments/foundry) - deploy and test contracts from the command line
+- [Using Hardhat](/tooling/dev-environments/hardhat) - deploy and test contracts with the Hardhat toolchain
+- [Using Remix](/tooling/dev-environments/remix) - deploy from the browser without local setup
+- [Celo SDKs](/tooling/libraries-sdks/celo-sdks) - the libraries available for reading and writing Celo state

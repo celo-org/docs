@@ -239,9 +239,9 @@ Instead of charging a fixed price upfront, a server can price each request by ac
 
 Publishers can monetize individual articles instead of requiring subscriptions. Each request is checked for a valid x402 payment—if missing, the server returns `402 Payment Required` with pricing details; if present, the payment is settled and the content is delivered. This unlocks true pay-per-article pricing at amounts too small for card-based payments.
 
-## Alternative: thirdweb facilitator
+## Other facilitators
 
-[thirdweb](https://thirdweb.com) offers a hosted x402 facilitator and SDK supporting Celo and 170+ EVM chains. It provides React hooks (`useFetchWithPayment`), a `wrapFetchWithPayment` helper for non-React clients, and a `settlePayment` helper for servers, handling wallet connection, payment signing, and retries. See the [thirdweb x402 docs](https://portal.thirdweb.com/x402) and [playground](https://playground.thirdweb.com/x402) to get started.
+thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb x402 docs](https://portal.thirdweb.com/x402).
 
 ## Resources
 
@@ -251,7 +251,6 @@ Publishers can monetize individual articles instead of requiring subscriptions. 
 | Celo x402 Dashboard | [x402.celo.org](https://x402.celo.org/) |
 | Celo x402 Facilitator API | `https://api.x402.celo.org` |
 | thirdweb x402 Docs | [portal.thirdweb.com/x402](https://portal.thirdweb.com/x402) |
-| thirdweb Playground | [playground.thirdweb.com/x402](https://playground.thirdweb.com/x402) |
 | GitHub | [github.com/coinbase/x402](https://github.com/coinbase/x402) |
 | Whitepaper | [x402.org/x402-whitepaper.pdf](https://www.x402.org/x402-whitepaper.pdf) |
 
