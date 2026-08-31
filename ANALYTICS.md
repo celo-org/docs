@@ -21,7 +21,7 @@ So measurement is split in two:
 | Asset | ID | Owner |
 |---|---|---|
 | GA4 property | `G-0CXEKQ81V2` | _fill in_ |
-| GTM container | `GTM-XXXXXXX` (placeholder — replace in `docs.json` when created) | _fill in_ |
+| GTM container | `GTM-NP9GP2BT` | _fill in_ |
 | Cloudflare zone / DNS for `docs.celo.org` | — | _fill in_ |
 | Mintlify org (Free/Starter plan) | — | _fill in_ |
 
