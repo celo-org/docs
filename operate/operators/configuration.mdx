@@ -16,7 +16,7 @@ The variables below configure `op-reth`, Celo's primary execution client. The `o
 
 | Variable | Values | Description |
 |---|---|---|
-| `NODE_TYPE` | `full` (default), `archive` | A `full` node stores historical state only for recent blocks. An `archive` node stores historical state for the entire chain (roughly 10x the storage). |
+| `NODE_TYPE` | `minimal`, `full` (default), `archive` | Sets the prune profile and the snapshot tier downloaded. A `minimal` node prunes transaction lookups fully and keeps only the most recent receipts, so it serves latest-state RPC on the smallest disk but little history. A `full` node stores historical state only for recent blocks. An `archive` node stores historical state for the entire chain (roughly 10x the storage). All three execute every block. |
 | `OP_RETH__SNAPSHOT` | `true`, `false` (default) | When `true`, an empty datadir is bootstrapped from a published snapshot (`snapshots.celo.org`). Required on mainnet, which needs the pre-L2 history; optional on Celo Sepolia, which can sync from genesis. Ignored once the datadir holds data. |
 
 `op-reth` syncs by executing every block. A new node starts from an empty datadir (see [Run a node with Docker](/operate/operators/run-node)); datadirs written by `op-geth` cannot be reused. For archive nodes, see [Running an archive node](/operate/operators/archive-node).
