@@ -4,8 +4,6 @@ sidebarTitle: "Smart Contracts"
 description: Details of the release process for updating smart contracts on the Celo platform.
 ---
 
-export const N = "N";
-
 Details of the release process for updating smart contracts on the Celo platform.
 
 <Warning>
@@ -44,7 +42,7 @@ Mixin contracts and libraries are considered part of the contracts that consume 
 
 ### Initialize Data
 
-Whenever Celo Core Contracts need to be re-initialized, their initialization arguments should be checked into version control under `packages/what-is-celo/about-celo-l1/protocol/releaseData/initializationData/release${N}.json`.
+Whenever Celo Core Contracts need to be re-initialized, their initialization arguments should be checked into version control under `packages/protocol/releaseData/initializationData/release${N}.json`.
 
 ### Release management in Git/Github
 
@@ -55,13 +53,13 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 1. A new release branch is created `release/core-contracts/${N}` with the contracts to be audited.
 2. The latest commit on the release branch is tagged with `core-contracts.v${N}.pre-audit`.
 3. On Github, a pre-release Github release should be created pointing at the latest tag on the release branch.
-4. On master branch, `.circleci/config.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `celo-core-contracts-v${N}.pre-audit` so that all future changes to master are versioned against the new release.
+4. On master branch, `.github/workflows/celo-monorepo.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `celo-core-contracts-v${N}.pre-audit` so that all future changes to master are versioned against the new release.
 5. Ongoing audit responses/fixes should continue to go into `release/celo-core-contracts/${N}`.
 
 #### After a completed release process:
 
 1. The release branch should be merged into `master` with a merge commit (instead of the usual squash merge strategy).
-2. On master branch, `.circleci/config.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `core-contracts.v${N}`
+2. On master branch, `.github/workflows/celo-monorepo.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `core-contracts.v${N}`
 
 ## Release Process
 
@@ -90,13 +88,14 @@ yarn tags:view
 
 ```bash
 # Run from `packages/protocol` in the celo-monorepo
-PREVIOUS_RELEASE="core-contracts.v${N-1}"
-NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
+N=18                                # the release being prepared
+PREVIOUS_RELEASE="core-contracts.v$((N-1))"
+NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
 yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
 
-A `libraries.json` file is written to disk only necessary for `release:make` that describes linked library addresses.
+A `$NETWORK-$PREVIOUS_RELEASE-libraries.json` file is written to disk describing linked library addresses. `release:make` requires it.
 
 ### Check Backward Compatibility
 
@@ -121,12 +120,13 @@ article](https://docs.openzeppelin.com/upgrades-plugins/proxies#storage-collisio
 by OpenZeppelin for a good overview of this problem and why it's important to
 check for it.
 
-The script generates a detailed report on version changes in JSON format.
+The script generates a detailed report on version changes in JSON format, written to `report-$PREVIOUS_RELEASE-$RELEASE_CANDIDATE.json`.
 
 ```bash
-PREVIOUS_RELEASE="core-contracts.v${N-1}"
+N=18
+PREVIOUS_RELEASE="core-contracts.v$((N-1))"
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn release:check-versions -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE -r "report.json"
+yarn release:check-versions -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE
 ```
 
 This should be used in tandem with `release:verify-deployed -b $PREVIOUS_RELEASE -n $NETWORK` to ensure the compatibility checks compare the release candidate to what is actually active on the network.
@@ -134,12 +134,15 @@ This should be used in tandem with `release:verify-deployed -b $PREVIOUS_RELEASE
 ### Deploy the release candidate
 
 Use the following script to build and deploy a candidate release. This takes as input the corresponding backward compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
-STORAGE updates are adopted by deploying a new proxy/implementation pair. This script outputs a JSON contract upgrade governance proposal.
+STORAGE updates are adopted by deploying a new proxy/implementation pair. This script writes a JSON contract upgrade governance proposal to `proposal-$NETWORK-$RELEASE_CANDIDATE.json`.
 
 ```bash
-NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
+N=18
+NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
+PREVIOUS_RELEASE="core-contracts.v$((N-1))"
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn release:make -b $RELEASE_CANDIDATE -n $NETWORK -r "report.json" -i "releaseData/initializationData/release${N}.json" -p "proposal.json" -l "libraries.json"
+PRIVATE_KEY=                        # deployer key for $NETWORK
+yarn release:make -b $RELEASE_CANDIDATE -n $NETWORK -r "report-$PREVIOUS_RELEASE-$RELEASE_CANDIDATE.json" -i "releaseData/initializationData/release${N}.json" -l "$NETWORK-$PREVIOUS_RELEASE-libraries.json" -k $PRIVATE_KEY
 ```
 
 The proposal encodes STORAGE updates by repointing the Registry to the new proxy. Storage compatible upgrades are encoded by repointing the existing proxy's implementation.
@@ -150,7 +153,7 @@ Submit the autogenerated upgrade proposal to the Governance contract for review 
 
 ```bash
 # resultant proposal ID should be communicated publicly
-celocli governance:propose --deposit 100e18 --from $YOUR_ADDRESS --jsonTransactions "proposal.json" --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-0055.md
+celocli governance:propose --deposit 100e18 --from $YOUR_ADDRESS --jsonTransactions "proposal-$NETWORK-$RELEASE_CANDIDATE.json" --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-0055.md
 ```
 
 ### Fetch Upgrade Proposal
@@ -170,8 +173,9 @@ accepted contract upgrade (in the form of the proposal.json you fetched in the s
 Additionally, include `initialization_data.json` from the CGP if any of the contracts have to be initialized.
 
 ```bash
+N=18
 RELEASE_CANDIDATE="core-contracts.v${N}"
-NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
+NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
 yarn release:verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
 ```
@@ -181,8 +185,9 @@ yarn release:verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n 
 After a release executes via Governance, you can use `release:verify-deployed` again to check that the resulting network state does indeed reflect the tagged release candidate:
 
 ```bash
+N=18
 RELEASE="core-contracts.v${N}"
-NETWORK=${"anvil"|"celo-sepolia"|"mainnet"}
+NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 yarn release:verify-deployed -n $NETWORK -b $RELEASE -f
 ```
 
@@ -218,7 +223,7 @@ After a successful release execution on a testnet, the resulting network state s
   ```
 - Complete a round of attestation
 - Redeem from Escrow
-- Register a Vaildator
+- Register a Validator
   ```bash
   celocli validator:register --blsKey <hexString> --blsSignature <hexString> --ecdsaKey <hexString> --from <addr>
   ```
@@ -227,7 +232,7 @@ After a successful release execution on a testnet, the resulting network state s
   ```bash
   celocli election:run
   ```
-- Get a valildator slashed for downtime and ejected from the validator set
+- Get a validator slashed for downtime and ejected from the validator set
 - Propose a governance proposal and get it executed
   ```bash
   celocli governance:propose --jsonTransactions <jsonFile> --deposit <number> --from <addr> --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
@@ -423,7 +428,7 @@ Deploying a new contract release should occur with the following process. On-cha
               <code>Passed</code> or <code>Rejected</code>) and notify the
               community in the Discord <code>#governance</code> channel.
             </li>
-            <li>Change corresponding CGP status to EXCECUTED.</li>
+            <li>Change corresponding CGP status to EXECUTED.</li>
             <li>
               Merge the release branch into <code>master</code> with a merge
               commit
