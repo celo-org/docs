@@ -1,15 +1,15 @@
 ---
 title: "Use Celo Docs with AI Tools"
 sidebarTitle: "Docs for AI Tools"
-description: "Connect docs.celo.org to Claude Code, Cursor, VS Code, and ChatGPT using the docs MCP server, llms.txt, and per-page Markdown."
+description: "Ask questions in-page with the docs assistant, or connect docs.celo.org to Claude Code, Cursor, VS Code, and ChatGPT using the docs MCP server, llms.txt, and per-page Markdown."
 ---
 
 **Point your AI assistant at the docs instead of its training data.** Everything on docs.celo.org is available in machine-readable form — a hosted MCP server your editor can query live, a full-text index for pasting into a chat, and a Markdown version of every page.
 
 This matters because model training data goes stale. Celo became an Ethereum L2 in March 2025, contract addresses change, and assistants confidently repeat outdated L1 details. Connecting your tool to these endpoints means answers come from the current docs.
 
-| Entry point | URL | Best for |
-|-------------|-----|----------|
+| Entry point | Where | Best for |
+|-------------|-------|----------|
 | In-page assistant | **Ask AI** button on any page | Quick questions while reading, without leaving the docs |
 | MCP server | `https://docs.celo.org/mcp` | Editors and agents — live search, no copy-paste |
 | Docs index | [`/llms.txt`](https://docs.celo.org/llms.txt) | Giving a chat a map of every docs page |
@@ -203,8 +203,14 @@ Every page has an **Ask AI** button in the bottom-right corner. It answers from 
 
 It searches the same content as the MCP server above, which means answers reflect the docs as currently published — not a model's training data.
 
+If an answer arrives without any links, the assistant offers a **Try a more thorough answer** button, which re-runs the question against a stronger model.
+
+<Warning>
+  Answers are AI-generated and can be wrong. Follow the citations before relying on anything load-bearing, especially contract addresses and code. An answer with no links is not grounded in these docs — treat it as a starting point, not a source.
+</Warning>
+
 <Note>
-  Answers are AI-generated. Follow the citations before relying on anything load-bearing, especially contract addresses and code. If the docs don't cover your question, the assistant says so instead of guessing — and that gap is a signal we use to decide what to write next.
+  **Where your question goes.** Questions are sent to Anthropic to generate the answer, and are logged along with the pages cited so we can find documentation gaps — questions that return no citation are reviewed weekly. Don't include secrets, private keys, or personal data.
 </Note>
 
 ## Copy any page as Markdown
