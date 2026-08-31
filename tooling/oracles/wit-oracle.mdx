@@ -33,8 +33,8 @@ The Witnet Proxy contract is the easiest and most convenient way to consume Witn
 
 The example below shows how to read the price of two different assets from the Witnet Price Router:
 
-```javascript
- // SPDX-License-Identifier: MIT
+```solidity
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
@@ -73,13 +73,13 @@ contract MyCeloContract {
 
 You may also read the latest price of supported currency pairs from your **Web3** application by interacting directly with the Price Router contract:
 
-```javascript
+```python
 web3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 abi = '[{ "inputs": [{ "internalType": "bytes32", "name": "_id", "type": "bytes32" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
-addr = '<WitnetProxy address for Celo>' // copy from docs.witnet.io -> Celo price feeds
+addr = '<WitnetProxy address for Celo>'  # copy from docs.witnet.io -> Celo price feeds
 contract = web3.eth.contract(address=addr, abi=abi)
-// get last value for "Price-CELO/USD-6"
-valueFor = contract.functions.valueFor().call("0x9ed884be")
+# last value for "Price-CELO/USD-6"
+valueFor = contract.functions.valueFor(bytes.fromhex('9ed884be')).call()
 print("Price-CELO/USD-6:", valueFor[0])
 print("> lastTimestamp:", valueFor[1])
 print("> latestUpdateStatus:", valueFor[2])
@@ -103,7 +103,7 @@ Copy the current randomness-contract address for your network from Witnet's [con
 
 This very basic example shows how easy is to source random uint32 values into your own contracts:
 
-```javascript
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 
