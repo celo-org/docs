@@ -61,9 +61,9 @@ Agents on Celo can charge and pay for services over plain HTTP, settling in stab
 
 Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce.
 
-## Give Agents a Wallet with Celina
+## Giving an agent a wallet
 
-[Celina](/build-on-celo/build-with-ai/mcp/celina) is a third-party, open-source stack that gives an LLM read, prepare, and execute access to Celo mainnet — balances, transfers, DeFi, governance, staking, and Self Agent ID — through an SDK, an MCP server, and a REST API.
+An agent that pays for things needs an account it can read from and sign with. You can wire this up directly with [viem](/tooling/libraries-sdks/viem), or use a tool that exposes the calls to an LLM: [Celina](/build-on-celo/build-with-ai/mcp/celina) is a third-party, open-source stack covering balances, transfers, DeFi, governance, staking and Self Agent ID through an SDK, an MCP server and a REST API.
 
 ## Fee Abstraction for Agents
 
