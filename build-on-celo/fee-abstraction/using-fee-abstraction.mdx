@@ -33,23 +33,11 @@ Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapter
 
 To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USD₮ and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
 
-For more on gas pricing, see [Gas Pricing](/legacy/protocol/transaction/gas-pricing).
+For more on gas pricing, see [Transaction Fees](/operate/specification/transaction-fees).
 
 ### Adapter Addresses
 
-#### Mainnet
-
-| Name   | Token Address | Adapter Address |
-| ------ | ------------- | --------------- |
-| `USDC` | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C#code) | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B#code) |
-| `USD₮` | [`0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e`](https://celoscan.io/address/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e#code) | [`0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72`](https://celoscan.io/address/0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72#code) |
-| `USA₮` | [`0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771`](https://celoscan.io/address/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771#code) | [`0x0357EE22278c922e1D36cFe6b899269b161880C4`](https://celoscan.io/address/0x0357EE22278c922e1D36cFe6b899269b161880C4#code) |
-
-#### Celo Sepolia (Testnet)
-
-| Name   | Token Address | Adapter Address |
-| ------ | ------------- | --------------- |
-| `USDC` | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://sepolia.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b#code) | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://sepolia.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0#code) |
+The current adapter and token addresses for each network are listed on the [Fee Currencies](/tooling/contracts/fee-currencies) page, which is generated from the on-chain `FeeCurrencyDirectory` allowlist.
 
 ---
 
@@ -140,7 +128,7 @@ async function main() {
 
 ### 2. Prepare the Transaction
 
-Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/legacy/protocol/transaction/transaction-types) compliant.
+Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/home/protocol/transactions/transaction-types) compliant.
 ```js
 let tx = {
   // ... other transaction fields

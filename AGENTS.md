@@ -8,7 +8,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 
 - A [Mintlify](https://mintlify.com) site. Content is MDX; navigation, redirects and theme live in `docs.json`. There is no build step beyond the Mintlify CLI.
 - `docs.json` is the single source of truth for what is reachable. **A file on disk is unreachable until it is listed under `navigation`.**
-- Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `infra-partners/`, `specs/`, `legacy/`. `_deprecated/` is slated for deletion — never add to it.
+- Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `operate/`.
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
 
@@ -109,13 +109,13 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Fact | Canonical page | Say this |
 |---|---|---|
 | Chain IDs, RPC URLs, explorers, faucet | `/build-on-celo/network-overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
-| Block time | `/specs/deployments` | "1-second blocks". Do not write "1-second finality" — see `/specs/finality` |
-| Transaction cost | `/specs/transaction-fees` | "below $0.01 for a typical transaction" |
-| Fee abstraction | `/build-on-celo/fee-abstraction/overview` (guide), `/tooling/contracts/fee-currencies` (addresses), `/specs/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
+| Block time | `/operate/specification/deployments` | "1-second blocks". Do not write "1-second finality" — see `/operate/specification/finality` |
+| Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
+| Fee abstraction | `/build-on-celo/fee-abstraction/overview` (guide), `/tooling/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
 | Stablecoins | `/build-on-celo/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USDT, USA₮ and other issuers — "30+ stablecoins" in total |
 | MiniPay | `/build-on-celo/build-on-minipay/overview` | stablecoin wallet, 10M+ activations, Mini App discovery page, Celo only |
-| Token duality | `/specs/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
-| Data availability | `/specs/eigenda` | EigenDA |
+| Token duality | `/operate/specification/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
+| Data availability | `/operate/specification/eigenda` | EigenDA |
 | Architecture | `/build-on-celo/cel2-architecture` | Ethereum L2 on the OP Stack |
 | Agent payments | `/build-on-celo/build-with-ai/x402`, `/build-on-celo/build-with-ai/mpp` | HTTP 402 flows settled in USDC/USDT; Celo facilitator `https://api.x402.celo.org` |
 | Agent identity and trust | `/build-on-celo/build-with-ai/8004`, `/build-on-celo/build-with-ai/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
