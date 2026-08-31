@@ -476,16 +476,9 @@ export const CeloBuilderEcosystem = ({
     {
       title: "Bring Your Ideas to Life",
       desc: "Sign up for upcoming hackathons and workshops",
-      href: "https://lemonade.social/s/celogovernance",
+      href: "https://luma.com/user/usr-QJkvU5EML2BJeYc",
       external: true,
       icon: "img/homepage/contribute.svg",
-    },
-    {
-      title: "Join Proof of Ship",
-      desc: "Build your onchain reputation to unlock exclusive rewards",
-      href: "https://celoplatform.notion.site/Build-With-Celo-Proof-of-Ship-17cd5cb803de8060ba10d22a72b549f8",
-      external: true,
-      icon: "img/homepage/connect.svg",
     },
     {
       title: "Make your Voice Heard",
