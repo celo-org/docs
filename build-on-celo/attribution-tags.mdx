@@ -3,7 +3,7 @@ title: "Attribution Tags"
 description: "Credit on-chain activity back to your app on Celo using ERC-8021 attribution tags."
 ---
 
-Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like [Proof of Ship](/build-on-celo/fund-your-project), MiniPay leaderboards, and hackathon tracking. Celo's implementation follows [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution).
+Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like MiniPay leaderboards and hackathon tracking. Celo's implementation follows [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution).
 
 ## How It Works
 
@@ -32,7 +32,7 @@ verifyTx({ client, hash })     // → { codes, schemaId } | null
 
 ## Quickstart
 
-If you've been issued a code (`celo_xxxxxxxx`) — for example through Proof of Ship onboarding or a hackathon registration — pass it directly:
+If you've been issued a code (`celo_xxxxxxxx`) — for example through a hackathon registration — pass it directly:
 
 ```ts
 import { toDataSuffix } from "@celo/attribution-tags";
@@ -114,5 +114,5 @@ console.log(result); // { codes: ["celo_b7k3p9da"], schemaId: 0 }
 ## Related
 
 - [x402: Agent Payments](/build-on-celo/build-with-ai/x402)
-- [Fund your Project](/build-on-celo/fund-your-project) — Proof of Ship progress tracking uses attribution tags
+- [Fund your Project](/build-on-celo/fund-your-project) — grant and funding programs in the Celo ecosystem
 - [Launch Checklist](/build-on-celo/launch-checklist)

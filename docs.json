@@ -378,8 +378,7 @@
             "group": "Overview",
             "pages": [
               "contribute-to-celo/index",
-              "contribute-to-celo/builders",
-              "contribute-to-celo/daos"
+              "contribute-to-celo/builders"
             ]
           },
           {
@@ -579,6 +578,10 @@
     {
       "source": "/contribute-to-celo/code-of-conduct",
       "destination": "https://celo.org/code-of-conduct"
+    },
+    {
+      "source": "/contribute-to-celo/daos",
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/legacy/whitepapers",
@@ -1310,7 +1313,7 @@
     },
     {
       "source": "/blog/2022/05/10/Getting%20started%20with%20DAOs%20on%20Celo",
-      "destination": "/contribute-to-celo/daos"
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/blog/2022/05/11/Plumo%20-%20An%20Ultralight%20Blockchain%20Client%20on%20Celo",
@@ -2478,7 +2481,7 @@
     },
     {
       "source": "/what-is-celo/joining-celo/daos",
-      "destination": "/contribute-to-celo/daos"
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/what-is-celo/joining-celo/index",
@@ -3448,8 +3451,12 @@
             "label": "X"
           },
           {
-            "href": "https://lemonade.social/s/celogovernance",
-            "label": "Governance Events"
+            "href": "https://luma.com/user/usr-QJkvU5EML2BJeYc",
+            "label": "Events"
+          },
+          {
+            "href": "https://celo-devs.beehiiv.com/subscribe",
+            "label": "Developer Newsletter"
           }
         ]
       }
