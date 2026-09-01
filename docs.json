@@ -10,6 +10,21 @@
   "contextual": {
     "options": ["copy", "view", "mcp", "chatgpt", "claude", "cursor", "vscode"]
   },
+  "seo": {
+    "organization": {
+      "name": "Celo",
+      "url": "https://celo.org",
+      "logo": "https://docs.celo.org/logo/celo_light.png",
+      "sameAs": [
+        "https://github.com/celo-org",
+        "https://x.com/Celo",
+        "https://www.youtube.com/@CeloOrg",
+        "https://discord.com/invite/celo",
+        "https://forum.celo.org/",
+        "https://l2beat.com/scaling/projects/celo"
+      ]
+    }
+  },
   "integrations": {
     "ga4": {
       "measurementId": "G-0CXEKQ81V2"
