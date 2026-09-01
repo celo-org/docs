@@ -69,13 +69,13 @@ contract MyCeloContract {
 }
 ```
 
-#### Javascript example
+#### Python example
 
 You may also read the latest price of supported currency pairs from your **Web3** application by interacting directly with the Price Router contract:
 
 ```python
 web3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
-abi = '[{ "inputs": [{ "internalType": "bytes32", "name": "_id", "type": "bytes32" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
+abi = '[{ "inputs": [{ "internalType": "bytes4", "name": "_id", "type": "bytes4" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
 addr = '<WitnetProxy address for Celo>'  # copy from docs.witnet.io -> Celo price feeds
 contract = web3.eth.contract(address=addr, abi=abi)
 # last value for "Price-CELO/USD-6"

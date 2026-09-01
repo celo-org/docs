@@ -2228,7 +2228,7 @@
     },
     {
       "source": "/protocol/identity/index",
-      "destination": "https://self.xyz/"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/protocol/index",

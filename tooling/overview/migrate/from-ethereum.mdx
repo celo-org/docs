@@ -11,7 +11,7 @@ Overview of the similarities and differences between the Celo and Ethereum block
 For a general overview of the Celo network and architecture, see [the Celo Overview page](/home/index).
 </Tip>
 
-## What is Celo's Relationship to Ethereum?
+## Celo's relationship to Ethereum
 
 Celo is an Ethereum Layer 2 solution. Since the migration, Celo is an OP stack based L2 on top of Ethereum, extending it by adding fee abstraction, 1-second blocks and a range of local stablecoins. Ethereum’s L2 landscape is becoming a melting pot of philosophies and Celo adds a [values-driven, inclusivity-focused layer](https://app.t2.world/article/cm1eqxyh8151217321mcesuw528v) to that mix, enriching Ethereum's pluralistic fabric. 
 
@@ -20,7 +20,7 @@ This means that all programming languages, developer tooling and standards that 
 Developers building on Celo can write smart contracts in [Solidity](https://solidity.readthedocs.io/en/latest/), and
 take advantage of smart contract standards that have already been developed for Ethereum.
 
-## The ERC-20 Token Standard
+## The ERC-20 token standard
 
 The [ERC20 token standard](https://eips.ethereum.org/EIPS/eip-20) is a standard API for tokens within smart contracts.
 This standard interface allows any tokens to be re-used by different applications.
@@ -55,7 +55,7 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 An **ERC20 compliant contract** must include the required functions and events at _minimum_.
 It can include additional functions and events and still be ERC20 compliant.
 
-## The Celo Native Asset and Mento Stablecoins
+## The Celo native asset and Mento stablecoins
 
 This interface is relevant for two important assets on the Celo network, the Celo native asset (CELO) and Mento stablecoins like USDm (Mento Dollar).
 
@@ -86,21 +86,21 @@ You can [view the implementation here.](https://celo.blockscout.com/address/0xaa
 
 2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/home/celo-l1).
 
-## Deploying Ethereum Contracts to Celo
+## Deploying Ethereum contracts to Celo
 
 Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Quicknode](https://www.quicknode.com/chains/celo).
 
-## Protocol Differences
+## Protocol differences
 
 ### OPCODES & Block headers
 
 With the move to an L2, Celo now supports the same OPCODES and Block headers as Ethereum.
 
-### Precompiled Contracts
+### Precompiled contracts
 
 Celo includes all of the Ethereum precompiled contracts and adds a few of its own. The current list is in [`core/vm/celo_contracts.go`](https://github.com/celo-org/op-geth/blob/celo-rebase-17/core/vm/celo_contracts.go) in `celo-org/op-geth`.
 
-### Core Contract Calls
+### Core contract calls
 
 Celo runs some protocol logic in core contracts rather than in the client — [epoch rewards](/home/protocol/epoch-rewards/index) and [validator elections](/home/protocol/staking/validator-elections) among them. If you index Celo, read those contracts rather than assuming every state change arrives as a normal transaction.
 
