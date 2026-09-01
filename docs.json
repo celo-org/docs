@@ -206,6 +206,8 @@
               "build-on-celo/build-with-farcaster",
               "build-on-celo/build-with-self",
               "build-on-celo/build-with-local-stablecoin",
+              "build-on-celo/build-with-usat",
+              "build-on-celo/build-on-socialconnect",
               "build-on-celo/build-with-defi"
             ]
           },
@@ -226,6 +228,7 @@
             "group": "Overview",
             "pages": [
               "tooling/overview/index",
+              "tooling/overview/migrate/from-ethereum",
               "tooling/bridges/bridges",
               "tooling/bridges/cross-chain-messaging",
               "tooling/testnets/celo-sepolia/index"
@@ -268,7 +271,8 @@
                   "tooling/wallets/ledger/setup",
                   "tooling/wallets/ledger/to-celo-terminal",
                   "tooling/wallets/ledger/to-celo-web",
-                  "tooling/wallets/ledger/to-celo-cli"
+                  "tooling/wallets/ledger/to-celo-cli",
+                  "tooling/wallets/ledger/eip712-workaround"
                 ]
               }
             ]
@@ -303,7 +307,8 @@
               "tooling/oracles/redstone",
               "tooling/oracles/supra",
               "tooling/oracles/quex-oracles",
-              "tooling/oracles/dia"
+              "tooling/oracles/dia",
+              "tooling/oracles/wit-oracle"
             ]
           },
           {
@@ -368,7 +373,12 @@
                   "tooling/libraries-sdks/contractkit/setup",
                   "tooling/libraries-sdks/contractkit/usage",
                   "tooling/libraries-sdks/contractkit/contracts-wrappers-registry",
-                  "tooling/libraries-sdks/contractkit/odis"
+                  "tooling/libraries-sdks/contractkit/odis",
+                  "tooling/libraries-sdks/contractkit/data-encryption-key",
+                  "tooling/libraries-sdks/contractkit/migrating-to-viem",
+                  "tooling/libraries-sdks/contractkit/migrating-to-contractkit-v2",
+                  "tooling/libraries-sdks/contractkit/migrating-to-contractkit-v1",
+                  "tooling/libraries-sdks/contractkit/notes-web3-with-contractkit"
                 ]
               },
               "tooling/libraries-sdks/web3/index"
@@ -393,8 +403,7 @@
             "group": "Overview",
             "pages": [
               "contribute-to-celo/index",
-              "contribute-to-celo/builders",
-              "contribute-to-celo/daos"
+              "contribute-to-celo/builders"
             ]
           },
           {
@@ -576,6 +585,130 @@
   },
   "redirects": [
     {
+      "source": "/build/build-with-thirdweb/overview",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build/build-with-thirdweb/celo-nft-drop-tutorial",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build/build-with-thirdweb/one-click%20quickstart",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/build/composer-kit",
+      "destination": "/tooling/libraries-sdks/composer-kit"
+    },
+    {
+      "source": "/build/mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/index"
+    },
+    {
+      "source": "/build/mcp/celo-mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/celo-mcp"
+    },
+    {
+      "source": "/build/mcp/composer-mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/index"
+    },
+    {
+      "source": "/build/build-on-socialconnect",
+      "destination": "/build-on-celo/build-on-socialconnect"
+    },
+    {
+      "source": "/developer/verify/foundry",
+      "destination": "/tooling/contract-verification/index"
+    },
+    {
+      "source": "/wallet/coinbase-wallet",
+      "destination": "/tooling/wallets/metamask/setup"
+    },
+    {
+      "source": "/build/support",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/network/alfajores/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/network/baklava/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/network/celo-sepolia/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/developer/setup/overview",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/developer/setup/mac",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/developer/setup/windows",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/developer/setup/wallet",
+      "destination": "/tooling/wallets/metamask/add-celo-testnet-to-metamask"
+    },
+    {
+      "source": "/developer/setup/replit",
+      "destination": "/tooling/dev-environments/remix"
+    },
+    {
+      "source": "/developer/setup/development-chain",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/developer/migrate/from-ethereum",
+      "destination": "/tooling/overview/migrate/from-ethereum"
+    },
+    {
+      "source": "/tooling/overview/setup/overview",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/tooling/overview/setup/mac",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/tooling/overview/setup/windows",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/tooling/overview/setup/wallet",
+      "destination": "/tooling/wallets/metamask/add-celo-testnet-to-metamask"
+    },
+    {
+      "source": "/tooling/overview/setup/replit",
+      "destination": "/tooling/dev-environments/remix"
+    },
+    {
+      "source": "/tooling/overview/setup/development-chain",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/build-on-celo/support",
+      "destination": "/build-on-celo/index"
+    },
+    {
+      "source": "/tooling/contract-verification/foundry",
+      "destination": "/tooling/contract-verification/index"
+    },
+    {
+      "source": "/tooling/testnets/celo-sepolia/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/wallets/coinbase-wallet",
+      "destination": "/tooling/wallets/metamask/setup"
+    },
+    {
       "source": "/tooling/overview/faucet",
       "destination": "https://faucet.celo.org/celo-sepolia"
     },
@@ -594,6 +727,10 @@
     {
       "source": "/contribute-to-celo/code-of-conduct",
       "destination": "https://celo.org/code-of-conduct"
+    },
+    {
+      "source": "/contribute-to-celo/daos",
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/legacy/whitepapers",
@@ -717,7 +854,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity",
-      "destination": "/tooling/libraries-sdks/contractkit/odis"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/celo-codebase/protocol/identity/encrypted-cloud-backup",
@@ -725,7 +862,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/index",
-      "destination": "/tooling/libraries-sdks/contractkit/odis"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/celo-codebase/protocol/identity/metadata",
@@ -733,7 +870,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/phone-number-privacy",
-      "destination": "/tooling/libraries-sdks/contractkit/odis"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/celo-codebase/protocol/identity/privacy-research",
@@ -753,7 +890,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity#using-the-mapping-for-payment",
-      "destination": "/tooling/libraries-sdks/contractkit/odis"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/celo-codebase/protocol/index",
@@ -1325,7 +1462,7 @@
     },
     {
       "source": "/blog/2022/05/10/Getting%20started%20with%20DAOs%20on%20Celo",
-      "destination": "/contribute-to-celo/daos"
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/blog/2022/05/11/Plumo%20-%20An%20Ultralight%20Blockchain%20Client%20on%20Celo",
@@ -1397,7 +1534,7 @@
     },
     {
       "source": "/developer-guide/celo-for-eth-devs",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/overview/migrate/from-ethereum"
     },
     {
       "source": "/developer-guide/contractkit",
@@ -1477,7 +1614,7 @@
     },
     {
       "source": "/developer-guide/overview/celo-for-eth-devs",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/overview/migrate/from-ethereum"
     },
     {
       "source": "/developer-guide/overview/integrations/custody",
@@ -1521,7 +1658,7 @@
     },
     {
       "source": "/developer-resources/celo-for-eth-devs",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/overview/migrate/from-ethereum"
     },
     {
       "source": "/developer-resources/contractkit/contracts-wrappers-registry",
@@ -2109,7 +2246,7 @@
     },
     {
       "source": "/protocol/identity/index",
-      "destination": "https://self.xyz/"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/protocol/index",
@@ -2193,7 +2330,7 @@
     },
     {
       "source": "/protocol/socialconnect",
-      "destination": "https://self.xyz/"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/protocol/stability",
@@ -2493,7 +2630,7 @@
     },
     {
       "source": "/what-is-celo/joining-celo/daos",
-      "destination": "/contribute-to-celo/daos"
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/what-is-celo/joining-celo/index",
@@ -3048,22 +3185,6 @@
       "destination": "/home/index"
     },
     {
-      "source": "/build/build-on-socialconnect",
-      "destination": "/build-on-celo/index"
-    },
-    {
-      "source": "/build/build-with-thirdweb/celo-nft-drop-tutorial",
-      "destination": "/tooling/dev-environments/thirdweb"
-    },
-    {
-      "source": "/build/build-with-thirdweb/one-click%20quickstart",
-      "destination": "/tooling/dev-environments/thirdweb"
-    },
-    {
-      "source": "/build/build-with-thirdweb/overview",
-      "destination": "/tooling/dev-environments/thirdweb"
-    },
-    {
       "source": "/tooling/dev-environments/thirdweb/overview",
       "destination": "/tooling/dev-environments/thirdweb"
     },
@@ -3094,26 +3215,6 @@
     {
       "source": "/build-on-celo/build-with-thirdweb/one-click%20quickstart",
       "destination": "/tooling/dev-environments/thirdweb"
-    },
-    {
-      "source": "/build/composer-kit",
-      "destination": "/tooling/libraries-sdks/composer-kit"
-    },
-    {
-      "source": "/build/mcp",
-      "destination": "/build-on-celo/build-with-ai/mcp/index"
-    },
-    {
-      "source": "/build/mcp/celo-mcp",
-      "destination": "/build-on-celo/build-with-ai/mcp/celo-mcp"
-    },
-    {
-      "source": "/build/mcp/composer-mcp",
-      "destination": "/build-on-celo/build-with-ai/mcp/index"
-    },
-    {
-      "source": "/build/support",
-      "destination": "/build-on-celo/index"
     },
     {
       "source": "/build-on-celo/build-with-ai/build-with-goat/token-swap-agent",
@@ -3285,7 +3386,7 @@
     },
     {
       "source": "/legacy/protocol/identity/index",
-      "destination": "/tooling/libraries-sdks/contractkit/odis"
+      "destination": "/build-on-celo/build-on-socialconnect"
     },
     {
       "source": "/legacy/protocol/identity/odis",
@@ -3463,8 +3564,12 @@
             "label": "X"
           },
           {
-            "href": "https://lemonade.social/s/celogovernance",
-            "label": "Governance Events"
+            "href": "https://luma.com/user/usr-QJkvU5EML2BJeYc",
+            "label": "Events"
+          },
+          {
+            "href": "https://celo-devs.beehiiv.com/subscribe",
+            "label": "Developer Newsletter"
           }
         ]
       }

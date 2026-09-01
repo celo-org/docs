@@ -14,11 +14,11 @@ How to deploy a smart contract to Celo testnet, Mainnet, or a local network usin
 
 ## Prerequisites
 
-To deploy on Celo using Hardhat, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
+Node.js and a package manager installed locally, plus an account funded from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia).
 
-- [Using Windows](/tooling/overview/setup/windows)
-- [Using Mac](/tooling/overview/setup/mac)
-- [Using Replit](/tooling/overview/setup/replit)
+The configuration below reads a mnemonic on Celo's derivation path, `m/44'/52752'/0'/0`. Generate one with [`celocli account:new`](/tooling/libraries-sdks/cli/account) — MetaMask cannot export or import along that path, so an existing MetaMask seed will not work here.
+
+To deploy without a local environment, use [Remix](/tooling/dev-environments/remix) instead.
 
 ## Create Hardhat Project
 
