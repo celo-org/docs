@@ -3533,6 +3533,18 @@
       "destination": "/operate/specification/:slug*"
     },
     {
+      "source": "/about-celo",
+      "destination": "/home"
+    },
+    {
+      "source": "/about-celo/manage/exchange",
+      "destination": "/home/manage/asset"
+    },
+    {
+      "source": "/about-celo/protocol/consensus",
+      "destination": "/home/protocol/security-council"
+    },
+    {
       "source": "/about-celo/:slug*",
       "destination": "/home/:slug*"
     },
@@ -3546,7 +3558,7 @@
     },
     {
       "source": "/general/ecosystem/daos",
-      "destination": "/contribute-to-celo/daos"
+      "destination": "/contribute-to-celo"
     },
     {
       "source": "/community/CIP-contributors",
@@ -3582,11 +3594,11 @@
     },
     {
       "source": "/developer-resources/dappkit/usage",
-      "destination": "/tooling/libraries-sdks/contractkit/usage"
+      "destination": "/tooling/libraries-sdks/contractkit/setup"
     },
     {
       "source": "/developer/dappkit/usage",
-      "destination": "/tooling/libraries-sdks/contractkit/usage"
+      "destination": "/tooling/libraries-sdks/contractkit/setup"
     },
     {
       "source": "/developer-resources/forno",
@@ -3650,19 +3662,79 @@
     },
     {
       "source": "/network/cannoli/disclaimer",
-      "destination": "/tooling/testnets/celo-sepolia/disclaimer"
+      "destination": "/tooling/testnets/celo-sepolia/index"
     },
     {
       "source": "/tooling/testnets/alfajores/disclaimer",
-      "destination": "/tooling/testnets/celo-sepolia/disclaimer"
+      "destination": "/tooling/testnets/celo-sepolia/index"
     },
     {
       "source": "/tooling/testnets/baklava/disclaimer",
-      "destination": "/tooling/testnets/celo-sepolia/disclaimer"
+      "destination": "/tooling/testnets/celo-sepolia/index"
     },
     {
       "source": "/tooling/testnets/mainnet/disclaimer",
-      "destination": "/tooling/testnets/celo-sepolia/disclaimer"
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/alfajores",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/baklava",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/mainnet",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/eclair",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/oracle",
+      "destination": "/tooling/oracles"
+    },
+    {
+      "source": "/network/cannoli",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/protocol/identity/odis-domain",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-domain-sequential-delay-domain",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-use-case-key-hardening",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-use-case-phone-number-privacy",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/encrypted-cloud-backup",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/metadata",
+      "destination": "/home/protocol/metadata"
+    },
+    {
+      "source": "/protocol/identity/privacy-research",
+      "destination": "/home/celo-l1"
+    },
+    {
+      "source": "/protocol/identity/randomness",
+      "destination": "/operate/specification/l2-migration#deactivated-random-contract"
+    },
+    {
+      "source": "/protocol/identity/smart-contract-accounts",
+      "destination": "/home/celo-l1"
     }
   ],
   "footer": {
