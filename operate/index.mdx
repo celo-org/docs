@@ -1,0 +1,89 @@
+---
+title: "Operate a Celo Node"
+sidebarTitle: "Start here"
+description: Run and maintain a Celo L2 node, read the protocol specification, and track the upgrades that affect operators
+---
+
+This section is for node operators, RPC providers, and readers of the Celo L2 protocol specification. The fastest path to a synced node is [Run a node with Docker](/operate/operators/run-node).
+
+<Warning>
+Celo is replacing `op-geth` with `op-reth` as its execution client. See [End of Support for op-geth](/operate/notices/op-geth-deprecation) for each network's switch date.
+</Warning>
+
+## Run a node
+
+<CardGroup cols={2}>
+  <Card title="Node types and execution clients" icon="server" href="/operate/operators/overview">
+    What a Celo L2 node is, the node tiers, and which execution client to run.
+  </Card>
+  <Card title="Run a node with Docker" icon="rocket" href="/operate/operators/run-node">
+    Bring up a full node with op-reth from a published snapshot.
+  </Card>
+  <Card title="Run an archive node" icon="layer-group" href="/operate/operators/archive-node">
+    Keep all historical state so the node answers RPC calls at any block.
+  </Card>
+  <Card title="Run a public RPC node" icon="plug" href="/operate/operators/public-rpc-node">
+    Settings for a node that serves public JSON-RPC traffic.
+  </Card>
+</CardGroup>
+
+## Keep a node healthy
+
+<CardGroup cols={2}>
+  <Card title="Monitoring" icon="chart-line" href="/operate/operators/monitoring">
+    Enable the monitoring stack and watch sync status and node health.
+  </Card>
+  <Card title="Upgrades and maintenance" icon="wrench" href="/operate/operators/maintenance">
+    Upgrade clients, restart safely, and back up node data.
+  </Card>
+  <Card title="Troubleshooting" icon="triangle-exclamation" href="/operate/operators/troubleshooting">
+    Fixes for common node problems, from stalled transactions to sync failures.
+  </Card>
+  <Card title="Historical proofs" icon="shield-check" href="/operate/operators/historical-proofs">
+    Serve deep `eth_getProof` requests from op-reth without running an archive node.
+  </Card>
+</CardGroup>
+
+## Reference
+
+<CardGroup cols={3}>
+  <Card title="Configuration" icon="list" href="/operate/operators/configuration">
+    The environment variables and client flags used by celo-l2-node-docker-compose.
+  </Card>
+  <Card title="Network config and assets" icon="sitemap" href="/operate/operators/network-config">
+    Bootnodes, container images, and downloadable artifacts for each network.
+  </Card>
+  <Card title="FAQ" icon="circle-info" href="/operate/operators/faq">
+    Answers to common questions about running nodes on Celo L2.
+  </Card>
+</CardGroup>
+
+## Protocol specification
+
+<CardGroup cols={3}>
+  <Card title="Celo L2 specification" icon="book" href="/operate/specification">
+    How the Celo L2 differs from the OP Stack it is built on.
+  </Card>
+  <Card title="Deployments" icon="file-contract" href="/operate/specification/deployments">
+    Deployment parameters and OP Stack config for Celo mainnet and Celo Sepolia.
+  </Card>
+  <Card title="Jovian upgrade" icon="bolt" href="/operate/specification/upgrades/jovian">
+    Optimism's Jovian hardfork plus Celo's transfer precompile and gas pricing changes.
+  </Card>
+</CardGroup>
+
+## Network notices
+
+<CardGroup cols={1}>
+  <Card title="Network notices" icon="megaphone" href="/operate/notices/overview">
+    Upgrade notices and deprecations that need action from node operators.
+  </Card>
+</CardGroup>
+
+## Related
+
+- [Network information](/build-on-celo/network-overview) — chain IDs, RPC URLs, explorers, and the faucet for Celo mainnet and Celo Sepolia.
+- [Nodes and services](/tooling/nodes/overview) — hosted RPC providers and Forno, for readers who need an endpoint rather than their own node.
+- [Operating a community RPC node](/contribute-to-celo/community-rpc-nodes/community-rpc-node) — run a community RPC node (the tooling calls it a validator) and keep it eligible for rewards.
+
+Please reach out to our team on [Discord](https://chat.celo.org) in the [#celo-L2-support](https://discord.com/channels/600834479145353243/1286649605798367252) channel if you have any questions.
