@@ -26,7 +26,7 @@ already assigns `/docs.json` to the same team. Request access through the team.
 | GA4 property | `G-0CXEKQ81V2` | `@celo-org/devrel` |
 | GTM container | `GTM-NP9GP2BT` | `@celo-org/devrel` |
 | Cloudflare zone / DNS for `docs.celo.org` | `celo.org` zone, `docs.celo.org` proxied | `@celo-org/devrel` |
-| Mintlify org (Free/Starter plan) | — | `@celo-org/devrel` |
+| Mintlify org | Starter plan (established in #2250) | `@celo-org/devrel` |
 
 The permission that matters when a tag needs fixing is **Publish** on the GTM container;
 Edit rights cannot ship a change.
@@ -90,4 +90,6 @@ Cloudflare Analytics (total requests) vs GA4 (sessions) also gives a rough overa
 
 - **Referrer-less AI traffic**: many clicks out of ChatGPT/Claude/Perplexity carry no referrer and appear as Direct in GA4.
 - **JS-capable agentic browsers** (Comet, Atlas, computer-use agents) execute the GA4 tag and count as humans; `is_automated` catches only naive automation.
-- **MCP server queries** (`https://docs.celo.org/mcp`) are served by Mintlify and visible in neither GA4 nor Cloudflare page analytics. Mintlify's own analytics dashboard (human-vs-agent split, assistant/search analytics) requires a paid Mintlify plan — the current plan is Free/Starter; upgrading is the future option if MCP/assistant visibility becomes important.
+- **MCP query content** — not MCP volume. Requests to `https://docs.celo.org/mcp` *do* traverse Cloudflare (they return `cf-ray`, `cf-cache-status: DYNAMIC`), so request volume is visible in Cloudflare's HTTP analytics filtered by path. They are invisible to GA4, which needs JavaScript. What no layer here can show is **what was asked**: the question text, which tool was called, whether the answer cited anything.
+
+  Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. The intended source of query-level signal is instead the in-page assistant (#2286), which can log its own questions. That telemetry does not exist yet, so the docs-gap loop the assistant was chosen for is not closed.
