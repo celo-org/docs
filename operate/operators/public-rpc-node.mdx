@@ -19,6 +19,12 @@ op-reth forwards transactions submitted to your endpoint to the sequencer so the
 
 If it is missing or wrong, transactions submitted to your node are accepted but never executed.
 
+<Note>
+**The sequencer endpoint is not a general-purpose RPC**
+
+It accepts `eth_sendRawTransaction` only — every other method is rejected with `rpc method is not whitelisted`. Use it for transaction submission and keep serving reads from your own node.
+</Note>
+
 ## Exposing the endpoint
 
 op-reth serves JSON-RPC over HTTP on port `9993` and WebSocket on `9994` by default (configurable via `PORT__OP_RETH_HTTP` and `PORT__OP_RETH_WS` — see the [Configuration reference](/operate/operators/configuration#ports)). The compose setup enables the `web3,debug,eth,txpool,net` namespaces on these endpoints.

@@ -18,6 +18,7 @@ See [Architecture](/operate/operators/architecture) for how these fit together.
 
 ## Node types
 
+- **Minimal node** — follows the chain on the smallest disk footprint, pruning aggressively. It validates every block and serves latest-state queries, but little historical RPC.
 - **Full node** — follows the chain and serves recent state. Starts from an empty datadir — bootstrap it from a published snapshot (or sync from genesis on Celo Sepolia), with no migrated L1 datadir required. This is the right choice for most operators.
 - **Archive node** — additionally preserves all historical state, at the cost of terabytes of storage. See [Running an archive node](/operate/operators/archive-node).
 
