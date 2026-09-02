@@ -10,6 +10,12 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 
 The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
+<Note>
+  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support submits a normal transaction and gas is charged in CELO, with no error — so a dApp setting `feeCurrency` has no effect there. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallets-with-cip-64-support).
+
+  The **Ledger support** field below is a different thing: it records whether the wallet can be used with a Ledger hardware device, not whether it supports fee abstraction.
+</Note>
+
 The [Wallet Infrastructure](#wallet-infrastructure) section provides an overview of wallet infrastructure solutions you can integrate into your dapp to enable seamless web3 interactions for your users.
 
 ## Celo Native Wallets 
@@ -28,6 +34,17 @@ MiniPay is a non-custodial lightweight mobile wallet that allows users to send a
 - Ledger support: No
 - Supported tokens: USDm, USDT, and USDC
 - [Start building](/build-on-celo/build-on-minipay/overview)
+
+---
+
+### [Ledger](https://www.ledger.com/)
+
+Ledger is a hardware wallet. Ledger Live added support for CELO and Celo stablecoins in December 2025, and [Celo fee abstraction in July 2026](https://blog.celo.org/ledger-now-supports-celo-fee-abstraction-unlocking-seamless-stablecoin-gas-payments-with-cip-64-30d26a11df1f) — gas can be paid in Celo-native assets rather than CELO.
+
+- Homepage: [ledger.com](https://www.ledger.com/)
+- Platforms: Ledger Live (desktop, mobile) with a Ledger device
+- Maintainers: [Ledger](https://www.ledger.com/)
+- Fee abstraction (CIP-64): Yes, since July 2026
 
 ---
 

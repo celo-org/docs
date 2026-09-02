@@ -24,9 +24,33 @@ Fee abstraction is built into the Celo protocol at the node level — it is not 
 2. Executes the transaction normally
 3. Calls `creditGasFees` to refund unused gas and distribute fees to block producers
 
-This means fee abstraction works with any externally owned account (EOA). No smart contract wallets, no relayers, no extra infrastructure needed.
+This means fee abstraction works with any externally owned account (EOA) at the protocol level. No smart contract wallets, no relayers, no extra infrastructure needed.
 
 To use an alternate fee currency, set its token or adapter address as the `feeCurrency` property on the transaction object.
+
+## The wallet has to support it too
+
+The protocol accepts a `feeCurrency` transaction from any account, but **something has to build that transaction**. `feeCurrency` is a field on the CIP-64 transaction type, so the wallet signing it must implement CIP-64.
+
+<Warning>
+  If the user's wallet does not support CIP-64, it submits a standard transaction instead and **gas is paid in CELO. Nothing errors.** Your `feeCurrency` is dropped silently, and a user with no CELO sees the transaction fail for want of gas — with nothing pointing at the wallet as the cause.
+
+  Setting `feeCurrency` in your dApp is necessary but not sufficient. Whether it takes effect is decided by the wallet your user brings.
+</Warning>
+
+### Wallets with CIP-64 support
+
+| Wallet | Fee abstraction | Notes |
+|---|---|---|
+| [MiniPay](/build-on-celo/build-on-minipay/overview) | Yes | Pays gas in whichever supported stablecoin the user holds most of, and [may override](/build-on-celo/build-on-minipay/overview) a `feeCurrency` you set |
+| [Valora](https://valora.xyz/) | Yes | Pays transaction fees with stablecoins |
+| [Ledger](https://www.ledger.com/) | Yes, since July 2026 | 18 Celo-native assets accepted for gas, via [Ledger Live](https://blog.celo.org/ledger-now-supports-celo-fee-abstraction-unlocking-seamless-stablecoin-gas-payments-with-cip-64-30d26a11df1f) |
+
+A wallet not listed here has not been confirmed either way — check with the wallet before assuming. Wallets that route through [viem](https://viem.sh) or [wagmi](https://wagmi.sh) inherit `feeCurrency` support from the library; Ethers.js and web3.js do not support the field.
+
+<Note>
+  Building a flow that depends on fee abstraction — onboarding a user who holds no CELO, for instance — means either targeting a wallet on this list, or keeping a path that works when gas is charged in CELO.
+</Note>
 
 For implementation details, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction). To add a new fee currency to the protocol, see [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency).
 
