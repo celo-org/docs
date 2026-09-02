@@ -35,6 +35,9 @@ Edit rights cannot ship a change.
 
 - `docs.json` → `integrations.gtm.tagId` loads the GTM container on every page. GA4 itself is configured **inside** GTM (Google Tag), not in `docs.json` — having both would double-count page views.
 - `snippets/AddNetworkButton.jsx` pushes `dataLayer` events: `add_network_click` on click, and `add_network_result` with `result` = `success` | `rejected` | `error` | `no_wallet` and `network` = chain name. This is the highest-intent action on the site.
+- The docs assistant is instrumented on both sides, in `celo-org/docs-ai-assistant` rather than in this repo:
+  - **Client (GA4).** `widget.js` reuses the page's existing `window.gtag` rather than loading a second tracker, and emits `assistant_opened`, `assistant_question` (`answered`, `escalated`, `truncated`), `assistant_escalate`, `assistant_new_chat`, `assistant_copy`, `assistant_citation_click` (`href`) and `assistant_error` (`from_api`, `status`). Question text is deliberately never sent to GA4.
+  - **Server (Redis).** `app/api/chat/route.ts` calls `logQuestion()`, which pushes `{question, model, citedUrls, answered, timestamp, refused}` onto the Upstash Redis list `docs-assistant:questions`, trimmed to the most recent 10,000. Without Redis configured it falls back to `console.log`, which on Vercel is short-retention only. **This list is the docs-gap signal** — the uncited questions in it are the pages that need writing.
 - A handful of outbound partner links carry manual UTM parameters (`tooling/libraries-sdks/reown/index.mdx`, `tooling/indexers/goldrush.mdx`). The GTM outbound-click tag below covers outbound attribution generally, so new UTMs are not required.
 
 ## Runbook 1: Google Tag Manager container
@@ -64,7 +67,8 @@ In the GA4 property for `G-0CXEKQ81V2` (Admin):
 - [ ] **Custom channel group "AI Assistants"**: condition Session source matches regex
   `chatgpt\.com|chat\.openai\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|grok\.com|x\.ai|deepseek\.com|you\.com|phind\.com|meta\.ai`
   GA4's built-in "AI Assistant" channel recognizes only ChatGPT, Gemini, DeepSeek, Copilot and Grok — not Claude or Perplexity. Known limit: a large share of AI-referred sessions arrive with no referrer and land in Direct; this channel measures the floor, not the total.
-- [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`.
+- [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`, plus the assistant's `answered`, `escalated`, `truncated`, `from_api`, `status` and `href`. Without these registered the assistant events still arrive, but their parameters cannot be used in any report.
+- [ ] **Re-verify `window.gtag` after the GTM swap.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`, and fails silently otherwise. That global is provided by `integrations.ga4` today and should still be provided by GTM's Google tag, but it is exactly the kind of silent break this setup has already produced once — check `typeof window.gtag` in the console on a published page after the swap lands.
 - [ ] **Explorations**: (a) free-form exploration with Page path + Exits for exit pages (GA4 has no standard exit report); (b) reverse Path exploration for drop-off journeys.
 
 Already answered by standard reports, no setup needed:
@@ -92,4 +96,4 @@ Cloudflare Analytics (total requests) vs GA4 (sessions) also gives a rough overa
 - **JS-capable agentic browsers** (Comet, Atlas, computer-use agents) execute the GA4 tag and count as humans; `is_automated` catches only naive automation.
 - **MCP query content** — not MCP volume. Requests to `https://docs.celo.org/mcp` *do* traverse Cloudflare (they return `cf-ray`, `cf-cache-status: DYNAMIC`), so request volume is visible in Cloudflare's HTTP analytics filtered by path. They are invisible to GA4, which needs JavaScript. What no layer here can show is **what was asked**: the question text, which tool was called, whether the answer cited anything.
 
-  Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. The intended source of query-level signal is instead the in-page assistant (#2286), which can log its own questions. That telemetry does not exist yet, so the docs-gap loop the assistant was chosen for is not closed.
+  Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. Query-level signal comes from the in-page assistant instead, and it is already implemented on both sides (see below).
