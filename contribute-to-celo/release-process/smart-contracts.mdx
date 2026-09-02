@@ -53,7 +53,7 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 1. A new release branch is created `release/core-contracts/${N}` with the contracts to be audited.
 2. The latest commit on the release branch is tagged with `core-contracts.v${N}.pre-audit`.
 3. On Github, a pre-release Github release should be created pointing at the latest tag on the release branch.
-4. On master branch, `.github/workflows/celo-monorepo.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `celo-core-contracts-v${N}.pre-audit` so that all future changes to master are versioned against the new release.
+4. On master branch, `.github/workflows/celo-monorepo.yml` should be edited so that the variable `RELEASE_TAG` points to the tag `core-contracts.v${N}.pre-audit` so that all future changes to master are versioned against the new release.
 5. Ongoing audit responses/fixes should continue to go into `release/celo-core-contracts/${N}`.
 
 #### After a completed release process:
@@ -63,10 +63,10 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 
 ## Release Process
 
-There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](/cli/)) for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
+There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](/cli/)). The release owners' own reference is [`RELEASE_PROCESS_FOUNDRY.md`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/RELEASE_PROCESS_FOUNDRY.md), which maps each retired Truffle command to its Foundry replacement. These are for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
 
 <Warning>
-For these to run, you may need to set up the celo-monorepo: follow the [Getting Started](https://github.com/celo-org/celo-monorepo/blob/045aa0061/README.md#-getting-started) steps and install the Node version pinned in [`.nvmrc`](https://github.com/celo-org/celo-monorepo/blob/045aa0061/.nvmrc) (managed with `nvm`). A successful `yarn install` and `yarn build` in the protocol package signal a completed setup.
+For these to run, you may need to set up the celo-monorepo: follow the [Getting Started](https://github.com/celo-org/celo-monorepo/blob/045aa0061/README.md#-getting-started) steps and install the Node version pinned in [`.nvmrc`](https://github.com/celo-org/celo-monorepo/blob/045aa0061/.nvmrc) (managed with `nvm`). A successful `yarn install` and `yarn build` in the protocol package signal a completed setup. The release scripts also shell out to [Foundry](https://getfoundry.sh) (`forge`, `cast`) and `jq`, so install those too.
 </Warning>
 
 Using these tools, a contract release candidate can be built, deployed, and proposed for upgrade automatically on a specified network. Subsequently, stakeholders can verify the release candidate against a governance upgrade proposal's contents on the network.
@@ -79,12 +79,13 @@ Typical script options:
 ### View the tagged releases for each network
 
 ```bash
+# Run from `packages/protocol` in the celo-monorepo
 yarn tags:view
 ```
 
 ### Verify the previous Release on the Network
 
-`release:verify-deployed` is a script that allows you to assess whether the bytecode on the given network matches the source code of a particular commit. It will run through the Celo Core Contracts and verify that the contracts' bytecodes as specified in the `Registry` match. Here, we will want to sanity-check that our network is running the previous release's audited commit.
+`release:verify-deployed:foundry` is a script that allows you to assess whether the bytecode on the given network matches the source code of a particular commit. It will run through the Celo Core Contracts and verify that the contracts' bytecodes as specified in the `Registry` match. Here, we will want to sanity-check that our network is running the previous release's audited commit.
 
 ```bash
 # Run from `packages/protocol` in the celo-monorepo
@@ -92,10 +93,10 @@ N=18                                # the release being prepared
 PREVIOUS_RELEASE="core-contracts.v$((N-1))"
 NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
-yarn release:verify-deployed -n $NETWORK -b $PREVIOUS_RELEASE -f
+yarn release:verify-deployed:foundry -n $NETWORK -b $PREVIOUS_RELEASE -f
 ```
 
-A `$NETWORK-$PREVIOUS_RELEASE-libraries.json` file is written to disk describing linked library addresses. `release:make` requires it.
+A `$NETWORK-$PREVIOUS_RELEASE-libraries.json` file is written to disk describing linked library addresses. `release:make:foundry` requires it.
 
 ### Check Backward Compatibility
 
@@ -123,26 +124,28 @@ check for it.
 The script generates a detailed report on version changes in JSON format, written to `report-$PREVIOUS_RELEASE-$RELEASE_CANDIDATE.json`.
 
 ```bash
+# Run from `packages/protocol` in the celo-monorepo
 N=18
 PREVIOUS_RELEASE="core-contracts.v$((N-1))"
 RELEASE_CANDIDATE="core-contracts.v${N}"
-yarn release:check-versions -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE
+yarn release:check-versions:foundry -a $PREVIOUS_RELEASE -b $RELEASE_CANDIDATE
 ```
 
-This should be used in tandem with `release:verify-deployed -b $PREVIOUS_RELEASE -n $NETWORK` to ensure the compatibility checks compare the release candidate to what is actually active on the network.
+This should be used in tandem with `release:verify-deployed:foundry -b $PREVIOUS_RELEASE -n $NETWORK` to ensure the compatibility checks compare the release candidate to what is actually active on the network.
 
 ### Deploy the release candidate
 
-Use the following script to build and deploy a candidate release. This takes as input the corresponding backward compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
+Use the following script to build and deploy a candidate release. This takes as input the corresponding backward compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. The Foundry script has no dry-run; pass `-u` with a local anvil fork's RPC URL to rehearse it.
 STORAGE updates are adopted by deploying a new proxy/implementation pair. This script writes a JSON contract upgrade governance proposal to `proposal-$NETWORK-$RELEASE_CANDIDATE.json`.
 
 ```bash
+# Run from `packages/protocol` in the celo-monorepo
 N=18
 NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 PREVIOUS_RELEASE="core-contracts.v$((N-1))"
 RELEASE_CANDIDATE="core-contracts.v${N}"
-PRIVATE_KEY=                        # deployer key for $NETWORK
-yarn release:make -b $RELEASE_CANDIDATE -n $NETWORK -r "report-$PREVIOUS_RELEASE-$RELEASE_CANDIDATE.json" -i "releaseData/initializationData/release${N}.json" -l "$NETWORK-$PREVIOUS_RELEASE-libraries.json" -k $PRIVATE_KEY
+PRIVATE_KEY="0x..."                 # deployer key for $NETWORK
+yarn release:make:foundry -b $RELEASE_CANDIDATE -n $NETWORK -r "report-$PREVIOUS_RELEASE-$RELEASE_CANDIDATE.json" -i "releaseData/initializationData/release${N}.json" -l "$NETWORK-$PREVIOUS_RELEASE-libraries.json" -k "$PRIVATE_KEY"
 ```
 
 The proposal encodes STORAGE updates by repointing the Registry to the new proxy. Storage compatible upgrades are encoded by repointing the existing proxy's implementation.
@@ -153,6 +156,9 @@ Submit the autogenerated upgrade proposal to the Governance contract for review 
 
 ```bash
 # resultant proposal ID should be communicated publicly
+N=18
+NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
+RELEASE_CANDIDATE="core-contracts.v${N}"
 celocli governance:propose --deposit 100e18 --from $YOUR_ADDRESS --jsonTransactions "proposal-$NETWORK-$RELEASE_CANDIDATE.json" --descriptionURL https://github.com/celo-org/governance/blob/main/CGPs/cgp-0055.md
 ```
 
@@ -167,28 +173,30 @@ celocli governance:show --proposalID <proposalId> --jsonTransactions "upgrade_pr
 
 ### Verify Proposed Release Candidate
 
-This script serves the same purpose as `release:verify-deployed` but for a not-yet
-accepted contract upgrade (in the form of the proposal.json you fetched in the step prior). It gives you the confidence that the branch specified in the `-b` flag in (same as `release:check-versions`) will be the resulting network state of the proposal if executed. It does so by going over all Celo Core Contracts and determining updates to the Registry pointers, proxy or implementation contracts and verifying their implied bytecode against the compiled source code.
+This script serves the same purpose as `release:verify-deployed:foundry` but for a not-yet
+accepted contract upgrade (in the form of the `upgrade_proposal.json` you fetched in the step prior). It gives you the confidence that the branch specified in the `-b` flag in (same as `release:check-versions:foundry`) will be the resulting network state of the proposal if executed. It does so by going over all Celo Core Contracts and determining updates to the Registry pointers, proxy or implementation contracts and verifying their implied bytecode against the compiled source code.
 
 Additionally, include `initialization_data.json` from the CGP if any of the contracts have to be initialized.
 
 ```bash
+# Run from `packages/protocol` in the celo-monorepo
 N=18
 RELEASE_CANDIDATE="core-contracts.v${N}"
 NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
 # A -f boolean flag can be provided to use a forno full node to connect to the provided network
-yarn release:verify-release -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
+yarn release:verify-deployed:foundry -p "upgrade_proposal.json" -b $RELEASE_CANDIDATE -n $NETWORK -f -i initialization_data.json
 ```
 
 ### Verify Executed Release
 
-After a release executes via Governance, you can use `release:verify-deployed` again to check that the resulting network state does indeed reflect the tagged release candidate:
+After a release executes via Governance, you can use `release:verify-deployed:foundry` again to check that the resulting network state does indeed reflect the tagged release candidate:
 
 ```bash
+# Run from `packages/protocol` in the celo-monorepo
 N=18
 RELEASE="core-contracts.v${N}"
 NETWORK="celo-sepolia"              # "anvil", "celo-sepolia" or "mainnet"
-yarn release:verify-deployed -n $NETWORK -b $RELEASE -f
+yarn release:verify-deployed:foundry -n $NETWORK -b $RELEASE -f
 ```
 
 ## Testing
