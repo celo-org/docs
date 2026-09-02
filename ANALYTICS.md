@@ -18,12 +18,18 @@ So measurement is split in two:
 
 ## Ownership
 
+Owners are teams, not individuals — this repository is public, and `.github/CODEOWNERS`
+already assigns `/docs.json` to the same team. Request access through the team.
+
 | Asset | ID | Owner |
 |---|---|---|
-| GA4 property | `G-0CXEKQ81V2` | _fill in_ |
-| GTM container | `GTM-NP9GP2BT` | _fill in_ |
-| Cloudflare zone / DNS for `docs.celo.org` | — | _fill in_ |
-| Mintlify org (Free/Starter plan) | — | _fill in_ |
+| GA4 property | `G-0CXEKQ81V2` | `@celo-org/devrel` |
+| GTM container | `GTM-NP9GP2BT` | `@celo-org/devrel` |
+| Cloudflare zone / DNS for `docs.celo.org` | `celo.org` zone, `docs.celo.org` proxied | `@celo-org/devrel` |
+| Mintlify org (Free/Starter plan) | — | `@celo-org/devrel` |
+
+The permission that matters when a tag needs fixing is **Publish** on the GTM container;
+Edit rights cannot ship a change.
 
 ## What is instrumented in this repo
 
@@ -33,9 +39,16 @@ So measurement is split in two:
 
 ## Runbook 1: Google Tag Manager container
 
-Create a **Web** container for `docs.celo.org` at https://tagmanager.google.com, then replace `GTM-XXXXXXX` in `docs.json` with the real ID. Configure:
+The container exists (`GTM-NP9GP2BT`) and `docs.json` carries its ID. Remaining tags to configure at https://tagmanager.google.com:
 
-- [ ] **Google Tag** with tag ID `G-0CXEKQ81V2`, firing on All Pages and on History Changes (Mintlify navigates client-side; without the history trigger only the first page view is counted).
+- [x] **Google Tag** with tag ID `G-0CXEKQ81V2`, firing on All Pages and on History Changes (Mintlify navigates client-side; without the history trigger only the first page view is counted). Verify against the published container rather than the GTM UI:
+
+  ```bash
+  curl -s "https://www.googletagmanager.com/gtag/js?id=GTM-NP9GP2BT" | grep -c "G-0CXEKQ81V2"   # must be >= 1
+  curl -s "https://www.googletagmanager.com/gtm.js?id=GTM-NP9GP2BT"                             # "vtp_tagId":"G-0CXEKQ81V2"
+  ```
+
+  This tag briefly carried the **container's own ID** in the Tag ID field instead of the measurement ID. The container loaded, a tag fired, nothing errored, and GA4 received nothing — so check the payload, not the UI.
 - [ ] **Scroll depth**: built-in Scroll Depth trigger at 25 / 50 / 75 / 90 % → GA4 event `scroll_depth` with parameter `percent_scrolled` (`{{Scroll Depth Threshold}}`). GA4's own enhanced measurement fires only at 90 %, which hides most drop-off.
 - [ ] **Outbound clicks**: Just Links trigger with condition Click URL does not contain `docs.celo.org` → GA4 event `outbound_click` with `link_domain` (`{{Click URL Hostname}}` — create a URL variable with component "Host Name") and `link_url` (`{{Click URL}}`).
 - [ ] **Code copy**: Click trigger on Mintlify's code-block copy button → GA4 event `copy_code` with `page_path`. The selector targets Mintlify's rendered UI and can change without notice — verify with GTM Preview after Mintlify updates.
@@ -62,16 +75,16 @@ Already answered by standard reports, no setup needed:
 
 ## Runbook 3: Cloudflare in front of docs.celo.org (bot visibility)
 
-This is the only layer that can see non-JS bot traffic. Mintlify supports Cloudflare as DNS provider with the proxy enabled:
+This is the only layer that can see non-JS bot traffic. The proxy is already in place, so only the AI Crawl Control steps remain:
 
-- [ ] Proxied (orange-cloud) CNAME for `docs.celo.org` pointing at the Mintlify target (per the Mintlify dashboard's custom-domain settings).
+- [x] Proxied (orange-cloud) CNAME for `docs.celo.org` pointing at the Mintlify target. Confirmed: `celo.org` resolves to Cloudflare nameservers, `docs.celo.org` is a CNAME to `cname.vercel-dns.com`, and responses carry `cf-ray` and `cf-cache-status`, which only appear when traffic passes through the proxy.
 - [ ] SSL/TLS mode **Full (strict)**.
 - [ ] **Disable "Always Use HTTPS"** for the zone (Mintlify requirement) and add no rules touching `/.well-known/acme-challenge`.
 - [ ] Enable **AI Crawl Control** (free plan): shows per-crawler activity (GPTBot, ClaudeBot, PerplexityBot, ChatGPT-User, Claude-User, Bytespider, CCBot, Amazonbot, …), the pages each crawler hits, crawl frequency and robots.txt compliance.
 - [ ] **Allow all AI crawlers.** These docs want to be read by agents; the tool is for measurement, not blocking. Check that no default block rules are active — Cloudflare default-blocks some AI crawler categories on new zones.
 - [ ] Sanity check after cutover: `curl -I https://docs.celo.org/llms.txt` returns 200 with a valid certificate; a normal page and its `.md` variant load.
 
-Cloudflare Analytics (total requests) vs GA4 (sessions) also gives a rough overall bot share as the delta between the two.
+Cloudflare Analytics (total requests) vs GA4 (sessions) also gives a rough overall bot share as the delta between the two. Treat it as rough: `docs.celo.org` returns `cf-cache-status: HIT`, so Cloudflare serves many requests from cache that never reach the origin, widening the delta for reasons unrelated to bots.
 
 ## Known blind spots
 
