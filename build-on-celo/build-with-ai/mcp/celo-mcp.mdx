@@ -105,23 +105,23 @@ Using the Celo MCP server, what is the current gas fee data on Celo mainnet?
 
 - **`get_network_status`** — current network status and connection information
 - **`get_block`** — a block by number, hash, or `latest`
-- **`get_latest_blocks`** — recent blocks, up to 100
+- **`get_latest_blocks`** — recent blocks; `count` defaults to 10 (max 100) and `offset` skips that many blocks back from the head
 - **`get_transaction`** — transaction detail by hash
 
 ### Balances and fees
 
-- **`get_celo_balances`** — CELO plus the core Mento stablecoins (USDm, EURm, BRLm) for an address
-- **`get_stable_token_balance`** — a wider set of tokens in one multicall: CELO, the Mento stablecoins, and USDC, USDT, USDGLO, cKES and others
+- **`get_celo_balances`** — CELO plus the core Mento stablecoins for an address; symbols are read from each contract on chain, so they come back as `USDm`, `EURm` and `BRLm`
+- **`get_stable_token_balance`** — a wider set of tokens in one multicall: CELO, the Mento stablecoins, and USDC, USDT, USDGLO, cKES and others; symbols come from the server's built-in token table, so the same three stablecoins are reported as `cUSD`, `cEUR` and `cREAL`
 - **`get_token_balance`** — the balance of one specific token for an address
 - **`get_gas_fee_data`** — current gas fees, including EIP-1559 fields
 
 <Note>
-`USDm`, `EURm` and `BRLm` are the Mento stablecoins, formerly cUSD, cEUR and cREAL. `USDM` with a capital M is a different asset from a different issuer.
+`USDm`, `EURm` and `BRLm` are the on-chain symbols of the Mento stablecoins, formerly `cUSD`, `cEUR` and `cREAL`. The two balance tools above name the same three assets differently, so match on the token address rather than the symbol when you combine their output. `USDM` with a capital M is a different asset from a different issuer.
 </Note>
 
 ### Governance
 
-- **`get_governance_proposals`** — governance proposals, paginated
+- **`get_governance_proposals`** — governance proposals, paginated; `page_size` defaults to 10 (max 20)
 - **`get_proposal_details`** — detail for one proposal
 
 ### Staking and validators
