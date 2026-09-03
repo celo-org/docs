@@ -11,6 +11,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 - Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `operate/`.
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
+- **Any `.js` file under the content root runs on every published page.** Mintlify injects them automatically — there is no allowlist and no way to scope one to a single page — and the same applies to `.css`. Treat a `.js` file here as production code shipped to every reader, not as content: it has full same-origin DOM access on pages that print contract addresses and RPC endpoints. Mintlify does not support a raw `<script src>` in MDX, so third-party scripts are injected programmatically from such a file (`assistant.js` is the example). Note `submodules/developer-tooling` sits under this root too.
 
 ### Commands
 
@@ -121,7 +122,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Agent identity and trust | `/build-on-celo/build-with-ai/8004`, `/build-on-celo/build-with-ai/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
 | Human identity | `/build-on-celo/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
 | Phone-number mapping | `/build-on-celo/build-on-socialconnect` | SocialConnect / ODIS |
-| AI tooling | `/build-on-celo/build-with-ai/use-docs-with-ai`, `/build-on-celo/build-with-ai/celopedia`, `/build-on-celo/build-with-ai/mcp/index` | docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
+| AI tooling | `/build-on-celo/build-with-ai/use-docs-with-ai`, `/build-on-celo/build-with-ai/celopedia`, `/build-on-celo/build-with-ai/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
 
 ### Partner contract addresses
 
@@ -136,7 +137,7 @@ Third-party (partner) contract addresses are not listed in these docs — link t
 
 ## 8. Writing for AI agents (discoverability)
 
-Most readers of these docs are now AI assistants and agents. Mintlify already serves them: `https://docs.celo.org/llms.txt` (index of every page's title and `description`), `llms-full.txt` (full text), every page as Markdown at its URL plus `.md`, the docs MCP server at `https://docs.celo.org/mcp`, and the page-level Copy / ChatGPT / Claude / Cursor menu. The [Celopedia skill](/build-on-celo/build-with-ai/celopedia) and the [Celo MCP server](/build-on-celo/build-with-ai/mcp/celo-mcp) are the other two entry points. Nothing needs configuring per page — but a page is only as useful to an agent as its text is explicit.
+Most readers of these docs are now AI assistants and agents. Mintlify already serves them: `https://docs.celo.org/llms.txt` (index of every page's title and `description`), `llms-full.txt` (full text), every page as Markdown at its URL plus `.md`, the docs MCP server at `https://docs.celo.org/mcp`, and the page-level Copy / ChatGPT / Claude / Cursor menu. Human readers also get the in-page [Ask AI assistant](/build-on-celo/build-with-ai/use-docs-with-ai), which answers from the same MCP endpoint. The [Celopedia skill](/build-on-celo/build-with-ai/celopedia) and the [Celo MCP server](/build-on-celo/build-with-ai/mcp/celo-mcp) are further entry points. Nothing needs configuring per page — but a page is only as useful to an agent as its text is explicit.
 
 Rules that make a page work for an agent:
 
