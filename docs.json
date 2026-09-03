@@ -441,6 +441,10 @@
         "tab": "Operate",
         "groups": [
           {
+            "group": "Introduction",
+            "pages": ["operate/index"]
+          },
+          {
             "group": "Network Notices",
             "pages": [
               "operate/notices/overview",
