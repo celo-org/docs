@@ -13,7 +13,11 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 
 The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
-The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets wallets that support the Celo network.
+<Note>
+  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support charges gas in CELO instead. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+</Note>
+
+The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets that support the Celo network.
 
 ## Celo Native Wallets
 
@@ -26,7 +30,7 @@ MiniPay is a non-custodial lightweight mobile wallet that allows users to send a
 - [Homepage](https://www.opera.com/products/minipay)
 - Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay), [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB), inside [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native) in Ghana, Nigeria, Kenya, South Africa, and Uganda
 - Maintainers: Opera
-- Ledger support: No
+- Hardware wallet support: No
 - Supported tokens: USDm, USDT, and USDC
 
 ---
@@ -38,7 +42,7 @@ Valora is a non-custodial multichain mobile wallet focused on helping users save
 - [Homepage](https://valora.xyz/)
 - Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://play.google.com/store/apps/details?id=co.clabs.valora)
 - Maintainers: [Valora](https://valora.xyz/)
-- Ledger support: No
+- Hardware wallet support: No
 - [Source Code](https://github.com/valora-inc/wallet)
 
 ---
@@ -50,14 +54,28 @@ Celo Terminal is a wallet and dApp platform designed as a hub for managing and r
 - Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://x.com/wotrust1)
-- Ledger support: Yes (Note: [EIP-712 signing requires workaround](/wallet/ledger/eip712-workaround))
+- Hardware wallet support: Yes (Note: [EIP-712 signing requires workaround](/wallet/ledger/eip712-workaround))
 - [Source Code](https://github.com/zviadm/celoterminal)
+
+---
+
+## Hardware Wallets
+
+---
+
+### [Ledger](https://www.ledger.com/)
+
+Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice, with Ledger Live 4.8 or later and Celo app 1.8 or later. dApp transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+
+- [Homepage](https://www.ledger.com/)
+- Platforms: Ledger Live (desktop, mobile) with a Ledger device
+- [Set up a Ledger with Celo](/tooling/wallets/ledger/setup)
 
 ---
 
 ## Celo Compatible Wallets
 
-Here’s an overview of popular wallets compatible with the Celo network. Note that some wallets do not support fee abstraction for gas payments with different tokens.
+Here’s an overview of popular wallets compatible with the Celo network. Not all of them support [fee abstraction](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64), so gas may be charged in CELO.
 
 ### [Rabby](https://rabby.io/)
 
