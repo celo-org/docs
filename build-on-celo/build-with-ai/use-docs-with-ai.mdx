@@ -1,15 +1,16 @@
 ---
 title: "Use Celo Docs with AI Tools"
 sidebarTitle: "Docs for AI Tools"
-description: "Connect docs.celo.org to Claude Code, Cursor, VS Code, and ChatGPT using the docs MCP server, llms.txt, and per-page Markdown."
+description: "Ask questions in-page with the docs assistant, or connect docs.celo.org to Claude Code, Cursor, VS Code, and ChatGPT using the docs MCP server, llms.txt, and per-page Markdown."
 ---
 
 **Point your AI assistant at the docs instead of its training data.** Everything on docs.celo.org is available in machine-readable form — a hosted MCP server your editor can query live, a full-text index for pasting into a chat, and a Markdown version of every page.
 
 This matters because model training data goes stale. Celo became an Ethereum L2 in March 2025, contract addresses change, and assistants confidently repeat outdated L1 details. Connecting your tool to these endpoints means answers come from the current docs.
 
-| Entry point | URL | Best for |
-|-------------|-----|----------|
+| Entry point | Where | Best for |
+|-------------|-------|----------|
+| In-page assistant | **Ask AI** button on any page | Quick questions while reading, without leaving the docs |
 | MCP server | `https://docs.celo.org/mcp` | Editors and agents — live search, no copy-paste |
 | Docs index | [`/llms.txt`](https://docs.celo.org/llms.txt) | Giving a chat a map of every docs page |
 | Full corpus | [`/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Long-context models that can hold the whole docs set |
@@ -196,6 +197,22 @@ Reach for `llms.txt` by default. It costs a fraction of the tokens, and any tool
 
 Both files are generated from the live site, so they never go stale.
 
+## Ask a question in the docs
+
+Every page has an **Ask AI** button in the bottom-right corner. It answers from the documentation and links the pages it used, so you can check the source rather than take the answer on trust.
+
+It searches the same content as the MCP server above, which means answers reflect the docs as currently published — not a model's training data.
+
+If an answer arrives without any links, the assistant offers a **Try a more thorough answer** button, which re-runs the question against a stronger model.
+
+<Warning>
+  Answers are AI-generated and can be wrong. Follow the citations before relying on anything load-bearing, especially contract addresses and code. An answer with no links is not grounded in these docs — treat it as a starting point, not a source.
+</Warning>
+
+<Note>
+  **Where your question goes.** Questions are sent to Anthropic to generate the answer, and are logged along with the pages cited so we can find documentation gaps — questions that return no citation are reviewed weekly. Don't include secrets, private keys, or personal data.
+</Note>
+
 ## Copy any page as Markdown
 
 Every page has a contextual menu beside its title:
@@ -211,7 +228,7 @@ You can also skip the menu: **append `.md` to any docs URL** to get the Markdown
 
 <CardGroup cols={2}>
   <Card title="Celo MCP Server" icon="server" href="/build-on-celo/build-with-ai/mcp/celo-mcp">
-    Query live chain data — balances, blocks, tokens, NFTs, and governance proposals — from your editor.
+    Query live chain data — blocks, transactions, balances, gas fees, governance and staking — from your editor.
   </Card>
   <Card title="Celopedia" icon="graduation-cap" href="/build-on-celo/build-with-ai/celopedia">
     A skill that gives your coding assistant curated Celo knowledge: contract addresses, protocols, MiniPay, and grants.
