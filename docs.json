@@ -3535,6 +3535,210 @@
     {
       "source": "/specs/:slug*",
       "destination": "/operate/specification/:slug*"
+    },
+    {
+      "source": "/about-celo",
+      "destination": "/home"
+    },
+    {
+      "source": "/about-celo/manage/exchange",
+      "destination": "/home/manage/asset"
+    },
+    {
+      "source": "/about-celo/protocol/consensus",
+      "destination": "/home/protocol/security-council"
+    },
+    {
+      "source": "/about-celo/:slug*",
+      "destination": "/home/:slug*"
+    },
+    {
+      "source": "/general/history",
+      "destination": "/home/history"
+    },
+    {
+      "source": "/general/using-celo/gas-fees",
+      "destination": "/home/gas-fees"
+    },
+    {
+      "source": "/general/ecosystem/daos",
+      "destination": "/contribute-to-celo"
+    },
+    {
+      "source": "/community/CIP-contributors",
+      "destination": "/contribute-to-celo/contributors/cip-contributors"
+    },
+    {
+      "source": "/community/code-contributors",
+      "destination": "/contribute-to-celo/contributors/code-contributors"
+    },
+    {
+      "source": "/community/documentation-contributors",
+      "destination": "/contribute-to-celo/contributors/documentation-contributors"
+    },
+    {
+      "source": "/community/release-process",
+      "destination": "/contribute-to-celo/release-process"
+    },
+    {
+      "source": "/holder/manage/asset",
+      "destination": "/home/manage/asset"
+    },
+    {
+      "source": "/holder/manage/release-gold",
+      "destination": "/home/manage/release-gold"
+    },
+    {
+      "source": "/holder/manage/self-custody",
+      "destination": "/home/manage/self-custody"
+    },
+    {
+      "source": "/developer-resources/contractkit",
+      "destination": "/tooling/libraries-sdks/contractkit"
+    },
+    {
+      "source": "/developer-resources/dappkit/usage",
+      "destination": "/tooling/libraries-sdks/contractkit/setup"
+    },
+    {
+      "source": "/developer/dappkit/usage",
+      "destination": "/tooling/libraries-sdks/contractkit/setup"
+    },
+    {
+      "source": "/developer-resources/forno",
+      "destination": "/tooling/nodes/forno"
+    },
+    {
+      "source": "/protocol/identity/odis",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/oracle/band-protocol",
+      "destination": "/tooling/oracles/band-protocol"
+    },
+    {
+      "source": "/oracle/redstone",
+      "destination": "/tooling/oracles/redstone"
+    },
+    {
+      "source": "/oracle/run",
+      "destination": "/tooling/oracles/run"
+    },
+    {
+      "source": "/what-is-celo/using-celo/eigenda",
+      "destination": "/operate/specification/eigenda"
+    },
+    {
+      "source": "/developer/dev-environments/hardhat",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/developer/dev-environments/foundry",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/developer/dev-environments/remix",
+      "destination": "/tooling/dev-environments/remix"
+    },
+    {
+      "source": "/developer/dev-environments/thirdweb",
+      "destination": "/tooling/dev-environments/thirdweb"
+    },
+    {
+      "source": "/developer/indexer/envio",
+      "destination": "/tooling/indexers/envio"
+    },
+    {
+      "source": "/developer/build-with-ai/usecases",
+      "destination": "/build-on-celo/build-with-ai/usecases"
+    },
+    {
+      "source": "/cel2/cel2-architecture",
+      "destination": "/build-on-celo/cel2-architecture"
+    },
+    {
+      "source": "/cel2/fee-currencies",
+      "destination": "/tooling/contracts/fee-currencies"
+    },
+    {
+      "source": "/build-on-celo/build-with-ai/celina",
+      "destination": "/build-on-celo/build-with-ai/mcp/celina"
+    },
+    {
+      "source": "/network/cannoli/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/alfajores/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/baklava/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/mainnet/disclaimer",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/alfajores",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/baklava",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/mainnet",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/tooling/testnets/eclair",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/oracle",
+      "destination": "/tooling/oracles"
+    },
+    {
+      "source": "/network/cannoli",
+      "destination": "/tooling/testnets/celo-sepolia/index"
+    },
+    {
+      "source": "/protocol/identity/odis-domain",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-domain-sequential-delay-domain",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-use-case-key-hardening",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/odis-use-case-phone-number-privacy",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/encrypted-cloud-backup",
+      "destination": "/tooling/libraries-sdks/contractkit/odis"
+    },
+    {
+      "source": "/protocol/identity/metadata",
+      "destination": "/home/protocol/metadata"
+    },
+    {
+      "source": "/protocol/identity/privacy-research",
+      "destination": "/home/celo-l1"
+    },
+    {
+      "source": "/protocol/identity/randomness",
+      "destination": "/operate/specification/l2-migration#deactivated-random-contract"
+    },
+    {
+      "source": "/protocol/identity/smart-contract-accounts",
+      "destination": "/home/celo-l1"
     }
   ],
   "footer": {
