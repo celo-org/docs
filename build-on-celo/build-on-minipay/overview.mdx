@@ -48,7 +48,7 @@ const hash = await walletClient.sendTransaction({
 
 Testnet addresses are on [Fee currency contracts](/tooling/contracts/fee-currencies).
 
-### Gas is paid in the user's stablecoin
+### Gas is paid in stablecoins
 
 MiniPay uses [fee abstraction](/build-on-celo/fee-abstraction/overview): the user never holds CELO, and the wallet pays gas in the stablecoin the user holds the most of. You may set `feeCurrency` on `eth_sendTransaction`, but MiniPay can override it. Do not build flows that assume a CELO balance, and do not show a "buy CELO for gas" step.
 
