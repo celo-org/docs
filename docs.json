@@ -26,8 +26,8 @@
     }
   },
   "integrations": {
-    "ga4": {
-      "measurementId": "G-0CXEKQ81V2"
+    "gtm": {
+      "tagId": "GTM-NP9GP2BT"
     }
   },
   "background": {
