@@ -1,7 +1,7 @@
 ---
 title: Fee Abstraction
 sidebarTitle: "Overview"
-description: Pay gas fees using ERC20 tokens instead of the native CELO token
+description: Pay gas fees in ERC20 tokens instead of CELO, how the protocol charges them, and which wallets build the CIP-64 transaction that makes it work
 ---
 
 Fee abstraction is one of Celo's core protocol features. It allows users to pay gas fees in ERC20 tokens — like USDC, USDT, or Mento stablecoins — instead of needing to hold the native CELO token.
@@ -24,11 +24,30 @@ Fee abstraction is built into the Celo protocol at the node level — it is not 
 2. Executes the transaction normally
 3. Calls `creditGasFees` to refund unused gas and distribute fees to block producers
 
-This means fee abstraction works with any externally owned account (EOA). No smart contract wallets, no relayers, no extra infrastructure needed.
+This means fee abstraction works with any externally owned account (EOA) at the protocol level. No smart contract wallets, no relayers, no extra infrastructure needed.
 
 To use an alternate fee currency, set its token or adapter address as the `feeCurrency` property on the transaction object.
 
 For implementation details, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction). To add a new fee currency to the protocol, see [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency).
+
+## Wallet support for CIP-64
+
+The protocol accepts a `feeCurrency` transaction from any account, but something has to build that transaction. `feeCurrency` is a field on the [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) transaction type, so the wallet signing it must implement CIP-64. Setting `feeCurrency` in your dApp is necessary but not sufficient: whether it takes effect is decided by the wallet your user brings.
+
+<Warning>
+  A wallet without CIP-64 support does not honour `feeCurrency`, and nothing tells you so. Most drop the field and sign a standard transaction, as MetaMask does: gas then comes out of the user's CELO balance, or, if the user holds no CELO, the transaction fails with a generic insufficient-funds error. A wallet that validates request parameters may instead reject the request outright. None of these outcomes points at the wallet as the cause.
+</Warning>
+
+| Wallet | How `feeCurrency` is handled |
+|---|---|
+| [MiniPay](/build-on-celo/build-on-minipay/overview) | Pays gas in the stablecoin the user holds the most of, and [may override](/build-on-celo/build-on-minipay/overview#gas-is-paid-in-stablecoins) a `feeCurrency` you set |
+| [Valora](https://valora.xyz/) | Builds CIP-64 itself and ignores a `feeCurrency` you set. It re-selects, paying in CELO when the balance covers the fee and otherwise in the fee currency the user holds the most of by value. Confirmed in the [wallet source](https://github.com/valora-xyz/wallet-stack/blob/main/packages/wallet-stack/src/walletConnect/saga.ts) |
+| [Ledger Live](/tooling/wallets/ledger/setup) | Ledger Live's own send flow builds CIP-64 and lets the user choose the fee currency. Needs Ledger Live 4.8 or later and Celo app 1.8 or later. This does not extend to dApps: a Ledger used through MetaMask signs what MetaMask builds, and MetaMask drops `feeCurrency` |
+| [MetaMask](/tooling/wallets/metamask/setup) | Not supported. The [transaction controller](https://github.com/MetaMask/core/blob/main/packages/transaction-controller/src/utils/utils.ts) keeps only the fields it knows, so `feeCurrency` is dropped and gas is charged in CELO |
+
+A wallet not listed here has not been confirmed either way. Check with the wallet before assuming. If a flow depends on fee abstraction, such as onboarding a user who holds no CELO, either target a wallet on this list or keep a path that works when gas is charged in CELO.
+
+Library support is a separate question from wallet support, and a library in a wallet's stack says nothing about whether that wallet forwards a dApp's `feeCurrency`. For viem, Ethers.js and web3.js, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction#using-fee-abstraction-with-viem).
 
 ## Whitelisted Fee Currencies (Mainnet)
 
@@ -44,3 +63,4 @@ Tokens with non-18 decimals (e.g. USDC, USD₮, USA₮ with 6 decimals) require 
 - [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — HTTP-native stablecoin payments for agents
 - [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction) — How to pay gas with alternate fee currencies in your transactions
 - [Adding Fee Currencies](/build-on-celo/fee-abstraction/add-fee-currency) — How to implement and register a new fee currency
+- [Celo Wallets](/tooling/wallets) — The wallets Celo documents, including the ones in the table above

@@ -71,7 +71,7 @@ celocli transfer:erc20 \
 
 ## Using Fee Abstraction with viem
 
-We recommend [viem](https://viem.sh/), which has native support for the `feeCurrency` field. Ethers.js and web3.js do not currently support this field.
+We recommend [viem](https://viem.sh/), which serializes CIP-64 natively when you pass a Celo chain from `viem/chains`. Ethers.js and web3.js do not support the field on their own; use the [Celo Ethers.js wrapper](/tooling/libraries-sdks/ethers) or the [web3 transaction-types plugin](/tooling/libraries-sdks/web3). Whichever library you use, the wallet that signs the transaction must also support CIP-64; see [wallet support](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
 
 ### 1. Estimate the Gas Fee
 
