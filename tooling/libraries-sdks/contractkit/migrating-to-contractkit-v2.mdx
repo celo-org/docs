@@ -8,7 +8,7 @@ How to migrate from v1 to v2 of the Celo SDK suite of packages and make use of t
 <Warning>
 [ContractKit has been sunset](https://forum.celo.org/t/sunsetting-contractkit/5337) for external use. Please use viem or wagmi for connecting with the blockchain. 
 
-Check out the [migration guide](/developer/contractkit/migrating-to-viem) for updating your dapp from ContractKit to viem.
+Check out the [migration guide](/developer/contractkit/migrating-to-viem) for updating your app from ContractKit to viem.
 
 To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
 </Warning>
@@ -19,7 +19,7 @@ To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contrac
 
 ### Bundle Size
 
-The primary motivation in creating v2 was reduced bundlesize and increased modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first dApps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. still big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, a `kit` instance is no longer required to any classes in the contractkit package, and the introduction of `MiniContractKit`.
+The primary motivation in creating v2 was reduced bundlesize and increased modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first apps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. still big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, a `kit` instance is no longer required to any classes in the contractkit package, and the introduction of `MiniContractKit`.
 
 ### Modularity
 
@@ -37,7 +37,7 @@ In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed u
 
 The prize of no longer needing a full `kit` is that it became possible to create a slimmed down minimal viable ContractKit.
 
-`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
+`MiniContractKit` provides a subset of ContractKit features with the same interface. For many apps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
 
 ## Get Started
 
