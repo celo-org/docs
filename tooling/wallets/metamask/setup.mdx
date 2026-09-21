@@ -1,11 +1,11 @@
 ---
 title: Programmatic Setup
-description: How dApp developers can use MetaMask to interact with the Celo network.
+description: How app developers can use MetaMask to interact with the Celo network.
 ---
 
 ## Adding a Celo Network to MetaMask
 
-To add a Celo Network to your dApp, you can use MetaMask's RPC API's `wallet_addEthereumChain` method. \([See documentation](https://docs.metamask.io/wallet/reference/json-rpc-methods/wallet_addethereumchain/)\).
+To add a Celo Network to your app, you can use MetaMask's RPC API's `wallet_addEthereumChain` method. \([See documentation](https://docs.metamask.io/wallet/reference/json-rpc-methods/wallet_addethereumchain/)\).
 
 Here is a JavaScript snippet you can use:
 
@@ -46,7 +46,7 @@ const CELO_SEPOLIA_PARAMS = {
 
 ## Adding Tokens \(e.g. USDm, EURm\)
 
-To watch an asset on a Celo network \(e.g. USDm, EURm\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/wallet/reference/json-rpc-methods/wallet_watchasset/)\).
+To watch an asset on a Celo network \(e.g. USDm, EURm\) in your app, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/wallet/reference/json-rpc-methods/wallet_watchasset/)\).
 
 Here is a JavaScript snippet you can use:
 
@@ -73,5 +73,5 @@ See [Stablecoin Contracts](/tooling/contracts/stablecoin-contracts) for the toke
 </Tip>
 
 <Warning>
-We strongly suggest that you disable your dApp's functionality when MetaMask is connected to a non-Celo network. MetaMask has an API for determining what network/chain you're connected to. [See here](https://docs.metamask.io/guide/ethereum-provider.html#methods) for more documentation around that.
+We strongly suggest that you disable your app's functionality when MetaMask is connected to a non-Celo network. MetaMask has an API for determining what network/chain you're connected to. [See here](https://docs.metamask.io/guide/ethereum-provider.html#methods) for more documentation around that.
 </Warning>
