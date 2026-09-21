@@ -16,6 +16,13 @@
 
   "third_party": [
     {
+      "symbol": "IDRX",
+      "name": "IDRX",
+      "issuer": "IDRX",
+      "issuer_url": "https://idrx.co/",
+      "mainnet_address": "0x18Bc5bcC660cf2B9cE3cd51a404aFe1a0cBD3C22"
+    },
+    {
       "symbol": "cNGN",
       "name": "Compliant Naira",
       "issuer": "Africa Stablecoin Consortium",
