@@ -838,11 +838,11 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus",
-      "destination": "/home/protocol/security-council"
+      "destination": "/home/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/index",
-      "destination": "/home/protocol/security-council"
+      "destination": "/home/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/locating-nodes",
@@ -850,7 +850,7 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/security-council"
+      "destination": "/home/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/validator-set-differences",
@@ -1146,7 +1146,7 @@
     },
     {
       "source": "/celo-holder-guide/celo-recovery",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/celo-holder-guide/connecting-ledger-celo-terminal-wallet",
@@ -1166,7 +1166,7 @@
     },
     {
       "source": "/celo-holder-guide/eth-recovery",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/celo-holder-guide/governance-cheat-sheet",
@@ -1202,11 +1202,11 @@
     },
     {
       "source": "/celo-owner-guide/celo-recovery",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/celo-owner-guide/eth-recovery",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/celo-owner-guide/governance-cheat-sheet",
@@ -1322,7 +1322,7 @@
     },
     {
       "source": "/cli/commands/registry",
-      "destination": "/tooling/libraries-sdks/cli/commands"
+      "destination": "/tooling/libraries-sdks/cli/network"
     },
     {
       "source": "/cli/commands/releasegold",
@@ -1794,11 +1794,11 @@
     },
     {
       "source": "/developer-resources/walkthroughs/no-code-erc20",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/dev-environments/remix"
     },
     {
       "source": "/developer-resources/walkthroughs/no-code-erc721",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/dev-environments/remix"
     },
     {
       "source": "/developer-resources/walkthroughs/hello-celo",
@@ -1810,7 +1810,7 @@
     },
     {
       "source": "/developer-resources/walkthroughs/valora-wc-v1",
-      "destination": "/build-on-celo"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer/build-on-minipay",
@@ -3598,11 +3598,11 @@
     },
     {
       "source": "/developer-resources/dappkit/usage",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer/dappkit/usage",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-resources/forno",
@@ -3794,7 +3794,7 @@
     },
     {
       "source": "/protocol/stability/oracles",
-      "destination": "/tooling/oracles"
+      "destination": "/tooling/oracles/run"
     },
     {
       "source": "/protocol/stability/stability-fees",
@@ -3842,11 +3842,11 @@
     },
     {
       "source": "/developer/dappkit",
-      "destination": "/tooling/libraries-sdks/contractkit"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer/dappkit/setup",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer/dev-environments/overview",
@@ -4166,7 +4166,7 @@
     },
     {
       "source": "/build-on-celo/build-with-ai/mcp/composer-mcp",
-      "destination": "/build-on-celo/build-with-ai/mcp"
+      "destination": "/build-on-celo/build-with-ai/mcp/index"
     },
     {
       "source": "/build-on-celo/build-with-ai/multi-agent-systems",
@@ -4210,7 +4210,7 @@
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo/metamask-setup",
-      "destination": "/tooling/wallets/metamask/setup"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo/metamask-valora-import",
@@ -4234,7 +4234,7 @@
     },
     {
       "source": "/tooling/libraries-sdks/cli/utils",
-      "destination": "/tooling/libraries-sdks/cli/commands"
+      "destination": "/tooling/libraries-sdks/cli/network"
     },
     {
       "source": "/tooling/libraries-sdks/rainbowkit-celo",
@@ -4262,11 +4262,11 @@
     },
     {
       "source": "/holder/recover/from-celo-address",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/holder/recover/from-eth-address",
-      "destination": "/home/manage/self-custody"
+      "destination": "/tooling/wallets/metamask/use"
     },
     {
       "source": "/holder/vote/governance",
@@ -4310,7 +4310,7 @@
     },
     {
       "source": "/command-line-interface/registry",
-      "destination": "/tooling/libraries-sdks/cli/commands"
+      "destination": "/tooling/libraries-sdks/cli/network"
     },
     {
       "source": "/FAQs",
@@ -4346,15 +4346,15 @@
     },
     {
       "source": "/developer-guide/dappkit",
-      "destination": "/tooling/libraries-sdks/contractkit"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-guide/dappkit/setup",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-guide/dappkit/usage",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-guide/integrations",
@@ -4390,15 +4390,15 @@
     },
     {
       "source": "/developer-resources/dappkit",
-      "destination": "/tooling/libraries-sdks/contractkit"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-resources/dappkit/README",
-      "destination": "/tooling/libraries-sdks/contractkit"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-resources/dappkit/setup",
-      "destination": "/tooling/libraries-sdks/contractkit/setup"
+      "destination": "/tooling/libraries-sdks/reown"
     },
     {
       "source": "/developer-resources/forno/README",
