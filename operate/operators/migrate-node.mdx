@@ -7,7 +7,7 @@ description: Legacy guide for migrating a Celo L1 node datadir to L2, kept for o
 <Warning>
 **Legacy path — not needed for op-reth**
 
-`op-reth`, Celo's primary execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/operate/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/operate/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, until your network's [switch date](/operate/notices/op-geth-deprecation).
+`op-reth`, Celo's supported execution client, cannot use a migrated datadir — the migration tool produces geth-format data. Run `op-reth` from an empty datadir instead — bootstrap it from a published snapshot (see [Run a node with Docker](/operate/operators/run-node)) — and serve pre-L2 historical state via the historical RPC service (see [Running an archive node](/operate/operators/archive-node)). The instructions below apply only to the legacy `op-geth` setup, whose support ended on each network's [switch date](/operate/notices/op-geth-deprecation).
 </Warning>
 
 <Tip>
