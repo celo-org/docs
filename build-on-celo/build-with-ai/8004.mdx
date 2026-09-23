@@ -18,7 +18,7 @@ description: Give AI agents portable identity, reputation, and validation on Cel
 When AI agents interact across organizational boundaries, three critical questions arise:
 
 - **Discovery**: How do agents find each other? The Identity Registry provides searchable metadata—agents query the registry to discover other agents by capabilities, endpoints, or domain.
-- **Identity**: How do agents verify who they're dealing with? Each agent is an ERC-721 NFT with a cryptographically linked wallet, enabling verification that you're communicating with the authentic agent owner.
+- **Identity**: How do agents verify who they're dealing with? Each agent is an ERC-721 NFT that can be cryptographically linked to a wallet, enabling verification that you're communicating with the authentic agent owner.
 - **Trust**: How do agents evaluate reliability? The Reputation Registry stores feedback from every interaction, creating a portable track record that travels with the agent across platforms.
 
 ### Protocol stack
@@ -58,36 +58,10 @@ Makes agents discoverable via portable NFT identifiers.
 
 **Key capabilities:**
 - Every agent **identity** is represented as an ERC-721 NFT—the agent itself runs off-chain, but its on-chain identity is an NFT that's browsable in wallets, transferable between owners, and queryable by smart contracts
-- `agentURI` points to registration file with endpoints
-- Supports multiple endpoint types (A2A, MCP, wallet, ENS, DIDs)
+- `agentURI` points to a registration file listing the service endpoints — see [Register a service](#register-a-service)
+- Endpoint types: `web`, `A2A`, `MCP`, `OASF`, `ENS`, `DID`, `email`
+- A wallet is linked separately and optionally, on-chain, with `setAgentWallet()`
 - Domain verification for endpoint ownership
-
-**Agent registration file structure:**
-
-```json
-{
-  "type": "Agent",
-  "name": "My AI Agent",
-  "description": "Description of capabilities",
-  "image": "ipfs://...",
-  "endpoints": [
-    {
-      "type": "a2a",
-      "url": "https://example.com/.well-known/agent.json"
-    },
-    {
-      "type": "mcp",
-      "url": "https://example.com/mcp"
-    },
-    {
-      "type": "wallet",
-      "address": "0x...",
-      "chainId": 42220
-    }
-  ],
-  "supportedTrust": ["reputation", "validation", "tee"]
-}
-```
 
 ### 2. Reputation Registry
 
@@ -177,6 +151,76 @@ const agentId = tx.events.Transfer.returnValues.tokenId;
 
 console.log('Agent registered with ID:', agentId);
 ```
+
+### Register a service
+
+An identity is not limited to an autonomous agent with its own wallet. Any callable service — an HTTP API, an [MCP server](/build-on-celo/build-with-ai/mcp/index), a bot — can hold one. `register()` mints the token to the address that sends the transaction, so the service itself needs no keys, no balance, and no on-chain logic. What it gets is a record agents can find and rate: endpoints in the Identity Registry, feedback in the Reputation Registry.
+
+The registration file is JSON you host anywhere an agent can fetch it — an HTTPS URL, IPFS, or a `data:` URI stored on-chain. `services` lists the endpoints you want callers to use; each entry is named `web`, `A2A`, `MCP`, `OASF`, `ENS`, `DID`, or `email`. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
+
+```json
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Example Rates API",
+  "description": "FX rates for Mento stablecoins, priced per request",
+  "image": "https://example.com/logo.png",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://example.com"
+    },
+    {
+      "name": "MCP",
+      "endpoint": "https://example.com/mcp",
+      "version": "2025-06-18"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://example.com/.well-known/agent-card.json",
+      "version": "0.3.0"
+    }
+  ],
+  "x402Support": true,
+  "active": true,
+  "supportedTrust": ["reputation"]
+}
+```
+
+Then point the registry at that file. `register()` returns the new agent ID, so simulating the call first gives you the ID without parsing the `Transfer` log:
+
+```ts
+import { createPublicClient, createWalletClient, http, parseAbi } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { celo } from 'viem/chains';
+
+// Celo mainnet (42220), Identity Registry
+const identityRegistry = '0x8004A169FB4a3325136EB29fA0ceB6D2e539a432';
+const abi = parseAbi([
+  'function register(string agentURI) returns (uint256 agentId)',
+]);
+
+// example key — the address that sends this transaction owns the agent NFT
+const account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`);
+const publicClient = createPublicClient({ chain: celo, transport: http() });
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
+
+const { result: agentId, request } = await publicClient.simulateContract({
+  account,
+  address: identityRegistry,
+  abi,
+  functionName: 'register',
+  args: ['https://example.com/.well-known/agent-registration.json'],
+});
+
+await walletClient.writeContract(request);
+console.log('Registered as agent', agentId);
+```
+
+Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
 ### Give Feedback
 
