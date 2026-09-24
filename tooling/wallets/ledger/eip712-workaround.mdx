@@ -13,7 +13,7 @@ Workaround for signing EIP-712 typed data with Ledger hardware wallets on Celo.
 The **Celo Ledger app** (when using the Celo-specific derivation path) currently does not support signing EIP-712 typed data, which is required for certain operations including:
 
 - Signing transactions in Safe multisigs via WalletConnect
-- Other dApps that require EIP-712 signature support
+- Other apps that require EIP-712 signature support
 - Smart contract interactions that use typed data signing
 
 If you encounter errors when trying to sign transactions (particularly with Safe multisigs), you'll need to use the **Eth Recovery** app as a workaround.
@@ -31,7 +31,7 @@ This is a temporary workaround until the Celo Ledger app adds native EIP-712 typ
 You do **not** need this workaround if:
 
 - You're using the **Ethereum app** on your Ledger to interact with Celo (using Ethereum derivation path)
-- Your wallet or dApp connects to Celo using the standard Ethereum derivation path (`m/44'/60'/0'/0`)
+- Your wallet or app connects to Celo using the standard Ethereum derivation path (`m/44'/60'/0'/0`)
 - You're not using the Celo-specific Ledger app
 
 The Ethereum app natively supports EIP-712 signing and works with Celo network since Celo is EVM-compatible.
