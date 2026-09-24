@@ -21,6 +21,8 @@ To make it easier to reliably send Fee Abstraction transactions, the JSON-RPC in
 - `eth_estimateGas` takes an optional `feeCurrency` parameter to get Fee Abstraction specific gas estimates (the gas price for the fee token transfers depends on the token)
 - `eth_gasPrice` and `eth_maxPriorityFeePerGas` take an optional `feeCurrency` parameter for getting CIP-64 gas prices.
 
+A request pays fees in native CELO only when `feeCurrency` is omitted or `null`. The zero address is not an alias for native CELO; the node rejects it as an unregistered fee currency.
+
 ### The Fee Currency Directory
 
 Only tokens that have been registered in the `FeeCurrencyDirectory` contract using Celo's governance process can be used for Fee Abstraction. The directory entry shows that the token is trustworthy and contains additional information about the token:
@@ -63,7 +65,7 @@ The `FeeCurrencyAdapter` contract has been [audited by Trail of Bits](https://gi
 
 Before each block, the blockchain client reads the list of all registered Fee Abstraction tokens from the `FeeCurrencyDirectory` and fetches the currency exchange rate for each of them. If the Oracle for a token reverts or returns invalid exchange rates (numerator or denominator are zero), the token is treated as if it was not registered. Token registrations and exchange rates stay the same within a block and are only updated before the next block.
 
-Transactions with unregistered `feeCurrency` values are not accepted into the tx pool and dropped from the pool if they have been previously accepted. The same is true if the `maxFeePerGas` falls below the current base fee.
+Transactions with unregistered `feeCurrency` values are not accepted into the tx pool and dropped from the pool if they have been previously accepted. The same is true if the `maxFeePerGas` falls below the current base fee. Only an absent `feeCurrency` (an empty RLP string) means native CELO; a CIP-64 transaction whose `feeCurrency` is the zero address is invalid, and so is any block that contains one.
 
 ### Gas Calculation for Fee Abstraction Transactions
 

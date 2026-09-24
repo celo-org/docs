@@ -21,7 +21,7 @@ This pulls the latest changes from GitHub and the latest images from the registr
 <Warning>
 **Hardfork upgrades are time-sensitive**
 
-Network hardforks require running a compatible client version *before* the fork block, or your node will stop following the chain. Watch the [Notices](/operate/notices/archive/l2-migration) for each upgrade's required versions and timing. The next major required migration is the move from op-geth to op-reth — see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
+Network hardforks require running a compatible client version *before* the fork block, or your node will stop following the chain. Watch the [Notices](/operate/notices/overview) for each upgrade's required versions and timing. Support for op-geth has ended; a node still running it must migrate to op-reth — see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Warning>
 
 To pin a specific image version instead of tracking the latest, set the matching `IMAGE_TAG__*` variable in your `.env` (for example `IMAGE_TAG__OP_RETH` or `IMAGE_TAG__OP_NODE`).

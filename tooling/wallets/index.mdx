@@ -11,10 +11,10 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
 <Note>
-  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops a dApp's `feeCurrency` without an error. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops the app's `feeCurrency` and charges gas in CELO. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
 </Note>
 
-The [Wallet Infrastructure](#wallet-infrastructure) section provides an overview of wallet infrastructure solutions you can integrate into your dapp to enable seamless web3 interactions for your users.
+The [Wallet Infrastructure](#wallet-infrastructure) section provides an overview of wallet infrastructure solutions you can integrate into your app to enable seamless web3 interactions for your users.
 
 ## Celo Native Wallets 
 
@@ -50,7 +50,7 @@ Valora is a non-custodial multichain mobile wallet focused on helping users save
 
 ### [Celo Terminal](https://celoterminal.com/)
 
-Celo Terminal is a wallet and dApp platform designed as a hub for managing and running Celo dApps locally.
+Celo Terminal is a wallet and app platform designed as a hub for managing and running Celo apps locally.
 
 - Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
@@ -65,7 +65,7 @@ Celo Terminal is a wallet and dApp platform designed as a hub for managing and r
 
 ### [Ledger](https://www.ledger.com/)
 
-Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice, with Ledger Live 4.8 or later and Celo app 1.8 or later. dApp transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice. App transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64) for the supported versions.
 
 - Homepage: [ledger.com](https://www.ledger.com/)
 - Platforms: Ledger Live (desktop, mobile) with a Ledger device
