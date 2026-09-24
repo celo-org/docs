@@ -20,8 +20,13 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Check for broken links
-        run: npx mintlify broken-links
+      # Runs first: a docs.json schema error (e.g. a duplicate redirect source)
+      # otherwise surfaces as unrelated broken links in the next step.
+      - name: Validate docs.json
+        run: npx mintlify validate
+
+      - name: Check for broken links and redirect destinations
+        run: npx mintlify broken-links --check-redirects
 
       - name: Check for orphan pages
         run: bash scripts/check-orphans.sh
