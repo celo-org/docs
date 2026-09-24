@@ -1,202 +1,241 @@
 ---
 title: Celo MCP Server
-description: Connect AI assistants to Celo blockchain data, tokens, contracts, and governance through the Celo MCP server
+description: Connect AI assistants to Celo blockchain data, balances, governance, and staking through the Celo MCP server
 ---
 
-The **Celo MCP Server** is a Model Context Protocol (MCP) server that provides comprehensive access to the Celo blockchain. This powerful tool enables AI assistants and development environments to interact directly with Celo blockchain data, execute token operations, manage NFTs, handle smart contract interactions, process transactions, and participate in governance operations.
+The **Celo MCP Server** gives AI assistants and editors read access to Celo — blocks, transactions, token balances, gas fees, governance proposals, staking and validator data. It runs locally over stdio, or as a remote endpoint over Streamable HTTP.
 
-## Key Features
+Every tool is a query. The server never signs or sends a transaction, so it cannot move funds. To give an agent a wallet, see [Celina](/build-on-celo/build-with-ai/mcp/celina).
 
-- 🔗 **Blockchain Data Access**: Real-time access to blocks, transactions, and account information
-- 💰 **Token Operations**: Complete ERC20 and Mento stable token support (USDm, EURm, BRLm)
-- 🖼️ **NFT Management**: Support for ERC721 and ERC1155 standards with metadata fetching
-- 📄 **Smart Contract Interactions**: Call functions, estimate gas, and manage ABIs
-- 📊 **Transaction Handling**: Gas estimation, EIP-1559 support, and transaction simulation
-- 🏛️ **Governance Operations**: Access to Celo governance proposals and voting data
+## What it covers
+
+- Network status, blocks and transactions
+- CELO, ERC-20 and Mento stablecoin balances for any address
+- EIP-1559 gas fee data
+- Governance proposals and proposal details
+- Staking balances, activatable stakes, validator groups and network-wide staking metrics
 
 ## Prerequisites
 
 - Python 3.11 or higher
-- Git (v2.38 or higher)
-- An IDE that supports MCP (Cursor or Claude Desktop)
+- An MCP-capable client — VS Code, Cursor, Claude Desktop, Claude Code, Windsurf or a JetBrains IDE
 
-## Installation
+## Install
 
-### Method 1: Direct Installation
+```bash
+pipx install celo-mcp
+```
 
-Clone the repository and install dependencies:
+`uvx celo-mcp` also works and needs no install step; the client configurations below use it.
+
+<Note>
+The server always reads from Celo Mainnet at `https://forno.celo.org`. The RPC endpoint is **not** configurable in the current release — the client is constructed without arguments, so neither `CELO_RPC_URL` nor the `CELO_MCP_`-prefixed settings reach it. There is no testnet mode.
+</Note>
+
+## Connect your client
+
+<Tabs>
+  <Tab title="VS Code">
+    VS Code reads `.vscode/mcp.json` in your workspace, or the user-level file opened with **MCP: Open User Configuration** from the command palette. The key is `servers`, not `mcpServers`:
+
+    ```json
+    {
+      "servers": {
+        "celo-mcp": {
+          "command": "uvx",
+          "args": ["--refresh", "celo-mcp"]
+        }
+      }
+    }
+    ```
+  </Tab>
+
+  <Tab title="Cursor">
+    Add to `~/.cursor/mcp.json`:
+
+    ```json
+    {
+      "mcpServers": {
+        "celo-mcp": {
+          "command": "uvx",
+          "args": ["--refresh", "celo-mcp"]
+        }
+      }
+    }
+    ```
+
+    `--refresh` makes `uvx` re-resolve the package so you pick up new releases.
+  </Tab>
+
+  <Tab title="Claude Desktop">
+    Add to `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS, or `%APPDATA%\Claude\claude_desktop_config.json` on Windows:
+
+    ```json
+    {
+      "mcpServers": {
+        "celo-mcp": {
+          "command": "uvx",
+          "args": ["--refresh", "celo-mcp"]
+        }
+      }
+    }
+    ```
+  </Tab>
+
+  <Tab title="Claude Code">
+    ```bash
+    claude mcp add celo-mcp -- uvx --refresh celo-mcp
+    ```
+  </Tab>
+
+  <Tab title="Windsurf & JetBrains">
+    Both configure MCP servers through their own settings UI rather than a file you edit directly. Use `uvx` as the command and `--refresh celo-mcp` as the arguments.
+  </Tab>
+</Tabs>
+
+**Try it:**
+
+```text
+Using the Celo MCP server, what is the current gas fee data on Celo mainnet?
+```
+
+## Available tools
+
+### Network and blocks
+
+- **`get_network_status`** — current network status and connection information
+- **`get_block`** — a block by number, hash, or `latest`
+- **`get_latest_blocks`** — recent blocks; `count` defaults to 10 (max 100) and `offset` skips that many blocks back from the head
+- **`get_transaction`** — transaction detail by hash
+
+### Balances and fees
+
+- **`get_celo_balances`** — CELO plus the core Mento stablecoins for an address; symbols are read from each contract on chain, so they come back as `USDm`, `EURm` and `BRLm`
+- **`get_stable_token_balance`** — a wider set of tokens in one multicall: CELO, the Mento stablecoins, and USDC, USDT, USDGLO, cKES and others; symbols come from the server's built-in token table, so the same three stablecoins are reported as `cUSD`, `cEUR` and `cREAL`
+- **`get_token_balance`** — the balance of one specific token for an address
+- **`get_gas_fee_data`** — current gas fees, including EIP-1559 fields
+
+<Note>
+`USDm`, `EURm` and `BRLm` are the on-chain symbols of the Mento stablecoins, formerly `cUSD`, `cEUR` and `cREAL`. The two balance tools above name the same three assets differently, so match on the token address rather than the symbol when you combine their output. `USDM` with a capital M is a different asset from a different issuer.
+</Note>
+
+### Governance
+
+- **`get_governance_proposals`** — governance proposals, paginated; `page_size` defaults to 10 (max 20)
+- **`get_proposal_details`** — detail for one proposal
+
+### Staking and validators
+
+- **`get_staking_balances`** — staking balances for an address, by validator group
+- **`get_activatable_stakes`** — pending stakes that can be activated for rewards
+- **`get_total_staking_info`** — network-wide staking and participation metrics
+- **`get_validator_groups`** — validator groups with members, votes, capacity and performance. **Paginated**, `page_size` defaults to 10, so a single call is not the full set
+- **`get_validator_group_details`** — detail for one validator group
+
+## Run as a remote HTTP endpoint
+
+Running the server over Streamable HTTP lets clients connect with a single URL and no local Python install. This is server operation — if you only want the server on your own machine, the stdio configurations above are all you need.
+
+```bash
+celo-mcp-server --transport http --host 0.0.0.0 --port 3000
+```
+
+`MCP_TRANSPORT`, `HOST` and `PORT` set the same three values from the environment.
+
+<Warning>
+The defaults bind `127.0.0.1` and accept only localhost hostnames. A remote client against a default-configured server fails twice over: **connection refused**, because nothing listens on the public interface — fix with `--host 0.0.0.0` or `HOST`; then **HTTP 421 Misdirected Request**, because the DNS-rebinding check rejects the public hostname — fix by setting `MCP_ALLOWED_HOSTS` to that hostname.
+</Warning>
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `MCP_TRANSPORT` | `stdio` or `http` | `stdio` |
+| `HOST` / `PORT` | HTTP bind host and port | `127.0.0.1` / `3000` |
+| `MCP_ALLOWED_HOSTS` | Hostnames accepted by the DNS-rebinding check, comma-separated. Set to your public hostname, or `*` to disable the check | localhost only |
+| `MCP_CORS_ORIGINS` | Allowed origins, comma-separated, or `*` | `*` |
+| `MCP_RATE_LIMIT` / `MCP_RATE_WINDOW` | Requests per client per window in seconds. `/health` is exempt | `60` / `60` |
+| `MCP_TRUST_PROXY` | Number of trusted `X-Forwarded-For` hops. Behind a load balancer or Cloud Run, leaving this unset makes every client share one rate-limit bucket keyed on the proxy IP | unset |
+| `MCP_AUTH_TOKEN` | If set, `/mcp` requires `Authorization: Bearer <token>` | unset, open |
+
+`GET /health` returns `200` for hosting health checks.
+
+Point a remote-capable client at the URL. The `type` field is required — an entry with a `url` and no `type` is read as a stdio server and silently skipped:
+
+<Tabs>
+  <Tab title="Claude Code">
+    ```bash
+    claude mcp add --transport http celo-mcp https://<your-host>/mcp
+    ```
+
+    With `MCP_AUTH_TOKEN` set on the server:
+
+    ```bash
+    claude mcp add --transport http celo-mcp https://<your-host>/mcp \
+      --header "Authorization: Bearer <token>"
+    ```
+  </Tab>
+
+  <Tab title="VS Code">
+    ```json
+    {
+      "servers": {
+        "celo-mcp": {
+          "type": "http",
+          "url": "https://<your-host>/mcp",
+          "headers": { "Authorization": "Bearer <token>" }
+        }
+      }
+    }
+    ```
+
+    Drop `headers` if the server has no `MCP_AUTH_TOKEN`.
+  </Tab>
+
+  <Tab title="Cursor">
+    ```json
+    {
+      "mcpServers": {
+        "celo-mcp": {
+          "type": "http",
+          "url": "https://<your-host>/mcp",
+          "headers": { "Authorization": "Bearer <token>" }
+        }
+      }
+    }
+    ```
+  </Tab>
+
+  <Tab title="Claude Desktop">
+    Remote servers are added as **custom connectors** rather than through a config file: **Settings** → **Connectors** → **Add custom connector**, then paste the URL.
+
+    Claude connects from Anthropic's infrastructure, not your machine, so the endpoint has to be reachable on the public internet.
+  </Tab>
+</Tabs>
+
+## Development
 
 ```bash
 git clone https://github.com/celo-org/celo-mcp
 cd celo-mcp
-pip install -e .
-```
-
-### Method 2: Using pipx (Recommended)
-
-```bash
-pip install pipx
-pipx install celo-mcp
-```
-
-## Configuration
-
-Set up optional environment variables for custom RPC endpoints:
-
-```bash
-export CELO_RPC_URL="https://forno.celo.org"  # Default: Celo mainnet
-export CELO_TESTNET_RPC_URL="https://forno.celo-sepolia.celo-testnet.org/"  # Celo Sepolia testnet
-```
-
-## MCP Client Integration
-
-MCP is supported by a wide range of IDEs and development tools. Below are setup instructions for popular options:
-
-### VS Code Setup
-
-VS Code has native MCP support. Add the following configuration to your MCP settings:
-
-**macOS/Linux**: `~/.vscode/mcp.json` or via VS Code settings
-**Windows**: `%APPDATA%\Code\User\mcp.json`
-
-```json
-{
-  "mcpServers": {
-    "celo-mcp": {
-      "command": "uvx",
-      "args": ["--refresh", "celo-mcp"]
-    }
-  }
-}
-```
-
-### Cursor IDE Setup
-
-Add the following configuration to your MCP settings file (`~/.cursor/mcp.json`):
-
-```json
-{
-  "mcpServers": {
-    "celo-mcp": {
-      "command": "uvx",
-      "args": ["--refresh", "celo-mcp"]
-    }
-  }
-}
-```
-
-The `--refresh` flag ensures the latest code is always loaded when the MCP server starts.
-
-### JetBrains IDEs Setup
-
-For IntelliJ IDEA, WebStorm, PyCharm, and other JetBrains IDEs, configure MCP through the IDE settings or via the JetBrains MCP Server plugin.
-
-### Windsurf Setup
-
-Windsurf has built-in MCP support. Configure MCP servers through the Windsurf settings interface.
-
-### Claude Desktop Setup
-
-For Claude Desktop, add this configuration to your MCP settings file:
-
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "celo-mcp": {
-      "command": "uvx",
-      "args": ["--refresh", "celo-mcp"]
-    }
-  }
-}
-```
-
-## Available Tools
-
-### Blockchain Data Operations
-
-#### Network and Block Information
-
-- **`get_network_status`**: Get current network status and connection information
-- **`get_block`**: Fetch block information by number, hash, or "latest"
-- **`get_latest_blocks`**: Get information about recent blocks (up to 100)
-
-#### Account and Transaction Data
-
-- **`get_account`**: Get account information including balance and nonce
-- **`get_transaction`**: Get detailed transaction information by hash
-
-### Token Operations
-
-#### Token Information and Balances
-
-- **`get_token_info`**: Get detailed token information (name, symbol, decimals, supply)
-- **`get_token_balance`**: Get token balance for a specific address
-- **`get_celo_balances`**: Get CELO and stable token balances for an address
-
-### NFT Operations
-
-#### NFT Management
-
-- **`get_nft_info`**: Get NFT information including metadata and collection details
-- **`get_nft_balance`**: Get NFT balance for an address (supports ERC721 and ERC1155)
-
-### Smart Contract Operations
-
-#### Contract Interactions
-
-- **`call_contract_function`**: Call read-only contract functions
-- **`estimate_contract_gas`**: Estimate gas for contract function calls
-
-### Transaction Operations
-
-#### Transaction Management
-
-- **`estimate_transaction`**: Estimate gas and cost for transactions
-- **`get_gas_fee_data`**: Get current gas fee data including EIP-1559 fees
-
-### Governance Operations
-
-#### Celo Governance
-
-- **`get_governance_proposals`**: Get Celo governance proposals with pagination
-- **`get_proposal_details`**: Get detailed information about specific governance proposals
-
-## Development
-
-### Running Tests
-
-```bash
-# Install development dependencies
 pip install -e ".[dev]"
 
-# Run tests
-pytest
-
-# Run with coverage
-pytest --cov=celo_mcp
+pytest                 # run tests
+black src/             # format
+ruff check src/        # lint
+mypy src/              # type-check
 ```
 
-### Code Quality
+## Resources
 
-```bash
-# Format code
-black src/
-isort src/
+| Resource | Link |
+|---|---|
+| Source | [celo-org/celo-mcp](https://github.com/celo-org/celo-mcp) |
+| Package | [celo-mcp on PyPI](https://pypi.org/project/celo-mcp/) |
+| Deployment guide | [docs/DEPLOYMENT.md](https://github.com/celo-org/celo-mcp/blob/main/docs/DEPLOYMENT.md) |
+| Model Context Protocol | [modelcontextprotocol.io](https://modelcontextprotocol.io/introduction) |
 
-# Lint code
-flake8 src/
-mypy src/
-```
+## Related
 
-## Running the Server
-
-Start the MCP server directly:
-
-```bash
-# Run the MCP server
-python -m celo_mcp.server
-
-```
+- [What is MCP?](/build-on-celo/build-with-ai/mcp/index) - how the protocol works and which Celo servers exist
+- [Celo Docs MCP Server](/build-on-celo/build-with-ai/use-docs-with-ai) - search these docs from your editor
+- [Celina](/build-on-celo/build-with-ai/mcp/celina) - an agent wallet, for the write side
+- [Network information](/build-on-celo/network-overview) - chain IDs, RPC URLs and explorers

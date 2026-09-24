@@ -134,6 +134,7 @@ Third-party (partner) contract addresses are not listed in these docs — link t
 - `USDm`, `EURm`, `BRLm` … — Mento stablecoins, lowercase `m`. `USDM` (capital M) is Mountain Protocol's token, a different asset. Never use one for the other.
 - `USDC`, `USDT`, `USA₮`, `CELO` — as the issuers write them. Use `USDT` in prose and code (not `USD₮`).
 - "Celo" is the chain, "CELO" the token. "MiniPay" (one word, capital P), "Mini App" (two words). "Celo Sepolia" is the testnet.
+- Write "app", not "dApp" or "dapp", for a generic on-chain application — lowercase in prose, title case only in a page `title`. "Mini App" (two words, both capitalized) is the branded MiniPay term and keeps its casing. Product names keep their own spelling: dAppLooker, DappRadar, `@celo/dappkit`.
 - Write "fee abstraction" and "fee currency" in lowercase in prose.
 
 ## 8. Writing for AI agents (discoverability)
