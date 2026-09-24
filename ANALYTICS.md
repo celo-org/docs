@@ -1,6 +1,6 @@
 # ANALYTICS.md — how docs.celo.org is measured
 
-Internal doc for maintainers. Not listed in `docs.json` `navigation`, so it is not a public docs page.
+Internal doc for maintainers. It is **not** in `docs.json` `navigation`, so it does not appear in the sidebar or search — but Mintlify serves every Markdown file under the content root regardless, so this page is publicly reachable at `https://docs.celo.org/ANALYTICS`. `https://docs.celo.org/AGENTS` and `/CLAUDE` are live today for the same reason. Nothing here is secret (both measurement IDs are already in the page source of every page), but do not put anything in this file you would not publish.
 
 ## Architecture
 
@@ -44,7 +44,7 @@ Edit rights cannot ship a change.
 
 The container exists (`GTM-NP9GP2BT`) and `docs.json` carries its ID. Remaining tags to configure at https://tagmanager.google.com:
 
-- [x] **Google Tag** with tag ID `G-0CXEKQ81V2`, firing on All Pages and on History Changes (Mintlify navigates client-side; without the history trigger only the first page view is counted). Verify against the published container rather than the GTM UI:
+- [ ] **Google Tag** with tag ID `G-0CXEKQ81V2`, firing on **All Pages only**. Do *not* add a History Change trigger. GA4 enhanced measurement already sends a `page_view` on `pushState` for this stream, so a history trigger makes the Google tag fire a second time and every in-site navigation is counted twice — measured as 1 `page_view` per navigation on plain gtag.js versus 2 under the container with the trigger attached. The container as published still carries that trigger; it has to come off before this is ticked. Verify against the published container rather than the GTM UI:
 
   ```bash
   curl -s "https://www.googletagmanager.com/gtag/js?id=GTM-NP9GP2BT" | grep -c "G-0CXEKQ81V2"   # must be >= 1
@@ -68,7 +68,7 @@ In the GA4 property for `G-0CXEKQ81V2` (Admin):
   `chatgpt\.com|chat\.openai\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|grok\.com|x\.ai|deepseek\.com|you\.com|phind\.com|meta\.ai`
   GA4's built-in "AI Assistant" channel recognizes only ChatGPT, Gemini, DeepSeek, Copilot and Grok — not Claude or Perplexity. Known limit: a large share of AI-referred sessions arrive with no referrer and land in Direct; this channel measures the floor, not the total.
 - [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`, plus the assistant's `answered`, `escalated`, `truncated`, `from_api`, `status` and `href`. Without these registered the assistant events still arrive, but their parameters cannot be used in any report.
-- [ ] **Re-verify `window.gtag` after the GTM swap.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`, and fails silently otherwise. That global is provided by `integrations.ga4` today and should still be provided by GTM's Google tag, but it is exactly the kind of silent break this setup has already produced once — check `typeof window.gtag` in the console on a published page after the swap lands.
+- [ ] **The GTM swap silences every assistant event, and there is no shim for it.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges and stay stopped until the widget is changed to push to `dataLayer` directly (#2307). Land the widget change first if the gap is not acceptable.
 - [ ] **Explorations**: (a) free-form exploration with Page path + Exits for exit pages (GA4 has no standard exit report); (b) reverse Path exploration for drop-off journeys.
 
 Already answered by standard reports, no setup needed:
@@ -79,21 +79,25 @@ Already answered by standard reports, no setup needed:
 
 ## Runbook 3: Cloudflare in front of docs.celo.org (bot visibility)
 
-This is the only layer that can see non-JS bot traffic. The proxy is already in place, so only the AI Crawl Control steps remain:
+This is the only layer that could see non-JS bot traffic. **None of it is in place today, and the earlier claim that it was is wrong.**
 
-- [x] Proxied (orange-cloud) CNAME for `docs.celo.org` pointing at the Mintlify target. Confirmed: `celo.org` resolves to Cloudflare nameservers, `docs.celo.org` is a CNAME to `cname.vercel-dns.com`, and responses carry `cf-ray` and `cf-cache-status`, which only appear when traffic passes through the proxy.
+`docs.celo.org` is a plain, DNS-only CNAME to `cname.vercel-dns.com`, and the addresses behind it (`76.76.21.93`, `66.33.60.194`) are Vercel's. A Cloudflare-proxied record returns Cloudflare addresses and hides the CNAME target, so a visible CNAME to Vercel is proof the record is *not* proxied. The `cf-ray` and `cf-cache-status` headers come from a Cloudflare layer upstream of Vercel, not from the `celo.org` zone — note `server: Vercel` on the same response. AI Crawl Control on the `celo.org` zone would therefore see nothing from this hostname.
+
+Everything below is conditional on first moving `docs.celo.org` behind the zone, which is a DNS change someone has to make and decide on:
+
+- [ ] Proxied (orange-cloud) record for `docs.celo.org`. **Not done.** Today it is DNS-only.
 - [ ] SSL/TLS mode **Full (strict)**.
 - [ ] **Disable "Always Use HTTPS"** for the zone (Mintlify requirement) and add no rules touching `/.well-known/acme-challenge`.
 - [ ] Enable **AI Crawl Control** (free plan): shows per-crawler activity (GPTBot, ClaudeBot, PerplexityBot, ChatGPT-User, Claude-User, Bytespider, CCBot, Amazonbot, …), the pages each crawler hits, crawl frequency and robots.txt compliance.
 - [ ] **Allow all AI crawlers.** These docs want to be read by agents; the tool is for measurement, not blocking. Check that no default block rules are active — Cloudflare default-blocks some AI crawler categories on new zones.
 - [ ] Sanity check after cutover: `curl -I https://docs.celo.org/llms.txt` returns 200 with a valid certificate; a normal page and its `.md` variant load.
 
-Cloudflare Analytics (total requests) vs GA4 (sessions) also gives a rough overall bot share as the delta between the two. Treat it as rough: `docs.celo.org` returns `cf-cache-status: HIT`, so Cloudflare serves many requests from cache that never reach the origin, widening the delta for reasons unrelated to bots.
+Once proxied, Cloudflare Analytics (total requests) vs GA4 (sessions) would also give a rough overall bot share as the delta between the two. Treat it as rough: caching means many requests never reach the origin, widening the delta for reasons unrelated to bots.
 
 ## Known blind spots
 
 - **Referrer-less AI traffic**: many clicks out of ChatGPT/Claude/Perplexity carry no referrer and appear as Direct in GA4.
 - **JS-capable agentic browsers** (Comet, Atlas, computer-use agents) execute the GA4 tag and count as humans; `is_automated` catches only naive automation.
-- **MCP query content** — not MCP volume. Requests to `https://docs.celo.org/mcp` *do* traverse Cloudflare (they return `cf-ray`, `cf-cache-status: DYNAMIC`), so request volume is visible in Cloudflare's HTTP analytics filtered by path. They are invisible to GA4, which needs JavaScript. What no layer here can show is **what was asked**: the question text, which tool was called, whether the answer cited anything.
+- **MCP traffic, both volume and content.** Requests to `https://docs.celo.org/mcp` are invisible to GA4, which needs JavaScript. They are not visible in our Cloudflare analytics either, because the hostname is not behind our zone (see Runbook 3) — that would only become true after the DNS change. And even then, what no layer here can show is **what was asked**: the question text, which tool was called, whether the answer cited anything.
 
   Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. Query-level signal comes from the in-page assistant instead, and it is already implemented on both sides (see below).
