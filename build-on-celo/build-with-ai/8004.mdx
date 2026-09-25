@@ -126,7 +126,7 @@ An identity is not limited to an autonomous agent that acts on its own. Any call
   **The address you register from becomes the agent's advertised wallet.** Every `register()` overload writes `agentWallet = msg.sender` and mints the NFT to that address, so whatever key signs this transaction is published as the agent's payment address. Use the key you actually want paid, not a throwaway ops key. `setAgentWallet()` changes it afterwards, but that needs a signature from the new wallet, so it is not a way to undo a mistake quietly. Transferring the agent NFT clears `agentWallet` outright.
 </Warning>
 
-The registration file is JSON you host anywhere an agent can fetch it — an HTTPS URL, IPFS, or a `data:` URI stored on-chain. `services` lists the endpoints you want callers to use. The names below are examples rather than a fixed set — the spec leaves the number and type of endpoints to you, and `wallet` entries for other chains are common. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
+The registration file is JSON you host anywhere an agent can fetch it — any HTTPS URL, IPFS, or a `data:` URI stored on-chain; the spec does not mandate a path. `services` lists the endpoints you want callers to use. The names below are examples rather than a fixed set — the spec leaves the number and type of endpoints to you, and `wallet` entries for other chains are common. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
 
 ```json
 {
@@ -171,22 +171,41 @@ import {
   createPublicClient,
   createWalletClient,
   http,
-  parseAbi,
   parseEventLogs,
 } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { celo } from 'viem/chains';
 
 // Celo mainnet (42220), Identity Registry
-const identityRegistry = '0x8004A169FB4a3325136EB29fA0ceB6D2e539a432';
-const abi = parseAbi([
-  'function register(string agentURI) returns (uint256 agentId)',
-  'event Registered(uint256 indexed agentId, string agentURI, address indexed owner)',
-]);
+const identityRegistry =
+  '0x8004A169FB4a3325136EB29fA0ceB6D2e539a432';
+const abi = [
+  {
+    type: 'function',
+    name: 'register',
+    stateMutability: 'nonpayable',
+    inputs: [{ name: 'agentURI', type: 'string' }],
+    outputs: [{ name: 'agentId', type: 'uint256' }],
+  },
+  {
+    type: 'event',
+    name: 'Registered',
+    inputs: [
+      { name: 'agentId', type: 'uint256', indexed: true },
+      { name: 'agentURI', type: 'string' },
+      { name: 'owner', type: 'address', indexed: true },
+    ],
+  },
+] as const;
 
-// This key's address is minted the NFT and published as the agent's wallet
-const account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`);
-const publicClient = createPublicClient({ chain: celo, transport: http() });
+// This key's address is minted the NFT and
+// published as the agent's wallet
+const key = process.env.PRIVATE_KEY as `0x${string}`;
+const account = privateKeyToAccount(key);
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
 const walletClient = createWalletClient({
   account,
   chain: celo,
@@ -198,69 +217,170 @@ const { request } = await publicClient.simulateContract({
   address: identityRegistry,
   abi,
   functionName: 'register',
-  args: ['https://example.com/.well-known/agent-registration.json'],
+  args: ['https://example.com/agent.json'],
 });
 
 const hash = await walletClient.writeContract({
   ...request,
-  // Celo mainnet (42220), USDC fee-currency adapter. USDC has 6 decimals, so
-  // feeCurrency takes the adapter address, not the token address. Omit this
-  // field to pay gas in CELO.
+  // Celo mainnet (42220), USDC fee-currency adapter.
+  // USDC has 6 decimals, so feeCurrency takes the
+  // adapter address, not the token address. Omit
+  // this field to pay gas in CELO.
   feeCurrency: '0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B',
 });
 
-const receipt = await publicClient.waitForTransactionReceipt({ hash });
-const [registered] = parseEventLogs({ abi, eventName: 'Registered', logs: receipt.logs });
+const receipt =
+  await publicClient.waitForTransactionReceipt({ hash });
+const [registered] = parseEventLogs({
+  abi,
+  eventName: 'Registered',
+  logs: receipt.logs,
+});
 console.log('Registered as agent', registered.args.agentId);
 ```
 
 Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
-### Install SDK
-
-The feedback examples below use the ERC-8004 SDK, which wraps the registries for TypeScript/JavaScript and Python:
-
-```bash
-# JavaScript/TypeScript
-npm install @chaoschain/sdk
-
-# Python
-pip install chaoschain-sdk
-```
-
 ### Give Feedback
 
-After interacting with an agent, submit feedback to the Reputation Registry. Each feedback entry includes a score, category tag (like "starred" for quality or "uptime" for availability), and an optional link to detailed off-chain feedback data:
+After interacting with an agent, submit feedback to the Reputation Registry. `giveFeedback` takes eight positional arguments, so the ABI below spells them out rather than compressing them into one signature string.
 
-```javascript
-import { ReputationRegistry } from '@chaoschain/sdk';
+The contract blocks self-feedback: the agent's owner and operators cannot rate their own agent, and the call reverts with `Self-feedback not allowed`. Feedback comes from a different address than the one that registered.
 
-const reputation = new ReputationRegistry(provider);
+```ts
+import {
+  createPublicClient,
+  createWalletClient,
+  http,
+  keccak256,
+  toHex,
+} from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { celo } from 'viem/chains';
 
-await reputation.giveFeedback(
-  agentId,
-  85,                    // score (0-100)
-  0,                     // decimals
-  'starred',             // tag1: category
-  '',                    // tag2: optional
-  'https://agent.example.com',  // endpoint used
-  'ipfs://QmDetailedFeedback',  // detailed feedback URI
-  feedbackHash           // keccak256 of feedback content
-);
+// Celo mainnet (42220), Reputation Registry
+const reputationRegistry =
+  '0x8004BAa17C55a88189AE136b182e5fdA19dE9b63';
+
+const abi = [
+  {
+    type: 'function',
+    name: 'giveFeedback',
+    stateMutability: 'nonpayable',
+    outputs: [],
+    inputs: [
+      { name: 'agentId', type: 'uint256' },
+      { name: 'value', type: 'int128' },
+      { name: 'valueDecimals', type: 'uint8' },
+      { name: 'tag1', type: 'string' },
+      { name: 'tag2', type: 'string' },
+      { name: 'endpoint', type: 'string' },
+      { name: 'feedbackURI', type: 'string' },
+      { name: 'feedbackHash', type: 'bytes32' },
+    ],
+  },
+] as const;
+
+const key = process.env.PRIVATE_KEY as `0x${string}`;
+const account = privateKeyToAccount(key);
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
+
+const hash = await walletClient.writeContract({
+  address: reputationRegistry,
+  abi,
+  functionName: 'giveFeedback',
+  args: [
+    444n,                    // agentId
+    85n,                     // value, int128
+    0,                       // valueDecimals
+    'starred',               // tag1: category
+    '',                      // tag2: optional
+    'https://example.com',   // endpoint used
+    '',                      // feedbackURI
+    keccak256(toHex('ok')),  // hash of the content
+  ],
+});
+
+await publicClient.waitForTransactionReceipt({ hash });
 ```
+
+`value` is an `int128`, so scores can be negative, and `valueDecimals` (max 18) fixes the scale: `85` with `0` decimals is 85, `850` with `1` is also 85.
 
 ### Query Agent Reputation
 
-Before delegating tasks to an agent, check its reputation. You can retrieve all individual feedback entries or get aggregated statistics:
+Before delegating work to an agent, read its reputation. `getSummary` aggregates, but it needs the list of addresses to aggregate over — fetch those with `getClients` first.
 
-```javascript
-// Get all feedback
-const feedback = await reputation.readAllFeedback(agentId);
+<Warning>
+`getSummary` reverts with `clientAddresses required` when the address array is empty, and `getClients` returns an empty array for an agent nobody has rated yet. Chaining the two without a check turns "no reviews" into a thrown error.
+</Warning>
 
-// Get summary statistics
-const summary = await reputation.getSummary(agentId);
-console.log('Average rating:', summary.averageScore);
-console.log('Total reviews:', summary.totalFeedback);
+```ts
+import { createPublicClient, http } from 'viem';
+import { celo } from 'viem/chains';
+
+// Celo mainnet (42220), Reputation Registry
+const reputationRegistry =
+  '0x8004BAa17C55a88189AE136b182e5fdA19dE9b63';
+
+const abi = [
+  {
+    type: 'function',
+    name: 'getClients',
+    stateMutability: 'view',
+    inputs: [{ name: 'agentId', type: 'uint256' }],
+    outputs: [{ name: '', type: 'address[]' }],
+  },
+  {
+    type: 'function',
+    name: 'getSummary',
+    stateMutability: 'view',
+    inputs: [
+      { name: 'agentId', type: 'uint256' },
+      { name: 'clients', type: 'address[]' },
+      { name: 'tag1', type: 'string' },
+      { name: 'tag2', type: 'string' },
+    ],
+    outputs: [
+      { name: 'count', type: 'uint64' },
+      { name: 'value', type: 'int128' },
+      { name: 'valueDecimals', type: 'uint8' },
+    ],
+  },
+] as const;
+
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+
+const agentId = 444n;
+const clients = await publicClient.readContract({
+  address: reputationRegistry,
+  abi,
+  functionName: 'getClients',
+  args: [agentId],
+});
+
+if (clients.length === 0) {
+  console.log('No feedback yet');
+} else {
+  const [count, value, decimals] =
+    await publicClient.readContract({
+      address: reputationRegistry,
+      abi,
+      functionName: 'getSummary',
+      args: [agentId, clients, '', ''],
+    });
+  console.log(`${count} reviews, score ${value}`);
+}
 ```
 
 ## Use Cases
