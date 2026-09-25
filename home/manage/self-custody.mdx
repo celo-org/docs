@@ -23,7 +23,7 @@ This guide assumes:
 
 - You have been informed by cLabs that the `ReleaseGold` instance corresponding to your address has been deployed.
 
-- You have your private key held on a [Ledger Nano S or Ledger Nano X](/wallet/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#using-a-single-ledger).
+- You have your private key held on a [Ledger Nano S or Ledger Nano X](/tooling/wallets/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#using-a-single-ledger).
 
 <Warning>
 **Warning**: Self-custodying keys have associated security and financial risks. Loss or theft of keys can result in irrecoverable loss of funds. This guide also requires technical knowledge. You should be comfortable with using a Command Line Interface (CLI) and understand the basics of how cryptographic network accounts work.
@@ -33,7 +33,7 @@ This guide assumes:
 
 If you have any questions or need assistance with these instructions, please contact cLabs or ask in the `#celo-holders` channel on [Celo's Discord server](https://chat.celo.org). Remember that Discord is a public channel: never disclose recovery phrases (also known as backup keys, or mnemonics), private keys, unsanitized log output, or personal information.
 
-Please refer to the [Ledger Troubleshooting](/wallet/ledger/to-celo-cli#troubleshooting) for issues using Ledgers with the Celo CLI.
+Please refer to the [Ledger Troubleshooting](/tooling/wallets/ledger/to-celo-cli#troubleshooting) for issues using Ledgers with the Celo CLI.
 
 ## Outline
 
@@ -53,19 +53,19 @@ You will need:
 
 - Your **Vote Signer Ledger:** One Ledger Nano S or X configured with a new, unused key. This will become a "warm wallet" you can use whenever you want to participate in validator elections or governance proposals.
 
-As a first step, follow [these instructions](/wallet/ledger/setup) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Celo Sepolia test network.
+As a first step, follow [these instructions](/tooling/wallets/ledger/setup) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Celo Sepolia test network.
 
 <Note>
-The latest version of the Celo Ledger app is 1.1.8. If you are already using a Ledger with an earlier version installed, please [upgrade](/wallet/ledger/setup).
+The latest version of the Celo Ledger app is 1.1.8. If you are already using a Ledger with an earlier version installed, please [upgrade](/tooling/wallets/ledger/setup).
 </Note>
 
-The remainder of this guide assumes you are using the first address available on each Ledger. You can add the flags described in [these instructions](/wallet/ledger/setup) to commands below to use different addresses.
+The remainder of this guide assumes you are using the first address available on each Ledger. You can add the flags described in [these instructions](/tooling/wallets/ledger/setup) to commands below to use different addresses.
 
 ### Using a single Ledger
 
 If you only have a single Ledger, and are comfortable losing the security advantage of keeping the beneficiary key offline when voting, you can configure a second address on the same Ledger as your voting key.
 
-First, read [these instructions](/wallet/ledger/setup) carefully. Then, wherever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#support).
+First, read [these instructions](/tooling/wallets/ledger/setup) carefully. Then, wherever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#support).
 
 ## Deployment
 
