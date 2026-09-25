@@ -12,6 +12,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
 - **Any `.js` file under the content root runs on every published page.** Mintlify injects them automatically — there is no allowlist and no way to scope one to a single page — and the same applies to `.css`. Treat a `.js` file here as production code shipped to every reader, not as content: it has full same-origin DOM access on pages that print contract addresses and RPC endpoints. Mintlify does not support a raw `<script src>` in MDX, so third-party scripts are injected programmatically from such a file (`assistant.js` is the example). Note `submodules/developer-tooling` sits under this root too.
+- Site analytics (GA4 via Google Tag Manager for humans, Cloudflare AI Crawl Control for bots/agents) are documented in [ANALYTICS.md](./ANALYTICS.md).
 
 ### Commands
 
