@@ -243,6 +243,18 @@ Publishers can monetize individual articles instead of requiring subscriptions. 
 
 thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb x402 docs](https://portal.thirdweb.com/x402).
 
+### Settlement asset options for the `exact` scheme
+
+The `exact` scheme is asset-agnostic: the `network` in a route's `accepts` is a CAIP-2 identifier, and the price object names any `asset` the seller's verifier and facilitator can settle. So a route is not limited to stablecoins on its host chain. One option is a **fee-free native coin** — no gas and no stablecoin decimals, settled on a feeless ledger. A live example (same `exact` scheme, network `nano:mainnet`, asset XNO, 0.0001 XNO per call) is a GET-only endpoint whose unpaid request returns a 402 with the native option:
+
+```bash
+curl -i 'https://extract.paypercall.dev/api/v1/extract?url=https%3A%2F%2Fexample.com'
+# -> HTTP 402, accepts[0] = { scheme: "exact", network: "nano:mainnet",
+#      asset: "XNO", amount: "100000000000000000000000000", payTo: "nano_1..." }
+```
+
+The manifest at `https://extract.paypercall.dev/.well-known/x402` lists the accepted `(scheme, network, asset)` pairs, so a price object like the one above resolves without a separate integration. The rest of this page applies unchanged: the seller still declares what the route `accepts`, the client still signs one option and retries with `PAYMENT-SIGNATURE`, and the verifier still settles before the resource is served.
+
 ## Resources
 
 | Resource | Link |
