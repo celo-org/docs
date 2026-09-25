@@ -13,8 +13,8 @@ So measurement is split in two:
 
 | Audience | Tool | Where |
 |---|---|---|
-| Humans (browsers) | GA4 `G-0CXEKQ81V2`, tags managed in Google Tag Manager | `docs.json` → `integrations.gtm` |
-| Bots and AI agents | Cloudflare AI Crawl Control (free tier), proxied in front of the domain | Cloudflare zone for `celo.org` |
+| Humans (browsers) | GA4 `G-0CXEKQ81V2` | `docs.json` → `integrations.ga4` (today); `integrations.gtm` once the swap lands |
+| Bots and AI agents | Cloudflare AI Crawl Control — **not set up**, needs a DNS change first (Runbook 3) | Cloudflare zone for `celo.org` |
 
 ## Ownership
 
@@ -25,7 +25,7 @@ already assigns `/docs.json` to the same team. Request access through the team.
 |---|---|---|
 | GA4 property | `G-0CXEKQ81V2` | `@celo-org/devrel` |
 | GTM container | `GTM-NP9GP2BT` | `@celo-org/devrel` |
-| Cloudflare zone / DNS for `docs.celo.org` | `celo.org` zone, `docs.celo.org` proxied | `@celo-org/devrel` |
+| Cloudflare zone / DNS for `docs.celo.org` | `celo.org` zone; `docs.celo.org` is **not** proxied today | `@celo-org/devrel` |
 | Mintlify org | Starter plan (established in #2250) | `@celo-org/devrel` |
 
 The permission that matters when a tag needs fixing is **Publish** on the GTM container;
@@ -33,7 +33,7 @@ Edit rights cannot ship a change.
 
 ## What is instrumented in this repo
 
-- `docs.json` → `integrations.gtm.tagId` loads the GTM container on every page. GA4 itself is configured **inside** GTM (Google Tag), not in `docs.json` — having both would double-count page views.
+- Today `docs.json` → `integrations.ga4.measurementId` loads GA4 directly. The intended end state is `integrations.gtm.tagId`, which loads the GTM container on every page with GA4 configured **inside** GTM (Google Tag) rather than in `docs.json` — having both would double-count page views. **That swap has not happened yet**; it is the last step, after the container is fixed and the assistant widget no longer depends on `window.gtag`.
 - `snippets/AddNetworkButton.jsx` pushes `dataLayer` events: `add_network_click` on click, and `add_network_result` with `result` = `success` | `rejected` | `error` | `no_wallet` and `network` = chain name. This is the highest-intent action on the site.
 - The docs assistant is instrumented on both sides, in `celo-org/docs-ai-assistant` rather than in this repo:
   - **Client (GA4).** `widget.js` reuses the page's existing `window.gtag` rather than loading a second tracker, and emits `assistant_opened`, `assistant_question` (`answered`, `escalated`, `truncated`), `assistant_escalate`, `assistant_new_chat`, `assistant_copy`, `assistant_citation_click` (`href`) and `assistant_error` (`from_api`, `status`). Question text is deliberately never sent to GA4.
@@ -42,7 +42,7 @@ Edit rights cannot ship a change.
 
 ## Runbook 1: Google Tag Manager container
 
-The container exists (`GTM-NP9GP2BT`) and `docs.json` carries its ID. Remaining tags to configure at https://tagmanager.google.com:
+The container exists (`GTM-NP9GP2BT`) but `docs.json` does **not** point at it yet — the site still loads GA4 directly. Everything below has to be true before the swap, or the swap loses measurement rather than adding it. Configure at https://tagmanager.google.com:
 
 - [ ] **Google Tag** with tag ID `G-0CXEKQ81V2`, firing on **All Pages only**. Do *not* add a History Change trigger. GA4 enhanced measurement already sends a `page_view` on `pushState` for this stream, so a history trigger makes the Google tag fire a second time and every in-site navigation is counted twice — measured as 1 `page_view` per navigation on plain gtag.js versus 2 under the container with the trigger attached. The container as published still carries that trigger; it has to come off before this is ticked. Verify against the published container rather than the GTM UI:
 
@@ -68,7 +68,7 @@ In the GA4 property for `G-0CXEKQ81V2` (Admin):
   `chatgpt\.com|chat\.openai\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|grok\.com|x\.ai|deepseek\.com|you\.com|phind\.com|meta\.ai`
   GA4's built-in "AI Assistant" channel recognizes only ChatGPT, Gemini, DeepSeek, Copilot and Grok — not Claude or Perplexity. Known limit: a large share of AI-referred sessions arrive with no referrer and land in Direct; this channel measures the floor, not the total.
 - [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`, plus the assistant's `answered`, `escalated`, `truncated`, `from_api`, `status` and `href`. Without these registered the assistant events still arrive, but their parameters cannot be used in any report.
-- [ ] **The GTM swap silences every assistant event, and there is no shim for it.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges and stay stopped until the widget is changed to push to `dataLayer` directly (#2307). Land the widget change first if the gap is not acceptable.
+- [ ] **Before the swap: the assistant events need a path that does not go through `window.gtag`.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges and stay stopped until the widget is changed to push to `dataLayer` directly (#2307). Land the widget change first if the gap is not acceptable.
 - [ ] **Explorations**: (a) free-form exploration with Page path + Exits for exit pages (GA4 has no standard exit report); (b) reverse Path exploration for drop-off journeys.
 
 Already answered by standard reports, no setup needed:
