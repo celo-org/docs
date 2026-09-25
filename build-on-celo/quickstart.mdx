@@ -1,129 +1,107 @@
 ---
 title: Quickstart
 sidebarTitle: Quickstart with Celo Composer
-description: Scaffold a Celo app in seconds with Celo Composer, the CLI for generating starter kits
+description: Scaffold a Celo app with Celo Composer and run it locally
 ---
 
-A powerful CLI tool for generating customizable Celo blockchain starter kits with modern monorepo architecture.
+For app developers starting a new project on Celo. Celo Composer is a CLI that generates a starter monorepo: a Next.js frontend with a wallet connector already configured for Celo mainnet and Celo Sepolia, plus an optional smart contract workspace.
 
 ## Prerequisites
 
-- Node.js >= 18.0.0
-- PNPM (recommended) or npm/yarn
+- Node.js 18 or later
+- pnpm 8 or later — the generated project is a pnpm workspace driven by Turborepo
 
-## Quick Start
+## Create a project
 
-Create a new Celo project in seconds:
+Nothing to install. Run the CLI with `npx`:
 
 ```bash
 npx @celo/celo-composer@latest create
 ```
 
-This will start an interactive setup process where you can choose your template, wallet provider, and smart contract framework.
-
-## Installation
-
-No installation required! Use `npx` to run Celo Composer directly without installing anything globally.
-
-## Usage
-
-### Interactive Mode
-
-Run the command without any flags to enter interactive mode:
-
-```bash
-npx @celo/celo-composer@latest create my-celo-app
-```
-
-The CLI will guide you through:
-
-- Project name and description
-- Template selection
-- Wallet provider choice
-- Smart contract framework selection
-- Dependency installation
-
-### Non-Interactive Mode
-
-Create a project with specific configurations using flags:
+The CLI prompts for a project name and description, a template, a wallet provider, a smart contract framework, and whether to install dependencies. Pass flags to skip the prompts:
 
 ```bash
 npx @celo/celo-composer@latest create my-celo-app \
   --template basic \
   --wallet-provider rainbowkit \
   --contracts hardhat \
-  --description "My awesome Celo app"
+  --description "My Celo app"
 ```
 
-### Quick Start with Defaults
-
-Skip all prompts and use default settings. This will create a basic app with no additional setup:
+To take every default without answering anything:
 
 ```bash
 npx @celo/celo-composer@latest create my-celo-app --yes
 ```
 
-## Available Templates
+The new project is initialized as a Git repository with an initial commit.
 
-### Basic Web App (default)
+## Choose a template
 
-A standard Next.js 14+ web application with modern UI, perfect for most app projects.
+### Basic web app (default)
+
+A Next.js web application with the App Router, Tailwind CSS and shadcn/ui components.
 
 ```bash
 npx @celo/celo-composer@latest create --template basic
 ```
 
-### Farcaster Miniapp
+### Farcaster miniapp
 
-A specialized template for building Farcaster Miniapps with Farcaster SDK and Frame development support.
+Adds the Farcaster Mini App SDK (`@farcaster/miniapp-sdk`).
 
 ```bash
 npx @celo/celo-composer@latest create --template farcaster-miniapp
 ```
 
-### MiniPay App
+### MiniPay app
 
-Optimized for building apps that integrate with the MiniPay mobile wallet, with mobile-first design.
+Mobile-first, for apps that run inside the MiniPay wallet. See [MiniPay](/build-on-celo/build-on-minipay/overview) for what MiniPay expects from a Mini App.
 
 ```bash
 npx @celo/celo-composer@latest create --template minipay
 ```
 
-Checkout [minipay docs](/build-on-celo/build-on-minipay/overview) to learn more about it.
+### AI chat app
 
-### AI Chat App
-
-A standalone Next.js AI chat application template.
+A standalone Next.js AI chat application.
 
 ```bash
 npx @celo/celo-composer@latest create --template ai-chat
 ```
 
-## Wallet Providers
+### x402 paid API
 
-Choose a wallet provider to handle user authentication and transaction signing:
+An API that charges per request with [x402](/build-on-celo/build-with-ai/x402), settled in stablecoins.
 
-- **RainbowKit** (default): Popular, easy-to-use wallet connector for React apps
-- **thirdweb**: Wallet connector from thirdweb
-- **None**: Skip wallet integration if you want to integrate your own solution
+```bash
+npx @celo/celo-composer@latest create --template x402
+```
+
+## Choose a wallet provider
+
+The wallet provider handles wallet connection and transaction signing in the frontend. This choice applies to the basic template — MiniPay always uses RainbowKit, and the Farcaster and AI chat templates bring their own setup.
+
+- **RainbowKit** (default): wallet connector for React, wired up with wagmi and viem
+- **thirdweb**: wallet connector from thirdweb
+- **None**: no wallet integration, bring your own
 
 ```bash
 npx @celo/celo-composer@latest create --wallet-provider rainbowkit
 ```
 
-## Smart Contract Frameworks
+## Choose a smart contract framework
 
-Set up a smart contract development environment:
-
-- **Hardhat** (default): Popular Ethereum development environment
-- **Foundry**: Fast, portable and modular toolkit for Ethereum application development
-- **None**: Skip smart contract development setup
+- **Hardhat** (default): generates `apps/contracts` with Hardhat, Ignition deployment modules and a test setup
+- **Foundry**: generates `apps/contracts` with a Foundry project
+- **None**: frontend only
 
 ```bash
 npx @celo/celo-composer@latest create --contracts hardhat
 ```
 
-## Command Options
+## Command options
 
 ```bash
 npx @celo/celo-composer@latest create [project-name] [options]
@@ -132,55 +110,100 @@ npx @celo/celo-composer@latest create [project-name] [options]
 | Flag                              | Description                                                        | Default            |
 | --------------------------------- | ------------------------------------------------------------------ | ------------------ |
 | `-d, --description <description>` | Project description                                                | Interactive prompt |
-| `-t, --template <type>`           | Template type (`basic`, `farcaster-miniapp`, `minipay`, `ai-chat`) | `basic`            |
+| `-t, --template <type>`           | Template type (`basic`, `farcaster-miniapp`, `minipay`, `ai-chat`, `x402`) | `basic`            |
 | `--wallet-provider <provider>`    | Wallet provider (`rainbowkit`, `thirdweb`, `none`)                 | `rainbowkit`       |
 | `-c, --contracts <framework>`     | Smart contract framework (`hardhat`, `foundry`, `none`)            | `hardhat`          |
 | `--skip-install`                  | Skip automatic dependency installation                             | `false`            |
 | `-y, --yes`                       | Skip all prompts and use defaults                                  | `false`            |
 
-## Generated Project Structure
+## Project structure
 
 ```
 my-celo-app/
 ├── apps/
-│   ├── web/                 # Next.js application
-│   └── contracts/           # Smart contracts (if selected)
-├── packages/
-│   ├── ui/                  # Shared UI components
-│   └── utils/                # Shared utilities
-├── package.json             # Root package.json
-├── pnpm-workspace.yaml      # PNPM workspace config
-├── turbo.json              # Turborepo configuration
-└── tsconfig.json           # TypeScript configuration
+│   ├── web/                 # Next.js app: src/app, src/components, Tailwind config
+│   └── contracts/           # Hardhat or Foundry workspace, if you selected one
+├── package.json             # Root scripts: dev, build, lint, contracts:*
+├── pnpm-workspace.yaml      # pnpm workspace config
+├── turbo.json               # Turborepo configuration
+└── tsconfig.json            # TypeScript configuration
 ```
 
-## Next Steps
+If you selected Hardhat or Foundry, the root `package.json` also exposes the contract tasks through Turborepo: `pnpm contracts:compile`, `pnpm contracts:test` and `pnpm contracts:deploy:celo-sepolia`.
 
-After creating your project, navigate to it and install dependencies (if you didn't use `--skip-install`):
+## Configure wallet connection
+
+`apps/web/.env.template` lists the variables the frontend reads. Copy it and fill it in before connecting a wallet:
+
+```bash
+cp my-celo-app/apps/web/.env.template my-celo-app/apps/web/.env
+```
+
+With the default RainbowKit provider, set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` to a project ID from [Reown](/tooling/libraries-sdks/reown) (formerly WalletConnect). Without it the config falls back to the placeholder string `YOUR_PROJECT_ID`, and any connection that goes through WalletConnect — mobile wallets and the QR flow — fails. A browser-extension wallet connects over its own injected provider and is unaffected.
+
+If you chose the thirdweb provider, set `NEXT_PUBLIC_THIRDWEB_CLIENT_ID` instead.
+
+## Run the app
 
 ```bash
 cd my-celo-app
-pnpm install  # If you used --skip-install
-pnpm dev      # Start development server
+pnpm install   # only if you passed --skip-install
+pnpm dev
 ```
 
-Your project is automatically initialized with Git and includes an initial commit.
+Turborepo runs the `dev` task in each workspace. The web app reports the address it is serving:
 
-## Tech Stack
+```text
+web:dev:   - Local:        http://localhost:3000
+```
 
-**Generated Projects Include:**
+## Verify the app runs
 
-- Next.js 14+ with App Router
-- TypeScript
-- Tailwind CSS
-- shadcn/ui components
-- Turborepo for monorepo management
-- PNPM workspaces
+1. Open the URL the dev server printed — `http://localhost:3000` unless that port was already taken.
+2. The landing page loads with your project name and a **Connect Wallet** button in the header.
+3. Click **Connect Wallet**, pick a wallet and approve the connection. The button is replaced by the connected network and your shortened address, which is the signal that wagmi, the connector and the Celo chain config are all working.
 
-## Support
+From here, write your contracts in `apps/contracts` and your UI in `apps/web/src`.
 
-Join the [Celo Discord server](https://discord.com/invite/celo). Reach out in the #build-with-celo channel with your questions and feedback.
+## Troubleshooting
+
+### Port 3000 is already in use
+
+Next.js does not fail; it takes the next free port and says so:
+
+```text
+web:dev:  ⚠ Port 3000 is in use, trying 3001 instead.
+web:dev:   - Local:        http://localhost:3001
+```
+
+Always open the URL from the terminal rather than assuming `3000`.
+
+### `Failed to install dependencies` during create
+
+The CLI continues and leaves the project in place. Install manually:
+
+```bash
+cd my-celo-app
+pnpm install
+```
+
+### The browser shows an error instead of the landing page
+
+Read the dev server output rather than the browser. Next.js names the failing module or component there — `Module not found: Can't resolve '<package>'` points at a dependency, a `ReferenceError` at a component — while the browser only shows a 500.
+
+If the error names a file you have not edited, it comes from the template rather than your code. Report it on the [Celo Composer issue tracker](https://github.com/celo-org/celo-composer/issues) with the dev server output and the version of `@celo/celo-composer` you scaffolded with.
 
 ## Resources
 
-- [GitHub Repository](https://github.com/celo-org/celo-composer)
+| Resource | Link |
+| --- | --- |
+| Celo Composer repository | [github.com/celo-org/celo-composer](https://github.com/celo-org/celo-composer) |
+| Celo Composer issues | [github.com/celo-org/celo-composer/issues](https://github.com/celo-org/celo-composer/issues) |
+| Celo Discord, `#build-with-celo` | [discord.com/invite/celo](https://discord.com/invite/celo) |
+
+## Related
+
+- [Network overview](/build-on-celo/network-overview) — chain IDs, RPC URLs and the faucet you need for Celo mainnet and Celo Sepolia
+- [MiniPay](/build-on-celo/build-on-minipay/overview) — what to change when the target is the MiniPay wallet
+- [Hardhat](/tooling/dev-environments/hardhat) — configure the generated contracts workspace for Celo
+- [Farcaster](/build-on-celo/build-with-farcaster) — build and publish a miniapp from the Farcaster template
