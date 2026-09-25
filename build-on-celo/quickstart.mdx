@@ -41,7 +41,7 @@ The new project is initialized as a Git repository with an initial commit.
 
 ### Basic web app (default)
 
-A Next.js 14 web application with the App Router, Tailwind CSS and shadcn/ui components.
+A Next.js web application with the App Router, Tailwind CSS and shadcn/ui components.
 
 ```bash
 npx @celo/celo-composer@latest create --template basic
@@ -49,7 +49,7 @@ npx @celo/celo-composer@latest create --template basic
 
 ### Farcaster miniapp
 
-Adds the Farcaster SDK and Frame development support.
+Adds the Farcaster Mini App SDK (`@farcaster/miniapp-sdk`).
 
 ```bash
 npx @celo/celo-composer@latest create --template farcaster-miniapp
@@ -71,9 +71,17 @@ A standalone Next.js AI chat application.
 npx @celo/celo-composer@latest create --template ai-chat
 ```
 
+### x402 paid API
+
+An API that charges per request with [x402](/build-on-celo/build-with-ai/x402), settled in stablecoins.
+
+```bash
+npx @celo/celo-composer@latest create --template x402
+```
+
 ## Choose a wallet provider
 
-The wallet provider handles wallet connection and transaction signing in the frontend:
+The wallet provider handles wallet connection and transaction signing in the frontend. This choice applies to the basic template — MiniPay always uses RainbowKit, and the Farcaster and AI chat templates bring their own setup.
 
 - **RainbowKit** (default): wallet connector for React, wired up with wagmi and viem
 - **thirdweb**: wallet connector from thirdweb
@@ -102,7 +110,7 @@ npx @celo/celo-composer@latest create [project-name] [options]
 | Flag                              | Description                                                        | Default            |
 | --------------------------------- | ------------------------------------------------------------------ | ------------------ |
 | `-d, --description <description>` | Project description                                                | Interactive prompt |
-| `-t, --template <type>`           | Template type (`basic`, `farcaster-miniapp`, `minipay`, `ai-chat`) | `basic`            |
+| `-t, --template <type>`           | Template type (`basic`, `farcaster-miniapp`, `minipay`, `ai-chat`, `x402`) | `basic`            |
 | `--wallet-provider <provider>`    | Wallet provider (`rainbowkit`, `thirdweb`, `none`)                 | `rainbowkit`       |
 | `-c, --contracts <framework>`     | Smart contract framework (`hardhat`, `foundry`, `none`)            | `hardhat`          |
 | `--skip-install`                  | Skip automatic dependency installation                             | `false`            |
@@ -121,18 +129,19 @@ my-celo-app/
 └── tsconfig.json            # TypeScript configuration
 ```
 
-The root `package.json` also exposes the contract tasks through Turborepo: `pnpm contracts:compile`, `pnpm contracts:test` and `pnpm contracts:deploy:celo-sepolia`.
+If you selected Hardhat or Foundry, the root `package.json` also exposes the contract tasks through Turborepo: `pnpm contracts:compile`, `pnpm contracts:test` and `pnpm contracts:deploy:celo-sepolia`.
 
 ## Configure wallet connection
 
 `apps/web/.env.template` lists the variables the frontend reads. Copy it and fill it in before connecting a wallet:
 
 ```bash
-cd my-celo-app/apps/web
-cp .env.template .env
+cp my-celo-app/apps/web/.env.template my-celo-app/apps/web/.env
 ```
 
-Set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` to a project ID from [Reown](/tooling/libraries-sdks/reown) (formerly WalletConnect). Without it the RainbowKit config falls back to the placeholder string `YOUR_PROJECT_ID` and wallet connection fails.
+With the default RainbowKit provider, set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` to a project ID from [Reown](/tooling/libraries-sdks/reown) (formerly WalletConnect). Without it the config falls back to the placeholder string `YOUR_PROJECT_ID`, and any connection that goes through WalletConnect — mobile wallets and the QR flow — fails. A browser-extension wallet connects over its own injected provider and is unaffected.
+
+If you chose the thirdweb provider, set `NEXT_PUBLIC_THIRDWEB_CLIENT_ID` instead.
 
 ## Run the app
 
@@ -144,11 +153,8 @@ pnpm dev
 
 Turborepo runs the `dev` task in each workspace. The web app reports the address it is serving:
 
-```
-web:dev:   ▲ Next.js 14.2.35
+```text
 web:dev:   - Local:        http://localhost:3000
-web:dev:  ✓ Starting...
-web:dev:  ✓ Ready in 3.7s
 ```
 
 ## Verify the app runs
@@ -165,7 +171,7 @@ From here, write your contracts in `apps/contracts` and your UI in `apps/web/src
 
 Next.js does not fail; it takes the next free port and says so:
 
-```
+```text
 web:dev:  ⚠ Port 3000 is in use, trying 3001 instead.
 web:dev:   - Local:        http://localhost:3001
 ```
