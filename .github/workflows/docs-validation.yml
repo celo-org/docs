@@ -6,6 +6,15 @@ on:
       - main
   workflow_dispatch:
 
+# Pinned deliberately. `npx mintlify` resolves the `latest` dist-tag at run time, so a
+# broken upstream publish takes every PR in this repo red at once with a failure that has
+# nothing to do with the diff. That happened on 4.2.931, which carries a transitive
+# dependency on @mintlify/auth-edge@0.0.51 — a package that is not on the npm registry,
+# making the CLI uninstallable. Bump this on purpose, after running the two commands below
+# locally against the new version.
+env:
+  MINTLIFY_VERSION: "4.2.920"
+
 jobs:
   validate-docs:
     name: Check for broken links
@@ -23,10 +32,10 @@ jobs:
       # Runs first: a docs.json schema error (e.g. a duplicate redirect source)
       # otherwise surfaces as unrelated broken links in the next step.
       - name: Validate docs.json
-        run: npx mintlify validate
+        run: npx mintlify@${{ env.MINTLIFY_VERSION }} validate
 
       - name: Check for broken links and redirect destinations
-        run: npx mintlify broken-links --check-redirects
+        run: npx mintlify@${{ env.MINTLIFY_VERSION }} broken-links --check-redirects
 
       - name: Check for orphan pages
         run: bash scripts/check-orphans.sh
