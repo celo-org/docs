@@ -123,7 +123,7 @@ Check out the [repository](https://github.com/erc-8004/erc-8004-contracts/tree/m
 An identity is not limited to an autonomous agent that acts on its own. Any callable service — an HTTP API, an [MCP server](/build-on-celo/build-with-ai/mcp/index), a bot — can hold one. The service itself needs no on-chain logic: what it gets is a record agents can find and rate, with endpoints in the Identity Registry and feedback in the Reputation Registry.
 
 <Warning>
-  **The address you register from becomes the agent's advertised wallet.** Every `register()` overload writes `agentWallet = msg.sender` and mints the NFT to that address, so whatever key signs this transaction is published as the agent's payment address. Use the key you actually want paid, not a throwaway ops key. `setAgentWallet()` changes it afterwards, but that needs a signature from the new wallet, so it is not a way to undo a mistake quietly. Transferring the agent NFT clears `agentWallet` outright.
+  **The address you register from owns the identity.** Every `register()` overload mints the NFT to `msg.sender` and writes `agentWallet = msg.sender`, so that key is published as the agent's payment address *and* controls `setAgentURI`, transfers, and every other owner-only call. Register from the key that should own the identity. The payee is easy to change afterwards — `setAgentWallet()` with a signature from the new wallet, or `unsetAgentWallet()` to clear it, which the owner can call on its own. Ownership is the part that is awkward to undo.
 </Warning>
 
 The registration file is JSON you host anywhere an agent can fetch it — any HTTPS URL, IPFS, or a `data:` URI stored on-chain; the spec does not mandate a path. `services` lists the endpoints you want callers to use. The names below are examples rather than a fixed set — the spec leaves the number and type of endpoints to you, and `wallet` entries for other chains are common. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
@@ -162,7 +162,7 @@ The registration file is JSON you host anywhere an agent can fetch it — any HT
 }
 ```
 
-`registrations` is what lets a caller check that the file and the on-chain entry agree, which is the cross-domain verification described above. You only learn the agent ID once the registration is mined, so the order is: publish the file without `registrations`, register, then update the file with the ID it returned.
+`registrations` is what lets a caller check that the file and the on-chain entry agree, which is the cross-domain verification described above. You only learn the agent ID once the registration is mined, so the order is: publish the file without `registrations`, register, then update the file with the ID it returned. For an IPFS or `data:` URI, adding the ID changes the URI, so point the registry at the new one with `setAgentURI(agentId, newURI)`.
 
 Then point the registry at that file. Read the agent ID from the `Registered` event on the receipt — the value `register()` returns is `_lastId` at simulation time, so anyone else registering first makes it wrong:
 
@@ -239,7 +239,7 @@ const [registered] = parseEventLogs({
 console.log('Registered as agent', registered.args.agentId);
 ```
 
-Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
+Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Transferring the agent NFT clears `agentWallet`, so the new owner sets it again. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
 ### Give Feedback
 
