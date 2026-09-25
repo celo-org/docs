@@ -60,7 +60,7 @@ Makes agents discoverable via portable NFT identifiers.
 - Every agent **identity** is represented as an ERC-721 NFT—the agent itself runs off-chain, but its on-chain identity is an NFT that's browsable in wallets, transferable between owners, and queryable by smart contracts
 - `agentURI` points to a registration file listing the service endpoints — see [Register a service](#register-a-service)
 - Endpoint types are customizable — `web`, `A2A`, `MCP`, `OASF`, `ENS`, `DID`, `email` and `wallet` are examples, not a closed list
-- `register()` sets the agent's wallet to the address that sent the transaction. `setAgentWallet()` changes it later, with a signature from the new wallet
+- `register()` sets the agent's wallet to the address that sent the transaction; transferring the NFT clears it. `setAgentWallet()` changes it later, with a signature from the new wallet
 - Domain verification for endpoint ownership
 
 ### 2. Reputation Registry
@@ -118,46 +118,12 @@ Check out the [repository](https://github.com/erc-8004/erc-8004-contracts/tree/m
 
 ## Quick Start
 
-### Install SDK
-
-The ERC-8004 SDK provides TypeScript/JavaScript and Python interfaces to interact with the on-chain registries. Install the SDK for your preferred language:
-
-```bash
-# JavaScript/TypeScript
-npm install @chaoschain/sdk
-
-# Python
-pip install chaoschain-sdk
-```
-
-### Register an Agent
-
-Registration mints a new ERC-721 NFT that represents your agent's on-chain identity. You'll need to:
-1. Create a registration file (JSON) describing your agent's name, capabilities, and endpoints
-2. Upload it to IPFS or host it at a public URL
-3. Call the registry to mint your agent NFT with the URI pointing to that file
-
-```javascript
-import { IdentityRegistry } from '@chaoschain/sdk';
-
-const registry = new IdentityRegistry(provider);
-
-// Upload registration file to IPFS first
-const agentURI = 'ipfs://QmYourRegistrationFile';
-
-// Register and get agent ID
-const tx = await registry.register(agentURI);
-const agentId = tx.events.Transfer.returnValues.tokenId;
-
-console.log('Agent registered with ID:', agentId);
-```
-
 ### Register a service
 
 An identity is not limited to an autonomous agent that acts on its own. Any callable service — an HTTP API, an [MCP server](/build-on-celo/build-with-ai/mcp/index), a bot — can hold one. The service itself needs no on-chain logic: what it gets is a record agents can find and rate, with endpoints in the Identity Registry and feedback in the Reputation Registry.
 
 <Warning>
-  **The address you register from becomes the agent's advertised wallet.** Every `register()` overload writes `agentWallet = msg.sender` and mints the NFT to that address, so whatever key signs this transaction is published as the agent's payment address. Use the key you actually want paid, not a throwaway ops key. `setAgentWallet()` changes it afterwards, but that needs a signature from the new wallet, so it is not a way to undo a mistake quietly.
+  **The address you register from becomes the agent's advertised wallet.** Every `register()` overload writes `agentWallet = msg.sender` and mints the NFT to that address, so whatever key signs this transaction is published as the agent's payment address. Use the key you actually want paid, not a throwaway ops key. `setAgentWallet()` changes it afterwards, but that needs a signature from the new wallet, so it is not a way to undo a mistake quietly. Transferring the agent NFT clears `agentWallet` outright.
 </Warning>
 
 The registration file is JSON you host anywhere an agent can fetch it — an HTTPS URL, IPFS, or a `data:` URI stored on-chain. `services` lists the endpoints you want callers to use. The names below are examples rather than a fixed set — the spec leaves the number and type of endpoints to you, and `wallet` entries for other chains are common. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
@@ -249,6 +215,18 @@ console.log('Registered as agent', registered.args.agentId);
 ```
 
 Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
+
+### Install SDK
+
+The feedback examples below use the ERC-8004 SDK, which wraps the registries for TypeScript/JavaScript and Python:
+
+```bash
+# JavaScript/TypeScript
+npm install @chaoschain/sdk
+
+# Python
+pip install chaoschain-sdk
+```
 
 ### Give Feedback
 
