@@ -1,7 +1,7 @@
 ---
 title: "ERC-8004: Agent Trust Protocol"
 sidebarTitle: "8004: Agent Trust"
-description: Give AI agents portable identity, reputation, and validation on Celo with the ERC-8004 trust standard
+description: Register an AI agent, API, MCP server or bot on Celo with ERC-8004 so other agents can discover and rate it
 ---
 
 [ERC-8004](https://github.com/erc-8004/erc-8004-contracts/tree/master) is an Ethereum standard that establishes trust infrastructure for autonomous AI agents. It enables agents to discover, identify, and evaluate other agents across organizational boundaries without pre-existing trust relationships.
@@ -58,36 +58,10 @@ Makes agents discoverable via portable NFT identifiers.
 
 **Key capabilities:**
 - Every agent **identity** is represented as an ERC-721 NFT—the agent itself runs off-chain, but its on-chain identity is an NFT that's browsable in wallets, transferable between owners, and queryable by smart contracts
-- `agentURI` points to registration file with endpoints
-- Supports multiple endpoint types (A2A, MCP, wallet, ENS, DIDs)
+- `agentURI` points to a registration file listing the service endpoints — see [Register a service](#register-a-service)
+- Endpoint types are customizable — `web`, `A2A`, `MCP`, `OASF`, `ENS`, `DID`, `email` and `wallet` are examples, not a closed list
+- `register()` sets the agent's wallet to the address that sent the transaction; transferring the NFT clears it. `setAgentWallet()` changes it later, with a signature from the new wallet
 - Domain verification for endpoint ownership
-
-**Agent registration file structure:**
-
-```json
-{
-  "type": "Agent",
-  "name": "My AI Agent",
-  "description": "Description of capabilities",
-  "image": "ipfs://...",
-  "endpoints": [
-    {
-      "type": "a2a",
-      "url": "https://example.com/.well-known/agent.json"
-    },
-    {
-      "type": "mcp",
-      "url": "https://example.com/mcp"
-    },
-    {
-      "type": "wallet",
-      "address": "0x...",
-      "chainId": 42220
-    }
-  ],
-  "supportedTrust": ["reputation", "validation", "tee"]
-}
-```
 
 ### 2. Reputation Registry
 
@@ -144,73 +118,269 @@ Check out the [repository](https://github.com/erc-8004/erc-8004-contracts/tree/m
 
 ## Quick Start
 
-### Install SDK
+### Register a service
 
-The ERC-8004 SDK provides TypeScript/JavaScript and Python interfaces to interact with the on-chain registries. Install the SDK for your preferred language:
+An identity is not limited to an autonomous agent that acts on its own. Any callable service — an HTTP API, an [MCP server](/build-on-celo/build-with-ai/mcp/index), a bot — can hold one. The service itself needs no on-chain logic: what it gets is a record agents can find and rate, with endpoints in the Identity Registry and feedback in the Reputation Registry.
 
-```bash
-# JavaScript/TypeScript
-npm install @chaoschain/sdk
+<Warning>
+  **The address you register from owns the identity.** Every `register()` overload mints the NFT to `msg.sender` and writes `agentWallet = msg.sender`, so that key is published as the agent's payment address *and* controls `setAgentURI`, transfers, and every other owner-only call. Register from the key that should own the identity. The payee is easy to change afterwards — `setAgentWallet()` with a signature from the new wallet, or `unsetAgentWallet()` to clear it, which the owner can call on its own. Ownership is the part that is awkward to undo.
+</Warning>
 
-# Python
-pip install chaoschain-sdk
+The registration file is JSON you host anywhere an agent can fetch it — any HTTPS URL, IPFS, or a `data:` URI stored on-chain; the spec does not mandate a path. `services` lists the endpoints you want callers to use. The names below are examples rather than a fixed set — the spec leaves the number and type of endpoints to you, and `wallet` entries for other chains are common. Set `x402Support` to `true` if those endpoints accept [x402](/build-on-celo/build-with-ai/x402) payments.
+
+```json
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Example Rates API",
+  "description": "FX rates for Mento stablecoins, priced per request",
+  "image": "https://example.com/logo.png",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://example.com"
+    },
+    {
+      "name": "MCP",
+      "endpoint": "https://example.com/mcp",
+      "version": "2025-06-18"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://example.com/.well-known/agent-card.json",
+      "version": "0.3.0"
+    }
+  ],
+  "x402Support": true,
+  "active": true,
+  "supportedTrust": ["reputation"],
+  "registrations": [
+    {
+      "agentId": 12345,
+      "agentRegistry": "eip155:42220:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+    }
+  ]
+}
 ```
 
-### Register an Agent
+`registrations` is what lets a caller check that the file and the on-chain entry agree, which is the cross-domain verification described above. You only learn the agent ID once the registration is mined, so the order is: publish the file without `registrations`, register, then update the file with the ID it returned. For an IPFS or `data:` URI, adding the ID changes the URI, so point the registry at the new one with `setAgentURI(agentId, newURI)`.
 
-Registration mints a new ERC-721 NFT that represents your agent's on-chain identity. You'll need to:
-1. Create a registration file (JSON) describing your agent's name, capabilities, and endpoints
-2. Upload it to IPFS or host it at a public URL
-3. Call the registry to mint your agent NFT with the URI pointing to that file
+Then point the registry at that file. Read the agent ID from the `Registered` event on the receipt — the value `register()` returns is `_lastId` at simulation time, so anyone else registering first makes it wrong:
 
-```javascript
-import { IdentityRegistry } from '@chaoschain/sdk';
+```ts
+import {
+  createPublicClient,
+  createWalletClient,
+  http,
+  parseEventLogs,
+} from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { celo } from 'viem/chains';
 
-const registry = new IdentityRegistry(provider);
+// Celo mainnet (42220), Identity Registry
+const identityRegistry =
+  '0x8004A169FB4a3325136EB29fA0ceB6D2e539a432';
+const abi = [
+  {
+    type: 'function',
+    name: 'register',
+    stateMutability: 'nonpayable',
+    inputs: [{ name: 'agentURI', type: 'string' }],
+    outputs: [{ name: 'agentId', type: 'uint256' }],
+  },
+  {
+    type: 'event',
+    name: 'Registered',
+    inputs: [
+      { name: 'agentId', type: 'uint256', indexed: true },
+      { name: 'agentURI', type: 'string' },
+      { name: 'owner', type: 'address', indexed: true },
+    ],
+  },
+] as const;
 
-// Upload registration file to IPFS first
-const agentURI = 'ipfs://QmYourRegistrationFile';
+// This key's address is minted the NFT and
+// published as the agent's wallet
+const key = process.env.PRIVATE_KEY as `0x${string}`;
+const account = privateKeyToAccount(key);
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
 
-// Register and get agent ID
-const tx = await registry.register(agentURI);
-const agentId = tx.events.Transfer.returnValues.tokenId;
+const { request } = await publicClient.simulateContract({
+  account,
+  address: identityRegistry,
+  abi,
+  functionName: 'register',
+  args: ['https://example.com/agent.json'],
+});
 
-console.log('Agent registered with ID:', agentId);
+const hash = await walletClient.writeContract({
+  ...request,
+  // Celo mainnet (42220), USDC fee-currency adapter.
+  // USDC has 6 decimals, so feeCurrency takes the
+  // adapter address, not the token address. Omit
+  // this field to pay gas in CELO.
+  feeCurrency: '0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B',
+});
+
+const receipt =
+  await publicClient.waitForTransactionReceipt({ hash });
+const [registered] = parseEventLogs({
+  abi,
+  eventName: 'Registered',
+  logs: receipt.logs,
+});
+console.log('Registered as agent', registered.args.agentId);
 ```
+
+Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Transferring the agent NFT clears `agentWallet`, so the new owner sets it again. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
 ### Give Feedback
 
-After interacting with an agent, submit feedback to the Reputation Registry. Each feedback entry includes a score, category tag (like "starred" for quality or "uptime" for availability), and an optional link to detailed off-chain feedback data:
+After interacting with an agent, submit feedback to the Reputation Registry. `giveFeedback` takes eight positional arguments, so the ABI below spells them out rather than compressing them into one signature string.
 
-```javascript
-import { ReputationRegistry } from '@chaoschain/sdk';
+The contract blocks self-feedback: the agent's owner and operators cannot rate their own agent, and the call reverts with `Self-feedback not allowed`. Feedback comes from a different address than the one that registered.
 
-const reputation = new ReputationRegistry(provider);
+```ts
+import {
+  createPublicClient,
+  createWalletClient,
+  http,
+  keccak256,
+  toHex,
+} from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { celo } from 'viem/chains';
 
-await reputation.giveFeedback(
-  agentId,
-  85,                    // score (0-100)
-  0,                     // decimals
-  'starred',             // tag1: category
-  '',                    // tag2: optional
-  'https://agent.example.com',  // endpoint used
-  'ipfs://QmDetailedFeedback',  // detailed feedback URI
-  feedbackHash           // keccak256 of feedback content
-);
+// Celo mainnet (42220), Reputation Registry
+const reputationRegistry =
+  '0x8004BAa17C55a88189AE136b182e5fdA19dE9b63';
+
+const abi = [
+  {
+    type: 'function',
+    name: 'giveFeedback',
+    stateMutability: 'nonpayable',
+    outputs: [],
+    inputs: [
+      { name: 'agentId', type: 'uint256' },
+      { name: 'value', type: 'int128' },
+      { name: 'valueDecimals', type: 'uint8' },
+      { name: 'tag1', type: 'string' },
+      { name: 'tag2', type: 'string' },
+      { name: 'endpoint', type: 'string' },
+      { name: 'feedbackURI', type: 'string' },
+      { name: 'feedbackHash', type: 'bytes32' },
+    ],
+  },
+] as const;
+
+const key = process.env.PRIVATE_KEY as `0x${string}`;
+const account = privateKeyToAccount(key);
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
+
+const hash = await walletClient.writeContract({
+  address: reputationRegistry,
+  abi,
+  functionName: 'giveFeedback',
+  args: [
+    444n,                    // agentId
+    85n,                     // value, int128
+    0,                       // valueDecimals
+    'starred',               // tag1: category
+    '',                      // tag2: optional
+    'https://example.com',   // endpoint used
+    '',                      // feedbackURI
+    keccak256(toHex('ok')),  // hash of the content
+  ],
+});
+
+await publicClient.waitForTransactionReceipt({ hash });
 ```
+
+`value` is an `int128`, so scores can be negative, and `valueDecimals` (max 18) fixes the scale: `85` with `0` decimals is 85, `850` with `1` is also 85.
 
 ### Query Agent Reputation
 
-Before delegating tasks to an agent, check its reputation. You can retrieve all individual feedback entries or get aggregated statistics:
+Before delegating work to an agent, read its reputation. `getSummary` aggregates, but it needs the list of addresses to aggregate over — fetch those with `getClients` first.
 
-```javascript
-// Get all feedback
-const feedback = await reputation.readAllFeedback(agentId);
+<Warning>
+`getSummary` reverts with `clientAddresses required` when the address array is empty, and `getClients` returns an empty array for an agent nobody has rated yet. Chaining the two without a check turns "no reviews" into a thrown error.
+</Warning>
 
-// Get summary statistics
-const summary = await reputation.getSummary(agentId);
-console.log('Average rating:', summary.averageScore);
-console.log('Total reviews:', summary.totalFeedback);
+```ts
+import { createPublicClient, http } from 'viem';
+import { celo } from 'viem/chains';
+
+// Celo mainnet (42220), Reputation Registry
+const reputationRegistry =
+  '0x8004BAa17C55a88189AE136b182e5fdA19dE9b63';
+
+const abi = [
+  {
+    type: 'function',
+    name: 'getClients',
+    stateMutability: 'view',
+    inputs: [{ name: 'agentId', type: 'uint256' }],
+    outputs: [{ name: '', type: 'address[]' }],
+  },
+  {
+    type: 'function',
+    name: 'getSummary',
+    stateMutability: 'view',
+    inputs: [
+      { name: 'agentId', type: 'uint256' },
+      { name: 'clients', type: 'address[]' },
+      { name: 'tag1', type: 'string' },
+      { name: 'tag2', type: 'string' },
+    ],
+    outputs: [
+      { name: 'count', type: 'uint64' },
+      { name: 'value', type: 'int128' },
+      { name: 'valueDecimals', type: 'uint8' },
+    ],
+  },
+] as const;
+
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+
+const agentId = 444n;
+const clients = await publicClient.readContract({
+  address: reputationRegistry,
+  abi,
+  functionName: 'getClients',
+  args: [agentId],
+});
+
+if (clients.length === 0) {
+  console.log('No feedback yet');
+} else {
+  const [count, value, decimals] =
+    await publicClient.readContract({
+      address: reputationRegistry,
+      abi,
+      functionName: 'getSummary',
+      args: [agentId, clients, '', ''],
+    });
+  console.log(`${count} reviews, score ${value}`);
+}
 ```
 
 ## Use Cases
