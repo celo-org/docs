@@ -8,7 +8,21 @@
     "dark": "#000000"
   },
   "contextual": {
-    "options": ["copy", "view", "mcp", "chatgpt", "claude", "cursor", "vscode"]
+    "options": [
+      "copy",
+      "view",
+      "mcp",
+      "chatgpt",
+      "claude",
+      "cursor",
+      "vscode",
+      {
+        "title": "Edit on GitHub",
+        "description": "Open the docs repository to edit a page and raise a pull request",
+        "icon": "github",
+        "href": "https://github.com/celo-org/docs"
+      }
+    ]
   },
   "seo": {
     "organization": {
