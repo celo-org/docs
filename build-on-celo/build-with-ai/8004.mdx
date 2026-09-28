@@ -65,7 +65,7 @@ Makes agents discoverable via portable NFT identifiers.
 
 ### 2. Reputation Registry
 
-Stores feedback and attestations about agent performance. Feedback is submitted on-chain by any address that has interacted with the agent—this includes users who hired the agent, other agents that collaborated with it, or monitoring services that track uptime and responsiveness. The contract prevents agents from rating themselves (owner and operator addresses are blocked from submitting feedback on their own agent).
+Stores feedback and attestations about agent performance. Feedback is submitted on-chain by any address other than the agent's own owner and operators, who are blocked from rating it. The contract does not check that the sender ever used the agent, so a raw summary can be padded — see [Query Agent Reputation](#query-agent-reputation) for reading one safely. In practice the addresses worth counting are users who hired the agent, other agents that collaborated with it, and monitoring services that track uptime.
 
 **Common feedback tags:**
 
@@ -252,8 +252,7 @@ import {
   createPublicClient,
   createWalletClient,
   http,
-  keccak256,
-  toHex,
+  zeroHash,
 } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { celo } from 'viem/chains';
@@ -298,32 +297,34 @@ const hash = await walletClient.writeContract({
   abi,
   functionName: 'giveFeedback',
   args: [
-    444n,                    // agentId
+    9699n,                   // example agentId - this rates a real agent
     85n,                     // value, int128
     0,                       // valueDecimals
     'starred',               // tag1: category
     '',                      // tag2: optional
     'https://example.com',   // endpoint used
-    '',                      // feedbackURI
-    keccak256(toHex('ok')),  // hash of the content
+    '',                      // feedbackURI: none, so no content to hash
+    zeroHash,                // keccak256 of the content at feedbackURI
   ],
 });
 
 await publicClient.waitForTransactionReceipt({ hash });
 ```
 
-`value` is an `int128`, so scores can be negative, and `valueDecimals` (max 18) fixes the scale: `85` with `0` decimals is 85, `850` with `1` is also 85.
+`value` is an `int128`, so scores can be negative, and `valueDecimals` (max 18) fixes the scale: `85` with `0` decimals is 85, `850` with `1` is also 85. `feedbackHash` is the `keccak256` of the content at `feedbackURI`; with no URI there is nothing to hash, so pass `zeroHash`.
 
 ### Query Agent Reputation
 
 Before delegating work to an agent, read its reputation. `getSummary` aggregates, but it needs the list of addresses to aggregate over — fetch those with `getClients` first.
+
+Two things decide whether the number you get back means anything. **Pass a tag**: an unfiltered summary averages every kind of feedback together, so a rating and an unrelated attestation end up in the same figure. And **choose the addresses yourself where the decision matters**: anyone can call `giveFeedback`, so a summary over every address that has ever rated an agent is open to padding. Treat `getClients` as a starting point, not an answer.
 
 <Warning>
 `getSummary` reverts with `clientAddresses required` when the address array is empty, and `getClients` returns an empty array for an agent nobody has rated yet. Chaining the two without a check turns "no reviews" into a thrown error.
 </Warning>
 
 ```ts
-import { createPublicClient, http } from 'viem';
+import { createPublicClient, formatUnits, http } from 'viem';
 import { celo } from 'viem/chains';
 
 // Celo mainnet (42220), Reputation Registry
@@ -361,7 +362,7 @@ const publicClient = createPublicClient({
   transport: http(),
 });
 
-const agentId = 444n;
+const agentId = 9699n; // example agentId
 const clients = await publicClient.readContract({
   address: reputationRegistry,
   abi,
@@ -369,17 +370,25 @@ const clients = await publicClient.readContract({
   args: [agentId],
 });
 
-if (clients.length === 0) {
-  console.log('No feedback yet');
+// getClients returns everyone who has ever rated this agent. Anyone can call
+// giveFeedback, so for a decision that matters, replace this with the reviewer
+// addresses you already trust and treat getClients only as a starting point.
+const [count, value, decimals] =
+  await publicClient.readContract({
+    address: reputationRegistry,
+    abi,
+    functionName: 'getSummary',
+    // Always pass a tag. Averaging across tags mixes ratings with
+    // unrelated feedback, and the result means nothing.
+    args: [agentId, clients, 'starred', ''],
+  });
+
+// A tag filter can leave a non-empty client list with a zero count,
+// so check count here rather than clients.length above.
+if (count === 0n) {
+  console.log('No starred feedback yet');
 } else {
-  const [count, value, decimals] =
-    await publicClient.readContract({
-      address: reputationRegistry,
-      abi,
-      functionName: 'getSummary',
-      args: [agentId, clients, '', ''],
-    });
-  console.log(`${count} reviews, score ${value}`);
+  console.log(`${count} reviews, score ${formatUnits(value, decimals)}`);
 }
 ```
 
