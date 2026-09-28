@@ -30,8 +30,12 @@ export const AddNetworkButton = ({ network = "mainnet" }) => {
   const [status, setStatus] = useState(null); // { kind: "success" | "error" | "info", text }
   const [pending, setPending] = useState(false);
 
-  // GTM picks these up and forwards them to GA4 (see /ANALYTICS.md).
-  // dataLayer is absent when GTM is blocked or not yet configured.
+  // Pushes land in window.dataLayer, which today's gtag.js creates. GA4 only
+  // sees them once a GTM tag listens for the event name and forwards it, so
+  // until that tag exists these are recorded locally and go no further
+  // (verified: pushing both events on the live site produces no /g/collect
+  // hit). See /ANALYTICS.md. The optional chain covers dataLayer being absent
+  // when analytics is blocked.
   const track = (event, result) => {
     window.dataLayer?.push({
       event,

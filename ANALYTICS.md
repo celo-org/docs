@@ -38,7 +38,7 @@ Edit rights cannot ship a change.
 - The docs assistant is instrumented on both sides, in `celo-org/docs-ai-assistant` rather than in this repo:
   - **Client (GA4).** `widget.js` reuses the page's existing `window.gtag` rather than loading a second tracker, and emits `assistant_opened`, `assistant_question` (`answered`, `escalated`, `truncated`), `assistant_escalate`, `assistant_new_chat`, `assistant_copy`, `assistant_citation_click` (`href`) and `assistant_error` (`from_api`, `status`). Question text is deliberately never sent to GA4.
   - **Server (Redis).** `app/api/chat/route.ts` calls `logQuestion()`, which pushes `{question, model, citedUrls, answered, timestamp, refused}` onto the Upstash Redis list `docs-assistant:questions`, trimmed to the most recent 10,000. Without Redis configured it falls back to `console.log`, which on Vercel is short-retention only. **This list is the docs-gap signal** — the uncited questions in it are the pages that need writing.
-- A handful of outbound partner links carry manual UTM parameters (`tooling/libraries-sdks/reown/index.mdx`, `tooling/indexers/goldrush.mdx`). The GTM outbound-click tag below covers outbound attribution generally, so new UTMs are not required.
+- A handful of outbound partner links carry manual UTM parameters (`tooling/libraries-sdks/reown/index.mdx`, `tooling/indexers/goldrush.mdx`). Those let the partner attribute traffic to us; the planned GTM outbound-click tag answers a different question — what our readers click.
 
 ## Runbook 1: Google Tag Manager container
 
@@ -57,6 +57,7 @@ The container exists (`GTM-NP9GP2BT`) but `docs.json` does **not** point at it y
 - [ ] **Code copy**: Click trigger on Mintlify's code-block copy button → GA4 event `copy_code` with `page_path`. The selector targets Mintlify's rendered UI and can change without notice — verify with GTM Preview after Mintlify updates.
 - [ ] **AI-menu clicks**: Click trigger on the page-level contextual menu (Copy page / ChatGPT / Claude / Cursor / VS Code / MCP — the `contextual.options` in `docs.json`) → GA4 event `ai_menu_click` with `ai_target` set from the clicked item's text. Same selector caveat as above.
 - [ ] **AddNetworkButton events**: Custom Event triggers for `add_network_click` and `add_network_result` → GA4 event tags forwarding `network` and `result` as parameters (Data Layer variables).
+- [ ] **Assistant events**: Custom Event trigger matching the regex `^assistant_` → a GA4 event tag using `{{Event}}` as the event name, forwarding `answered`, `escalated`, `truncated`, `from_api`, `status` and `href` as parameters (Data Layer variables). Without this tag the seven `assistant_*` events stop at the swap and do not come back, even after the widget starts pushing to `dataLayer` (#2307) — the pushes need something listening for them, exactly like `add_network_*`.
 - [ ] **Automation heuristic**: Custom HTML tag (fires before the Google Tag, e.g. on Consent/Initialization) that pushes `{ is_automated: "true" }` to the dataLayer when `navigator.webdriver === true` or the user agent contains `HeadlessChrome`; attach `is_automated` as a parameter on the Google Tag. This is a weak signal, not a count — agentic browsers such as Comet and Atlas use stock Chrome user agents and are indistinguishable client-side.
 - [ ] Verify everything in GTM **Preview mode** against the live site, then **Publish**.
 
@@ -68,7 +69,7 @@ In the GA4 property for `G-0CXEKQ81V2` (Admin):
   `chatgpt\.com|chat\.openai\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|grok\.com|x\.ai|deepseek\.com|you\.com|phind\.com|meta\.ai`
   GA4's built-in "AI Assistant" channel recognizes only ChatGPT, Gemini, DeepSeek, Copilot and Grok — not Claude or Perplexity. Known limit: a large share of AI-referred sessions arrive with no referrer and land in Direct; this channel measures the floor, not the total.
 - [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`, plus the assistant's `answered`, `escalated`, `truncated`, `from_api`, `status` and `href`. Without these registered the assistant events still arrive, but their parameters cannot be used in any report.
-- [ ] **Before the swap: the assistant events need a path that does not go through `window.gtag`.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges and stay stopped until the widget is changed to push to `dataLayer` directly (#2307). Land the widget change first if the gap is not acceptable.
+- [ ] **Before the swap: the assistant events need a path that does not go through `window.gtag`.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges. **Two things have to be in place before it, not one**: the widget has to push to `dataLayer` directly (#2307), *and* the container needs the `^assistant_` trigger and tag from Runbook 1 to forward those pushes. Either one alone leaves the events dark.
 - [ ] **Explorations**: (a) free-form exploration with Page path + Exits for exit pages (GA4 has no standard exit report); (b) reverse Path exploration for drop-off journeys.
 
 Already answered by standard reports, no setup needed:
@@ -79,7 +80,7 @@ Already answered by standard reports, no setup needed:
 
 ## Runbook 3: Cloudflare in front of docs.celo.org (bot visibility)
 
-This is the only layer that could see non-JS bot traffic. **None of it is in place today, and the earlier claim that it was is wrong.**
+This is the only layer that could see non-JS bot traffic. **None of it is in place today.**
 
 `docs.celo.org` is a plain, DNS-only CNAME to `cname.vercel-dns.com`, and the addresses behind it (`76.76.21.93`, `66.33.60.194`) are Vercel's. A Cloudflare-proxied record returns Cloudflare addresses and hides the CNAME target, so a visible CNAME to Vercel is proof the record is *not* proxied. The `cf-ray` and `cf-cache-status` headers come from a Cloudflare layer upstream of Vercel, not from the `celo.org` zone — note `server: Vercel` on the same response. AI Crawl Control on the `celo.org` zone would therefore see nothing from this hostname.
 
@@ -100,4 +101,4 @@ Once proxied, Cloudflare Analytics (total requests) vs GA4 (sessions) would also
 - **JS-capable agentic browsers** (Comet, Atlas, computer-use agents) execute the GA4 tag and count as humans; `is_automated` catches only naive automation.
 - **MCP traffic, both volume and content.** Requests to `https://docs.celo.org/mcp` are invisible to GA4, which needs JavaScript. They are not visible in our Cloudflare analytics either, because the hostname is not behind our zone (see Runbook 3) — that would only become true after the DNS change. And even then, what no layer here can show is **what was asked**: the question text, which tool was called, whether the answer cited anything.
 
-  Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. Query-level signal comes from the in-page assistant instead, and it is already implemented on both sides (see below).
+  Mintlify's own dashboard would cover part of that, but it needs the Pro plan ($450/mo), which #2250 evaluated and declined — the site was previously on Pro and deliberately moved to Starter. Query-level signal comes from the in-page assistant instead, and it is already implemented on both sides — see “What is instrumented in this repo” above.
