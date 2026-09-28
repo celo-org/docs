@@ -73,7 +73,7 @@ npx @celo/celo-composer@latest create --template ai-chat
 
 ### x402 paid API
 
-An API that charges per request with [x402](/build-on-celo/build-with-ai/x402), settled in stablecoins.
+Keeps the basic web app and adds an `apps/api` workspace with an [x402](/build-on-celo/build-with-ai/x402)-paid endpoint and a buyer script that pays it in USDC.
 
 ```bash
 npx @celo/celo-composer@latest create --template x402
@@ -81,7 +81,7 @@ npx @celo/celo-composer@latest create --template x402
 
 ## Choose a wallet provider
 
-The wallet provider handles wallet connection and transaction signing in the frontend. This choice applies to the basic template — MiniPay always uses RainbowKit, and the Farcaster and AI chat templates bring their own setup.
+The wallet provider handles wallet connection and transaction signing in the frontend. This choice applies to the basic template — MiniPay always uses RainbowKit, the Farcaster template ships its own wallet setup, and the AI chat and x402 templates have no wallet UI.
 
 - **RainbowKit** (default): wallet connector for React, wired up with wagmi and viem
 - **thirdweb**: wallet connector from thirdweb
