@@ -9,9 +9,9 @@ This page is for app developers who want to index Celo contract events and query
 
 With HyperIndex, you define the contracts and events to index in `config.yaml`, write handlers that turn those events into entities, and query the result through a GraphQL API. Handlers are written in TypeScript (the default) or ReScript. You can run an indexer locally, self-host it, or deploy it to [Envio Cloud](https://docs.envio.dev/docs/HyperIndex/hosted-service), Envio's managed hosting.
 
-[HyperSync](https://docs.envio.dev/docs/HyperSync/overview) is Envio's data retrieval layer, used as an alternative to JSON-RPC. It is available on Celo mainnet (chain ID `42220`) at `https://celo.hypersync.xyz`, and HyperIndex uses it as the default data source there. For networks without HyperSync, such as Celo Sepolia (chain ID `11142220`), HyperIndex uses an [RPC data source](https://docs.envio.dev/docs/HyperIndex/rpc-sync).
+[HyperSync](https://docs.envio.dev/docs/HyperSync/overview) is Envio's data retrieval layer, used as an alternative to JSON-RPC. It is available on Celo mainnet (chain ID `42220`) at `https://celo.hypersync.xyz`, and HyperIndex uses it as the default data source there. For networks without HyperSync, such as Celo Sepolia (chain ID `11142220`), HyperIndex uses an [RPC data source](https://docs.envio.dev/docs/HyperIndex/rpc-sync). Celo Sepolia is not in Envio's network list, so you must supply the ABI and RPC URL yourself rather than importing from a block explorer.
 
-HyperSync is also available as a standalone API through the [Python, Rust, Node.js, and Go clients](https://docs.envio.dev/docs/HyperSync/hypersync-clients), or through [HyperRPC](https://docs.envio.dev/docs/HyperRPC/overview-hyperrpc), its JSON-RPC interface. HyperSync requires an [API token](https://docs.envio.dev/docs/HyperSync/api-tokens).
+HyperSync is also available as a standalone API through the [Node.js, Python, and Rust clients](https://docs.envio.dev/docs/HyperSync/hypersync-clients) (a community-maintained Go client also exists), or through [HyperRPC](https://docs.envio.dev/docs/HyperRPC/overview-hyperrpc), its JSON-RPC interface. HyperSync requires an [API token](https://docs.envio.dev/docs/HyperSync/api-tokens).
 
 ## Prerequisites
 
