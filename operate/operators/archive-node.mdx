@@ -67,11 +67,11 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
     OP_RETH__SNAPSHOT=true
     ```
 
-    On first start this downloads the snapshot matching your `NODE_TYPE` (here, the archive snapshot) and continues from there. **On mainnet a snapshot is required** — it provides the pre-L2 (Celo L1) history. On **Celo Sepolia**, which has no pre-L2 history, you can instead leave `OP_RETH__SNAPSHOT=false` and execute every block from genesis. Either way, `NODE_TYPE=archive` is what keeps the full historical state available, and `DATADIR_PATH` must be empty on first start — a datadir written by `op-geth` cannot be reused.
+    On first start this downloads the snapshot matching your `NODE_TYPE` (here, the archive snapshot) and continues from there. **On mainnet a snapshot is required** — it provides the Celo L1 state at the L2 migration. Pre-L2 blocks, transactions, receipts and state come from the Historical RPC Service configured below. On **Celo Sepolia**, which has no pre-L2 history, you can instead leave `OP_RETH__SNAPSHOT=false` and execute every block from genesis. Either way, `NODE_TYPE=archive` is what keeps the full historical state available, and `DATADIR_PATH` must be empty on first start — a datadir written by `op-geth` cannot be reused.
 
     #### Configure Historical RPC Service
 
-    To handle RPC requests for pre-hardfork state and execution, an L2 archive node proxies to a legacy archive node or "Historical RPC Service".
+    To handle RPC requests for pre-hardfork blocks, transactions, receipts, state and execution, an L2 node proxies to a legacy archive node or "Historical RPC Service". This applies to every mainnet node that serves such requests, not only to archive nodes. Run the legacy archive node with the Celo L1 client version listed in [Network config](/operate/operators/network-config).
     There are two ways to configure a Historical RPC Service for your archive node:
 
     1. Supply a pre-hardfork archive datadir and let [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start a legacy archive node. To do this configure `.env` as follows:
