@@ -74,9 +74,9 @@ Follow these steps to run a full node. If you would like to run an archive node,
         OP_RETH__SNAPSHOT=true
         ```
 
-        **On mainnet a snapshot is required** — it provides the Celo L1 state at the L2 migration, which `op-reth` cannot reproduce by executing blocks. The snapshot does not contain the pre-L2 blocks, transactions or receipts. `op-reth` serves requests for them by proxying to a Historical RPC Service; see [Configure Historical RPC Service](/operate/operators/archive-node#configure-historical-rpc-service).
+        **On mainnet a snapshot is required** — it provides the Celo L1 state at the L2 migration, which `op-reth` cannot reproduce by executing blocks. The snapshot does not contain the pre-L2 blocks, transactions or receipts. `op-reth` serves most requests for them by proxying to a Historical RPC Service, but pre-L2 `eth_getLogs` returns no logs; see [Configure Historical RPC Service](/operate/operators/archive-node#configure-historical-rpc-service).
 
-    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can leave `OP_RETH__SNAPSHOT=false` (the default) and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
+    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can set `OP_RETH__SNAPSHOT=false` and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
 
     <Warning>
     **Datadirs from op-geth cannot be reused**
