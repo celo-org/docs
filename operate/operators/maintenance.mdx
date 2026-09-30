@@ -53,4 +53,4 @@ cp -a ./envs/<network>/datadir /path/to/backup
 
 ## Re-syncing
 
-If you need to rebuild a node, start from an empty `DATADIR_PATH` — a datadir written by op-geth cannot be reused. Bootstrap from a published snapshot (`OP_RETH__SNAPSHOT=true`, required on mainnet) or, on Celo Sepolia, execute every block from genesis; see [Run a node with Docker](/operate/operators/run-node). Pre-L2 historical state for archive nodes is served separately — see [Running an archive node](/operate/operators/archive-node).
+If you need to rebuild a node, start from an empty `DATADIR_PATH` — a datadir written by op-geth cannot be reused. Bootstrap from a published snapshot (`OP_RETH__SNAPSHOT=true`, required on mainnet) or, on Celo Sepolia, execute every block from genesis; see [Run a node with Docker](/operate/operators/run-node). Pre-L2 historical state is served separately, by a Historical RPC Service that every mainnet node needs — see [Configure Historical RPC Service](/operate/operators/archive-node#configure-historical-rpc-service).
