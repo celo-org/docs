@@ -239,7 +239,15 @@ Instead of charging a fixed price upfront, a server can price each request by ac
 
 Publishers can monetize individual articles instead of requiring subscriptions. Each request is checked for a valid x402 payment—if missing, the server returns `402 Payment Required` with pricing details; if present, the payment is settled and the content is delivered. This unlocks true pay-per-article pricing at amounts too small for card-based payments.
 
-## Other facilitators
+## Trust and other facilitators
+
+The Celo facilitator at `https://api.x402.celo.org` is built and run by Celo, and it never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+
+A facilitator you do not know deserves the same checks as any other service that submits transactions for you:
+
+- Confirm who operates it and that its source is public.
+- Before your server accepts a payment, check the asset, amount and `payTo` address against what you priced. Do not rely on the facilitator's response alone.
+- Test against Celo Sepolia (`https://api.x402.sepolia.celo.org` for the Celo facilitator) before sending mainnet funds.
 
 thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb x402 docs](https://portal.thirdweb.com/x402).
 
