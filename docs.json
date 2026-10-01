@@ -495,8 +495,7 @@
               "operate/operators/public-rpc-node",
               "operate/operators/monitoring",
               "operate/operators/maintenance",
-              "operate/operators/troubleshooting",
-              "operate/operators/migrate-node"
+              "operate/operators/troubleshooting"
             ]
           },
           {
@@ -3020,7 +3019,11 @@
     },
     {
       "source": "/cel2/operators/migrate-node",
-      "destination": "/operate/operators/migrate-node"
+      "destination": "/operate/operators/run-node"
+    },
+    {
+      "source": "/operate/operators/migrate-node",
+      "destination": "/operate/operators/run-node"
     },
     {
       "source": "/cel2/operators/overview",

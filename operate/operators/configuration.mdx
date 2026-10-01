@@ -9,7 +9,7 @@ This page documents the `.env` variables and the key client flags used by the [c
 <Info>
 **Execution client: op-reth**
 
-The variables below configure `op-reth`, Celo's supported execution client. Support for `op-geth` ended on each network's switch date; for its variables, see the **op-geth variables** accordion below and [End of Support for op-geth](/operate/notices/op-geth-deprecation).
+The variables below configure `op-reth`, Celo's supported execution client. Support for `op-geth` ended on Celo Sepolia on June 24, 2026 and on mainnet on July 22, 2026; see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Info>
 
 ## Node type and sync
@@ -85,23 +85,6 @@ These flags are set for you by the compose start scripts; they are listed here b
 - **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/operate/operators/monitoring).
 
 For every other op-reth/op-node flag, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
-
-<Accordion title="op-geth variables (until your switch date)">
-
-If you are still running `op-geth` from an older checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose), use these equivalents in place of their `OP_RETH__` counterparts. They stop working once your network reaches its [switch date](/operate/notices/op-geth-deprecation).
-
-| Variable | Description |
-|---|---|
-| `OP_GETH__SYNCMODE` | `snap` or `full`. If unset, a `full` node defaults to `snap` and an `archive` node to `full`. `full` requires a migrated pre-hardfork datadir. |
-| `OP_GETH__NAT` | How op-geth determines its public IP for discovery. One of `any`, `none`, `upnp`, `pmp`, `pmp:<IP>`, `extip:<IP>`, `stun:<IP:PORT>`. |
-| `OP_GETH__HISTORICAL_RPC` | RPC endpoint of a running legacy archive node for pre-hardfork state. |
-| `PORT__OP_GETH_HTTP` / `PORT__OP_GETH_WS` / `PORT__OP_GETH_P2P` | op-geth JSON-RPC (HTTP `9993`, WebSocket `9994`) and P2P (`30303`) ports. |
-| `IPC_PATH` | Alternative location for the geth IPC file, if the datadir disk does not support unix domain sockets. |
-| `IMAGE_TAG__OP_GETH` | Pin a specific op-geth image version. |
-
-Key op-geth flags: `--rollup.sequencerhttp` (sequencer endpoint), `--history.transactions=0` (index the full transaction history), and `--l2.enginekind=geth` on op-node.
-
-</Accordion>
 
 ## Monitoring
 
