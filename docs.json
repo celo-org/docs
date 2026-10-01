@@ -437,8 +437,7 @@
               "contribute-to-celo/release-process/index",
               "contribute-to-celo/release-process/smart-contracts",
               "contribute-to-celo/release-process/blockchain-client",
-              "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils",
-              "contribute-to-celo/release-process/attestation-service"
+              "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils"
             ]
           }
         ]
@@ -1026,6 +1025,10 @@
     {
       "source": "/home/roadmap",
       "destination": "/learn"
+    },
+    {
+      "source": "/contribute-to-celo/release-process/attestation-service",
+      "destination": "/contribute-to-celo/release-process"
     },
     {
       "source": "/build/build-with-thirdweb/overview",
@@ -1941,7 +1944,7 @@
     },
     {
       "source": "/community/release-process/attestation-service",
-      "destination": "/contribute-to-celo/release-process/attestation-service"
+      "destination": "/contribute-to-celo/release-process"
     },
     {
       "source": "/community/release-process/base-cli-contractkit-dappkit-utils",
@@ -3049,7 +3052,7 @@
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/release-process/attestation-service",
-      "destination": "/contribute-to-celo/release-process/attestation-service"
+      "destination": "/contribute-to-celo/release-process"
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/release-process/blockchain-client",
