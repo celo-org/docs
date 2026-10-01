@@ -1,6 +1,6 @@
 ---
 title: Wallets
-description: Overview of digital wallets available to send, spend, and earn Celo assets.
+description: Choose a wallet to hold CELO and stablecoins on Celo, connect MetaMask, find your address and move funds in or out
 ---
 
 <Info>
@@ -175,3 +175,34 @@ Zerion Wallet is a non-custodial wallet for crypto that gives you access to a br
 
 - [Homepage](https://www.mtpelerin.com/bridge-wallet)
 - Platforms: iOS, Android
+
+## Troubleshooting
+
+### Connect MetaMask to Celo
+
+MetaMask does not show Celo until the network is added. Follow [Configure MetaMask for Celo](/tooling/wallets/metamask/setup); the chain ID and RPC URL are on the [network overview](/build-on-celo/network-overview). If an app asks you to install MetaMask when you already have it, the app could not detect the extension in that browser. Open the app in the browser profile where MetaMask is installed, or connect with another wallet from the lists above.
+
+### Find your Celo address
+
+Celo uses Ethereum-style addresses (`0x…`, 42 characters). Open your wallet and copy the address it shows for Celo. Check the network name before you send: a transfer on the wrong network can be lost.
+
+### You cannot sign in or recover a wallet
+
+Celo has no accounts or passwords. A wallet is controlled by the wallet app that created it, so recovery goes through that wallet's app or support, not through Celo.
+
+### A token does not appear in your wallet
+
+Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/tooling/contracts/stablecoin-contracts). Tokens sent on another network do not show up on Celo.
+
+### Move funds in or out
+
+- [Ramps](/home/ramps): convert between local currency and crypto with a provider.
+- [Exchanges](/home/exchanges): buy or sell CELO.
+- [Bridges](/home/bridged-tokens/bridges): move assets between Celo and other networks.
+
+Which providers work in your country depends on the provider. Check availability and fees with the provider before you send funds.
+
+## Related
+
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview): pay gas in stablecoins, and which wallets support it
+- [Self-custody](/home/manage/self-custody): keep control of your own funds
