@@ -199,9 +199,11 @@ Both files are generated from the live site, so they never go stale.
 
 ## Ask a question in the docs
 
-Every page has an **Ask AI** button in the bottom-right corner. It answers from the documentation and links the pages it used, so you can check the source rather than take the answer on trust.
+Every page has an **Ask AI** button in the bottom-right corner that opens the Celo Docs Assistant. It answers from the documentation and links the pages it used, so you can check the source rather than take the answer on trust.
 
-It searches the same content as the MCP server above, which means answers reflect the docs as currently published — not a model's training data.
+The assistant can only search these docs, and it refuses questions unrelated to Celo. It can't see your wallet or account, send transactions, install skills or run commands, and it doesn't read live chain data; for that, use the [Celo MCP Server](/build-on-celo/build-with-ai/mcp/celo-mcp).
+
+The assistant searches the same content as the docs MCP server above, which means answers reflect the docs as currently published — not a model's training data.
 
 If an answer arrives without any links, the assistant offers a **Try a more thorough answer** button, which re-runs the question against a stronger model.
 
@@ -242,5 +244,5 @@ You can also skip the menu: **append `.md` to any docs URL** to get the Markdown
 </CardGroup>
 
 <Note>
-  Spotted something wrong on a page? Ask your assistant to use the `submit_feedback` tool — it reports the problem straight to the docs team. You can also [open an issue](https://github.com/celo-org/docs/issues).
+  Spotted something wrong on a page? Ask your coding assistant (with the docs MCP server connected) to use the `submit_feedback` tool — it reports the problem straight to the docs team. You can also [open an issue](https://github.com/celo-org/docs/issues).
 </Note>
