@@ -4,7 +4,7 @@ sidebarTitle: "Using Fee Abstraction"
 description: How to pay gas fees using alternate fee currencies on Celo with viem and celocli
 ---
 
-This guide shows how to send transactions that pay gas fees in ERC20 tokens instead of CELO. For background on how fee abstraction works, see the [Overview](/build-on-celo/fee-abstraction/overview).
+This page is the how-to for app and agent developers: send transactions that pay gas fees in ERC20 tokens instead of CELO. For background and wallet support, see the [overview](/build-on-celo/fee-abstraction/overview). For token and adapter addresses, see [Fee currency contracts](/tooling/contracts/fee-currencies). For the protocol rules, see the [fee abstraction specification](/operate/specification/fee-abstraction).
 
 ---
 
@@ -37,7 +37,7 @@ For more on gas pricing, see [Transaction Fees](/operate/specification/transacti
 
 ### Adapter Addresses
 
-The current adapter and token addresses for each network are listed on the [Fee Currencies](/tooling/contracts/fee-currencies) page, which is generated from the on-chain `FeeCurrencyDirectory` allowlist.
+The current adapter and token addresses for each network are listed on the [Fee currency contracts](/tooling/contracts/fee-currencies) page, which is generated from the on-chain `FeeCurrencyDirectory` allowlist.
 
 ---
 
@@ -194,4 +194,35 @@ async function send(amountInWei) {
 
 ---
 
-If you have any questions, please [reach out](https://github.com/celo-org/developer-tooling/discussions/categories/q-a).
+## Troubleshooting
+
+| Symptom | Cause and fix |
+|---|---|
+| `fee currency not registered: 0x…` from `eth_estimateGas` | The `feeCurrency` value is not on the allowlist. For USDC, USDT and USA₮ it is usually the token address: use the adapter address from [Fee currency contracts](/tooling/contracts/fee-currencies). The zero address is not an alias for CELO either; omit `feeCurrency` to pay in CELO. |
+| `execution reverted: Currency not in the directory` from `eth_gasPrice` | Same cause: the address passed as the `feeCurrency` parameter is a token address, not an adapter or directory entry. |
+| `could not convert from native to fee currency (fee-currency=0x…): unregistered fee-currency address` from `eth_maxPriorityFeePerGas` | Same cause: pass the adapter address, not the token address. |
+| The transaction succeeds but gas was charged in CELO, or fails with an insufficient-funds error although the user holds the stablecoin | The wallet dropped `feeCurrency`. Check [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64). |
+| A transfer or fee is 10¹² times too large or too small | USDC, USDT and USA₮ have 6 decimals, but `eth_gasPrice` and `balanceOf` on the adapter report 18 decimals. Use 6 decimals for token transfers and 18 for gas math. |
+
+Where to set the fee currency:
+
+| Tool | Parameter |
+|---|---|
+| viem | `feeCurrency` on the transaction, with a Celo chain from `viem/chains` |
+| Celo CLI | `--gasCurrency` |
+| Ethers.js, web3.js | Not supported on their own; use the [Celo Ethers.js wrapper](/tooling/libraries-sdks/ethers) or the [web3 transaction-types plugin](/tooling/libraries-sdks/web3) |
+| JSON-RPC | `feeCurrency` in the `eth_estimateGas` call, and the fee currency address as the parameter of `eth_gasPrice` and `eth_maxPriorityFeePerGas` |
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Questions | [developer-tooling discussions](https://github.com/celo-org/developer-tooling/discussions/categories/q-a) |
+| CIP-64 | [cip-0064](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) |
+
+## Related
+
+- [Fee abstraction guide](/build-on-celo/fee-abstraction/overview) — Background, why it matters and which wallets support it
+- [Fee currency contracts](/tooling/contracts/fee-currencies) — Token and adapter addresses for each network
+- [Fee abstraction specification](/operate/specification/fee-abstraction) — Protocol rules, JSON-RPC changes and node flags
+- [Adding fee currencies](/build-on-celo/fee-abstraction/add-fee-currency) — Register a new fee currency
