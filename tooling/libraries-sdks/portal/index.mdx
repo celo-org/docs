@@ -169,13 +169,17 @@ const portal = new Portal({
   gatewayConfig: {
     ["eip155:1"]: "https://api.portalhq.io/rpc/v1/eip155/1",
     ["eip155:42220"]: "https://api.portalhq.io/rpc/v1/eip155/42220", // Celo Mainnet
-    ["eip155:44787"]: "https://api.portalhq.io/rpc/v1/eip155/44787", // Celo Alfajores
+    ["eip155:11142220"]: "https://api.portalhq.io/rpc/v1/eip155/11142220", // Celo Sepolia
   },
 });
 ```
 
   </Tab>
 </Tabs>
+
+<Warning>
+Portal's [chain list](https://docs.portalhq.io/resources/blockchain-support) does not yet name Celo Sepolia (`eip155:11142220`). Confirm support with Portal before relying on the Celo Sepolia examples on this page.
+</Warning>
 
 ### Creating an MPC Wallet
 
@@ -228,7 +232,7 @@ After creating a wallet, you can fund it with test tokens using `portal.receiveT
   <Tab title="Web">
 
 ```javascript
-const chainId = "eip155:44787"; // Celo Alfajores
+const chainId = "eip155:11142220"; // Celo Sepolia
 const params = {
   amount: "0.01", // You will receive 0.01 CELO
   token: "NATIVE", // Token, use "NATIVE" for the chain's native token
@@ -242,7 +246,7 @@ console.log(`✅ Transaction hash: ${response.data.txHash}`);
   <Tab title="iOS">
 
 ```swift
-let chainId = "eip155:44787" // Celo Alfajores
+let chainId = "eip155:11142220" // Celo Sepolia
 let params = FundParams(
   amount: "0.01", // You will receive 0.01 CELO
   token: "NATIVE" // Token, use "NATIVE" for the chain's native token
@@ -256,7 +260,7 @@ print("✅ Transaction hash: \(response.data.txHash)")
   <Tab title="Android">
 
 ```kotlin
-val chainId = "eip155:44787" // Celo Alfajores
+val chainId = "eip155:11142220" // Celo Sepolia
 val params = FundParams(
   amount = "0.01", // You will receive 0.01 CELO
   token = "NATIVE" // Token, use "NATIVE" for the chain's native token
@@ -270,7 +274,7 @@ println("✅ Transaction hash: ${response.data.txHash}")
   <Tab title="React Native">
 
 ```javascript
-const chainId = "eip155:44787"; // Celo Alfajores
+const chainId = "eip155:11142220"; // Celo Sepolia
 const params = {
   amount: "0.01", // You will receive 0.01 CELO
   token: "NATIVE", // Token, use "NATIVE" for the chain's native token
