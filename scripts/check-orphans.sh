@@ -35,6 +35,7 @@ find . \( -name '*.mdx' -o -name '*.md' \) \
   -not -path './scripts/*' \
   -not -path './README.md' \
   -not -path './AGENTS.md' \
+  -not -path './ANALYTICS.md' \
   -not -path './CLAUDE.md' \
   | sed 's|^\./||; s|\.mdx$||; s|\.md$||' | sort -u > "$page_files"
 
