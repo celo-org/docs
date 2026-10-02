@@ -1,47 +1,30 @@
 ---
 title: "CELO Token Duality"
-sidebarTitle: "Celo Token"
-description: Introduction to CELO and its compliance to the ERC20 standard.
+sidebarTitle: "CELO Token"
+description: CELO is both the native currency of Celo and an ERC-20 token, with no wrapping needed
 ---
 
-<Warning>
-As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
-Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+This page is for app developers and CELO holders who use CELO as the native currency, as an ERC-20 token, or both. CELO is both at once: you can move it with a native transfer, the way ETH moves on Ethereum, or through the standard ERC-20 interface, and either way the tokens show up in both the native balance and the ERC-20 balance.
 
-For the most up-to-date information, refer to our [Celo L2 documentation](/build#celo-l2-mainnet).
-</Warning>
+## How it works
 
----
+The CELO ERC-20 contract keeps no balances of its own. `balanceOf` returns the account's native balance, and `transfer` and `transferFrom` trigger a native transfer through a precompile that only the CELO token can call. The precompile's address, parameters and gas cost are in the [token duality specification](/operate/specification/token-duality).
 
-The CELO token is unique in its ability to function as both a native token and an ERC-20 compatible token.
+The CELO ERC-20 contract is registered in the Registry as `GoldToken`; its address on each network is listed in [Core Contracts](/tooling/contracts/core-contracts).
 
-## What is Token Duality?
+## Why it matters on Celo
 
-Token duality means that **CELO functions both as the native currency of the Celo blockchain and as an ERC-20 compatible token**. This enables CELO tokens to be transferred in two ways:
+An account has one CELO balance that both interfaces read and change, so unlike ETH and WETH there is nothing to wrap or unwrap. Wallets and apps can use native transfers, the ERC-20 interface, or both, and they see the same balance either way.
 
-1. **Native transfers**, similar to how ETH is transferred on Ethereum.
-2. **ERC-20 transfers**, using the standard ERC-20 interface.
+## Resources
 
-Regardless of the transfer method, CELO tokens **reflect in both the native account balance and the ERC-20 balance**. Unlike ETH/WETH, there is **no need for wrapping or unwrapping**.
+| Resource | Link |
+|---|---|
+| Token duality specification | [/operate/specification/token-duality](/operate/specification/token-duality) |
+| CELO token (`GoldToken`) address on mainnet and Celo Sepolia | [Core Contracts](/tooling/contracts/core-contracts) |
 
----
+## Related
 
-## Implementation Details
-
-### **Native Transfers and Balances**
-- Native transfers and balance storage work exactly as they do on Ethereum.
-- The CELO ERC-20 contract **reads native balances** and triggers native transfers via its ERC-20 interface.
-
-### **Reading Balances via ERC-20**
-- The ERC-20 implementation does **not** store balances in contract storage.
-- Instead, `balanceOf(address)` directly returns the **native balance**, ensuring consistency across both transfer types.
-
-### **Transfers via ERC-20**
-- The `transfer` and `transferFrom` functions do **not** modify contract storage.
-- Instead, these functions **initiate a native transfer**.
-- Since Ethereum does not support native transfers from smart contracts, **Celo introduces a transfer precompile** to handle this. This precompile can only be called by the CELO token.
-- The address of the CELO ERC-20 contract can be looked up via the Registry smart contract, under the `GoldToken` identifier.
-
----
-
-By enabling seamless interoperability between native and ERC-20 transactions, **CELO remains highly flexible within the Ethereum and Celo ecosystems** without requiring additional conversion steps.
+- [Token duality specification](/operate/specification/token-duality) - the transfer precompile's address, parameters and gas cost
+- [Core Contracts](/tooling/contracts/core-contracts) - where to find the CELO ERC-20 contract on each network
+- [Celo for Ethereum developers](/tooling/overview/migrate/from-ethereum) - why tracking CELO balances means following native transfers as well as ERC-20 `Transfer` events
