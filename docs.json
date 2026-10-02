@@ -69,78 +69,69 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Home",
+        "tab": "Learn",
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["home/celo"]
+            "pages": [
+              "learn/celo",
+              "learn/index",
+              "learn/history",
+              "learn/celo-l1"
+            ]
           },
           {
-            "group": "Overview",
+            "group": "Network",
             "pages": [
-              "home/index",
-              "home/history",
-              "home/celo-l1",
-              "home/wallets",
-              "home/exchanges",
-              "home/gas-fees",
-              "home/ramps",
-              {
-                "group": "Bridging",
-                "pages": [
-                  "home/bridged-tokens/bridges",
-                  "home/bridged-tokens/native-ETH-bridging",
-                  "home/bridged-tokens/bridging-celo-from-ethereum",
-                  "home/bridged-tokens/withdrawing-celo-to-ethereum"
-                ]
-              }
+              "learn/network/overview",
+              "learn/network/architecture"
             ]
           },
           {
             "group": "Protocol",
             "pages": [
-              "home/protocol/index",
-              "home/protocol/security-council",
-              "home/protocol/celo-token",
-              "home/protocol/escrow",
-              "home/protocol/challengers",
-              "home/protocol/metadata"
+              "learn/protocol/index",
+              "learn/protocol/security-council",
+              "learn/protocol/celo-token",
+              "learn/protocol/escrow",
+              "learn/protocol/challengers",
+              "learn/protocol/metadata"
             ]
           },
           {
             "group": "Governance",
             "pages": [
-              "home/protocol/governance/overview",
-              "home/protocol/governance/governance-toolkit",
-              "home/protocol/governance/create-governance-proposal",
-              "home/protocol/governance/voting-in-governance",
-              "home/protocol/governance/voting-in-governance-using-mondo",
-              "home/protocol/governance/governable-parameters",
-              "home/protocol/governance/smart-contracts-upgrades"
+              "learn/protocol/governance/overview",
+              "learn/protocol/governance/governance-toolkit",
+              "learn/protocol/governance/create-governance-proposal",
+              "learn/protocol/governance/voting-in-governance",
+              "learn/protocol/governance/voting-in-governance-using-mondo",
+              "learn/protocol/governance/governable-parameters",
+              "learn/protocol/governance/smart-contracts-upgrades"
             ]
           },
           {
             "group": "Transactions",
             "pages": [
-              "home/protocol/transactions/overview",
-              "home/protocol/transactions/tx-comment-encryption",
-              "home/protocol/transactions/transaction-types"
+              "learn/protocol/transactions/overview",
+              "learn/protocol/transactions/tx-comment-encryption",
+              "learn/protocol/transactions/transaction-types"
             ]
           },
           {
             "group": "Staking",
             "pages": [
-              "home/protocol/staking/index",
-              "home/protocol/staking/locked-celo",
-              "home/protocol/staking/validator-elections",
-              "home/protocol/staking/validator-groups",
-              "home/protocol/staking/voting",
+              "learn/protocol/staking/index",
+              "learn/protocol/staking/locked-celo",
+              "learn/protocol/staking/validator-elections",
+              "learn/protocol/staking/validator-groups",
+              "learn/protocol/staking/voting",
               {
                 "group": "Key Management",
                 "pages": [
-                  "home/protocol/staking/key-management/summary",
-                  "home/protocol/staking/key-management/detailed",
-                  "home/protocol/staking/key-management/key-rotation"
+                  "learn/protocol/staking/key-management/summary",
+                  "learn/protocol/staking/key-management/detailed",
+                  "learn/protocol/staking/key-management/key-rotation"
                 ]
               }
             ]
@@ -148,17 +139,30 @@
           {
             "group": "Epoch Rewards",
             "pages": [
-              "home/protocol/epoch-rewards/index",
-              "home/protocol/epoch-rewards/community-fund",
-              "home/protocol/epoch-rewards/carbon-offsetting-fund"
+              "learn/protocol/epoch-rewards/index",
+              "learn/protocol/epoch-rewards/community-fund",
+              "learn/protocol/epoch-rewards/carbon-offsetting-fund"
             ]
           },
           {
-            "group": "Manage applications",
+            "group": "Bridging",
             "pages": [
-              "home/manage/self-custody",
-              "home/manage/release-gold",
-              "home/manage/asset"
+              "learn/bridged-tokens/bridges",
+              "learn/bridged-tokens/native-ETH-bridging",
+              "learn/bridged-tokens/bridging-celo-from-ethereum",
+              "learn/bridged-tokens/withdrawing-celo-to-ethereum"
+            ]
+          },
+          {
+            "group": "Using CELO",
+            "pages": [
+              "learn/wallets",
+              "learn/exchanges",
+              "learn/ramps",
+              "learn/gas-fees",
+              "learn/manage/self-custody",
+              "learn/manage/release-gold",
+              "learn/manage/asset"
             ]
           }
         ]
@@ -171,8 +175,6 @@
             "pages": [
               "build-on-celo/index",
               "build-on-celo/quickstart",
-              "build-on-celo/network-overview",
-              "build-on-celo/cel2-architecture",
               "build-on-celo/launch-checklist",
               "build-on-celo/attribution-tags",
               "build-on-celo/scaling-your-app",
@@ -202,7 +204,6 @@
                   "build-on-celo/build-with-ai/vibe-coding"
                 ]
               },
-
               {
                 "group": "MCP Servers",
                 "pages": [
@@ -457,7 +458,9 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["operate/index"]
+            "pages": [
+              "operate/index"
+            ]
           },
           {
             "group": "Network Notices",
@@ -603,6 +606,22 @@
   },
   "redirects": [
     {
+      "source": "/home",
+      "destination": "/learn"
+    },
+    {
+      "source": "/home/:slug*",
+      "destination": "/learn/:slug*"
+    },
+    {
+      "source": "/build-on-celo/network-overview",
+      "destination": "/learn/network/overview"
+    },
+    {
+      "source": "/build-on-celo/cel2-architecture",
+      "destination": "/learn/network/architecture"
+    },
+    {
       "source": "/quickstart",
       "destination": "/build-on-celo/quickstart"
     },
@@ -612,7 +631,7 @@
     },
     {
       "source": "/home/protocol/transaction/:slug*",
-      "destination": "/home/protocol/transactions/:slug*"
+      "destination": "/learn/protocol/transactions/:slug*"
     },
     {
       "source": "/infra-partners/integration/nightfall",
@@ -620,7 +639,7 @@
     },
     {
       "source": "/learn/celo-token",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/learn/developer-tools",
@@ -676,19 +695,19 @@
     },
     {
       "source": "/home/celo-token",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/home/celo-tokenomics",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/celo-owner-guide/governance",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/governance/overview",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/command-line-interface/commands/governance",
@@ -700,7 +719,7 @@
     },
     {
       "source": "/developer/deployments/testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/developer/build/mcp/mcp",
@@ -732,7 +751,7 @@
     },
     {
       "source": "/operations-manual/celo-foundation-voting-policy",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/summary",
@@ -752,7 +771,7 @@
     },
     {
       "source": "/home/celo-technology",
-      "destination": "/build-on-celo/cel2-architecture"
+      "destination": "/learn/network/architecture"
     },
     {
       "source": "/home/developer-tools",
@@ -760,11 +779,11 @@
     },
     {
       "source": "/home/overview",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/home/roadmap",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/build/build-with-thirdweb/overview",
@@ -980,7 +999,7 @@
     },
     {
       "source": "/celo-codebase/protocol",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/celo-codebase/protocol/bridging/bridging-native-assets",
@@ -1016,23 +1035,23 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/index",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/locating-nodes",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/ultralight-sync",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/consensus/validator-set-differences",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/identity",
@@ -1048,7 +1067,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/metadata",
-      "destination": "/home/protocol/metadata"
+      "destination": "/learn/protocol/metadata"
     },
     {
       "source": "/celo-codebase/protocol/identity/phone-number-privacy",
@@ -1056,7 +1075,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/privacy-research",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/identity/randomness",
@@ -1064,11 +1083,11 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/smart-contract-accounts",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/identity/valora-accounts",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/identity#using-the-mapping-for-payment",
@@ -1076,7 +1095,7 @@
     },
     {
       "source": "/celo-codebase/protocol/index",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/celo-codebase/protocol/odis",
@@ -1124,11 +1143,11 @@
     },
     {
       "source": "/celo-codebase/protocol/plumo",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake",
-      "destination": "/home/protocol/staking/index"
+      "destination": "/learn/protocol/staking/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/becoming-a-validator",
@@ -1136,59 +1155,59 @@
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund",
-      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/learn/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/community-fund",
-      "destination": "/home/protocol/epoch-rewards/community-fund"
+      "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund",
-      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/learn/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund",
-      "destination": "/home/protocol/epoch-rewards/community-fund"
+      "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund#bolstering-the-reserve",
-      "destination": "/home/protocol/epoch-rewards/community-fund"
+      "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards#introduction-to-locked-celo-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards#:~:text=Calculating%20Uptime%20Score,validators%20committing%20the%20previous%20block.",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards#calculating-uptime-score",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/index",
-      "destination": "/home/protocol/staking/index"
+      "destination": "/learn/protocol/staking/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/locked-gold",
-      "destination": "/home/protocol/staking/locked-celo"
+      "destination": "/learn/protocol/staking/locked-celo"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/locked-gold-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/penalties",
@@ -1196,19 +1215,19 @@
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/validator-elections",
-      "destination": "/home/protocol/staking/validator-elections"
+      "destination": "/learn/protocol/staking/validator-elections"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/validator-groups",
-      "destination": "/home/protocol/staking/validator-groups"
+      "destination": "/learn/protocol/staking/validator-groups"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/validator-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/celo-codebase/protocol/release-gold",
-      "destination": "/home/manage/release-gold"
+      "destination": "/learn/manage/release-gold"
     },
     {
       "source": "/celo-codebase/protocol/stability",
@@ -1224,7 +1243,7 @@
     },
     {
       "source": "/celo-codebase/protocol/stability/granda-mento",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/stability/index",
@@ -1236,7 +1255,7 @@
     },
     {
       "source": "/celo-codebase/protocol/stability/stability-fees",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/stability#stability-of-celos-stablecoin-protocol",
@@ -1248,7 +1267,7 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/escrow",
-      "destination": "/home/protocol/escrow"
+      "destination": "/learn/protocol/escrow"
     },
     {
       "source": "/celo-codebase/protocol/transactions/gas-pricing",
@@ -1256,47 +1275,47 @@
     },
     {
       "source": "/celo-codebase/protocol/transactions/index",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/celo-codebase/protocol/transactions/native-currency",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/celo-codebase/protocol/transactions/tx-comment-encryption",
-      "destination": "/home/protocol/transactions/tx-comment-encryption"
+      "destination": "/learn/protocol/transactions/tx-comment-encryption"
     },
     {
       "source": "/celo-codebase/protocol/transactions/transaction-types",
-      "destination": "/home/protocol/transactions/transaction-types"
+      "destination": "/learn/protocol/transactions/transaction-types"
     },
     {
       "source": "/celo-codebase/wallet",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/invitations",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/README",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/verification",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-codebase/wallet/intro",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/celo-gold-holder-guide/ledger",
@@ -1308,19 +1327,19 @@
     },
     {
       "source": "/celo-gold-holder-guide/quick-start",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/celo-gold-holder-guide/voting-governance",
-      "destination": "/home/protocol/governance/voting-in-governance"
+      "destination": "/learn/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-gold-holder-guide/voting-validators",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/celo-holder-guide/celo-exchange-bot",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/celo-holder-guide/celo-recovery",
@@ -1340,7 +1359,7 @@
     },
     {
       "source": "/celo-holder-guide/cusd",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/celo-holder-guide/eth-recovery",
@@ -1348,7 +1367,7 @@
     },
     {
       "source": "/celo-holder-guide/governance-cheat-sheet",
-      "destination": "/home/protocol/governance/governable-parameters"
+      "destination": "/learn/protocol/governance/governable-parameters"
     },
     {
       "source": "/celo-holder-guide/ledger",
@@ -1356,27 +1375,27 @@
     },
     {
       "source": "/celo-holder-guide/owners",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/quick-start",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/celo-holder-guide/release-gold",
-      "destination": "/home/manage/release-gold"
+      "destination": "/learn/manage/release-gold"
     },
     {
       "source": "/celo-holder-guide/voting-governance",
-      "destination": "/home/protocol/governance/voting-in-governance"
+      "destination": "/learn/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-holder-guide/voting-validators",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/celo-owner-guide/celo-exchange-bot",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/celo-owner-guide/celo-recovery",
@@ -1388,7 +1407,7 @@
     },
     {
       "source": "/celo-owner-guide/governance-cheat-sheet",
-      "destination": "/home/protocol/governance/governable-parameters"
+      "destination": "/learn/protocol/governance/governable-parameters"
     },
     {
       "source": "/celo-owner-guide/ledger",
@@ -1396,27 +1415,27 @@
     },
     {
       "source": "/celo-owner-guide/quick-start",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/quick-start#lock-celo",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/celo-owner-guide/quick-start#vote-for-a-validator-group",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/celo-owner-guide/release-gold",
-      "destination": "/home/manage/release-gold"
+      "destination": "/learn/manage/release-gold"
     },
     {
       "source": "/celo-owner-guide/voting-governance",
-      "destination": "/home/protocol/governance/voting-in-governance"
+      "destination": "/learn/protocol/governance/voting-in-governance"
     },
     {
       "source": "/celo-owner-guide/voting-validators",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/celo-sdk",
@@ -1432,7 +1451,7 @@
     },
     {
       "source": "/celo.org",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/cli/autocomplete",
@@ -1648,11 +1667,11 @@
     },
     {
       "source": "/blog/2022/05/11/Plumo - An Ultralight Blockchain Client on Celo",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/blog/2022/05/19/3 Simple Steps to Get Started with Valora on Celo",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/blog/2022/05/20/ContractKit - A Practical Guide to Interacting with the Celo Core Contracts",
@@ -1940,15 +1959,15 @@
     },
     {
       "source": "/developer-resources/networks/alfajores-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/developer-resources/networks/baklava-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/developer-resources/networks/celo-mainnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/developer-resources/overview",
@@ -2092,7 +2111,7 @@
     },
     {
       "source": "/docs.celo.org",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/es/learn/evm-compatible-tooling",
@@ -2100,23 +2119,23 @@
     },
     {
       "source": "/faqs",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/faqs#what-is-celos-supply",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/faqs#who-are-the-founders-of-celo",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/general",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/general/architecture",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/general/ecosystem/builders",
@@ -2128,7 +2147,7 @@
     },
     {
       "source": "/general/ecosystem/governance",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/general/ecosystem/overview",
@@ -2144,7 +2163,7 @@
     },
     {
       "source": "/getting-started/alfajores-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/faucet",
@@ -2152,7 +2171,7 @@
     },
     {
       "source": "/getting-started/alfajores-testnet/index",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
@@ -2160,15 +2179,15 @@
     },
     {
       "source": "/getting-started/alfajores-testnet/using-the-mobile-wallet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/baklava-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/baklava-testnet/index",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-full-node",
@@ -2184,7 +2203,7 @@
     },
     {
       "source": "/getting-started/choosing-a-network",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/hosted-nodes",
@@ -2192,11 +2211,11 @@
     },
     {
       "source": "/getting-started/mainnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/mainnet/index",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/mainnet/running-a-full-node-in-mainnet",
@@ -2208,7 +2227,7 @@
     },
     {
       "source": "/getting-started/rc1",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/rc1/running-a-full-node-in-rc1",
@@ -2248,7 +2267,7 @@
     },
     {
       "source": "/getting-started/using-the-mobile-wallet",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/validator-troubleshooting-faq",
@@ -2256,11 +2275,11 @@
     },
     {
       "source": "/getting-started/wallets",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/wallets/index",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo",
@@ -2296,55 +2315,55 @@
     },
     {
       "source": "/getting-started/wallets#celo-compatible-wallets",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/wallets#celo-native-wallets",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/wallets#celowalletapp",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/holder/asset",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/holder/exchange",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/holder/release-gold",
-      "destination": "/home/manage/release-gold"
+      "destination": "/learn/manage/release-gold"
     },
     {
       "source": "/holder/self-custody",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/important-information/alfajores-testnet-disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/important-information/baklava-testnet-disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/important-information/mainnet-testnet-disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/important-information/rc-network-disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network#celo-alfajores-l2-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network#celo-baklava-l2-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network/alfajores/run-full-node",
@@ -2400,19 +2419,19 @@
     },
     {
       "source": "/protocol/consensus/index",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/consensus/locating-nodes",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/consensus/ultralight-sync",
-      "destination": "/home/protocol/security-council"
+      "destination": "/learn/protocol/security-council"
     },
     {
       "source": "/protocol/consensus/validator-set-differences",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/contracts/add-contract",
@@ -2424,7 +2443,7 @@
     },
     {
       "source": "/protocol/governance",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/protocol/identity/index",
@@ -2432,7 +2451,7 @@
     },
     {
       "source": "/protocol/index",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/protocol/oracle/band-protocol",
@@ -2460,31 +2479,31 @@
     },
     {
       "source": "/protocol/pos/epoch-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/learn/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/protocol/pos/epoch-rewards-community-fund",
-      "destination": "/home/protocol/epoch-rewards/community-fund"
+      "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/protocol/pos/epoch-rewards-locked-gold",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/protocol/pos/epoch-rewards-validator",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/protocol/pos/index",
-      "destination": "/home/protocol/staking/index"
+      "destination": "/learn/protocol/staking/index"
     },
     {
       "source": "/protocol/pos/locked-gold",
-      "destination": "/home/protocol/staking/locked-celo"
+      "destination": "/learn/protocol/staking/locked-celo"
     },
     {
       "source": "/protocol/pos/penalties",
@@ -2492,19 +2511,19 @@
     },
     {
       "source": "/protocol/pos/validator-elections",
-      "destination": "/home/protocol/staking/validator-elections"
+      "destination": "/learn/protocol/staking/validator-elections"
     },
     {
       "source": "/protocol/pos/validator-groups",
-      "destination": "/home/protocol/staking/validator-groups"
+      "destination": "/learn/protocol/staking/validator-groups"
     },
     {
       "source": "/protocol/pos/validator-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/protocol/proof-of-stake",
-      "destination": "/home/protocol/staking/index"
+      "destination": "/learn/protocol/staking/index"
     },
     {
       "source": "/protocol/randomness",
@@ -2524,7 +2543,7 @@
     },
     {
       "source": "/protocol/transaction/escrow",
-      "destination": "/home/protocol/escrow"
+      "destination": "/learn/protocol/escrow"
     },
     {
       "source": "/protocol/transaction/gas-pricing",
@@ -2532,19 +2551,19 @@
     },
     {
       "source": "/protocol/transaction/native-currency",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/protocol/transaction/overview",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/protocol/transaction/transaction-types",
-      "destination": "/home/protocol/transactions/transaction-types"
+      "destination": "/learn/protocol/transactions/transaction-types"
     },
     {
       "source": "/protocol/transaction/tx-comment-encryption",
-      "destination": "/home/protocol/transactions/tx-comment-encryption"
+      "destination": "/learn/protocol/transactions/tx-comment-encryption"
     },
     {
       "source": "/token-addresses",
@@ -2588,7 +2607,7 @@
     },
     {
       "source": "/v/master/getting-started/baklava-testnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/validator-guide/attestation-service",
@@ -2596,7 +2615,7 @@
     },
     {
       "source": "/validator-guide/celo-foundation-voting-policy",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/validator-guide/celo-signal",
@@ -2604,27 +2623,27 @@
     },
     {
       "source": "/validator-guide/devops-best-practices",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/key-management/detailed",
-      "destination": "/home/protocol/staking/key-management/detailed"
+      "destination": "/learn/protocol/staking/key-management/detailed"
     },
     {
       "source": "/validator-guide/key-management/key-rotation",
-      "destination": "/home/protocol/staking/key-management/key-rotation"
+      "destination": "/learn/protocol/staking/key-management/key-rotation"
     },
     {
       "source": "/validator-guide/key-management/summary",
-      "destination": "/home/protocol/staking/key-management/summary"
+      "destination": "/learn/protocol/staking/key-management/summary"
     },
     {
       "source": "/validator-guide/monitoring",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/node-upgrades",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/overview",
@@ -2632,19 +2651,19 @@
     },
     {
       "source": "/validator-guide/proxy",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/securing-nodes-and-services",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator-guide/summary/key-rotation",
-      "destination": "/home/protocol/staking/key-management/key-rotation"
+      "destination": "/learn/protocol/staking/key-management/key-rotation"
     },
     {
       "source": "/validator-guide/validator-explorer",
-      "destination": "/home/protocol/staking/voting#validator-explorers"
+      "destination": "/learn/protocol/staking/voting#validator-explorers"
     },
     {
       "source": "/validator/attestation",
@@ -2652,7 +2671,7 @@
     },
     {
       "source": "/validator/celo-foundation-voting-policy",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/validator/celo-signal",
@@ -2660,31 +2679,31 @@
     },
     {
       "source": "/validator/devops-best-practices",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator/key-management/detailed",
-      "destination": "/home/protocol/staking/key-management/detailed"
+      "destination": "/learn/protocol/staking/key-management/detailed"
     },
     {
       "source": "/validator/key-management/key-rotation",
-      "destination": "/home/protocol/staking/key-management/key-rotation"
+      "destination": "/learn/protocol/staking/key-management/key-rotation"
     },
     {
       "source": "/validator/key-management/summary",
-      "destination": "/home/protocol/staking/key-management/summary"
+      "destination": "/learn/protocol/staking/key-management/summary"
     },
     {
       "source": "/validator/monitoring",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator/node-upgrade",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator/proxy",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator/run/alfajores",
@@ -2708,7 +2727,7 @@
     },
     {
       "source": "/validator/security",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/validator/troubleshooting-faq",
@@ -2716,15 +2735,15 @@
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-      "destination": "/home/protocol/epoch-rewards/carbon-offsetting-fund"
+      "destination": "/learn/protocol/epoch-rewards/carbon-offsetting-fund"
     },
     {
       "source": "/what-is-celo/about-celo-l1/protocol/pos/epoch-rewards-community-fund",
-      "destination": "/home/protocol/epoch-rewards/community-fund"
+      "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
       "source": "/what-is-celo/about-celo-l1/validator/celo-signal",
@@ -2736,7 +2755,7 @@
     },
     {
       "source": "/what-is-celo/using-celo/protocol/governance",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/what-is-celo/using-celo/protocol/penalties",
@@ -2744,27 +2763,27 @@
     },
     {
       "source": "/why-celo",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/why-celo#celo-is-mobile-open-and-real",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/why-celo#mobile",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/why-celo#open",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/why-celo#real",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/overview",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/indexer/envio",
@@ -2952,51 +2971,51 @@
     },
     {
       "source": "/what-is-celo",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/what-is-celo/using-celo/protocol",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/what-is-celo/using-celo/protocol/:slug*",
-      "destination": "/home/protocol/:slug*"
+      "destination": "/learn/protocol/:slug*"
     },
     {
       "source": "/what-is-celo/using-celo/manage/:slug*",
-      "destination": "/home/manage/:slug*"
+      "destination": "/learn/manage/:slug*"
     },
     {
       "source": "/what-is-celo/using-celo/bridged_tokens/:slug*",
-      "destination": "/home/bridged-tokens/:slug*"
+      "destination": "/learn/bridged-tokens/:slug*"
     },
     {
       "source": "/what-is-celo/using-celo/bridges",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/what-is-celo/using-celo/native-ETH-bridging",
-      "destination": "/home/bridged-tokens/native-ETH-bridging"
+      "destination": "/learn/bridged-tokens/native-ETH-bridging"
     },
     {
       "source": "/what-is-celo/using-celo/exchanges",
-      "destination": "/home/exchanges"
+      "destination": "/learn/exchanges"
     },
     {
       "source": "/what-is-celo/using-celo/gas-fees",
-      "destination": "/home/gas-fees"
+      "destination": "/learn/gas-fees"
     },
     {
       "source": "/what-is-celo/using-celo/ramps",
-      "destination": "/home/ramps"
+      "destination": "/learn/ramps"
     },
     {
       "source": "/what-is-celo/using-celo/wallets",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/what-is-celo/history",
-      "destination": "/home/history"
+      "destination": "/learn/history"
     },
     {
       "source": "/what-is-celo/joining-celo",
@@ -3008,7 +3027,7 @@
     },
     {
       "source": "/what-is-celo/about-celo-l1/:slug*",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/cli",
@@ -3020,7 +3039,7 @@
     },
     {
       "source": "/network",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network/alfajores",
@@ -3056,11 +3075,11 @@
     },
     {
       "source": "/network/mainnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network/mainnet/:slug*",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/network/node/:slug*",
@@ -3068,7 +3087,7 @@
     },
     {
       "source": "/wallet",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/wallet/:slug*",
@@ -3116,11 +3135,11 @@
     },
     {
       "source": "/cel2/guides/bridging-celo-from-l1-to-l2",
-      "destination": "/home/bridged-tokens/bridging-celo-from-ethereum"
+      "destination": "/learn/bridged-tokens/bridging-celo-from-ethereum"
     },
     {
       "source": "/cel2/guides/withdrawing-celo-from-l2-to-l1",
-      "destination": "/home/bridged-tokens/withdrawing-celo-to-ethereum"
+      "destination": "/learn/bridged-tokens/withdrawing-celo-to-ethereum"
     },
     {
       "source": "/cel2/notices/celo-sepolia-launch",
@@ -3216,7 +3235,7 @@
     },
     {
       "source": "/cel2/whats-changed/cel2-architecture",
-      "destination": "/build-on-celo/cel2-architecture"
+      "destination": "/learn/network/architecture"
     },
     {
       "source": "/cel2/whats-changed/l1-l2",
@@ -3228,11 +3247,11 @@
     },
     {
       "source": "/cel2/whats-changed/overview",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/cel2",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/learn/add-gas-currency",
@@ -3240,47 +3259,47 @@
     },
     {
       "source": "/learn/CELO-coin-summary",
-      "destination": "/home/celo"
+      "destination": "/learn/celo"
     },
     {
       "source": "/learn/celo-economic-model",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/learn/celo-ecosystem",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/celo-highlights",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/celo-milestones",
-      "destination": "/home/history"
+      "destination": "/learn/history"
     },
     {
       "source": "/learn/celo-onboarding",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/celo-overview",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/Celo-payments",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/learn/celo-protocol",
-      "destination": "/home/protocol/index"
+      "destination": "/learn/protocol/index"
     },
     {
       "source": "/learn/celo-protocol-summary",
-      "destination": "/home/protocol/index"
+      "destination": "/learn/protocol/index"
     },
     {
       "source": "/learn/celo-resources",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/celo-stack",
@@ -3288,11 +3307,11 @@
     },
     {
       "source": "/learn/celo-summary",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/learn/celo-whitepapers",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/learn/developer-onboarding",
@@ -3300,35 +3319,31 @@
     },
     {
       "source": "/learn/platform-native-stablecoins-summary",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/learn/topology-of-a-celo-network",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/learn/why-celo",
-      "destination": "/home/index"
-    },
-    {
-      "source": "/learn/:slug*",
-      "destination": "/home/:slug*"
+      "destination": "/learn/index"
     },
     {
       "source": "/key-concepts",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/markdown-page",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/search",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/showcase",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/developer/bridges",
@@ -3372,7 +3387,7 @@
     },
     {
       "source": "/what-is-celo/using-celo",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/tooling/dev-environments/thirdweb/overview",
@@ -3444,7 +3459,7 @@
     },
     {
       "source": "/tooling/overview/network-overview",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/tooling/wallets/staking",
@@ -3452,15 +3467,15 @@
     },
     {
       "source": "/tooling/plumo/index",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/tooling/plumo/verification-phase-1",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/tooling/plumo/verification-phase-2",
-      "destination": "/home/index"
+      "destination": "/learn/index"
     },
     {
       "source": "/community/developer-events",
@@ -3472,63 +3487,63 @@
     },
     {
       "source": "/legacy/transition/guides/bridging-celo-from-l1-to-l2",
-      "destination": "/home/bridged-tokens/bridging-celo-from-ethereum"
+      "destination": "/learn/bridged-tokens/bridging-celo-from-ethereum"
     },
     {
       "source": "/legacy/transition/guides/withdrawing-celo-from-l2-to-l1",
-      "destination": "/home/bridged-tokens/withdrawing-celo-to-ethereum"
+      "destination": "/learn/bridged-tokens/withdrawing-celo-to-ethereum"
     },
     {
       "source": "/legacy/protocol/pos/index",
-      "destination": "/home/protocol/staking/index"
+      "destination": "/learn/protocol/staking/index"
     },
     {
       "source": "/legacy/protocol/pos/locked-gold",
-      "destination": "/home/protocol/staking/locked-celo"
+      "destination": "/learn/protocol/staking/locked-celo"
     },
     {
       "source": "/legacy/protocol/pos/validator-elections",
-      "destination": "/home/protocol/staking/validator-elections"
+      "destination": "/learn/protocol/staking/validator-elections"
     },
     {
       "source": "/legacy/protocol/pos/validator-groups",
-      "destination": "/home/protocol/staking/validator-groups"
+      "destination": "/learn/protocol/staking/validator-groups"
     },
     {
       "source": "/legacy/validator/voting",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/legacy/validator/key-management/summary",
-      "destination": "/home/protocol/staking/key-management/summary"
+      "destination": "/learn/protocol/staking/key-management/summary"
     },
     {
       "source": "/legacy/validator/key-management/detailed",
-      "destination": "/home/protocol/staking/key-management/detailed"
+      "destination": "/learn/protocol/staking/key-management/detailed"
     },
     {
       "source": "/legacy/validator/key-management/key-rotation",
-      "destination": "/home/protocol/staking/key-management/key-rotation"
+      "destination": "/learn/protocol/staking/key-management/key-rotation"
     },
     {
       "source": "/legacy/protocol/identity/metadata",
-      "destination": "/home/protocol/metadata"
+      "destination": "/learn/protocol/metadata"
     },
     {
       "source": "/legacy/overview",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/l1-architecture",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/transaction/index",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/legacy/protocol/transaction/native-currency",
-      "destination": "/home/protocol/celo-token"
+      "destination": "/learn/protocol/celo-token"
     },
     {
       "source": "/legacy/protocol/transaction/erc20-transaction-fees",
@@ -3540,15 +3555,15 @@
     },
     {
       "source": "/legacy/protocol/transaction/escrow",
-      "destination": "/home/protocol/escrow"
+      "destination": "/learn/protocol/escrow"
     },
     {
       "source": "/legacy/protocol/transaction/transaction-types",
-      "destination": "/home/protocol/transactions/transaction-types"
+      "destination": "/learn/protocol/transactions/transaction-types"
     },
     {
       "source": "/legacy/protocol/transaction/tx-comment-encryption",
-      "destination": "/home/protocol/transactions/tx-comment-encryption"
+      "destination": "/learn/protocol/transactions/tx-comment-encryption"
     },
     {
       "source": "/legacy/protocol/stability/index",
@@ -3560,7 +3575,7 @@
     },
     {
       "source": "/legacy/protocol/stability/stability-fees",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/stability/oracles",
@@ -3572,7 +3587,7 @@
     },
     {
       "source": "/legacy/protocol/stability/granda-mento",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/identity/index",
@@ -3604,23 +3619,23 @@
     },
     {
       "source": "/legacy/protocol/identity/smart-contract-accounts",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/identity/privacy-research",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/pos/epoch-rewards",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/legacy/protocol/pos/epoch-rewards-validator",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/legacy/protocol/pos/epoch-rewards-locked-gold",
-      "destination": "/home/protocol/epoch-rewards/index"
+      "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
       "source": "/legacy/protocol/pos/penalties",
@@ -3632,15 +3647,15 @@
     },
     {
       "source": "/legacy/protocol/consensus/index",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/consensus/validator-set-differences",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/consensus/locating-nodes",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/protocol/randomness",
@@ -3664,23 +3679,23 @@
     },
     {
       "source": "/legacy/validator/security",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/validator/monitoring",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/validator/devops-best-practices",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/validator/node-upgrade",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/validator/proxy",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/validator/troubleshooting-faq",
@@ -3688,15 +3703,15 @@
     },
     {
       "source": "/legacy/validator/validator-explorer",
-      "destination": "/home/protocol/staking/voting#validator-explorers"
+      "destination": "/learn/protocol/staking/voting#validator-explorers"
     },
     {
       "source": "/legacy/validator/celo-foundation-voting-policy",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/legacy/transition/whats-changed/overview",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/legacy/transition/whats-changed/l1-l2",
@@ -3724,27 +3739,27 @@
     },
     {
       "source": "/about-celo",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/about-celo/manage/exchange",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/about-celo/protocol/consensus",
-      "destination": "/home/protocol/security-council"
+      "destination": "/learn/protocol/security-council"
     },
     {
       "source": "/about-celo/:slug*",
-      "destination": "/home/:slug*"
+      "destination": "/learn/:slug*"
     },
     {
       "source": "/general/history",
-      "destination": "/home/history"
+      "destination": "/learn/history"
     },
     {
       "source": "/general/using-celo/gas-fees",
-      "destination": "/home/gas-fees"
+      "destination": "/learn/gas-fees"
     },
     {
       "source": "/general/ecosystem/daos",
@@ -3768,15 +3783,15 @@
     },
     {
       "source": "/holder/manage/asset",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/holder/manage/release-gold",
-      "destination": "/home/manage/release-gold"
+      "destination": "/learn/manage/release-gold"
     },
     {
       "source": "/holder/manage/self-custody",
-      "destination": "/home/manage/self-custody"
+      "destination": "/learn/manage/self-custody"
     },
     {
       "source": "/developer-resources/contractkit",
@@ -3840,7 +3855,7 @@
     },
     {
       "source": "/cel2/cel2-architecture",
-      "destination": "/build-on-celo/cel2-architecture"
+      "destination": "/learn/network/architecture"
     },
     {
       "source": "/cel2/fee-currencies",
@@ -3864,7 +3879,7 @@
     },
     {
       "source": "/tooling/testnets/mainnet/disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/tooling/testnets/alfajores",
@@ -3876,7 +3891,7 @@
     },
     {
       "source": "/tooling/testnets/mainnet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/tooling/testnets/eclair",
@@ -3912,11 +3927,11 @@
     },
     {
       "source": "/protocol/identity/metadata",
-      "destination": "/home/protocol/metadata"
+      "destination": "/learn/protocol/metadata"
     },
     {
       "source": "/protocol/identity/privacy-research",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/identity/randomness",
@@ -3924,15 +3939,15 @@
     },
     {
       "source": "/protocol/identity/smart-contract-accounts",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/bridging/bridging-to-celo",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/protocol/governance/create-proposal",
-      "destination": "/home/protocol/governance/create-governance-proposal"
+      "destination": "/learn/protocol/governance/create-governance-proposal"
     },
     {
       "source": "/protocol/optics",
@@ -3956,7 +3971,7 @@
     },
     {
       "source": "/protocol/plumo",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/pos/becoming-a-validator",
@@ -3976,7 +3991,7 @@
     },
     {
       "source": "/protocol/stability/granda-mento",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/stability/oracles",
@@ -3984,23 +3999,23 @@
     },
     {
       "source": "/protocol/stability/stability-fees",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/stability/tobin-tax",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/protocol/token-bridges",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/protocol/transaction",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/protocol/transaction/full-node-incentives",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/developer/build-on-minipay/enabling-testnet",
@@ -4044,7 +4059,7 @@
     },
     {
       "source": "/developer/faucet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/developer/react-celo",
@@ -4120,27 +4135,27 @@
     },
     {
       "source": "/cel2/bridging/bridging-celo-from-holesky-to-alfajores-using-viem",
-      "destination": "/home/bridged-tokens/bridging-celo-from-ethereum"
+      "destination": "/learn/bridged-tokens/bridging-celo-from-ethereum"
     },
     {
       "source": "/cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
-      "destination": "/home/bridged-tokens/bridging-celo-from-ethereum"
+      "destination": "/learn/bridged-tokens/bridging-celo-from-ethereum"
     },
     {
       "source": "/cel2/bridging/bridging-celo-from-l1-to-l2-using-viem",
-      "destination": "/home/bridged-tokens/bridging-celo-from-ethereum"
+      "destination": "/learn/bridged-tokens/bridging-celo-from-ethereum"
     },
     {
       "source": "/cel2/bridging/withdrawing-celo-from-alfajores-to-holesky-using-viem",
-      "destination": "/home/bridged-tokens/withdrawing-celo-to-ethereum"
+      "destination": "/learn/bridged-tokens/withdrawing-celo-to-ethereum"
     },
     {
       "source": "/cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
-      "destination": "/home/bridged-tokens/withdrawing-celo-to-ethereum"
+      "destination": "/learn/bridged-tokens/withdrawing-celo-to-ethereum"
     },
     {
       "source": "/cel2/bridging/withdrawing-celo-from-l2-to-l1-using-viem",
-      "destination": "/home/bridged-tokens/withdrawing-celo-to-ethereum"
+      "destination": "/learn/bridged-tokens/withdrawing-celo-to-ethereum"
     },
     {
       "source": "/cel2/contract-addresses",
@@ -4160,11 +4175,11 @@
     },
     {
       "source": "/cel2/network-information",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/cel2/notices/native-ETH-bridging",
-      "destination": "/home/bridged-tokens/native-ETH-bridging"
+      "destination": "/learn/bridged-tokens/native-ETH-bridging"
     },
     {
       "source": "/cel2/notices/pectra-upgrade",
@@ -4244,7 +4259,7 @@
     },
     {
       "source": "/celo-codebase/protocol/README",
-      "destination": "/home/protocol"
+      "destination": "/learn/protocol"
     },
     {
       "source": "/celo-codebase/protocol/bridging/bridging-to-celo-zh_cn",
@@ -4252,11 +4267,11 @@
     },
     {
       "source": "/celo-codebase/protocol/consensus/README",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/governance",
-      "destination": "/home/protocol/governance/overview"
+      "destination": "/learn/protocol/governance/overview"
     },
     {
       "source": "/celo-codebase/protocol/identity/README",
@@ -4264,7 +4279,7 @@
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/README",
-      "destination": "/home/protocol/staking"
+      "destination": "/learn/protocol/staking"
     },
     {
       "source": "/celo-codebase/protocol/stability/README",
@@ -4272,19 +4287,19 @@
     },
     {
       "source": "/celo-codebase/protocol/stability/tobin-tax",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/transactions/README",
-      "destination": "/home/protocol/transactions/overview"
+      "destination": "/learn/protocol/transactions/overview"
     },
     {
       "source": "/celo-codebase/protocol/transactions/full-node-incentives",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/celo-codebase/protocol/transactions/tx-comment-encyption",
-      "destination": "/home/protocol/transactions/tx-comment-encryption"
+      "destination": "/learn/protocol/transactions/tx-comment-encryption"
     },
     {
       "source": "/celo-codebase/style-guide/typescript",
@@ -4292,15 +4307,15 @@
     },
     {
       "source": "/celo-codebase/wallet/README",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/general/celo_l1_index",
-      "destination": "/home/celo-l1"
+      "destination": "/learn/celo-l1"
     },
     {
       "source": "/general/ecosystem/guides/create-proposal",
-      "destination": "/home/protocol/governance/create-governance-proposal"
+      "destination": "/learn/protocol/governance/create-governance-proposal"
     },
     {
       "source": "/general/ecosystem/guides/fundraising",
@@ -4320,23 +4335,23 @@
     },
     {
       "source": "/general/glossary",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/general/using-celo/bridging",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/general/using-celo/dexes",
-      "destination": "/home/exchanges"
+      "destination": "/learn/exchanges"
     },
     {
       "source": "/general/using-celo/voting",
-      "destination": "/home/protocol/governance/voting-in-governance-using-mondo"
+      "destination": "/learn/protocol/governance/voting-in-governance-using-mondo"
     },
     {
       "source": "/general/using-celo/wallets",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/general/web2-to-web3",
@@ -4344,7 +4359,7 @@
     },
     {
       "source": "/general/whitepapers",
-      "destination": "/home/history#white-papers"
+      "destination": "/learn/history#white-papers"
     },
     {
       "source": "/build-on-celo/build-with-ai/examples/build-with-nebula",
@@ -4364,7 +4379,7 @@
     },
     {
       "source": "/build-on-celo/build-with-bridge",
-      "destination": "/home/ramps"
+      "destination": "/learn/ramps"
     },
     {
       "source": "/build-on-celo/build-with-zk-identity",
@@ -4372,11 +4387,11 @@
     },
     {
       "source": "/getting-started/faucet",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/getting-started/glossary",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/getting-started/running-a-full-node-in-alfajores",
@@ -4388,7 +4403,7 @@
     },
     {
       "source": "/getting-started/using-the-wallet",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo/choosing-the-right-gas-price",
@@ -4436,15 +4451,15 @@
     },
     {
       "source": "/bridge",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/holder",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/holder/manage/exchange",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/holder/recover/from-celo-address",
@@ -4456,27 +4471,27 @@
     },
     {
       "source": "/holder/vote/governance",
-      "destination": "/home/protocol/governance/voting-in-governance"
+      "destination": "/learn/protocol/governance/voting-in-governance"
     },
     {
       "source": "/holder/vote/governance-parameters",
-      "destination": "/home/protocol/governance/governable-parameters"
+      "destination": "/learn/protocol/governance/governable-parameters"
     },
     {
       "source": "/holder/vote/validator",
-      "destination": "/home/protocol/staking/voting"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/what-is-celo/celo-website",
-      "destination": "/home/celo"
+      "destination": "/learn/celo"
     },
     {
       "source": "/what-is-celo/using-celo/glossary",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/what-is-celo/using-celo/native-bridging",
-      "destination": "/home/bridged-tokens/bridges"
+      "destination": "/learn/bridged-tokens/bridges"
     },
     {
       "source": "/validator",
@@ -4484,15 +4499,15 @@
     },
     {
       "source": "/validator/validator-explorer",
-      "destination": "/home/protocol/staking/voting#validator-explorers"
+      "destination": "/learn/protocol/staking/voting#validator-explorers"
     },
     {
       "source": "/home/manage/exchange",
-      "destination": "/home/manage/asset"
+      "destination": "/learn/manage/asset"
     },
     {
       "source": "/home/protocol/consensus",
-      "destination": "/home/protocol/security-council"
+      "destination": "/learn/protocol/security-council"
     },
     {
       "source": "/command-line-interface/registry",
@@ -4500,23 +4515,23 @@
     },
     {
       "source": "/FAQs",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/GLOSSARY",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/celo-holder-guide/overview",
-      "destination": "/home/wallets"
+      "destination": "/learn/wallets"
     },
     {
       "source": "/glossary",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/important-information/mainnet-network-disclaimer",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/learn/network/overview"
     },
     {
       "source": "/uniswap-addresses",
@@ -4524,11 +4539,11 @@
     },
     {
       "source": "/welcome",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/index_old",
-      "destination": "/home"
+      "destination": "/learn"
     },
     {
       "source": "/developer-guide/dappkit",

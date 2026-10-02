@@ -8,7 +8,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 
 - A [Mintlify](https://mintlify.com) site. Content is MDX; navigation, redirects and theme live in `docs.json`. There is no build step beyond the Mintlify CLI.
 - `docs.json` is the single source of truth for what is reachable. **A file on disk is unreachable until it is listed under `navigation`.**
-- Content directories today: `home/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `operate/`.
+- Content directories today: `learn/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `operate/`.
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
 - **Any `.js` file under the content root runs on every published page.** Mintlify injects them automatically — there is no allowlist and no way to scope one to a single page — and the same applies to `.css`. Treat a `.js` file here as production code shipped to every reader, not as content: it has full same-origin DOM access on pages that print contract addresses and RPC endpoints. Mintlify does not support a raw `<script src>` in MDX, so third-party scripts are injected programmatically from such a file (`assistant.js` is the example). Note `submodules/developer-tooling` sits under this root too.
@@ -110,7 +110,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 
 | Fact | Canonical page | Say this |
 |---|---|---|
-| Chain IDs, RPC URLs, explorers, faucet | `/build-on-celo/network-overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
+| Chain IDs, RPC URLs, explorers, faucet | `/learn/network/overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
 | Block time | `/operate/specification/deployments` | "1-second blocks". Do not write "1-second finality" — see `/operate/specification/finality` |
 | Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
 | Fee abstraction | `/build-on-celo/fee-abstraction/overview` (guide), `/tooling/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
@@ -118,7 +118,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 | MiniPay | `/build-on-celo/build-on-minipay/overview` | stablecoin wallet, 10M+ activations, Mini App discovery page, Celo only |
 | Token duality | `/operate/specification/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
 | Data availability | `/operate/specification/eigenda` | EigenDA |
-| Architecture | `/build-on-celo/cel2-architecture` | Ethereum L2 on the OP Stack |
+| Architecture | `/learn/network/architecture` | Ethereum L2 on the OP Stack |
 | Agent payments | `/build-on-celo/build-with-ai/x402`, `/build-on-celo/build-with-ai/mpp` | HTTP 402 flows settled in USDC/USDT; Celo facilitator `https://api.x402.celo.org` |
 | Agent identity and trust | `/build-on-celo/build-with-ai/8004`, `/build-on-celo/build-with-ai/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
 | Human identity | `/build-on-celo/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
