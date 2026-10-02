@@ -8,7 +8,13 @@ A public RPC node serves JSON-RPC requests to external clients. This page covers
 
 ## Serve transaction lookups by hash
 
-A public RPC endpoint should return any transaction by its hash. op-reth exposes the standard `eth` namespace, so transactions are retrievable by hash within the node's retained history, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup needs no extra configuration for this. (On the legacy op-geth setup this instead requires `--history.transactions=0`, which the compose setup sets for you.)
+A public RPC endpoint should return any transaction by its hash. op-reth exposes the standard `eth` namespace, so transactions are retrievable by hash within the node's retained history, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup needs no extra configuration for this with `NODE_TYPE=full` (the default) or `NODE_TYPE=archive`.
+
+<Warning>
+**Do not use `NODE_TYPE=minimal` for a public RPC node**
+
+`NODE_TYPE=minimal` starts `op-reth` with `--minimal`, which fully prunes transaction lookups, so `eth_getTransactionByHash` returns `null`. Use `full` or `archive`. See the [Configuration reference](/operate/operators/configuration#node-type-and-sync) for what each tier retains.
+</Warning>
 
 ## Forward transactions to the sequencer
 

@@ -495,8 +495,7 @@
               "operate/operators/public-rpc-node",
               "operate/operators/monitoring",
               "operate/operators/maintenance",
-              "operate/operators/troubleshooting",
-              "operate/operators/migrate-node"
+              "operate/operators/troubleshooting"
             ]
           },
           {
@@ -3184,7 +3183,15 @@
     },
     {
       "source": "/cel2/operators/migrate-node",
-      "destination": "/operate/operators/migrate-node"
+      "destination": "/operate/notices/op-geth-deprecation"
+    },
+    {
+      "source": "/infra-partners/operators/migrate-node",
+      "destination": "/operate/notices/op-geth-deprecation"
+    },
+    {
+      "source": "/operate/operators/migrate-node",
+      "destination": "/operate/notices/op-geth-deprecation"
     },
     {
       "source": "/cel2/operators/overview",
