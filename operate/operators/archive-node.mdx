@@ -13,7 +13,7 @@ This guide covers running a **full archive node**, which serves every historical
 <Info>
 **Execution client: op-reth**
 
-These instructions use `op-reth`, Celo's supported execution client. Support for `op-geth` ended on each network's switch date — see the **Still running op-geth?** notes at the end of this guide and [End of Support for op-geth](/operate/notices/op-geth-deprecation).
+These instructions use `op-reth`, Celo's supported execution client. Support for `op-geth` has ended; see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Info>
 
 ## Overview
@@ -27,7 +27,7 @@ To run an L2 archive node, you need to start the L2 execution client in archive 
 
 An L2 archive node starts from an empty datadir, like a full node — no migrated L1 data is required. To serve pre-L2 historical state, you additionally need one of:
 
-1. A non-migrated Celo L1 archive node datadir (the compose setup runs a legacy archive node from it). Do not attempt to migrate an archive datadir.
+1. A non-migrated Celo L1 archive node datadir (the compose setup runs a legacy archive node from it). The compose setup uses this datadir as it is.
 2. The RPC endpoint of a running legacy Celo L1 archive node.
 
 Ensure any datadir you supply is not in use by a running node before proceeding.
@@ -133,19 +133,4 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
    cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993
    ```
 
-<Accordion title="Still running op-geth? (until your switch date)">
-
-Until your network's [switch date](/operate/notices/op-geth-deprecation), you can keep running an `op-geth` archive node from an existing checkout of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). The flow above is the same, with these differences:
-
-- **Sync mode instead of a snapshot.** `op-geth` archive nodes should run `full` sync against a migrated pre-hardfork datadir — `snap` sync only stores archive data from the point it completes, leaving a gap after the hardfork:
-
-    ```text
-    OP_GETH__SYNCMODE=full
-    DATADIR_PATH=<path to a migrated L1 full node datadir>
-    ```
-
-- **Historical RPC variable.** Use `OP_GETH__HISTORICAL_RPC` in place of `OP_RETH__HISTORICAL_RPC`.
-- **P2P variables.** Use `OP_GETH__NAT` (values `any|none|upnp|pmp|pmp:<IP>|extip:<IP>|stun:<IP:PORT>`) and `PORT__OP_GETH_P2P` (default `30303`).
-- **Logs.** Follow `docker compose logs -n 50 -f op-geth`; a syncing node shows `Syncing beacon headers downloaded=...` and later `"Syncing: chain download in progress","synced":"21.07%"`.
-
-</Accordion>
+   Use any block up to the last Celo L1 block, `31056499` on mainnet; see [Deployments](/operate/specification/deployments) and the [Celo L2 Migration](/operate/notices/archive/l2-migration) notice for the migration heights.
