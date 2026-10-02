@@ -373,22 +373,30 @@ const clients = await publicClient.readContract({
 // getClients returns everyone who has ever rated this agent. Anyone can call
 // giveFeedback, so for a decision that matters, replace this with the reviewer
 // addresses you already trust and treat getClients only as a starting point.
-const [count, value, decimals] =
-  await publicClient.readContract({
-    address: reputationRegistry,
-    abi,
-    functionName: 'getSummary',
-    // Always pass a tag. Averaging across tags mixes ratings with
-    // unrelated feedback, and the result means nothing.
-    args: [agentId, clients, 'starred', ''],
-  });
-
-// A tag filter can leave a non-empty client list with a zero count,
-// so check count here rather than clients.length above.
-if (count === 0n) {
+//
+// Two guards, because two different cases come back empty:
+// 1. clients.length === 0: nobody has rated this agent, and getSummary
+//    would revert with "clientAddresses required", so skip the call.
+// 2. count === 0n after the call: the agent has feedback, but none with
+//    this tag, so the filtered summary is empty.
+if (clients.length === 0) {
   console.log('No starred feedback yet');
 } else {
-  console.log(`${count} reviews, score ${formatUnits(value, decimals)}`);
+  const [count, value, decimals] =
+    await publicClient.readContract({
+      address: reputationRegistry,
+      abi,
+      functionName: 'getSummary',
+      // Always pass a tag. Averaging across tags mixes ratings with
+      // unrelated feedback, and the result means nothing.
+      args: [agentId, clients, 'starred', ''],
+    });
+
+  if (count === 0n) {
+    console.log('No starred feedback yet');
+  } else {
+    console.log(`${count} reviews, score ${formatUnits(value, decimals)}`);
+  }
 }
 ```
 
