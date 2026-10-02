@@ -1,0 +1,129 @@
+---
+title: Build with AI on Celo
+sidebarTitle: "Overview"
+description: Build AI agents on Celo that pay, transact, and coordinate onchain with stablecoins
+---
+
+## Agentic Activity with Real World Utility
+
+Celo is a leading Ethereum Layer 2 optimized for agentic activity with real-world utility, enabling AI agents to autonomously perform onchain actions tied directly to payments, commerce, and financial coordination.
+
+Agents on Celo can tap into the network's expansive payments ecosystem, leveraging fast finality, sub-cent transaction costs, and a stablecoin-optimized financial stack spanning peer-to-peer transfers, merchant payments, remittances, and onchain FX. Combined with native support for agent standards like [ERC-8004](/build/agents/8004) for trust, [x402](/build/agents/x402) and [MPP](/build/agents/mpp) for HTTP-native payments, and Celo's [Celopedia](/build/agents/celopedia), Celo provides a production-ready environment for deploying AI agents that do more than trade tokens—they move money, coordinate economic activity, and interact with real users at global scale.
+
+## Why Build AI Agents on Celo
+
+On Celo, AI Agents can experiment and execute at scale. Celo's infrastructure is optimized for high-frequency, real-world transactions that AI agents rely on to operate autonomously and cost-effectively.
+
+Key advantages include:
+
+- **Fast finality and sub-cent transaction costs**, enabling agents to act continuously without prohibitive fees
+- **Stablecoin-optimized design**, supporting payments, savings, subscriptions, and settlements across 25 stable assets tracking a wide range of local currencies
+- **Mobile-first reach**, allowing agents to interact with users through wallets and apps used daily across global markets
+- **Ethereum alignment**, giving agents access to the broader Ethereum ecosystem while operating in a purpose-built execution environment
+
+This makes Celo uniquely suited for agentic workflows tied to commerce, coordination, and financial automation.
+
+## What Is an AI Agent on Celo
+
+An AI agent on Celo is a software system that can:
+
+- Observe onchain and offchain data
+- Make decisions using AI models or rule-based logic
+- Execute transactions and contract calls autonomously
+- Interact with users, wallets, and protocols without constant manual input
+
+On Celo, agents are first-class participants in the economy. They can send and receive stablecoins, pay for services, manage balances, interact with DeFi protocols, and coordinate activity across multiple users and applications.
+
+## Types of AI Agents
+
+**1. Basic AI Agents**
+- Simple tasks like chatbots with decision trees.
+- Examples: Command processors, basic I/O automation.
+
+**2. Functional Agents**
+- Specialized agents with defined purposes.
+- Examples: Code review agents, research assistants, or domain-specific solvers.
+
+**3. Autonomous Agents**
+- Operate with minimal human intervention.
+- Capabilities: Multi-step reasoning, task automation, self-improvement.
+
+**4. Multi-Agent Systems**
+- Collaborative systems where agents work together.
+- Examples: Collective problem-solving, distributed decision-making, or agent-to-agent communication.
+
+## Agent Payments with x402 and MPP
+
+Agents on Celo can charge and pay for services over plain HTTP, settling in stablecoins in a single request — no accounts, invoices, or checkout flows.
+
+- **[x402](/build/agents/x402)** gives meaning to the HTTP `402 Payment Required` status code, letting an agent settle a stablecoin micropayment inline with the request.
+- **[MPP (Machine Payments Protocol)](/build/agents/mpp)** builds on the same flow so any service can charge USDC per request through a hosted facilitator — the buyer pays no gas.
+
+Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce. A paid API, MCP server, or bot can also carry its own ERC-8004 identity, so agents can discover it and rate it — see [Register a service](/build/agents/8004#register-a-service).
+
+## Giving an agent a wallet
+
+An agent that pays for things needs an account it can read from and sign with. You can wire this up directly with [viem](/build/tools/libraries-sdks/viem), or use a tool that exposes the calls to an LLM: [Celina](/build/agents/mcp/celina) is a third-party, open-source stack covering balances, transfers, DeFi, governance, staking and Self Agent ID through an SDK, an MCP server, a REST API, and a read-only Telegram bot.
+
+## Fee Abstraction for Agents
+
+AI agents on Celo can pay gas fees in stablecoins like USDC or USDT instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
+
+Celo supports a `feeCurrency` field on transactions that lets you specify which token to use for gas. [viem](https://viem.sh/) has native support for this field, making it the recommended library for agent backends.
+
+### Quick Start
+
+This example shows an agent sending a USDC transfer while paying gas in USDC:
+
+```typescript
+import { createWalletClient, createPublicClient, http, parseUnits } from "viem";
+import { celo } from "viem/chains";
+import { privateKeyToAccount } from "viem/accounts";
+import { erc20Abi } from "viem";
+
+// Agent's wallet
+const account = privateKeyToAccount(process.env.AGENT_PRIVATE_KEY as `0x${string}`);
+
+const walletClient = createWalletClient({
+  account,
+  chain: celo,
+  transport: http(),
+});
+
+const publicClient = createPublicClient({
+  chain: celo,
+  transport: http(),
+});
+
+// Addresses
+const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
+
+async function sendUSDCWithFeeAbstraction(to: `0x${string}`, amount: bigint) {
+  const hash = await walletClient.writeContract({
+    address: USDC,
+    abi: erc20Abi,
+    functionName: "transfer",
+    args: [to, amount],
+    feeCurrency: USDC_ADAPTER, // Pay gas in USDC
+  });
+
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  return receipt;
+}
+
+// Agent sends 1 USDC, gas paid in USDC — no CELO needed
+await sendUSDCWithFeeAbstraction("0xRecipient...", parseUnits("1", 6));
+```
+
+<Note>
+  When using USDC or USDT as fee currency, always use the **adapter address** (not the token address). Adapters normalize the 6-decimal tokens to the 18-decimal format that Celo's gas pricing requires. For 18-decimal tokens like USDm, use the token address directly.
+</Note>
+
+For the current token and adapter addresses on Mainnet and Celo Sepolia, see [Fee Currencies](/build/tools/contracts/fee-currencies) — generated from the on-chain `FeeCurrencyDirectory` allowlist.
+
+For the full guide — including gas estimation, CIP-64 transaction types, and CLI usage — see [Fee Abstraction](/build/fee-abstraction/using-fee-abstraction).
+
+## Crediting Agent Transactions to Your App
+
+Agents transacting on behalf of your app can also carry an [attribution tag](/build/agents/attribution-tags), so the on-chain activity they generate is credited back to you — useful for tracking usage across MiniPay or your own analytics.

@@ -1,0 +1,102 @@
+---
+title: "Deploy on Celo with Hardhat"
+sidebarTitle: "Using Hardhat"
+description: How to deploy a Smart Contract to Celo using Hardhat
+---
+
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Hardhat](https://hardhat.org/).
+
+---
+
+## Introduction to Hardhat
+
+[Hardhat](https://hardhat.org/) is a development environment to compile, deploy, test, and debug your Ethereum or Celo software. It helps developers manage and automate the recurring tasks that are inherent to the process of building smart contracts and apps, as well as easily introducing more functionality around this workflow. This means compiling, running, and testing smart contracts at the very core.
+
+## Prerequisites
+
+Node.js and a package manager installed locally, plus an account funded from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia).
+
+The configuration below reads a mnemonic on Celo's derivation path, `m/44'/52752'/0'/0`. Generate one with [`celocli account:new`](/build/tools/libraries-sdks/cli/account) — MetaMask cannot export or import along that path, so an existing MetaMask seed will not work here.
+
+To deploy without a local environment, use [Remix](/build/tools/dev-environments/remix) instead.
+
+## Create Hardhat Project
+
+Choose one of the following items to prepare an app to deploy on Celo.
+
+- Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract.
+
+## Update the hardhat.config.js file
+
+Open [hardhat.config.js](https://hardhat.org/config/) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/celo-composer/blob/main/templates/contracts/hardhat/hardhat.config.ts.hbs). This code is similar to Hardhat settings with a few configuration updates needed to deploy to a Celo network. You will need to create a `.env` file in the project root directory and install `dotenv` with npm or yarn in order to read the `process.env.MNEMONIC` variable in the config file.
+
+### Connect to Testnet using Forno
+
+Using [Forno](/build/tools/nodes/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Sepolia Testnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+
+```js
+   celoSepolia: {
+     url: "https://forno.celo-sepolia.celo-testnet.org/",
+     accounts: {
+       mnemonic: process.env.MNEMONIC,
+       path: "m/44'/52752'/0'/0"
+     },
+     chainId: 11142220
+   }
+```
+
+<Info>
+Celo uses a different account derivation path than Ethereum, so you have to specify "m/44'/52752'/0'/0" as the path.
+</Info>
+
+### Connect to Mainnet using Forno
+
+Using [Forno](/build/tools/nodes/forno) also allows you to connect to the Celo main blockchain without running a local node. The Mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+
+```js
+   celo: {
+     url: "https://forno.celo.org",
+     accounts: {
+       mnemonic: process.env.MNEMONIC,
+       path: "m/44'/52752'/0'/0"
+     },
+     chainId: 42220
+   }
+```
+
+<Tip>
+[Forno](/build/tools/nodes/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+</Tip>
+
+## Deploy to Celo
+
+Run the following command from your root project directory to deploy to Celo Sepolia testnet.
+
+```shell
+npx hardhat run scripts/sample-script.js --network celoSepolia
+```
+
+...or run this command to deploy to Celo Mainnet.
+
+```shell
+npx hardhat run scripts/sample-script.js --network celo
+```
+
+## View Contract Deployment
+
+Copy your **contract address** from the terminal and navigate to the [block explorer](https://celo.blockscout.com/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
+
+<Frame>
+![github](/img/doc-images/deploy-hardhat/image1.png)
+</Frame>
+
+<Tip>
+Learn more about building and deploying apps using the <a href="https://hardhat.org/">HardHat documentation</a>.
+</Tip>
+
+## Verify Contracts on Celo
+
+- [Using Blockscout](/developer/verify/blockscout)
+- [Using Remix](/developer/verify/remix)
+- [Using CeloScan](/developer/verify/celoscan)
+- [Using Hardhat](/developer/verify/hardhat)
