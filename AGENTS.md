@@ -20,6 +20,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 npm i -g mint          # once
 mint dev               # preview at http://localhost:3000
 mint broken-links      # must pass before every PR; CI runs it on every PR to main
+python3 scripts/check_redirects.py  # must pass too when you touch redirects; CI runs it
 mint update            # if the CLI misbehaves
 ```
 
@@ -27,10 +28,10 @@ mint update            # if the CLI misbehaves
 
 All four steps, every time. External links and search results break silently when one is skipped.
 
-1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect.
+1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect. A source cannot contain `#`: browsers never send the fragment, so it never matches. Between `:slug*` wildcards the first match wins, so put a narrower wildcard above a broader one.
 2. Update the page's entry under `navigation` (or remove it).
 3. Update every inbound internal link: `grep -rn --include='*.mdx' "/old/path" .`
-4. Run `mint broken-links`.
+4. Run `mint broken-links` and `python3 scripts/check_redirects.py`.
 
 Deleting a page still needs step 1 — redirect to the nearest page that answers the same question.
 
