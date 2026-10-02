@@ -1,0 +1,101 @@
+---
+title: "Query On-Chain Identifiers with ODIS"
+sidebarTitle: "Querying on-chain identifiers with ODIS"
+description: How to use ODIS to query the on-chain identifier given a phone number.
+---
+
+<Warning>
+As of block height 31,056,500 (March 26, 2025, 3:00 AM UTC), Celo is no longer a standalone Layer 1 blockchain—it is now an Ethereum Layer 2!
+Some documentation may be outdated as updates are in progress. If you encounter issues, please [file a bug report](https://github.com/celo-org/docs/issues/new/choose).
+
+For the most up-to-date information, refer to our [Celo L2 documentation](/build#celo-l2-mainnet).
+</Warning>
+
+## What is ODIS?
+
+One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.
+
+<Note>
+ODIS requests are rate-limited based on transaction history and balance. Ensure the account that is performing the queries has a balance and has performed transactions on the network. If an out of quota error is hit, this indicates that more transactions need to be sent from the querying account.
+</Note>
+
+The main ODIS method is `getObfuscatedIdentifier`, which queries and computes the on-chain identifier for an off-chain identifier such as a phone number.
+
+<Tip>
+See [this overview document](/build/build-on-socialconnect) for more details on ODIS.
+</Tip>
+
+## Authentication
+
+Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer/contractkit/data-encryption-key)
+
+You may use the `EncryptionKeySigner` for your `AuthSigner` by passing in the raw private key:
+
+```ts
+const authSigner: AuthSigner = {
+  authenticationMethod: OdisUtils.Query.AuthenticationMethod.ENCRYPTION_KEY,
+  rawKey: privateDataKey,
+};
+```
+
+Alternatively, you may use the `WalletKeySigner` by passing in a contractkit instance with the account unlocked:
+
+```ts
+const authSigner: AuthSigner = {
+  authenticationMethod: OdisUtils.Query.AuthenticationMethod.WALLET_KEY,
+  contractKit,
+};
+```
+
+## Service Context
+
+The `ServiceContext` object provides the ODIS endpoint URL and the ODIS public key (same as above).
+
+```ts
+const serviceContext: ServiceContext = {
+  odisUrl,
+  odisPubKey,
+};
+```
+
+The ODIS endpoint URL for each environment can be found here:
+
+| Environment       | Key                                                                  |
+| ----------------- | -------------------------------------------------------------------- |
+| Alfajores Staging | https://us-central1-celo-phone-number-privacy-stg.cloudfunctions.net |
+| Alfajores         | https://us-central1-celo-phone-number-privacy.cloudfunctions.net     |
+| Mainnet           | https://us-central1-celo-pgpnp-mainnet.cloudfunctions.net            |
+
+The ODIS public key for each environment can be found here:
+
+| Environment       | Key                                                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Alfajores Staging | 7FsWGsFnmVvRfMDpzz95Np76wf/1sPaK0Og9yiB+P8QbjiC8FV67NBans9hzZEkBaQMhiapzgMR6CkZIZPvgwQboAxl65JWRZecGe5V3XO4sdKeNemdAZ2TzQuWkuZoA |
+| Alfajores         | kPoRxWdEdZ/Nd3uQnp3FJFs54zuiS+ksqvOm9x8vY6KHPG8jrfqysvIRU0wtqYsBKA7SoAsICMBv8C/Fb2ZpDOqhSqvr/sZbZoHmQfvbqrzbtDIPvUIrHgRS0ydJCMsA |
+| Mainnet           | FvreHfLmhBjwxHxsxeyrcOLtSonC9j7K3WrS4QapYsQH6LdaDTaNGmnlQMfFY04Bp/K4wAvqQwO9/bqPVCKf8Ze8OZo8Frmog4JY4xAiwrsqOXxug11+htjEe1pj4uMA |
+
+## Query phone number identifier
+
+This call consumes quota. When the user runs out of quota, it's recommended to prompt the user to "purchase" more quota by sending a transaction to themselves. This method returns the pepper retrieved from the service as well as the computed on-chain identifier that is generated using this pepper and the phone number.
+
+### BLS Blinding Client
+
+It's important for user privacy that the ODIS servers don't have the ability to view the raw phone number. Before making the request, the library first blinds the phone number using a BLS library. This prevents ODIS from seeing the phone number while still making the resulting signature recoverable to the original phone number. The blinding client is written in [Rust](https://github.com/celo-org/celo-threshold-bls-rs) and compiled to WebAssembly.
+
+The SDK ships a `WasmBlsBlindingClient`. If you don't pass a blinding client, `getObfuscatedIdentifier` defaults to it:
+
+```ts
+const blsBlindingClient = new WasmBlsBlindingClient(odisPubKey);
+```
+
+`WasmBlsBlindingClient` only runs in a Node.js environment: its constructor throws in React Native and in the browser. For browser or React Native runtimes, pass your own web blinding client. See the [example web blinding client](https://github.com/celo-org/social-connect/blob/d013ed9/docs/examples/blinding/webBlindingClient.ts) in the social-connect repo.
+
+Now you're ready to get the on-chain identifier. `OdisUtils.Identifier.getObfuscatedIdentifier` [documentation can be found here](https://github.com/celo-org/social-connect/blob/d013ed9/packages/identity/src/odis/identifier.ts#L105).
+
+The response will be [an `IdentifierHashDetails` object](https://github.com/celo-org/social-connect/blob/d013ed9/packages/identity/src/odis/identifier.ts#L74) with the plaintext identifier, the on-chain identifier (`obfuscatedIdentifier`), and the pepper.
+
+<Note>
+The older `OdisUtils.PhoneNumberIdentifier.getPhoneNumberIdentifier` (which returns a `phoneHash`) is deprecated in favor of `getObfuscatedIdentifier`.
+</Note>
+
+You can view an example of this call in the [SocialConnect Twitter sample app](https://github.com/celo-org/SocialConnect-Twitter/blob/f5d398f/packages/react-app/pages/index.tsx).

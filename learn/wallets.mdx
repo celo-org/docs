@@ -5,15 +5,15 @@ description: Choose a wallet to hold and send CELO and Celo stablecoins, connect
 
 import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
 
-This page helps people who hold CELO or Celo stablecoins choose a wallet. App developers adding wallets to an app should see [Wallet integration](/tooling/wallets).
+This page helps people who hold CELO or Celo stablecoins choose a wallet. App developers adding wallets to an app should see [Wallet integration](/build/tools/wallets).
 
 ## Choosing a wallet
 
 Celo works with a range of wallets, each offering features to meet different user needs.
 
-The [Celo native wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
+The [Celo native wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build/build-on-socialconnect) and [fee abstraction](/build/fee-abstraction/overview).
 
-Some wallets charge gas in CELO even if you hold stablecoins; see [which wallets can pay gas in stablecoins](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+Some wallets charge gas in CELO even if you hold stablecoins; see [which wallets can pay gas in stablecoins](/build/fee-abstraction/overview#wallet-support-for-cip-64).
 
 The [Celo compatible wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets that support the Celo network.
 
@@ -53,7 +53,7 @@ Celo Terminal is a wallet and app platform designed as a hub for managing and ru
 - Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://x.com/wotrust1)
-- Hardware wallet support: Yes (Note: [EIP-712 signing requires workaround](/tooling/wallets/ledger/eip712-workaround))
+- Hardware wallet support: Yes (Note: [EIP-712 signing requires workaround](/build/tools/wallets/ledger/eip712-workaround))
 - [Source Code](https://github.com/zviadm/celoterminal)
 
 ---
@@ -64,17 +64,17 @@ Celo Terminal is a wallet and app platform designed as a hub for managing and ru
 
 ### [Ledger](https://www.ledger.com/)
 
-Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice. App transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64) for the supported versions.
+Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice. App transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build/fee-abstraction/overview#wallet-support-for-cip-64) for the supported versions.
 
 - [Homepage](https://www.ledger.com/)
-- Guides: [set up a Ledger with Celo](/tooling/wallets/ledger/setup), connect it to [Celo Terminal](/tooling/wallets/ledger/to-celo-terminal), the [Celo web wallet](/tooling/wallets/ledger/to-celo-web) or the [Celo CLI](/tooling/wallets/ledger/to-celo-cli), and the [EIP-712 signing workaround](/tooling/wallets/ledger/eip712-workaround)
+- Guides: [set up a Ledger with Celo](/build/tools/wallets/ledger/setup), connect it to [Celo Terminal](/build/tools/wallets/ledger/to-celo-terminal), the [Celo web wallet](/build/tools/wallets/ledger/to-celo-web) or the [Celo CLI](/build/tools/wallets/ledger/to-celo-cli), and the [EIP-712 signing workaround](/build/tools/wallets/ledger/eip712-workaround)
 - Platforms: Ledger Live (desktop, mobile) with a Ledger device
 
 ---
 
 ## Celo compatible wallets
 
-Here’s an overview of popular wallets compatible with the Celo network. Not all of them support [fee abstraction](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64), so gas may be charged in CELO.
+Here’s an overview of popular wallets compatible with the Celo network. Not all of them support [fee abstraction](/build/fee-abstraction/overview#wallet-support-for-cip-64), so gas may be charged in CELO.
 
 ### [Rabby](https://rabby.io/)
 
@@ -90,7 +90,7 @@ Your go-to wallet for Ethereum and EVM - Track portfolio across all EVM chains i
 MetaMask is a self-custody wallet with support for Celo.
 
 - [Homepage](https://metamask.io/)
-- Guides: add Celo [mainnet](/learn/network/overview) or [testnet](/tooling/wallets/metamask/add-celo-testnet-to-metamask) to MetaMask, and [use MetaMask with Celo](/tooling/wallets/metamask/use)
+- Guides: add Celo [mainnet](/learn/network/overview) or [testnet](/build/tools/wallets/metamask/add-celo-testnet-to-metamask) to MetaMask, and [use MetaMask with Celo](/build/tools/wallets/metamask/use)
 - Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask)
 
 ---
@@ -192,7 +192,7 @@ Celo has no usernames or passwords. A wallet is controlled by its recovery phras
 
 ### A token does not appear in your wallet
 
-Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/tooling/contracts/stablecoin-contracts); use the Celo Mainnet column. Tokens sent on another network do not show up on Celo.
+Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/build/tools/contracts/stablecoin-contracts); use the Celo Mainnet column. Tokens sent on another network do not show up on Celo.
 
 ### Move funds in or out
 
@@ -204,5 +204,5 @@ Which providers work in your country depends on the provider. Check availability
 
 ## Related
 
-- [Wallet integration](/tooling/wallets) — for app developers adding wallets to an app
-- [Fee abstraction](/build-on-celo/fee-abstraction/overview) — how gas is paid in stablecoins, and which wallets support it
+- [Wallet integration](/build/tools/wallets) — for app developers adding wallets to an app
+- [Fee abstraction](/build/fee-abstraction/overview) — how gas is paid in stablecoins, and which wallets support it

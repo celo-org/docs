@@ -10,17 +10,17 @@ This directory contains utility scripts for maintaining and updating the Celo do
 
 | Page | Source |
 | ---- | ------ |
-| `tooling/contracts/core-contracts.mdx` | `celocli network:contracts` |
-| `tooling/contracts/l1-contracts.mdx` | rollup config files + `cast` |
-| `tooling/contracts/fee-currencies.mdx` | `FeeCurrencyDirectory.getCurrencies()` via `cast` |
-| `tooling/contracts/stablecoin-contracts.mdx` | the fee-currency allowlist + `data/stablecoins.json` |
+| `build/tools/contracts/core-contracts.mdx` | `celocli network:contracts` |
+| `build/tools/contracts/l1-contracts.mdx` | rollup config files + `cast` |
+| `build/tools/contracts/fee-currencies.mdx` | `FeeCurrencyDirectory.getCurrencies()` via `cast` |
+| `build/tools/contracts/stablecoin-contracts.mdx` | the fee-currency allowlist + `data/stablecoins.json` |
 
 Do not edit those four files by hand — change the generator instead. The page bodies live in
 the `PAGE_HEADER_*` constants near the top of `update_contracts.py`.
 
 ## Data
 
-- `data/stablecoins.json` - Curated input for `tooling/contracts/stablecoin-contracts.mdx`.
+- `data/stablecoins.json` - Curated input for `build/tools/contracts/stablecoin-contracts.mdx`.
   Mento stablecoins plus USDC, USD₮ and USA₮ are read from the on-chain fee-currency
   allowlist; third-party issuers have no registry to read from, so they are maintained by
   hand here, along with issuer attribution and any display-symbol overrides.
