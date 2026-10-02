@@ -71,7 +71,7 @@ Two hosts are involved, and they are not interchangeable:
 - **Payment API** — `https://api.x402.celo.org` (mainnet) is the facilitator endpoint your resource server talks to for `/verify`, `/settle`, and `/supported`. Celo Sepolia is at `https://api.x402.sepolia.celo.org`.
 
 <Note>
-  Source: `celo-org/x402-facilitator` (private repo). The endpoints below are live at `https://api.x402.celo.org` (mainnet) and `https://api.x402.sepolia.celo.org` (Celo Sepolia).
+  The endpoints below are live at `https://api.x402.celo.org` (mainnet) and `https://api.x402.sepolia.celo.org` (Celo Sepolia).
 </Note>
 
 ### Endpoints
@@ -241,12 +241,13 @@ Publishers can monetize individual articles instead of requiring subscriptions. 
 
 ## Trust and other facilitators
 
-The Celo facilitator at `https://api.x402.celo.org` is built and run by Celo, and it never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+The Celo facilitator at `https://api.x402.celo.org` is run by Celo and built on [`x402-rs`](https://github.com/x402-rs/x402-rs).
 
 A facilitator you do not know deserves the same checks as any other service that submits transactions for you:
 
-- Confirm who operates it and that its source is public.
+- Confirm who operates it.
 - Before your server accepts a payment, check the asset, amount and `payTo` address against what you priced. Do not rely on the facilitator's response alone.
+- Confirm the settlement transaction on-chain before you deliver anything valuable. A facilitator cannot redirect funds, because the payer signs `to` and `value`, but a settlement claim should still be checked.
 - Test against Celo Sepolia (`https://api.x402.sepolia.celo.org` for the Celo facilitator) before sending mainnet funds.
 
 thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb x402 docs](https://portal.thirdweb.com/x402).
