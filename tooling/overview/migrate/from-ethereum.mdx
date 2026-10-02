@@ -8,7 +8,7 @@ Overview of the similarities and differences between the Celo and Ethereum block
 ---
 
 <Tip>
-For a general overview of the Celo network and architecture, see [the Celo Overview page](/home/index).
+For a general overview of the Celo network and architecture, see [the Celo Overview page](/learn/index).
 </Tip>
 
 ## Celo's relationship to Ethereum
@@ -80,11 +80,11 @@ You can [view the implementation here.](https://celo.blockscout.com/address/0xaa
 
 1.  As previously mentioned, CELO transfers are not required to happen via the ERC20 interface. A user's CELO balance may change without any interaction with the CELO contract, as they may transfer CELO natively.
 
-2.  Celo supports a broad range of Ethereum-compatible transaction types to ensure seamless integration with existing Ethereum tooling. In addition to standard Ethereum tx types like legacy (type 0), EIP-2930 (type 1), and EIP-1559 (type 2), Celo also supports OP Stack-specific deposited transactions (type 126) and introduces its own Celo-native tx type (type 123) to enable features like Fee Abstraction. While most Ethereum transactions work out of the box on Celo, developers can also take advantage of extended functionality such as paying gas fees in ERC-20 tokens.  For a more detailed overview, check out the full breakdown of supported [transaction types](/home/protocol/transactions/transaction-types).
+2.  Celo supports a broad range of Ethereum-compatible transaction types to ensure seamless integration with existing Ethereum tooling. In addition to standard Ethereum tx types like legacy (type 0), EIP-2930 (type 1), and EIP-1559 (type 2), Celo also supports OP Stack-specific deposited transactions (type 126) and introduces its own Celo-native tx type (type 123) to enable features like Fee Abstraction. While most Ethereum transactions work out of the box on Celo, developers can also take advantage of extended functionality such as paying gas fees in ERC-20 tokens.  For a more detailed overview, check out the full breakdown of supported [transaction types](/learn/protocol/transactions/transaction-types).
 
 1)  Mnemonic seed phrases can derive different accounts depending on the key derivation path used. While Ethereum wallets typically use the path `m/44'/60'/0'/0`, Celo defines its own path as `m/44'/52752'/0'/0`. Despite this, **most Celo wallets—including Valora—default to the Ethereum derivation path**, except in the case of some legacy accounts. Ledger Wallet, when used with the **Celo Ledger app**, strictly uses the Celo path. Tools like the **Celo CLI and the Celo Ledger app**, however, offer flexibility and allow users to specify either path explicitly.
 
-2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and app developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/home/celo-l1).
+2)  The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and app developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/learn/celo-l1).
 
 ## Deploying Ethereum contracts to Celo
 
@@ -102,7 +102,7 @@ Celo includes all of the Ethereum precompiled contracts and adds a few of its ow
 
 ### Core contract calls
 
-Celo runs some protocol logic in core contracts rather than in the client — [epoch rewards](/home/protocol/epoch-rewards/index) and [validator elections](/home/protocol/staking/validator-elections) among them. If you index Celo, read those contracts rather than assuming every state change arrives as a normal transaction.
+Celo runs some protocol logic in core contracts rather than in the client — [epoch rewards](/learn/protocol/epoch-rewards/index) and [validator elections](/learn/protocol/staking/validator-elections) among them. If you index Celo, read those contracts rather than assuming every state change arrives as a normal transaction.
 
 ### Node management APIs
 

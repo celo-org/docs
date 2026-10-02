@@ -8,9 +8,9 @@
 # Build on Celo section - DevRel team
 /build-on-celo/ @celo-org/devrel
 
-# Home section (protocol, manage, etc.) - Blockchain and Primitives teams
-/home/ @celo-org/blockchain @celo-org/primitives
-/home/protocol/ @celo-org/blockchain @celo-org/primitives
+# Learn section (protocol, governance, manage, etc.) - Blockchain and Primitives teams
+/learn/ @celo-org/blockchain @celo-org/primitives
+/learn/protocol/ @celo-org/blockchain @celo-org/primitives
 
 # Contribute to Celo section - DevRel team
 /contribute-to-celo/ @celo-org/devrel
