@@ -196,6 +196,7 @@
                 "group": "Agent Infrastructure",
                 "pages": [
                   "build-on-celo/build-with-ai/x402",
+                  "build-on-celo/build-with-ai/x402-get-discovered",
                   "build-on-celo/build-with-ai/mpp",
                   "build-on-celo/build-with-ai/celopedia",
                   "build-on-celo/build-with-ai/vibe-coding"
