@@ -94,7 +94,7 @@ The policy, decided for the restructure: **troubleshooting-first.**
 - Self-contained: imports shown, env vars named, network stated in a comment. A reader copies one block and it works.
 - Bare language tag, no `title=`, no line highlighting. Use `bash` for shell (not `sh`/`shell`), `ts`/`tsx` for TypeScript (not `typescript`), `js`/`jsx` for JavaScript, `solidity`, `json`, `yaml`.
 - Every address in a code block or table carries the network name and, for tokens, the decimals: `// Celo mainnet (42220), USDC, 6 decimals`.
-- Every address is written in its EIP-55 checksummed form; get it from `cast to-check-sum-address <address>`. Mixed case with a wrong checksum breaks copied code: ethers throws `bad address checksum` and viem's `isAddress` returns `false`.
+- Write new and edited addresses in their EIP-55 checksummed form; get it from `cast to-check-sum-address <address>`. Mixed case with a wrong checksum breaks copied code: ethers throws `bad address checksum` and viem's `isAddress` returns `false`. Do not sweep old pages just to recase addresses; fix the ones on pages you are already editing.
 - Prefer `viem` / `wagmi` examples; they support Celo fee-currency transactions natively.
 - Testnet is **Celo Sepolia, chain ID 11142220**. Alfajores (44787) is retired — do not reference it.
 
