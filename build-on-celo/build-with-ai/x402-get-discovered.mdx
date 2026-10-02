@@ -25,7 +25,7 @@ Discovery has two halves.
 | [Coinbase x402 discovery](https://docs.cdp.coinbase.com/x402/seller/get-discovered) | Automatic after a paid call settles through Coinbase's facilitator | Coinbase's facilitator settles on Base, Base Sepolia, Polygon, Arbitrum, World and Solana. Listings without a settlement for 30 days are removed |
 | [x402scan](https://www.x402scan.com/resources/register) | Submit the URL; it is added if it returns a valid challenge | Registration accepts Base and Solana resources |
 | [8004scan](https://8004scan.io) | Register an [ERC-8004](/build-on-celo/build-with-ai/8004) identity whose registration file lists your endpoints and sets `x402Support` | An identity on Celo |
-| [Buy catalog](https://usebuy.ai) | Ask for a listing with the [buy-skill issue form](https://github.com/celo-org/buy-skill/issues/new/choose) | A public origin, a description, a price, and the networks and tokens you accept |
+| [Buy catalog](https://usebuy.ai) | Ask for a listing with the [buy-skill issue form](https://github.com/celo-org/buy-skill/issues/new?template=list-your-service.yml) | A public origin, a description, a price, and the networks and tokens you accept |
 
 ## Describe your endpoint in the 402
 
@@ -111,7 +111,7 @@ curl -X POST https://agent402.tools/api/index/register \
 
 ## List in Coinbase's discovery index
 
-Coinbase's index adds an endpoint automatically after a paid call has settled through Coinbase's facilitator, It removes resources that go 30 days without a settlement, and endpoints that stop returning `402`. That facilitator settles on Base, Base Sepolia, Polygon, Arbitrum, World and Solana. To appear there with a Celo offer:
+Coinbase's index adds an endpoint automatically after a paid call has settled through Coinbase's facilitator. It removes resources that go 30 days without a settlement, and endpoints that stop returning `402`. That facilitator settles on Base, Base Sepolia, Polygon, Arbitrum, World and Solana, so an offer that only settles on Celo is not listed. To appear there:
 
 1. Follow [Coinbase's seller guide](https://docs.cdp.coinbase.com/x402/seller/get-discovered) to add an offer on one of those networks and settle it through Coinbase's facilitator.
 2. Keep at least one paid call a month on the offer that settles there.
@@ -126,7 +126,7 @@ Agents that look up sellers on [8004scan](https://8004scan.io) read the on-chain
 
 ## Ask for a listing in the Buy catalog
 
-Buy's catalog is curated. Open a listing request with the [buy-skill issue form](https://github.com/celo-org/buy-skill/issues/new/choose) with your origin, a one-paragraph description, the price, and the networks and tokens you accept.
+Buy's catalog is curated. Open a listing request with the [buy-skill issue form](https://github.com/celo-org/buy-skill/issues/new?template=list-your-service.yml) with your origin, a one-paragraph description, the price, and the networks and tokens you accept.
 
 ## Troubleshooting
 
