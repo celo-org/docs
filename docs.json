@@ -603,6 +603,170 @@
   },
   "redirects": [
     {
+      "source": "/quickstart",
+      "destination": "/build-on-celo/quickstart"
+    },
+    {
+      "source": "/operate/integration/nightfall",
+      "destination": "/build-on-celo/nightfall"
+    },
+    {
+      "source": "/home/protocol/transaction/:slug*",
+      "destination": "/home/protocol/transactions/:slug*"
+    },
+    {
+      "source": "/infra-partners/integration/nightfall",
+      "destination": "/build-on-celo/nightfall"
+    },
+    {
+      "source": "/learn/celo-token",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/learn/developer-tools",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/protocol/transaction/fee-abstraction",
+      "destination": "/build-on-celo/fee-abstraction/overview"
+    },
+    {
+      "source": "/protocol/transaction/fees",
+      "destination": "/operate/specification/transaction-fees"
+    },
+    {
+      "source": "/tooling/overview/network/node/overview",
+      "destination": "/tooling/nodes/overview"
+    },
+    {
+      "source": "/build-on-celo/contract-development/deploy/deploy-with-foundry",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/contract-development/deploy/deploy-with-foundry",
+      "destination": "/tooling/dev-environments/foundry"
+    },
+    {
+      "source": "/build-on-celo/mobile-wallets/minipay",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/build-on-celo/minipay/overview",
+      "destination": "/build-on-celo/build-on-minipay/overview"
+    },
+    {
+      "source": "/celo-sdk/introduction",
+      "destination": "/tooling/libraries-sdks/celo-sdks"
+    },
+    {
+      "source": "/contract/reference/core-contracts",
+      "destination": "/tooling/contracts/core-contracts"
+    },
+    {
+      "source": "/tooling/contracts/l1-core-contracts",
+      "destination": "/tooling/contracts/l1-contracts"
+    },
+    {
+      "source": "/tooling/contracts/legacy/l1-contracts",
+      "destination": "/tooling/contracts/l1-contracts"
+    },
+    {
+      "source": "/tooling/nodes/contribute-to-celo/community-rpc-nodes/community-rpc-node.mdx",
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
+    },
+    {
+      "source": "/home/celo-token",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/home/celo-tokenomics",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/celo-owner-guide/governance",
+      "destination": "/home/protocol/governance/overview"
+    },
+    {
+      "source": "/governance/overview",
+      "destination": "/home/protocol/governance/overview"
+    },
+    {
+      "source": "/command-line-interface/commands/governance",
+      "destination": "/tooling/libraries-sdks/cli/governance"
+    },
+    {
+      "source": "/developer/deploy-hardhat",
+      "destination": "/tooling/dev-environments/hardhat"
+    },
+    {
+      "source": "/developer/deployments/testnet",
+      "destination": "/build-on-celo/network-overview"
+    },
+    {
+      "source": "/developer/build/mcp/mcp",
+      "destination": "/build-on-celo/build-with-ai/mcp/index"
+    },
+    {
+      "source": "/get-started/grants",
+      "destination": "/build-on-celo/fund-your-project"
+    },
+    {
+      "source": "/build-on",
+      "destination": "/build-on-celo"
+    },
+    {
+      "source": "/tutorials",
+      "destination": "/build-on-celo"
+    },
+    {
+      "source": "/getting-started/baklava-testnet/running-a-validator",
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
+    },
+    {
+      "source": "/getting-started/baklava-testnet/reconnecting-to-network",
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
+    },
+    {
+      "source": "/operations-manual/node-upgrades",
+      "destination": "/operate"
+    },
+    {
+      "source": "/operations-manual/celo-foundation-voting-policy",
+      "destination": "/home/celo-l1"
+    },
+    {
+      "source": "/validator-guide/summary",
+      "destination": "/operate"
+    },
+    {
+      "source": "/operations-manual/summary/ledger",
+      "destination": "/tooling/wallets/ledger/setup"
+    },
+    {
+      "source": "/validator-guide/summary/ledger",
+      "destination": "/tooling/wallets/ledger/setup"
+    },
+    {
+      "source": "/tooling/libraries-sdks/viem/celo-transaction-types",
+      "destination": "/tooling/libraries-sdks/viem/index"
+    },
+    {
+      "source": "/home/celo-technology",
+      "destination": "/build-on-celo/cel2-architecture"
+    },
+    {
+      "source": "/home/developer-tools",
+      "destination": "/tooling/overview"
+    },
+    {
+      "source": "/home/overview",
+      "destination": "/home"
+    },
+    {
+      "source": "/home/roadmap",
+      "destination": "/home"
+    },
+    {
       "source": "/build/build-with-thirdweb/overview",
       "destination": "/tooling/dev-environments/thirdweb"
     },
