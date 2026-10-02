@@ -1108,31 +1108,31 @@
     },
     {
       "source": "/celo-codebase/wallet",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/invitations",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/README",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/how-the-wallet-works/verification",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-codebase/wallet/intro",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/celo-gold-holder-guide/ledger",
@@ -1488,7 +1488,7 @@
     },
     {
       "source": "/blog/2022/05/19/3 Simple Steps to Get Started with Valora on Celo",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/blog/2022/05/20/ContractKit - A Practical Guide to Interacting with the Celo Core Contracts",
@@ -2084,7 +2084,7 @@
     },
     {
       "source": "/getting-started/using-the-mobile-wallet",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/validator-troubleshooting-faq",
@@ -2092,11 +2092,11 @@
     },
     {
       "source": "/getting-started/wallets",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/wallets/index",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo",
@@ -2132,15 +2132,15 @@
     },
     {
       "source": "/getting-started/wallets#celo-compatible-wallets",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/wallets#celo-native-wallets",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/wallets#celowalletapp",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/holder/asset",
@@ -2904,7 +2904,7 @@
     },
     {
       "source": "/wallet",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/wallet/:slug*",
@@ -4120,7 +4120,7 @@
     },
     {
       "source": "/celo-codebase/wallet/README",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/general/celo_l1_index",
@@ -4216,7 +4216,7 @@
     },
     {
       "source": "/getting-started/using-the-wallet",
-      "destination": "/tooling/wallets"
+      "destination": "/home/wallets"
     },
     {
       "source": "/getting-started/wallets/using-metamask-with-celo/choosing-the-right-gas-price",
