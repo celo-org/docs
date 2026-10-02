@@ -23,6 +23,7 @@ Support for `op-geth` ended on these dates:
 If your node still runs `op-geth`, migrate it to `op-reth`. A Celo-compatible `op-reth` release is available, and the node-operator guides use it:
 
 - Follow [Run a node with Docker](/operate/operators/run-node) to run `op-reth`. A new node starts from an empty datadir — bootstrap it from a published snapshot (`OP_RETH__SNAPSHOT=true`, required on mainnet) or, on Celo Sepolia, sync from genesis; no L1 data migration is required.
+- To switch an existing mainnet node, [RETH_MIGRATION.md](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/RETH_MIGRATION.md) in the compose repository walks through running `op-reth` in parallel with `op-geth`, adding `--l2.enginekind=reth` to `op-node`, and cutting traffic over once `op-reth` reaches the tip.
 - A migrated `op-geth` datadir cannot be reused — `op-reth` uses a different on-disk format. Start `op-reth` with an empty `DATADIR_PATH`.
 - For archive nodes and pre-L2 historical state, see [Running an archive node](/operate/operators/archive-node).
 - See the [Configuration reference](/operate/operators/configuration) for the `OP_RETH__*` variables, and the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for the latest images.

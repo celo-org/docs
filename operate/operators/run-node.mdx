@@ -11,7 +11,7 @@ This guide is designed to help node operators run a Celo L2 node with Docker.
 
 These instructions use `op-reth`, Celo's supported execution client. A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
 
-Support for `op-geth` ended on Celo Sepolia on June 24, 2026 and on mainnet on July 22, 2026. A node still running it can follow the wrong chain; see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
+Support for `op-geth` has ended, and a node still running it can follow the wrong chain; see [End of Support for op-geth](/operate/notices/op-geth-deprecation). To switch an existing mainnet node, [RETH_MIGRATION.md](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/RETH_MIGRATION.md) in the compose repository describes running `op-reth` alongside `op-geth` on an empty datadir, repointing `op-node` with `--l2.enginekind=reth`, and moving traffic over once `op-reth` reaches the chain tip.
 </Info>
 
 ## Recommended Hardware
@@ -81,7 +81,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
     <Warning>
     **Datadirs from op-geth cannot be reused**
 
-    `op-reth` uses a different on-disk format. A datadir written by `op-geth` cannot be used with `op-reth`. Start from an empty `DATADIR_PATH`. Pre-L2 historical state is served separately; see [Running an archive node](/operate/operators/archive-node).
+    `op-reth` uses a different on-disk format. A datadir written by `op-geth`, including one produced by the L1→L2 migration tool, cannot be used with `op-reth`. Start from an empty `DATADIR_PATH`. Pre-L2 historical state is served separately; see [Running an archive node](/operate/operators/archive-node).
     </Warning>
 
     #### Configure node type

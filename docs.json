@@ -3019,11 +3019,15 @@
     },
     {
       "source": "/cel2/operators/migrate-node",
-      "destination": "/operate/operators/run-node"
+      "destination": "/operate/notices/op-geth-deprecation"
+    },
+    {
+      "source": "/infra-partners/operators/migrate-node",
+      "destination": "/operate/notices/op-geth-deprecation"
     },
     {
       "source": "/operate/operators/migrate-node",
-      "destination": "/operate/operators/run-node"
+      "destination": "/operate/notices/op-geth-deprecation"
     },
     {
       "source": "/cel2/operators/overview",

@@ -44,6 +44,15 @@ These L1 mechanisms were decommissioned before or during the L2 migration and no
 - **Komenci and meta-transaction wallets** — the fee-less onboarding flow used by the original Celo Wallet was discontinued.
 - **The `celo-blockchain` client** — the L1 client (docker image `us.gcr.io/celo-org/geth`) stopped syncing new blocks at the migration. To serve pre-migration state, run a [Historical RPC Service](/operate/operators/archive-node).
 
+## Extract a key from the old Geth keystore
+
+The old geth keystore API is not supported anymore, but you can extract your private key by using [cast](https://book.getfoundry.sh/cast/)'s `decrypt-keystore` command.
+Just give it the path to your keystore and the name of your key, e.g.
+
+```bash
+cast wallet decrypt-keystore -k validator-00/keystore/ testkey
+```
+
 ## Resources
 
 | Resource | Link |
