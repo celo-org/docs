@@ -95,6 +95,8 @@ export function useMiniPay() {
 }
 ```
 
+There is no sign-in step either. Don't ask the user to sign a message to access your app or to authenticate: MiniPay connects the wallet automatically, and its wallet-connection guide rules out sign-in prompts.
+
 Check for `window.ethereum` before initialising any web3 library; the provider is injected by the host. Wallet-connection details and error handling: [Wallet connection](https://docs.minipay.xyz/getting-started/wallet-connection.html).
 
 ### Resolve MiniPay phone numbers to addresses
