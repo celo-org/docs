@@ -20,9 +20,8 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo/rollup.json)
 - [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json)
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/celo/celo-mainnet-migrated-chaindata.tar.zst) — geth-format, for legacy `op-geth` full/archive sync
 - P2P peers
-  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`) and op-geth (`--bootnodes`):
+  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`):
 
     ```text
     enode://28f4fcb7f38c1b012087f7aef25dcb0a1257ccf1cdc4caa88584dc25416129069b514908c8cead5d0105cb0041dd65cd4ee185ae0d379a586fb07b1447e9de38@34.169.39.223:30303
@@ -60,7 +59,6 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
   - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.5)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.0) — legacy, unsupported since the [switch date](/operate/notices/op-geth-deprecation)
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9) — legacy archive / historical RPC service
 
 ## Celo Sepolia
@@ -70,7 +68,7 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/rollup.json)
 - [Genesis](https://storage.googleapis.com/cel2-rollup-files/celo-sepolia/genesis.json)
 - P2P peers:
-  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`) and op-geth (`--bootnodes`):
+  - Execution-client bootnodes, used by op-reth (`OP_RETH__BOOTNODES`):
 
     ```text
     enode://7fd35dfea27042fe008c74ea97c7a41254b293152730419a6e9bcd84bb03c7ced418c1043e2ef6ad63d2facca6fbdacfbf7c4bfcf33ee7e9a0e6b7eb0617595d@34.169.104.197:30303
@@ -94,4 +92,3 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
   - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.5)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.1.0)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.8.2)
-  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.1.2) — legacy, unsupported since the [switch date](/operate/notices/op-geth-deprecation)

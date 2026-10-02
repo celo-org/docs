@@ -30,8 +30,23 @@ export const AddNetworkButton = ({ network = "mainnet" }) => {
   const [status, setStatus] = useState(null); // { kind: "success" | "error" | "info", text }
   const [pending, setPending] = useState(false);
 
+  // Pushes land in window.dataLayer, which today's gtag.js creates. GA4 only
+  // sees them once a GTM tag listens for the event name and forwards it, so
+  // until that tag exists these are recorded locally and go no further
+  // (verified: pushing both events on the live site produces no /g/collect
+  // hit). See /ANALYTICS.md. The optional chain covers dataLayer being absent
+  // when analytics is blocked.
+  const track = (event, result) => {
+    window.dataLayer?.push({
+      event,
+      network: cfg.params.chainName,
+      ...(result ? { result } : {}),
+    });
+  };
+
   const handleClick = async () => {
     setStatus(null);
+    track("add_network_click");
 
     // Resolve the injected provider. With several wallets installed,
     // window.ethereum can be a non-MetaMask provider that auto-rejects
@@ -44,6 +59,7 @@ export const AddNetworkButton = ({ network = "mainnet" }) => {
         : eth;
 
     if (!provider || !provider.request) {
+      track("add_network_result", "no_wallet");
       setStatus({
         kind: "info",
         text: "No browser wallet detected. Install MetaMask, then try again.",
@@ -57,16 +73,18 @@ export const AddNetworkButton = ({ network = "mainnet" }) => {
         method: "wallet_addEthereumChain",
         params: [cfg.params],
       });
+      track("add_network_result", "success");
       setStatus({ kind: "success", text: `${cfg.params.chainName} added to your wallet.` });
     } catch (err) {
       // Log the raw error so the exact code/message is visible in devtools.
       console.error("wallet_addEthereumChain failed", err);
       // 4001 is the EIP-1193 "user rejected request" code; anything else is a
       // real failure, so surface the wallet's own message rather than masking it.
-      const text =
-        err && err.code === 4001
-          ? "Request cancelled in your wallet."
-          : `Couldn't add the network${err && err.message ? `: ${err.message}` : "."}`;
+      const rejected = err && err.code === 4001;
+      track("add_network_result", rejected ? "rejected" : "error");
+      const text = rejected
+        ? "Request cancelled in your wallet."
+        : `Couldn't add the network${err && err.message ? `: ${err.message}` : "."}`;
       setStatus({ kind: "error", text });
     } finally {
       setPending(false);

@@ -15,6 +15,9 @@
 
   var script = document.createElement('script');
   script.src = WIDGET_SRC;
+  // The widget host answers with `access-control-allow-origin: *`, so a CORS
+  // load works. It is also what a future `integrity` attribute would require.
+  script.crossOrigin = 'anonymous';
   // The widget reads this rather than inferring its own origin.
   script.dataset.apiUrl = 'https://docs-assistant.celo.org/api/chat';
   script.referrerPolicy = 'strict-origin';
