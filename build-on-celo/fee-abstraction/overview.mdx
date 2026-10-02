@@ -1,8 +1,10 @@
 ---
-title: Fee Abstraction
+title: Fee abstraction guide
 sidebarTitle: "Overview"
 description: Pay gas fees in ERC20 tokens instead of CELO, how the protocol charges them, and which wallets build the CIP-64 transaction that makes it work
 ---
+
+This page is the guide to fee abstraction for app and agent developers. To send a transaction, see [Using fee abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction). For token and adapter addresses, see [Fee currency contracts](/tooling/contracts/fee-currencies). For the protocol rules (exchange rates, tx-pool checks, intrinsic gas, node flags), see the [fee abstraction specification](/operate/specification/fee-abstraction).
 
 Fee abstraction is one of Celo's core protocol features. It allows users to pay gas fees in ERC20 tokens — like USDC, USDT, or Mento stablecoins — instead of needing to hold the native CELO token.
 
@@ -49,16 +51,16 @@ A wallet not listed here has not been confirmed either way. Check with the walle
 
 Library support is a separate question from wallet support, and a library in a wallet's stack says nothing about whether that wallet forwards an app's `feeCurrency`. For viem, Ethers.js and web3.js, see [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction#using-fee-abstraction-with-viem).
 
-## Whitelisted Fee Currencies (Mainnet)
+## Fee currencies and adapters
 
-The full up-to-date list of whitelisted fee currencies — including token and adapter addresses — is automatically maintained at [Fee Currencies](/tooling/contracts/fee-currencies).
-
-Tokens with non-18 decimals (e.g. USDC, USD₮, USA₮ with 6 decimals) require an adapter contract. Use the adapter address — not the token address — in the `feeCurrency` field. See the adapter table in [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction#adapters-for-non-18-decimal-tokens).
+The allowlist, with token and adapter addresses for each network, is on [Fee currency contracts](/tooling/contracts/fee-currencies). Tokens with 6 decimals (USDC, USD₮, USA₮) go through an adapter, and the adapter address, not the token address, is the `feeCurrency` value; see [adapters for non-18-decimal tokens](/build-on-celo/fee-abstraction/using-fee-abstraction#adapters-for-non-18-decimal-tokens).
 
 ---
 
 ## Related
 
+- [Fee currency contracts](/tooling/contracts/fee-currencies) — Allowlisted tokens with their `feeCurrency` and token addresses
+- [Fee abstraction specification](/operate/specification/fee-abstraction) — Protocol rules, JSON-RPC changes and node flags
 - [Fee Abstraction for AI Agents](/build-on-celo/build-with-ai/overview#fee-abstraction-for-agents) — Using fee abstraction in autonomous agent backends
 - [x402: Agent Payments](/build-on-celo/build-with-ai/x402) — HTTP-native stablecoin payments for agents
 - [Using Fee Abstraction](/build-on-celo/fee-abstraction/using-fee-abstraction) — How to pay gas with alternate fee currencies in your transactions
