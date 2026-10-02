@@ -5,6 +5,11 @@ This directory contains utility scripts for maintaining and updating the Celo do
 ## Available Scripts
 
 - `update_contracts.py` - Updates contract addresses and deployment information in the documentation
+- `check_redirects.py` - Fails on `docs.json` redirects that cannot work: `#` in a source, a wildcard
+  shadowed by an earlier one, a source that captures a navigation path, or a destination that is
+  `/`, redirected again, or not a page in navigation. CI runs it with its tests
+  (`python3 -m unittest discover -s scripts -p 'test_*.py'`).
+- `check-orphans.sh` - Fails on page files that navigation does not reach. CI runs it.
 
 ### Generated pages
 

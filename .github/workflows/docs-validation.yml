@@ -44,3 +44,11 @@ jobs:
 
       - name: Check for orphan pages
         run: bash scripts/check-orphans.sh
+
+      - name: Test the redirect check
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
+      # Catches redirects Mintlify accepts but that cannot work: wildcards shadowed by an
+      # earlier wildcard, chains, `#` in a source, sources that capture navigation paths.
+      - name: Check redirects
+        run: python3 scripts/check_redirects.py
