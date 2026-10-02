@@ -1,24 +1,21 @@
 ---
 title: Wallets for users
-sidebarTitle: Wallets for users
-description: Choose a wallet to hold and send CELO and stablecoins on Celo, with the native, hardware and compatible wallets compared
+description: Wallets that hold and send CELO and Celo stablecoins, grouped into Celo native, hardware and compatible wallets
 ---
 
-This page is for people who hold CELO or Celo stablecoins and want to pick a wallet. If you are an app developer adding wallets to your app, see [Wallet integration](/tooling/wallets). For the wider directory of apps and projects built on Celo, see [celo.org/ecosystem](https://celo.org/ecosystem).
+This page helps people who hold CELO or Celo stablecoins choose a wallet. App developers adding wallets to an app should see [Wallet integration](/tooling/wallets).
 
-## Choosing a Wallet
+## Choosing a wallet
 
 Celo works with a range of wallets, each offering features to meet different user needs.
 
-The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
+The [Celo native wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build-on-celo/build-on-socialconnect) and [fee abstraction](/build-on-celo/fee-abstraction/overview).
 
-<Note>
-  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops the app's `feeCurrency` and charges gas in CELO. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
-</Note>
+Some wallets charge gas in CELO even if you hold stablecoins; see [which wallets can pay gas in stablecoins](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
 
-The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets that support the Celo network.
+The [Celo compatible wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets that support the Celo network.
 
-## Celo Native Wallets
+## Celo native wallets
 
 ---
 
@@ -58,7 +55,7 @@ Celo Terminal is a wallet and app platform designed as a hub for managing and ru
 
 ---
 
-## Hardware Wallets
+## Hardware wallets
 
 ---
 
@@ -67,12 +64,12 @@ Celo Terminal is a wallet and app platform designed as a hub for managing and ru
 Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice. App transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64) for the supported versions.
 
 - [Homepage](https://www.ledger.com/)
-- Platforms: Ledger Live (desktop, mobile) with a Ledger device
 - Guides: [set up a Ledger with Celo](/tooling/wallets/ledger/setup), connect it to [Celo Terminal](/tooling/wallets/ledger/to-celo-terminal), the [Celo web wallet](/tooling/wallets/ledger/to-celo-web) or the [Celo CLI](/tooling/wallets/ledger/to-celo-cli), and the [EIP-712 signing workaround](/tooling/wallets/ledger/eip712-workaround)
+- Platforms: Ledger Live (desktop, mobile) with a Ledger device
 
 ---
 
-## Celo Compatible Wallets
+## Celo compatible wallets
 
 Here’s an overview of popular wallets compatible with the Celo network. Not all of them support [fee abstraction](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64), so gas may be charged in CELO.
 
@@ -89,9 +86,8 @@ Your go-to wallet for Ethereum and EVM - Track portfolio across all EVM chains i
 
 MetaMask is a self-custody wallet with support for Celo.
 
-Guides: [configure MetaMask for Celo](/tooling/wallets/metamask/setup) and [use MetaMask with Celo](/tooling/wallets/metamask/use).
-
 - [Homepage](https://metamask.io/)
+- Guides: add Celo [mainnet](/build-on-celo/network-overview) or [testnet](/tooling/wallets/metamask/add-celo-testnet-to-metamask) to MetaMask, and [use MetaMask with Celo](/tooling/wallets/metamask/use)
 - Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask)
 
 ---
@@ -142,7 +138,7 @@ Supports over 130 blockchains, including CELO. Enables users to store, trade, an
 
 ### [Safe Wallet](https://app.safe.global/welcome)
 
-Decentralized custody protocol and collective asset management platform. Provide multisg wallet support, Account Abstraction and more.
+Decentralized custody protocol and collective asset management platform. Provides multisig wallet support, Account Abstraction and more.
 
 - [Homepage](https://app.safe.global/welcome)
 - Platforms: Browser, iOS, Android
@@ -174,3 +170,8 @@ Zerion Wallet is a non-custodial wallet for crypto that gives you access to a br
 
 - [Homepage](https://www.mtpelerin.com/bridge-wallet)
 - Platforms: iOS, Android
+
+## Related
+
+- [Wallet integration](/tooling/wallets) — for app developers adding wallets to an app
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) — how gas is paid in stablecoins, and which wallets support it
