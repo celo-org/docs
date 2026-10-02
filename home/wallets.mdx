@@ -1,7 +1,9 @@
 ---
 title: Wallets for users
-description: Wallets that hold and send CELO and Celo stablecoins, grouped into Celo native, hardware and compatible wallets
+description: Choose a wallet to hold and send CELO and Celo stablecoins, connect MetaMask, find your address and move funds in or out
 ---
+
+import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
 
 This page helps people who hold CELO or Celo stablecoins choose a wallet. App developers adding wallets to an app should see [Wallet integration](/tooling/wallets).
 
@@ -171,6 +173,34 @@ Zerion Wallet is a non-custodial wallet for crypto that gives you access to a br
 
 - [Homepage](https://www.mtpelerin.com/bridge-wallet)
 - Platforms: iOS, Android
+
+## Troubleshooting
+
+### Connect MetaMask to Celo
+
+MetaMask does not show Celo until the network is added. Add it with the button below; the chain ID and RPC URL are on the [network overview](/build-on-celo/network-overview). If an app asks you to install MetaMask when you already have it, the app could not detect the extension in that browser. Open the app in the browser profile where MetaMask is installed, or connect with another wallet from the lists above.
+
+<AddNetworkButton network="mainnet" />
+
+### Find your Celo address
+
+Celo uses Ethereum-style addresses (`0x…`, 42 characters). Open your wallet and copy the address it shows for Celo. Check the network name before you send: a transfer on the wrong network can be lost.
+
+### Recover a wallet
+
+Celo has no usernames or passwords. A wallet is controlled by its recovery phrase (seed phrase) or private key. To restore a wallet, import the recovery phrase into a wallet app. Without it, no one can recover the funds: not Celo, and not the wallet's maker. Never share your recovery phrase with anyone, including people who say they are support.
+
+### A token does not appear in your wallet
+
+Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/tooling/contracts/stablecoin-contracts); use the Celo Mainnet column. Tokens sent on another network do not show up on Celo.
+
+### Move funds in or out
+
+- [Ramps](/home/ramps): convert between local currency and crypto with a provider.
+- [Exchanges](/home/exchanges): buy or sell CELO.
+- [Bridges](/home/bridged-tokens/bridges): move assets between Celo and other networks.
+
+Which providers work in your country depends on the provider. Check availability and fees with the provider before you send funds.
 
 ## Related
 
