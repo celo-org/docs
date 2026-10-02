@@ -611,8 +611,20 @@
       "destination": "/build-on-celo/nightfall"
     },
     {
-      "source": "/home/protocol/transaction/overview",
-      "destination": "/home/gas-fees"
+      "source": "/home/protocol/transaction/:slug*",
+      "destination": "/home/protocol/transactions/:slug*"
+    },
+    {
+      "source": "/infra-partners/integration/nightfall",
+      "destination": "/build-on-celo/nightfall"
+    },
+    {
+      "source": "/learn/celo-token",
+      "destination": "/home/protocol/celo-token"
+    },
+    {
+      "source": "/learn/developer-tools",
+      "destination": "/tooling/overview"
     },
     {
       "source": "/protocol/transaction/fee-abstraction",
@@ -624,7 +636,7 @@
     },
     {
       "source": "/tooling/overview/network/node/overview",
-      "destination": "/operate/operators/run-node"
+      "destination": "/tooling/nodes/overview"
     },
     {
       "source": "/build-on-celo/contract-development/deploy/deploy-with-foundry",
@@ -708,11 +720,11 @@
     },
     {
       "source": "/getting-started/baklava-testnet/running-a-validator",
-      "destination": "/operate/operators/run-node"
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
     },
     {
       "source": "/getting-started/baklava-testnet/reconnecting-to-network",
-      "destination": "/build-on-celo/network-overview"
+      "destination": "/contribute-to-celo/community-rpc-nodes/community-rpc-node"
     },
     {
       "source": "/operations-manual/node-upgrades",
@@ -720,7 +732,7 @@
     },
     {
       "source": "/operations-manual/celo-foundation-voting-policy",
-      "destination": "/operate"
+      "destination": "/home/celo-l1"
     },
     {
       "source": "/validator-guide/summary",
