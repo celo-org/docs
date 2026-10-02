@@ -40,6 +40,17 @@ Edit rights cannot ship a change.
   - **Server (Redis).** `app/api/chat/route.ts` calls `logQuestion()`, which pushes `{question, model, citedUrls, answered, timestamp, refused}` onto the Upstash Redis list `docs-assistant:questions`, trimmed to the most recent 10,000. Without Redis configured it falls back to `console.log`, which on Vercel is short-retention only. **This list is the docs-gap signal** — the uncited questions in it are the pages that need writing.
 - A handful of outbound partner links carry manual UTM parameters (`tooling/libraries-sdks/reown/index.mdx`, `tooling/indexers/goldrush.mdx`). Those let the partner attribute traffic to us; the planned GTM outbound-click tag answers a different question — what our readers click.
 
+### Reviewing unanswered questions
+
+- **Weekly:** an automated report files a "Docs assistant: N unanswered questions" issue listing questions that returned no citation, with injection and enumeration probes shown as a count and only a short sample.
+- **Owned task:** `@celo-org/devrel` triages each weekly issue and closes it once its real gaps have been turned into doc issues. Questions that were refused as off-topic carry `refused: true` and are not gaps.
+- The Redis list `docs-assistant:questions` is the raw store for digging deeper. It holds raw question text.
+- Do not copy question text into other issues, PRs or commits; describe the topic instead. The weekly bot report currently pastes raw questions into a public issue. Redacting it, skipping `refused: true` entries and expiring the Redis log is tracked in the `docs-ai-assistant` repository, issue #3.
+
+### Script hardening
+
+`assistant.js` loads `https://docs-assistant.celo.org/widget.js` with `crossOrigin = 'anonymous'`; the host sends `access-control-allow-origin: *` from the `/widget.js` headers rule in `docs-ai-assistant`'s `next.config.ts`, so the load works under CORS. Anyone editing that rule should know docs.celo.org depends on it. There is **no Subresource Integrity hash and no Content-Security-Policy** on this site: an `integrity` hash would break the widget on every widget deploy, and the Mintlify Starter plan offers no header configuration we have confirmed. Whoever controls `docs-assistant.celo.org` can therefore run script on every docs page, so changes to that host need the same review as a change to this repo (#2302).
+
 ## Runbook 1: Google Tag Manager container
 
 The container exists (`GTM-NP9GP2BT`) but `docs.json` does **not** point at it yet — the site still loads GA4 directly. Everything below has to be true before the swap, or the swap loses measurement rather than adding it. Configure at https://tagmanager.google.com:
@@ -70,6 +81,7 @@ In the GA4 property for `G-0CXEKQ81V2` (Admin):
   GA4's built-in "AI Assistant" channel recognizes only ChatGPT, Gemini, DeepSeek, Copilot and Grok — not Claude or Perplexity. Known limit: a large share of AI-referred sessions arrive with no referrer and land in Direct; this channel measures the floor, not the total.
 - [ ] **Custom dimensions** (event-scoped): `percent_scrolled`, `link_domain`, `ai_target`, `network`, `result`, `is_automated`, plus the assistant's `answered`, `escalated`, `truncated`, `from_api`, `status` and `href`. Without these registered the assistant events still arrive, but their parameters cannot be used in any report.
 - [ ] **Before the swap: the assistant events need a path that does not go through `window.gtag`.** `widget.js` calls `track()` only `if (typeof window.gtag === 'function')`. On the live site that global is a function, provided by `integrations.ga4`; on a page carrying only the GTM container it is `undefined`. Defining `gtag(){ dataLayer.push(arguments) }` by hand does *not* rescue it — no hit goes out. So all seven `assistant_*` events stop the moment the swap merges. **Two things have to be in place before it, not one**: the widget has to push to `dataLayer` directly (#2307), *and* the container needs the `^assistant_` trigger and tag from Runbook 1 to forward those pushes. Either one alone leaves the events dark.
+- [ ] **After the swap, confirm on a published page** that the assistant still reports: ask the assistant one question. The pass criterion is one `assistant_question` event visible in GA4 Realtime with `answered` populated.
 - [ ] **Explorations**: (a) free-form exploration with Page path + Exits for exit pages (GA4 has no standard exit report); (b) reverse Path exploration for drop-off journeys.
 
 Already answered by standard reports, no setup needed:
