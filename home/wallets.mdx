@@ -3,6 +3,8 @@ title: Wallets
 description: Choose a wallet to hold CELO and stablecoins on Celo, connect MetaMask, find your address and move funds in or out
 ---
 
+import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
+
 <Info>
 This page is for people holding CELO and Celo assets. For the wider directory of apps and projects built on Celo, see [celo.org/ecosystem](https://celo.org/ecosystem).
 </Info>
@@ -180,19 +182,21 @@ Zerion Wallet is a non-custodial wallet for crypto that gives you access to a br
 
 ### Connect MetaMask to Celo
 
-MetaMask does not show Celo until the network is added. Follow [Configure MetaMask for Celo](/tooling/wallets/metamask/setup); the chain ID and RPC URL are on the [network overview](/build-on-celo/network-overview). If an app asks you to install MetaMask when you already have it, the app could not detect the extension in that browser. Open the app in the browser profile where MetaMask is installed, or connect with another wallet from the lists above.
+MetaMask does not show Celo until the network is added. Add it with the button below; the chain ID and RPC URL are on the [network overview](/build-on-celo/network-overview). If an app asks you to install MetaMask when you already have it, the app could not detect the extension in that browser. Open the app in the browser profile where MetaMask is installed, or connect with another wallet from the lists above.
+
+<AddNetworkButton network="mainnet" />
 
 ### Find your Celo address
 
 Celo uses Ethereum-style addresses (`0x…`, 42 characters). Open your wallet and copy the address it shows for Celo. Check the network name before you send: a transfer on the wrong network can be lost.
 
-### You cannot sign in or recover a wallet
+### Recover a wallet
 
-Celo has no accounts or passwords. A wallet is controlled by the wallet app that created it, so recovery goes through that wallet's app or support, not through Celo.
+Celo has no usernames or passwords. A wallet is controlled by its recovery phrase (seed phrase) or private key. To restore a wallet, import the recovery phrase into a wallet app. Without it, no one can recover the funds: not Celo, and not the wallet's maker. Never share your recovery phrase with anyone, including people who say they are support.
 
 ### A token does not appear in your wallet
 
-Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/tooling/contracts/stablecoin-contracts). Tokens sent on another network do not show up on Celo.
+Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/tooling/contracts/stablecoin-contracts); use the Celo Mainnet column. Tokens sent on another network do not show up on Celo.
 
 ### Move funds in or out
 
@@ -205,4 +209,3 @@ Which providers work in your country depends on the provider. Check availability
 ## Related
 
 - [Fee abstraction](/build-on-celo/fee-abstraction/overview): pay gas in stablecoins, and which wallets support it
-- [Self-custody](/home/manage/self-custody): keep control of your own funds
