@@ -309,7 +309,7 @@
               "tooling/indexers/envio",
               "tooling/indexers/goldrush",
               "tooling/indexers/indexing-co",
-              "tooling/indexers/codex"
+              "tooling/indexers/codex", "tooling/indexers/pinax"
             ]
           },
           {
