@@ -1,0 +1,7 @@
+.colored_text a {
+  color: inherit !important;
+}
+
+ol ol {
+  list-style-type: lower-roman !important;
+}

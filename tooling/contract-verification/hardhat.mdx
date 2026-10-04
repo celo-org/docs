@@ -1,0 +1,93 @@
+---
+title: "Verify Smart Contract using Hardhat"
+sidebarTitle: "Using Hardhat"
+description: How to verify a Smart Contract on Celo using Hardhat
+---
+
+Verifying a smart contract allows developers to review your code from within the CeloScan Block Explorer
+
+<Tip>
+If you use [Celo Composer](https://github.com/celo-org/celo-composer) all the configuration is done for you out of the box, all you need is the CeloScan API keys!
+</Tip>
+
+## Prerequisites
+
+Before the installation steps you need to have your hardhat project initialized using the command
+
+```bash
+npx hardhat init
+```
+
+Make sure to have dependencies installed and the hardhat config file is importing `@nomicfoundation/hardhat-toolbox`
+
+### Hardhat Configuration
+
+Use environment variables for secrets. Install `dotenv`, create a `.env`, and load it at the top of `hardhat.config.js`.
+
+```bash
+npm i -D dotenv
+```
+
+```js
+// hardhat.config.js
+require("dotenv").config();
+```
+
+```bash
+# .env
+PRIVATE_KEY=0xYOUR_PRIVATE_KEY
+ETHERSCAN_API_KEY=your_celoscan_api_key
+```
+
+Then add the following configuration to the `config` object in `hardhat.config.js`.
+
+```js
+    networks: {
+        celoSepolia: {
+            // can be replaced with the RPC url of your choice.
+            url: "https://forno.celo-sepolia.celo-testnet.org/",
+            accounts: [process.env.PRIVATE_KEY],
+        },
+        celo: {
+            url: "https://forno.celo.org",
+            accounts: [process.env.PRIVATE_KEY],
+        }
+    },
+    etherscan: {
+        apiKey: process.env.ETHERSCAN_API_KEY,
+        customChains: [
+            {
+                network: "celoSepolia",
+                chainId: 11142220,
+                urls: {
+                    apiURL: "https://api.etherscan.io/v2/api",
+                    browserURL: "https://sepolia.celoscan.io",
+                },
+            },
+            {
+                network: "celo",
+                chainId: 42220,
+                urls: {
+                    apiURL: "https://api.etherscan.io/v2/api",
+                    browserURL: "https://celoscan.io/",
+                },
+            },
+        ]
+    },
+```
+
+## Verifying Contracts
+
+Use the following command (Make sure your contracts are compiled before verification)
+
+Celo Sepolia Testnet
+
+```bash
+npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network celoSepolia
+```
+
+Celo Mainnet
+
+```bash
+npx hardhat verify [CONTRACT_ADDRESS] [CONSTRUCTOR_ARGS] --network celo
+```

@@ -1,0 +1,148 @@
+---
+title: Wallet integration
+description: Providers for adding wallets to an app on Celo, with links to their docs and to the Celo guides for Ledger and MetaMask
+---
+
+This page lists providers for adding wallets to an app on Celo. If you hold CELO and want to choose a wallet to use, see [Wallets for users](/home/wallets); to list your Mini App inside MiniPay, see [Build for MiniPay](/build-on-celo/build-on-minipay/overview).
+
+<Note>
+  **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops the app's `feeCurrency` and charges gas in CELO. See [which wallets support it](/build-on-celo/fee-abstraction/overview#wallet-support-for-cip-64).
+</Note>
+
+## Wallet providers
+
+The list is in no particular order and is not a recommendation.
+
+---
+
+### [Privy](https://www.privy.io/)
+
+Whitelabel wallets, transaction signing and onchain infrastructure through one API.
+
+- Homepage: [privy.io](https://www.privy.io/)
+- [Source Code](https://github.com/privy-io)
+
+---
+
+### [Openfort](https://www.openfort.io/)
+
+Non-custodial embedded wallets with social login, backend (server) wallets, and account abstraction with paymasters for gasless transactions and paying fees in stablecoins.
+
+- Homepage: [openfort.io](https://www.openfort.io/)
+- [Docs](https://www.openfort.io/docs)
+- [Source Code](https://github.com/openfort-xyz)
+
+---
+
+### [Alchemy Smart Wallets](https://www.alchemy.com/smart-wallets)
+
+Smart wallet infrastructure from Alchemy.
+
+- Homepage: [alchemy.com](https://www.alchemy.com)
+- [Docs](https://www.alchemy.com/smart-wallets)
+
+---
+
+### [thirdweb](https://thirdweb.com/wallets)
+
+Self-custodial embedded wallet infrastructure.
+
+- Homepage: [thirdweb.com](https://thirdweb.com/)
+- [Docs](https://portal.thirdweb.com/wallets)
+
+---
+
+### [Reown](https://reown.com/)
+
+Reown, formerly WalletConnect Inc., maintains WalletConnect, which connects apps to the wallets users already have.
+
+- Homepage: [reown.com](https://reown.com/)
+- [Reown on Celo](/tooling/libraries-sdks/reown)
+- [Source Code](https://github.com/WalletConnect)
+
+---
+
+### [Dynamic](https://www.dynamic.xyz/)
+
+Wallet connection and authentication platform with built-in Celo support, covering multiple wallets, network switching and multi-wallet linking.
+
+- Homepage: [dynamic.xyz](https://www.dynamic.xyz/)
+- [Dynamic on Celo](/tooling/libraries-sdks/dynamic)
+
+---
+
+### [BlockRadar](https://www.blockradar.co/)
+
+Wallet as a service for fintechs handling stablecoin transactions.
+
+- Homepage: [www.blockradar.co](https://www.blockradar.co/)
+- [Docs](https://docs.blockradar.co/introduction)
+- [Source Code](https://github.com/iamnotstatic/multichain-crypto-wallet)
+
+---
+
+### [Para](https://www.getpara.com/)
+
+Wallet and authentication suite for crypto applications.
+
+- Homepage: [getpara.com](https://www.getpara.com/)
+- [Docs](https://docs.getpara.com/)
+- [Source Code](https://github.com/getpara)
+
+---
+
+### [Safe Wallet](https://app.safe.global/welcome)
+
+Smart account and multisig wallet platform. To sign Safe transactions with a Ledger over WalletConnect, see the [EIP-712 signing workaround](/tooling/wallets/ledger/eip712-workaround).
+
+- Homepage: [app.safe.global](https://app.safe.global/welcome)
+- [Docs](https://docs.safe.global/home/what-is-safe)
+- [Source Code](https://github.com/safe-global/safe-wallet-monorepo)
+
+---
+
+### [Zerion](https://zerion.io/)
+
+Zerion's developer API for building apps and wallets.
+
+- Homepage: [zerion.io](https://zerion.io/)
+- [API reference](https://developers.zerion.io/reference/getting-started)
+
+---
+
+### [Portal](https://portalhq.io/)
+
+MPC wallet provider: embedded MPC wallets for users, and an SDK for the web3 functionality of an app.
+
+- Homepage: [portalhq.io](https://portalhq.io/)
+- [Portal on Celo](/tooling/libraries-sdks/portal)
+- Platforms: [iOS](https://docs.portalhq.io/guides/ios), [Android](https://docs.portalhq.io/guides/android), [Browser](https://docs.portalhq.io/guides/web), [Flutter](https://docs.portalhq.io/resources/flutter), [API](https://docs.portalhq.io/guides/enclave-mpc-api), [React Native](https://docs.portalhq.io/guides/react-native)
+- [Documentation](https://docs.portalhq.io/)
+
+---
+
+### [JAW](https://jaw.id/)
+
+Smart account infrastructure with passkey-secured accounts, ENS identity, gas sponsorship, and programmable permissions for subscriptions and delegated agent execution, through a TypeScript SDK.
+
+- Homepage: [jaw.id](https://jaw.id/)
+- [JAW on Celo](/tooling/libraries-sdks/jaw)
+- [Docs](https://docs.jaw.id/)
+- [Source Code](https://github.com/JustaName-id/jaw-mono)
+- [Dashboard](https://dashboard.jaw.id/)
+
+---
+
+## Ledger and MetaMask guides
+
+- [Set up a Ledger with Celo](/tooling/wallets/ledger/setup) — Ledger Nano S or X
+- [Connect a Ledger to Celo Terminal](/tooling/wallets/ledger/to-celo-terminal), the [Celo web wallet](/tooling/wallets/ledger/to-celo-web) or the [Celo CLI](/tooling/wallets/ledger/to-celo-cli)
+- [EIP-712 signing workaround for Ledger](/tooling/wallets/ledger/eip712-workaround) — for apps that sign typed data, such as Safe over WalletConnect
+- [Programmatic MetaMask setup](/tooling/wallets/metamask/setup) — add a Celo network to MetaMask from your app with `wallet_addEthereumChain`
+- [MetaMask and Celo](/tooling/wallets/metamask/use) — what to keep in mind when users bring MetaMask
+
+## Related
+
+- [Wallets for users](/home/wallets) — the wallets a holder can install
+- [Fee abstraction](/build-on-celo/fee-abstraction/overview) — pay gas in stablecoins, and which wallets support it
+- [Build for MiniPay](/build-on-celo/build-on-minipay/overview) — list a Mini App inside MiniPay

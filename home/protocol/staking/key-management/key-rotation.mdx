@@ -1,0 +1,49 @@
+---
+title: Signer Key Rotation
+sidebarTitle: "Key Rotation"
+description: Replace an authorized signer key with a new one without touching the Locked CELO account key
+---
+
+This page is for operators and CELO holders who need to replace an authorized signer key. As detailed in [the Celo account roles description page](/home/protocol/staking/key-management/detailed), Locked CELO accounts can authorize separate signer keys for roles such as voting or validator management. This way, if an authorized signer key is lost or compromised, the Locked CELO account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
+
+## Rotate a signer key
+
+Authorizing a new signer for a role overwrites the old signer for that role. The new signer must first produce a proof-of-possession, and the key being replaced must never have been used as an authorized signer or Locked CELO Account before.
+
+```bash
+# With $SIGNER_TO_AUTHORIZE as the new signer:
+
+# Create a proof-of-possession. Note that the new signer private key must be available.
+celocli account:proof-of-possession --account $VALIDATOR_ACCOUNT_ADDRESS --signer $SIGNER_TO_AUTHORIZE
+```
+
+If `VALIDATOR_ACCOUNT_ADDRESS` corresponds to a key you possess:
+
+```bash
+# From a node with access to the key for VALIDATOR_ACCOUNT_ADDRESS
+celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION
+```
+
+If `VALIDATOR_ACCOUNT_ADDRESS` is a `ReleaseGold` contract:
+
+```bash
+# From a node with access to the beneficiary key of VALIDATOR_ACCOUNT_ADDRESS
+celocli releasecelo:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION
+```
+
+The same flow applies to vote signers with `--role vote`.
+
+Confirm the rotation:
+
+```bash
+celocli account:show $VALIDATOR_ACCOUNT_ADDRESS
+```
+
+<Warning>
+A newly authorized signer takes effect for validator elections at the next epoch. A deauthorized signer cannot be reauthorized later, so never reuse old signer keys.
+</Warning>
+
+## Related
+
+- [Detailed role descriptions](/home/protocol/staking/key-management/detailed) - the authorize commands per role
+- [Key management summary](/home/protocol/staking/key-management/summary) - which key can be stored where

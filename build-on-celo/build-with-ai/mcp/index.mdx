@@ -1,0 +1,59 @@
+---
+title: Model Context Protocol (MCP)
+description: Learn about the Model Context Protocol and how to use Celo-specific MCP servers for building AI agents
+---
+
+[The Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). It was developed by Anthropic, the AI company behind Claude, to solve the challenge of consistently and efficiently connecting AI models with various data sources and tools. MCP has become the industry standard for integrating AI tools and IDEs, with widespread adoption across major development environments including VS Code, Cursor, JetBrains IDEs, Windsurf, Zed, and many others. OpenAI has also adopted MCP across their Agents SDK and ChatGPT desktop app, ensuring broad compatibility across major AI platforms.
+
+## Celo specific MCPs:
+
+- [Celo MCP Server](/build-on-celo/build-with-ai/mcp/celo-mcp)
+  - Chain info, balances, gas fees
+  - Governance proposals
+  - Staking and validators
+  - Runs locally (stdio) or as a remote HTTP endpoint
+- [Celo Docs MCP Server](/build-on-celo/build-with-ai/use-docs-with-ai)
+  - Search the documentation from your editor
+- [Celina](/build-on-celo/build-with-ai/mcp/celina)
+  - Give your LLM a wallet on Celo — balances, transfers, DeFi, governance, staking, and Self Agent ID
+
+<iframe
+  src="https://www.youtube.com/embed/7XInE4Ll0as"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full aspect-video rounded-lg"
+></iframe>
+
+## Why MCP?
+
+MCP helps you build agents and complex workflows on top of LLMs by providing:
+
+- A growing list of pre-built integrations that your LLM can directly plug into
+- The flexibility to switch between LLM providers and vendors
+- Best practices for securing your data within your infrastructure
+
+## Core Architecture
+
+MCP follows a client-server architecture where a host application can connect to multiple servers:
+
+### Components
+
+- **MCP Hosts**: Programs like Claude Desktop, IDEs (VS Code, Cursor, JetBrains, Windsurf, Zed, and more), or AI tools that want to access data through MCP
+- **MCP Clients**: Protocol clients that maintain 1:1 connections with servers
+- **MCP Servers**: Lightweight programs that each expose specific capabilities through the standardized Model Context Protocol
+- **Local Data Sources**: Your computer's files, databases, and services that MCP servers can securely access
+- **Remote Services**: External systems available over the internet (e.g., through APIs) that MCP servers can connect to
+
+## Discover MCP Servers
+
+Explore existing MCP server implementations:
+
+- [Awesome MCP Servers](https://mcpservers.org/) - Technical implementations
+- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Technical, art, marketing, and more
+
+## Additional Resources
+
+- [Official MCP Documentation](https://modelcontextprotocol.io/introduction)
+- [MCP Community Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions)

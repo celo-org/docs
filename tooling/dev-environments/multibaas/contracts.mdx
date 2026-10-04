@@ -1,0 +1,156 @@
+---
+title: Smart Contracts
+description: Deploy, link, and call smart contracts on Celo using the MultiBaas REST API and SDK.
+---
+
+MultiBaas manages contracts in two layers:
+
+- **[Library](https://docs.curvegrid.com/multibaas/manage-contracts#smart-contract-library)** — contract definitions (ABI and bytecode)
+- **[On-chain](https://docs.curvegrid.com/multibaas/manage-contracts#on-chain-smart-contracts)** — deployed instances linked to a blockchain address
+
+## Adding a Contract to the Library
+
+You can add a contract to the library in four ways:
+
+1. **Direct ABI upload** — paste an ABI JSON directly
+2. **Solidity source upload** — MultiBaas compiles it for you
+3. **Address lookup** — MultiBaas fetches the ABI from Blockscout or Etherscan by contract address
+4. **Framework plugin** — automated via the [Hardhat](#hardhat) or [Forge](#foundry--forge) plugin during deployment (see below)
+
+## Deploying or Linking a Contract
+
+### Deploy a new contract
+
+1. Go to **Contracts → On-chain → + → Deploy Contract**
+2. Select a contract from the library
+3. Fill in constructor parameters
+4. Optionally enable **Sync Events** and set a starting block for event indexing
+5. Submit — if using a Cloud Wallet, MultiBaas signs and submits the transaction automatically
+
+### Link an existing contract
+
+1. Go to **Contracts → On-chain → + → Link Contract**
+2. Enter the contract address (MultiBaas can auto-fetch the ABI from a block explorer)
+3. Select the contract definition from the library
+4. Optionally enable **Sync Events**
+
+## Calling Contract Methods
+
+Once a contract is linked, MultiBaas exposes all its functions via the [REST API](https://docs.curvegrid.com/multibaas/api/multibaas-api). Toggle on Developer Mode in the contract functions UI to see sample payload, curl, TypeScript, or golang code. The base URL for all API calls is:
+
+```
+https://<deployment-id>.multibaas.com/api/v0
+```
+
+The API path uses `/chains/ethereum/` as a fixed prefix regardless of the actual EVM network. This is a MultiBaas convention — it works correctly for Celo.
+
+### Using the TypeScript SDK
+
+Install the [TypeScript SDK](https://www.npmjs.com/package/@curvegrid/multibaas-sdk):
+
+```bash
+npm install @curvegrid/multibaas-sdk
+```
+
+Configure the client:
+
+```typescript
+import * as MultiBaas from '@curvegrid/multibaas-sdk';
+
+const config = new MultiBaas.Configuration({
+  basePath: `${process.env.MULTIBAAS_DEPLOYMENT_URL}/api/v0`,
+  accessToken: process.env.MULTIBAAS_API_KEY,
+});
+
+const contractsApi = new MultiBaas.ContractsApi(config);
+```
+
+**Read a contract function:**
+
+```typescript
+const response = await contractsApi.callContractFunction(
+  'my-contract-alias',  // address alias configured in MultiBaas
+  'MyContract',         // contract label in the library
+  'balanceOf',          // method name
+  {
+    args: ['0xRecipientAddress'],
+    signAndSubmit: false,
+  },
+);
+
+console.log(response.data.result.output);
+```
+
+**Write to a contract using a Cloud Wallet:**
+
+```typescript
+const response = await contractsApi.callContractFunction(
+  'my-contract-alias',
+  'MyContract',
+  'transfer',
+  {
+    args: ['0xRecipientAddress', '1000000000000000000'],
+    from: process.env.CLOUD_WALLET_ADDRESS,
+    signAndSubmit: true,
+  },
+);
+
+console.log(response.data.result.tx.hash);
+```
+
+Setting `signAndSubmit: true` with a configured Cloud Wallet address instructs MultiBaas to sign and broadcast the transaction on your behalf.
+
+**Write to a contract with an external wallet (viem):**
+
+```typescript
+import { createWalletClient, custom } from 'viem';
+import { celo } from 'viem/chains';
+
+const walletClient = createWalletClient({
+  chain: celo,
+  transport: custom(window.ethereum),
+});
+
+// Get the unsigned transaction from MultiBaas
+const response = await contractsApi.callContractFunction(
+  'my-contract-alias',
+  'MyContract',
+  'transfer',
+  {
+    args: ['0xRecipientAddress', '1000000000000000000'],
+    signAndSubmit: false,
+  },
+);
+
+const tx = response.data.result.tx;
+
+// Sign and submit with the user's connected wallet
+await walletClient.sendTransaction({
+  to: tx.to,
+  data: tx.data,
+  value: BigInt(tx.value ?? 0),
+  account: userAddress,
+});
+```
+
+## Framework Plugins
+
+### Hardhat
+
+The `hardhat-multibaas-plugin` automatically uploads and links contracts in your MultiBaas deployment as part of your Hardhat deploy scripts.
+
+```bash
+npm install --save-dev hardhat hardhat-multibaas-plugin @nomicfoundation/hardhat-ignition
+```
+
+See the [plugin repository](https://github.com/curvegrid/hardhat-multibaas-plugin) for setup instructions.
+
+### Foundry / Forge
+
+The `forge-multibaas` plugin provides the same integration for Foundry-based projects.
+
+```bash
+forge install curvegrid/forge-multibaas
+```
+
+See the [plugin repository](https://github.com/curvegrid/forge-multibaas) for setup instructions.

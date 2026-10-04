@@ -1,0 +1,97 @@
+---
+title: Detailed Role Descriptions
+sidebarTitle: "Detailed Roles"
+description: Each Celo account role in detail, with the celocli commands to designate accounts and authorize signers
+---
+
+This page is for CELO holders and node operators setting up staking keys. It describes each account role and shows how to designate an account as playing that role.
+
+## Celo Accounts
+
+Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.
+
+Celo Accounts can be designated as Locked CELO Accounts or authorized as signer keys on behalf of a Locked CELO Account by sending special transactions using [celocli](/cli/). Note that Celo accounts that have not been designated as Locked CELO Accounts or authorized signers may not be able to send certain transactions related to staking.
+
+## Locked CELO Accounts
+
+[Locked CELO](/home/protocol/staking/locked-celo) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in staking. Furthermore, Locked CELO Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked CELO Account.
+
+In _most_ cases, the Locked CELO Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked CELO Account with both the authorized vote signer _and_ the Locked CELO Account.
+
+Because of the significant privileges afforded to the Locked CELO Account, it is best to store this key securely and access it as infrequently as is possible. Authorizing other signers is one way to minimize how frequently you need to access your Locked CELO Account key. The Locked CELO Account key will only be used to send transactions and **can be stored on a Ledger hardware wallet.**
+
+### Creating a Locked CELO Account
+
+A Celo account may be designated as a Locked CELO Account by running the following command:
+
+```bash
+# Designate the Celo account as a Locked CELO Account
+celocli account:register --from $ADDRESS_TO_DESIGNATE --useLedger
+
+# Confirm the address was designated as a Locked CELO Account
+celocli account:show $ADDRESS_TO_DESIGNATE
+```
+
+Note that [ReleaseGold](/home/manage/release-gold) beneficiary keys are considered vanilla Celo accounts with respect to staking, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked CELO Account.
+
+## Authorized Vote Signers
+
+Any Locked CELO Account may optionally authorize a Celo account as a vote signer. Authorized vote signers can vote for validator groups and for on-chain governance proposals on behalf of the Locked CELO Account.
+
+Note that the vote signer must first generate a "proof-of-possession" indicating that signer's willingness to be authorized on behalf of the Locked CELO Account.
+
+Authorized vote signers can only be used to send voting transactions and **can be stored on a Ledger hardware wallet**.
+
+### Authorizing a Vote Signer
+
+A Celo account may be authorized as a vote signer on behalf of a Locked CELO Account by running the following commands:
+
+```bash
+# Create a proof-of-possession. Note that the signer private key must be available.
+celocli account:proof-of-possession --account $LOCKED_GOLD_ACCOUNT --signer $SIGNER_TO_AUTHORIZE --useLedger
+
+# Authorize the vote signer. Note that the Locked Gold Account private key must be available.
+celocli account:authorize --from $LOCKED_GOLD_ACCOUNT --role vote --signer $SIGNER_TO_AUTHORIZE --signature $SIGNER_PROOF_OF_POSSESSION --useLedger
+
+# Confirm that the vote signer was authorized
+celocli account:show $LOCKED_GOLD_ACCOUNT
+
+# You can also look up account info via the authorized signer
+celocli account:show $SIGNER_TO_AUTHORIZE
+```
+
+## Authorized Validator Signers
+
+Any Locked CELO Account may optionally authorize a Celo account as a validator signer. Authorized validator signers can be used to register and manage a validator or validator group on behalf of the Locked CELO Account.
+
+An authorized validator signer key that will be used to register a validator group can be used to send group management transactions (e.g. register, add member A, queue commission update to 0.25, etc.). An authorized validator signer key that will be used to register a validator can be used to send validator management transactions (e.g. register, affiliate with group A, etc.). These keys send only transactions and **can be stored on a Ledger hardware wallet.**
+
+Note that the validator signer must first generate a "proof-of-possession" indicating the signer's willingness to be authorized on behalf of the Locked CELO Account.
+
+<Note>
+On the Celo L1, the validator signer key was also used to sign consensus messages, together with a BLS signer key derived from it. Consensus signing ended with the L2 migration; see [About Celo L1](/home/celo-l1).
+</Note>
+
+### Authorizing a Validator Signer
+
+A Celo account may be authorized as a validator signer on behalf of a Locked CELO Account by running the following commands:
+
+```bash
+# Create a proof-of-possession. Note that the signer private key must be available.
+celocli account:proof-of-possession --account $LOCKED_GOLD_ACCOUNT --signer $SIGNER_TO_AUTHORIZE
+
+# Authorize the validator signer. Note that the Locked CELO Account private key must be available.
+celocli account:authorize --from $LOCKED_GOLD_ACCOUNT --role validator --signer $SIGNER_TO_AUTHORIZE --signature $SIGNER_PROOF_OF_POSSESSION --useLedger
+
+# Confirm that the validator signer was authorized
+celocli account:show $LOCKED_GOLD_ACCOUNT
+
+# You can also look up account info via the authorized signer
+celocli account:show $SIGNER_TO_AUTHORIZE
+```
+
+## Related
+
+- [Key management summary](/home/protocol/staking/key-management/summary) - the roles at a glance
+- [Key rotation](/home/protocol/staking/key-management/key-rotation) - replacing an authorized signer safely
+- [Registering a community RPC provider](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node) - these commands in the full registration flow
