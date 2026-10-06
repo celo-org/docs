@@ -26,11 +26,10 @@ If you are coming from Ethereum, not having L1 data and operator fees is what yo
 
 Celo follows the usual [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) rules to determine a block's base fee with on modification: The base fee can't fall below a certain limit, the base fee floor. This prevents the chain to be spammed with unimportant transactions that will make the chain state grow rapidly and make future scaling harder. The floor is set sufficiently low to still keep average transactions below 0.01 USD.
 
-The base fee floor is set in the `eip1559BaseFeeFloor` rollup configuration variable and is denominated in native CELO token. If Fee Abstraction is used to pay in other tokens, the base fee is converted to the token's value at the current exchange rate.
+The base fee floor is the `minBaseFee` value introduced by the [Jovian upgrade](/operate/specification/upgrades/jovian). It is set in the L1 `SystemConfig` contract and encoded in the `extraData` field of every L2 block header, next to the EIP-1559 denominator and elasticity: bytes 9 to 16 hold the floor in wei as a big-endian `u64`. The current value for each network is listed on [Deployments](/operate/specification/deployments). The floor is denominated in native CELO token. If Fee Abstraction is used to pay in other tokens, the base fee is converted to the token's value at the current exchange rate.
 
 ## FeeHandler
 
-All base fees are sent to the FeeHandler contract, which is responsible for deciding what to eventually do with the fees. The final behavior for Celo L2 mainnet has not been confirmed yet (as of 2024-11-15). On Celo L1, the FeeHandler:
+All base fees are sent to the [FeeHandler](/tooling/contracts/core-contracts#celo-mainnet) contract, which decides what to do with the fees. Celo governance sets how the FeeHandler splits them between burning, carbon offsetting and other beneficiaries. On Celo Mainnet the burn fraction and the carbon fraction are both 0, and a single other beneficiary, registered under the name `cLabs`, receives 100% of the fees.
 
-- burns 80% of the fees (after converting non-CELO fees to CELO)
-- sends 20% of the fees to carbon offsetting projects as part of the Ultragreen Money initiative.
+To read the current split, call `getBurnFraction()`, `getCarbonFraction()`, `getOtherBeneficiariesAddresses()` and `getOtherBeneficiariesInfo(address)` on the FeeHandler. Fractions are fixed-point values where `10^24` is 100%.

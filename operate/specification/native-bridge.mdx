@@ -25,4 +25,4 @@ ERC20 tokens can be bridged the same way as in the unmodified OP Stack, see [Bri
 
 ## Using Bridged Tokens as Fee Abstraction
 
-The `OptimismMintableERC20` (used to represent ERC20 tokens from L1 on L2) supports the [`IFeeCurrency`](https://github.com/celo-org/fee-currency-example/blob/master/src/IFeeCurrency.sol) interface, which is a requirement to use them as a Fee Abstraction token. Before a new `OptimismMintableERC20` instance can actually be used as Fee Abstraction, it still has to be added to the `FeeCurrencyDirectory` (`0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685`) by Celo governance. This is currently only the case for `WETH`.
+The `OptimismMintableERC20` (used to represent ERC20 tokens from L1 on L2) supports the [`IFeeCurrency`](https://github.com/celo-org/fee-currency-example/blob/master/src/IFeeCurrency.sol) interface, which is a requirement to use them as a Fee Abstraction token. Before a new `OptimismMintableERC20` instance can actually be used as Fee Abstraction, it still has to be added to the [`FeeCurrencyDirectory`](/tooling/contracts/core-contracts#celo-mainnet) by Celo governance. This is currently only the case for `WETH`.

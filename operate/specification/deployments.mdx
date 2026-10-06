@@ -14,7 +14,7 @@ The Celo L2 network has the following chain properties:
 - Block gas target: 6,000,000 gas (see EIP-1559 elasticity multiplier)
 - EIP-1559 elasticity multiplier: 5
 - EIP-1559 denominator: 400
-- EIP-1559 floor: 25 Gwei
+- Minimum base fee: 200 Gwei ([Jovian](/operate/specification/upgrades/jovian) `minBaseFee`)
 
 ### Parameters
 
@@ -31,14 +31,14 @@ L1 and L2 contract addresses are listed in the documentation.
 
 ## Celo Sepolia testnet
 
-The Celo Sepolia testnet has the same chain properties as Celo Mainnet:
+The Celo Sepolia testnet has the same chain properties as Celo Mainnet, except for a lower minimum base fee:
 
 - Block period: 1 second
 - Block gas limit: 30,000,000 gas
 - Block gas target: 6,000,000 gas (see EIP-1559 elasticity multiplier)
 - EIP-1559 elasticity multiplier: 5
 - EIP-1559 denominator: 400
-- EIP-1559 floor: 25 Gwei
+- Minimum base fee: 50 Gwei ([Jovian](/operate/specification/upgrades/jovian) `minBaseFee`)
 
 ### Contract addresses
 
@@ -53,13 +53,14 @@ L1 and L2 contract addresses are listed in the documentation.
 | Config                            | Celo        | OP     |
 |-----------------------------------|-------------|--------|
 | `maxSequencerDrift`               | 2892        | 1800   |
-| `sequencerWindowSize`             | 3600        | 3600   |
+| `sequencerWindowSize`             | 7200        | 3600   |
 | `channelTimeout`                  | 300         | 300    |
-| `finalizationPeriodSeconds`       | 12          | 12     |
+| `finalizationPeriodSeconds`       | 604800      | 12     |
 | `enableGovernance`                | `false`     | `true` |
 | `eip1559Denominator`              | 400         | 50     |
 | `eip1559DenominatorCanyon`        | 400         | 250    |
 | `eip1559Elasticity`               | 5           | 6      |
-| `eip1559BaseFeeFloor`             | 25000000000 | -      |
 | `gasPriceOracleBaseFeeScalar`     | 0           | 1368   |
 | `gasPriceOracleBlobBaseFeeScalar` | 0           | 810949 |
+
+The minimum base fee is not part of this config. It is the `minBaseFee` value in the L1 `SystemConfig` contract, encoded in every L2 block header; see [Transaction fees](/operate/specification/transaction-fees#base-fee-floor).
