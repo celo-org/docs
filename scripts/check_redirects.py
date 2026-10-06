@@ -87,7 +87,8 @@ class Site:
             source = redirect["source"]
             is_wildcard = source.endswith(WILDCARD_SUFFIX)
             prefix = source[: -len(WILDCARD_SUFFIX)] if is_wildcard else source
-            if PATH_PARAMETER.search(prefix):
+            # The fragment is reported as a `#` problem; `#:~:text=` there is not a parameter.
+            if PATH_PARAMETER.search(prefix.split("#")[0]):
                 raise ConfigError(
                     f"{source}: the only path parameter this script understands is a trailing "
                     f"{WILDCARD_SUFFIX}; rewrite the source or teach scripts/check_redirects.py its matching"

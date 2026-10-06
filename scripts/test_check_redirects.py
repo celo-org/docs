@@ -104,6 +104,11 @@ class InvalidSources(unittest.TestCase):
         [problem] = problems_for([redirect("/faqs#supply", "/guides/start")])
         self.assertIn("/faqs#supply: source contains '#'", problem)
 
+    def test_text_fragment_source_is_a_fragment_problem(self):
+        # A real docs.json source: the `:~` after `#` must not read as a path parameter.
+        [problem] = problems_for([redirect("/faqs#:~:text=Calculating%20Uptime%20Score", "/guides/start")])
+        self.assertIn("/faqs#:~:text=Calculating%20Uptime%20Score: source contains '#'", problem)
+
     def test_narrower_wildcard_below_broader_never_matches(self):
         [problem] = problems_for([
             redirect("/old/:slug*", "/guides/:slug*"),
