@@ -23,6 +23,10 @@ With monitoring enabled, Grafana is available at [http://localhost:3000](http://
 - **Username:** `admin`
 - **Password:** `celo`
 
+<Warning>
+These are the compose defaults, and compose publishes Grafana on every host interface (`${PORT__GRAFANA:-3000}:3000`). Before the node is reachable from a network, set `GF_SECURITY_ADMIN_PASSWORD` in `.env` (compose loads `.env` after `grafana.env`, so it takes precedence) or firewall port 3000.
+</Warning>
+
 The **Simple Node Dashboard** (Dashboards → Manage → Simple Node Dashboard) shows basic node information and sync status. If you run the challenger, the **Succinct Challenger** dashboard shows challenger activity.
 
 ## Where metrics come from
@@ -33,7 +37,7 @@ The **Simple Node Dashboard** (Dashboards → Manage → Simple Node Dashboard) 
 
 ## Key metrics to watch
 
-From **op-node** (scraped by Prometheus at `op-node:7300` on the compose network; this port is not published to the host, where `localhost:7300` is the healthcheck):
+From **op-node** (query in Prometheus at `http://localhost:9090` or in Grafana; the op-node port 7300 is not published to the host, where `localhost:7300` is the healthcheck):
 
 - **`op_node_default_refs_number`** — the op-node's current L1/L2 reference block numbers. If it stops increasing, your node is not syncing; if it goes backwards, your node is reorging.
 - **`op_node_default_peer_count`** — how many peers op-node is connected to. Without peers, op-node cannot sync unsafe blocks and your node will lag behind the sequencer.

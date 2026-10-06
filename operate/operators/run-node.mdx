@@ -76,7 +76,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
         **On mainnet a snapshot is required** — it provides the pre-L2 (Celo L1) history, which `op-reth` cannot reproduce by executing blocks.
 
-    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can set `OP_RETH__SNAPSHOT=false` (the default is `true`) and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
+    - **From genesis.** On **Celo Sepolia**, which has no pre-L2 history, you can set `OP_RETH__SNAPSHOT=false` (the shipped `.env` files set it to `true`) and execute every block from genesis. This needs no external data but takes considerably longer to reach the chain tip.
 
     <Warning>
     **Datadirs from op-geth cannot be reused**
