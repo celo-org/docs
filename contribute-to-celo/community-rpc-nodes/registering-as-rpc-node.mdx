@@ -23,7 +23,7 @@ Install the Celo CLI following the [Command Line Interface (CLI)](/cli/) setup i
 To register as a community RPC provider, you need:
 
 - **10,000 CELO** to register an RPC node
-- **10,000 CELO per member RPC** to register an RPC Group
+- **10,000 CELO** to register an RPC Group; the group must then hold 10,000 CELO for each member, so a group with five members needs 50,000 CELO
 
 If you don't have enough CELO, you can practice the registration process on the [Celo Sepolia Testnet](/learn/network/overview). Use the [testnet faucet](https://faucet.celo.org/celo-sepolia) to get test CELO - select "Advanced Needs" when requesting funds for RPC provider testing.
 
@@ -78,7 +78,7 @@ celocli lockedcelo:show $CELO_NODE_ADDRESS
 
 #### Lock CELO
 
-Lock up CELO for both accounts to secure the right to register a Validator and Validator Group. You need 10,000 CELO per member node to register a group. This requirement stays in place for 7 days after a member leaves the group, and the group can deregister once it has had no members for 7 days.
+Lock up CELO for both accounts to secure the right to register a Validator and Validator Group. You need 10,000 CELO to register a group. The group must then hold 10,000 CELO for each member, so a group with five members needs 50,000 CELO. This requirement stays in place for 7 days after a member leaves the group, and the group can deregister once it has had no members for 7 days. After deregistering, unlock the CELO and wait the 3-day [unlocking period](/learn/protocol/staking/locked-celo#unlocking-period) before you can withdraw.
 
 ```bash
 celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
@@ -96,7 +96,7 @@ You can use the Celo CLI with a Ledger hardware wallet (see [CLI docs](/build/to
 
 #### Lock CELO
 
-Lock up CELO for the node account to secure the right to register a Validator. You need 10,000 CELO to register a node. This CELO stays locked while the node is registered; the node can deregister 3 days after it leaves its group.
+Lock up CELO for the node account to secure the right to register a Validator. You need 10,000 CELO to register a node. This CELO stays locked while the node is registered; the node can deregister 3 days after it leaves its group. After deregistering, unlock the CELO and wait the 3-day [unlocking period](/learn/protocol/staking/locked-celo#unlocking-period) before you can withdraw.
 
 ```bash
 celocli lockedcelo:lock --from $CELO_NODE_ADDRESS --value 10000e18

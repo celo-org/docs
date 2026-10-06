@@ -35,11 +35,11 @@ Any account that has at least the minimum stake requirement in Locked Gold, whet
 
 The account that creates a validator group is able to deregister that group if it has no members.
 
-While an account has a registered validator group, or for up to a `deregistrationPeriod` after it is deregistered, attempts to `unlock` the account's amount of Locked Gold will fail if they would cause the remaining amount to fall below the minimum stake requirement.
+While an account has a registered validator group, `unlock` fails if it would leave less than the group requirement (10,000 CELO per member, held for 7 days after a member leaves).
 
 ## Group share
 
-Validator groups are compensated by taking a share (the 'Group Share') of the [validator rewards](/learn/protocol/epoch-rewards/index) from any of its member validators that are elected during an epoch. This value is set at registration time and can be changed later.
+Validator groups are compensated by taking a share (the 'Group Share') of the [epoch rewards](/learn/protocol/epoch-rewards/index) earned through its member validators that are elected during an epoch. With the per-epoch validator payment at 0 since [CGP-0218](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0218.md), that share of validator payments is empty, but the group still earns its commission on the CELO rewards paid to its voters. This value is set at registration time and can be changed later.
 
 ## Changing group members
 
@@ -63,7 +63,7 @@ Both validators and validator groups can use [account metadata](/learn/protocol/
 
 ## Dissolving of a validator group
 
-A group must keep 10,000 Locked CELO per member for 7 days after a member leaves, and can deregister once it has had no members for 7 days.
+A group must keep 10,000 Locked CELO per member for 7 days after a member leaves, and can deregister once it has had no members for 7 days. After deregistering, unlock the CELO and wait the 3-day [unlocking period](/learn/protocol/staking/locked-celo#unlocking-period) before you can withdraw.
 
 ## Related
 
