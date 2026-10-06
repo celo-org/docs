@@ -130,7 +130,7 @@ const routes: RoutesConfig = {
         payTo: "0xYourSellerPayoutAddress", // your wallet — receives the USDC
         price: {
           amount: "10000", // $0.01 — USDC has 6 decimals; always a string
-          asset: "0xcEBA9300f2b948710d2653dD7B07f33A8B32118C",
+          asset: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
           extra: { name: "USDC", version: "2" }, // EIP-712 domain, must match the token
         },
       },
@@ -192,8 +192,8 @@ The Celo facilitator settles **USDC** and **USDT** via EIP-3009 `transferWithAut
 
 | Token | Address | Decimals |
 |-------|---------|----------|
-| USDC | `0xcEBA9300f2b948710d2653dD7B07f33A8B32118C` | 6 |
-| USDT | `0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e` | 6 |
+| USDC | `0xcebA9300f2b948710d2653dD7B07f33A8B32118C` | 6 |
+| USDT | `0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e` | 6 |
 
 ### Celo Configuration
 
@@ -207,7 +207,7 @@ const mainnetAccepts = {
   payTo: "0xYourSellerPayoutAddress",
   price: {
     amount: "10000", // $0.01 — USDC has 6 decimals
-    asset: "0xcEBA9300f2b948710d2653dD7B07f33A8B32118C", // Celo mainnet USDC
+    asset: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C", // Celo mainnet USDC
     extra: { name: "USDC", version: "2" },
   },
 };
