@@ -11,6 +11,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 # Pinned deliberately. `npx mintlify` resolves the `latest` dist-tag at run time, so a
 # broken upstream publish takes every PR in this repo red at once with a failure that has
 # nothing to do with the diff. That happened on 4.2.931, which carries a transitive
