@@ -52,15 +52,17 @@ L1 and L2 contract addresses are listed in the documentation.
 
 | Config                            | Celo        | OP     |
 |-----------------------------------|-------------|--------|
-| `maxSequencerDrift`               | 2892        | 1800   |
+| `maxSequencerDrift`               | 2892        | 600    |
 | `sequencerWindowSize`             | 7200        | 3600   |
-| `channelTimeout`                  | 300         | 300    |
-| `finalizationPeriodSeconds`       | 604800      | 12     |
+| `channelTimeout`                  | 50          | 50     |
+| `finalizationPeriodSeconds`       | 604800      | 604800 |
 | `enableGovernance`                | `false`     | `true` |
 | `eip1559Denominator`              | 400         | 50     |
 | `eip1559DenominatorCanyon`        | 400         | 250    |
 | `eip1559Elasticity`               | 5           | 6      |
 | `gasPriceOracleBaseFeeScalar`     | 0           | 1368   |
 | `gasPriceOracleBlobBaseFeeScalar` | 0           | 810949 |
+
+`channelTimeout` shows the value in force: since the Granite upgrade it is a protocol constant of 50 L1 blocks on every OP Stack chain, and the deploy-config value of 300 no longer applies.
 
 The minimum base fee is not part of this config. It is the `minBaseFee` value in the L1 `SystemConfig` contract, encoded in every L2 block header; see [Transaction fees](/operate/specification/transaction-fees#base-fee-floor).
