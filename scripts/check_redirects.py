@@ -7,7 +7,8 @@ the rest:
 
   - a source containing `#`: browsers never send the fragment, so it never matches
   - a `:slug*` wildcard that an earlier wildcard, broader or identical, always matches first
-  - a source that captures a path navigation links to
+  - a source that captures a page in navigation
+  - a navigation link to a redirected path, which should link to the destination
   - a destination of `/`, which is itself redirected to the first nav page
   - a destination that is itself redirected (a chain)
   - a destination that is not a page in navigation
@@ -105,6 +106,14 @@ class Site:
                 return source
         return None
 
+    def destination_for(self, url: str, source: str) -> str:
+        """Where the redirect `source`, which matches `url`, sends it."""
+        destination = next(r["destination"] for r in self.redirects if r["source"] == source)
+        if not (source.endswith(WILDCARD_SUFFIX) and destination.endswith(WILDCARD_SUFFIX)):
+            return destination
+        slug = url[len(source) - len(WILDCARD_SUFFIX):]
+        return destination[: -len(WILDCARD_SUFFIX)] + slug
+
     def page_exists(self, path: str) -> bool:
         candidates = (f"{path}.mdx", f"{path}.md", f"{path}/index.mdx", f"{path}/index.md")
         return any((self.root / candidate).is_file() for candidate in candidates)
@@ -143,9 +152,17 @@ def find_problems(site: Site) -> list[str]:
                 break
 
     for page in sorted(site.nav):
-        source = site.matching_source(f"/{page}")
-        if source is not None:
-            problems.append(f"{source}: redirects /{page}, which navigation links to")
+        url = f"/{page}"
+        source = site.matching_source(url)
+        if source is None:
+            continue
+        if site.page_exists(page):
+            problems.append(f"{source}: redirects {url}, which is a page in navigation")
+        else:
+            problems.append(
+                f"{url}: navigation links to this path, which {source} redirects; "
+                f"link {site.destination_for(url, source)} instead"
+            )
 
     return problems
 

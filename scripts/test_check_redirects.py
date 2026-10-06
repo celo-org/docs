@@ -16,7 +16,13 @@ NAVIGATION = {
         {"tab": "Guides", "groups": [{"group": "Guides", "pages": ["guides/start", "guides/advanced"]}]},
         {"tab": "Tools", "groups": [{"group": "Tools", "pages": ["tools/index"]}]},
     ],
-    "global": {"anchors": [{"anchor": "Start here", "href": "/guides/start"}]},
+    "global": {
+        "anchors": [
+            {"anchor": "Start here", "href": "/guides/start"},
+            # No page on disk: only fine as long as nothing redirects it.
+            {"anchor": "Moved", "href": "/moved/advanced"},
+        ]
+    },
 }
 
 
@@ -126,14 +132,28 @@ class InvalidSources(unittest.TestCase):
         self.assertEqual(
             problems_for([redirect("/guides/:slug*", "/tools")]),
             [
-                "/guides/:slug*: redirects /guides/advanced, which navigation links to",
-                "/guides/:slug*: redirects /guides/start, which navigation links to",
+                "/guides/:slug*: redirects /guides/advanced, which is a page in navigation",
+                "/guides/:slug*: redirects /guides/start, which is a page in navigation",
             ],
         )
 
     def test_exact_source_capturing_a_nav_href(self):
         problems = problems_for([redirect("/guides/start", "/guides/advanced")])
-        self.assertEqual(problems, ["/guides/start: redirects /guides/start, which navigation links to"])
+        self.assertEqual(problems, ["/guides/start: redirects /guides/start, which is a page in navigation"])
+
+    def test_nav_link_to_a_redirected_path(self):
+        self.assertEqual(
+            problems_for([redirect("/moved/advanced", "/guides/advanced")]),
+            ["/moved/advanced: navigation links to this path, which /moved/advanced redirects; "
+             "link /guides/advanced instead"],
+        )
+
+    def test_nav_link_to_a_path_under_a_redirected_wildcard(self):
+        self.assertEqual(
+            problems_for([redirect("/moved/:slug*", "/guides/:slug*")]),
+            ["/moved/advanced: navigation links to this path, which /moved/:slug* redirects; "
+             "link /guides/advanced instead"],
+        )
 
 
 class InvalidDestinations(unittest.TestCase):
