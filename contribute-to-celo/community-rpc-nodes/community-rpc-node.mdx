@@ -1,6 +1,6 @@
 ---
 title: "Operating a Community RPC Node"
-description: How to operate a community RPC node on Celo and keep it eligible for rewards
+description: How to operate a community RPC node on Celo, meet the uptime requirement for elected providers, and claim validator payments
 ---
 
 This guide covers how to operate a community RPC node on Celo.
@@ -13,13 +13,15 @@ This guide covers how to operate a community RPC node on Celo.
 The term "validator" appears in code and documentation due to historical reasons, but refers to community RPC providers.
 </Note>
 
-To be eligible for rewards, registered and elected nodes must operate independent RPC endpoints. This guide assumes your node has been properly [registered](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node).
+Registered and elected nodes must operate independent RPC endpoints; see [Penalties](/contribute-to-celo/community-rpc-nodes/penalties) for how uptime is scored. This guide assumes your node has been properly [registered](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node).
 
 ## Running the RPC Service
 
 To operate the required RPC endpoint, follow the [Running a node guide](/operate/operators/run-node).
 
 ## Rewards
+
+The per-epoch USDm payment to elected providers is 0: governance set `targetValidatorEpochPayment` on the `EpochRewards` contract to 0 in [CGP-0218](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0218.md). Elections continue, and voters for elected groups still earn CELO rewards. The commands below send and track any payment already allocated to a validator and not yet sent.
 
 ### Claiming Rewards
 

@@ -14,9 +14,9 @@ The Celo community has established penalties for Community RPC providers who fai
 
 ## How It Works
 
-Community RPC providers receive 82.19178082 USDm per day at a perfect score of 1. Scores are monitored off-chain by the Score Management Committee, an independent working group running custom software based on [Vido by Atalma](https://dev.vido.atalma.io/celo/rpc). This committee operates a Safe Multisig with permissions to manage the on-chain `ScoreManager.sol` smart contract.
+The per-epoch USDm payment to Community RPC providers is 0, set by governance in [CGP-0218](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0218.md). Scores still count: a group's score scales the CELO rewards paid to voters for that group. Scores are monitored off-chain by the Score Management Committee, an independent working group running custom software based on [Vido by Atalma](https://dev.vido.atalma.io/celo/rpc). This committee operates a Safe Multisig with permissions to manage the on-chain `ScoreManager.sol` smart contract.
 
-Weekly, the committee collates measurements and averages scores for each provider. Scores below 1 are updated and apply to the following week's payments.
+Weekly, the committee collates measurements and averages scores for each provider. Scores below 1 are updated and apply to the following week's rewards.
 
 **Running a Community RPC is mandatory for elected providers.** Insufficient uptime results in slashing - a portion of locked CELO is forfeited.
 
@@ -32,7 +32,7 @@ The Committee controls a multisig with governance-granted powers to call functio
 
 ### Metrics
 
-Rewards are allocated automatically after each epoch based on `ScoreManager` contract scores and claimed manually by providers.
+Rewards are calculated automatically after each epoch from `ScoreManager` contract scores. Voter rewards in CELO are distributed automatically; the provider payment is 0.
 
 Weekly score breakdown:
 

@@ -1,10 +1,10 @@
 ---
 title: "Registering a Community RPC provider"
 sidebarTitle: "Register as a Community RPC Node"
-description: Step-by-step instructions for registering a community RPC provider on chain to be eligible for rewards
+description: Step-by-step instructions for registering a community RPC provider and its group on chain
 ---
 
-Step-by-step instructions on how to register a RPC node on chain to be eligible for rewards.
+Step-by-step instructions on how to register a RPC node on chain.
 
 <Note>
 ****Terminology****
@@ -78,7 +78,7 @@ celocli lockedcelo:show $CELO_NODE_ADDRESS
 
 #### Lock CELO
 
-Lock up CELO for both accounts to secure the right to register a Validator and Validator Group. You need 10,000 CELO to register a node. This CELO stays locked for approximately 60 days after deregistration.
+Lock up CELO for both accounts to secure the right to register a Validator and Validator Group. You need 10,000 CELO per member node to register a group. This requirement stays in place for 7 days after a member leaves the group, and the group can deregister once it has had no members for 7 days.
 
 ```bash
 celocli lockedcelo:lock --from $CELO_GROUP_ADDRESS --value 10000e18
@@ -96,7 +96,7 @@ You can use the Celo CLI with a Ledger hardware wallet (see [CLI docs](/build/to
 
 #### Lock CELO
 
-Lock up CELO for the node account to secure the right to register a Validator. You need 10,000 CELO to register a node. This CELO stays locked for approximately 180 days after removal of the Nth validator from the group.
+Lock up CELO for the node account to secure the right to register a Validator. You need 10,000 CELO to register a node. This CELO stays locked while the node is registered; the node can deregister 3 days after it leaves its group.
 
 ```bash
 celocli lockedcelo:lock --from $CELO_NODE_ADDRESS --value 10000e18
@@ -323,8 +323,8 @@ celocli lockedcelo:show $CELO_GROUP_ADDRESS
 celocli lockedcelo:show $CELO_NODE_ADDRESS
 ```
 
-### USDm Rewards
+### USDm payments
 
-Active validators receive USDm rewards based on their validator score, calculated as part of the L2 epoch rewards process (see `EpochRewards.calculateTargetEpochRewards()`). For more details, refer to the [L2 Epoch Rewards documentation](/learn/protocol/epoch-rewards/index).
+The per-epoch USDm payment to elected validators is 0: governance set `EpochRewards.targetValidatorEpochPayment` to 0 in [CGP-0218](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0218.md). For how epoch rewards are calculated, see [L2 Epoch Rewards](/learn/protocol/epoch-rewards/index).
 
-For reward claiming instructions, see [Claiming Rewards](./community-rpc-node#claiming-rewards).
+To claim a payment already allocated and not yet sent, see [Claiming Rewards](/contribute-to-celo/community-rpc-nodes/community-rpc-node#claiming-rewards).
