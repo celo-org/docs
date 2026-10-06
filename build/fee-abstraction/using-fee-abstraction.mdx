@@ -45,8 +45,10 @@ The current adapter and token addresses for each network are listed on the [Fee 
 
 Transfer 1 USDC using USDC as the fee currency via [`celocli`](/cli):
 ```bash
+# Celo mainnet (42220): token 0xcebA9300f2b948710d2653dD7B07f33A8B32118C (USDC, 6 decimals), fee currency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B (USDC adapter)
+# --from and --to are example addresses; use your own.
 celocli transfer:erc20 \
-  --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B \
+  --erc20Address 0xcebA9300f2b948710d2653dD7B07f33A8B32118C \
   --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 \
   --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 \
   --value 1000000 \
@@ -54,10 +56,12 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
-When using USDC, USD₮, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals — pass `--value` in units of `10^6` (e.g. `1000000` = 1 USD₮/USDC/USA₮).
+When using USDC, USDT, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals, so pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC/USA₮).
 
-Transfer 1 USD₮ using USD₮ as the fee currency:
+Transfer 1 USDT using USDT as the fee currency:
 ```bash
+# Celo mainnet (42220): token 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e (USDT, 6 decimals), fee currency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 (USDT adapter)
+# --from and --to are example addresses; use your own.
 celocli transfer:erc20 \
   --erc20Address 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e \
   --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 \
