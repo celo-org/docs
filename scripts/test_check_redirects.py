@@ -105,6 +105,23 @@ class InvalidSources(unittest.TestCase):
         ])
         self.assertIn("/old/ai/:slug*: never matches, because /old/:slug* comes earlier", problem)
 
+    def test_same_wildcard_twice_never_matches(self):
+        [problem] = problems_for([
+            redirect("/old/:slug*", "/guides/:slug*"),
+            redirect("/old/:slug*", "/tools"),
+        ])
+        self.assertIn("/old/:slug*: never matches, because the same wildcard comes earlier", problem)
+
+    def test_sibling_wildcard_with_shared_text_prefix_is_fine(self):
+        # /old-guides is not under /old, although the strings share a prefix.
+        self.assertEqual(
+            problems_for([
+                redirect("/old/:slug*", "/guides/:slug*"),
+                redirect("/old-guides/:slug*", "/guides/:slug*"),
+            ]),
+            [],
+        )
+
     def test_wildcard_capturing_a_nav_page(self):
         self.assertEqual(
             problems_for([redirect("/guides/:slug*", "/tools")]),

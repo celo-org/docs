@@ -6,7 +6,7 @@ Mintlify accepts all of these without complaint, and `mint broken-links
 the rest:
 
   - a source containing `#`: browsers never send the fragment, so it never matches
-  - a `:slug*` wildcard that an earlier, broader wildcard always matches first
+  - a `:slug*` wildcard that an earlier wildcard, broader or identical, always matches first
   - a source that captures a path navigation links to
   - a destination of `/`, which is itself redirected to the first nav page
   - a destination that is itself redirected (a chain)
@@ -132,6 +132,9 @@ def find_problems(site: Site) -> list[str]:
 
     for index, (prefix, source) in enumerate(site.wildcards):
         for earlier_prefix, earlier_source in site.wildcards[:index]:
+            if prefix == earlier_prefix:
+                problems.append(f"{source}: never matches, because the same wildcard comes earlier; delete one")
+                break
             if prefix.startswith(earlier_prefix + "/"):
                 problems.append(
                     f"{source}: never matches, because {earlier_source} comes earlier and matches first; "
