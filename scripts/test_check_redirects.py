@@ -1,10 +1,14 @@
 """Tests for check_redirects.py. Run: python3 -m unittest discover -s scripts -p 'test_*.py'"""
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
+from unittest import mock
 
-from check_redirects import Site, find_problems
+import check_redirects
+from check_redirects import ConfigError, Site, find_problems
 
 PAGES = ["guides/start", "guides/advanced", "tools/index", "orphan"]
 NAVIGATION = {
@@ -16,14 +20,30 @@ NAVIGATION = {
 }
 
 
+def write_site(root, config):
+    for page in PAGES:
+        (root / page).parent.mkdir(parents=True, exist_ok=True)
+        (root / f"{page}.mdx").write_text("---\ntitle: Test\n---\n")
+    (root / "docs.json").write_text(json.dumps(config))
+
+
 def problems_for(redirects):
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
-        for page in PAGES:
-            (root / page).parent.mkdir(parents=True, exist_ok=True)
-            (root / f"{page}.mdx").write_text("---\ntitle: Test\n---\n")
-        (root / "docs.json").write_text(json.dumps({"navigation": NAVIGATION, "redirects": redirects}))
+        write_site(root, {"navigation": NAVIGATION, "redirects": redirects})
         return find_problems(Site(root))
+
+
+def config_error_for(config):
+    """The ConfigError message Site raises for `config`, or None if it raises nothing."""
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_site(root, config)
+        try:
+            Site(root)
+        except ConfigError as error:
+            return str(error)
+        return None
 
 
 def redirect(source, destination):
@@ -129,6 +149,46 @@ class InvalidDestinations(unittest.TestCase):
     def test_missing_wildcard_destination_prefix(self):
         [problem] = problems_for([redirect("/old/:slug*", "/gone/:slug*")])
         self.assertIn("/old/:slug* -> /gone/:slug*: /gone is not a folder, a page or a redirect source", problem)
+
+
+class UncheckableConfig(unittest.TestCase):
+    def test_other_path_parameters_are_refused(self):
+        for source in ("/old/:path*", "/old/:id", "/old/:slug*/end", "/old/*", "/old/v:version"):
+            with self.subTest(source=source):
+                message = config_error_for({"navigation": NAVIGATION, "redirects": [redirect(source, "/tools")]})
+                self.assertEqual(
+                    message,
+                    f"{source}: the only path parameter this script understands is a trailing /:slug*; "
+                    "rewrite the source or teach scripts/check_redirects.py its matching",
+                )
+
+    def test_literal_colon_is_not_a_parameter(self):
+        # A real docs.json source: the colon is followed by a space, so Mintlify reads it literally.
+        source = "/blog/2022/03/04/Celo CLI: A Practical Guide"
+        self.assertEqual(problems_for([redirect(source, "/tools")]), [])
+
+    def test_missing_or_empty_redirects(self):
+        for config in ({"navigation": NAVIGATION, "rediects": []}, {"navigation": NAVIGATION, "redirects": []}):
+            with self.subTest(config=config):
+                self.assertEqual(config_error_for(config), "docs.json has no 'redirects', or it is empty")
+
+    def test_missing_or_empty_navigation(self):
+        redirects = [redirect("/old", "/tools")]
+        for config in ({"redirects": redirects}, {"navigation": {}, "redirects": redirects}):
+            with self.subTest(config=config):
+                self.assertEqual(config_error_for(config), "docs.json has no 'navigation', or it is empty")
+
+    def test_navigation_without_pages(self):
+        config = {"navigation": {"tabs": [{"tab": "Empty", "groups": []}]}, "redirects": [redirect("/old", "/tools")]}
+        self.assertEqual(config_error_for(config), "docs.json navigation lists no pages")
+
+    def test_main_exits_1_with_the_message(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            write_site(Path(tmp), {"navigation": NAVIGATION, "redirects": []})
+            stderr = io.StringIO()
+            with mock.patch("sys.argv", ["check_redirects.py", tmp]), redirect_stderr(stderr):
+                self.assertEqual(check_redirects.main(), 1)
+        self.assertEqual(stderr.getvalue(), "Cannot check redirects: docs.json has no 'redirects', or it is empty\n")
 
 
 if __name__ == "__main__":

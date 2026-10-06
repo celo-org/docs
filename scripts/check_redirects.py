@@ -17,13 +17,26 @@ Matching follows Mintlify's precedence: an exact source beats every wildcard
 regardless of order; between wildcards the first match in the array wins; a
 wildcard also matches its bare prefix (`/a/:slug*` matches `/a`).
 
+The only path parameter the script understands is a trailing `/:slug*`. It
+exits with an error on any other (`/a/:path*`, `/a/:id`, `/a/:slug*/b`) rather
+than guess how Mintlify matches it, and likewise when `redirects` or
+`navigation` is missing or empty.
+
 Run from anywhere: python3 scripts/check_redirects.py
 """
 import json
+import re
 import sys
 from pathlib import Path
 
 WILDCARD_SUFFIX = "/:slug*"
+# A Mintlify path parameter: `:` followed by a name or `*`, or a bare `*`. A `:`
+# followed by anything else is literal, as in "/blog/.../Celo CLI: A Practical Guide".
+PATH_PARAMETER = re.compile(r":[\w*]|\*")
+
+
+class ConfigError(Exception):
+    """docs.json has a shape this script cannot check."""
 
 
 def nav_pages(navigation) -> set[str]:
@@ -59,15 +72,27 @@ class Site:
     def __init__(self, root: Path):
         self.root = root
         config = json.loads((root / "docs.json").read_text())
-        self.redirects = config.get("redirects", [])
+        for key in ("redirects", "navigation"):
+            if not config.get(key):
+                raise ConfigError(f"docs.json has no '{key}', or it is empty")
+        self.redirects = config["redirects"]
         self.nav = nav_pages(config["navigation"])
+        if not self.nav:
+            raise ConfigError("docs.json navigation lists no pages")
         self.exact_sources = set()
         # (prefix, source) pairs in array order; prefix is the source without /:slug*
         self.wildcards = []
         for redirect in self.redirects:
             source = redirect["source"]
-            if source.endswith(WILDCARD_SUFFIX):
-                self.wildcards.append((source[: -len(WILDCARD_SUFFIX)], source))
+            is_wildcard = source.endswith(WILDCARD_SUFFIX)
+            prefix = source[: -len(WILDCARD_SUFFIX)] if is_wildcard else source
+            if PATH_PARAMETER.search(prefix):
+                raise ConfigError(
+                    f"{source}: the only path parameter this script understands is a trailing "
+                    f"{WILDCARD_SUFFIX}; rewrite the source or teach scripts/check_redirects.py its matching"
+                )
+            if is_wildcard:
+                self.wildcards.append((prefix, source))
             else:
                 self.exact_sources.add(source)
 
@@ -154,7 +179,12 @@ def wildcard_destination_problems(site: Site, source: str, destination: str) -> 
 
 def main() -> int:
     root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent
-    problems = find_problems(Site(root))
+    try:
+        site = Site(root)
+    except ConfigError as error:
+        print(f"Cannot check redirects: {error}", file=sys.stderr)
+        return 1
+    problems = find_problems(site)
     if not problems:
         print("No redirect problems found.")
         return 0
