@@ -28,7 +28,7 @@ mint update            # if the CLI misbehaves
 
 All four steps, every time. External links and search results break silently when one is skipped.
 
-1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect. A source cannot contain `#`: browsers never send the fragment, so it never matches. Between `:slug*` wildcards the first match wins, so put a narrower wildcard above a broader one.
+1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect. A source cannot contain `#`: browsers never send the fragment, so it never matches. Write wildcards as a trailing `/:slug*`; the redirect check refuses any other path parameter. Between `:slug*` wildcards the first match wins, so put a narrower wildcard above a broader one.
 2. Update the page's entry under `navigation` (or remove it).
 3. Update every inbound internal link: `grep -rn --include='*.mdx' "/old/path" .`
 4. Run `mint broken-links` and `python3 scripts/check_redirects.py`.
