@@ -1,5 +1,5 @@
 {
-  "_note": "Curated input for tooling/contracts/stablecoin-contracts.mdx. Mento tokens plus USDC and USDT are read from the on-chain fee-currency allowlist by scripts/update_contracts.py; everything in this file has no registry to read from and must be maintained by hand.",
+  "_note": "Curated input for build/tools/contracts/stablecoin-contracts.mdx. Mento tokens plus USDC and USDT are read from the on-chain fee-currency allowlist by scripts/update_contracts.py; everything in this file has no registry to read from and must be maintained by hand.",
 
   "issuers": {
     "_note": "Issuer attribution for the allowlisted stablecoins. _default covers the Mento tokens.",
