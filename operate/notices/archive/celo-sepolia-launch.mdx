@@ -3,7 +3,7 @@ title: "Celo Sepolia Testnet Launch"
 description: Launch of the Celo Sepolia developer testnet and the sunset of Alfajores and Baklava
 ---
 
-Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky sunsets in September 2025. The Baklava testnet will also sunset with Holesky, with no replacement planned.
+Celo Sepolia is the developer testnet that replaced Alfajores when Holesky was sunset in September 2025. The Baklava testnet was also sunset with Holesky, with no replacement.
 
 <Note>
 **Key Information**
@@ -16,10 +16,10 @@ Celo Sepolia is a new developer testnet that will replace Alfajores when Holesky
   - Jul 24, 2025—Jul 31, 2025: Internal testing ✅
   - Aug 1, 2025—Aug 12, 2025: Early access phase ✅
   - Aug 13, 2025: Public announcement ✅
-  - Aug 14, 2025—Sep 14, 2025: Transition period
-  - Sep 30, 2025: Planned Alfajores and Baklava sunset, aligned with Holesky deprecation
+  - Aug 14, 2025—Sep 14, 2025: Transition period ✅
+  - Sep 30, 2025: Alfajores and Baklava sunset, aligned with the Holesky deprecation ✅
 
-**Node Providers**: Please support both Alfajores and Celo Sepolia during the transition period.
+**Node Providers**: Alfajores and Baklava are retired; support Celo Sepolia.
 
 **Developers**: Verify that your dependencies support Celo Sepolia, then go ahead and deploy all contracts.
 </Note>
@@ -32,13 +32,9 @@ Celo Sepolia is the new developer testnet for Celo running as an Ethereum Layer 
 
 ### For Node Providers
 
-Please support both Alfajores and Celo Sepolia in parallel during the early access and transition phases to ensure a smooth migration for developers. See the [node setup guide](/operate/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
+Node providers were asked to support both Alfajores and Celo Sepolia in parallel during the early access and transition phases to ensure a smooth migration for developers. Alfajores and Baklava are retired, so only Celo Sepolia needs support. See the [node setup guide](/operate/operators/run-node) for technical details and our recommended [Docker Compose Setup](https://github.com/celo-org/celo-l2-node-docker-compose).
 
-Release versions:
-
-- `op-geth` at [v2.1.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.2)
-- `op-node` at [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0)
-- `eigenda-proxy` at [v1.8.2](https://github.com/layr-labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2)
+The versions released for the Celo Sepolia launch were `op-geth` [v2.1.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.2), `op-node` [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0) and `eigenda-proxy` [v1.8.2](https://github.com/layr-labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2). For current versions see [Network config](/operate/operators/network-config).
 
 ### For Developers
 
@@ -68,7 +64,7 @@ Since Celo Sepolia starts with a clean slate, there is no historical data or con
 | L1 Foundation | Ethereum Holesky | Ethereum Sepolia |
 | Chain ID | 44787 | 11142220 |
 | State | Historical from L1 migration | Fresh start |
-| Longevity | Sunset planned Sept 2025 | Long-term testnet |
+| Longevity | Sunset in September 2025 | Long-term testnet |
 
 ## Early Adopters
 
