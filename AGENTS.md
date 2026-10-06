@@ -80,7 +80,7 @@ Use these names exactly (they are the most common ones in the repo; synonyms lik
 - Document what is true now. No "recently", "as of the L2 migration", "previously", "coming soon", "roadmap". Change history belongs in Notices and release notes; planned work is not documented until it ships.
 - Never invent a technical detail. If you do not know an address, flag, endpoint, env var or command, look it up (this repo, the source repo, the live chain) or say you do not know. Addresses are checked against the chain (`eth_call` / `eth_getCode`) before they land, not copied from memory or from another page.
 - No inflated adjectives ("seamless", "robust", "powerful", "comprehensive", "leading"), no unsourced superlatives ("the only production-ready…"), no rule-of-three padding, no promotional framing.
-- No rocket emoji in any copy: pages, headings, banners or PR text. If a banner needs an emoji, use 🤖.
+- No emoji in headings or body copy. A banner may open with one emoji that fits its subject, but never a rocket.
 - No comparisons that position Celo against another chain or product ("the equivalent of X on Y"). Describe what Celo does.
 - Link jargon on first use on introductory pages — ERC-20, EVM, EOA, facilitator, base units — or replace it with the plain word.
 - Callouts: `Note`, `Tip`, `Info`, `Warning` components only. Never `>` blockquotes for callouts.
