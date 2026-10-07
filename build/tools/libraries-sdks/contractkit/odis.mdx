@@ -72,9 +72,15 @@ The ODIS public key for each environment can be found here:
 | Mainnet      | FvreHfLmhBjwxHxsxeyrcOLtSonC9j7K3WrS4QapYsQH6LdaDTaNGmnlQMfFY04Bp/K4wAvqQwO9/bqPVCKf8Ze8OZo8Frmog4JY4xAiwrsqOXxug11+htjEe1pj4uMA |
 | Celo Sepolia | kPoRxWdEdZ/Nd3uQnp3FJFs54zuiS+ksqvOm9x8vY6KHPG8jrfqysvIRU0wtqYsBKA7SoAsICMBv8C/Fb2ZpDOqhSqvr/sZbZoHmQfvbqrzbtDIPvUIrHgRS0ydJCMsA |
 
-`@celo/identity` 6.0.0-beta.0 and later ship both as ready-made contexts:
+`@celo/identity` 6.0.0-beta.0 and later ship both as ready-made contexts. The beta needs `viem` installed alongside it:
+
+```bash
+npm install @celo/identity@6.0.0-beta.0 viem
+```
 
 ```ts
+import { OdisUtils } from "@celo/identity";
+
 const { getServiceContext, OdisContextName } = OdisUtils.Query;
 const serviceContext = getServiceContext(OdisContextName.CELO_SEPOLIA); // or OdisContextName.MAINNET
 ```
