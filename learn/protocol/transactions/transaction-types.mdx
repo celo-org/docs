@@ -306,7 +306,7 @@ import {
   parseGwei,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { celoAlfajores } from "viem/chains";
+import { celoSepolia } from "viem/chains";
 import "dotenv/config"; // use to read private key from environment variable
 ```
 
@@ -328,11 +328,11 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
  */
 const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
 const publicClient = createPublicClient({
-  chain: celoAlfajores,
+  chain: celoSepolia,
   transport: http(),
 });
 const walletClient = createWalletClient({
-  chain: celoAlfajores, // Celo testnet
+  chain: celoSepolia, // Celo Sepolia testnet
   transport: http(),
 });
 ```
