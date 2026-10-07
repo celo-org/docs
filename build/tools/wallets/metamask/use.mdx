@@ -1,48 +1,56 @@
 ---
 title: MetaMask and Celo
-description: Overview of MetaMask and how you can get started with MetaMask on Celo.
+description: Add Celo to MetaMask, import a Celo account by private key and understand why MetaMask pays gas in CELO
 ---
+
+This page is for people who hold CELO and want to use MetaMask on Celo, and for app developers whose users connect with MetaMask.
+
+[MetaMask](https://metamask.io/) is a crypto wallet that can be used in a web browser and on mobile devices to interact with the Ethereum blockchain. Many apps integrate with MetaMask.
+
+Celo supports [Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), added in the [Donut hard fork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0027.md) in May 2021. Users can use MetaMask on Celo, and app developers can port Ethereum apps to Celo.
 
 <Danger>
 Do not send ETH to your Celo address. Do not send CELO assets to your Ethereum address. Always make sure that you are connected to the correct network.
 </Danger>
 
-[MetaMask](https://metamask.io/) is a crypto wallet that can be used in a web browser and on mobile devices to interact with the Ethereum blockchain. Many apps in the space integrate with MetaMask, and we're excited to bring its functionality to the Celo ecosystem.
+## How to use MetaMask with Celo
 
-Since Celo network's [Donut Hardfork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0027.md), activated on Mainnet on May 19th, 2021, the protocol now supports [Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md). This means that users may use MetaMask to interact with the Celo blockchain and app developers can more easily port Ethereum apps to the Celo blockchain.
+### For end users
 
-## **How to use MetaMask with Celo**
+- Add Celo Mainnet or Celo Sepolia to MetaMask with one click ([network information](/learn/network/overview))
+- [Add Celo Sepolia manually](/build/tools/wallets/metamask/add-celo-testnet-to-metamask)
+- [Set up a Ledger to use with MetaMask on Celo](/build/tools/wallets/ledger/setup)
 
-### **For end users:**
-
-- [Configure a MetaMask Desktop or Web Wallet to Work with Celo](/build/tools/wallets/metamask/setup)
-- [Setup a Ledger to Work with MetaMask to Work With Celo](/build/tools/wallets/ledger/setup)
-
-### **For developers:**
+### For developers
 
 - [Set up MetaMask to work with your app](/build/tools/wallets/metamask/setup)
 
-## **Things to Keep in Mind**
+## Things to keep in mind
 
 MetaMask does not natively support Celo compatibility and some features won’t work perfectly. Here are some things to be aware of when using MetaMask with Celo.
 
-## **Private Key Import**
+## Private key import
 
 Celo and Ethereum use different derivation paths for generating seed phrases. Because MetaMask does not let you specify a derivation path to use:
 
 - You can't import an existing Celo account into the MetaMask wallet using its seed phrase, as you'd get the Ethereum version of it. Instead, you have to import it using the associated private key.
-- If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/) you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
+- If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/)), you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
 - See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](/build/tools/wallets/metamask/import)
-- See these guides if you accidentally sent ETH to CELO addresses or CELO to ETH addresses.
 
-## **Gas Fees Require CELO**
+## Gas fees require CELO
 
 While gas on Celo can usually be paid in [many different currencies](/build/fee-abstraction/overview), when using MetaMask, gas fees will automatically be paid in CELO. This is because MetaMask will be using the [Ethereum-compatible Celo transaction format](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), which doesn't include the `feeCurrency` field.
 
-## **Incorrect Logo**
+## Incorrect logo
 
 In some cases, the MetaMask UI may display the Ethereum logo in places where it should display a CELO logo or no logo at all.
 
 <Note>
-MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose a Celo native wallet [here](/build/tools/wallets/metamask/setup).
+MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose one of [the native wallets on Wallets for users](/learn/wallets#celo-native-wallets).
 </Note>
+
+## Related
+
+- [Programmatic Setup](/build/tools/wallets/metamask/setup) - add Celo to MetaMask from your app with `wallet_addEthereumChain`
+- [Wallets for users](/learn/wallets) - Celo native wallets and the other wallets that work with Celo
+- [Network information](/learn/network/overview) - chain IDs, RPC URLs and the add-network buttons for Celo Mainnet and Celo Sepolia

@@ -437,8 +437,7 @@
               "contribute-to-celo/release-process/index",
               "contribute-to-celo/release-process/smart-contracts",
               "contribute-to-celo/release-process/blockchain-client",
-              "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils",
-              "contribute-to-celo/release-process/attestation-service"
+              "contribute-to-celo/release-process/base-cli-contractkit-dappkit-utils"
             ]
           }
         ]
@@ -542,7 +541,7 @@
       "anchors": [
         {
           "anchor": "Docs for AI",
-          "href": "/build-on-celo/build-with-ai/use-docs-with-ai",
+          "href": "/build/agents/use-docs-with-ai",
           "icon": "robot"
         },
         {
@@ -1028,6 +1027,10 @@
       "destination": "/learn"
     },
     {
+      "source": "/contribute-to-celo/release-process/attestation-service",
+      "destination": "/contribute-to-celo/release-process"
+    },
+    {
       "source": "/build/build-with-thirdweb/overview",
       "destination": "/build/tools/dev-environments/thirdweb"
     },
@@ -1328,10 +1331,6 @@
       "destination": "/learn/celo-l1"
     },
     {
-      "source": "/celo-codebase/protocol/identity#using-the-mapping-for-payment",
-      "destination": "/build/build-on-socialconnect"
-    },
-    {
       "source": "/celo-codebase/protocol/index",
       "destination": "/learn/protocol"
     },
@@ -1412,27 +1411,11 @@
       "destination": "/learn/protocol/epoch-rewards/community-fund"
     },
     {
-      "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund#bolstering-the-reserve",
-      "destination": "/learn/protocol/epoch-rewards/community-fund"
-    },
-    {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards",
       "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
-      "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards#introduction-to-locked-celo-rewards",
-      "destination": "/learn/protocol/epoch-rewards/index"
-    },
-    {
       "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards",
-      "destination": "/learn/protocol/epoch-rewards/index"
-    },
-    {
-      "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards#:~:text=Calculating%20Uptime%20Score,validators%20committing%20the%20previous%20block.",
-      "destination": "/learn/protocol/epoch-rewards/index"
-    },
-    {
-      "source": "/celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards#calculating-uptime-score",
       "destination": "/learn/protocol/epoch-rewards/index"
     },
     {
@@ -1496,10 +1479,6 @@
       "destination": "/learn/celo-l1"
     },
     {
-      "source": "/celo-codebase/protocol/stability#stability-of-celos-stablecoin-protocol",
-      "destination": "/build/build-with-local-stablecoin"
-    },
-    {
       "source": "/celo-codebase/protocol/transactions/erc20-transaction-fees",
       "destination": "/build/fee-abstraction/overview"
     },
@@ -1558,10 +1537,6 @@
     {
       "source": "/celo-gold-holder-guide/ledger",
       "destination": "/build/tools/wallets/ledger/setup"
-    },
-    {
-      "source": "/celo-gold-holder-guide/ledger#install-the-celo-cli",
-      "destination": "/build/tools/wallets/ledger/to-celo-cli"
     },
     {
       "source": "/celo-gold-holder-guide/quick-start",
@@ -1654,14 +1629,6 @@
     {
       "source": "/celo-owner-guide/quick-start",
       "destination": "/learn/manage/self-custody"
-    },
-    {
-      "source": "/celo-owner-guide/quick-start#lock-celo",
-      "destination": "/learn/manage/self-custody"
-    },
-    {
-      "source": "/celo-owner-guide/quick-start#vote-for-a-validator-group",
-      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/celo-owner-guide/release-gold",
@@ -1794,10 +1761,6 @@
     {
       "source": "/command-line-interface/commands",
       "destination": "/build/tools/libraries-sdks/cli/commands"
-    },
-    {
-      "source": "/command-line-interface/commands/account#celocli-account-new",
-      "destination": "/build/tools/libraries-sdks/cli/account"
     },
     {
       "source": "/command-line-interface/commands/exchange",
@@ -1941,7 +1904,7 @@
     },
     {
       "source": "/community/release-process/attestation-service",
-      "destination": "/contribute-to-celo/release-process/attestation-service"
+      "destination": "/contribute-to-celo/release-process"
     },
     {
       "source": "/community/release-process/base-cli-contractkit-dappkit-utils",
@@ -2360,14 +2323,6 @@
       "destination": "/learn"
     },
     {
-      "source": "/faqs#what-is-celos-supply",
-      "destination": "/learn"
-    },
-    {
-      "source": "/faqs#who-are-the-founders-of-celo",
-      "destination": "/learn/index"
-    },
-    {
       "source": "/general",
       "destination": "/learn/index"
     },
@@ -2528,40 +2483,8 @@
       "destination": "/build/tools/wallets/metamask/use"
     },
     {
-      "source": "/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask",
-      "destination": "/build/tools/wallets/metamask/use"
-    },
-    {
-      "source": "/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-tokens-eg-cusd-ceur",
-      "destination": "/build/tools/wallets/metamask/use"
-    },
-    {
-      "source": "/getting-started/wallets/using-metamask-with-celo/manual-setup#sending-assets-to-metamask",
-      "destination": "/build/tools/wallets/metamask/use"
-    },
-    {
-      "source": "/getting-started/wallets/using-metamask-with-celo/manual-setup#setup",
-      "destination": "/build/tools/wallets/metamask/use"
-    },
-    {
       "source": "/getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask",
       "destination": "/build/tools/wallets/ledger/setup"
-    },
-    {
-      "source": "/getting-started/wallets/using-metamask-with-celo#importing-via-private-key",
-      "destination": "/build/tools/wallets/metamask/import"
-    },
-    {
-      "source": "/getting-started/wallets#celo-compatible-wallets",
-      "destination": "/learn/wallets"
-    },
-    {
-      "source": "/getting-started/wallets#celo-native-wallets",
-      "destination": "/learn/wallets"
-    },
-    {
-      "source": "/getting-started/wallets#celowalletapp",
-      "destination": "/learn/wallets"
     },
     {
       "source": "/holder/asset",
@@ -2593,14 +2516,6 @@
     },
     {
       "source": "/important-information/rc-network-disclaimer",
-      "destination": "/learn/network/overview"
-    },
-    {
-      "source": "/network#celo-alfajores-l2-testnet",
-      "destination": "/learn/network/overview"
-    },
-    {
-      "source": "/network#celo-baklava-l2-testnet",
       "destination": "/learn/network/overview"
     },
     {
@@ -3004,22 +2919,6 @@
       "destination": "/learn/index"
     },
     {
-      "source": "/why-celo#celo-is-mobile-open-and-real",
-      "destination": "/learn/index"
-    },
-    {
-      "source": "/why-celo#mobile",
-      "destination": "/learn/index"
-    },
-    {
-      "source": "/why-celo#open",
-      "destination": "/learn/index"
-    },
-    {
-      "source": "/why-celo#real",
-      "destination": "/learn/index"
-    },
-    {
       "source": "/overview",
       "destination": "/learn/index"
     },
@@ -3049,7 +2948,7 @@
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/release-process/attestation-service",
-      "destination": "/contribute-to-celo/release-process/attestation-service"
+      "destination": "/contribute-to-celo/release-process"
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/release-process/blockchain-client",
