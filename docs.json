@@ -542,7 +542,7 @@
       "anchors": [
         {
           "anchor": "Docs for AI",
-          "href": "/build-on-celo/build-with-ai/use-docs-with-ai",
+          "href": "/build/agents/use-docs-with-ai",
           "icon": "robot"
         },
         {
