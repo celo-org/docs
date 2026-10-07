@@ -20,6 +20,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 npm i -g mint          # once
 mint dev               # preview at http://localhost:3000
 mint broken-links      # must pass before every PR; CI runs it on every PR to main
+python3 scripts/check_redirects.py  # must pass too when you touch redirects; CI runs it
 mint update            # if the CLI misbehaves
 ```
 
@@ -27,10 +28,10 @@ mint update            # if the CLI misbehaves
 
 All four steps, every time. External links and search results break silently when one is skipped.
 
-1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect.
+1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect. A source cannot contain `#`: browsers never send the fragment, so it never matches. Write wildcards as a trailing `/:slug*`; the redirect check refuses any other path parameter. Between `:slug*` wildcards the first match wins, so put a narrower wildcard above a broader one.
 2. Update the page's entry under `navigation` (or remove it).
 3. Update every inbound internal link: `grep -rn --include='*.mdx' "/old/path" .`
-4. Run `mint broken-links`.
+4. Run `mint broken-links` and `python3 scripts/check_redirects.py`.
 
 Deleting a page still needs step 1 — redirect to the nearest page that answers the same question.
 
@@ -80,6 +81,7 @@ Use these names exactly (they are the most common ones in the repo; synonyms lik
 - Document what is true now. No "recently", "as of the L2 migration", "previously", "coming soon", "roadmap". Change history belongs in Notices and release notes; planned work is not documented until it ships.
 - Never invent a technical detail. If you do not know an address, flag, endpoint, env var or command, look it up (this repo, the source repo, the live chain) or say you do not know. Addresses are checked against the chain (`eth_call` / `eth_getCode`) before they land, not copied from memory or from another page.
 - No inflated adjectives ("seamless", "robust", "powerful", "comprehensive", "leading"), no unsourced superlatives ("the only production-ready…"), no rule-of-three padding, no promotional framing.
+- No emoji in headings or body copy. A banner may open with one emoji that fits its subject, but never a rocket.
 - No comparisons that position Celo against another chain or product ("the equivalent of X on Y"). Describe what Celo does.
 - Link jargon on first use on introductory pages — ERC-20, EVM, EOA, facilitator, base units — or replace it with the plain word.
 - Callouts: `Note`, `Tip`, `Info`, `Warning` components only. Never `>` blockquotes for callouts.
@@ -94,6 +96,7 @@ The policy, decided for the restructure: **troubleshooting-first.**
 - Self-contained: imports shown, env vars named, network stated in a comment. A reader copies one block and it works.
 - Bare language tag, no `title=`, no line highlighting. Use `bash` for shell (not `sh`/`shell`), `ts`/`tsx` for TypeScript (not `typescript`), `js`/`jsx` for JavaScript, `solidity`, `json`, `yaml`.
 - Every address in a code block or table carries the network name and, for tokens, the decimals: `// Celo mainnet (42220), USDC, 6 decimals`.
+- Write new and edited addresses in their EIP-55 checksummed form; get it from `cast to-check-sum-address <address>`. Mixed case with a wrong checksum breaks copied code: ethers throws `bad address checksum` and viem's `isAddress` returns `false`. Do not sweep old pages just to recase addresses; fix the ones on pages you are already editing.
 - Prefer `viem` / `wagmi` examples; they support Celo fee-currency transactions natively.
 - Testnet is **Celo Sepolia, chain ID 11142220**. Alfajores (44787) is retired — do not reference it.
 

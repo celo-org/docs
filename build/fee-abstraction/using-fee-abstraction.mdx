@@ -31,7 +31,7 @@ Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapter
 - **For `feeCurrency`**: use the adapter address.
 - **For `balanceOf`**: querying via the adapter returns the balance as if the token had 18 decimals — useful for checking whether an account can cover gas without converting units.
 
-To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USD₮ and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
+To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USDT and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
 
 For more on gas pricing, see [Transaction Fees](/operate/specification/transaction-fees).
 
@@ -45,8 +45,11 @@ The current adapter and token addresses for each network are listed on the [Fee 
 
 Transfer 1 USDC using USDC as the fee currency via [`celocli`](/cli):
 ```bash
+# Celo mainnet (42220): token 0xcebA9300f2b948710d2653dD7B07f33A8B32118C (USDC, 6 decimals), fee currency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B (USDC adapter)
+# --from and --to are example addresses; use your own.
 celocli transfer:erc20 \
-  --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B \
+  --node celo \
+  --erc20Address 0xcebA9300f2b948710d2653dD7B07f33A8B32118C \
   --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 \
   --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 \
   --value 1000000 \
@@ -54,16 +57,19 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
-When using USDC, USD₮, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals — pass `--value` in units of `10^6` (e.g. `1000000` = 1 USD₮/USDC/USA₮).
+When using USDC, USDT, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals, so pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC/USA₮).
 
-Transfer 1 USD₮ using USD₮ as the fee currency:
+Transfer 1 USDT using USDT as the fee currency:
 ```bash
+# Celo mainnet (42220): token 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e (USDT, 6 decimals), fee currency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 (USDT adapter)
+# --from and --to are example addresses; use your own.
 celocli transfer:erc20 \
-  --erc20Address 0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e \
+  --node celo \
+  --erc20Address 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e \
   --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 \
   --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 \
   --value 1000000 \
-  --gasCurrency 0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72 \
+  --gasCurrency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 \
   --privateKey [PRIVATE_KEY]
 ```
 
@@ -81,7 +87,7 @@ Before sending, estimate the transaction fee so the UI can reserve that amount a
 The gas price returned from the RPC is always expressed in 18 decimals, regardless of the fee currency.
 </Note>
 
-Use the adapter address (for USDC/USD₮/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
+Use the adapter address (for USDC/USDT/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
 ```js
 import { createPublicClient, hexToBigInt, http } from "viem";
 import { celo } from "viem/chains";
@@ -128,7 +134,7 @@ async function main() {
 
 ### 2. Prepare the Transaction
 
-Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/learn/protocol/transactions/transaction-types) compliant.
+Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/learn/protocol/transactions/transaction-types) compliant.
 ```js
 let tx = {
   // ... other transaction fields
