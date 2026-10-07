@@ -6,7 +6,7 @@
 * @celo-org/devrel 
 
 # Build on Celo section - DevRel team
-/build-on-celo/ @celo-org/devrel
+/build/ @celo-org/devrel
 
 # Learn section (protocol, governance, manage, etc.) - Blockchain and Primitives teams
 /learn/ @celo-org/blockchain @celo-org/primitives
@@ -19,28 +19,28 @@
 /operate/ @celo-org/blockchain
 
 # Tooling section
-/tooling/ @celo-org/devrel
+/build/tools/ @celo-org/devrel
 
 # CLI tools - DevRel and DevTooling teams
-/tooling/libraries-sdks/cli/ @celo-org/devrel @celo-org/devtooling
+/build/tools/libraries-sdks/cli/ @celo-org/devrel @celo-org/devtooling
 
 # ContractKit - DevRel and DevTooling teams
-/tooling/libraries-sdks/contractkit/ @celo-org/devrel @celo-org/devtooling
+/build/tools/libraries-sdks/contractkit/ @celo-org/devrel @celo-org/devtooling
 
 # Development environments (was developer/deploy) - DevRel and Primitives teams
-/tooling/dev-environments/ @celo-org/devrel @celo-org/primitives
+/build/tools/dev-environments/ @celo-org/devrel @celo-org/primitives
 
 # SDK libraries - DevRel and DevTooling teams
-/tooling/libraries-sdks/rainbowkit-celo/ @celo-org/devrel @celo-org/devtooling
-/tooling/libraries-sdks/viem/ @celo-org/devrel @celo-org/devtooling
-/tooling/libraries-sdks/ @celo-org/devrel @celo-org/devtooling
+/build/tools/libraries-sdks/rainbowkit-celo/ @celo-org/devrel @celo-org/devtooling
+/build/tools/libraries-sdks/viem/ @celo-org/devrel @celo-org/devtooling
+/build/tools/libraries-sdks/ @celo-org/devrel @celo-org/devtooling
 
 # Smart contracts - Primitives team
-/tooling/contracts/ @celo-org/primitives
+/build/tools/contracts/ @celo-org/primitives
 
 # Network/Node operations - DevRel and Blockchain teams
-/tooling/testnets/ @celo-org/devrel @celo-org/blockchain
-/tooling/nodes/ @celo-org/devrel @celo-org/blockchain
+/build/tools/testnets/ @celo-org/devrel @celo-org/blockchain
+/build/tools/nodes/ @celo-org/devrel @celo-org/blockchain
 
 # Configuration files
 /docs.json @celo-org/devrel

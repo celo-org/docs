@@ -21,11 +21,11 @@ The full specification of these mechanisms — transaction types, fee rules, fin
 Celo keeps two fee properties that shape everything built on it:
 
 - **Fees stay below a cent.** The protocol configures the OP Stack's L1 and operator fee components to zero and relies on EigenDA's low data costs, so a typical transaction costs less than $0.01 — the mechanics are specified in [Transaction fees](/operate/specification/transaction-fees).
-- **Gas can be paid in stablecoins.** [Fee abstraction](/build-on-celo/fee-abstraction/overview) is implemented at the node level — not through paymasters or relayers — so any externally owned account can pay gas in USDm, USDC, USDT, or another allowlisted currency using a [CIP-64 transaction](/operate/specification/transaction-types). A user or an AI agent can hold nothing but dollars and still transact.
+- **Gas can be paid in stablecoins.** [Fee abstraction](/build/fee-abstraction/overview) is implemented at the node level — not through paymasters or relayers — so any externally owned account can pay gas in USDm, USDC, USDT, or another allowlisted currency using a [CIP-64 transaction](/operate/specification/transaction-types). A user or an AI agent can hold nothing but dollars and still transact.
 
 ## Stablecoins
 
-Stable value is a protocol-era concern on Celo rather than an afterthought. [Mento](https://www.mento.org/), the stablecoin protocol that began as part of Celo's core contracts, issues USDm, EURm, and a family of [local-currency stablecoins](/build-on-celo/build-with-local-stablecoin), alongside third-party issues like USDC and USDT. Because of fee abstraction, these are not just assets on the chain — they are the currencies the chain itself accepts for gas.
+Stable value is a protocol-era concern on Celo rather than an afterthought. [Mento](https://www.mento.org/), the stablecoin protocol that began as part of Celo's core contracts, issues USDm, EURm, and a family of [local-currency stablecoins](/build/build-with-local-stablecoin), alongside third-party issues like USDC and USDT. Because of fee abstraction, these are not just assets on the chain — they are the currencies the chain itself accepts for gas.
 
 ## Staking, epochs, and rewards
 
@@ -37,16 +37,16 @@ Every meaningful parameter of the protocol — from fee currencies to contract u
 
 ## Identity
 
-Celo's original mission — payments that work on a phone — left it with an identity layer most chains lack. [SocialConnect](/build-on-celo/build-on-minipay/overview) maps phone numbers to addresses privately through ODIS, which is what lets MiniPay users send stablecoins to a contact instead of a hex string. [Self](/build-on-celo/build-with-self) brings zero-knowledge proofs of personhood, age, and nationality on-chain, and the [ERC-8004 trust registries](/build-on-celo/build-with-ai/8004) extend the same model to AI agents.
+Celo's original mission — payments that work on a phone — left it with an identity layer most chains lack. [SocialConnect](/build/mini-apps/overview) maps phone numbers to addresses privately through ODIS, which is what lets MiniPay users send stablecoins to a contact instead of a hex string. [Self](/build/build-with-self) brings zero-knowledge proofs of personhood, age, and nationality on-chain, and the [ERC-8004 trust registries](/build/agents/8004) extend the same model to AI agents.
 
 ## What the protocol is optimized for
 
-Put together — sub-cent fees, 1-second blocks, gas in stablecoins, phone-number identity, proof-of-human — the protocol is built for two audiences: **people using mobile-first apps** like MiniPay's 10M+ activated wallets, and **AI agents** that pay, get paid, and prove who stands behind them using [x402, ERC-8004, and the rest of the agent stack](/build-on-celo/build-with-ai/overview).
+Put together — sub-cent fees, 1-second blocks, gas in stablecoins, phone-number identity, proof-of-human — the protocol is built for two audiences: **people using mobile-first apps** like MiniPay's 10M+ activated wallets, and **AI agents** that pay, get paid, and prove who stands behind them using [x402, ERC-8004, and the rest of the agent stack](/build/agents/overview).
 
 ## Related
 
 - [Celo's L2 architecture](/learn/network/architecture) - The OP Stack layout in detail
 - [Specification](/operate/specification/index) - The normative protocol specification
-- [Fee abstraction](/build-on-celo/fee-abstraction/overview) - Pay gas in stablecoins
+- [Fee abstraction](/build/fee-abstraction/overview) - Pay gas in stablecoins
 - [Governance](/learn/protocol/governance/overview) - How the protocol changes
 - [Network overview](/learn/network/overview) - Chain IDs, RPCs, explorers

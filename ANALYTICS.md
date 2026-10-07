@@ -38,7 +38,7 @@ Edit rights cannot ship a change.
 - The docs assistant is instrumented on both sides, in `celo-org/docs-ai-assistant` rather than in this repo:
   - **Client (GA4).** `widget.js` reuses the page's existing `window.gtag` rather than loading a second tracker, and emits `assistant_opened`, `assistant_question` (`answered`, `escalated`, `truncated`), `assistant_escalate`, `assistant_new_chat`, `assistant_copy`, `assistant_citation_click` (`href`) and `assistant_error` (`from_api`, `status`). Question text is deliberately never sent to GA4.
   - **Server (Redis).** `app/api/chat/route.ts` calls `logQuestion()`, which pushes `{question, model, citedUrls, answered, timestamp, refused}` onto the Upstash Redis list `docs-assistant:questions`, trimmed to the most recent 10,000. Without Redis configured it falls back to `console.log`, which on Vercel is short-retention only. **This list is the docs-gap signal** — the uncited questions in it are the pages that need writing.
-- A handful of outbound partner links carry manual UTM parameters (`tooling/libraries-sdks/reown/index.mdx`, `tooling/indexers/goldrush.mdx`). Those let the partner attribute traffic to us; the planned GTM outbound-click tag answers a different question — what our readers click.
+- A handful of outbound partner links carry manual UTM parameters (`build/tools/libraries-sdks/reown/index.mdx`, `build/tools/indexers/goldrush.mdx`). Those let the partner attribute traffic to us; the planned GTM outbound-click tag answers a different question — what our readers click.
 
 ### Reviewing unanswered questions
 

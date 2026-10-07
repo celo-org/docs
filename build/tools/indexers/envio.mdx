@@ -1,0 +1,79 @@
+---
+title: Envio
+description: Index real-time and historical Celo contract data into a GraphQL API with Envio HyperIndex and HyperSync
+---
+
+This page is for app developers who want to index Celo contract events and query them through a GraphQL API. [Envio](https://envio.dev/) HyperIndex is an indexing framework for real-time and historical blockchain data.
+
+## How it works
+
+With HyperIndex, you define the contracts and events to index in `config.yaml`, write handlers that turn those events into entities, and query the result through a GraphQL API. Handlers are written in TypeScript (the default) or ReScript. You can run an indexer locally, self-host it, or deploy it to [Envio Cloud](https://docs.envio.dev/docs/HyperIndex/hosted-service), Envio's managed hosting.
+
+[HyperSync](https://docs.envio.dev/docs/HyperSync/overview) is Envio's data retrieval layer, used as an alternative to JSON-RPC. It is available on Celo mainnet (chain ID `42220`) at `https://celo.hypersync.xyz`, and HyperIndex uses it as the default data source there. For networks without HyperSync, such as Celo Sepolia (chain ID `11142220`), HyperIndex uses an [RPC data source](https://docs.envio.dev/docs/HyperIndex/rpc-sync). Celo Sepolia is not in Envio's network list, so you must supply the ABI and RPC URL yourself rather than importing from a block explorer.
+
+HyperSync is also available as a standalone API through the [Node.js, Python, and Rust clients](https://docs.envio.dev/docs/HyperSync/hypersync-clients) (a community-maintained Go client also exists), or through [HyperRPC](https://docs.envio.dev/docs/HyperRPC/overview-hyperrpc), its JSON-RPC interface. HyperSync requires an [API token](https://docs.envio.dev/docs/HyperSync/api-tokens).
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/download) 22 or newer
+- [pnpm](https://pnpm.io/installation) (recommended)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/), to run the indexer locally
+
+## Create an indexer from a Celo contract
+
+Run the following command and follow the prompts:
+
+```bash
+pnpx envio init
+```
+
+1. Enter a folder name for the project, or press Enter to use the current directory.
+2. Select `Evm` as the blockchain ecosystem.
+3. Select `From Address - Lookup ABI from block explorer`. The other options are `From ABI File` (use your own ABI file), two templates (`ERC20` and `Greeter`), and two feature examples.
+4. Select `celo` as the blockchain. You can type to filter the list.
+5. Enter the contract address. If the contract is a proxy, enter the proxy address.
+6. Choose the events to index. All events in the ABI are selected by default.
+7. Select `I'm finished`, or add another address, network, or contract.
+8. Add an Envio API token to the project's `.env` file. You can create a new token or add an existing one.
+
+The command generates the configuration (`config.yaml`), GraphQL schema (`schema.graphql`), and event handlers (`src/handlers/`).
+
+To run contract import without prompts, pass the chain and address as flags:
+
+```bash
+# Celo mainnet (42220)
+pnpx envio init contract-import explorer -b celo -c <CONTRACT_ADDRESS> --single-contract --all-events -n my-indexer -d my-indexer
+```
+
+For Celo Sepolia, pass a local ABI file, an RPC URL, and the block to start indexing from:
+
+```bash
+# Celo Sepolia (11142220)
+pnpx envio init contract-import local -a ./abi.json --contract-name MyContract -b 11142220 -r https://forno.celo-sepolia.celo-testnet.org -s <START_BLOCK> -c <CONTRACT_ADDRESS> --single-contract --all-events -n my-indexer -d my-indexer
+```
+
+## Run the indexer locally
+
+Make sure Docker is running, then start the indexer from the project folder:
+
+```bash
+pnpm dev
+```
+
+This opens the local Hasura console, where you can query the indexed data with GraphQL. The local admin password is `testing`.
+
+## Resources
+
+| Resource | Link |
+| --- | --- |
+| HyperIndex quickstart | [docs.envio.dev/docs/HyperIndex/quickstart](https://docs.envio.dev/docs/HyperIndex/quickstart) |
+| Running the indexer locally | [docs.envio.dev/docs/HyperIndex/running-locally](https://docs.envio.dev/docs/HyperIndex/running-locally) |
+| Deploying to Envio Cloud | [docs.envio.dev/docs/HyperIndex/hosted-service-deployment](https://docs.envio.dev/docs/HyperIndex/hosted-service-deployment) |
+| HyperIndex tutorials | [docs.envio.dev/docs/HyperIndex/tutorial-erc20-token-transfers](https://docs.envio.dev/docs/HyperIndex/tutorial-erc20-token-transfers) |
+| Discord | [discord.gg/envio](https://discord.gg/envio) |
+| Email | [hello@envio.dev](mailto:hello@envio.dev) |
+
+## Related
+
+- [Data indexers overview](/build/tools/indexers/overview) - other indexing options on Celo
+- [Network overview](/learn/network/overview) - Celo chain IDs and RPC URLs

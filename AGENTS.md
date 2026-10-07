@@ -8,7 +8,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 
 - A [Mintlify](https://mintlify.com) site. Content is MDX; navigation, redirects and theme live in `docs.json`. There is no build step beyond the Mintlify CLI.
 - `docs.json` is the single source of truth for what is reachable. **A file on disk is unreachable until it is listed under `navigation`.**
-- Content directories today: `learn/`, `build-on-celo/`, `tooling/`, `contribute-to-celo/`, `operate/`.
+- Content directories today: `learn/`, `build/`, `contribute-to-celo/`, `operate/`. Tool pages live under `build/tools/`.
 - `snippets/` holds reusable JSX/MDX (`/snippets/ColoredText.jsx`, `/snippets/YouTube.jsx`, `/snippets/AddNetworkButton.jsx`). Import with an absolute path after the frontmatter: `import {YouTube} from '/snippets/YouTube.jsx'`.
 - Static assets: `img/`, `images/`, `assets/`, `logo/`.
 - **Any `.js` file under the content root runs on every published page.** Mintlify injects them automatically — there is no allowlist and no way to scope one to a single page — and the same applies to `.css`. Treat a `.js` file here as production code shipped to every reader, not as content: it has full same-origin DOM access on pages that print contract addresses and RPC endpoints. Mintlify does not support a raw `<script src>` in MDX, so third-party scripts are injected programmatically from such a file (`assistant.js` is the example). Note `submodules/developer-tooling` sits under this root too.
@@ -20,6 +20,7 @@ Structural work in progress is tracked in the restructure epic, [#2266](https://
 npm i -g mint          # once
 mint dev               # preview at http://localhost:3000
 mint broken-links      # must pass before every PR; CI runs it on every PR to main
+python3 scripts/check_redirects.py  # must pass too when you touch redirects; CI runs it
 mint update            # if the CLI misbehaves
 ```
 
@@ -27,10 +28,10 @@ mint update            # if the CLI misbehaves
 
 All four steps, every time. External links and search results break silently when one is skipped.
 
-1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect.
+1. Add a `redirects` entry in `docs.json`: `{ "source": "/old/path", "destination": "/new/path" }` — no `.mdx`, root-relative. Point at the final page, not at another redirect. A source cannot contain `#`: browsers never send the fragment, so it never matches. Write wildcards as a trailing `/:slug*`; the redirect check refuses any other path parameter. Between `:slug*` wildcards the first match wins, so put a narrower wildcard above a broader one.
 2. Update the page's entry under `navigation` (or remove it).
 3. Update every inbound internal link: `grep -rn --include='*.mdx' "/old/path" .`
-4. Run `mint broken-links`.
+4. Run `mint broken-links` and `python3 scripts/check_redirects.py`.
 
 Deleting a page still needs step 1 — redirect to the nearest page that answers the same question.
 
@@ -80,6 +81,7 @@ Use these names exactly (they are the most common ones in the repo; synonyms lik
 - Document what is true now. No "recently", "as of the L2 migration", "previously", "coming soon", "roadmap". Change history belongs in Notices and release notes; planned work is not documented until it ships.
 - Never invent a technical detail. If you do not know an address, flag, endpoint, env var or command, look it up (this repo, the source repo, the live chain) or say you do not know. Addresses are checked against the chain (`eth_call` / `eth_getCode`) before they land, not copied from memory or from another page.
 - No inflated adjectives ("seamless", "robust", "powerful", "comprehensive", "leading"), no unsourced superlatives ("the only production-ready…"), no rule-of-three padding, no promotional framing.
+- No emoji in headings or body copy. A banner may open with one emoji that fits its subject, but never a rocket.
 - No comparisons that position Celo against another chain or product ("the equivalent of X on Y"). Describe what Celo does.
 - Link jargon on first use on introductory pages — ERC-20, EVM, EOA, facilitator, base units — or replace it with the plain word.
 - Callouts: `Note`, `Tip`, `Info`, `Warning` components only. Never `>` blockquotes for callouts.
@@ -94,12 +96,13 @@ The policy, decided for the restructure: **troubleshooting-first.**
 - Self-contained: imports shown, env vars named, network stated in a comment. A reader copies one block and it works.
 - Bare language tag, no `title=`, no line highlighting. Use `bash` for shell (not `sh`/`shell`), `ts`/`tsx` for TypeScript (not `typescript`), `js`/`jsx` for JavaScript, `solidity`, `json`, `yaml`.
 - Every address in a code block or table carries the network name and, for tokens, the decimals: `// Celo mainnet (42220), USDC, 6 decimals`.
+- Write new and edited addresses in their EIP-55 checksummed form; get it from `cast to-check-sum-address <address>`. Mixed case with a wrong checksum breaks copied code: ethers throws `bad address checksum` and viem's `isAddress` returns `false`. Do not sweep old pages just to recase addresses; fix the ones on pages you are already editing.
 - Prefer `viem` / `wagmi` examples; they support Celo fee-currency transactions natively.
 - Testnet is **Celo Sepolia, chain ID 11142220**. Alfajores (44787) is retired — do not reference it.
 
 ## 6. Links and components
 
-- Internal links are root-relative with no extension: `[Fee abstraction](/build-on-celo/fee-abstraction/overview)`. Never `./`, `../`, or `.mdx`. Anchors are fine: `/build-on-celo/fee-abstraction/using-fee-abstraction#adapter-addresses`. `mint broken-links` does not validate anchors — check them by hand.
+- Internal links are root-relative with no extension: `[Fee abstraction](/build/fee-abstraction/overview)`. Never `./`, `../`, or `.mdx`. Anchors are fine: `/build/fee-abstraction/using-fee-abstraction#adapter-addresses`. `mint broken-links` does not validate anchors — check them by hand.
 - External links use the full URL. Link to the canonical source (the standard, the SDK docs, the contract on the explorer).
 - Components in use: `Card`/`CardGroup` for index and landing pages, `Tabs`/`Tab` for per-OS or per-client variants, `Accordion`/`AccordionGroup` for optional depth, `Frame` around images, `CodeGroup` for the same step in several package managers. Numbered procedures are plain markdown lists. Keep to this set so pages look alike.
 - Images never carry information that is not also in the text. Agents and screen readers do not see screenshots.
@@ -113,17 +116,17 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Chain IDs, RPC URLs, explorers, faucet | `/learn/network/overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
 | Block time | `/operate/specification/deployments` | "1-second blocks". Do not write "1-second finality" — see `/operate/specification/finality` |
 | Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
-| Fee abstraction | `/build-on-celo/fee-abstraction/overview` (guide), `/tooling/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
-| Stablecoins | `/build-on-celo/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USDT, USA₮ and other issuers — "30+ stablecoins" in total |
-| MiniPay | `/build-on-celo/build-on-minipay/overview` | stablecoin wallet, 10M+ activations, Mini App discovery page, Celo only |
+| Fee abstraction | `/build/fee-abstraction/overview` (guide), `/build/tools/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
+| Stablecoins | `/build/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USDT, USA₮ and other issuers — "30+ stablecoins" in total |
+| MiniPay | `/build/mini-apps/overview` | stablecoin wallet, 10M+ activations, Mini App discovery page, Celo only |
 | Token duality | `/operate/specification/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
 | Data availability | `/operate/specification/eigenda` | EigenDA |
 | Architecture | `/learn/network/architecture` | Ethereum L2 on the OP Stack |
-| Agent payments | `/build-on-celo/build-with-ai/x402`, `/build-on-celo/build-with-ai/mpp` | HTTP 402 flows settled in USDC/USDT; Celo facilitator `https://api.x402.celo.org` |
-| Agent identity and trust | `/build-on-celo/build-with-ai/8004`, `/build-on-celo/build-with-ai/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
-| Human identity | `/build-on-celo/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
-| Phone-number mapping | `/build-on-celo/build-on-socialconnect` | SocialConnect / ODIS |
-| AI tooling | `/build-on-celo/build-with-ai/use-docs-with-ai`, `/build-on-celo/build-with-ai/celopedia`, `/build-on-celo/build-with-ai/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
+| Agent payments | `/build/agents/x402`, `/build/agents/mpp` | HTTP 402 flows settled in USDC/USDT; Celo facilitator `https://api.x402.celo.org` |
+| Agent identity and trust | `/build/agents/8004`, `/build/agents/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
+| Human identity | `/build/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
+| Phone-number mapping | `/build/build-on-socialconnect` | SocialConnect / ODIS |
+| AI tooling | `/build/agents/use-docs-with-ai`, `/build/agents/celopedia`, `/build/agents/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
 
 ### Partner contract addresses
 
@@ -139,7 +142,7 @@ Third-party (partner) contract addresses are not listed in these docs — link t
 
 ## 8. Writing for AI agents (discoverability)
 
-Most readers of these docs are now AI assistants and agents. Mintlify already serves them: `https://docs.celo.org/llms.txt` (index of every page's title and `description`), `llms-full.txt` (full text), every page as Markdown at its URL plus `.md`, the docs MCP server at `https://docs.celo.org/mcp`, and the page-level Copy / ChatGPT / Claude / Cursor menu. Human readers also get the in-page [Ask AI assistant](/build-on-celo/build-with-ai/use-docs-with-ai), which answers from the same MCP endpoint. The [Celopedia skill](/build-on-celo/build-with-ai/celopedia) and the [Celo MCP server](/build-on-celo/build-with-ai/mcp/celo-mcp) are further entry points. Nothing needs configuring per page — but a page is only as useful to an agent as its text is explicit.
+Most readers of these docs are now AI assistants and agents. Mintlify already serves them: `https://docs.celo.org/llms.txt` (index of every page's title and `description`), `llms-full.txt` (full text), every page as Markdown at its URL plus `.md`, the docs MCP server at `https://docs.celo.org/mcp`, and the page-level Copy / ChatGPT / Claude / Cursor menu. Human readers also get the in-page [Ask AI assistant](/build/agents/use-docs-with-ai), which answers from the same MCP endpoint. The [Celopedia skill](/build/agents/celopedia) and the [Celo MCP server](/build/agents/mcp/celo-mcp) are further entry points. Nothing needs configuring per page — but a page is only as useful to an agent as its text is explicit.
 
 Rules that make a page work for an agent:
 
@@ -151,7 +154,7 @@ Rules that make a page work for an agent:
 6. **Headings name the task.** `## Estimate gas in USDC`, not `## Step 3`.
 7. **Close with `## Related`.** Agents traverse the link graph; a page with no outgoing internal links is a dead end.
 8. **Text over images.** Screenshots are fine as illustration; the steps must be in words.
-9. **New agent-relevant pages get listed** on `/build-on-celo/build-with-ai/overview` and, when it exists, the AI-resources page (#2261).
+9. **New agent-relevant pages get listed** on `/build/agents/overview` and, when it exists, the AI-resources page (#2261).
 
 ## 9. Pull requests
 

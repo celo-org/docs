@@ -1,0 +1,37 @@
+---
+title: "Verify Contract Deployed on Celo"
+sidebarTitle: "Overview"
+description: How to verify a contract deployed on Celo with Hardhat, Foundry, Remix, Blockscout or Celoscan
+---
+
+Verifying publishes your contract's source so anyone can read it on the block explorer. Pick the route that matches how you deployed.
+
+## Verify contracts on Celo
+
+- [Using Foundry](#using-foundry)
+- [Using Hardhat](/build/tools/contract-verification/hardhat)
+- [Using Blockscout](/build/tools/contract-verification/blockscout)
+- [Using Remix](/build/tools/contract-verification/remix)
+- [Using Celoscan](/build/tools/contract-verification/celoscan)
+
+## Using Foundry
+
+If you deployed with [Foundry](/build/tools/dev-environments/foundry), verify with `forge verify-contract`. Set your API key first — get one at [etherscan.io/register](https://etherscan.io/register):
+
+```bash
+export ETHERSCAN_API_KEY=<your etherscan API key>
+```
+
+Celo Mainnet (chain ID 42220):
+
+```bash
+forge verify-contract --chain-id 42220 <contract_address> <contract_location> --etherscan-api-key $ETHERSCAN_API_KEY --watch
+```
+
+Celo Sepolia testnet (chain ID 11142220):
+
+```bash
+forge verify-contract --chain-id 11142220 <contract_address> <contract_location> --etherscan-api-key $ETHERSCAN_API_KEY --watch
+```
+
+Passing `--verify` to `forge create` or `forge script` verifies right after deployment using the same `ETHERSCAN_API_KEY`. A `[etherscan]` block in `foundry.toml` is only needed to point Foundry at a custom verifier URL.

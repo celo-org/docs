@@ -1,0 +1,66 @@
+---
+title: "Celopedia"
+sidebarTitle: "Celopedia (Skill)"
+description: "Celopedia gives your AI coding assistant deep Celo knowledge — so you can find an idea, shape it, get feedback, and ship on Celo without leaving your editor."
+---
+
+**Your AI coding assistant, now fluent in Celo.** Celopedia is a knowledge skill that plugs verified Celo intelligence — contract addresses, protocols, MiniPay, grants, and agent infrastructure — straight into the tools you already build with.
+
+Go from "what should I build?" to a live app without tab-hopping through docs.
+
+<CardGroup cols={2}>
+  <Card title="Find your idea" icon="lightbulb">
+    Search live ecosystem data to spot the gaps and opportunities worth building.
+  </Card>
+  <Card title="Shape your idea" icon="compass-drafting">
+    Compare verticals, pick the right protocols, and scope an architecture that fits Celo.
+  </Card>
+  <Card title="Get feedback" icon="comments">
+    Pressure-test as you go — how saturated is this market, how does my approach compare?
+  </Card>
+  <Card title="Go live fast" icon="rocket">
+    Grab contract addresses, MiniPay and fee-abstraction patterns, and deploy — all in your editor.
+  </Card>
+</CardGroup>
+
+## Install Celopedia
+
+Run this in a terminal, from the root of the project you want to use it in:
+
+```bash
+npx skills add celo-org/celopedia-skills
+```
+
+<Note>
+  The command has to run in a terminal. The **Ask AI** assistant on these docs can't run it. Celopedia works with file-based skill environments including Codex, Claude Code, and OpenClaw. Claude Code needs an extra step after this command, described in the [repository README](https://github.com/celo-org/celopedia-skills#claude-code). Restart your coding assistant afterward if it doesn't discover new skills mid-session.
+</Note>
+
+## Try it
+
+Once installed, ask your assistant things like:
+
+```text
+What lending protocols exist on Celo, and which vertical is least saturated?
+Give me the Uniswap V4 contract addresses on Celo mainnet.
+Scaffold a payments Mini App with the recommended architecture.
+Set up a Foundry project for Celo with fee abstraction.
+```
+
+## What's inside
+
+| Area | What you get |
+|------|--------------|
+| Network & contracts | Chain IDs, RPCs, explorers, fee currencies, and verified contract addresses |
+| Ecosystem intelligence | Product discovery, competitor scans, and vertical analysis |
+| Builder setup | Foundry, Hardhat, Viem, Wagmi, fee abstraction, and deploy & verify patterns |
+| DeFi | References for Uniswap, Aave, Morpho, Mento, Velodrome, Curve, Ubeswap, and stCELO |
+| MiniPay | Wallet detection, stablecoin payments, ODIS, templates, and listing guidance |
+| AI agents | ERC-8004, x402, the Celo MCP Server, and agent skill references |
+| Grants | Funding programs and grant matchmaking |
+
+Celopedia is curated from official Celo documentation, protocol references, and live public data sources including Celo Docs, The Grid, DefiLlama, and Celoscan.
+
+## Resources
+
+- [Celopedia](https://celopedia.celo.org/)
+- [Celopedia GitHub repository](https://github.com/celo-org/celopedia-skills)
