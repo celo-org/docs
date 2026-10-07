@@ -8,7 +8,7 @@ This page is the how-to for app and agent developers: send transactions that pay
 
 ---
 
-## Allowlisted Fee Currencies
+## Allowlisted fee currencies
 
 The protocol maintains a governable allowlist of smart contract addresses that can be used as fee currencies. These contracts implement an extension of the ERC20 interface with additional functions for debiting and crediting transaction fees (see [Adding Fee Currencies](/build/fee-abstraction/add-fee-currency)).
 
@@ -23,7 +23,7 @@ celocli network:whitelist --node celo
 
 ---
 
-## Adapters for Non-18-Decimal Tokens
+## Adapters for non-18-decimal tokens
 
 Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapters are used when a token has decimals other than 18 (e.g., USDC and USDT use 6 decimals). The Celo blockchain calculates gas pricing in 18 decimals, so adapters normalize the value.
 
@@ -35,13 +35,13 @@ To get the underlying token address for an adapter, call `adaptedToken()` on the
 
 For more on gas pricing, see [Transaction Fees](/operate/specification/transaction-fees).
 
-### Adapter Addresses
+### Adapter addresses
 
 The current adapter and token addresses for each network are listed on the [Fee currency contracts](/build/tools/contracts/fee-currencies) page, which is generated from the on-chain `FeeCurrencyDirectory` allowlist.
 
 ---
 
-## Using Fee Abstraction with Celo CLI
+## Using fee abstraction with Celo CLI
 
 Transfer 1 USDC using USDC as the fee currency via [`celocli`](/cli):
 ```bash
@@ -75,11 +75,11 @@ celocli transfer:erc20 \
 
 ---
 
-## Using Fee Abstraction with viem
+## Using fee abstraction with viem
 
 We recommend [viem](https://viem.sh/), which serializes CIP-64 natively when you pass a Celo chain from `viem/chains`. Ethers.js and web3.js do not support the field on their own; use the [Celo Ethers.js wrapper](/build/tools/libraries-sdks/ethers) or the [web3 transaction-types plugin](/build/tools/libraries-sdks/web3). Whichever library you use, the wallet that signs the transaction must also support CIP-64; see [wallet support](/build/fee-abstraction/overview#wallet-support-for-cip-64).
 
-### 1. Estimate the Gas Fee
+### Estimate the gas fee
 
 Before sending, estimate the transaction fee so the UI can reserve that amount and prevent users from trying to transfer more than their available balance.
 
@@ -137,7 +137,7 @@ const fee = gasPrice * gas;
 console.log(`Estimated fee: ${formatEther(fee)} USDC`);
 ```
 
-### 2. Prepare the Transaction
+### Prepare the transaction
 
 Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/learn/protocol/transactions/transaction-types) compliant.
 ```js
@@ -148,7 +148,7 @@ let tx = {
 };
 ```
 
-### 3. Send the Transaction
+### Send the transaction
 
 The script below sends 1 USDC in total, fee included: it estimates the fee as in step 1, converts it from 18 to 6 decimals, and transfers 1 USDC minus the fee. The fee actually charged can differ slightly from the estimate if the base fee changes before the transaction is included. The sender needs slightly more than 1 USDC, because before running the transfer the network checks that the balance covers the gas limit times the maximum fee per gas. Set `PRIVATE_KEY` to the sender's key.
 ```js
