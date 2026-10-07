@@ -89,47 +89,52 @@ The gas price returned from the RPC is always expressed in 18 decimals, regardle
 
 Use the adapter address (for USDC/USDT/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
 ```js
-import { createPublicClient, hexToBigInt, http } from "viem";
+import {
+  createPublicClient,
+  encodeFunctionData,
+  erc20Abi,
+  formatEther,
+  hexToBigInt,
+  http,
+  parseUnits,
+} from "viem";
 import { celo } from "viem/chains";
 
-const USDC_ADAPTER_MAINNET = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
+// Celo mainnet (42220), USDC, 6 decimals
+const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+// Celo mainnet (42220), USDC adapter, the fee currency for USDC
+const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
+
+// Example addresses; use your own. estimateGas reverts if the sender holds less than 1 USDC.
+const sender = "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D";
+const recipient = "0xDF7d8B197EB130cF68809730b0D41999A830c4d7";
 
 const publicClient = createPublicClient({
   chain: celo,
   transport: http(),
 });
 
-const transaction = {
-  from: "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D",
-  to: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
-  data: "0xa9059cbb000000000000000000000000ccc9576f841de93cd32bee7b98fe8b9bd3070e3d00000000000000000000000000000000000000000000000000000000000f4240",
-  feeCurrency: USDC_ADAPTER_MAINNET,
-};
+// Transfer 1 USDC: token amounts use the token's 6 decimals
+const data = encodeFunctionData({
+  abi: erc20Abi,
+  functionName: "transfer",
+  args: [recipient, parseUnits("1", 6)],
+});
 
-async function getGasPriceInUSDC() {
-  const priceHex = await publicClient.request({
-    method: "eth_gasPrice",
-    params: [USDC_ADAPTER_MAINNET],
-  });
-  return hexToBigInt(priceHex);
-}
+// eth_gasPrice takes the fee currency as a parameter and returns a hex string
+const gasPrice = hexToBigInt(
+  await publicClient.request({ method: "eth_gasPrice", params: [USDC_ADAPTER] }),
+);
+const gas = await publicClient.estimateGas({
+  account: sender,
+  to: USDC,
+  data,
+  feeCurrency: USDC_ADAPTER,
+});
 
-async function estimateGasInUSDC(transaction) {
-  const estimatedGasInHex = await publicClient.estimateGas({
-    ...transaction,
-    feeCurrency: USDC_ADAPTER_MAINNET,
-  });
-  return hexToBigInt(estimatedGasInHex);
-}
-
-async function main() {
-  const gasPriceInUSDC = await getGasPriceInUSDC();
-  const estimatedGas = await estimateGasInUSDC(transaction);
-
-  // Total fee the user must reserve before transferring
-  const transactionFeeInUSDC = formatEther(gasPriceInUSDC * estimatedGas).toString();
-  return transactionFeeInUSDC;
-}
+// Total fee the user must reserve, in the adapter's 18 decimals
+const fee = gasPrice * gas;
+console.log(`Estimated fee: ${formatEther(fee)} USDC`);
 ```
 
 ### 2. Prepare the Transaction
@@ -138,64 +143,69 @@ Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (US
 ```js
 let tx = {
   // ... other transaction fields
-  feeCurrency: "0x2f25deb3848c207fc8e0c34035b3ba7fc157602b", // USDC Adapter address
+  feeCurrency: "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B", // Celo mainnet (42220), USDC adapter
   type: "0x7b",
 };
 ```
 
 ### 3. Send the Transaction
 
-The example below transfers 1 USDC, subtracting the estimated fee from the transfer amount so the sender's full balance is not over-spent.
+The script below sends 1 USDC in total, fee included: it estimates the fee as in step 1, converts it from 18 to 6 decimals, and transfers 1 USDC minus the fee. The fee actually charged can differ slightly from the estimate if the base fee changes before the transaction is included. The sender needs slightly more than 1 USDC, because before running the transfer the network checks that the balance covers the gas limit times the maximum fee per gas. Set `PRIVATE_KEY` to the sender's key.
 ```js
-import { createWalletClient, http } from "viem";
-import { celo } from "viem/chains";
+import {
+  createPublicClient,
+  createWalletClient,
+  encodeFunctionData,
+  erc20Abi,
+  hexToBigInt,
+  http,
+  parseUnits,
+} from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { stableTokenAbi } from "@celo/abis";
+import { celo } from "viem/chains";
 
-const account = privateKeyToAccount("0x432c...");
+// Celo mainnet (42220), USDC, 6 decimals
+const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+// Celo mainnet (42220), USDC adapter, the fee currency for USDC
+const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
 
-const client = createWalletClient({
+// Example recipient; use your own.
+const recipient = "0xDF7d8B197EB130cF68809730b0D41999A830c4d7";
+
+const account = privateKeyToAccount(process.env.PRIVATE_KEY);
+const publicClient = createPublicClient({ chain: celo, transport: http() });
+const walletClient = createWalletClient({ account, chain: celo, transport: http() });
+
+function transferData(amount) {
+  return encodeFunctionData({
+    abi: erc20Abi,
+    functionName: "transfer",
+    args: [recipient, amount],
+  });
+}
+
+const total = parseUnits("1", 6); // 1 USDC
+
+const gasPrice = hexToBigInt(
+  await publicClient.request({ method: "eth_gasPrice", params: [USDC_ADAPTER] }),
+);
+const gas = await publicClient.estimateGas({
   account,
-  chain: celo,
-  transport: http(),
+  to: USDC,
+  data: transferData(total),
+  feeCurrency: USDC_ADAPTER,
 });
 
-const USDC_ADAPTER_MAINNET = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
-const USDC_MAINNET = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
+// The fee is in the adapter's 18 decimals; convert it to USDC's 6, rounding up
+const scale = 10n ** 12n;
+const feeInUsdc = (gasPrice * gas + scale - 1n) / scale;
 
-async function calculateTransactionFeesInUSDC(transaction) {
-  const gasPriceInUSDC = await getGasPriceInUSDC();
-  const estimatedGas = await estimateGasInUSDC(transaction);
-  return gasPriceInUSDC * estimatedGas;
-}
-
-async function send(amountInWei) {
-  const to = USDC_MAINNET;
-
-  const data = encodeFunctionData({
-    abi: stableTokenAbi,
-    functionName: "transfer",
-    args: ["0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D", amountInWei],
-  });
-
-  const transactionFee = await calculateTransactionFeesInUSDC({ to, data });
-
-  // Subtract the fee from the amount so the sender isn't over-spending
-  const tokenReceivedByReceiver = parseEther("1") - transactionFee;
-
-  const dataAfterFeeCalculation = encodeFunctionData({
-    abi: stableTokenAbi,
-    functionName: "transfer",
-    args: ["0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D", tokenReceivedByReceiver],
-  });
-
-  const hash = await client.sendTransaction({
-    ...{ to, data: dataAfterFeeCalculation },
-    feeCurrency: USDC_ADAPTER_MAINNET,
-  });
-
-  return hash;
-}
+const hash = await walletClient.sendTransaction({
+  to: USDC,
+  data: transferData(total - feeInUsdc),
+  feeCurrency: USDC_ADAPTER,
+});
+console.log(`Sent: ${hash}`);
 ```
 
 ---
