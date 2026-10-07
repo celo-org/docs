@@ -73,7 +73,7 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
 
     To handle RPC requests for pre-hardfork blocks, transactions, state and execution, an L2 node proxies to a legacy archive node or "Historical RPC Service". This applies to every mainnet node that serves such requests, not only to archive nodes. Run the legacy archive node with the Celo L1 client version listed in [Network config](/operate/operators/network-config).
 
-    There are two ways to configure a Historical RPC Service for your archive node:
+    There are two ways to configure a Historical RPC Service for your node:
 
     1. Supply a pre-hardfork archive datadir and let [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start a legacy archive node. To do this configure `.env` as follows:
 
@@ -96,7 +96,7 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
     <Warning>
     **Not every pre-L2 request is forwarded**
 
-    `op-reth` forwards these methods when they target a block before the L2 migration (mainnet block 31,056,500). It also forwards the methods that take a block or transaction hash whenever it cannot find that hash locally, for example because it was pruned.
+    The `op-reth` images `celo-v1.0.5` and `celo-v1.0.6` forward these methods when they target a block before the L2 migration (mainnet block 31,056,500). They also forward the methods that take a block or transaction hash whenever they cannot find that hash locally, for example because it was pruned.
 
     - `eth_getBlockByNumber`, `eth_getBlockByHash`
     - `eth_getTransactionByHash`, `eth_getRawTransactionByHash`, `eth_getTransactionReceipt`
@@ -108,8 +108,9 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
 
     - `eth_getLogs` with a block range returns no logs from pre-L2 blocks, and it does not return an error. A range that crosses the migration block returns only the logs from L2 blocks. With a pre-L2 `blockHash` it returns a "block not found" error. The filter methods (`eth_newFilter`, `eth_getFilterLogs`, `eth_getFilterChanges`) are not forwarded either.
     - `eth_getBlockReceipts` returns `null` for pre-L2 blocks. Fetch each receipt with `eth_getTransactionReceipt` instead.
+    - The transaction count, by-index and uncle methods, such as `eth_getBlockTransactionCountByNumber`, `eth_getTransactionByBlockNumberAndIndex` and `eth_getUncleCountByBlockNumber`, return `null` for pre-L2 blocks.
 
-    To read pre-L2 logs, send `eth_getLogs` directly to the Historical RPC Service. Forwarding `eth_getLogs` depends on [ethereum-optimism/optimism#22663](https://github.com/ethereum-optimism/optimism/pull/22663), which is not merged yet.
+    To read pre-L2 logs, send `eth_getLogs` directly to the Historical RPC Service.
     </Warning>
 
     #### Configure P2P for external network access
