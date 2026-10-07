@@ -4,13 +4,13 @@ sidebarTitle: "CELO Token"
 description: CELO is both the native currency of Celo and an ERC-20 token, with no wrapping needed
 ---
 
-This page is for app developers and CELO holders who use CELO as the native currency, as an ERC-20 token, or both. CELO is both at once: you can move it with a native transfer, the way ETH moves on Ethereum, or through the standard ERC-20 interface, and either way the tokens show up in both the native balance and the ERC-20 balance.
+This page is for app developers and CELO holders who use CELO as the native currency, as an [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token, or both. CELO is both at once: you can move it with a native transfer, the way ETH moves on Ethereum, or through the standard ERC-20 interface, and either way the tokens show up in both the native balance and the ERC-20 balance.
 
 ## How it works
 
-The CELO ERC-20 contract keeps no balances of its own. `balanceOf` returns the account's native balance, and `transfer` and `transferFrom` trigger a native transfer through a precompile that only the CELO token can call. The precompile's address, parameters and gas cost are in the [token duality specification](/operate/specification/token-duality).
+The CELO ERC-20 contract keeps no balances of its own. `balanceOf` returns the account's native balance, and `transfer` and `transferFrom` trigger a native transfer through a contract built into the chain (a precompile) that only the CELO token can call. The [token duality specification](/operate/specification/token-duality#the-transfer-precompile) gives the precompile's address, parameters and gas cost.
 
-The CELO ERC-20 contract is registered in the Registry as `GoldToken`; its address on each network is listed in [Core Contracts](/tooling/contracts/core-contracts).
+The Registry, the on-chain directory of Celo's core contracts, lists the CELO ERC-20 contract as `GoldToken`. [Core Contracts](/build/tools/contracts/core-contracts) gives the Registry and `GoldToken` addresses on each network.
 
 ## Why it matters on Celo
 
@@ -21,10 +21,10 @@ An account has one CELO balance that both interfaces read and change, so unlike 
 | Resource | Link |
 |---|---|
 | Token duality specification | [/operate/specification/token-duality](/operate/specification/token-duality) |
-| CELO token (`GoldToken`) address on mainnet and Celo Sepolia | [Core Contracts](/tooling/contracts/core-contracts) |
+| CELO token (`GoldToken`) address on mainnet and Celo Sepolia | [Core Contracts](/build/tools/contracts/core-contracts) |
 
 ## Related
 
 - [Token duality specification](/operate/specification/token-duality) - the transfer precompile's address, parameters and gas cost
-- [Core Contracts](/tooling/contracts/core-contracts) - where to find the CELO ERC-20 contract on each network
-- [Celo for Ethereum developers](/tooling/overview/migrate/from-ethereum) - why tracking CELO balances means following native transfers as well as ERC-20 `Transfer` events
+- [Core Contracts](/build/tools/contracts/core-contracts) - where to find the CELO ERC-20 contract on each network
+- [Celo for Ethereum developers](/build/tools/overview/migrate/from-ethereum) - why tracking CELO balances means following native transfers as well as ERC-20 `Transfer` events
