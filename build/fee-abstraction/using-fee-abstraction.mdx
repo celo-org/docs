@@ -45,8 +45,8 @@ The current adapter and token addresses for each network are listed on the [Fee 
 
 Transfer 1 USDC using USDC as the fee currency via [`celocli`](/cli):
 ```bash
-# Celo mainnet (42220): token 0xcebA9300f2b948710d2653dD7B07f33A8B32118C (USDC, 6 decimals), fee currency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B (USDC adapter)
-# --from and --to are example addresses; use your own.
+# Celo mainnet (42220): token 0xcebA9300f2b948710d2653dD7B07f33A8B32118C (USDC, 6 decimals), fee currency 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B (USDC adapter, gas math in 18 decimals; this adapter has no decimals() function)
+# --from and --to are example Celo mainnet addresses; use your own.
 celocli transfer:erc20 \
   --node celo \
   --erc20Address 0xcebA9300f2b948710d2653dD7B07f33A8B32118C \
@@ -61,8 +61,8 @@ When using USDC, USDT, or USA₮, use the **adapter address** (not the token add
 
 Transfer 1 USDT using USDT as the fee currency:
 ```bash
-# Celo mainnet (42220): token 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e (USDT, 6 decimals), fee currency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 (USDT adapter)
-# --from and --to are example addresses; use your own.
+# Celo mainnet (42220): token 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e (USDT, 6 decimals), fee currency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 (USDT adapter, 18 decimals)
+# --from and --to are example Celo mainnet addresses; use your own.
 celocli transfer:erc20 \
   --node celo \
   --erc20Address 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e \
@@ -73,11 +73,15 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
+A key passed with `--privateKey` stays in your shell history, and other users on the machine can see it in the process list while the command runs. Use a dedicated account that holds only what you plan to send.
+
 ---
 
 ## Using fee abstraction with viem
 
 We recommend [viem](https://viem.sh/), which serializes CIP-64 natively when you pass a Celo chain from `viem/chains`. Ethers.js and web3.js do not support the field on their own; use the [Celo Ethers.js wrapper](/build/tools/libraries-sdks/ethers) or the [web3 transaction-types plugin](/build/tools/libraries-sdks/web3). Whichever library you use, the wallet that signs the transaction must also support CIP-64; see [wallet support](/build/fee-abstraction/overview#wallet-support-for-cip-64).
+
+To run the scripts below, install viem with `npm install viem`, save each script as an `.mjs` file (they use `import` and top-level `await`), and run it with `node`. They target Celo mainnet and use USDC. For USDT or USA₮, replace the token and adapter addresses with that token's pair from [Fee currency contracts](/build/tools/contracts/fee-currencies); both tokens have 6 decimals, so the math stays the same.
 
 ### Estimate the gas fee
 
@@ -103,9 +107,10 @@ import { celo } from "viem/chains";
 // Celo mainnet (42220), USDC, 6 decimals
 const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
 // Celo mainnet (42220), USDC adapter, the fee currency for USDC
+// (gas math in 18 decimals; this adapter has no decimals() function)
 const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
 
-// Example addresses; use your own. estimateGas reverts if the sender holds less than 1 USDC.
+// Example Celo mainnet addresses; use your own. estimateGas reverts if the sender holds less than 1 USDC.
 const sender = "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D";
 const recipient = "0xDF7d8B197EB130cF68809730b0D41999A830c4d7";
 
@@ -132,9 +137,9 @@ const gas = await publicClient.estimateGas({
   feeCurrency: USDC_ADAPTER,
 });
 
-// Total fee the user must reserve, in the adapter's 18 decimals
+// Total fee the user must reserve, in the fee token, scaled to 18 decimals
 const fee = gasPrice * gas;
-console.log(`Estimated fee: ${formatEther(fee)} USDC`);
+console.log(`Estimated fee: ${formatEther(fee)}`);
 ```
 
 ### Prepare the transaction
@@ -143,14 +148,18 @@ Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (US
 ```js
 let tx = {
   // ... other transaction fields
-  feeCurrency: "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B", // Celo mainnet (42220), USDC adapter
+  feeCurrency: "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B", // Celo mainnet (42220), USDC adapter (gas math in 18 decimals)
   type: "0x7b",
 };
 ```
 
 ### Send the transaction
 
-The script below sends 1 USDC in total, fee included: it estimates the fee as in step 1, converts it from 18 to 6 decimals, and transfers 1 USDC minus the fee. The fee actually charged can differ slightly from the estimate if the base fee changes before the transaction is included. The sender needs slightly more than 1 USDC, because before running the transfer the network checks that the balance covers the gas limit times the maximum fee per gas. Set `PRIVATE_KEY` to the sender's key.
+<Warning>
+This script sends real USDC on Celo mainnet. Use a dedicated account that holds only what you plan to send, keep its key in an environment variable or a secret store, and never commit or log it. To try the script on Celo Sepolia first, replace `celo` with `celoSepolia` and use the Celo Sepolia USDC token and adapter from [Fee currency contracts](/build/tools/contracts/fee-currencies).
+</Warning>
+
+The script below sends 1 USDC in total, fee included: it estimates the fee as in [Estimate the gas fee](#estimate-the-gas-fee), converts it from 18 to 6 decimals, and transfers 1 USDC minus the fee. The network takes the fee from the sender's USDC balance before it runs the transfer, so the balance must cover the transferred amount plus the fee at the time of inclusion. That fee can rise above the estimate if the base fee goes up in between, so keep a small margin above 1 USDC. The network also checks that the balance covers the gas limit times the maximum fee per gas, which is higher than the estimate. Set `PRIVATE_KEY` to the sender's private key, a `0x`-prefixed hex string.
 ```js
 import {
   createPublicClient,
@@ -167,9 +176,10 @@ import { celo } from "viem/chains";
 // Celo mainnet (42220), USDC, 6 decimals
 const USDC = "0xcebA9300f2b948710d2653dD7B07f33A8B32118C";
 // Celo mainnet (42220), USDC adapter, the fee currency for USDC
+// (gas math in 18 decimals; this adapter has no decimals() function)
 const USDC_ADAPTER = "0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B";
 
-// Example recipient; use your own.
+// Example Celo mainnet recipient; use your own.
 const recipient = "0xDF7d8B197EB130cF68809730b0D41999A830c4d7";
 
 const account = privateKeyToAccount(process.env.PRIVATE_KEY);
@@ -196,7 +206,7 @@ const gas = await publicClient.estimateGas({
   feeCurrency: USDC_ADAPTER,
 });
 
-// The fee is in the adapter's 18 decimals; convert it to USDC's 6, rounding up
+// The fee is in 18 decimals; convert it to USDC's 6, rounding up
 const scale = 10n ** 12n;
 const feeInUsdc = (gasPrice * gas + scale - 1n) / scale;
 
