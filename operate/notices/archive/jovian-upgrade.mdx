@@ -6,12 +6,12 @@ description: Node operator changes and activation timings for the Jovian hardfor
 This page outlines changes related to the Jovian Upgrade for node operators.
 
 <Note>
-This page will be kept updated with key information about the upgrade.
+Jovian has been activated.
 
 - Celo Sepolia testnet activation: Tue, Mar 17, 2026, 12:03:57 UTC
   - Activation timestamp: `1773749037`
 - **Mainnet** activation: Tue, Mar 31, 2026, 12:06:28 UTC
-  - Actvation timestamp: `1774958788`
+  - Activation timestamp: `1774958788`
 </Note>
 
 ## What is the Jovian Hardfork?
@@ -29,27 +29,27 @@ For the full technical specification, see the [Jovian upgrade spec](/operate/spe
 ## For Bridges and Users
 
 <Note>
-All withdrawals that are not finalized before the contract upgrade right before the Jovian hardfork will need to be reproven after the upgrade is complete. You may want to consider waiting until after the upgrade is complete to begin a withdrawal during this 7-day window.
+All withdrawals that were not finalized before the contract upgrade right before the Jovian hardfork had to be reproven (see step 4 below).
 </Note>
 
 Celo's Jovian hardfork includes [Optimism Upgrade 16](https://docs.optimism.io/notices/archive/upgrade-16). Users should be aware of the following impacts:
 
 ### Withdrawal flow changes
 
-1. There will be a one-time invalidation of all pending withdrawal proofs created on L1.
-2. Complete any pending withdrawals before the upgrade is executed.
-3. Avoid creating new withdrawal proofs that would not become executable in time.
+1. There was a one-time invalidation of all pending withdrawal proofs created on L1.
+2. Pending withdrawals had to be completed before the upgrade was executed.
+3. New withdrawal proofs that would not become executable in time had to be avoided.
 4. If a withdrawal was invalidated, submit a second withdrawal proof transaction on L1.
 
 This invalidation does not place any ETH or ERC-20 tokens at risk.
 
 ## For Node Operators
 
-Node operators will need to upgrade to the respective Jovian releases before the activation dates.
+Node operators needed to upgrade to the respective Jovian releases before the activation dates.
 
-### Update to the latest release
+### Releases for Jovian
 
-The release contains the activation timestamps for Celo Mainnet and Celo Sepolia testnet.
+The release contained the activation timestamps for Celo Mainnet and Celo Sepolia testnet. For current versions see [Network config](/operate/operators/network-config).
 
 - `op-geth` at [v2.2.2](https://github.com/celo-org/op-geth/releases/tag/celo-v2.2.2)
 - `op-node` at [v2.2.1](https://github.com/celo-org/optimism/releases/tag/celo-v2.2.1)
@@ -89,7 +89,7 @@ The configuration for each service can be found in our [Docker Compose Setup](ht
 
 ### Re-download genesis and rollup.json files
 
-The `genesis.json` and `rollup.json` files have been updated for the Jovian hardfork. Node operators not using the [Docker Compose setup](https://github.com/celo-org/celo-l2-node-docker-compose) must re-download these files before upgrading.
+The `genesis.json` and `rollup.json` files have been updated for the Jovian hardfork. Node operators not using the [Docker Compose setup](https://github.com/celo-org/celo-l2-node-docker-compose) had to re-download these files before upgrading.
 
 **Mainnet:**
 - [`genesis.json`](https://storage.googleapis.com/cel2-rollup-files/celo/genesis.json)
@@ -103,7 +103,7 @@ The `genesis.json` and `rollup.json` files have been updated for the Jovian hard
 
 Make the following checks to verify that your node is properly configured.
 
-- op-node and op-geth will log their configurations at startup
+- op-node and op-geth logged their configurations at startup
 - Check that the Jovian time is set correctly in the `op-node` startup logs
 - Check that the Jovian time is set correctly in the `op-geth` startup logs
 
@@ -111,9 +111,9 @@ Make the following checks to verify that your node is properly configured.
 
 #### Event logs index rebuild on upgrade
 
-Nodes will perform a one-time log index rebuild on first start, visible as `Log
+Nodes performed a one-time log index rebuild on first start, visible as `Log
 index head rendering in progress` in logs. This can take several hours as the
-full chain history is processed. Subsequent restarts will not re-index.
+full chain history is processed. Subsequent restarts did not re-index.
 
 #### Event logs new flag `--history.logs`
 

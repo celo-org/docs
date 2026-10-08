@@ -7,16 +7,12 @@ description: Breaking changes for node operators in the L2 Isthmus network upgra
 This page outlines breaking changes related to the Isthmus network upgrade for node operators.
 
 <Note>
-This page will be kept updated with key information about the hardfork.
+Isthmus has been activated.
 
 - Baklava testnet activation was executed at timestamp `1749654000` ([block 37881140](https://celo-baklava.blockscout.com/block/0xec4a86ed28d74090b71cb59c34e4b31b8a49ef00b09880d67034dc56237e4b1d)) on Wed, Jun 11, 2025, 15:00:00 UTC.
 - Alfajores testnet activation was executed at timestamp `1750863600` ([block 49908280](https://celo-alfajores.blockscout.com/block/0x643b5ce0b59b83ffd8a9b9cfc13a91eeb1228094e0dbb3e1927ec2afc28dfbcb)) on Wed, Jun 25, 2025, 15:00:00 UTC.
 - **Mainnet** activation was executed at timestamp **`1752073200`** ([block 40172442](https://celo.blockscout.com/block/0xdef57aaf634a3de07e7763db9b21d5e192e784316b8c233a2a4cd1eea6bf4f41)) on Wed, Jul 9, 2025, 15:00:00 UTC.
 </Note>
-
-<Warning>
-If you're encountering a stuck node after Alfajores hardfork block (49908280), see the [FAQ](/operate/operators/faq).
-</Warning>
 
 ## What's included in Isthmus
 
@@ -43,11 +39,11 @@ For more information on the Holocene details, please review [OP's Holocene speci
 
 ## For node operators
 
-Node operators will need to upgrade to the respective Isthmus releases before the activation dates.
+Node operators needed to upgrade to the respective Isthmus releases before the activation dates.
 
-### Update to the latest release
+### Releases for Isthmus
 
-The release contains the activation timestamps for Celo Mainnet, Baklava and Alfajores.
+The release contained the activation timestamps for Celo Mainnet, Baklava and Alfajores. For current versions see [Network config](/operate/operators/network-config).
 
 - `op-geth` at [v2.1.0](https://github.com/celo-org/op-geth/releases/tag/celo-v2.1.0)
 - `op-node` at [v2.1.0](https://github.com/celo-org/optimism/releases/tag/celo-v2.1.0)
@@ -56,12 +52,12 @@ The release contains the activation timestamps for Celo Mainnet, Baklava and Alf
 
 The Isthmus hardfork also prepares the Celo networks for the EigenDA v2 update.
 
-This means that operators need to make sure to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2).
+This means that operators needed to upgrade the [EigenDA proxy](https://github.com/Layr-Labs/eigenda/tree/master/api/proxy) to version [v1.8.2](https://github.com/Layr-Labs/eigenda/pkgs/container/eigenda-proxy/437919973?tag=v1.8.2).
 
 ### Verify Your Configuration
 
 Make the following checks to verify that your node is properly configured.
 
-- op-node and op-geth will log their configurations at startup
+- op-node and op-geth logged their configurations at startup
 - Check that the Isthmus time is set to `activation-timestamp` in the `op-node` startup logs
 - Check that the Isthmus time is set to `activation-timestamp` in the `op-geth` startup logs
