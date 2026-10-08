@@ -55,7 +55,7 @@ The flow is as follows:
 
 - This Locked CELO immediately becomes non-voting, receives no further Epoch Rewards, and can be re-used to vote for a different group.
 
-- The account may choose to `unlock` an amount of Locked CELO at any time, provided that it is inactive: this means it is non-voting in Validator Elections, not needed to meet the `Validators` contract's stake requirement (10,000 CELO for a validator, held for 3 days after it leaves its group; 10,000 CELO per member for a validator group, held for 7 days after a member leaves), and not active in any [Governance proposals](/learn/protocol/governance/overview). Once an unlocking period of 3 days has passed, the account can call `withdraw` to have the `LockedGold` contract transfer them that amount.
+- The account may choose to `unlock` an amount of Locked CELO at any time, provided that it is inactive: this means it is non-voting in Validator Elections, not needed to meet the `Validators` contract's stake requirement (10,000 CELO for a validator while it is registered, which it can end 3 days after it leaves its group; for a validator group, 10,000 CELO per member, at least 10,000, while registered and for 7 days after a member leaves), and not active in any [Governance proposals](/learn/protocol/governance/overview). Once an unlocking period of 3 days has passed, the account can call `withdraw` to have the `LockedGold` contract transfer them that amount.
 
 Votes persist between epochs, and the same vote is applied to each election unless and until it is changed. Vote withdrawal, vote changes, and additional CELO being used to vote have no effect on the validator set until the election finalizes at the end of the epoch.
 
