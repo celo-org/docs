@@ -1,0 +1,208 @@
+---
+title: Wallets for users
+description: Choose a wallet to hold and send CELO and Celo stablecoins, connect MetaMask, find your address and move funds in or out
+---
+
+import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
+
+This page helps people who hold CELO or Celo stablecoins choose a wallet. App developers adding wallets to an app should see [Wallet integration](/build/tools/wallets).
+
+## Choosing a wallet
+
+Celo works with a range of wallets, each offering features to meet different user needs.
+
+The [Celo native wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](/build/build-on-socialconnect) and [fee abstraction](/build/fee-abstraction/overview).
+
+Some wallets charge gas in CELO even if you hold stablecoins; see [which wallets can pay gas in stablecoins](/build/fee-abstraction/overview#wallet-support-for-cip-64).
+
+The [Celo compatible wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets that support the Celo network.
+
+## Celo native wallets
+
+---
+
+### [MiniPay](https://www.opera.com/products/minipay)
+
+MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers.
+
+- [Homepage](https://www.opera.com/products/minipay)
+- Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay), [iOS](https://apps.apple.com/de/app/minipay-easy-global-wallet/id6504087257?l=en-GB), and inside [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native)
+- Availability by country, platform and Opera Mini: the [MiniPay availability list](https://docs.minipay.xyz/getting-started/availability.html)
+- Maintainers: Opera
+- Hardware wallet support: No
+- Supported tokens: USDm, USDT, and USDC
+
+---
+
+### [Valora](https://valora.xyz/)
+
+Valora is a non-custodial multichain mobile wallet focused on helping users save, earn, and send their crypto. It supports Celo's ability to pay for transactions with stablecoins, supports Wallet Connect, and has a built in swap experience that works across chains. It also lets users verify their phone number and send payments to their contacts.
+
+- [Homepage](https://valora.xyz/)
+- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://play.google.com/store/apps/details?id=co.clabs.valora)
+- Maintainers: [Valora](https://valora.xyz/)
+- Hardware wallet support: No
+- [Source Code](https://github.com/valora-inc/wallet)
+
+---
+
+### [Celo Terminal](https://celoterminal.com/)
+
+Celo Terminal is a wallet and app platform designed as a hub for managing and running Celo apps locally.
+
+- Homepage: [celoterminal.com](https://celoterminal.com)
+- Platforms: MacOS, Linux, Windows
+- Maintainers: [WOTrust](https://x.com/wotrust1)
+- Hardware wallet support: Yes (Note: [EIP-712 signing requires workaround](/build/tools/wallets/ledger/eip712-workaround))
+- [Source Code](https://github.com/zviadm/celoterminal)
+
+---
+
+## Hardware wallets
+
+---
+
+### [Ledger](https://www.ledger.com/)
+
+Ledger is a hardware wallet. Ledger Live supports CELO and Celo stablecoins, and its send flow can pay gas in a Celo fee currency of the user's choice. App transactions signed with a Ledger through MetaMask are not CIP-64, because MetaMask drops `feeCurrency`; see [wallet support for CIP-64](/build/fee-abstraction/overview#wallet-support-for-cip-64) for the supported versions.
+
+- [Homepage](https://www.ledger.com/)
+- Guides: [set up a Ledger with Celo](/build/tools/wallets/ledger/setup), connect it to [Celo Terminal](/build/tools/wallets/ledger/to-celo-terminal), the [Celo web wallet](/build/tools/wallets/ledger/to-celo-web) or the [Celo CLI](/build/tools/wallets/ledger/to-celo-cli), and the [EIP-712 signing workaround](/build/tools/wallets/ledger/eip712-workaround)
+- Platforms: Ledger Live (desktop, mobile) with a Ledger device
+
+---
+
+## Celo compatible wallets
+
+Here’s an overview of popular wallets compatible with the Celo network. Not all of them support [fee abstraction](/build/fee-abstraction/overview#wallet-support-for-cip-64), so gas may be charged in CELO.
+
+### [Rabby](https://rabby.io/)
+
+Your go-to wallet for Ethereum and EVM - Track portfolio across all EVM chains in one place - Discover popular apps for your needs.
+
+- [Homepage](https://rabby.io/)
+- Platforms: Browser, iOS, Android
+
+---
+
+### [MetaMask](https://metamask.io/)
+
+MetaMask is a self-custody wallet with support for Celo.
+
+- [Homepage](https://metamask.io/)
+- Guides: add Celo [mainnet](/learn/network/overview) or [testnet](/build/tools/wallets/metamask/add-celo-testnet-to-metamask) to MetaMask, and [use MetaMask with Celo](/build/tools/wallets/metamask/use)
+- Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask)
+
+---
+
+### [Uniswap Wallet](https://wallet.uniswap.org/)
+
+Uniswap Wallet is a self-custody wallet with support for Celo.
+
+- [Homepage](https://wallet.uniswap.org/)
+- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+- Maintainers: [Uniswap](https://app.uniswap.org/)
+- [Source Code](https://github.com/Uniswap/wallet)
+
+---
+
+### [Trust Wallet](https://trustwallet.com/)
+
+Trust Wallet is a self-custody wallet with support for Celo available as a mobile app and extension on multiple browsers.
+
+- [Homepage](https://trustwallet.com/)
+- Platforms: [iOS](https://apps.apple.com/us/app/trust-crypto-bitcoin-wallet/id1288339409?mt=8), [Android](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph),
+- Maintainers: [Trust Wallet](https://trustwallet.com/)
+- [Source Code](https://github.com/trustwallet)
+
+---
+
+### [Gem Wallet](https://gemwallet.com/)
+
+Gem Wallet is an open-source, self-custody mobile wallet with support for Celo, including sending, receiving, buying, and swapping CELO and Celo stablecoins.
+
+- [Homepage](https://gemwallet.com/)
+- Platforms: [iOS](https://apps.apple.com/app/id6448712670), [Android](https://play.google.com/store/apps/details?id=com.gemwallet.android), [APK](https://apk.gemwallet.com/gem_wallet_latest.apk)
+- Maintainers: [Gem Wallet](https://gemwallet.com/)
+- [Source Code](https://github.com/gemwalletcom/wallet)
+
+---
+
+### [OKX Web3 Wallet](https://web3.okx.com/)
+
+Supports over 130 blockchains, including CELO. Enables users to store, trade, analyze, earn, and connect to Web3 sites. The mobile app features a built-in browser for seamless Web3 access and includes a tab to switch to the OKX exchange (though creating an exchange account is not required to use the wallet). It’s fully compatible with WalletConnect and widely supported across Web3 platforms.
+
+- [Homepage](https://web3.okx.com/)
+- Platforms: [iOS](https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484), [Android](https://play.google.com/store/apps/details?id=com.okx.wallet), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge), [Telegram](https://web.telegram.org/k/#@OKX_WALLET_BOT)
+- Maintainers: [OKX](https://okx.com/)
+- Source code is not available, although there are two repositories related and useful for developers: https://github.com/okx/go-wallet-sdk and https://github.com/okx/js-wallet-sdk
+
+---
+
+### [Safe Wallet](https://app.safe.global/welcome)
+
+Decentralized custody protocol and collective asset management platform. Provides multisig wallet support, Account Abstraction and more.
+
+- [Homepage](https://app.safe.global/welcome)
+- Platforms: Browser, iOS, Android
+- [Docs](https://docs.safe.global/home/what-is-safe)
+- [Source Code](https://github.com/safe-global/safe-wallet-monorepo)
+
+---
+
+### [Zerion](https://zerion.io/)
+
+Zerion Wallet is a non-custodial wallet for crypto that gives you access to a broad range of opportunities across DeFi and NFTs.
+
+- [Homepage](https://zerion.io/)
+- Platforms: Browser, iOS, Android
+- [Source Code](https://developers.zerion.io/reference/getting-started)
+
+---
+
+### [1Inch Wallet](https://1inch.com/wallet)
+
+1inch Wallet gives you rapid updates and swap orders - whether you’re checking balances or trading on the go.
+
+- [Homepage](https://1inch.com/wallet)
+- Platforms: iOS, Android
+
+---
+
+### [Bridge Wallet](https://www.mtpelerin.com/bridge-wallet)
+
+- [Homepage](https://www.mtpelerin.com/bridge-wallet)
+- Platforms: iOS, Android
+
+## Troubleshooting
+
+### Connect MetaMask to Celo
+
+MetaMask does not show Celo until the network is added. Add it with the button below; the chain ID and RPC URL are on the [network overview](/learn/network/overview). If an app asks you to install MetaMask when you already have it, the app could not detect the extension in that browser. Open the app in the browser profile where MetaMask is installed, or connect with another wallet from the lists above.
+
+<AddNetworkButton network="mainnet" />
+
+### Find your Celo address
+
+Celo uses Ethereum-style addresses (`0x…`, 42 characters). Open your wallet and copy the address it shows for Celo. Check the network name before you send: a transfer on the wrong network can be lost.
+
+### Recover a wallet
+
+Celo has no usernames or passwords. A wallet is controlled by its recovery phrase (seed phrase) or private key. To restore a wallet, import the recovery phrase into a wallet app. Without it, no one can recover the funds: not Celo, and not the wallet's maker. Never share your recovery phrase with anyone, including people who say they are support.
+
+### A token does not appear in your wallet
+
+Check that the wallet is on the Celo network, then add the token by its contract address. Stablecoin addresses are listed in [stablecoin contracts](/build/tools/contracts/stablecoin-contracts); use the Celo Mainnet column. Tokens sent on another network do not show up on Celo.
+
+### Move funds in or out
+
+- [Ramps](/learn/ramps): convert between local currency and crypto with a provider.
+- [Exchanges](/learn/exchanges): buy or sell CELO.
+- [Bridges](/learn/bridged-tokens/bridges): move assets between Celo and other networks.
+
+Which providers work in your country depends on the provider. Check availability and fees with the provider before you send funds.
+
+## Related
+
+- [Wallet integration](/build/tools/wallets) — for app developers adding wallets to an app
+- [Fee abstraction](/build/fee-abstraction/overview) — how gas is paid in stablecoins, and which wallets support it

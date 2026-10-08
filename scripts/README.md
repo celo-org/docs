@@ -5,22 +5,28 @@ This directory contains utility scripts for maintaining and updating the Celo do
 ## Available Scripts
 
 - `update_contracts.py` - Updates contract addresses and deployment information in the documentation
+- `check_redirects.py` - Fails on `docs.json` redirects that cannot work: `#` in a source, a wildcard
+  shadowed by an earlier or identical one, a source that captures a page in navigation, a navigation
+  link to a redirected path, or a destination that is `/`, redirected again, or not a page in
+  navigation. It only understands a trailing `/:slug*` wildcard and stops with an error on any other
+  path parameter. CI runs it with its tests (`python3 -m unittest discover -s scripts -p 'test_*.py'`).
+- `check-orphans.sh` - Fails on page files that navigation does not reach. CI runs it.
 
 ### Generated pages
 
 | Page | Source |
 | ---- | ------ |
-| `tooling/contracts/core-contracts.mdx` | `celocli network:contracts` |
-| `tooling/contracts/l1-contracts.mdx` | rollup config files + `cast` |
-| `tooling/contracts/fee-currencies.mdx` | `FeeCurrencyDirectory.getCurrencies()` via `cast` |
-| `tooling/contracts/stablecoin-contracts.mdx` | the fee-currency allowlist + `data/stablecoins.json` |
+| `build/tools/contracts/core-contracts.mdx` | `celocli network:contracts` |
+| `build/tools/contracts/l1-contracts.mdx` | rollup config files + `cast` |
+| `build/tools/contracts/fee-currencies.mdx` | `FeeCurrencyDirectory.getCurrencies()` via `cast` |
+| `build/tools/contracts/stablecoin-contracts.mdx` | the fee-currency allowlist + `data/stablecoins.json` |
 
 Do not edit those four files by hand — change the generator instead. The page bodies live in
 the `PAGE_HEADER_*` constants near the top of `update_contracts.py`.
 
 ## Data
 
-- `data/stablecoins.json` - Curated input for `tooling/contracts/stablecoin-contracts.mdx`.
+- `data/stablecoins.json` - Curated input for `build/tools/contracts/stablecoin-contracts.mdx`.
   Mento stablecoins plus USDC, USD₮ and USA₮ are read from the on-chain fee-currency
   allowlist; third-party issuers have no registry to read from, so they are maintained by
   hand here, along with issuer attribution and any display-symbol overrides.
