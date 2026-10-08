@@ -1,6 +1,6 @@
 ---
 title: "Operating a Community RPC Node"
-description: How to operate a community RPC node on Celo and keep it eligible for rewards
+description: How to operate a community RPC node on Celo and meet the uptime requirement for elected providers
 ---
 
 This guide covers how to operate a community RPC node on Celo.
@@ -13,17 +13,19 @@ This guide covers how to operate a community RPC node on Celo.
 The term "validator" appears in code and documentation due to historical reasons, but refers to community RPC providers.
 </Note>
 
-To be eligible for rewards, registered and elected nodes must operate independent RPC endpoints. This guide assumes your node has been properly [registered](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node).
+Registered and elected nodes must operate independent RPC endpoints; see [Penalties](/contribute-to-celo/community-rpc-nodes/penalties) for how uptime is scored. This guide assumes your node has been properly [registered](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node).
 
-## Running the RPC Service
+## Running the RPC service
 
 To operate the required RPC endpoint, follow the [Running a node guide](/operate/operators/run-node).
 
 ## Rewards
 
+The per-epoch USDm payment to elected providers is 0: governance set `targetValidatorEpochPayment` on the `EpochRewards` contract to 0 in [CGP-0218](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0218.md). Elections continue, and voters for elected groups still earn CELO rewards. The commands below send and track any payment already allocated to a validator and not yet sent.
+
 ### Claiming Rewards
 
-Validator rewards for RPC nodes must be claimed, which is possible anytime after allocation. Use this CLI command:
+If a payment was allocated before CGP-0218 and not yet sent, claim it with this CLI command:
 
 ```bash
 celocli epochs:send-validator-payment --from $YOUR_ADDRESS --for $VALIDATOR_ADDRESS
@@ -34,7 +36,7 @@ Where:
 - `$YOUR_ADDRESS` is your Celo account address sending the transaction
 - `$VALIDATOR_ADDRESS` is your validator's Celo account address
 
-Note: anyone can run this command, but rewards distribute according to your validator group's commission rate.
+Note: anyone can run this command; the payment is split according to your validator group's commission rate.
 
 ### Verifying Rewards
 
@@ -49,7 +51,7 @@ For accounting purposes, you can:
 
 ### Group Commission Settings
 
-Validator rewards distribution is affected by the validator group's commission rate. A commission rate of `1` means the entire reward goes to the validator group. Ensure you understand your group's commission settings to correctly anticipate reward allocations.
+The group commission rate applies to any validator payment allocated before CGP-0218 and not yet sent; a rate of `1` sends the whole payment to the group. Since [CGP-0241](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0241.md), a group can also set a separate voter reward commission on the CELO rewards paid to its voters.
 
 Check commission settings with:
 
