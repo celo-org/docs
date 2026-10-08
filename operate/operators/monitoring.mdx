@@ -24,7 +24,7 @@ With monitoring enabled, Grafana is available at [http://localhost:3000](http://
 - **Password:** `celo`
 
 <Warning>
-These are the compose defaults, and compose publishes Grafana on every host interface (`${PORT__GRAFANA:-3000}:3000`). Before the node is reachable from a network, set `GF_SECURITY_ADMIN_PASSWORD` in `.env` (compose loads `.env` after `grafana.env`, so it takes precedence) or firewall port 3000.
+These are the compose defaults, and compose publishes Grafana on every host interface (`${PORT__GRAFANA:-3000}:3000`). Set `GF_SECURITY_ADMIN_PASSWORD` in `.env` before you first start with monitoring enabled: Grafana reads it only when it creates the admin user, and keeps that user in the `grafana_data` volume. If Grafana has already started, change the password in Grafana instead (user icon → **Change Password**). Either way, firewall port 3000 so it is not reachable from the public internet.
 </Warning>
 
 The **Simple Node Dashboard** (Dashboards → Manage → Simple Node Dashboard) shows basic node information and sync status. If you run the challenger, the **Succinct Challenger** dashboard shows challenger activity.
