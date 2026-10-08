@@ -189,6 +189,7 @@
               "build/agents/x402",
               "build/agents/x402-get-discovered",
               "build/agents/mpp",
+              "build/agents/askbots",
               "build/agents/celopedia",
               "build/agents/vibe-coding",
               "build/agents/mcp/index",
