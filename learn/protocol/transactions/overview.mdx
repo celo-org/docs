@@ -30,23 +30,9 @@ used to pay gas fees are controlled via governance and the list of tokens allowe
 FeeCurrencyDirectory.sol. Fee abstraction on Celo works with EOAs. No paymaster required! Learn all
 about [fee abstraction](/build/fee-abstraction/overview).
 
-## Transaction Fee Allocation Post-L2 Transition
+## Transaction fee allocation
 
-With the shift to L2, the allocation of transaction fees has been restructured to support the network's evolving operational needs:
-
-- [**Carbon Offset Fund**](/learn/protocol/epoch-rewards/carbon-offsetting-fund): 10% of transaction fees continue to support the carbon offset fund, maintaining Celo's environmental commitment. This adjustment reflects the network's reduced carbon footprint following the L2 upgrade.
-
-- **Network Operations**: The remaining 90% of transaction fees are allocated to essential network operations, including:
-
-  - **Data Availability**: Ensuring that transaction data is accessible and secure.
-
-  - **Layer 1 Fees**: Covering costs associated with interactions between Celo's L2 and the Ethereum mainnet.
-
-  - **Sequencer and Batcher Operations**: Supporting the infrastructure that orders and batches transactions on the network.
-
-  - **Revenue Sharing with the OP-Stack**: Complying with the Superchain Ecosystem requirements, which involve sharing revenue with the OP-Stack.
-
-This reallocation ensures that transaction fees are utilized effectively to maintain network sustainability and operational efficiency in the L2 environment.
+Celo governance sets how the FeeHandler splits collected fees; see [Transaction fees](/operate/specification/transaction-fees#feehandler) for the current split.
 
 ## Conclusion
 
