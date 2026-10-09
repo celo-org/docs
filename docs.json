@@ -345,7 +345,8 @@
                   "build/tools/indexers/envio",
                   "build/tools/indexers/goldrush",
                   "build/tools/indexers/indexing-co",
-                  "build/tools/indexers/codex"
+                  "build/tools/indexers/codex",
+                  "build/tools/indexers/pinax"
                 ]
               },
               {

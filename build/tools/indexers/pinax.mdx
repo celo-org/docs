@@ -1,0 +1,46 @@
+---
+title: Pinax
+description: Stream Celo blocks with Firehose and Substreams, or query archive state over JSON-RPC, using Pinax endpoints
+---
+
+This page is for app developers and data teams who need Celo data in bulk: full block streams, custom indexing pipelines, or historical state at any block. [Pinax](https://pinax.network/) runs its own Celo nodes and maintains the open source Firehose and Substreams stack alongside StreamingFast.
+
+## How it works
+
+[Firehose](https://app.pinax.network/docs/firehose) streams full blocks over gRPC, including transactions, receipts, logs, call traces, and balance changes. It carries more than a JSON-RPC node returns, and it reads history faster than sequential RPC calls.
+
+[Substreams](https://app.pinax.network/docs/substreams) runs on top of Firehose. You write modules in Rust, package them as an `.spkg` file, and run them on Pinax servers to turn raw blocks into the shape your application needs. Output can go to PostgreSQL or ClickHouse, stream to a consumer, or feed a Graph Node as a subgraph data source.
+
+[Pinax RPC](https://app.pinax.network/docs/rpc) serves standard Ethereum JSON-RPC 2.0 from archive nodes, so historical state is queryable at any block.
+
+## Celo mainnet
+
+| Service | Endpoint | Authentication |
+| --- | --- | --- |
+| Firehose | `celo.firehose.pinax.network:443` | `X-Api-Key` header |
+| Substreams | `celo.substreams.pinax.network:443` | `SUBSTREAMS_API_KEY` |
+| RPC | `https://celo.rpc.pinax.network` | API key |
+
+## Celo Sepolia
+
+| Service | Endpoint | Authentication |
+| --- | --- | --- |
+| RPC | `https://celosepolia.rpc.pinax.network` | API key |
+
+<Note>
+  Firehose and Substreams are available on Celo mainnet only. Celo Sepolia is served over RPC.
+</Note>
+
+## Resources
+
+| Resource | Link |
+| --- | --- |
+| Pinax documentation | https://app.pinax.network/docs |
+| Create an API key | https://app.pinax.network |
+| Substreams CLI | https://docs.substreams.dev |
+| Plans and pricing | https://pinax.network/en/pricing |
+
+## Related
+
+- [Indexers overview](/build/tools/indexers/overview) - other indexing options on Celo, and when each one fits.
+- [The Graph](/build/tools/indexers/the-graph) - subgraphs, which can use Substreams as a data source.
