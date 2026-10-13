@@ -57,7 +57,7 @@ On Celo, agents are first-class participants in the economy. They can send and r
 Agents on Celo can charge and pay for services over plain HTTP, settling in stablecoins in a single request — no accounts, invoices, or checkout flows.
 
 - **[x402](/build/agents/x402)** gives meaning to the HTTP `402 Payment Required` status code, letting an agent settle a stablecoin micropayment inline with the request.
-- **[MPP (Machine Payments Protocol)](/build/agents/mpp)** builds on the same flow so any service can charge USDC per request through a hosted facilitator — the buyer pays no gas.
+- **[MPP (Machine Payments Protocol)](/build/agents/mpp)** is a separate protocol that uses the same `402` flow, so any service can charge USDC per request. On Celo it settles through the same hosted facilitator as x402 — the buyer pays no gas.
 
 Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce. A paid API, MCP server, or bot can also carry its own ERC-8004 identity, so agents can discover it and rate it — see [Register a service](/build/agents/8004#register-a-service).
 
