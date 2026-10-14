@@ -33,10 +33,18 @@ sequenceDiagram
 USDC moves buyer → seller directly inside the token contract. The facilitator
 submits the transaction and pays the gas; it never custodies funds.
 
+<Note>
+  MPP and [x402](/build/agents/x402) are separate protocols with different wire
+  formats. On Celo they share one settlement backend: the hosted facilitator at
+  [x402.celo.org](https://x402.celo.org). That is why the API key and credits
+  below come from the x402 dashboard and the environment variable is named
+  `X402_API_KEY`.
+</Note>
+
 ## Prerequisites
 
-Settlement runs through a hosted facilitator that charges a small credit per
-transaction. Get an API key (a human does this once):
+MPP settlement on Celo runs through the same hosted facilitator as x402, which
+charges a small credit per transaction. Get an API key (a human does this once):
 
 1. Open [x402.celo.org](https://x402.celo.org) and connect an EVM wallet.
 2. Click **Create API key** and sign the message (no gas, no transaction).
