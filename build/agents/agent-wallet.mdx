@@ -1,0 +1,85 @@
+---
+title: "Give Your Agent a Wallet and Test Funds"
+sidebarTitle: "Agent Wallet"
+description: Create an account for an agent, fund it on Celo Sepolia and send a first transfer before you wire it into x402 or MPP
+---
+
+This page is for agent developers who need an account their agent can sign with and some test funds. It ends with a transfer on Celo Sepolia, the testnet, so you know the account works before you add payments. Every example in the agents section that reads `AGENT_PRIVATE_KEY` assumes you have done this.
+
+## Prerequisites
+
+- Node.js 18 or later
+- `npm install viem`
+
+## Generate an account
+
+An agent signs with a private key. Create one with [viem](/build/tools/libraries-sdks/viem):
+
+```ts
+// generate-key.mjs
+import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
+
+const privateKey = generatePrivateKey();
+console.log("AGENT_PRIVATE_KEY=" + privateKey);
+console.log("Address:", privateKeyToAccount(privateKey).address);
+```
+
+Run it once with `node generate-key.mjs`. Put the `AGENT_PRIVATE_KEY` line in a `.env` file that is in `.gitignore`, and keep the address for the next step.
+
+<Warning>
+  Use a separate key for testing. Anyone who has the key controls everything the account holds. Never commit it, and never reuse a testnet key on mainnet.
+</Warning>
+
+## Get test funds
+
+The account needs CELO on Celo Sepolia (chain ID `11142220`) to pay gas.
+
+1. Open the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia) and request CELO for the address from the previous step. It sends 1 CELO per request without signing in.
+2. If you plan to test x402 or MPP, also get test USDC from the [Circle faucet](https://faucet.circle.com). The Celo Sepolia USDC token has 6 decimals, so 1 USDC is `1000000` base units.
+
+Other faucets and the network details are on the [network information](/learn/network/overview) page.
+
+## Send a first transfer
+
+This script reads the balance and sends a small amount of CELO to another address. Replace the recipient with an address you control.
+
+```ts
+// first-transfer.mjs
+// Celo Sepolia (11142220), native CELO, 18 decimals
+import { createPublicClient, createWalletClient, http, parseEther, formatEther } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { celoSepolia } from "viem/chains";
+
+const account = privateKeyToAccount(process.env.AGENT_PRIVATE_KEY);
+const publicClient = createPublicClient({ chain: celoSepolia, transport: http() });
+const walletClient = createWalletClient({ account, chain: celoSepolia, transport: http() });
+
+const balance = await publicClient.getBalance({ address: account.address });
+console.log("Balance:", formatEther(balance), "CELO");
+
+const hash = await walletClient.sendTransaction({
+  to: "0xYourOtherAddress", // example, replace with an address you control
+  value: parseEther("0.01"),
+});
+const receipt = await publicClient.waitForTransactionReceipt({ hash });
+console.log("Status:", receipt.status, "Hash:", hash);
+```
+
+Run it with your key in the environment, for example `node --env-file=.env first-transfer.mjs`.
+
+You are done when it prints `Status: success`. Look the hash up on the [Celo Sepolia explorer](https://celo-sepolia.blockscout.com) to see the transaction.
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| `insufficient funds for gas` | The account has no CELO on Celo Sepolia | Request CELO from the faucet, then check the balance |
+| `Balance: 0 CELO` after the faucet | The faucet sent funds to a different address, or to mainnet | Check the address and that you are on Celo Sepolia, not Celo mainnet |
+| USDC transfer amount is off by a factor of 10^12 | USDC has 6 decimals and CELO has 18 | Use `parseUnits("1", 6)` for USDC and `parseEther` for CELO |
+
+## Next steps
+
+- [x402](/build/agents/x402) - charge or pay per request with this account
+- [MPP](/build/agents/mpp) - the same flow through the Celo facilitator
+- [Fee abstraction for agents](/build/agents/overview#fee-abstraction-for-agents) - pay gas in a stablecoin so the account needs no CELO
+- [Celina](/build/agents/mcp/celina) - give an LLM a wallet through a tool instead of a key you manage
