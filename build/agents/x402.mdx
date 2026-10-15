@@ -31,6 +31,8 @@ Traditional payment systems don't work for AI agents and micropayments:
 
 ## How It Works
 
+A *facilitator* is a service that checks a buyer's signed payment and submits it on-chain on the seller's behalf, so the seller does not run a node or hold gas.
+
 ```mermaid
 sequenceDiagram
     participant Client as Client (Agent)
@@ -154,6 +156,18 @@ Using Hono instead of Express? Swap `@x402/express` → `@x402/hono`; the body i
 <Warning>
   USDT has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in the `extra` field or signature verification fails.
 </Warning>
+
+### Check that it works
+
+Start the server and request the paid route without a payment:
+
+```bash
+curl -i http://localhost:3000/premium
+```
+
+The response is `402 Payment Required`, and the payment requirements describe the route's price: `10000` base units of USDC, which is $0.01 because USDC has 6 decimals. That `402` means the middleware is wired to the route.
+
+A buyer that signs the authorization and retries the request receives `200` with `{"data":"paid content"}`, and the payment settles on Celo for the price above. At that point you have charged an agent $0.01. Settlement needs the API key from the next section.
 
 ### Getting an API Key
 
