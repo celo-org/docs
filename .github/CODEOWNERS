@@ -12,8 +12,8 @@
 /learn/ @celo-org/blockchain @celo-org/primitives
 /learn/protocol/ @celo-org/blockchain @celo-org/primitives
 
-# Contribute to Celo section - DevRel team
-/contribute-to-celo/ @celo-org/devrel
+# Contribute section - DevRel team
+/contribute/ @celo-org/devrel
 
 # Operate section (node operation and protocol specification) - Blockchain team
 /operate/ @celo-org/blockchain
