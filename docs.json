@@ -184,6 +184,7 @@
             "pages": [
               "build/agents/overview",
               "build/agents/use-docs-with-ai",
+              "build/agents/agent-wallet",
               "build/agents/8004",
               "build/agents/self-agent-id",
               "build/agents/agent-vault",
