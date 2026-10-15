@@ -186,6 +186,7 @@
               "build/agents/use-docs-with-ai",
               "build/agents/8004",
               "build/agents/self-agent-id",
+              "build/agents/agent-vault",
               "build/agents/x402",
               "build/agents/x402-get-discovered",
               "build/agents/mpp",

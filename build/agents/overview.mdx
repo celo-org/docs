@@ -65,6 +65,10 @@ Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-u
 
 An agent that pays for things needs an account it can read from and sign with. You can wire this up directly with [viem](/build/tools/libraries-sdks/viem), or use a tool that exposes the calls to an LLM: [Celina](/build/agents/mcp/celina) covers balances, transfers, DeFi, governance, staking and Self Agent ID through an SDK, an MCP server, a REST API, and a read-only Telegram bot. The SDK and MCP server are open source.
 
+## Paying by card and signing in to websites
+
+Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card and sign in to websites through a hosted MCP server, a Playwright SDK or an HTTP API. The agent works with mock tokens and never holds the card number or password. It is not a Celo protocol and does not settle onchain; for onchain payments, use [x402](/build/agents/x402) and [MPP](/build/agents/mpp).
+
 ## Fee Abstraction for Agents
 
 AI agents on Celo can pay gas fees in stablecoins like USDC or USDT instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
