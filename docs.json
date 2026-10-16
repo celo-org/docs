@@ -2333,11 +2333,11 @@
     },
     {
       "source": "/general/ecosystem/builders",
-      "destination": "/contribute"
+      "destination": "/contribute/builders"
     },
     {
       "source": "/general/ecosystem/contributors",
-      "destination": "/contribute"
+      "destination": "/contribute/contributors/code-contributors"
     },
     {
       "source": "/general/ecosystem/governance",
@@ -2773,7 +2773,7 @@
     },
     {
       "source": "/validator-guide/celo-signal",
-      "destination": "/contribute"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/validator-guide/devops-best-practices",
@@ -2829,7 +2829,7 @@
     },
     {
       "source": "/validator/celo-signal",
-      "destination": "/contribute"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/validator/devops-best-practices",
@@ -2901,7 +2901,7 @@
     },
     {
       "source": "/what-is-celo/about-celo-l1/validator/celo-signal",
-      "destination": "/contribute"
+      "destination": "/learn/protocol/staking/voting"
     },
     {
       "source": "/what-is-celo/joining-celo/contributors/code-of-conduct",
@@ -2965,7 +2965,7 @@
     },
     {
       "source": "/what-is-celo/joining-celo/builders",
-      "destination": "/contribute"
+      "destination": "/contribute/builders"
     },
     {
       "source": "/what-is-celo/joining-celo/daos",
@@ -4687,7 +4687,7 @@
           },
           {
             "label": "Contributors",
-            "href": "https://docs.celo.org/contribute/"
+            "href": "/contribute"
           }
         ]
       },
