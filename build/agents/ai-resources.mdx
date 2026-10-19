@@ -1,7 +1,6 @@
 ---
 title: "AI Resources"
-sidebarTitle: "AI Resources"
-description: Every way docs.celo.org and Celo tooling serve AI tools and agents, with one line on when to use each
+description: The AI-facing resources that docs.celo.org and Celo tooling offer to AI tools and agents, with one line on when to use each
 ---
 
 This page is for developers and agent builders who want an AI assistant, coding tool or agent to work from current Celo information. It lists what the docs and Celo tooling offer and links to the page that explains each.
@@ -10,12 +9,12 @@ This page is for developers and agent builders who want an AI assistant, coding 
 
 | Resource | Where | Use it to |
 |----------|-------|-----------|
-| Docs assistant | **Ask AI** button on any page | Ask a question and get an answer with links to the pages it used |
-| Docs MCP server | `https://docs.celo.org/mcp` | Let an editor or agent search the docs live |
-| `llms.txt` | [`docs.celo.org/llms.txt`](https://docs.celo.org/llms.txt) | Give a chat a map of every docs page |
-| `llms-full.txt` | [`docs.celo.org/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Load the whole docs set into a long-context model |
-| Page as Markdown | Append `.md` to any docs URL | Quote one page as context in a script or agent |
-| Contextual menu | Next to every page title | Copy a page, view it as Markdown, or open it in ChatGPT, Claude, Cursor or VS Code |
+| [Docs assistant](/build/agents/use-docs-with-ai#ask-a-question-in-the-docs) | **Ask AI** button on any page | Ask a question and get an answer with links to the pages it used |
+| [Docs MCP server](/build/agents/use-docs-with-ai#connect-the-docs-mcp-server) | `https://docs.celo.org/mcp` | Let an editor or agent search the docs live |
+| [`llms.txt` and `llms-full.txt`](/build/agents/use-docs-with-ai#llms-txt-and-llms-full-txt) | [`docs.celo.org/llms.txt`](https://docs.celo.org/llms.txt), [`docs.celo.org/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Give a chat a map of every docs page, or load the whole docs set into a long-context model |
+| [Page as Markdown](/build/agents/use-docs-with-ai#copy-any-page-as-markdown) | Append `.md` to any docs URL | Quote one page as context in a script or agent |
+| [Contextual menu](/build/agents/use-docs-with-ai#copy-any-page-as-markdown) | Next to every page title | Copy a page, view it as Markdown, open it in ChatGPT or Claude, or install the docs MCP server in Cursor or VS Code |
+| Docs skill | [`docs.celo.org/skill.md`](https://docs.celo.org/skill.md) | Give an agent that loads skills a summary of what the docs cover and when to use them |
 
 [Use Celo docs with AI tools](/build/agents/use-docs-with-ai) has the setup steps for each client and what the assistant can and cannot do.
 
@@ -25,8 +24,16 @@ This page is for developers and agent builders who want an AI assistant, coding 
 |----------|------------------------|------|
 | Celopedia | A skill with curated Celo knowledge: contract addresses, MiniPay, DeFi, grants and agent infrastructure | [Celopedia](/build/agents/celopedia) |
 | Celo MCP server | Live chain data: balances, blocks, gas fees, governance and staking | [Celo MCP server](/build/agents/mcp/celo-mcp) |
-| Celina | A wallet on Celo for an LLM: balances, transfers, DeFi, governance, staking and Self Agent ID | [Celina](/build/agents/mcp/celina) |
 | Vibe coding tools | AI-assisted development tools that work for building on Celo | [Vibe coding tools](/build/agents/vibe-coding) |
+
+## Third-party tools for agents
+
+These are built by other teams, not by Celo.
+
+| Resource | What it gives an agent | Page |
+|----------|------------------------|------|
+| Celina | A wallet on Celo for an LLM: balances, transfers, DeFi, governance, staking and Self Agent ID | [Celina](/build/agents/mcp/celina) |
+| Agent Vault | Card payments and website sign-in through mock tokens, so the agent never holds the real values | [Agent Vault](/build/agents/agent-vault) |
 
 ## Protocols for agents
 
@@ -34,7 +41,7 @@ This page is for developers and agent builders who want an AI assistant, coding 
 |----------|--------------|------|
 | x402 | Charge or pay per HTTP request in stablecoins | [x402](/build/agents/x402) |
 | MPP | Charge per API request, settled through the Celo facilitator | [MPP](/build/agents/mpp) |
-| ERC-8004 | Register an agent identity, reputation and validation onchain | [ERC-8004](/build/agents/8004) |
+| ERC-8004 | Register an agent onchain so other agents can find and rate it | [ERC-8004](/build/agents/8004) |
 | Self Agent ID | Tie an agent to a verified human with a zero-knowledge proof | [Self Agent ID](/build/agents/self-agent-id) |
 
 ## Related
