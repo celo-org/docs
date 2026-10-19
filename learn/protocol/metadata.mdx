@@ -15,7 +15,7 @@ The term "validator" is used in the code and corresponding explanation due to hi
 ## Use cases
 
 - Tools want to present public metadata supplied by a validator or validator group as part of a list of candidate groups, or a list of current elected validators.
-- Community RPC providers register their public RPC URL as a claim; see [Registering the Node URL](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node#registering-the-node-url).
+- Community RPC providers register their public RPC URL as a claim; see [Registering the Node URL](/contribute/community-rpc-nodes/registering-as-rpc-node#registering-the-node-url).
 - Governance Explorer UIs may want to present public metadata about the creators of governance proposals.
 
 Furthermore, these tools may want to include user chosen information such as names or profile pictures that would be expensive to store on-chain. For this purpose, the Celo protocol supports **metadata** that allows accounts to make both verifiable as well as non-verifiable claims. The design is described in [CIP3](https://github.com/celo-org/CIPs/pull/4).
@@ -32,7 +32,7 @@ The following types of claim are supported:
 
 - **Domain Claim** - Accounts can make claims on domain names. This claim is verifiable by signing a message with the account and embedding it in a [TXT record](https://wikipedia.org/wiki/TXT_record).
 
-- **RPC URL Claim** - Community RPC providers claim the public HTTPS URL their node serves. See [Registering a community RPC provider](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node#registering-the-node-url).
+- **RPC URL Claim** - Community RPC providers claim the public HTTPS URL their node serves. See [Registering a community RPC provider](/contribute/community-rpc-nodes/registering-as-rpc-node#registering-the-node-url).
 
 ## Handling metadata
 
@@ -64,6 +64,6 @@ celocli account:get-metadata $ACCOUNT_ADDRESS
 
 ## Related
 
-- [Registering a community RPC provider](/contribute-to-celo/community-rpc-nodes/registering-as-rpc-node) - the RPC URL claim in the registration flow
+- [Registering a community RPC provider](/contribute/community-rpc-nodes/registering-as-rpc-node) - the RPC URL claim in the registration flow
 - [Validator groups](/learn/protocol/staking/validator-groups) - why groups publish identity claims
 - [celocli account commands](/build/tools/libraries-sdks/cli/account) - the full command reference
