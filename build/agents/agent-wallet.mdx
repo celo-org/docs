@@ -4,18 +4,18 @@ sidebarTitle: "Agent Wallet"
 description: Create an account for an agent, fund it on Celo Sepolia and send a first transfer before you wire it into x402 or MPP
 ---
 
-This page is for agent developers who need an account their agent can sign with and some test funds. It ends with a transfer on Celo Sepolia, the testnet, so you know the account works before you add payments. Every example in the agents section that reads `AGENT_PRIVATE_KEY` assumes you have done this.
+This page is for agent developers who need an account their agent can sign with and some test funds. It ends with a transfer on Celo Sepolia, the testnet, so you know the account works before you add payments. The account works wherever an agent page asks for a key on Celo Sepolia.
 
 ## Prerequisites
 
-- Node.js 18 or later
+- Node.js 20.6 or later
 - `npm install viem`
 
 ## Generate an account
 
 An agent signs with a private key. Create one with [viem](/build/tools/libraries-sdks/viem):
 
-```ts
+```js
 // generate-key.mjs
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 
@@ -43,7 +43,7 @@ Other faucets and the network details are on the [network information](/learn/ne
 
 This script reads the balance and sends a small amount of CELO to another address. Replace the recipient with an address you control.
 
-```ts
+```js
 // first-transfer.mjs
 // Celo Sepolia (11142220), native CELO, 18 decimals
 import { createPublicClient, createWalletClient, http, parseEther, formatEther } from "viem";
@@ -74,12 +74,12 @@ You are done when it prints `Status: success`. Look the hash up on the [Celo Sep
 | Symptom | Cause | Fix |
 |---------|-------|-----|
 | `insufficient funds for gas` | The account has no CELO on Celo Sepolia | Request CELO from the faucet, then check the balance |
-| `Balance: 0 CELO` after the faucet | The faucet sent funds to a different address, or to mainnet | Check the address and that you are on Celo Sepolia, not Celo mainnet |
+| `Balance: 0 CELO` after the faucet | The faucet sent funds to a different address, or you are reading the balance on Celo mainnet | Check the address and that your client uses Celo Sepolia (chain ID `11142220`) |
 | USDC transfer amount is off by a factor of 10^12 | USDC has 6 decimals and CELO has 18 | Use `parseUnits("1", 6)` for USDC and `parseEther` for CELO |
 
-## Next steps
+## Related
 
 - [x402](/build/agents/x402) - charge or pay per request with this account
 - [MPP](/build/agents/mpp) - the same flow through the Celo facilitator
 - [Fee abstraction for agents](/build/agents/overview#fee-abstraction-for-agents) - pay gas in a stablecoin so the account needs no CELO
-- [Celina](/build/agents/mcp/celina) - give an LLM a wallet through a tool instead of a key you manage
+- [Celina](/build/agents/mcp/celina) - expose balances and transfers to an LLM as MCP tools
