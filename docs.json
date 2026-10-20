@@ -190,12 +190,12 @@
               "build/agents/x402",
               "build/agents/x402-get-discovered",
               "build/agents/mpp",
-              "build/agents/askbots",
               "build/agents/celopedia",
               "build/agents/vibe-coding",
               "build/agents/mcp/index",
               "build/agents/mcp/celo-mcp",
               "build/agents/mcp/celina",
+              "build/agents/askbots",
               "build/agents/usecases",
               "build/agents/attribution-tags"
             ]
