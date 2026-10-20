@@ -96,19 +96,17 @@ Ensure any datadir you supply is not in use by a running node before proceeding.
     <Warning>
     **Not every pre-L2 request is forwarded**
 
-    The `op-reth` images `celo-v1.0.5` and `celo-v1.0.6` forward these methods when they target a block before the L2 migration (mainnet block 31,056,500). They also forward the methods that take a block or transaction hash whenever they cannot find that hash locally, for example because it was pruned.
+    The `op-reth` image `celo-v1.0.7` forwards these methods when they target a block before the L2 migration (mainnet block 31,056,500). It also forwards the methods that take a block or transaction hash whenever it cannot find that hash locally, for example because it was pruned.
 
-    - `eth_getBlockByNumber`, `eth_getBlockByHash`
+    - `eth_getBlockByNumber`, `eth_getBlockByHash`, `eth_getBlockReceipts`, `eth_getHeaderByNumber`, `eth_getHeaderByHash`
+    - `eth_getBlockTransactionCountByNumber`, `eth_getBlockTransactionCountByHash`, `eth_getTransactionByBlockNumberAndIndex`, `eth_getTransactionByBlockHashAndIndex`, `eth_getRawTransactionByBlockNumberAndIndex`, `eth_getRawTransactionByBlockHashAndIndex`
+    - `eth_getUncleCountByBlockNumber`, `eth_getUncleCountByBlockHash`, `eth_getUncleByBlockNumberAndIndex`, `eth_getUncleByBlockHashAndIndex`
     - `eth_getTransactionByHash`, `eth_getRawTransactionByHash`, `eth_getTransactionReceipt`
     - `eth_getBalance`, `eth_getCode`, `eth_getTransactionCount`, `eth_getStorageAt`, `eth_getProof`
     - `eth_call`, `eth_estimateGas`, `eth_createAccessList`
     - `debug_traceTransaction`, `debug_traceBlockByNumber`, `debug_traceBlockByHash`, `debug_traceCall`
 
-    Any other method is answered from the local database, which holds no pre-L2 blocks or receipts. In particular:
-
-    - `eth_getLogs` with a block range returns no logs from pre-L2 blocks, and it does not return an error. A range that crosses the migration block returns only the logs from L2 blocks. With a pre-L2 `blockHash` it returns a "block not found" error. The filter methods (`eth_newFilter`, `eth_getFilterLogs`, `eth_getFilterChanges`) are not forwarded either.
-    - `eth_getBlockReceipts` returns `null` for pre-L2 blocks. Fetch each receipt with `eth_getTransactionReceipt` instead.
-    - The transaction count, by-index and uncle methods, such as `eth_getBlockTransactionCountByNumber`, `eth_getTransactionByBlockNumberAndIndex` and `eth_getUncleCountByBlockNumber`, return `null` for pre-L2 blocks.
+    Any other method is answered from the local database, which holds no pre-L2 blocks or receipts. In particular, `eth_getLogs` with a block range returns no logs from pre-L2 blocks, and it does not return an error. A range that crosses the migration block returns only the logs from L2 blocks. With a pre-L2 `blockHash` it returns a "block not found" error. The filter methods (`eth_newFilter`, `eth_getFilterLogs`, `eth_getFilterChanges`) are not forwarded either.
 
     To read pre-L2 logs, send `eth_getLogs` directly to the Historical RPC Service.
     </Warning>
