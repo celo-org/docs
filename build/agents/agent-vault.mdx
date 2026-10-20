@@ -1,0 +1,188 @@
+---
+title: "Agent Vault: Card Payments and Logins for Agents"
+sidebarTitle: "Self: Agent Vault"
+description: Let an agent you build pay at online checkouts and sign in to websites through an MCP server, SDK or HTTP API, using mock tokens instead of real card numbers and passwords
+---
+
+This page is for developers who build AI agents that must pay a merchant by card or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol, and its documentation describes no Celo, stablecoin or x402 support. For agents that pay onchain, see [x402](/build/agents/x402) and [MPP](/build/agents/mpp).
+
+Your agent never holds a card number or a password. It gets mock tokens, fills a checkout or sign-in form in a browser that Agent Vault runs, and Agent Vault replaces each token with the real value as it types, after checking the account holder's rules. A prompt, a log or a model provider's retention then holds only tokens.
+
+## Prerequisites
+
+- An Agent Vault account at [app.agentvault.io](https://app.agentvault.io), and a card saved in the dashboard for any agent that will pay. Plans set a monthly payment quota and an agent-card allowance; see [Billing and plans](https://docs.agentvault.io/dashboard/billing).
+- For the hosted MCP server: an MCP client that supports streamable HTTP and OAuth sign-in.
+- For the self-run MCP server, the SDK and the HTTP API: an API key from the dashboard. The SDK runs server side on Bun or Node 20 or later.
+
+## How it works
+
+1. The account holder adds cards, logins and addresses to the vault in the dashboard.
+2. Your agent receives mock tokens such as `av_card_1_number_u7x2k`. A token typed anywhere outside Agent Vault's browser is a plain string and does nothing.
+3. The agent drives a browser that runs inside Agent Vault's proxy and fills fields with tokens.
+4. At each fill, the proxy checks the account holder's rules, swaps the token for the real value and types it into the merchant page. A login fills only on the site it was saved for.
+
+Agent Vault does not move money. The merchant sees an ordinary card payment, and the merchant and the card issuer keep the financial record.
+
+## Choose an integration
+
+| Option | Use it when | Auth |
+|---|---|---|
+| Hosted MCP server | Your agent runs in an MCP client such as Claude Code, Claude Desktop or Codex | OAuth sign-in, no API key |
+| Self-run MCP server (`@agentvault/mcp`) | You want the server as a local stdio process | API key in the environment |
+| Playwright SDK (`@agentvault/playwright`) | You write the agent in TypeScript and want full browser control | API key |
+| HTTP API | You need anything except driving the browser: the token catalog, recipe lookup, signup requests | API key; recipe lookup needs none |
+| Agent skill | You want the agent to follow the rules without a long system prompt. Use it with one of the options above | None |
+
+If you are unsure, start with the hosted MCP server. Agent Vault documents setup for Meta Muse, Grok Bot, OpenClaw, Claude Code, Hermes, Claude Desktop, Antigravity and Codex in [Connect your agent](https://docs.agentvault.io/agents/overview).
+
+## Connect through MCP
+
+The hosted MCP server is at `https://mcp.agentvault.io/mcp`. You sign in with your Agent Vault account; there is no API key to copy.
+
+<Tabs>
+  <Tab title="Claude Code">
+    ```bash
+    claude mcp add --transport http agent-vault https://mcp.agentvault.io/mcp
+    ```
+
+    Then run `/mcp` in Claude Code, choose **agent-vault** and sign in.
+  </Tab>
+  <Tab title="Codex">
+    ```bash
+    codex mcp add agent-vault --url https://mcp.agentvault.io/mcp
+    ```
+
+    Sign-in starts after the command. If it does not, run `codex mcp login agent-vault --no-browser`.
+  </Tab>
+  <Tab title="Other clients">
+    Add a remote MCP server with the URL above, using streamable HTTP and OAuth. Your client finds the sign-in page from the URL.
+  </Tab>
+</Tabs>
+
+## Install the SDK
+
+`@agentvault/playwright` replaces Playwright's `chromium`: every browser action runs in the proxy, and token fills resolve there. The package is not on npm. Install it from the URL Agent Vault hosts, then set all three variables.
+
+```bash
+npm install https://app.agentvault.io/sdk/agentvault-playwright.tgz
+```
+
+```bash
+# Hosted Agent Vault values. A self-hosted deployment shows its own in the dashboard.
+export SELF_AGENT_PAY_API_KEY=av_...   # from the dashboard
+export SELF_AGENT_PAY_PROXY_URL=wss://proxy.agentvault.io/v1
+export SELF_AGENT_PAY_API_URL=https://api.agentvault.io
+```
+
+## MCP tools and HTTP endpoints
+
+The MCP server exposes 29 tools, plus `get_pending_result` on the hosted server. They are grouped in the order a run uses them:
+
+| Stage | Tools |
+|---|---|
+| Discover | `get_token_catalog`, `get_checkout_recipes`, `submit_checkout_recipe`, `get_recipe_submission` |
+| Open an account | `create_login`, `get_signup_request`, `wait_for_signup_approval`, `set_login_username`, `rotate_login_password` |
+| Drive the page | `open_page`, `click`, `press`, `wait_for_selector`, `count`, `wait_for_popup`, `close_popup` |
+| Fill | `fill_checkout`, `fill_login`, `declare_page_hint`, `list_page_hint_kinds` |
+| Look at the page | `observe_page`, `snapshot_page`, `list_frames`, `detect_challenge`, `get_network_log` |
+| Hand off | `request_challenge_handoff` |
+| Confirm and finish | `get_session_outcome`, `get_run_report`, `close_session` |
+
+The HTTP API covers everything except driving the browser, which uses the proxy's WebSocket protocol through the SDK or the MCP server:
+
+| Endpoint | Purpose | Auth |
+|---|---|---|
+| `GET /v1/tokens` | Read the mock token catalog | API key |
+| `GET /v1/recipes` | Look up checkout recipes | None |
+| `POST /v1/recipes` | Contribute a recipe | API key |
+| `GET /v1/recipes/submissions/{id}` | Read a submission's verdict | API key |
+| `POST /v1/logins/requests` | Ask the account holder to approve a new login | API key with signup |
+| `GET /v1/logins/requests/{id}` | Poll a signup request | The key that filed it |
+| `POST /v1/logins/username` | Record the username on an agent-created login | API key with signup |
+| `POST /v1/logins/password` | Replace an agent-created login's password | API key with signup |
+
+## Rules your agent must follow
+
+Agent Vault publishes nine rules as a page and as an installable skill, so you can load them on their own or paste them into a system prompt:
+
+1. Never ask for or type a real card number, CVV or password.
+2. Never generate a password or an email address. Call `create_login` and the vault mints the password.
+3. Never read back a filled value. `page.evaluate` is disabled for agent sessions.
+4. Match the token to the page. Credentials are locked to the site they belong to.
+5. Hand challenges such as 3-D Secure, one-time codes and CAPTCHAs to the account owner.
+6. Fill the card in the right order.
+7. Submit once.
+8. Read the run report before telling anyone money moved.
+9. Contribute what you learned to the recipe registry.
+
+See [Rules of engagement](https://docs.agentvault.io/mcp/rules-of-engagement) for the reason behind each rule and the skill install.
+
+## Limits and timeouts
+
+| Limit | Value |
+|---|---|
+| Proxy session | Ends after 15 minutes idle or 60 minutes in total; start a new session for a fresh browser |
+| Token catalog requests per key, per minute | Free 60, Plus 300, Enterprise 600 |
+| Token catalog requests per account, per minute | Free 120, Plus 600, Enterprise 1,200 |
+| Payments per rolling 30 days | Free 5, Plus 100, Enterprise unlimited |
+
+## Set spending limits for an agent
+
+The account holder gives each agent an agent card: a set of rules on one of their saved cards. The rules are checked on every fill.
+
+| Control | What it does |
+|---|---|
+| Spending limits | Cap spend in US dollars per transaction, per week and per rolling 30 days. A daily limit is available on Plus and Enterprise. |
+| Merchant rules | Block named sites. Allow only named sites (merchant allowlists) on Enterprise. |
+| Approval | Pause purchases above an amount the holder chooses until they approve. |
+| Kill switch | **Pause all agents** on the dashboard Overview page stops every agent at once. |
+
+<Warning>
+A card with no agent card has no spending limits. Every card added after the first starts that way. Give each agent its own agent card and API key before you connect it.
+</Warning>
+
+## Receive events with webhooks
+
+Webhooks are set per agent card and are available on Plus and Enterprise. Each delivery is a signed JSON `POST` to your HTTPS endpoint. Verify the `X-AgentPay-Signature` header with the card's signing secret, which starts with `whsec_`. Failed deliveries are retried up to five times in total, and queuing an event is best effort, so treat webhooks as alerts, not a ledger. The events are `card_fill`, `denied_fill`, `limit_threshold`, `auto_pause` and `approval_required`.
+
+## Troubleshooting
+
+Branch on the error `code`, not the message. The SDK throws `SelfAgentPayError` with a stable `code`, and the MCP server returns a tool error with the same message. The [error codes](https://docs.agentvault.io/sdk/error-codes) page says which codes are safe to retry.
+
+| Symptom | Fix |
+|---|---|
+| `claude mcp list` shows `Needs authentication` | Run `/mcp` in Claude Code, choose **agent-vault** and sign in, or run `claude mcp login agent-vault`. |
+| `no API key` from `listTokens()` or `chromium.launch()` | Set `SELF_AGENT_PAY_API_KEY`, `SELF_AGENT_PAY_PROXY_URL` and `SELF_AGENT_PAY_API_URL`. The SDK and the self-run MCP server need all three. |
+| `Failed to connect to proxy` | `SELF_AGENT_PAY_PROXY_URL` is not set, so the SDK tries `ws://localhost:4000/v1`. Set it to your proxy URL. |
+| `cvv_entry_required` | Agent Vault never stores the card security code. The checkout needs a deployment with live security code entry, where the account holder types the code in the dashboard. |
+| `limit_reached` | The fill went over a spending limit. A spend counts against the limits when the fill lands, before an order exists. With auto-pause on, the card stops until the holder resumes it. |
+| `plan_quota_reached` | The account used its plan's payments for the rolling 30 days. This is an account setting, not a card setting. |
+| `destination_unauthorized` | A card, security code, identity or address token was used on a site the account holder has not authorized as a destination. The fill waits for their approval, then fails if they do not give it. |
+
+## What Agent Vault does not do
+
+- It does not hide the card from the merchant, and it does not move money.
+- It does not solve CAPTCHAs, 3-D Secure checks or one-time codes. It hands the live page to the account holder to complete.
+- Its documentation describes no blockchain component, so it gives the agent no wallet or onchain identity. For agent identity on Celo, see [ERC-8004](/build/agents/8004) and [Self Agent ID](/build/agents/self-agent-id).
+- Limits bound what an agent can spend, not what it can buy. A compromised agent can still make purchases that the limits and merchant rules allow. For what is and is not protected, read Agent Vault's [security model](https://docs.agentvault.io/security/model).
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Product and sign-up | [agentvault.io](https://agentvault.io) |
+| Documentation | [docs.agentvault.io](https://docs.agentvault.io) |
+| Documentation index for AI tools | [docs.agentvault.io/llms.txt](https://docs.agentvault.io/llms.txt) |
+| Hosted MCP server | `https://mcp.agentvault.io/mcp` |
+| Tool reference | [docs.agentvault.io/mcp/tool-reference](https://docs.agentvault.io/mcp/tool-reference) |
+| HTTP API reference | [docs.agentvault.io/reference/http-api](https://docs.agentvault.io/reference/http-api) |
+| Checkout recipe registry (open source) | [GitHub](https://github.com/selfxyz/agent-checkout-skill) |
+| Changelog | [GitHub releases](https://github.com/selfxyz/agent-pay/releases) |
+
+## Related
+
+- [Build with AI on Celo](/build/agents/overview) — where card and login flows sit next to onchain agent payments
+- [x402: Agent Payments](/build/agents/x402) — pay per HTTP request with stablecoins on Celo
+- [MPP: Machine Payments Protocol](/build/agents/mpp) — charge USDC per API request
+- [Model Context Protocol (MCP)](/build/agents/mcp/index) — how MCP servers connect to your agent
+- [Self Agent ID](/build/agents/self-agent-id) — proof-of-human identity for an agent on Celo

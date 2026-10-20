@@ -164,17 +164,17 @@ Using Hono instead of Express? Swap `@x402/express` → `@x402/hono`; the body i
 3. The key is shown once. Copy it and set it as `X402_API_KEY` in your server environment.
 
 <Warning>
-  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement credits.
+  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement balance.
 </Warning>
 
-New accounts get free credits on both networks. Beyond that, credits are bought by depositing USDC on the dashboard, priced at $0.001 per settlement.
+New accounts get free credits on both networks, one per settlement. After that, deposit USDC, USDT or USAT on the dashboard (USDC on Celo Sepolia) and it becomes a balance in USD. Each settlement is charged gas at cost plus 0.3% of the payment value, or gas only when the asset has no USD price. `GET https://api.x402.celo.org/api/config` returns the current model under `pricing`.
 
 If a call to `/settle` fails, the status code tells you why:
 
 | Status | Meaning                                                        |
 |--------|---------------------------------------------------------------|
 | `401`  | Missing or invalid API key.                                   |
-| `402`  | Out of credits — top up on the dashboard.                     |
+| `402`  | Out of free credits and balance — top up on the dashboard.    |
 | `429`  | Free-tier rate limit reached.                                 |
 
 ## x402 on Celo
