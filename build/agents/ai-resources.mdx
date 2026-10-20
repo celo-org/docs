@@ -14,7 +14,9 @@ This page is for developers and agent builders who want an AI assistant, coding 
 | [`llms.txt` and `llms-full.txt`](/build/agents/use-docs-with-ai#llms-txt-and-llms-full-txt) | [`docs.celo.org/llms.txt`](https://docs.celo.org/llms.txt), [`docs.celo.org/llms-full.txt`](https://docs.celo.org/llms-full.txt) | Give a chat a map of every docs page, or load the whole docs set into a long-context model |
 | [Page as Markdown](/build/agents/use-docs-with-ai#copy-any-page-as-markdown) | Append `.md` to any docs URL | Quote one page as context in a script or agent |
 | [Contextual menu](/build/agents/use-docs-with-ai#copy-any-page-as-markdown) | Next to every page title | Copy a page, view it as Markdown, open it in ChatGPT or Claude, or install the docs MCP server in Cursor or VS Code |
-| Docs skill | [`docs.celo.org/skill.md`](https://docs.celo.org/skill.md) | Give an agent that loads skills a summary of what the docs cover and when to use them |
+| Docs skill | [`docs.celo.org/skill.md`](https://docs.celo.org/skill.md) | Give an agent that loads skills a summary of what it can do with Celo and when to use it |
+
+Install the docs skill with `npx skills add https://docs.celo.org`. MCP clients connected to the docs MCP server load it as a resource.
 
 [Use Celo docs with AI tools](/build/agents/use-docs-with-ai) has the setup steps for each client and what the assistant can and cannot do.
 
@@ -24,14 +26,14 @@ This page is for developers and agent builders who want an AI assistant, coding 
 |----------|------------------------|------|
 | Celopedia | A skill with curated Celo knowledge: contract addresses, MiniPay, DeFi, grants and agent infrastructure | [Celopedia](/build/agents/celopedia) |
 | Celo MCP server | Live chain data: balances, blocks, gas fees, governance and staking | [Celo MCP server](/build/agents/mcp/celo-mcp) |
-| Vibe coding tools | AI-assisted development tools that work for building on Celo | [Vibe coding tools](/build/agents/vibe-coding) |
 
-## Third-party tools for agents
+## Third-party tools
 
 These are built by other teams, not by Celo.
 
-| Resource | What it gives an agent | Page |
-|----------|------------------------|------|
+| Resource | What it gives you | Page |
+|----------|-------------------|------|
+| Vibe coding tools | AI-assisted development tools, such as Cursor and Lovable, that work for building on Celo | [Vibe coding tools](/build/agents/vibe-coding) |
 | Celina | A wallet on Celo for an LLM: balances, transfers, DeFi, governance, staking and Self Agent ID | [Celina](/build/agents/mcp/celina) |
 | Agent Vault | Card payments and website sign-in through mock tokens, so the agent never holds the real values | [Agent Vault](/build/agents/agent-vault) |
 
