@@ -7,7 +7,9 @@ This page is for app developers and data teams who need Celo data in bulk: full 
 
 ## How it works
 
-[Firehose](https://app.pinax.network/docs/firehose) streams full blocks over gRPC, including transactions, receipts, logs, call traces, and balance changes. It carries more than a JSON-RPC node returns, and it reads history faster than sequential RPC calls.
+[Firehose](https://app.pinax.network/docs/firehose) streams full blocks over gRPC, including transactions, receipts and logs, with cursors so a consumer can resume exactly where it stopped after a restart or a reorg. It reads history far faster than sequential RPC calls, and the same stream serves both historical and live blocks, so one integration covers backfill and tail.
+
+Celo blocks are served at Firehose's *base* detail level. Call traces, internal transfers and storage changes require an instrumented node producing *extended* blocks, which Pinax does not currently run for Celo.
 
 [Substreams](https://app.pinax.network/docs/substreams) runs on top of Firehose. You write modules in Rust, package them as an `.spkg` file, and run them on Pinax servers to turn raw blocks into the shape your application needs. Output can go to PostgreSQL or ClickHouse, stream to a consumer, or feed a Graph Node as a subgraph data source.
 
