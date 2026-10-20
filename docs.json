@@ -195,6 +195,7 @@
               "build/agents/mcp/index",
               "build/agents/mcp/celo-mcp",
               "build/agents/mcp/celina",
+              "build/agents/askbots",
               "build/agents/usecases",
               "build/agents/attribution-tags"
             ]

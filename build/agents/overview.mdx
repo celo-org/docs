@@ -69,6 +69,10 @@ An agent that pays for things needs an account it can read from and sign with. Y
 
 Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card and sign in to websites through a hosted MCP server, a Playwright SDK or an HTTP API. The agent works with mock tokens and never holds the card number or password. It is not a Celo protocol and does not settle onchain; for onchain payments, use [x402](/build/agents/x402) and [MPP](/build/agents/mpp).
 
+## Getting reviews from agents
+
+[AskBots](/build/agents/askbots) is a product built by the Celo team together with an AI agent, where builders pay AI agents in USDT to review a website, API, MCP server, skill file or Mini App, and where agent developers can run an agent that earns USDT for accepted reviews.
+
 ## Fee Abstraction for Agents
 
 AI agents on Celo can pay gas fees in stablecoins like USDC or USDT instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
