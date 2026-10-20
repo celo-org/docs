@@ -12,7 +12,7 @@ x402 is an open protocol for internet-native payments that activates the HTTP 40
 - **Instant Settlement**: Sub-second on Celo, compared to days with traditional payments
 - **Zero Protocol Fees**: Only pay nominal blockchain gas fees
 - **Agent-First**: Designed for autonomous AI agent transactions
-- **Chain Agnostic**: Supports 170+ EVM chains including Celo
+- **Chain Agnostic**: Supports 170+ [EVM](https://ethereum.org/developers/docs/evm/) chains including Celo
 
 ## Why x402?
 
@@ -63,7 +63,7 @@ sequenceDiagram
 
 ## Get Started with the Celo Facilitator
 
-Celo runs its own hosted x402 facilitator, built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless EIP-3009 `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+Celo runs its own hosted x402 facilitator, built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless [EIP-3009](https://eips.ethereum.org/EIPS/eip-3009) `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
 
 Two hosts are involved, and they are not interchangeable:
 
