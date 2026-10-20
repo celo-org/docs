@@ -196,7 +196,9 @@ curl -s -o /dev/null -D - http://localhost:3000/premium \
 
 The decoded JSON shows the route's price: `10000` base units of USDC, which is $0.01 because USDC has 6 decimals. A `402` with that price means the middleware is wired to the route.
 
-To see a paid response you need a buyer that signs the authorization and retries the request. The `x402` template of Celo Composer includes a buyer script that pays an x402 endpoint in USDC; see [x402 paid API](/build/quickstart#x402-paid-api). The route above uses Celo mainnet and a placeholder `payTo`, so point both at a Celo Sepolia route and an address you control first, using the Celo Sepolia values under [Celo Configuration](#celo-configuration). A paid request returns `200` with `{"data":"paid content"}` and the payment settles on Celo for the price above. At that point you have charged an agent $0.01. Settlement needs the API key from the previous section.
+To see a paid response you need a buyer that signs the authorization and retries the request. The simplest way is the `x402` template of Celo Composer, which ships its own seller and buyer wired to Celo Sepolia (see [x402 paid API](/build/quickstart#x402-paid-api)). Run the seller with `pnpm api:dev` and the buyer with `pnpm api:buy`. The buyer pays the template's own route and prints the response and the settlement transaction, so expect that output rather than the `{"data":"paid content"}` from the server above. The buyer wallet needs test USDC on Celo Sepolia and no CELO.
+
+To charge for the server on this page instead, switch it to Celo Sepolia. Change the `network`, `asset` and `payTo` values to the Celo Sepolia ones under [Celo Configuration](#celo-configuration), and change the facilitator `url` to `https://api.x402.sepolia.celo.org`. The mainnet facilitator does not list Celo Sepolia, so the server fails on startup if the URL stays as it is. Settlement needs the key from the previous section. A paid request then returns `200` with `{"data":"paid content"}` and the payment settles on Celo Sepolia for the price above. At that point you have charged an agent $0.01 in test USDC.
 
 ## x402 on Celo
 
