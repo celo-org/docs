@@ -14,7 +14,7 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
 
 ## Mainnet
 
-- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); a mainnet node must bootstrap from one (`OP_RETH__SNAPSHOT=true`) for the pre-L2 history (see [Run a node](/operate/operators/run-node))
+- op-reth snapshots — published at [`snapshots.celo.org`](https://snapshots.celo.org); a mainnet node must bootstrap from one (`OP_RETH__SNAPSHOT=true`) for the Celo L1 state at the L2 migration (see [Run a node](/operate/operators/run-node))
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/celo/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/celo/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/celo/l2-allocs.json)
@@ -56,8 +56,8 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
     ```
 
 - Container images:
-  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.5)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.2.3)
+  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.7)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.2.4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v2.6.0)
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.9) — legacy archive / historical RPC service
 
@@ -89,6 +89,6 @@ The recommended [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l
     ```
 
 - Container images:
-  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.5)
-  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.2.3)
+  - [op-reth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth:celo-v1.0.7)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.2.4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v2.6.0)
