@@ -26,7 +26,7 @@ The switch from the Celo L1 blockchain to the Celo L2 introduces a variety of ch
 
 ### Precompile Deprecation and Epoch Management
 
-As part of Celo's transition to a L2 network, the following Celo precompiles, except the `Transfer` precompile, will be deprecated.
+As part of Celo's transition to a L2 network, the following Celo precompiles, except the `Transfer` precompile, were removed.
 
 - `FRACTION_MUL`
 - `PROOF_OF_POSSESSION`
@@ -430,7 +430,7 @@ Celo added the following fields to block bodies:
 - `randomness`
 - `epochSnarkData`
 
-As additions they do not damage compatibility at the RPC API level as API clients would generally ignore them. However, in the transition to L2 these fields are planned for removal because they will no longer be needed.
+As additions they do not damage compatibility at the RPC API level as API clients would generally ignore them. However, these fields were removed in the transition to L2 because they are no longer needed.
 
 In the transition to L2 as an attempt to improve the situation with RPC API compatibility for historical blocks, all post-Gingerbread fields will be returned for **all** blocks.
 Both pre-Gingerbread and post-Gingerbread blocks retrieved from the L2 RPC API would look the same with the exception of `baseFeePerGas` which for now will not be returned for pre-Gingerbread blocks.
