@@ -126,7 +126,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Agent identity and trust | `/build/agents/8004`, `/build/agents/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
 | Human identity | `/build/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
 | Phone-number mapping | `/build/build-on-socialconnect` | SocialConnect / ODIS |
-| AI tooling | `/build/agents/use-docs-with-ai`, `/build/agents/celopedia`, `/build/agents/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
+| AI tooling | `/build/agents/ai-resources` (index), `/build/agents/use-docs-with-ai`, `/build/agents/celopedia`, `/build/agents/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
 
 ### Partner contract addresses
 
@@ -154,7 +154,7 @@ Rules that make a page work for an agent:
 6. **Headings name the task.** `## Estimate gas in USDC`, not `## Step 3`.
 7. **Close with `## Related`.** Agents traverse the link graph; a page with no outgoing internal links is a dead end.
 8. **Text over images.** Screenshots are fine as illustration; the steps must be in words.
-9. **New agent-relevant pages get listed** on `/build/agents/overview` and, when it exists, the AI-resources page (#2261).
+9. **New agent-relevant pages get listed** on `/build/agents/overview` and `/build/agents/ai-resources`.
 
 ## 9. Pull requests
 
