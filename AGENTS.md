@@ -118,7 +118,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
 | Fee abstraction | `/build/fee-abstraction/overview` (guide), `/build/tools/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
 | Stablecoins | `/build/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USDT, USA₮ and other issuers — "30+ stablecoins" in total |
-| MiniPay | `/build/mini-apps/overview` | stablecoin wallet, 10M+ activations, Mini App discovery page, Celo only |
+| MiniPay | `/build/mini-apps/overview` | stablecoin wallet, 20M+ wallet activations in 70+ countries, Mini App discovery page, Celo only |
 | Token duality | `/operate/specification/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
 | Data availability | `/operate/specification/eigenda` | EigenDA |
 | Architecture | `/learn/network/architecture` | Ethereum L2 on the OP Stack |
