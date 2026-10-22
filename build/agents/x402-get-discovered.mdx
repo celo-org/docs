@@ -9,7 +9,7 @@ This page is for developers who sell an API, a tool, or content over [x402](/bui
 ## Prerequisites
 
 - A resource server that returns `402 Payment Required` on Celo. Set one up on the [x402 page](/build/agents/x402#pointing-a-resource-server-at-it) first.
-- A public HTTPS origin. Indexes probe your endpoint from the outside, and some probe it every 30 minutes.
+- A public HTTPS origin. Indexes probe your endpoint from the outside, and agent402.tools probes it every 30 minutes.
 - Node.js 20 or later and the v2 packages: `@x402/express`, `@x402/core`, `@x402/evm`, `@x402/extensions`.
 
 ## How it works
@@ -24,6 +24,8 @@ Discovery has two halves.
 | [agent402.tools](https://agent402.tools/sell) | One `POST` with your origin; the crawler probes it every 30 minutes | A public origin that answers with a 402 |
 | [8004scan](https://8004scan.io) | Register an [ERC-8004](/build/agents/8004) identity whose registration file lists your endpoints and sets `x402Support` | An identity on Celo |
 | [Buy catalog](https://usebuy.ai) | Ask for a listing with the [buy-skill issue form](https://github.com/celo-org/buy-skill/issues/new?template=list-your-service.yml) | A public origin, a description, a price, and the networks and tokens you accept |
+
+The extension is named `bazaar` after Coinbase's Bazaar, but Coinbase's Bazaar and x402scan do not list Celo-only offers, so they are not covered here.
 
 ## Describe your endpoint in the 402
 
@@ -99,7 +101,7 @@ Write the `description` for an agent that is deciding whether to call you: what 
 
 ## Register with agent402.tools
 
-One request lists your origin at once, and Celo has its own market page there. The crawler re-probes the x402 surface every 30 minutes and ranks listings by crawl health, then by distinct payers and price. Its own router pays sellers only on chains it holds wallets for, and Celo is not one of them, so buyers pay a Celo-only seller directly rather than through the router.
+One request lists your origin at once, and Celo has [its own market page](https://agent402.tools/celo) there. The crawler re-probes the x402 surface every 30 minutes and ranks listings by crawl health, then by distinct payers and price. Its own router pays sellers only on chains it holds wallets for, and Celo is not one of them, so buyers pay a Celo-only seller directly rather than through the router.
 
 ```bash
 curl -X POST https://agent402.tools/api/index/register \
