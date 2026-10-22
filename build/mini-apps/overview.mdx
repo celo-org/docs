@@ -27,17 +27,16 @@ DeFi apps (lending, borrowing, savings and similar) are for projects with a long
 
 ### Stablecoins are the only assets
 
-MiniPay holds USDm, USDC, USDT and USA₮ — no CELO balance is shown to the user. Price and settle in one of these.
+MiniPay holds USDm, USDC and USDT — no CELO balance is shown to the user. Price and settle in one of these.
 
 | Token | Celo mainnet (42220) | Decimals |
 |---|---|---|
 | USDm | [`0x765DE816845861e75A25fCA122bb6898B8B1282a`](https://celoscan.io/address/0x765DE816845861e75A25fCA122bb6898B8B1282a) | 18 |
 | USDC | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) | 6 |
 | USDT | [`0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`](https://celoscan.io/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) | 6 |
-| USA₮ | [`0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771`](https://celoscan.io/address/0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771) | 6 |
 
 <Warning>
-USDC, USDT and USA₮ use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a USDC transfer sends 10¹² times the intended amount. Pass the token's decimals explicitly.
+USDC and USDT use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a USDC transfer sends 10¹² times the intended amount. Pass the token's decimals explicitly.
 </Warning>
 
 ```ts
