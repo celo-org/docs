@@ -65,7 +65,7 @@ sequenceDiagram
 
 ## Get Started with the Celo Facilitator
 
-Celo runs its own hosted x402 facilitator, built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It accepts **USDC** and **USDT** on Celo via the gasless [EIP-3009](https://eips.ethereum.org/EIPS/eip-3009) `transferWithAuthorization` scheme — the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
+Celo runs its own hosted x402 facilitator, built on the open-source [`x402-rs`](https://github.com/x402-rs/x402-rs) implementation. It is the recommended default for accepting x402 payments on Celo. It settles 10 stablecoins on Celo: **USDC**, **USDT** and **USAT** through the gasless [EIP-3009](https://eips.ethereum.org/EIPS/eip-3009) `transferWithAuthorization` scheme, and the six Ripio wFIAT local-currency stablecoins and **cNGN** through Permit2. With EIP-3009 the buyer signs an authorization off-chain, and the facilitator submits it on-chain and pays the gas itself. The facilitator never custodies funds: `transferWithAuthorization` moves tokens directly payer → payee inside the token contract.
 
 Two hosts are involved, and they are not interchangeable:
 
@@ -206,17 +206,40 @@ Celo is an ideal network for x402 due to:
 
 - **Low fees**: Gas costs under $0.001 per transaction
 - **Fast finality**: ~1 second block times
-- **Stablecoin support**: Native USDC and USDT for predictable pricing
+- **Stablecoin support**: USDC, USDT and USAT for predictable dollar pricing, plus Ripio's wFIAT stablecoins (wARS, wBRL, wMXN, wCOP, wPEN, wCLP) and cNGN so an agent can settle in its owner's local currency
 - **Fee abstraction**: Agents can pay gas in the same stablecoins used for x402 payments — no separate CELO balance needed. See [Fee Abstraction for Agents](/build/agents/overview#fee-abstraction-for-agents)
 
-### Supported Payment Tokens on Celo
+### Supported payment tokens on Celo
 
-The Celo facilitator settles **USDC** and **USDT** via EIP-3009 `transferWithAuthorization`:
+The Celo facilitator settles 10 stablecoins on Celo mainnet (chain ID 42220). Celo Sepolia (chain ID 11142220) supports USDC only.
+
+| Token | Transfer method | Decimals | `extra.name` | `extra.version` |
+|---|---|---|---|---|
+| USDC | EIP-3009 | 6 | `USDC` | `2` |
+| USDT | EIP-3009 | 6 | `Tether USD` | `1` |
+| USAT | EIP-3009 | 6 | `Tether America USD` | `1` |
+| wARS (Argentine peso) | Permit2 | 18 | `Peso Argentino` | `1` |
+| wBRL (Brazilian real) | Permit2 | 18 | `Real Brasileño` | `1` |
+| wMXN (Mexican peso) | Permit2 | 18 | `Peso Mexicano` | `1` |
+| wCOP (Colombian peso) | Permit2 | 18 | `Peso Colombiano` | `1` |
+| wPEN (Peruvian sol) | Permit2 | 18 | `Sol Peruano` | `1` |
+| wCLP (Chilean peso) | Permit2 | 18 | `Peso Chileno` | `1` |
+| cNGN (Nigerian naira) | Permit2 | 6 | `cNGN` | `1` |
+
+Use `extra.name` from the table in the route, not the token symbol: it is the token's EIP-712 domain name. The wFIAT stablecoins are issued by Ripio and cNGN by WrappedCBDC Limited. Read every asset address from `paymentAssets` in the [live facilitator config](https://x402.celo.org/api/config), or for USAT see [Build with USA₮](/build/build-with-usat). The USDC and USDT addresses on Celo mainnet (42220) are:
 
 | Token | Address | Decimals |
 |-------|---------|----------|
 | USDC | `0xcebA9300f2b948710d2653dD7B07f33A8B32118C` | 6 |
 | USDT | `0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e` | 6 |
+
+#### Pay with Permit2 tokens
+
+- **Seller route:** name the asset with its address and set `extra` to the token's `name`, `version` and `assetTransferMethod: "permit2"`. If you leave out `assetTransferMethod`, the client signs an EIP-3009 authorization that these tokens cannot execute.
+- **Amounts:** write the amount as a base-unit string at the token's decimals: 18 for the wFIAT stablecoins and 6 for cNGN. For example, 1 wARS is `"1000000000000000000"`.
+- **wFIAT stablecoins:** add `extensions.eip2612GasSponsoring` to the route. Without it, first-time payers get `412 permit2_allowance_required`.
+- **cNGN:** leave out `eip2612GasSponsoring`, because cNGN has no EIP-2612 `permit()`. The first payer sends `approve(Permit2, amount)` on the cNGN contract and pays that gas. Permit2 on Celo mainnet (42220) is at `0x000000000022D473030F116dDEE9F6B43aC78BA3`. Later payments need only a signature until the allowance runs out.
+- **Buyer:** these assets are not in the x402 client's default-asset table, so add each one to `spendControls.allowedAssets` with a per-payment cap. The default `"$1"` cap is a US dollar figure and does not apply to them.
 
 ### Celo Configuration
 
