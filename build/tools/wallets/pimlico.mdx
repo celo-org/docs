@@ -1,0 +1,110 @@
+---
+title: Sponsor gas with Pimlico on Celo
+sidebarTitle: "Pimlico"
+description: Send a gas-sponsored ERC-4337 transaction from a smart account on Celo with Pimlico's bundler and paymaster, using permissionless.js and viem
+---
+
+This page is for app and agent developers who want users to transact without holding CELO, through an [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) smart account whose gas a paymaster pays. [Pimlico](https://www.pimlico.io/) runs a bundler and paymasters on Celo mainnet and Celo Sepolia. If your users already have an externally owned account and you only want them to pay gas in a stablecoin, you do not need a bundler at all: use [fee abstraction](/build/fee-abstraction/overview).
+
+## Prerequisites
+
+- A Pimlico API key from the [Pimlico dashboard](https://dashboard.pimlico.io/). Sponsorship on mainnet needs a funded sponsorship policy; on Celo Sepolia the free tier sponsors test transactions.
+- Node.js 18 or later and a TypeScript project.
+- `permissionless` and `viem`:
+
+```bash
+npm install permissionless viem
+```
+
+## How it works
+
+Your app builds a user operation for a smart account, sends it to Pimlico's bundler, and attaches Pimlico's paymaster so the paymaster deposit covers the gas instead of the account. The bundler submits the user operation to the EntryPoint contract on Celo. Pimlico supports EntryPoint v0.6 and v0.7 on both Celo networks; the example below uses v0.7, which is the current default in permissionless.js.
+
+The bundler and paymaster URL is the same for both networks, with the chain in the path:
+
+```
+https://api.pimlico.io/v2/42220/rpc?apikey=YOUR_API_KEY      # Celo mainnet
+https://api.pimlico.io/v2/11142220/rpc?apikey=YOUR_API_KEY   # Celo Sepolia
+```
+
+## Send a sponsored transaction
+
+The script creates a smart account owned by a private key, then sends a transaction whose gas Pimlico pays. The smart account is deployed with its first user operation; the owner never needs CELO.
+
+```ts
+// Celo Sepolia (11142220). For mainnet use `celo` from viem/chains and 42220 in the Pimlico URL.
+import { createPublicClient, http } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { celoSepolia } from "viem/chains";
+import { entryPoint07Address } from "viem/account-abstraction";
+import { createSmartAccountClient } from "permissionless";
+import { toSimpleSmartAccount } from "permissionless/accounts";
+import { createPimlicoClient } from "permissionless/clients/pimlico";
+
+const pimlicoUrl = `https://api.pimlico.io/v2/11142220/rpc?apikey=${process.env.PIMLICO_API_KEY}`;
+
+const publicClient = createPublicClient({
+  chain: celoSepolia,
+  transport: http("https://forno.celo-sepolia.celo-testnet.org"),
+});
+
+const pimlicoClient = createPimlicoClient({
+  transport: http(pimlicoUrl),
+  entryPoint: { address: entryPoint07Address, version: "0.7" },
+});
+
+const account = await toSimpleSmartAccount({
+  client: publicClient,
+  owner: privateKeyToAccount(process.env.OWNER_PRIVATE_KEY as `0x${string}`),
+  entryPoint: { address: entryPoint07Address, version: "0.7" },
+});
+console.log("smart account:", account.address);
+
+const smartAccountClient = createSmartAccountClient({
+  account,
+  chain: celoSepolia,
+  bundlerTransport: http(pimlicoUrl),
+  paymaster: pimlicoClient,
+  userOperation: {
+    estimateFeesPerGas: async () => (await pimlicoClient.getUserOperationGasPrice()).fast,
+  },
+});
+
+const txHash = await smartAccountClient.sendTransaction({
+  to: "0x0000000000000000000000000000000000000000", // example: replace with your contract
+  value: 0n,
+  data: "0x",
+});
+console.log("transaction:", `https://celo-sepolia.blockscout.com/tx/${txHash}`);
+```
+
+`OWNER_PRIVATE_KEY` is the key that controls the smart account; keep it in an environment variable, never in source. The owner address needs no balance.
+
+To use a Safe smart account instead of the reference SimpleAccount, replace `toSimpleSmartAccount` with `toSafeSmartAccount` from `permissionless/accounts` and pass `owners: [privateKeyToAccount(...)]` and `version: "1.4.1"`. Safe 1.4.1 and the Safe 4337 module are deployed on both Celo networks.
+
+## Let users pay gas in USDC or USDT
+
+Pimlico's ERC-20 paymaster charges the smart account in a token instead of sponsoring. On Celo mainnet it accepts USDC and USDT among others; see Pimlico's [supported tokens](https://docs.pimlico.io/references/paymaster/erc20-paymaster/supported-tokens) for the current list and addresses. Follow Pimlico's [ERC-20 paymaster guide](https://docs.pimlico.io/guides/how-to/erc20-paymaster/how-to/use-paymaster) and set the Celo chain in the URL as above. This is the smart-account equivalent of [fee abstraction](/build/fee-abstraction/overview), which does the same for externally owned accounts at the protocol level.
+
+## Troubleshooting
+
+- `AA21 didn't pay prefund` or a similar insufficient-funds error: the paymaster was not attached. Check that `paymaster: pimlicoClient` is set and that the API key has an active sponsorship policy for the chain.
+- `chain not supported` from the Pimlico endpoint: the chain in the URL is wrong. Use `42220` or `celo` for mainnet and `11142220` or `celo-sepolia` for the testnet. Alfajores is not supported.
+- Gas estimation reverts on the first transaction: the smart account is deployed in that same user operation, so the `to` contract must accept calls from a fresh address. Test with a zero-value call to your own contract first.
+- The transaction hash does not appear on the explorer: the bundler returns the user operation hash first. `sendTransaction` in permissionless waits for inclusion and returns the on-chain transaction hash; if you call `sendUserOperation` directly, wait with `waitForUserOperationReceipt`.
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Pimlico supported chains | [docs.pimlico.io/guides/supported-chains](https://docs.pimlico.io/guides/supported-chains) |
+| Pimlico tutorial: sponsor a user operation | [docs.pimlico.io/guides/tutorials/tutorial-1](https://docs.pimlico.io/guides/tutorials/tutorial-1) |
+| permissionless.js reference | [docs.pimlico.io/references/permissionless](https://docs.pimlico.io/references/permissionless) |
+| Pimlico dashboard | [dashboard.pimlico.io](https://dashboard.pimlico.io/) |
+
+## Related
+
+- [Fee abstraction](/build/fee-abstraction/overview) — pay gas in stablecoins from a normal account, no bundler needed
+- [Wallet integration](/build/tools/wallets) — other wallet and smart-account providers on Celo
+- [JAW on Celo](/build/tools/libraries-sdks/jaw) — passkey smart accounts with gas sponsorship
+- [Give your agent a wallet](/build/agents/agent-wallet) — set up an account and test funds for an agent on Celo Sepolia

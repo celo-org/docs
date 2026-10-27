@@ -9,6 +9,10 @@ This page lists providers for adding wallets to an app on Celo. If you hold CELO
   **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops the app's `feeCurrency` and charges gas in CELO. See [which wallets support it](/build/fee-abstraction/overview#wallet-support-for-cip-64).
 </Note>
 
+<Note>
+  **Gas sponsorship.** To pay gas for your users through an ERC-4337 smart account, see [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico). Providers on this list that run their own bundler and paymaster on Celo link to it from their entry. To let users pay gas in a stablecoin without a smart account, use [fee abstraction](/build/fee-abstraction/overview).
+</Note>
+
 ## Wallet providers
 
 The list is in no particular order and is not a recommendation.
@@ -26,7 +30,7 @@ Whitelabel wallets, transaction signing and onchain infrastructure through one A
 
 ### [Openfort](https://www.openfort.io/)
 
-Non-custodial embedded wallets with social login, backend (server) wallets, and account abstraction with paymasters for gasless transactions and paying fees in stablecoins.
+Non-custodial embedded wallets with social login and backend (server) wallets. Openfort's own bundler and paymaster do not list Celo among their supported chains; embedded wallets work on any EVM chain.
 
 - Homepage: [openfort.io](https://www.openfort.io/)
 - [Docs](https://www.openfort.io/docs)
@@ -121,6 +125,17 @@ MPC wallet provider: embedded MPC wallets for users, and an SDK for the web3 fun
 
 ---
 
+### [Pimlico](https://www.pimlico.io/)
+
+ERC-4337 bundler and paymasters on Celo mainnet and Celo Sepolia: sponsor gas for smart accounts, or let users pay gas in USDC or USDT through the ERC-20 paymaster. Works with permissionless.js and viem.
+
+- Homepage: [pimlico.io](https://www.pimlico.io/)
+- [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico)
+- [Docs](https://docs.pimlico.io/)
+- [Source Code](https://github.com/pimlicolabs)
+
+---
+
 ### [JAW](https://jaw.id/)
 
 Smart account infrastructure with passkey-secured accounts, ENS identity, gas sponsorship, and programmable permissions for subscriptions and delegated agent execution, through a TypeScript SDK.
@@ -145,4 +160,5 @@ Smart account infrastructure with passkey-secured accounts, ENS identity, gas sp
 
 - [Wallets for users](/learn/wallets) — the wallets a holder can install
 - [Fee abstraction](/build/fee-abstraction/overview) — pay gas in stablecoins, and which wallets support it
+- [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico) — ERC-4337 bundler and paymaster for smart accounts
 - [Build for MiniPay](/build/mini-apps/overview) — list a Mini App inside MiniPay
