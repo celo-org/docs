@@ -89,7 +89,8 @@ Pimlico's ERC-20 paymaster charges the smart account in a token instead of spons
 ## Troubleshooting
 
 - `AA21 didn't pay prefund` or a similar insufficient-funds error: the paymaster was not attached. Check that `paymaster: pimlicoClient` is set. On mainnet, check that your Pimlico plan has a balance or card attached. If you created a sponsorship policy and pass its ID, check that it covers the chain.
-- `chain not supported` from the Pimlico endpoint: the chain in the URL is wrong. Use `42220` or `celo` for mainnet and `11142220` or `celo-sepolia` for the testnet.- Gas estimation reverts on the first transaction: the smart account is deployed in that same user operation, so the `to` contract must accept calls from a fresh address. Test with a zero-value call to your own contract first.
+- `chain not supported` from the Pimlico endpoint: the chain in the URL is wrong. Use `42220` or `celo` for mainnet and `11142220` or `celo-sepolia` for the testnet.
+- Gas estimation reverts on the first transaction: the smart account is deployed in that same user operation, so the `to` contract must accept calls from a fresh address. Test with a zero-value call to your own contract first.
 - The transaction hash does not appear on the explorer: the bundler returns the user operation hash first. `sendTransaction` in permissionless waits for inclusion and returns the on-chain transaction hash; if you call `sendUserOperation` directly, wait with `waitForUserOperationReceipt`.
 
 ## Resources
