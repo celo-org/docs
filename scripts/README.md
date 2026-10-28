@@ -11,10 +11,6 @@ This directory contains utility scripts for maintaining and updating the Celo do
   navigation. It only understands a trailing `/:slug*` wildcard and stops with an error on any other
   path parameter. CI runs it with its tests (`python3 -m unittest discover -s scripts -p 'test_*.py'`).
 - `check-orphans.sh` - Fails on page files that navigation does not reach. CI runs it.
-- `test_network_identifiers.py` - Fails when `assets/celo-identifiers.json` disagrees with
-  `learn/network/overview.mdx`, or when an address in it does not match the generated
-  `fee-currencies.mdx` and `core-contracts.mdx` pages (case-sensitive, so EIP-55 casing must
-  match too). CI runs it with the other `test_*.py` files.
 
 ### Generated pages
 
@@ -37,13 +33,6 @@ the `PAGE_HEADER_*` constants near the top of `update_contracts.py`.
 
   `scripts/.gitignore` ignores `*.json` but re-includes `data/*.json`. If you add another
   curated input here, check it is not silently ignored: `git check-ignore -v <path>`.
-
-- `../assets/celo-identifiers.json` - Chain IDs, RPC endpoints, explorers, faucets and the core
-  token and fee-currency addresses for both networks. Mintlify serves it as a static file at
-  `https://docs.celo.org/assets/celo-identifiers.json`, so tools can read it directly. Mintlify
-  cannot import a `.json` file into an MDX page, so `learn/network/overview.mdx` carries the same
-  values as plain tables and `test_network_identifiers.py` keeps the two in step. Change both in
-  the same PR.
 
 ## Pre-requisites
 

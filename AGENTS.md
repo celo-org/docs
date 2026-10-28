@@ -113,7 +113,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 
 | Fact | Canonical page | Say this |
 |---|---|---|
-| Chain IDs, RPC URLs, explorers, faucet, core token and `feeCurrency` addresses | `/learn/network/overview`, machine-readable copy at `/assets/celo-identifiers.json` (keep both in step; `scripts/test_network_identifiers.py` checks them) | mainnet `42220`, `https://forno.celo.org`, explorers `https://celo.blockscout.com` and `https://celoscan.io`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`, explorer `https://celo-sepolia.blockscout.com`; faucet `https://faucet.celo.org/celo-sepolia` |
+| Chain IDs, RPC URLs, explorers, faucet | `/learn/network/overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
 | Block time | `/operate/specification/deployments` | "1-second blocks". Do not write "1-second finality" — see `/operate/specification/finality` |
 | Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
 | Fee abstraction | `/build/fee-abstraction/overview` (guide), `/build/tools/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |

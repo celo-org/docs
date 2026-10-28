@@ -1,11 +1,11 @@
 ---
 title: Network Information
-description: Chain IDs, RPC endpoints, block explorers, faucets and core token and fee-currency addresses for Celo Mainnet and Celo Sepolia
+description: Chain IDs, RPC endpoints, block explorers and faucets for Celo Mainnet and Celo Sepolia
 ---
 
 import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
 
-The identifiers an app, wallet or agent needs to connect to Celo Mainnet and the Celo Sepolia testnet. The same values are published as JSON at [`/assets/celo-identifiers.json`](https://docs.celo.org/assets/celo-identifiers.json) for tools that read them programmatically.
+The identifiers an app, wallet or agent needs to connect to Celo Mainnet and the Celo Sepolia testnet.
 
 ## Celo Mainnet
 
@@ -22,18 +22,9 @@ The identifiers an app, wallet or agent needs to connect to Celo Mainnet and the
 
 <AddNetworkButton network="mainnet" />
 
-### Tokens and fee currencies on Celo Mainnet
+### Fee currencies
 
-Use the **token address** to transfer or approve a token. Use the **feeCurrency address** as the `feeCurrency` field of a transaction to pay gas in that token. The two differ for USDC and USDT: they use 6 decimals, and gas is priced in 18, so they are allowlisted through an adapter contract. To pay gas in CELO, leave `feeCurrency` out.
-
-| Token | Decimals | Token address (Celo Mainnet, 42220) | feeCurrency address (Celo Mainnet, 42220) |
-| ----- | -------- | ----------------------------------- | ----------------------------------------- |
-| CELO | 18 | [`0x471EcE3750Da237f93B8E339c536989b8978a438`](https://celo.blockscout.com/address/0x471EcE3750Da237f93B8E339c536989b8978a438) | Not needed: leave `feeCurrency` out |
-| USDm | 18 | [`0x765DE816845861e75A25fCA122bb6898B8B1282a`](https://celo.blockscout.com/address/0x765DE816845861e75A25fCA122bb6898B8B1282a) | [`0x765DE816845861e75A25fCA122bb6898B8B1282a`](https://celo.blockscout.com/address/0x765DE816845861e75A25fCA122bb6898B8B1282a) (same as the token) |
-| USDC | 6 | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celo.blockscout.com/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celo.blockscout.com/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B) (adapter) |
-| USDT | 6 | [`0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`](https://celo.blockscout.com/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) | [`0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72`](https://celo.blockscout.com/address/0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72) (adapter) |
-
-The fee-currency allowlist lives in the `FeeCurrencyDirectory` contract, [`0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276`](https://celo.blockscout.com/address/0x15F344b9E6c3Cb6F0376A36A64928b13F62C6276) on Celo Mainnet. Every allowlisted token is on the [fee currency contracts](/build/tools/contracts/fee-currencies) page, and every stablecoin on [stablecoin contracts](/build/tools/contracts/stablecoin-contracts).
+To pay gas in a token other than CELO, set the transaction's `feeCurrency` field. USDC, USD₮ and USA₮ use 6 decimals, so they pass an adapter address as `feeCurrency`, not the token address. The addresses for both networks are on the [fee currency contracts](/build/tools/contracts/fee-currencies) page.
 
 ## Celo Sepolia Testnet
 
@@ -52,19 +43,6 @@ The fee-currency allowlist lives in the `FeeCurrencyDirectory` contract, [`0x15F
 
 <AddNetworkButton network="sepolia" />
 
-### Tokens and fee currencies on Celo Sepolia
-
-The token and feeCurrency addresses differ in the same way as on mainnet.
-
-| Token | Decimals | Token address (Celo Sepolia, 11142220) | feeCurrency address (Celo Sepolia, 11142220) |
-| ----- | -------- | -------------------------------------- | -------------------------------------------- |
-| CELO | 18 | [`0x471EcE3750Da237f93B8E339c536989b8978a438`](https://celo-sepolia.blockscout.com/address/0x471EcE3750Da237f93B8E339c536989b8978a438) | Not needed: leave `feeCurrency` out |
-| USDm | 18 | [`0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`](https://celo-sepolia.blockscout.com/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b) | [`0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`](https://celo-sepolia.blockscout.com/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b) (same as the token) |
-| USDC | 6 | [`0x01C5C0122039549AD1493B8220cABEdD739BC44E`](https://celo-sepolia.blockscout.com/address/0x01C5C0122039549AD1493B8220cABEdD739BC44E) | [`0xbf1441Ea57f43f35f713431001f35742c88071c7`](https://celo-sepolia.blockscout.com/address/0xbf1441Ea57f43f35f713431001f35742c88071c7) (adapter) |
-| USDT | 6 | [`0xd077A400968890Eacc75cdc901F0356c943e4fDb`](https://celo-sepolia.blockscout.com/address/0xd077A400968890Eacc75cdc901F0356c943e4fDb) | [`0xe19447B12cb0d0220B2a501D8382be2f61CcF92a`](https://celo-sepolia.blockscout.com/address/0xe19447B12cb0d0220B2a501D8382be2f61CcF92a) (adapter) |
-
-The `FeeCurrencyDirectory` on Celo Sepolia is [`0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF`](https://celo-sepolia.blockscout.com/address/0x9212Fb72ae65367A7c887eC4Ad9bE310BAC611BF).
-
 <Note>
 Alfajores (chain ID 44787) is retired. Use Celo Sepolia (chain ID 11142220) for testing.
 </Note>
@@ -75,7 +53,7 @@ The Celo Sepolia Testnet is designed for testing and experimentation by develope
 
 ## Related
 
-- [Fee abstraction](/build/fee-abstraction/overview) - how to pay gas in USDm, USDC or USDT from any wallet that supports `feeCurrency`
+- [Fee abstraction](/build/fee-abstraction/overview) - how to pay gas in USDm, USDC or USD₮ from any wallet that supports `feeCurrency`
 - [Fee currency contracts](/build/tools/contracts/fee-currencies) - every token on the fee-currency allowlist, read from `FeeCurrencyDirectory`
 - [Stablecoin contracts](/build/tools/contracts/stablecoin-contracts) - stablecoin addresses on both networks
 - [Celo Sepolia testnet](/build/tools/testnets/celo-sepolia/index) - faucets and testing on Celo Sepolia
