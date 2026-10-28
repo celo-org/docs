@@ -319,6 +319,7 @@
                 "group": "Wallets",
                 "pages": [
                   "build/tools/wallets/index",
+                  "build/tools/wallets/pimlico",
                   {
                     "group": "MetaMask",
                     "pages": [
