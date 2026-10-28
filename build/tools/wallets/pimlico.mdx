@@ -8,8 +8,8 @@ This page is for app and agent developers who want users to transact without hol
 
 ## Prerequisites
 
-- A Pimlico API key from the [Pimlico dashboard](https://dashboard.pimlico.io/). Sponsorship on mainnet needs a funded sponsorship policy; on Celo Sepolia the free tier sponsors test transactions.
-- Node.js 18 or later and a TypeScript project.
+- A Pimlico API key from the [Pimlico dashboard](https://dashboard.pimlico.io/). Sponsoring on mainnet needs a Pimlico paid plan with a card or balance; on Celo Sepolia sponsorship is free. A sponsorship policy is optional and only caps what you sponsor.
+- Node.js 18 or later and a TypeScript project set up as an ES module: set `"type": "module"` in `package.json` or save the script as `.mts`, because the example uses top-level `await`.
 - `permissionless` and `viem`:
 
 ```bash
@@ -82,15 +82,14 @@ console.log("transaction:", `https://celo-sepolia.blockscout.com/tx/${txHash}`);
 
 To use a Safe smart account instead of the reference SimpleAccount, replace `toSimpleSmartAccount` with `toSafeSmartAccount` from `permissionless/accounts` and pass `owners: [privateKeyToAccount(...)]` and `version: "1.4.1"`. Safe 1.4.1 and the Safe 4337 module are deployed on both Celo networks.
 
-## Let users pay gas in USDC or USDT
+## Let users pay gas in USDC or USD₮
 
-Pimlico's ERC-20 paymaster charges the smart account in a token instead of sponsoring. On Celo mainnet it accepts USDC and USDT among others; see Pimlico's [supported tokens](https://docs.pimlico.io/references/paymaster/erc20-paymaster/supported-tokens) for the current list and addresses. Follow Pimlico's [ERC-20 paymaster guide](https://docs.pimlico.io/guides/how-to/erc20-paymaster/how-to/use-paymaster) and set the Celo chain in the URL as above. This is the smart-account equivalent of [fee abstraction](/build/fee-abstraction/overview), which does the same for externally owned accounts at the protocol level.
+Pimlico's ERC-20 paymaster charges the smart account in a token instead of sponsoring. It is available on Celo mainnet only, not on Celo Sepolia, and on Pimlico's custom plan: [Pimlico's pricing](https://docs.pimlico.io/guides/pricing) includes the ERC-20 paymaster on pay-as-you-go only for USDC on Ethereum, Polygon, Base, Optimism and Arbitrum. Contact Pimlico to enable it for Celo tokens such as USDC and USD₮; see Pimlico's [supported tokens](https://docs.pimlico.io/references/paymaster/erc20-paymaster/supported-tokens) for the current list and addresses. Follow Pimlico's [ERC-20 paymaster guide](https://docs.pimlico.io/guides/how-to/erc20-paymaster/how-to/use-paymaster) and set the Celo chain in the URL as above. This is the smart-account equivalent of [fee abstraction](/build/fee-abstraction/overview), which does the same for externally owned accounts at the protocol level.
 
 ## Troubleshooting
 
-- `AA21 didn't pay prefund` or a similar insufficient-funds error: the paymaster was not attached. Check that `paymaster: pimlicoClient` is set and that the API key has an active sponsorship policy for the chain.
-- `chain not supported` from the Pimlico endpoint: the chain in the URL is wrong. Use `42220` or `celo` for mainnet and `11142220` or `celo-sepolia` for the testnet. Alfajores is not supported.
-- Gas estimation reverts on the first transaction: the smart account is deployed in that same user operation, so the `to` contract must accept calls from a fresh address. Test with a zero-value call to your own contract first.
+- `AA21 didn't pay prefund` or a similar insufficient-funds error: the paymaster was not attached. Check that `paymaster: pimlicoClient` is set. On mainnet, check that your Pimlico plan has a balance or card attached. If you created a sponsorship policy and pass its ID, check that it covers the chain.
+- `chain not supported` from the Pimlico endpoint: the chain in the URL is wrong. Use `42220` or `celo` for mainnet and `11142220` or `celo-sepolia` for the testnet.- Gas estimation reverts on the first transaction: the smart account is deployed in that same user operation, so the `to` contract must accept calls from a fresh address. Test with a zero-value call to your own contract first.
 - The transaction hash does not appear on the explorer: the bundler returns the user operation hash first. `sendTransaction` in permissionless waits for inclusion and returns the on-chain transaction hash; if you call `sendUserOperation` directly, wait with `waitForUserOperationReceipt`.
 
 ## Resources
