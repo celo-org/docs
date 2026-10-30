@@ -1,0 +1,38 @@
+---
+title: "CGTv2 Upgrade"
+sidebarTitle: "CGTv2"
+description: The CGTv2 upgrade, which moves CELO from the legacy custom gas token design to the OP Stack's Custom Gas Token v2
+---
+
+## Overview
+
+The CGTv2 upgrade for the Celo network moves CELO, the network's gas token, from the OP Stack's legacy custom gas token design to Custom Gas Token v2 (CGT v2). It is a maintenance upgrade with no new features. It aligns Celo with the custom gas token design that current OP Stack releases support, so that Celo can adopt future OP Stack upgrades.
+
+## Specifications
+
+Optimism introduced CGT v2 for new chains in Upgrade 18 (op-contracts v6.0.0) without a migration path for chains on the legacy design. The Celo CGTv2 upgrade adds that migration for Celo. For full technical details of CGT v2, see the Optimism documentation linked below.
+
+- [Optimism's Custom Gas Token documentation](https://docs.optimism.io/op-stack/features/custom-gas-token)
+- [Optimism's Custom Gas Token Specifications](https://specs.optimism.io/protocol/custom-gas-token/overview.html)
+- [Optimism's Upgrade 18 Notice](https://docs.optimism.io/notices/archive/upgrade-18)
+
+### L1 Contract changes
+
+The L1 contracts are upgraded to op-contracts v6.0.0 in one governance transaction. The L1 CELO held by `OptimismPortal2` moves into a new `CeloGasBridgeL1` escrow contract, and the custom gas token mode is enabled. CELO deposits go through `CeloGasBridgeL1` instead of `OptimismPortal2.depositERC20Transaction()`, which is removed.
+
+The governance proposal is TBD.
+
+### L2 changes
+
+At activation, upgrade transactions add the CGT v2 predeploys `LiquidityController` and `NativeAssetLiquidity`, which hold and release native CELO, and the Celo-specific `CeloGasBridgeL2`, which pairs with `CeloGasBridgeL1`. CELO withdrawals start from `CeloGasBridgeL2` instead of `L2ToL1MessagePasser`.
+
+Native CELO and the CELO ERC-20 are unchanged, so [token duality](/operate/specification/token-duality) works as before.
+
+## Upgrade Timelines
+
+The CGTv2 upgrade will activate on Celo Sepolia first and then on Mainnet, with the activation process for each network occurring independently.
+
+| Network      | Date & Time (UTC) |
+| ------------ | ----------------- |
+| Celo Sepolia | TBD               |
+| Mainnet      | TBD               |
