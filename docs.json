@@ -460,6 +460,7 @@
             "group": "Network Notices",
             "pages": [
               "operate/notices/overview",
+              "operate/notices/cgtv2-upgrade",
               "operate/notices/op-geth-deprecation",
               "operate/notices/req-resp-cl-sync-deprecation",
               {
@@ -526,6 +527,7 @@
           {
             "group": "Protocol Upgrades",
             "pages": [
+              "operate/specification/upgrades/cgtv2",
               "operate/specification/upgrades/jovian",
               "operate/specification/upgrades/jello",
               "operate/specification/upgrades/ice-cream",

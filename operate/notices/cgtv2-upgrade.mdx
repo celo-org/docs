@@ -1,0 +1,41 @@
+---
+title: "CGTv2 Hardfork"
+description: Changes for node operators and bridges in the CGTv2 hardfork, which moves CELO to the OP Stack's Custom Gas Token v2 design
+---
+
+This page outlines changes related to the CGTv2 Upgrade for node operators, bridges and other integrators of the native CELO bridge.
+
+<Note>
+CGTv2 activation dates are TBD.
+
+- Celo Sepolia testnet activation: TBD
+- **Mainnet** activation: TBD
+</Note>
+
+## What is the CGTv2 Hardfork?
+
+The CGTv2 Hardfork is a maintenance upgrade. It moves CELO, Celo's gas token, from the OP Stack's legacy custom gas token design to [Custom Gas Token v2](https://docs.optimism.io/op-stack/features/custom-gas-token) (CGT v2), the design that current OP Stack releases support. It adds no new features. It brings Celo in line with the OP Stack so that Celo can adopt future OP Stack upgrades.
+
+Key changes include:
+
+- **New CELO bridge**: CELO moves between Ethereum and Celo through a dedicated bridge, `CeloGasBridgeL1` on Ethereum and `CeloGasBridgeL2` on Celo, instead of through `OptimismPortal2` directly. The L1 CELO held by `OptimismPortal2` moves into `CeloGasBridgeL1`.
+- **L1 contract upgrade**: The L1 contracts are upgraded to the OP Stack contracts that support CGT v2 ([op-contracts v6.0.0](https://docs.optimism.io/notices/archive/upgrade-18)).
+- **New L2 predeploys**: The upgrade adds the CGT v2 predeploys that hold and release native CELO for the bridge.
+
+For the full technical specification, see the [CGTv2 upgrade spec](/operate/specification/upgrades/cgtv2).
+
+## For Bridges and Users
+
+Users and apps on Celo do not need to do anything. CELO stays the native gas token, and [token duality](/operate/specification/token-duality) is unchanged: the CELO ERC-20 on Celo shows the same balance as the native balance.
+
+Bridges, exchanges and other services that move CELO between Ethereum and Celo through the native bridge must update their integration:
+
+1. Deposits (Ethereum to Celo) use `CeloGasBridgeL1.deposit()` instead of `OptimismPortal2.depositERC20Transaction()`, which is removed.
+2. Withdrawals (Celo to Ethereum) start with `CeloGasBridgeL2.withdraw()` instead of `L2ToL1MessagePasser.initiateWithdrawal()`. Proving and finalizing still happen on `OptimismPortal2`.
+3. Withdrawals started before the upgrade must be finalized before it. A withdrawal that was started under the legacy design and not finalized before the upgrade cannot be paid out afterwards.
+
+Other ERC-20 tokens keep using `L1StandardBridge` and `L2StandardBridge`. Contract addresses and the cutoff date for legacy withdrawals will be published on this page before the upgrade.
+
+## For Node Operators
+
+Node operators will need to upgrade to the CGTv2 releases before the activation dates. The releases are TBD. For current versions see [Network config](/operate/operators/network-config).
