@@ -26,13 +26,13 @@ For the full technical specification, see the [CGTv2 upgrade spec](/operate/spec
 
 ## For Bridges and Users
 
-Users and apps on Celo do not need to do anything. CELO stays the native gas token, and [token duality](/operate/specification/token-duality) is unchanged: the CELO ERC-20 on Celo shows the same balance as the native balance.
+Users and apps on Celo do not need to do anything, unless they have a CELO withdrawal to Ethereum in progress (see step 3 below). CELO stays the native gas token, and [token duality](/operate/specification/token-duality) is unchanged: the CELO ERC-20 on Celo shows the same balance as the native balance.
 
 Bridges, exchanges and other services that move CELO between Ethereum and Celo through the native bridge must update their integration:
 
 1. Deposits (Ethereum to Celo) use `CeloGasBridgeL1.deposit()` instead of `OptimismPortal2.depositERC20Transaction()`, which is removed.
 2. Withdrawals (Celo to Ethereum) start with `CeloGasBridgeL2.withdraw()` instead of `L2ToL1MessagePasser.initiateWithdrawal()`. Proving and finalizing still happen on `OptimismPortal2`.
-3. Withdrawals started before the upgrade must be finalized before it. A withdrawal that was started under the legacy design and not finalized before the upgrade cannot be paid out afterwards.
+3. Withdrawals started before the upgrade must be finalized before it. A withdrawal that was started under the legacy design and not finalized before the upgrade cannot be paid out afterwards. Finalizing needs a proof and the challenge window (about 7 days on mainnet) first, so start any withdrawal well before the cutoff.
 
 Other ERC-20 tokens keep using `L1StandardBridge` and `L2StandardBridge`. Contract addresses and the cutoff date for legacy withdrawals will be published on this page before the upgrade.
 
