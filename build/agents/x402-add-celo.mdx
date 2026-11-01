@@ -1,0 +1,151 @@
+---
+title: "x402: Add Celo to your endpoint"
+sidebarTitle: "x402: Add Celo"
+description: Accept USDC, USDT and USA₮ on Celo from an existing x402 endpoint by adding Celo offers and the Celo facilitator next to the network you already use
+---
+
+This page is for developers who already sell an API over [x402](/build/agents/x402) on another network and want agents on Celo to pay for it too. The existing network keeps working: you add offers for Celo to the same route, point those offers at the Celo facilitator, and check the result with one command. Buyers pay in stablecoins and need no CELO, and the facilitator pays the gas.
+
+## Prerequisites
+
+- A resource server built on the x402 v2 packages, on Node.js 20 or later: `@x402/express` (or `@x402/hono`), `@x402/core` and `@x402/evm`. If you run x402 v1, see the [network names under Troubleshooting](#troubleshooting).
+- A wallet address that can receive funds on Celo. An EOA works as is. A smart contract wallet only works if it is deployed at that address on Celo.
+- A Celo facilitator API key, set as `X402_API_KEY`. [Create one on the dashboard](/build/agents/x402#getting-an-api-key). Without it the 402 still works, and `/settle` fails with `401`.
+
+## How it works
+
+A route's `accepts` list can name more than one network. The buyer picks the offer it can pay and signs for that token. The resource server takes several facilitators and sends each payment to the one that supports its network, so Celo payments go to the Celo facilitator and everything else stays where it was.
+
+Each token signs with its own EIP-712 domain, so an offer has to carry the `extra.name` and `extra.version` of that token on Celo. These values can differ between networks for the same token.
+
+## Add Celo to a route
+
+The block below sells one route on Base and on Celo. The Celo offers cover USDC, USDT and USA₮, all with 6 decimals. Accept all three: wallets funded from the [USA₮ faucet](/build/build-with-usat) hold only USA₮, and a seller that does not offer it cannot sell to them.
+
+```ts
+// Base (8453) and Celo mainnet (42220). Node 20+. npm i express @x402/express @x402/core @x402/evm
+import express from "express";
+import { paymentMiddleware, x402ResourceServer } from "@x402/express";
+import { HTTPFacilitatorClient, type RoutesConfig } from "@x402/core/server";
+import { ExactEvmScheme } from "@x402/evm/exact/server";
+
+const payTo = "0xYourSellerPayoutAddress"; // example
+
+// The facilitator you use today
+const existingFacilitator = new HTTPFacilitatorClient({ url: process.env.FACILITATOR_URL! });
+
+// Celo's hosted facilitator. Note the api. subdomain
+const celoFacilitator = new HTTPFacilitatorClient({
+  url: "https://api.x402.celo.org",
+  createAuthHeaders: async () => {
+    const h = { "X-API-Key": process.env.X402_API_KEY! };
+    return { verify: h, settle: h, supported: h };
+  },
+});
+
+const server = new x402ResourceServer([existingFacilitator, celoFacilitator])
+  .register("eip155:8453", new ExactEvmScheme())
+  .register("eip155:42220", new ExactEvmScheme());
+
+// A Celo mainnet offer for $0.01 in a 6-decimal token
+const onCelo = (asset: string, name: string, version: string) => ({
+  scheme: "exact",
+  network: "eip155:42220" as const,
+  payTo,
+  price: { amount: "10000", asset, extra: { name, version } },
+});
+
+const routes: RoutesConfig = {
+  "GET /rates": {
+    accepts: [
+      { scheme: "exact", network: "eip155:8453", payTo, price: "$0.01" },
+      onCelo("0xcebA9300f2b948710d2653dD7B07f33A8B32118C", "USDC", "2"), // Celo mainnet USDC, 6 decimals
+      onCelo("0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e", "Tether USD", "1"), // Celo mainnet USDT, 6 decimals
+      onCelo("0xD2ab3C9A02DBBAB236BfEC45D1d755DF4267F771", "Tether America USD", "1"), // Celo mainnet USA₮, 6 decimals
+    ],
+    description: "Latest FX rates",
+    mimeType: "application/json",
+  },
+};
+
+const app = express();
+app.use(paymentMiddleware(routes, server));
+app.get("/rates", (_req, res) => res.json({ usd_ngn: 1500 }));
+app.listen(3000);
+```
+
+To accept a local-currency stablecoin as well, follow [Pay with Permit2 tokens](/build/agents/x402#pay-with-permit2-tokens). Those tokens use another transfer method and most use 18 decimals, so the `onCelo` helper above does not fit them.
+
+## Check the endpoint
+
+Start the server and quote the route with the [Buy](https://usebuy.ai) CLI. It reads the 402 the way a paying agent does and tells you whether each Celo offer can be paid. It needs no wallet and signs nothing.
+
+```bash
+npx @celo/buy quote http://localhost:3000/rates --token USAT
+```
+
+The USA₮ offer reports `payable` as `yes`. Abridged output:
+
+```text
+402 Payment Required — http://localhost:3000/rates  (x402 v2, 3 offers)
+
+  3. 0.01 USAT  (10000 atomic)  on celo
+     pay to       0xYourSellerPayoutAddress
+     payable      yes — matches --token USAT on celo
+
+Nothing was signed or paid. To pay: buy curl with the same arguments.
+```
+
+The count shows 3 offers because the command reads the Celo offers only. Repeat with `--token USDC` and `--token USDT`. A `yes` means the offer is well formed. It does not prove settlement, so make one real payment before you announce the endpoint.
+
+## Keep an upstream API key on the server
+
+Many paid endpoints wrap an API that the seller pays for. The buyer pays you over x402 and never sees the upstream key:
+
+```ts
+// Runs behind paymentMiddleware, so the buyer's payment is already verified.
+app.get("/rates", async (_req, res) => {
+  const upstream = await fetch(process.env.UPSTREAM_URL!, {
+    headers: { Authorization: `Bearer ${process.env.UPSTREAM_API_KEY}` },
+  });
+  if (!upstream.ok) {
+    res.status(502).json({ error: "upstream_unavailable" });
+    return;
+  }
+  res.json(await upstream.json());
+});
+```
+
+- **Store the key in the environment or a secret store.** Never put it in the 402, in the response, in logs, or in the route `description`.
+- **Return an error status when the upstream fails.** The middleware verifies the payment, runs your handler, and settles only if the handler answers with a status below 400. A `502` here means the buyer is not charged. If you return `200` with an error in the body, the buyer pays for it.
+- **Price above the upstream cost.** Your handler runs before settlement, so a payment that fails at `/settle` still costs you the upstream call. Include that in your margin, along with the [settlement fee](/build/agents/x402#getting-an-api-key).
+- **Cache where the data allows it.** FX rates cached for 30 to 60 seconds cut upstream calls and protect your rate limit. State the cache time in the `description`, so an agent knows how fresh the data is.
+- **Check that the upstream allows resale.** Read its terms before you sell its data, including free and public APIs. Some do not allow commercial use.
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Startup fails with `Facilitator does not support scheme "exact" on network "eip155:42220"` | The resource server only knows your existing facilitator | Pass both facilitators to `x402ResourceServer` as an array |
+| Requests fail with `Facilitator supported returned invalid JSON: <!doctype html>` | The URL points at the dashboard, `x402.celo.org` | Use `https://api.x402.celo.org` |
+| A signed payment gets `invalid_exact_evm_payload_signature` | `extra.name` or `extra.version` was copied from another network, for example `USD Coin` for USDC | Use the [values for Celo](/build/agents/x402#supported-payment-tokens-on-celo): USDC is `USDC`, version `2` |
+| The buyer fails with `EIP-712 domain parameters (name, version) are required in payment requirements` | The offer has an `asset` and no `extra` | Add `extra: { name, version }` to the `price` object |
+| A valid payment gets `insufficient_funds` | The buyer's wallet does not hold enough of the token in the offer it chose | Nothing to fix on your side. The more tokens you accept, the more wallets can pay |
+| `/settle` returns `401` | `X402_API_KEY` is missing or wrong | [Create a key](/build/agents/x402#getting-an-api-key) and set it in the server environment |
+| `buy quote` on an x402 v1 endpoint reports `offer is on eip155:42220, you would pay on celo` | x402 v1 names the network `celo` in the response body. x402 v2 names it `eip155:42220` in the `PAYMENT-REQUIRED` header | Use the name that matches the version your endpoint declares. `GET https://api.x402.celo.org/supported` lists both |
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| Celo x402 dashboard | [x402.celo.org](https://x402.celo.org/) |
+| Live facilitator config | [x402.celo.org/api/config](https://x402.celo.org/api/config) |
+| Buy CLI on npm | [npmjs.com/package/@celo/buy](https://www.npmjs.com/package/@celo/buy) |
+| x402 specification | [github.com/x402-foundation/x402](https://github.com/x402-foundation/x402) |
+
+## Related
+
+- [x402: Agent Payments](/build/agents/x402) - The protocol, the Celo facilitator, and the full token table
+- [x402: Get your endpoint discovered](/build/agents/x402-get-discovered) - Make the endpoint findable by agents and indexes once it accepts Celo
+- [Build with USA₮](/build/build-with-usat) - The token, its contract, and the faucet many agent wallets start from
+- [Give your agent a wallet and test funds](/build/agents/agent-wallet) - Set up a buyer to make the first real payment
