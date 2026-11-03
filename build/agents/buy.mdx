@@ -1,0 +1,97 @@
+---
+title: "buy: Pay for APIs from an agent"
+sidebarTitle: "buy (agent payments)"
+description: Let an AI agent or a CLI pay for HTTP APIs, data, and compute in stablecoins on Celo with buy, an x402 payment client
+---
+
+This page is for agent developers who want their agent, or their own scripts, to pay for paid HTTP services on Celo. [buy](https://usebuy.ai) is a payment client built by Celo: when a service answers `402 Payment Required`, buy signs a stablecoin payment with a wallet kept in your OS keychain and retries the request with the payment attached. It pays in USDC, USD₮, or USA₮ on Celo through the [x402](/build/agents/x402) flow, and works as a CLI or as an MCP server that gives an agent payment tools.
+
+<Warning>
+  buy is pre-1.0 beta software without an external security review, and it is not intended for production use. Mainnet payments are real and irreversible: use a dedicated wallet with a small balance and always set a maximum amount.
+</Warning>
+
+## Prerequisites
+
+- Node.js 22 or later. buy runs with `npx`, so there is nothing to clone or install globally.
+- For mainnet payments, a small amount of USDC, USD₮, or USA₮ on Celo mainnet in the wallet buy creates. The sandbox below needs no funds.
+
+## How it works
+
+1. Your agent or script calls a paid endpoint through buy.
+2. The service answers `402 Payment Required` with its offers: token, price, network, and recipient.
+3. buy checks the price against your maximum, signs the payment with the key in your OS keychain, and retries the request. The agent never sees the private key.
+4. The payment settles on Celo through the x402 facilitator, and buy returns the service's response.
+
+Paid calls to the buy gateway go to `https://gateway.usebuy.ai`, which holds the upstream providers' credentials, so the agent never handles a third-party API key.
+
+## Try it in the sandbox
+
+`--sandbox` runs the whole flow on Celo Sepolia with test USDC and needs no setup. On the first run buy creates a `sandbox` account, funds it with 1 test USDC from the gateway faucet, and pays the request:
+
+```bash
+# Celo Sepolia (11142220), test USDC, no real funds
+npx --yes @celo/buy@0.8.5 --sandbox curl https://gateway.usebuy.ai/v1/social/x/posts/search \
+  -X POST -H 'content-type: application/json' -d '{"query":"celo"}'
+```
+
+The faucet grants 1 test USDC per address per day, so an offer above that cannot be paid from the sandbox.
+
+## Pay on mainnet
+
+Create a dedicated wallet. Celo mainnet is the default network:
+
+```bash
+# Celo mainnet (42220)
+npx --yes @celo/buy@0.8.5 setup --name demo
+```
+
+Fund the printed address with a small amount of USDC, USD₮, or USA₮ on Celo mainnet. To see what an endpoint charges before paying, use `buy quote`: it takes the same arguments as `buy curl`, prints each offer's token, price, network and recipient, and pays nothing.
+
+Every paid call should carry `--max-amount`. buy refuses to sign when the quote is above it:
+
+```bash
+# Celo mainnet (42220), pays at most 0.02 USDC
+npx --yes @celo/buy@0.8.5 curl --max-amount 0.02 <paid-endpoint-url>
+```
+
+USDC is the default token. Add `--token USDT` or `--token USAT` to pay in one of those instead; the service must offer that token in its `402` response.
+
+## Give an agent payment tools
+
+Install the buy MCP server in your MCP clients:
+
+```bash
+npx --yes @celo/buy@0.8.5 mcp install --client all
+```
+
+The agent gets tools such as `buy_pay_quote`, `buy_curl`, `buy_balance` and `buy_whoami`. Every paid call over MCP carries a `maxAmount` and is refused before signing when the quote is above it. `buy_send`, which moves money directly, stays off unless you enable it with a budget or an allowlist.
+
+The MCP server gives an agent the ability to pay. The [buy skills](https://github.com/celo-org/buy-skill) teach it how to use that safely: read the free catalog, quote the exact request, get your approval for the price, pay once, and report the transaction hash.
+
+```bash
+npx skills add celo-org/buy-skill
+```
+
+## Troubleshooting
+
+| Error | What to do |
+|-------|------------|
+| `500 provision_failed` or `500 settle_uncertain` | Do not retry automatically: the payment may already have settled. Run `buy receipts --resolve` to ask the token contract whether it did. |
+| `unexpected_response` from `buy quote` | The route answered with something other than `402`, so it is not a paid endpoint. Check the URL. |
+| A `4xx` or `503` response | The service refused the request before settlement, so nothing was charged. |
+
+`buy receipts --account <name>` lists your local payment history, including each settlement transaction.
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| buy website and catalog | [usebuy.ai](https://usebuy.ai) |
+| `@celo/buy` on npm | [npmjs.com/package/@celo/buy](https://www.npmjs.com/package/@celo/buy) |
+| buy skills | [github.com/celo-org/buy-skill](https://github.com/celo-org/buy-skill) |
+
+## Related
+
+- [x402](/build/agents/x402) - the payment flow buy uses, and how to charge for your own API
+- [x402: Get your endpoint discovered](/build/agents/x402-get-discovered) - how to ask for a listing in the buy catalog
+- [Give your agent a wallet and test funds](/build/agents/agent-wallet) - other ways for an agent to hold and spend funds on Celo
