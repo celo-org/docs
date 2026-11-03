@@ -8,13 +8,13 @@ This page is for developers who already sell an API over [x402](/build/agents/x4
 
 ## Prerequisites
 
-- A resource server built on the x402 v2 packages, on Node.js 20 or later: `@x402/express` (or `@x402/hono`), `@x402/core` and `@x402/evm`. If you run x402 v1, see the [network names under Troubleshooting](#troubleshooting).
+- A resource server built on the x402 v2 packages, on Node.js 20 or later: `@x402/express` (or `@x402/hono`), `@x402/core` and `@x402/evm`. This page was tested with `@x402/express`, `@x402/core` and `@x402/evm` 2.29.0 and `express` 5.3.0. If you run x402 v1, see the [network names under Troubleshooting](#troubleshooting).
 - A wallet address that can receive funds on Celo. An EOA works as is. A smart contract wallet only works if it is deployed at that address on Celo.
 - A Celo facilitator API key, set as `X402_API_KEY`. [Create one on the dashboard](/build/agents/x402#getting-an-api-key). Without it the 402 still works, and `/settle` fails with `401`.
 
 ## How it works
 
-A route's `accepts` list can name more than one network. The buyer picks the offer it can pay and signs for that token. The resource server takes several facilitators and sends each payment to the one that supports its network, so Celo payments go to the Celo facilitator and everything else stays where it was.
+A route's `accepts` list can name more than one network. The buyer picks the offer it can pay and signs for that token. The resource server takes several facilitators and, for each network, uses the first one in the list that supports it. Put the Celo facilitator first: some facilitators also support Celo, and listed first they would take the Celo payments. Every other network stays with the facilitator you use today.
 
 Each token signs with its own EIP-712 domain, so an offer has to carry the `extra.name` and `extra.version` of that token on Celo. These values can differ between networks for the same token.
 
@@ -31,7 +31,8 @@ import { ExactEvmScheme } from "@x402/evm/exact/server";
 
 const payTo = "0xYourSellerPayoutAddress"; // example
 
-// The facilitator you use today
+// Stands in for the facilitator client you already have. Reuse that client
+// as configured: building a new one from its URL drops any createAuthHeaders.
 const existingFacilitator = new HTTPFacilitatorClient({ url: process.env.FACILITATOR_URL! });
 
 // Celo's hosted facilitator. Note the api. subdomain
@@ -43,7 +44,8 @@ const celoFacilitator = new HTTPFacilitatorClient({
   },
 });
 
-const server = new x402ResourceServer([existingFacilitator, celoFacilitator])
+// Celo first: for each network the server uses the first facilitator that supports it
+const server = new x402ResourceServer([celoFacilitator, existingFacilitator])
   .register("eip155:8453", new ExactEvmScheme())
   .register("eip155:42220", new ExactEvmScheme());
 
@@ -96,14 +98,15 @@ The USA₮ offer reports `payable` as `yes`. Abridged output:
 Nothing was signed or paid. To pay: buy curl with the same arguments.
 ```
 
-The count shows 3 offers because the command reads the Celo offers only. Repeat with `--token USDC` and `--token USDT`. A `yes` means the offer is well formed. It does not prove settlement, so make one real payment before you announce the endpoint.
+The count shows 3 offers because the command reads the Celo offers only. Repeat with `--token USDC` and `--token USDT`. A `yes` means the offer matches the network, token and scheme Buy pays with. It does not prove settlement, so make one real payment before you announce the endpoint.
 
 ## Keep an upstream API key on the server
 
-Many paid endpoints wrap an API that the seller pays for. The buyer pays you over x402 and never sees the upstream key:
+Many paid endpoints wrap an API that the seller pays for. The buyer pays you over x402 and never sees the upstream key. This handler replaces the `/rates` handler in the example above:
 
 ```ts
-// Runs behind paymentMiddleware, so the buyer's payment is already verified.
+// Replaces the /rates handler above. Runs behind paymentMiddleware, so the
+// buyer's payment is already verified.
 app.get("/rates", async (_req, res) => {
   const upstream = await fetch(process.env.UPSTREAM_URL!, {
     headers: { Authorization: `Bearer ${process.env.UPSTREAM_API_KEY}` },
@@ -126,7 +129,8 @@ app.get("/rates", async (_req, res) => {
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Startup fails with `Facilitator does not support scheme "exact" on network "eip155:42220"` | The resource server only knows your existing facilitator | Pass both facilitators to `x402ResourceServer` as an array |
+| Startup fails with `Facilitator does not support scheme "exact" on network "eip155:42220"` | The resource server only knows your existing facilitator | Pass both facilitators to `x402ResourceServer` as an array, the Celo one first |
+| Celo payments settle through your existing facilitator, or fail there | That facilitator also supports Celo and is listed first | Put the Celo facilitator first in the array |
 | Requests fail with `Facilitator supported returned invalid JSON: <!doctype html>` | The URL points at the dashboard, `x402.celo.org` | Use `https://api.x402.celo.org` |
 | A signed payment gets `invalid_exact_evm_payload_signature` | `extra.name` or `extra.version` was copied from another network, for example `USD Coin` for USDC | Use the [values for Celo](/build/agents/x402#supported-payment-tokens-on-celo): USDC is `USDC`, version `2` |
 | The buyer fails with `EIP-712 domain parameters (name, version) are required in payment requirements` | The offer has an `asset` and no `extra` | Add `extra: { name, version }` to the `price` object |
