@@ -257,3 +257,25 @@ https://celo.publicnode.com
 <Card href="https://boltrpc.io/networks/celo" arrow title="BoltRPC">
 https://boltrpc.io/networks/celo
 </Card>
+
+### eRPC
+
+[eRPC](https://github.com/erpc/erpc) is an open-source, self-hosted RPC proxy. It sits in front of several Celo endpoints, such as [Forno](/build/tools/nodes/forno) and [dRPC](#drpc), fails over between them, retries failed requests, and caches responses.
+
+```yaml erpc.yaml
+projects:
+  - id: main
+    upstreams:
+      - endpoint: https://forno.celo.org
+      - endpoint: https://celo.drpc.org
+```
+
+Run `docker run -p 4000:4000 -v $(pwd)/erpc.yaml:/erpc.yaml ghcr.io/erpc/erpc:latest`, then send requests to `http://localhost:4000/main/evm/42220`.
+
+#### Supported networks
+
+- Celo Mainnet
+
+<Card href="https://github.com/erpc/erpc" arrow title="eRPC">
+https://github.com/erpc/erpc
+</Card>
