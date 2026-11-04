@@ -43,7 +43,7 @@ Nightfall uses **zero-knowledge rollup (ZK-ZK rollup)** technology to batch priv
 
 ### Token Support
 
-- **ERC-20**: Stablecoins (USDT, USDC) and other fungible tokens
+- **ERC-20**: Stablecoins (USD₮, USDC) and other fungible tokens
 - **ERC-721**: Non-fungible tokens (NFTs)
 - **ERC-1155**: Multi-token standard
 - **ERC-3525**: Semi-fungible tokens
@@ -177,7 +177,7 @@ Update the following variables in `celo-sepolia.env`:
 `CLIENT_ADDRESS` must be funded on Celo Sepolia with:
 
 - **CELO for gas** on deposit and de-escrow transactions. Get it from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia).
-- **A balance of whichever token you intend to deposit.** For example, to move USDT into Nightfall, `CLIENT_ADDRESS` must hold USDT on Celo Sepolia.
+- **A balance of whichever token you intend to deposit.** For example, to move USD₮ into Nightfall, `CLIENT_ADDRESS` must hold USD₮ on Celo Sepolia.
 
 The client calls `approve()` and `transferFrom()` on your behalf when you submit a deposit — no manual approval step is needed.
 

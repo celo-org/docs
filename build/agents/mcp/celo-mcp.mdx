@@ -111,7 +111,7 @@ Using the Celo MCP server, what is the current gas fee data on Celo mainnet?
 ### Balances and fees
 
 - **`get_celo_balances`** — CELO plus the core Mento stablecoins for an address; symbols are read from each contract on chain, so they come back as `USDm`, `EURm` and `BRLm`
-- **`get_stable_token_balance`** — a wider set of tokens in one multicall: CELO, the Mento stablecoins, and USDC, USDT, USDGLO, cKES and others; symbols come from the server's built-in token table, so the same three stablecoins are reported as `cUSD`, `cEUR` and `cREAL`
+- **`get_stable_token_balance`** — a wider set of tokens in one multicall: CELO, the Mento stablecoins, and USDC, USD₮, USDGLO, cKES and others; symbols come from the server's built-in token table, so the same three stablecoins are reported as `cUSD`, `cEUR` and `cREAL`
 - **`get_token_balance`** — the balance of one specific token for an address
 - **`get_gas_fee_data`** — current gas fees, including EIP-1559 fields
 
