@@ -98,7 +98,7 @@ Once live, your app code travels through the standard x402 `builder-code` extens
 - The client echoes it in the payment payload; a client paying on its own behalf adds its code under `extensions["builder-code"].info.s`.
 - The facilitator reads both, adds its own `w`, and appends the suffix to the settlement calldata.
 
-You can declare the code now: it is ignored until the facilitator update ships, then applied automatically. It applies to x402 v2 payments only (v1 has no `extensions` field) and, at first, to settlements in USDC, USDT and USAT.
+You can declare the code now: it is ignored until the facilitator update ships, then applied automatically. It applies to x402 v2 payments only (v1 has no `extensions` field) and, at first, to settlements in USDC, USD₮ and USA₮.
 
 ## Verifying It Worked
 
