@@ -58,9 +58,9 @@ Agents on Celo can charge and pay for services over plain HTTP, settling in stab
 
 - **[x402](/build/agents/x402)** gives meaning to the HTTP `402 Payment Required` status code, letting an agent settle a stablecoin micropayment inline with the request.
 - **[MPP (Machine Payments Protocol)](/build/agents/mpp)** is a separate protocol that uses the same `402` flow, so any service can charge USDC per request. On Celo, it settles through the same hosted facilitator as x402 — the buyer pays no gas.
-- **[buy](/build/agents/buy)** is Celo's x402 payment client: it lets an agent or a script pay for paid HTTP APIs in stablecoins, with a spending cap on every call.
+- **[buy](/build/agents/buy)** is Celo's x402 payment client: it lets an agent or a script pay for paid HTTP APIs in stablecoins, with a per-call spending cap you set (`--max-amount`).
 
-Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce. A paid API, MCP server, or bot can also carry its own ERC-8004 identity, so agents can discover it and rate it — see [Register a service](/build/agents/8004#register-a-service).
+x402 and MPP settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce. A paid API, MCP server, or bot can also carry its own ERC-8004 identity, so agents can discover it and rate it — see [Register a service](/build/agents/8004#register-a-service).
 
 ## Giving an agent a wallet
 
