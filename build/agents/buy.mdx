@@ -50,21 +50,24 @@ Fund the printed address with a small amount of USDC, USD₮, or USA₮ on Celo 
 Every paid call should carry `--max-amount`. buy refuses to sign when the quote is above it:
 
 ```bash
-# Celo mainnet (42220), pays at most 0.02 USDC
-npx --yes @celo/buy@0.8.5 curl --max-amount 0.02 <paid-endpoint-url>
+# Celo mainnet (42220), pays at most 0.01 USDC
+npx --yes @celo/buy@0.8.5 curl --max-amount 0.01 https://gateway.usebuy.ai/v1/social/x/posts/search \
+  -X POST -H 'content-type: application/json' -d '{"query":"celo"}'
 ```
 
 USDC is the default token. Add `--token USDT` or `--token USAT` to pay in one of those instead; the service must offer that token in its `402` response.
 
 ## Give an agent payment tools
 
-Install the buy MCP server in your MCP clients:
+Register the buy MCP server with Claude Code and Codex:
 
 ```bash
 npx --yes @celo/buy@0.8.5 mcp install --client all
 ```
 
-The agent gets tools such as `buy_pay_quote`, `buy_curl`, `buy_balance` and `buy_whoami`. Every paid call over MCP carries a `maxAmount` and is refused before signing when the quote is above it. `buy_send`, which moves money directly, stays off unless you enable it with a budget or an allowlist.
+For any other MCP client, configure `npx --yes @celo/buy@0.8.5 mcp serve` as a stdio server.
+
+The agent gets tools such as `buy_pay_quote`, `buy_curl`, `buy_balance` and `buy_whoami`. Pass `maxAmount` on every paid call: it is optional, in atomic units (`20000` is 0.02 USDC), and without it the call is capped only by the account's daily cap, if you set one with `buy account cap <name> <amount>`. `buy_send`, which moves money directly, is off by default. To turn it on, set `BUY_MCP_ENABLE_SEND=1`, `BUY_MCP_SEND_ACCOUNT`, and either `BUY_MCP_SEND_BUDGET` or `BUY_MCP_SEND_ALLOWLIST`.
 
 The MCP server gives an agent the ability to pay. The [buy skills](https://github.com/celo-org/buy-skill) teach it how to use that safely: read the free catalog, quote the exact request, get your approval for the price, pay once, and report the transaction hash.
 
@@ -78,7 +81,9 @@ npx skills add celo-org/buy-skill
 |-------|------------|
 | `500 provision_failed` or `500 settle_uncertain` | Do not retry automatically: the payment may already have settled. Run `buy receipts --resolve` to ask the token contract whether it did. |
 | `unexpected_response` from `buy quote` | The route answered with something other than `402`, so it is not a paid endpoint. Check the URL. |
-| A `4xx` or `503` response | The service refused the request before settlement, so nothing was charged. |
+| `amount_exceeds_max` | The quote is above your `--max-amount` (or `maxAmount`). Nothing was signed. Raise the cap only if the price is expected. |
+| `insufficient_balance` | The wallet holds less than the price. Nothing was signed. Fund the account. |
+| A `4xx` or `503` response | With `paymentSettled: false` in the body, or no `X-PAYMENT-RESPONSE` header, the request was refused before settlement. Otherwise it may have been charged: check for a receipt, or run `buy receipts --resolve`, before retrying, and do not retry automatically. |
 
 `buy receipts --account <name>` lists your local payment history, including each settlement transaction.
 
