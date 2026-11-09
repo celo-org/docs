@@ -27,16 +27,16 @@ DeFi apps (lending, borrowing, savings and similar) are for projects with a long
 
 ### Stablecoins are the only assets
 
-MiniPay holds USDm, USDC and USDT — no CELO balance is shown to the user. Price and settle in one of these.
+MiniPay holds USDm, USDC and USD₮ — no CELO balance is shown to the user. Price and settle in one of these.
 
 | Token | Celo mainnet (42220) | Decimals |
 |---|---|---|
 | USDm | [`0x765DE816845861e75A25fCA122bb6898B8B1282a`](https://celoscan.io/address/0x765DE816845861e75A25fCA122bb6898B8B1282a) | 18 |
 | USDC | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C) | 6 |
-| USDT | [`0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`](https://celoscan.io/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) | 6 |
+| USD₮ | [`0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`](https://celoscan.io/address/0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e) | 6 |
 
 <Warning>
-USDC and USDT use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a USDC transfer sends 10¹² times the intended amount. Pass the token's decimals explicitly.
+USDC and USD₮ use **6 decimals**; USDm uses 18. `parseUnits(amount, 18)` on a USDC transfer sends 10¹² times the intended amount. Pass the token's decimals explicitly.
 </Warning>
 
 ```ts
@@ -208,7 +208,7 @@ Everything below lives at docs.minipay.xyz and is maintained by the MiniPay team
 
 **Technical reference**
 - [Retrieve balance](https://docs.minipay.xyz/technical-references/retrieve-balance.html)
-- [Send a transaction](https://docs.minipay.xyz/technical-references/send-transaction.html) — USDC, USDT, USDm with wagmi
+- [Send a transaction](https://docs.minipay.xyz/technical-references/send-transaction.html) — USDC, USD₮, USDm with wagmi
 - [Gas estimation](https://docs.minipay.xyz/technical-references/gas-estimation.html)
 - [Transaction status](https://docs.minipay.xyz/technical-references/transaction-status.html)
 - [Phone number lookup](https://docs.minipay.xyz/technical-references/phone-number-lookup.html)
@@ -223,7 +223,7 @@ Everything below lives at docs.minipay.xyz and is maintained by the MiniPay team
 
 ## Related
 
-- [Fee abstraction](/build/fee-abstraction/overview) - How gas in stablecoins works and the adapter addresses for USDC and USDT
+- [Fee abstraction](/build/fee-abstraction/overview) - How gas in stablecoins works and the adapter addresses for USDC and USD₮
 - [Fee currency contracts](/build/tools/contracts/fee-currencies) - Token and adapter addresses per network
 - [Build with local stablecoins](/build/build-with-local-stablecoin) - Mento stablecoins beyond USDm
 - [SocialConnect](/build/build-on-socialconnect) - Phone-number to address mapping
