@@ -83,7 +83,7 @@ npx skills add celo-org/buy-skill
 | `unexpected_response` from `buy quote` | The route answered with something other than `402`, so it is not a paid endpoint. Check the URL. |
 | `amount_exceeds_max` | The quote is above your `--max-amount` (or `maxAmount`). Nothing was signed. Raise the cap only if the price is expected. |
 | `insufficient_balance` | The wallet holds less than the price. Nothing was signed. Fund the account. |
-| A `4xx` or `503` response | With `paymentSettled: false` in the body, or no `X-PAYMENT-RESPONSE` header, the request was refused before settlement. Otherwise it may have been charged: check for a receipt, or run `buy receipts --resolve`, before retrying, and do not retry automatically. |
+| A `4xx` or `503` response | If the body says `paymentSettled: false` (buy gateway), the request was refused before settlement. If buy printed `the paid request ended with HTTP …; the payment may have settled`, run `buy receipts --resolve` before paying again, and do not retry automatically. |
 
 `buy receipts --account <name>` lists your local payment history, including each settlement transaction.
 
