@@ -25,13 +25,13 @@ celocli network:whitelist --node celo
 
 ## Adapters for non-18-decimal tokens
 
-Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapters are used when a token has decimals other than 18 (e.g., USDC and USDT use 6 decimals). The Celo blockchain calculates gas pricing in 18 decimals, so adapters normalize the value.
+Allowlisted addresses may be **adapters** rather than full ERC20 tokens. Adapters are used when a token has decimals other than 18 (e.g., USDC and USD₮ use 6 decimals). The Celo blockchain calculates gas pricing in 18 decimals, so adapters normalize the value.
 
 - **For transfers**: use the token address as usual.
 - **For `feeCurrency`**: use the adapter address.
 - **For `balanceOf`**: querying via the adapter returns the balance as if the token had 18 decimals — useful for checking whether an account can cover gas without converting units.
 
-To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USDT and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
+To get the underlying token address for an adapter, call `adaptedToken()` on the adapter contract. Newer adapters — including the USD₮ and USA₮ ones — expose this as `getAdaptedToken()` instead, so try both if the first call reverts.
 
 For more on gas pricing, see [Transaction Fees](/operate/specification/transaction-fees).
 
@@ -57,9 +57,9 @@ celocli transfer:erc20 \
   --privateKey [PRIVATE_KEY]
 ```
 
-When using USDC, USDT, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals, so pass `--value` in units of `10^6` (e.g. `1000000` = 1 USDT/USDC/USA₮).
+When using USDC, USD₮, or USA₮, use the **adapter address** (not the token address) as `--gasCurrency`. All three tokens use 6 decimals, so pass `--value` in units of `10^6` (e.g. `1000000` = 1 USD₮/USDC/USA₮).
 
-Transfer 1 USDT using USDT as the fee currency:
+Transfer 1 USD₮ using USD₮ as the fee currency:
 ```bash
 # Celo mainnet (42220): token 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e (USDT, 6 decimals), fee currency 0x0E2A3e05bc9A16F5292A6170456A710cb89C6f72 (USDT adapter, 18 decimals)
 # --from and --to are example Celo mainnet addresses; use your own.
@@ -81,7 +81,7 @@ A key passed with `--privateKey` stays in your shell history, and other users on
 
 We recommend [viem](https://viem.sh/), which serializes CIP-64 natively when you pass a Celo chain from `viem/chains`. Ethers.js and web3.js do not support the field on their own; use the [Celo Ethers.js wrapper](/build/tools/libraries-sdks/ethers) or the [web3 transaction-types plugin](/build/tools/libraries-sdks/web3). Whichever library you use, the wallet that signs the transaction must also support CIP-64; see [wallet support](/build/fee-abstraction/overview#wallet-support-for-cip-64).
 
-To run the scripts below, install viem with `npm install viem`, save each script as an `.mjs` file (they use `import` and top-level `await`), and run it with `node`. They target Celo mainnet and use USDC. For USDT or USA₮, replace the token and adapter addresses with that token's pair from [Fee currency contracts](/build/tools/contracts/fee-currencies); both tokens have 6 decimals, so the math stays the same.
+To run the scripts below, install viem with `npm install viem`, save each script as an `.mjs` file (they use `import` and top-level `await`), and run it with `node`. They target Celo mainnet and use USDC. For USD₮ or USA₮, replace the token and adapter addresses with that token's pair from [Fee currency contracts](/build/tools/contracts/fee-currencies); both tokens have 6 decimals, so the math stays the same.
 
 ### Estimate the gas fee
 
@@ -91,7 +91,7 @@ Before sending, estimate the transaction fee so the UI can reserve that amount a
 The gas price returned from the RPC is always expressed in 18 decimals, regardless of the fee currency.
 </Note>
 
-Use the adapter address (for USDC/USDT/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
+Use the adapter address (for USDC/USD₮/USA₮) or token address (for USDm, EURm, BRLm) as the `feeCurrency` value when estimating.
 ```js
 import {
   createPublicClient,
@@ -144,7 +144,7 @@ console.log(`Estimated fee: ${formatEther(fee)}`);
 
 ### Prepare the transaction
 
-Set `feeCurrency` to the adapter address (USDC/USDT/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/learn/protocol/transactions/transaction-types) compliant.
+Set `feeCurrency` to the adapter address (USDC/USD₮/USA₮) or token address (USDm, EURm, BRLm). Use transaction type `123` (`0x7b`), which is [CIP-64](/learn/protocol/transactions/transaction-types) compliant.
 ```js
 let tx = {
   // ... other transaction fields
@@ -224,11 +224,11 @@ console.log(`Sent: ${hash}`);
 
 | Symptom | Cause and fix |
 |---|---|
-| `fee currency not registered: 0x…` from `eth_estimateGas` | The `feeCurrency` value is not on the allowlist. For USDC, USDT and USA₮ it is usually the token address: use the adapter address from [Fee currency contracts](/build/tools/contracts/fee-currencies). The zero address is not an alias for CELO either; omit `feeCurrency` to pay in CELO. |
+| `fee currency not registered: 0x…` from `eth_estimateGas` | The `feeCurrency` value is not on the allowlist. For USDC, USD₮ and USA₮ it is usually the token address: use the adapter address from [Fee currency contracts](/build/tools/contracts/fee-currencies). The zero address is not an alias for CELO either; omit `feeCurrency` to pay in CELO. |
 | `execution reverted: Currency not in the directory` from `eth_gasPrice` | Same cause: the address passed as the `feeCurrency` parameter is a token address, not an adapter or directory entry. |
 | `could not convert from native to fee currency (fee-currency=0x…): unregistered fee-currency address` from `eth_maxPriorityFeePerGas` | Same cause: pass the adapter address, not the token address. |
 | The transaction succeeds but gas was charged in CELO, or fails with an insufficient-funds error although the user holds the stablecoin | The wallet dropped `feeCurrency`. Check [wallet support for CIP-64](/build/fee-abstraction/overview#wallet-support-for-cip-64). |
-| A transfer or fee is 10¹² times too large or too small | USDC, USDT and USA₮ have 6 decimals, but `eth_gasPrice` and `balanceOf` on the adapter report 18 decimals. Use 6 decimals for token transfers and 18 for gas math. |
+| A transfer or fee is 10¹² times too large or too small | USDC, USD₮ and USA₮ have 6 decimals, but `eth_gasPrice` and `balanceOf` on the adapter report 18 decimals. Use 6 decimals for token transfers and 18 for gas math. |
 
 Where to set the fee currency:
 
