@@ -21,6 +21,7 @@ npm i -g mint          # once
 mint dev               # preview at http://localhost:3000
 mint broken-links      # must pass before every PR; CI runs it on every PR to main
 python3 scripts/check_redirects.py  # must pass too when you touch redirects; CI runs it
+node scripts/check_components.mjs  # must pass too when you use a component; needs `mint` on PATH; CI runs it
 mint update            # if the CLI misbehaves
 ```
 
@@ -105,6 +106,7 @@ The policy, decided for the restructure: **troubleshooting-first.**
 - Internal links are root-relative with no extension: `[Fee abstraction](/build/fee-abstraction/overview)`. Never `./`, `../`, or `.mdx`. Anchors are fine: `/build/fee-abstraction/using-fee-abstraction#adapter-addresses`. `mint broken-links` does not validate anchors — check them by hand.
 - External links use the full URL. Link to the canonical source (the standard, the SDK docs, the contract on the explorer).
 - Components in use: `Card`/`CardGroup` for index and landing pages, `Tabs`/`Tab` for per-OS or per-client variants, `Accordion`/`AccordionGroup` for optional depth, `Frame` around images, `CodeGroup` for the same step in several package managers. Numbered procedures are plain markdown lists. Keep to this set so pages look alike.
+- A component must be a Mintlify built-in, imported from `/snippets/`, or defined in the page. `mint validate` and `mint broken-links` do not notice a misspelled tag (`<Notte>`); `node scripts/check_components.mjs` does. It also catches lowercase block tags such as `<aside>`, which Mintlify drops from the page.
 - Images never carry information that is not also in the text. Agents and screen readers do not see screenshots.
 
 ## 7. One fact, one page
@@ -116,13 +118,13 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Chain IDs, RPC URLs, explorers, faucet | `/learn/network/overview` | mainnet `42220`, `https://forno.celo.org`; Celo Sepolia `11142220`, `https://forno.celo-sepolia.celo-testnet.org`; faucet `https://faucet.celo.org/celo-sepolia` |
 | Block time | `/operate/specification/deployments` | "1-second blocks". Do not write "1-second finality" — see `/operate/specification/finality` |
 | Transaction cost | `/operate/specification/transaction-fees` | "below $0.01 for a typical transaction" |
-| Fee abstraction | `/build/fee-abstraction/overview` (guide), `/build/tools/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USDT or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
-| Stablecoins | `/build/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USDT, USA₮ and other issuers — "30+ stablecoins" in total |
+| Fee abstraction | `/build/fee-abstraction/overview` (guide), `/build/tools/contracts/fee-currencies` (addresses), `/operate/specification/fee-abstraction` (protocol) | pay gas in USDm, USDC, USD₮ or another allowlisted token from any EOA; no paymaster; 6-decimal tokens use the **adapter** address as `feeCurrency` |
+| Stablecoins | `/build/build-with-local-stablecoin` | 15 Mento stablecoins (USDm, EURm, BRLm, KESm, …) plus USDC, USD₮, USA₮ and other issuers — "30+ stablecoins" in total |
 | MiniPay | `/build/mini-apps/overview` | stablecoin wallet, 20M+ wallet activations in 70+ countries, Mini App discovery page, Celo only |
 | Token duality | `/operate/specification/token-duality` | CELO is both the native token and an ERC-20; no wrapping |
 | Data availability | `/operate/specification/eigenda` | EigenDA |
 | Architecture | `/learn/network/architecture` | Ethereum L2 on the OP Stack |
-| Agent payments | `/build/agents/x402`, `/build/agents/mpp` | HTTP 402 flows settled in USDC/USDT; Celo facilitator `https://api.x402.celo.org` |
+| Agent payments | `/build/agents/x402`, `/build/agents/mpp` | HTTP 402 flows settled in USDC/USD₮; Celo facilitator `https://api.x402.celo.org` |
 | Agent identity and trust | `/build/agents/8004`, `/build/agents/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
 | Human identity | `/build/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
 | Phone-number mapping | `/build/build-on-socialconnect` | SocialConnect / ODIS |
@@ -135,7 +137,7 @@ Third-party (partner) contract addresses are not listed in these docs — link t
 ### Names
 
 - `USDm`, `EURm`, `BRLm` … — Mento stablecoins, lowercase `m`. `USDM` (capital M) is Mountain Protocol's token, a different asset. Never use one for the other.
-- `USDC`, `USDT`, `USA₮`, `CELO` — as the issuers write them. Use `USDT` in prose and code (not `USD₮`).
+- `USDC`, `USD₮`, `USA₮`, `CELO` — as the issuers write them. Write `USD₮` and `USA₮` in prose, never `USDT` or `USAT`. Keep literal values as they are: CLI flags and arguments (`--token USDT`), API fields, package and contract names, EIP-712 domain strings, and on-chain `symbol()` values (USD₮ returns `USD₮`, USA₮ returns `USAT`).
 - "Celo" is the chain, "CELO" the token. "MiniPay" (one word, capital P), "Mini App" (two words). "Celo Sepolia" is the testnet.
 - Write "app", not "dApp" or "dapp", for a generic on-chain application — lowercase in prose, title case only in a page `title`. "Mini App" (two words, both capitalized) is the branded MiniPay term and keeps its casing. Product names keep their own spelling: dAppLooker, DappRadar, `@celo/dappkit`.
 - Write "fee abstraction" and "fee currency" in lowercase in prose.
