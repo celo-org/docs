@@ -56,8 +56,12 @@ jobs:
       - name: Check redirects
         run: python3 scripts/check_redirects.py
 
-      # `mintlify validate` fails on MDX syntax errors but passes a tag for a component that
-      # does not exist (`<Notte>`), which Mintlify then cannot render. Previews are not
-      # available to catch it, so this does.
+      # Mintlify silently drops a block element it does not know (`<Notte>`, `<aside>`) and
+      # fails the page on an unknown inline one, but no `mintlify` command reports either, and
+      # previews are not available. This applies Mintlify's own rule, using the parser and
+      # component list from the pinned CLI.
+      - name: Test the component check
+        run: npx -p mintlify@${{ env.MINTLIFY_VERSION }} -c 'node --test scripts/check_components.test.mjs'
+
       - name: Check for unknown components
-        run: python3 scripts/check_components.py
+        run: npx -p mintlify@${{ env.MINTLIFY_VERSION }} -c 'node scripts/check_components.mjs'

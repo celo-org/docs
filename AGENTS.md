@@ -21,7 +21,7 @@ npm i -g mint          # once
 mint dev               # preview at http://localhost:3000
 mint broken-links      # must pass before every PR; CI runs it on every PR to main
 python3 scripts/check_redirects.py  # must pass too when you touch redirects; CI runs it
-python3 scripts/check_components.py # must pass too when you use a component; CI runs it
+node scripts/check_components.mjs  # must pass too when you use a component; needs `mint` on PATH; CI runs it
 mint update            # if the CLI misbehaves
 ```
 
@@ -106,7 +106,7 @@ The policy, decided for the restructure: **troubleshooting-first.**
 - Internal links are root-relative with no extension: `[Fee abstraction](/build/fee-abstraction/overview)`. Never `./`, `../`, or `.mdx`. Anchors are fine: `/build/fee-abstraction/using-fee-abstraction#adapter-addresses`. `mint broken-links` does not validate anchors — check them by hand.
 - External links use the full URL. Link to the canonical source (the standard, the SDK docs, the contract on the explorer).
 - Components in use: `Card`/`CardGroup` for index and landing pages, `Tabs`/`Tab` for per-OS or per-client variants, `Accordion`/`AccordionGroup` for optional depth, `Frame` around images, `CodeGroup` for the same step in several package managers. Numbered procedures are plain markdown lists. Keep to this set so pages look alike.
-- A component must be a Mintlify built-in, imported from `/snippets/`, or defined in the page. `mint validate` and `mint broken-links` do not notice a misspelled tag (`<Notte>`); `python3 scripts/check_components.py` does.
+- A component must be a Mintlify built-in, imported from `/snippets/`, or defined in the page. `mint validate` and `mint broken-links` do not notice a misspelled tag (`<Notte>`); `node scripts/check_components.mjs` does. It also catches lowercase block tags such as `<aside>`, which Mintlify drops from the page.
 - Images never carry information that is not also in the text. Agents and screen readers do not see screenshots.
 
 ## 7. One fact, one page

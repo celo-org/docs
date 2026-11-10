@@ -11,10 +11,14 @@ This directory contains utility scripts for maintaining and updating the Celo do
   navigation. It only understands a trailing `/:slug*` wildcard and stops with an error on any other
   path parameter. CI runs it with its tests (`python3 -m unittest discover -s scripts -p 'test_*.py'`).
 - `check-orphans.sh` - Fails on page files that navigation does not reach. CI runs it.
-- `check_components.py` - Fails on a page that uses a component that is not a Mintlify built-in, not
-  imported and not defined in the page (`<Notte>`, `<CardGrup>`). `mintlify validate` fails on MDX syntax
-  errors but passes these. Skips code blocks, inline code and comments. The built-in list is pinned to the
-  Mintlify version CI uses; the file says how to refresh it. CI runs it with its tests.
+- `check_components.mjs` - Fails on a page that uses a component Mintlify will not render: a block element
+  whose name is not in Mintlify's component list and not defined in the page (`<Notte>`, `<CardGrup>`, and
+  lowercase block tags such as `<aside>`, which Mintlify drops with everything inside), or an unknown inline
+  component, which fails the page. It loads the parser and the list from the Mintlify CLI, so there is no list
+  to keep in sync: run it with `mint` or `mintlify` on PATH, or `npx -p mintlify@<version> -c 'node
+  scripts/check_components.mjs'`. It depends on three exports Mintlify does not document, so a rename shows up
+  as a failing step when `MINTLIFY_VERSION` is bumped. CI runs it with its tests (`node --test
+  scripts/check_components.test.mjs`).
 
 ### Generated pages
 
