@@ -192,6 +192,7 @@
               "build/agents/x402",
               "build/agents/x402-add-celo",
               "build/agents/x402-get-discovered",
+              "build/agents/vet402",
               "build/agents/mpp",
               "build/agents/celopedia",
               "build/agents/vibe-coding",

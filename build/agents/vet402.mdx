@@ -1,0 +1,49 @@
+---
+title: "vet402: Check x402 Sellers Before Paying"
+sidebarTitle: "vet402: Seller checks"
+description: Check what an x402 seller on Celo delivered in past paid purchases before an agent signs a USDC payment
+---
+
+This page is for agent developers whose agents pay x402 endpoints on Celo. vet402 is built by KIZUNA Creation, not by Celo, and it is not a Celo protocol. vet402 buys from listed x402 endpoints, including sellers that settle in USDC on Celo, re-reads each payment on chain, and records whether the paid request returned content. An agent can read that record before it signs a payment.
+
+## Prerequisites
+
+- For the npm package: Node 20 or later and `vet402` 0.1.1 or later.
+- For the hosted MCP server: an MCP client that supports streamable HTTP.
+- No API key needed. Without a key, `check()` is limited to 10 calls a minute per IP, and the hosted MCP server to 120 requests a minute per IP.
+
+## How it works
+
+1. vet402 pays a listed x402 endpoint, for example one that settles in USDC on Celo, and records the settlement transaction.
+2. It records whether the paid request answered 2xx, other than 202 Accepted, with a non-empty body.
+3. `check(url)` returns that record with an ALLOW, WARN or BLOCK recommendation, or UNKNOWN when vet402 has no record of the URL. The MCP server's `check_x402_seller` tool returns the same record, with `not_in_catalog: true` when there is none.
+
+## Check a seller from code
+
+```ts
+import { check } from "vet402"; // vet402 0.1.1 or later, Node 20 or later
+
+const r = await check("https://api.example.com/v1/quote");
+console.log(r.recommendation); // ALLOW, WARN or BLOCK, or UNKNOWN when vet402 has no record of the URL
+```
+
+## Connect the MCP server
+
+```json
+{"mcpServers":{"vet402":{"type":"http","url":"https://vet402.com/mcp"}}}
+```
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| vet402 purchases on Celo | [vet402.com/x402/chains/celo](https://vet402.com/x402/chains/celo) |
+| How to check a seller | [vet402.com/x402/check-a-seller](https://vet402.com/x402/check-a-seller) |
+| Hosted MCP server | [vet402.com/docs/mcp](https://vet402.com/docs/mcp) |
+| Source code (MIT) | [github.com/kzmttkc/vet402](https://github.com/kzmttkc/vet402) |
+| Purchase data (CC BY 4.0) | [vet402.com/api/v1/observatory/state](https://vet402.com/api/v1/observatory/state) |
+
+## Related
+
+- [x402](/build/agents/x402) - charge or pay per HTTP request in stablecoins on Celo
+- [AI Resources](/build/agents/ai-resources) - other resources for agents on Celo
