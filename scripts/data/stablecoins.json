@@ -129,6 +129,21 @@
       "mainnet_address": "0x61D450a098b6a7f69fC4b98CE68198fe59768651"
     },
     {
+      "symbol": "frxUSD",
+      "name": "Frax USD",
+      "issuer": "Frax",
+      "issuer_url": "https://frax.com/",
+      "mainnet_address": "0x00000000D61733e7A393A10A5B48c311AbE8f1E5"
+    },
+    {
+      "symbol": "sfrxUSD",
+      "name": "Staked Frax USD",
+      "_note": "Yield-bearing staked frxUSD, 18 decimals; listed with frxUSD at the issuer's request.",
+      "issuer": "Frax",
+      "issuer_url": "https://frax.com/",
+      "mainnet_address": "0x00000000fD8C4B8A413A06821456801295921a71"
+    },
+    {
       "symbol": "G$",
       "name": "GoodDollar",
       "issuer": "GoodDollar",
