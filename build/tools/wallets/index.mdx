@@ -9,6 +9,10 @@ This page lists providers for adding wallets to an app on Celo. If you hold CELO
   **Fee abstraction depends on the wallet.** Paying gas in stablecoins requires the wallet to build a CIP-64 transaction. A wallet without that support drops the app's `feeCurrency` and charges gas in CELO. See [which wallets support it](/build/fee-abstraction/overview#wallet-support-for-cip-64).
 </Note>
 
+<Note>
+  **Gas sponsorship.** To pay gas for your users through an ERC-4337 smart account, see [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico). To let users pay gas in a stablecoin without a smart account, use [fee abstraction](/build/fee-abstraction/overview).
+</Note>
+
 ## Wallet providers
 
 The list is in no particular order and is not a recommendation.
@@ -121,6 +125,17 @@ MPC wallet provider: embedded MPC wallets for users, and an SDK for the web3 fun
 
 ---
 
+### [Pimlico](https://www.pimlico.io/)
+
+ERC-4337 bundler and paymasters on Celo mainnet and Celo Sepolia: sponsor gas for smart accounts. Paying gas in USDC or USD₮ through the ERC-20 paymaster is mainnet only and on Pimlico's custom plan. Works with permissionless.js and viem.
+
+- Homepage: [pimlico.io](https://www.pimlico.io/)
+- [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico)
+- [Docs](https://docs.pimlico.io/)
+- [Source Code](https://github.com/pimlicolabs)
+
+---
+
 ### [JAW](https://jaw.id/)
 
 Smart account infrastructure with passkey-secured accounts, ENS identity, gas sponsorship, and programmable permissions for subscriptions and delegated agent execution, through a TypeScript SDK.
@@ -145,4 +160,5 @@ Smart account infrastructure with passkey-secured accounts, ENS identity, gas sp
 
 - [Wallets for users](/learn/wallets) — the wallets a holder can install
 - [Fee abstraction](/build/fee-abstraction/overview) — pay gas in stablecoins, and which wallets support it
+- [Sponsor gas with Pimlico on Celo](/build/tools/wallets/pimlico) — ERC-4337 bundler and paymaster for smart accounts
 - [Build for MiniPay](/build/mini-apps/overview) — list a Mini App inside MiniPay

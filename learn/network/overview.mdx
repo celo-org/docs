@@ -1,13 +1,11 @@
 ---
 title: Network Information
-description: How to choose a Celo network based on your needs and objectives.
+description: Chain IDs, RPC endpoints, block explorers and faucets for Celo Mainnet and Celo Sepolia
 ---
 
 import { AddNetworkButton } from '/snippets/AddNetworkButton.jsx';
 
-Overview of Celo Mainnet and the Celo Sepolia Testnet.
-
----
+The identifiers an app, wallet or agent needs to connect to Celo Mainnet and the Celo Sepolia testnet.
 
 ## Celo Mainnet
 
@@ -19,17 +17,21 @@ Overview of Celo Mainnet and the Celo Sepolia Testnet.
 | Currency Symbol            | CELO                                                                                                                                                                                                      |
 | RPC Nodes                  | [List of RPC providers](/build/tools/nodes/overview#as-a-service)                                                                                                                                            |
 | RPC Endpoint (best effort) | https://forno.celo.org <br/> Note: [Forno](/build/tools/nodes/forno#celo-mainnet) is rate limited, as your usage increases consider options that can provide the desired level of support (SLA).                          |
-| Block Explorers            | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>                                                                               |
-| Bridge Link                | [List of bridges](/developer/bridges/bridges)                                                                                                                                                             |
+| Block Explorers            | <ul><li>[https://celo.blockscout.com](https://celo.blockscout.com)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>                                                                               |
+| Bridge Link                | [List of bridges](/build/tools/bridges/bridges)                                                                                                                                                             |
 
 <AddNetworkButton network="mainnet" />
+
+### Fee currencies
+
+To pay gas in a token other than CELO, set the transaction's `feeCurrency` field. Tokens that do not use 18 decimals, such as USDC, USD₮ and USA₮, pass an adapter address as `feeCurrency`, not the token address. The addresses for both networks are on the [fee currency contracts](/build/tools/contracts/fee-currencies) page.
 
 ## Celo Sepolia Testnet
 
 | Name                       | Value                                                                                                                                                    |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Network Name               | Celo Sepolia                                                                                                                                             |
-| Description                | The New Developer Testnet network (replacing Alfajores)                                                                                                  |
+| Description                | The Celo developer testnet, built on Ethereum Sepolia                                                                                                    |
 | Chain ID                   | 11142220                                                                                                                                                 |
 | Currency Symbol            | CELO                                                                                                                                                     |
 | RPC Nodes                  | [List of RPC providers](/build/tools/nodes/overview#as-a-service)                                                                                            |
@@ -37,26 +39,21 @@ Overview of Celo Mainnet and the Celo Sepolia Testnet.
 | OP-Node RPC Endpoint (best effort) | [https://op.celo-sepolia.celo-testnet.org](https://op.celo-sepolia.celo-testnet.org)                                                               |
 | Block Explorer             | [https://celo-sepolia.blockscout.com](https://celo-sepolia.blockscout.com)                                                                             |
 | Bridge Link                | [https://testnets.superbridge.app](https://testnets.superbridge.app/?fromChainId=11155111&toChainId=11142220) <br/> Note: Ensure you enable Testnet in settings |
-| Faucet Links                | <ul><li>[https://cloud.google.com/application/web3/faucet/celo/sepolia](https://cloud.google.com/application/web3/faucet/celo/sepolia)</li><li>[https://faucet.celo.org/celo-sepolia](https://faucet.celo.org/celo-sepolia)</li></ul>                                                                                                                                              |
+| Faucet Links                | <ul><li>[https://faucet.celo.org/celo-sepolia](https://faucet.celo.org/celo-sepolia)</li><li>[https://cloud.google.com/application/web3/faucet/celo/sepolia](https://cloud.google.com/application/web3/faucet/celo/sepolia)</li></ul>                                                                                                                                              |
 
 <AddNetworkButton network="sepolia" />
 
-The Celo Sepolia Testnet is Celo's new developer testnet built on Ethereum Sepolia, designed to replace Alfajores following the planned Holesky deprecation in September 2025.
-
-**Key Features:**
-
-- **Fresh State**: Starts with a clean slate, no state inheritance from Alfajores
-- **L1 Foundation**: Built on Ethereum Sepolia for enhanced stability
-- **Developer-Focused**: Provides the same developer experience as Alfajores
-
-<Tip>
-**New Celo Sepolia Testnet Now Live!**
-
-Try Celo's new developer testnet on Ethereum Sepolia.
-[Learn more →](/operate/notices/archive/celo-sepolia-launch)
-</Tip>
+<Note>
+Alfajores (chain ID 44787) is retired. Use Celo Sepolia (chain ID 11142220) for testing.
+</Note>
 
 <Warning>
 The Celo Sepolia Testnet is designed for testing and experimentation by developers. Its tokens hold no real world economic value. The testnet software will be upgraded on a regular basis. This will erase your accounts, their balance and your transaction history. You may encounter bugs and limitations with the software and documentation.
 </Warning>
 
+## Related
+
+- [Fee abstraction](/build/fee-abstraction/overview) - how to pay gas in USDm, USDC or USD₮ from any wallet that supports `feeCurrency`
+- [Fee currency contracts](/build/tools/contracts/fee-currencies) - every token on the fee-currency allowlist, read from `FeeCurrencyDirectory`
+- [Stablecoin contracts](/build/tools/contracts/stablecoin-contracts) - stablecoin addresses on both networks
+- [Celo Sepolia testnet](/build/tools/testnets/celo-sepolia/index) - faucets and testing on Celo Sepolia

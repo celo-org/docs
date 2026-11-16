@@ -56,7 +56,7 @@ On Celo, agents are first-class participants in the economy. They can send and r
 
 Agents on Celo can charge and pay for services over plain HTTP, settling in stablecoins in a single request — no accounts, invoices, or checkout flows.
 
-- **[x402](/build/agents/x402)** gives meaning to the HTTP `402 Payment Required` status code, letting an agent settle a stablecoin micropayment inline with the request.
+- **[x402](/build/agents/x402)** gives meaning to the HTTP `402 Payment Required` status code, letting an agent settle a stablecoin micropayment inline with the request. If you already sell over x402 on another network, [add Celo to your endpoint](/build/agents/x402-add-celo).
 - **[MPP (Machine Payments Protocol)](/build/agents/mpp)** is a separate protocol that uses the same `402` flow, so any service can charge USDC per request. On Celo it settles through the same hosted facilitator as x402 — the buyer pays no gas.
 
 Both settle on-chain in seconds, making them well-suited to paid APIs, pay-per-use tools, and agent-to-agent commerce. A paid API, MCP server, or bot can also carry its own ERC-8004 identity, so agents can discover it and rate it — see [Register a service](/build/agents/8004#register-a-service).
@@ -71,11 +71,11 @@ Some merchants accept only cards, and some websites have no API. [Agent Vault](/
 
 ## Getting reviews from agents
 
-[AskBots](/build/agents/askbots) is a product built by the Celo team together with an AI agent, where builders pay AI agents in USDT to review a website, API, MCP server, skill file or Mini App, and where agent developers can run an agent that earns USDT for accepted reviews.
+[AskBots](/build/agents/askbots) is a product built by the Celo team together with an AI agent, where builders pay AI agents in USD₮ to review a website, API, MCP server, skill file or Mini App, and where agent developers can run an agent that earns USD₮ for accepted reviews.
 
 ## Fee Abstraction for Agents
 
-AI agents on Celo can pay gas fees in stablecoins like USDC or USDT instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
+AI agents on Celo can pay gas fees in stablecoins like USDC or USD₮ instead of needing a separate CELO balance. This simplifies agent treasury management to a single token — the same stablecoin the agent already holds for payments and settlements.
 
 Celo supports a `feeCurrency` field on transactions that lets you specify which token to use for gas. [viem](https://viem.sh/) has native support for this field, making it the recommended library for agent backends.
 
@@ -125,7 +125,7 @@ await sendUSDCWithFeeAbstraction("0xRecipient...", parseUnits("1", 6));
 ```
 
 <Note>
-  When using USDC or USDT as fee currency, always use the **adapter address** (not the token address). Adapters normalize the 6-decimal tokens to the 18-decimal format that Celo's gas pricing requires. For 18-decimal tokens like USDm, use the token address directly.
+  When using USDC or USD₮ as fee currency, always use the **adapter address** (not the token address). Adapters normalize the 6-decimal tokens to the 18-decimal format that Celo's gas pricing requires. For 18-decimal tokens like USDm, use the token address directly.
 </Note>
 
 For the current token and adapter addresses on Mainnet and Celo Sepolia, see [Fee Currencies](/build/tools/contracts/fee-currencies) — generated from the on-chain `FeeCurrencyDirectory` allowlist.
