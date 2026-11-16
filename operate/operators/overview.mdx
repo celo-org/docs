@@ -28,6 +28,14 @@ See [Architecture](/operate/operators/architecture) for how these fit together.
 - **op-geth** — the previous execution client. Support ended on each network's switch date; a node still running it can follow the wrong chain.
 
 <Warning>
+**Use the Celo image, not upstream op-reth**
+
+Celo's execution client is `celo-reth`, a Celo build of `op-reth` from [celo-org/celo-kona](https://github.com/celo-org/celo-kona/tree/main/crates/celo-reth). It is published as the image `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth`, which is why these docs call it `op-reth`.
+
+`op-reth` builds from `ethereum-optimism/optimism` or `celo-org/optimism` are not Celo-compatible and must not be used on Celo mainnet or Celo Sepolia. They list Celo among their built-in chain specs, but they lack Celo's execution rules: they pay the base fee to the OP Stack `BaseFeeVault` where Celo pays the `FeeHandler`, and they have no fee currency (CIP-64) transaction type.
+</Warning>
+
+<Warning>
 **op-geth is no longer supported**
 
 Celo has replaced `op-geth` with `op-reth` as its execution client. A node still running `op-geth` can follow the wrong chain. See [End of Support for op-geth](/operate/notices/op-geth-deprecation) for the switch dates and details, and follow the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository for release updates.
