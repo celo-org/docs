@@ -1,0 +1,57 @@
+---
+title: Pinax
+description: Stream Celo blocks with Firehose and Substreams, or query archive state over JSON-RPC, using Pinax endpoints
+---
+
+This page is for app developers and data teams who need Celo data in bulk: full block streams, custom indexing pipelines, or historical state at any block. [Pinax](https://pinax.network/) runs its own Celo nodes and operates Firehose and Substreams endpoints; the Substreams documentation [lists Pinax among its providers](https://docs.substreams.dev/reference-material/chains-and-endpoints).
+
+## How it works
+
+[Firehose](https://app.pinax.network/docs/firehose) streams full blocks over gRPC, including transactions, receipts and logs, with cursors so a consumer can resume exactly where it stopped after a restart or a reorg. The same stream serves both historical and live blocks, so one integration covers backfill and tail.
+
+Celo blocks are served at Firehose's *base* detail level: call traces, internal transfers and storage changes are not included. Those *extended* fields are produced by an instrumented node, which Pinax does not currently run for Celo. The Graph's [networks registry](https://networks-registry.thegraph.com/TheGraphNetworksRegistry.json) records the same for Celo — `"evmExtendedModel": false` and `"blockFeatures": ["base"]`.
+
+[Substreams](https://app.pinax.network/docs/substreams) runs on top of Firehose. You write modules in Rust, package them as an `.spkg` file, and run them on Pinax servers to turn raw blocks into the shape your application needs. Output can go to PostgreSQL or ClickHouse, stream to a consumer, or feed a Graph Node as a subgraph data source.
+
+[Pinax RPC](https://app.pinax.network/docs/rpc) serves standard Ethereum JSON-RPC 2.0 from archive nodes, so historical state is queryable at any block.
+
+## Endpoints
+
+[pinax.network/chain/celo](https://pinax.network/chain/celo) is the canonical list of Pinax's Celo endpoints. The tables below are examples, and that page is the one to trust if they ever disagree.
+
+### Celo mainnet
+
+| Service | Endpoint | Authentication |
+| --- | --- | --- |
+| Firehose | `celo.firehose.pinax.network:443` | API key, sent as an `X-Api-Key` header |
+| Substreams | `celo.substreams.pinax.network:443` | API key; the Substreams CLI reads it from `SUBSTREAMS_API_KEY` |
+| RPC | `https://celo.rpc.pinax.network` | API key, optional — see below |
+
+### Celo Sepolia
+
+| Service | Endpoint | Authentication |
+| --- | --- | --- |
+| RPC | `https://celosepolia.rpc.pinax.network` | API key, optional — see below |
+
+<Note>
+  Firehose and Substreams are available on Celo mainnet only. Celo Sepolia is served over RPC.
+</Note>
+
+### Calling RPC without an API key
+
+The RPC endpoints also answer unauthenticated requests, so an `eth_chainId` call with no key returns `0xa4ec` on mainnet and `0xaa044c` on Sepolia. Those requests take a rate-limited anonymous path, served only from Pinax's own nodes with no fallback capacity behind them. Send an API key for the full routing and for per-key rate limits — see the [RPC documentation](https://app.pinax.network/docs/rpc).
+
+## Resources
+
+| Resource | Link |
+| --- | --- |
+| Celo endpoints on Pinax | https://pinax.network/chain/celo |
+| Pinax documentation | https://app.pinax.network/docs |
+| Create an API key | https://app.pinax.network |
+| Substreams CLI | https://docs.substreams.dev |
+| Plans and pricing | https://pinax.network/en/pricing |
+
+## Related
+
+- [Indexers overview](/build/tools/indexers/overview) - other indexing options on Celo, and when each one fits.
+- [The Graph](/build/tools/indexers/the-graph) - subgraphs, which can use Substreams as a data source.
