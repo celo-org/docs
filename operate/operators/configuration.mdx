@@ -4,12 +4,12 @@ sidebarTitle: "Configuration"
 description: Reference for the environment variables and client flags used by celo-l2-node-docker-compose
 ---
 
-This page documents the `.env` variables and the key client flags used by the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup. For the exhaustive command-line flag references, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) docs.
+This page documents the `.env` variables and the key client flags used by the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) setup. For the exhaustive command-line flag references, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) docs. The op-reth reference covers only the flags Celo's client shares with upstream `op-reth`.
 
 <Info>
 **Execution client: op-reth**
 
-The variables below configure `op-reth`, Celo's supported execution client. Support for `op-geth` has ended; see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
+The variables below configure `op-reth`, Celo's supported execution client. It is the Celo build, `celo-reth`; upstream `op-reth` builds are [not Celo-compatible](/operate/operators/overview#execution-client). Support for `op-geth` has ended; see [End of Support for op-geth](/operate/notices/op-geth-deprecation).
 </Info>
 
 ## Node type and sync
@@ -84,7 +84,7 @@ These flags are set for you by the compose start scripts; they are listed here b
 - **`--l2.enginekind=reth`** (op-node) — tells op-node which execution client it is driving. It is set to `reth` for `op-reth`.
 - **`--metrics.enabled`** (op-node) — exposes Prometheus metrics on port `7300`. See [Monitoring & metrics](/operate/operators/monitoring).
 
-For every other op-reth/op-node flag, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references.
+For every other op-reth/op-node flag, see the Optimism [op-reth config](https://docs.optimism.io/node-operators/reference/op-reth-config) and [op-node config](https://docs.optimism.io/node-operators/reference/op-node-config) references. The op-reth reference documents only the flags Celo's client shares with upstream `op-reth`. The binary you run must still be the Celo image, `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-reth`: an upstream `op-reth` build is [not Celo-compatible](/operate/operators/overview#execution-client).
 
 ## Monitoring
 
