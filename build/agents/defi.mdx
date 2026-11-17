@@ -1,0 +1,126 @@
+---
+title: "Agentic DeFi on Celo"
+sidebarTitle: "Agentic DeFi"
+description: Let an AI agent quote and settle FX between local stablecoins on Textile, swap on Uniswap and lend on Aave or Morpho on Celo, paying gas in the stablecoin it holds
+---
+
+This page is for agent developers who want an agent to move money, not only to answer questions. On Celo an agent is an economic actor: it can quote and settle FX between local stablecoins through Textile, swap on Uniswap, supply to Aave or Morpho, and pay gas for all of it in the USD₮ or USDC it already holds through [fee abstraction](/build/fee-abstraction/overview). Blocks are 1 second and a typical transaction costs below $0.01, so an agent can act often. [ERC-8004](/build/agents/8004) and [Self Agent ID](/build/agents/self-agent-id) give the agent an identity counterparties can check, and an [attribution tag](/build/agents/attribution-tags) credits its activity to your app.
+
+The page uses Textile's FX API as the worked example because onchain FX in local currencies is the part of DeFi that only exists at this scale on Celo. Swaps and lending follow the same loop with a different contract call.
+
+## Prerequisites
+
+- An account the agent signs with, funded on Celo mainnet (chain ID 42220) with a small amount of USD₮ or USDC. [Give your agent a wallet](/build/agents/agent-wallet) covers key generation; fund the address from an exchange or [bridge](/build/tools/bridges/bridges).
+- Node.js 20.6 or later and `npm install viem`.
+- For firm FX quotes, either a Textile API key or a wallet signature. Textile's test keys work only on BNB Smart Chain testnet and Base Sepolia, not on Celo Sepolia, so FX runs on mainnet with small amounts. Indicative prices need no key.
+
+## How it works
+
+1. The agent reads a price: Textile's price ladder for an FX pair, an [oracle](/build/tools/oracles) feed, or a DEX quote.
+2. It decides within limits you set in code: maximum size per trade, maximum spend per day, maximum slippage.
+3. It asks for a firm quote or builds the swap or supply transaction.
+4. It simulates the transaction, then signs it with its own key and sets `feeCurrency` so gas comes out of the stablecoin balance.
+5. It submits, waits for the receipt and records the result.
+
+Nothing in this loop is custodial. Textile, Uniswap, Aave and Morpho never hold the agent's key or funds.
+
+## Quote and settle FX with Textile
+
+[Textile FX](https://app.textilecredit.com/) is a request-for-quote market. Makers run bots that price each corridor from their own feeds; the agent asks for a quote on an exact size and receives one firm, all-or-nothing offer bound to its wallet, or `no_quote`. Live Celo corridors include cNGN, wARS, wBRL, wCOP, wMXN, IDRX, USDC, CELO and G$ against USD₮; the current list and the token addresses are in Textile's [address book](https://docs.textilecredit.com/protocol/address-book.html).
+
+The v2 API lives at `https://api.textilecredit.com/v2`. Amounts are strings in base units, and rates are scaled by 1e27.
+
+| Call | Auth | Use |
+|---|---|---|
+| `POST /rfq/preview` | none | Indicative price for a size, a few seconds stale |
+| `GET /rfq/levels?chainId=42220` | none | Price ladder per pair, with minimum and maximum size |
+| `POST /rfq/request` | API key or wallet signature | Firm quote with signed maker orders and the calldata to execute |
+| `POST /rfq/{id}/submit` | same | Report the transaction hash after you broadcast |
+| `GET /rfq/{id}` | same | Status and settled amounts |
+
+The example below asks for an indicative price for 1 USD₮ into wARS on Celo mainnet. It runs without a key.
+
+```ts
+// textile-preview.mts — Celo mainnet (42220)
+// USD₮ 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e, 6 decimals
+// wARS 0x0DC4F92879B7670e5f4e4e6e3c801D229129D90D, 18 decimals
+const res = await fetch("https://api.textilecredit.com/v2/rfq/preview", {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({
+    chainId: 42220,
+    sellToken: "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+    buyToken: "0x0DC4F92879B7670e5f4e4e6e3c801D229129D90D",
+    sellAmount: "1000000", // 1 USD₮
+  }),
+});
+const { data } = await res.json();
+console.log(data.status, data.buyAmount, data.rateRay);
+```
+
+Run it with `node textile-preview.mts`. A `preview` status prints the wARS amount in base units and the rate; `no_quote` means no maker is pricing that size right now.
+
+To trade, the agent calls `/rfq/request` with the same body plus its `taker` address. With an API key it sends `Authorization: Bearer <key>`; without one it signs a challenge once and sends it as `takerProof`, which covers about 12 hours of requests. The response carries `quote.takerPays`, `quote.reactor`, `quote.expiresAt` and `transactions.swap`. The agent then:
+
+1. Checks the allowance of the sell token for `quote.reactor` and approves `takerPays` if it is short. For USD₮ reset a non-zero allowance to zero first.
+2. Confirms the current time is before `expiresAt`. Quotes live about 60 seconds.
+3. Sends `transactions.swap` from the taker wallet, with `feeCurrency` set so gas is paid in USD₮.
+4. Posts the transaction hash to `/rfq/{id}/submit` and polls `/rfq/{id}` for the settled amounts.
+
+A limit order is the alternative when the agent wants to set the price: it signs a gasless order, keeps the funds in its wallet, and a maker fills it when the price is met. Textile's [RFQ reference](https://docs.textilecredit.com/api/v2/rfq.html), [authentication](https://docs.textilecredit.com/api/v2/authentication.html) and [API key](https://docs.textilecredit.com/api/how-to-get-an-api-key.html) pages have the field-level detail and a viem walkthrough.
+
+## Swap on Uniswap
+
+Uniswap v4 and v3 are deployed on Celo mainnet and Celo Sepolia; the router and pool manager addresses are on [Uniswap contracts](/build/tools/contracts/uniswap-contracts). An agent quotes through the Quoter contract, sets a slippage bound, and sends the swap through the Universal Router with `feeCurrency` set. Stablecoin pairs such as USDC/USD₮ and USDm/USD₮ carry [Merkl](https://app.merkl.xyz/) incentives, which is where liquidity concentrates.
+
+## Lend and earn on Aave and Morpho
+
+[Aave v3](https://aave.com/) on Celo lets an agent supply USD₮ or USDC to earn interest, or borrow against collateral, by calling the Pool contract listed in Aave's documentation. [Morpho](https://morpho.org/) offers isolated markets and curated vaults; on Celo the vaults are curated by [Feather](https://app.feather.zone/celo/earn), and an agent deposits into a vault with an ERC-4626 `deposit` call. In both cases read the health factor or vault share price before and after the call so the agent can stop when a position moves against it.
+
+If the agent is tool-driven rather than hand-coded, [Celina](/build/agents/mcp/celina) exposes Uniswap v3 and v4, Aave v3, Mento and transfers as tools through an SDK, an MCP server and a REST API.
+
+## Pay gas in the stablecoin you hold
+
+Every write above is a normal Celo transaction, so the agent sets `feeCurrency` to the **adapter** address of USD₮ or USDC and never needs CELO. The example on [Build with AI on Celo](/build/agents/overview#fee-abstraction-for-agents) shows the viem call, and [Fee currencies](/build/tools/contracts/fee-currencies) lists the adapter addresses per network. Passing the token address instead of the adapter is the most common mistake.
+
+## Guardrails
+
+- **Simulate before you sign.** Run `eth_call` or viem's `simulateContract` with the exact calldata. A revert in simulation costs nothing; a revert onchain costs gas and a quote.
+- **Cap spend in code.** Enforce a per-transaction maximum and a daily maximum on the agent side, independent of what the model decides. [buy](/build/agents/buy) does this for x402 with `--max-amount`; do the same for DeFi calls.
+- **Use a dedicated key with limited funds.** The agent's account holds what it may lose. Top it up from a treasury it cannot sign for.
+- **Bound price and time.** Reject a quote whose rate deviates more than your threshold from the preview or an oracle, and never broadcast after `expiresAt`.
+- **Handle `no_quote` and partial liquidity.** Textile quotes are all-or-nothing. Retry with a smaller size, split the order, or place a limit order.
+- **Give the agent an identity.** Register it with [ERC-8004](/build/agents/8004) or [Self Agent ID](/build/agents/self-agent-id) so services and counterparties can verify who is trading.
+- **Tag the transactions.** Append an [attribution tag](/build/agents/attribution-tags) so the activity is credited to your app.
+
+## Troubleshooting
+
+- **`status: "no_quote"`** - No maker priced the size within the reply window. Check the pair's `minSellAmount` and `maxSellAmount` on `/rfq/levels`, then retry smaller or use a limit order.
+- **`429 rate_limited`** - More than 4 RFQs outstanding. Cancel or let them expire before requesting again.
+- **Quote expired** - More than 60 seconds passed between `/rfq/request` and the broadcast. Request a new quote; approve the reactor ahead of time so the swap is the only transaction in the window.
+- **`takerProof` rejected** - The signing wallet must be the `taker` named in the request, and the proof expires after about 12 hours.
+- **Transaction reverts with a fee-currency error** - `feeCurrency` holds the USD₮ or USDC token address instead of the adapter address. Use the adapter from [Fee currencies](/build/tools/contracts/fee-currencies).
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Textile FX docs and v2 RFQ API | [docs.textilecredit.com/api/v2](https://docs.textilecredit.com/api/v2/) |
+| Textile address book | [docs.textilecredit.com/protocol/address-book](https://docs.textilecredit.com/protocol/address-book.html) |
+| Uniswap contracts on Celo | [/build/tools/contracts/uniswap-contracts](/build/tools/contracts/uniswap-contracts) |
+| Aave documentation | [aave.com/docs](https://aave.com/docs) |
+| Morpho documentation | [docs.morpho.org](https://docs.morpho.org/) |
+| Celo DeFi metrics | [defillama.com/chain/celo](https://defillama.com/chain/celo) |
+| Celina tool catalog | [usecelina.xyz](https://www.usecelina.xyz) |
+| Celopedia DeFi references | [Celopedia](/build/agents/celopedia) |
+| Celo Discord, `#build-with-celo` | [discord.com/invite/celo](https://discord.com/invite/celo) |
+
+## Related
+
+- [Build with AI on Celo](/build/agents/overview) - Where to start when building an agent on Celo
+- [Give your agent a wallet](/build/agents/agent-wallet) - Generate a key and get test funds
+- [Build with DeFi](/build/build-with-defi) - Every DeFi protocol live on Celo
+- [Build with local stablecoins](/build/build-with-local-stablecoin) - The currencies an FX agent can trade
+- [x402](/build/agents/x402) - Pay for the data and APIs an agent consumes
+- [ERC-8004](/build/agents/8004) - Agent identity, reputation and validation registries
+- [Self Agent ID](/build/agents/self-agent-id) - Tie an agent to a verified human

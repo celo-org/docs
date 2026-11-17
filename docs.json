@@ -186,6 +186,7 @@
               "build/agents/use-docs-with-ai",
               "build/agents/ai-resources",
               "build/agents/agent-wallet",
+              "build/agents/defi",
               "build/agents/8004",
               "build/agents/self-agent-id",
               "build/agents/agent-vault",
@@ -222,12 +223,10 @@
           {
             "group": "Guides",
             "pages": [
-              "build/build-with-farcaster",
-              "build/build-with-self",
-              "build/build-with-local-stablecoin",
-              "build/build-with-usat",
-              "build/build-on-socialconnect",
               "build/build-with-defi",
+              "build/build-with-usat",
+              "build/build-with-local-stablecoin",
+              "build/build-with-self",
               {
                 "group": "Fee Abstraction",
                 "pages": [
@@ -237,8 +236,8 @@
                 ]
               },
               "build/scaling-your-app",
-              "build/nightfall",
-              "build/fund-your-project"
+              "build/fund-your-project",
+              "build/nightfall"
             ]
           },
           {
@@ -602,6 +601,14 @@
     "dark": "/images/CeloDocs_LogoDark.svg"
   },
   "redirects": [
+    {
+      "source": "/build/build-with-farcaster",
+      "destination": "/build/mini-apps/overview"
+    },
+    {
+      "source": "/build/build-on-socialconnect",
+      "destination": "/build/build-with-self"
+    },
     {
       "source": "/tooling/libraries-sdks/particle-network/:slug*",
       "destination": "/build/tools/libraries-sdks/celo-sdks"
@@ -1304,7 +1311,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/celo-codebase/protocol/identity/encrypted-cloud-backup",
@@ -1312,7 +1319,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/index",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/celo-codebase/protocol/identity/metadata",
@@ -1320,7 +1327,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/phone-number-privacy",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/celo-codebase/protocol/identity/privacy-research",
@@ -2608,7 +2615,7 @@
     },
     {
       "source": "/protocol/identity/index",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/protocol/index",
@@ -2692,7 +2699,7 @@
     },
     {
       "source": "/protocol/socialconnect",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/protocol/stability",
@@ -3588,7 +3595,7 @@
     },
     {
       "source": "/legacy/protocol/identity/index",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/legacy/protocol/identity/odis",
@@ -3904,7 +3911,7 @@
     },
     {
       "source": "/protocol/identity/odis-use-case-phone-number-privacy",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/protocol/identity/encrypted-cloud-backup",
@@ -4052,7 +4059,7 @@
     },
     {
       "source": "/developer/socialconnect",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/developer/tools",
@@ -4260,7 +4267,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/README",
-      "destination": "/build/build-on-socialconnect"
+      "destination": "/build/build-with-self"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/README",

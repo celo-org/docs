@@ -127,7 +127,7 @@ Numbers and addresses live on one canonical page; every other page links there i
 | Agent payments | `/build/agents/x402`, `/build/agents/mpp` | HTTP 402 flows settled in USDC/USD₮; Celo facilitator `https://api.x402.celo.org` |
 | Agent identity and trust | `/build/agents/8004`, `/build/agents/self-agent-id` | ERC-8004 registries on Celo; Self Agent ID adds a zero-knowledge proof-of-human |
 | Human identity | `/build/build-with-self` | Self: passport / EU ID / Aadhaar proofs, nothing leaves the device |
-| Phone-number mapping | `/build/build-on-socialconnect` | SocialConnect / ODIS |
+| Phone-number mapping | `/build/build-with-self#self-connect` | Self Connect (formerly SocialConnect) / ODIS; protocol docs live at docs.self.xyz |
 | AI tooling | `/build/agents/ai-resources` (index), `/build/agents/use-docs-with-ai`, `/build/agents/celopedia`, `/build/agents/mcp/index` | in-page Ask AI assistant, docs MCP at `https://docs.celo.org/mcp`, `llms.txt`, per-page `.md`, Celopedia skill, Celo MCP server |
 
 ### Partner contract addresses
