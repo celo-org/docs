@@ -30,11 +30,11 @@ Please refer to the [Ledger Troubleshooting](/build/tools/wallets/ledger/to-celo
 
 In this guide, you will:
 
-- Install the Celo CLI (and optionally, a local node to connect to the network)
+- Install the Celo CLI and point it at a Celo node
 - Access the `ReleaseGold` account associated with your address using your existing Ledger
 - Authorize a voting key, which you will hold on a new, second Ledger
-- Lock some of the Gold in your `ReleaseGold` account
-- Use that Locked CELO to vote for Validator Groups to operate Celo's [staking](/learn/protocol/staking/index) mechanism (and in doing so be ready to receive [epoch rewards](/learn/protocol/epoch-rewards/index))
+- Lock some of the CELO in your `ReleaseGold` account
+- Use that Locked CELO to vote for Validator Groups through Celo's [staking](/learn/protocol/staking/index) mechanism (and in doing so be ready to receive [epoch rewards](/learn/protocol/epoch-rewards/index))
 
 ## Preparing Ledgers
 
@@ -56,31 +56,30 @@ First, read [these instructions](/build/tools/wallets/ledger/setup) carefully. T
 
 ## Deployment
 
-If you haven't already, open a terminal window and install the [Celo CLI](/cli/):
+If you haven't already, open a terminal window and install the [Celo CLI](/build/tools/libraries-sdks/cli/index):
 
 ```bash
  npm install -g @celo/celocli
 ```
 
-If you have previously installed the CLI, ensure that you are using version 0.0.47 or later:
+If you have previously installed the CLI, ensure that you are using version 9 or later:
 
 ```bash
 celocli --version
 ```
 
-And if not, upgrade by running the same command as above.
+The commands in this guide were checked with version 9.0.1. To upgrade to the latest version, run the install command again.
 
 You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](/learn/network/overview) network. There are two options:
 
-- **Local Celo Blockchain node**: You can run a full node on your local machine which will communicate
-  with other nodes and cryptographically verify all data it receives. Since this approach does not require you to trust the network, it is most secure.
+- **Your own Celo node**: You can run a Celo node on your own machine, so that the CLI reads chain data from a node you operate instead of from a third party.
 
-  To do this, follow the tutorial for [running a full node](/operate/operators/run-node) (and make sure to pass `--usb`).
+  To do this, follow the guide for [running a node](/operate/operators/run-node) and wait until the node is fully synced. A node set up with that guide serves its RPC API on port 9993.
 
   Then run:
 
   ```bash
-  celocli config:set --node http://localhost:8545
+  celocli config:set --node http://localhost:9993
   ```
 
 - **cLabs-operated node**: As an alternative to using your own node, you can use an existing transaction
@@ -130,7 +129,7 @@ Verify the configuration, balance, and beneficiary details. You can find an expl
 
 If any of these details appear to be incorrect, please contact cLabs, and do not proceed with the remainder of this guide.
 
-If the configuration shows `canVote: true`, your contract allows you to participate in electing Validator Groups for Celo's Proof of Stake protocol, and potentially earn epoch rewards for doing so. Please continue to follow the remainder of this guide (or you can come back and continue at any time).
+If the configuration shows `canVote: true`, your contract allows you to vote for Validator Groups, and potentially earn epoch rewards for doing so. Please continue to follow the remainder of this guide (or you can come back and continue at any time).
 
 Otherwise, you're all set. You don't need to take any further action right now.
 
@@ -224,7 +223,7 @@ celocli account:balance $CELO_VOTE_SIGNER_ADDRESS
 
 ## Lock CELO
 
-To vote for Validator Groups and on governance proposals you will need to lock CELO. This is to keep the network secure by making sure each unit of CELO can only be used to vote once.
+To vote for Validator Groups and on governance proposals you will need to lock CELO. Locking makes sure each unit of CELO can only be used once in the same vote.
 
 Specify the amount of CELO you wish to lock (don’t include the `< >` braces). All amounts are given as wei, i.e., units of 10^-18 CELO. For example, 1 CELO = 1000000000000000000.
 
@@ -245,7 +244,7 @@ celocli lockedgold:show $CELO_RG_ADDRESS
 
 ## Vote for a Validator Group
 
-Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](/learn/protocol/epoch-rewards).
+CELO holders can lock CELO and vote for Validator Groups on the Celo network. These votes elect Validators, which serve the network as [community RPC providers](/contribute/community-rpc-nodes/community-rpc-node). By voting you can also earn [epoch rewards](/learn/protocol/epoch-rewards/index).
 
 For more details, check out the [Voting for Validators page](/learn/protocol/staking/voting), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
 
@@ -295,12 +294,12 @@ Your locked CELO votes should be displayed next to `pending` under `votes`.
 
 ## The next day: Activate your Vote
 
-Your vote will apply starting at the next Validator Election, held once per day, and will continue to apply at each subsequent election until you change it.
+Your vote will apply starting at the next Validator Election, held at the end of each epoch (approximately once per day), and will continue to apply at each subsequent election until you change it.
 
 After that election has occurred, you will need to activate your vote. This will allow you to receive epoch rewards if in that election (or at any subsequent one, until you change your vote) the Validator Group for which you voted elected at least one Validator. Rewards will get added to your votes for that Group and will compound automatically.
 
 <Note>
-Epoch lengths in Mainnet are set to be the number of blocks produced in a day. As a result, votes may need to be activated up to 24 hours after they are cast.
+An epoch on Mainnet lasts at least one day. As a result, you may need to wait a day or slightly longer after casting your votes before you can activate them.
 </Note>
 
 Check that your votes were cast in a previous epoch:
@@ -319,7 +318,7 @@ Now activate your votes:
 
 ```bash
 # Using the Vote Signer Ledger
-# You must do this in an epoch after the one you voted in: this may take up to 24h
+# You must do this in an epoch after the one you voted in: this may take a day or slightly longer
 celocli election:activate --from $CELO_VOTE_SIGNER_ADDRESS --useLedger
 ```
 
