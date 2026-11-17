@@ -42,10 +42,11 @@ Edit rights cannot ship a change.
 
 ### Reviewing unanswered questions
 
-- **Weekly:** an automated report files a "Docs assistant: N unanswered questions" issue listing questions that returned no citation, with injection and enumeration probes shown as a count and only a short sample.
+- **Weekly:** an automated report files a "Docs assistant: N unanswered questions" issue listing questions that returned no citation. Each question is shown as a code span with emails, addresses, keys and URLs redacted; off-topic refusals are skipped, and injection and enumeration probes are shown only as a count.
 - **Owned task:** `@celo-org/devrel` triages each weekly issue and closes it once its real gaps have been turned into doc issues. Questions that were refused as off-topic carry `refused: true` and are not gaps.
 - The Redis list `docs-assistant:questions` is the raw store for digging deeper. It holds raw question text.
-- Do not copy question text into other issues, PRs or commits; describe the topic instead. The weekly bot report currently pastes raw questions into a public issue. Redacting it, skipping `refused: true` entries and expiring the Redis log is tracked in the `docs-ai-assistant` repository, issue #3.
+- Do not copy question text into other issues, PRs or commits; describe the topic instead.
+- The probe filter misses some probes, and those land in the gap table as if they were reader questions. Triage counts them as probes, not gaps, and reports the pattern (never the payload) in the `docs-ai-assistant` repository.
 
 ### Script hardening
 
