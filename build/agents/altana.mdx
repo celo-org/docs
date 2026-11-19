@@ -17,7 +17,7 @@ This page is for agent developers who want an agent to move stablecoins onchain 
 1. The owner creates a Smart Agentic Wallet. The owner holds the admin key. Altana never holds keys or funds.
 2. The owner grants the agent a session key: a scoped, time-bounded delegation from the admin key. The agent signs with the session key only.
 3. A session carries three limits: a spend cap per token over a rolling period, an allowlist of contracts and methods, and an expiry. The wallet contract enforces them. A call outside them reverts.
-4. Grants are registered in the Keystore, a public onchain registry. Any client can check that a session key is valid, and the owner revokes a session in one transaction. A revoked session cannot be reactivated.
+4. By default, a grant registers the session's public key in the Keystore, a public onchain registry. Any client can then check that a session key is valid, and the owner revokes a session in one transaction. A revoked session cannot be reactivated.
 5. An intent relay turns the agent's intents into transactions and simulates each one before signing.
 
 Wallet addresses are the same on every chain Altana supports, and permissions work the same way on each.
