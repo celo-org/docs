@@ -202,7 +202,7 @@ To see a paid response you need a buyer that signs the authorization and retries
 
 To charge for the server on this page instead, switch it to Celo Sepolia. Change the `network`, `asset` and `payTo` values to the Celo Sepolia ones under [Celo Configuration](#celo-configuration), and change the facilitator `url` to `https://api.x402.sepolia.celo.org`. The mainnet facilitator does not list Celo Sepolia, so the server fails on startup if the URL stays as it is. Settlement needs the key from [Getting an API Key](#getting-an-api-key). A paid request then returns `200` with `{"data":"paid content"}` and the payment settles on Celo Sepolia for the price above. At that point you have charged an agent $0.01 in test USDC.
 
-Run that paid request once before you go live. It is the only step on this page that reaches `/settle`. If `X402_API_KEY` is missing or wrong, the paid retry does not return `200`: the facilitator rejects the settlement with `401 Missing X-API-Key` (or `401` for an invalid key), the buyer is not charged, and your server logs the settlement failure. A green unpaid `402` check alone does not prove that settlement works.
+Run that paid request once before you go live. It is the only step on this page that reaches `/settle`. If `X402_API_KEY` is missing or wrong, the paid retry does not return `200`: the facilitator rejects the settlement with `401 Missing X-API-Key` (or `401` for an invalid key), the buyer is not charged, and the paid retry comes back as `402` with a `PAYMENT-RESPONSE` header whose decoded `errorReason` reads `Facilitator settle failed (401): … Missing X-API-Key` (decode it with `base64 -d`). Nothing is written to your server logs. A green unpaid `402` check alone does not prove that settlement works.
 
 ## x402 on Celo
 
