@@ -71,6 +71,20 @@ const client = createClient({ chains: [CELO] });
 
 Wallet creation, session grants and revocation follow [Altana's SDK setup](https://docs.altana.network/sdk/setup).
 
+## Pay for x402 APIs on Celo
+
+An agent pays [x402](/build/agents/x402) endpoints on Celo from its Altana wallet in USDC, USD₮ or USA₮, within the session's spend cap. Pass the tokens as `x402Tokens` when you grant the session, then call `fetchWithX402`. It signs one payment and retries the request once.
+
+```ts
+// Celo mainnet (42220). `session` comes from grantSession with x402Tokens set.
+const res = await client.fetchWithX402({
+  session,
+  url: "https://api.example.com/paid-endpoint", // example
+});
+```
+
+Run `fetchWithX402` server side, because many endpoints block the payment header in browsers. See [x402 payments](https://docs.altana.network/sdk/x402).
+
 ## Sell over x402 on Celo
 
 `@altananetwork/x402-server` lets a merchant charge for an endpoint over [x402](/build/agents/x402) on Celo. It ships token configs for `USDC_CELO`, `USDT_CELO` and `USAT_CELO` on mainnet, which use 6 decimals, so a price of `200_000n` is 0.2. A merchant can list several tokens, and each payment settles on its own token's contract.
@@ -102,6 +116,7 @@ Set both `calls` and `spend` when you grant a session. If you leave out `calls`,
 | Documentation | [docs.altana.network](https://docs.altana.network) |
 | Supported networks, endpoints and Keystore addresses | [Networks](https://docs.altana.network/concepts/networks) |
 | MCP server install | [MCP install](https://docs.altana.network/mcp/install) |
+| Paying x402 from an Altana wallet | [x402 payments](https://docs.altana.network/sdk/x402) |
 | Selling over x402 on Celo | [x402 server](https://docs.altana.network/sdk/x402-server#celo) |
 | Session keys | [Sessions](https://docs.altana.network/concepts/sessions) |
 | Keystore | [Keystore](https://docs.altana.network/concepts/keystore) |
