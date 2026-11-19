@@ -1,7 +1,7 @@
 ---
 title: "Agent Vault: Payments and Logins for Agents"
 sidebarTitle: "Self: Agent Vault"
-description: Let an agent you build pay at online checkouts, pay x402 services in stablecoins on Celo and sign in to websites, without the agent holding card numbers, passwords or keys
+description: Let an agent you build pay at online checkouts, pay x402 services sold on Buy in stablecoins on Celo and sign in to websites, without the agent holding card numbers, passwords or keys
 ---
 
 This page is for developers who build AI agents that must pay a merchant by card, pay for an API in stablecoins on Celo, or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol. Agent payments on Celo run over [x402](/build/agents/x402), and the agent never holds a key.
@@ -25,10 +25,10 @@ For card payments, Agent Vault does not move money. The merchant sees an ordinar
 
 ## Pay x402 services from the agent wallet
 
-Agent Vault creates an onchain wallet for the account holder on Celo and pays [x402](/build/agents/x402) services from it for the agent. Agent Vault holds the wallet's key for the account holder, and only the account holder can withdraw. The agent can spend from the wallet but never gets the key or signs a payment.
+Agent Vault creates an onchain wallet for the account holder on Celo and pays [x402](/build/agents/x402) services sold on Buy from it for the agent. Only services sold on Buy are supported. Agent Vault holds the wallet's key for the account holder, and only the account holder can withdraw. The agent can spend from the wallet but never gets the key or signs a payment.
 
 - **Network and tokens:** Celo mainnet, with USDC, USD₮ or USA₮. The wallet needs no CELO for fees. A Celo Sepolia sandbox takes test USDC.
-- **What it pays for:** API calls sold on Buy, a pay-per-call API marketplace. To pay x402 APIs from your own code, see [buy](/build/agents/buy).
+- **What it pays for:** only API calls sold on Buy, a pay-per-call API marketplace. It does not pay other x402 endpoints. To pay any x402 API from your own code, see [buy](/build/agents/buy).
 - **Limits:** the account holder's agent card sets the spending limits, and a payment can wait for approval first, depending on the seller and the card's approval amount.
 - **Final payments:** a payment on Buy cannot be reversed from the Wallet page.
 
