@@ -16,7 +16,7 @@ Celo uses a formal on-chain governance mechanism to manage and upgrade the proto
 In the following commands `<VARIABLE>` is used as a placeholder for something you should specify on the command line.
 </Note>
 
-## Viewing Proposals
+## Viewing proposals
 
 A list of active proposals can be viewed with the following command:
 
@@ -30,7 +30,7 @@ Included will be three lists of proposals by status:
 - **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [Governance overview](/learn/protocol/governance/overview).
 - **Expired** proposals are no longer being considered.
 
-## Understanding Proposal Details
+## Understanding proposal details
 
 You can view information about a specific proposal with:
 
@@ -82,7 +82,7 @@ To see how many votes a proposal needs to pass (depending on what type of comman
 
 In the proposal above, there is a **constitutionThreshold** target of "0.7" or 70% of votes must be in support, "0.998" or 99.8% of votes have currently voted "yes", the number of votes required to pass are 29.1M CELO, with 30.9M CELO currently voted in total.
 
-## Voting on Proposals
+## Voting on proposals
 
 When a proposal is Queued, you can upvote the proposal to indicate you'd like it to be considered.
 
@@ -106,7 +106,7 @@ Once a proposal has reached the Referendum phase, it is open to community for vo
 celocli governance:vote --proposalID=<PROPOSAL_ID> --value=<Abstain|Yes|No> --from=<YOUR_VOTER_ADDRESS>
 ```
 
-## Executing a Proposal
+## Executing a proposal
 
 If a Governance Proposal receives enough votes and passes in the Referendum phase, it can be executed by anyone.
 
@@ -114,11 +114,11 @@ If a Governance Proposal receives enough votes and passes in the Referendum phas
 celocli governance:execute --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
 ```
 
-## Vote Delegation
+## Vote delegation
 
 [Contract Release 10](https://github.com/celo-org/celo-monorepo/issues/10375) introduced vote delegation, which allows the governance participant to delgate their voting power.
 
-### Delegating Votes
+### Delegating votes
 
 You can delegate votes using the following command:
 
@@ -137,7 +137,7 @@ You can view the max number of delegatees one can have using the following comma
 celocli lockedgold:max-delegatees-count
 ```
 
-### Revoking Delegated Votes
+### Revoking delegated votes
 
 You can use the following command to revoke delegated votes:
 
@@ -147,7 +147,7 @@ celocli lockedgold:revoke-delegate --from <DELEGATOR_ADDRESS> --to <DELEGATEE_AD
 
 For example, If you have delegated 15% to the delegatee and pass 5% as `percent` then 5% will be subtracted from the 15% resulting in 10% delegation.
 
-### Total percent of Locked Celo delegated by an account
+### Total percent of Locked CELO delegated by an account
 
 You can use the following command to get the total percent of locked celo delegated by an account:
 
@@ -155,7 +155,7 @@ You can use the following command to get the total percent of locked celo delega
 celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
 ```
 
-### List of Delegatees of a Delegator
+### List of delegatees of a delegator
 
 You can use the following command to get the list of delegatees of an account:
 
@@ -163,7 +163,7 @@ You can use the following command to get the list of delegatees of an account:
 celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
 ```
 
-### Total Delegated Votes to an address
+### Total delegated votes to an address
 
 You can use the following command to get the total delegated votes to an address:
 
@@ -171,7 +171,7 @@ You can use the following command to get the total delegated votes to an address
 celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
 ```
 
-## Staying Informed
+## Staying informed
 
 To stay up-to-date with all governance activities and proposals:
 

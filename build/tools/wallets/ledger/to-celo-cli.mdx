@@ -53,7 +53,7 @@ celocli node:synced
 
 The output should display `true`. If it displays `false` you may need to wait a bit and try again.
 
-### Confirm Addresses on Celo CLI
+### Confirm addresses on Celo CLI
 
 The Ledger's current seed phrase determines the device's accounts. In the terminal on your computer, you can view the first account's address with the following command:
 
@@ -79,7 +79,7 @@ celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 **Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.
 </Note>
 
-### Performing a Testnet transaction on Celo CLI
+### Performing a testnet transaction on Celo CLI
 
 Before using your address on the Celo Mainnet, you may want to test it on the Celo Sepolia Testnet
 with the following instructions.
@@ -114,7 +114,7 @@ To use `celocli` with your Ledger, ensure the device is connected to your comput
 
 Then, simply append the `--useLedger` flag to any `celocli` commands with which you'd like to use a Ledger. You may also append the `--ledgerConfirmAddress` flag, which will require that you manually verify on the Ledger the address from which the transaction is being sent.
 
-## View Account Balance
+## View account balance
 
 In order to view your account Balance on your Ledger with `celocli`, you need to run the following command:
 
@@ -126,13 +126,13 @@ celocli account:balance <your-address>
 
 This will display the specific account balance for your address on Celo Mainnet.
 
-## Receive Crypto Assets
+## Receive crypto assets
 
 In order to receive Celo on your address, whether it's CELO or USDm or any Mento stablecoin, you must share your specific address with the sender.
 
 Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://celo.blockscout.com/).
 
-## Send Crypto Assets
+## Send crypto assets
 
 In order to send CELO or USDm from your Ledger, you just need a recipient address to send to. Once you have that and the amount you would like to send (in our example, 10 CELO), we will go over how to send CELO using `celocli`.
 

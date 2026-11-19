@@ -9,7 +9,7 @@ When using Ethers.js on Celo, we suggest using the Celo Ethers.js Wrapper to mak
 [Fee Abstraction](/build/fee-abstraction/overview) on Celo enables the use of stablecoins like cUSD, USD₮ and USDC as gas tokens. 
 </Warning>
 
-## Celo Ethers.JS Wrapper
+## Celo Ethers.JS wrapper
 
 A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
@@ -29,7 +29,7 @@ or
 
 Note this wrapper has Ethers v5 as a peer dependency. Your project must include a dependency on that as well.
 
-## Basic Usage
+## Basic usage
 
 Connect to the network by creating a `CeloProvider`, which is based on [JsonRpc-Provider](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/):
 
@@ -62,7 +62,7 @@ const txReceipt = await txResponse.wait();
 console.info(`CELO transaction hash received: ${txReceipt.transactionHash}`);
 ```
 
-## Contract Interaction
+## Contract interaction
 
 `CeloWallet` can be used to send transactions.
 
