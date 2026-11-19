@@ -72,7 +72,7 @@ Use these names exactly (they are the most common ones in the repo; synonyms lik
 
 ### Headings
 
-- Sentence case for new and rewritten headings: `## How it works`, not `## How It Works`. Do not mass-retitle old pages just for case; fix headings on pages you are already editing.
+- Sentence case for headings: `## How it works`, not `## How It Works`.
 - No emoji, no numbering in headings (`## 1. Install` → `## Install`), no questions as headings unless the page is an FAQ.
 - A heading names the task or the thing. "Overview", "Introduction" and "Details" carry no information.
 
