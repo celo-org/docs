@@ -1,10 +1,10 @@
 ---
-title: "Agent Vault: Card Payments and Logins for Agents"
+title: "Agent Vault: Payments and Logins for Agents"
 sidebarTitle: "Self: Agent Vault"
-description: Let an agent you build pay at online checkouts and sign in to websites through an MCP server, SDK or HTTP API, using mock tokens instead of real card numbers and passwords
+description: Let an agent you build pay at online checkouts, pay x402 services sold on Buy in stablecoins on Celo and sign in to websites, without the agent holding card numbers, passwords or keys
 ---
 
-This page is for developers who build AI agents that must pay a merchant by card or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol, and its documentation describes no Celo, stablecoin or x402 support. For agents that pay onchain, see [x402](/build/agents/x402) and [MPP](/build/agents/mpp).
+This page is for developers who build AI agents that must pay a merchant by card, pay for an API in stablecoins on Celo, or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol. Agent payments on Celo run over [x402](/build/agents/x402), and the agent never holds a key.
 
 Your agent never holds a card number or a password. It gets mock tokens, fills a checkout or sign-in form in a browser that Agent Vault runs, and Agent Vault replaces each token with the real value as it types, after checking the account holder's rules. A prompt, a log or a model provider's retention then holds only tokens.
 
@@ -21,7 +21,26 @@ Your agent never holds a card number or a password. It gets mock tokens, fills a
 3. The agent drives a browser that runs inside Agent Vault's proxy and fills fields with tokens.
 4. At each fill, the proxy checks the account holder's rules, swaps the token for the real value and types it into the merchant page. A login fills only on the site it was saved for.
 
-Agent Vault does not move money. The merchant sees an ordinary card payment, and the merchant and the card issuer keep the financial record.
+For card payments, Agent Vault does not move money. The merchant sees an ordinary card payment, and the merchant and the card issuer keep the financial record. For x402 payments, see the next section.
+
+## Pay x402 services from the agent wallet
+
+Agent Vault creates an onchain wallet for the account holder on Celo and pays [x402](/build/agents/x402) services sold on Buy from it for the agent. Only services sold on Buy are supported. Agent Vault holds the wallet's key for the account holder, and only the account holder can withdraw. The agent can spend from the wallet but never gets the key or signs a payment.
+
+- **Network and tokens:** Celo mainnet, with USDC, USD₮ or USA₮. The wallet needs no CELO for fees. A Celo Sepolia sandbox takes test USDC.
+- **What it pays for:** only API calls sold on Buy, a pay-per-call API marketplace. It does not pay other x402 endpoints. To pay any x402 API from your own code, see [buy](/build/agents/buy).
+- **Limits:** the account holder's agent card sets the spending limits, and a payment can wait for approval first, depending on the seller and the card's approval amount.
+- **Final payments:** a payment on Buy cannot be reversed from the Wallet page.
+
+<Warning>
+Send only the tokens the Wallet page lists, on the network it names. Other tokens sent to the wallet cannot be withdrawn.
+</Warning>
+
+See [Wallet](https://docs.agentvault.io/dashboard/wallet) for funding and withdrawal steps.
+
+## Altana or Agent Vault
+
+Both limit what an agent can do. [Altana](/build/agents/altana) gives the agent a wallet whose key the owner holds, with spend limits the blockchain enforces and anyone can verify. Agent Vault keeps logins, cards and payment authority out of the agent's hands, with limits it checks before each payment.
 
 ## Choose an integration
 
@@ -161,9 +180,10 @@ Branch on the error `code`, not the message. The SDK throws `SelfAgentPayError` 
 
 ## What Agent Vault does not do
 
-- It does not hide the card from the merchant, and it does not move money.
+- It does not hide the card from the merchant, and card payments are ordinary card payments.
 - It does not solve CAPTCHAs, 3-D Secure checks or one-time codes. It hands the live page to the account holder to complete.
-- Its documentation describes no blockchain component, so it gives the agent no wallet or onchain identity. For agent identity on Celo, see [ERC-8004](/build/agents/8004) and [Self Agent ID](/build/agents/self-agent-id).
+- It does not give the agent an onchain identity. For agent identity on Celo, see [ERC-8004](/build/agents/8004) and [Self Agent ID](/build/agents/self-agent-id).
+- Agent Vault holds the wallet key for the account holder, and only the account holder can withdraw. You trust Agent Vault to apply the limits. For wallets where the owner keeps the key, see [Altana](/build/agents/altana).
 - Limits bound what an agent can spend, not what it can buy. A compromised agent can still make purchases that the limits and merchant rules allow. For what is and is not protected, read Agent Vault's [security model](https://docs.agentvault.io/security/model).
 
 ## Resources
@@ -174,6 +194,7 @@ Branch on the error `code`, not the message. The SDK throws `SelfAgentPayError` 
 | Documentation | [docs.agentvault.io](https://docs.agentvault.io) |
 | Documentation index for AI tools | [docs.agentvault.io/llms.txt](https://docs.agentvault.io/llms.txt) |
 | Hosted MCP server | `https://mcp.agentvault.io/mcp` |
+| Wallet and withdrawals | [docs.agentvault.io/dashboard/wallet](https://docs.agentvault.io/dashboard/wallet) |
 | Tool reference | [docs.agentvault.io/mcp/tool-reference](https://docs.agentvault.io/mcp/tool-reference) |
 | HTTP API reference | [docs.agentvault.io/reference/http-api](https://docs.agentvault.io/reference/http-api) |
 | Checkout recipe registry (open source) | [GitHub](https://github.com/selfxyz/agent-checkout-skill) |
@@ -182,6 +203,7 @@ Branch on the error `code`, not the message. The SDK throws `SelfAgentPayError` 
 ## Related
 
 - [Build with AI on Celo](/build/agents/overview) — where card and login flows sit next to onchain agent payments
+- [Altana](/build/agents/altana) — an agent wallet where the owner keeps the key and limits are enforced onchain
 - [x402: Agent Payments](/build/agents/x402) — pay per HTTP request with stablecoins on Celo
 - [MPP: Machine Payments Protocol](/build/agents/mpp) — charge USDC per API request
 - [Model Context Protocol (MCP)](/build/agents/mcp/index) — how MCP servers connect to your agent

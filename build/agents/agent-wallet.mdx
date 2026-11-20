@@ -1,6 +1,6 @@
 ---
 title: "Give Your Agent a Wallet and Test Funds"
-sidebarTitle: "Agent Wallet"
+sidebarTitle: "Agent Wallet Infra"
 description: Create an account for an agent, fund it on Celo Sepolia and send a first transfer before you wire it into x402 or MPP
 ---
 
@@ -68,6 +68,29 @@ console.log("Status:", receipt.status, "Hash:", hash);
 Run it with your key in the environment, for example `node --env-file=.env first-transfer.mjs`.
 
 You are done when it prints `Status: success`. Look the hash up on the [Celo Sepolia explorer](https://celo-sepolia.blockscout.com) to see the transaction.
+
+## Choose wallet infrastructure for an agent
+
+A raw key is enough for testing. For an agent that holds real funds, use a wallet provider. Each of these works on Celo and can serve as an agent wallet. Details and links are on the [wallet providers](/build/tools/wallets/index) page. The list is in no particular order and is not a recommendation.
+
+| Provider | What it gives an agent |
+|---|---|
+| [Altana](/build/agents/altana) | Self-custodial wallet; the owner keeps the admin key and the agent gets a session key with a spend cap, contract allowlist and expiry enforced onchain |
+| [Agent Vault](/build/agents/agent-vault) | A wallet on Celo whose key Agent Vault holds for the account holder; pays x402 services sold on Buy in USDC, USD₮ or USA₮ within the holder's limits |
+| [JAW](https://jaw.id/) | Passkey-secured smart accounts with programmable permissions for delegated agent execution |
+| [Privy](https://www.privy.io/) | Whitelabel and server wallets with transaction signing through one API |
+| [Openfort](https://www.openfort.io/) | Embedded and backend (server) wallets, with paymasters that can take fees in stablecoins |
+| [Alchemy Smart Wallets](https://www.alchemy.com/smart-wallets) | Smart wallet infrastructure |
+| [thirdweb](https://thirdweb.com/wallets) | Embedded wallet infrastructure |
+| [Para](https://www.getpara.com/) | Wallet and authentication suite |
+| [Portal](https://portalhq.io/) | MPC wallets and an SDK |
+| [BlockRadar](https://www.blockradar.co/) | Wallet as a service for stablecoin transactions |
+| [Safe Wallet](https://app.safe.global/welcome) | Smart account and multisig wallet |
+| [Dynamic](https://www.dynamic.xyz/) | Wallet connection and authentication with Celo support |
+| [Reown](https://reown.com/) | WalletConnect, which connects apps to existing wallets |
+| [Zerion](https://zerion.io/) | Developer API for building apps and wallets |
+
+To sponsor gas for an ERC-4337 smart account, see [Pimlico](/build/tools/wallets/pimlico). To pay gas in a stablecoin from any account, see [fee abstraction](/build/fee-abstraction/overview).
 
 ## Troubleshooting
 
