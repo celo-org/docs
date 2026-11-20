@@ -50,6 +50,7 @@ description: Use the x402 protocol to let agents and apps pay per HTTP request w
 
 - `title` and `description` are required. `description` is what `llms.txt` shows AI tools and what search previews show humans — write the outcome the page enables, one sentence, no trailing period.
 - Never use `og:description`, `id`, `icon`, or `mode` in frontmatter. Pages still carrying `og:description` are being migrated (#2239).
+  - **One exception:** `learn/celo.mdx` keeps `og:description` set to the verbatim @Celo bio on X. docs.celo.org resolves to that page, so the bio becomes the X, Slack and Telegram preview text. Its `description` still follows the rule above. Do not remove it in a migration sweep.
 - No H1 in the body; the title is the H1. Start with one or two sentences of prose before the first `##`.
 
 ### The first paragraph says who the page is for
