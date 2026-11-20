@@ -133,7 +133,7 @@ If the configuration shows `canVote: true`, your contract allows you to vote for
 
 Otherwise, you're all set. You don't need to take any further action right now.
 
-## Authorize Vote Signer Keys
+## Authorize vote signer keys
 
 To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](/learn/protocol/staking/key-management/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
 
@@ -242,7 +242,7 @@ Check that your CELO was successfully locked.
 celocli lockedgold:show $CELO_RG_ADDRESS
 ```
 
-## Vote for a Validator Group
+## Vote for a validator group
 
 CELO holders can lock CELO and vote for Validator Groups on the Celo network. These votes elect Validators, which serve the network as [community RPC providers](/contribute/community-rpc-nodes/community-rpc-node). By voting you can also earn [epoch rewards](/learn/protocol/epoch-rewards/index).
 
@@ -292,7 +292,7 @@ celocli election:show $CELO_RG_ADDRESS --voter
 
 Your locked CELO votes should be displayed next to `pending` under `votes`.
 
-## The next day: Activate your Vote
+## The next day: Activate your vote
 
 Your vote will apply starting at the next Validator Election, held at the end of each epoch (approximately once per day), and will continue to apply at each subsequent election until you change it.
 
@@ -336,7 +336,7 @@ celocli rewards:show --voter $CELO_RG_ADDRESS
 
 Or by searching for your `ReleaseGold` address on [Celo Blockscout](https://celo.blockscout.com) and opening the "Epoch rewards" tab, which appears once the address has received rewards.
 
-## Next Steps
+## Next steps
 
 You are now set up to participate in the Celo network!
 
@@ -346,7 +346,7 @@ Now you've locked CELO, you can use it to participate in voting for or against [
 
 You can also read more about how Celo's [staking](/learn/protocol/staking/index) and on-chain [Governance](/learn/protocol/governance/overview) mechanisms work.
 
-## Revoking Votes
+## Revoking votes
 
 At any point you can revoke votes cast for a Validator Group. For example, a Group may be performing poorly and affecting your rewards, and you may prefer to vote for another Group.
 
@@ -369,7 +369,7 @@ celocli election:revoke --from $CELO_VOTE_SIGNER_ADDRESS --for $CELO_VALIDATOR_G
 
 You can immediately re-use this locked CELO to vote for another Group.
 
-## Unlocking and Withdrawing
+## Unlocking and withdrawing
 
 At some point, the terms of your `ReleaseGold` contract will allow you to withdraw funds and transfer them to your beneficiary address.
 

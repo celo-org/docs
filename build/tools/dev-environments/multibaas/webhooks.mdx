@@ -5,16 +5,16 @@ description: Receive real-time HTTP callbacks for on-chain contract events using
 
 MultiBaas webhooks deliver real-time HTTP POST callbacks to your server whenever a configured on-chain event fires. This lets you react to contract activity without polling the blockchain.
 
-## Supported Event Types
+## Supported event types
 
 | Type | Trigger |
 |---|---|
 | `event.emitted` | A contract event is emitted on-chain (requires **Sync Events** enabled on the contract) |
 | `transaction.included` | A Cloud Wallet transaction is mined in a block |
 
-## Creating a Webhook
+## Creating a webhook
 
-### In the Dashboard
+### In the dashboard
 
 1. Go to **Blockchain → Webhooks → +**
 2. Enter a label and your publicly accessible HTTPS endpoint URL
@@ -33,7 +33,7 @@ curl -X POST \
   }'
 ```
 
-## Webhook Payload
+## Webhook payload
 
 Each request delivers a JSON array of one or more events:
 
@@ -65,7 +65,7 @@ type MultiBaasEvent = {
 };
 ```
 
-## Verifying Signatures
+## Verifying signatures
 
 Every webhook request includes two headers:
 
@@ -95,7 +95,7 @@ function verifyWebhookSignature(
 
 The webhook secret is shown once when you create the webhook in the MultiBaas dashboard.
 
-## Example: Next.js Webhook Handler
+## Example: Next.js webhook handler
 
 The following is based on how [Celo Mondo](https://mondo.celo.org/) uses MultiBaas webhooks to process Celo governance events in real time.
 
@@ -157,7 +157,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
 For a full production example — including governance proposal processing, multisig approval handling, progressive historical backfill, and database integration — see the [Celo Mondo webhook handler](https://github.com/celo-org/celo-mondo/tree/main/src/app/api/webhooks/multibaas).
 
-## Environment Variables
+## Environment variables
 
 ```bash
 MULTIBAAS_DEPLOYMENT_URL=https://<deployment-id>.multibaas.com

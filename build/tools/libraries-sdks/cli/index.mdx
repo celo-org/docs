@@ -26,7 +26,7 @@ brew install celocli
 celocli --version
 ```
 
-### NPM Package
+### NPM package
 
 The Celo CLI is published as a node module on NPM. Assuming you have [npm](https://www.npmjs.com/get-npm) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) both installed, you can install the Celo CLI using the following command:
 
@@ -60,7 +60,7 @@ To see all available commands, run `celocli commands`.
 
 To see all available flags for a command, add the flag `--globalHelp` to the command.
 
-## Optional: Configure Full Node
+## Optional: Configure full node
 
 Commands need to connect to a Celo node to execute most functionality.
 You have several options for node connectivity:
@@ -87,11 +87,11 @@ You can verify that `celocli` is connected by running:
 celocli config:get
 ```
 
-## Import Accounts
+## Import accounts
 
 If you are connecting to a remote node (like Forno), Celo CLI will need to sign transactions locally before sending them. To do this, Celo CLI needs access to a private key. There are a couple ways to sign transactions using Celo CLI.
 
-### Import Private Key (less secure)
+### Import private key (less secure)
 
 Add the `--privateKey` flag followed by the private key associated with the sending account. For example:
 
@@ -101,7 +101,7 @@ celocli transfer:celo --from <accountAddress> --to <addressOfChoice> --value <va
 
 Or you can use a Ledger hardware wallet (preferred, see below).
 
-### Using a Ledger Wallet
+### Using a Ledger wallet
 
 The Celo CLI supports using a [Ledger hardware wallet](/build/tools/wallets/ledger/setup) to sign transactions. Just add the `--useLedger` flag to a command that requires a signature.
 
