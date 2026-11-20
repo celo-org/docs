@@ -75,7 +75,7 @@ Major and minor releases should be constructed by pushing a commit to the `maste
 
 Only one commit should ever have a “stable” tag at any given version number. When that commit is created, a tag should be added along with release notes. Once the tag is published it should not be reused for any further release or changes.
 
-### Emergency Patches
+### Emergency patches
 
 Bugs which affect the security, stability, or core functionality of the network may need to be released outside the standard release cycle. In this case, an emergency patch release should be created on top of all supported minor releases which contains the minimal change and corresponding test for the fix.
 
@@ -85,6 +85,6 @@ If the issue is exploitable and mitigations are not readily available, a patch s
 
 > Pushing an upgrade with this process will be disruptive to any nodes that do not upgrade quickly. It should _only_ be used when the circumstances require it.
 
-## Vulnerability Disclosure
+## Vulnerability disclosure
 
 Vulnerabilities in `celo-blockchain` releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-blockchain/blob/master/SECURITY.md).

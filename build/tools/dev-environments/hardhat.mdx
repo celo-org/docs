@@ -20,7 +20,7 @@ The configuration below reads a mnemonic on Celo's derivation path, `m/44'/52752
 
 To deploy without a local environment, use [Remix](/build/tools/dev-environments/remix) instead.
 
-## Create Hardhat Project
+## Create Hardhat project
 
 Choose one of the following items to prepare an app to deploy on Celo.
 
@@ -30,7 +30,7 @@ Choose one of the following items to prepare an app to deploy on Celo.
 
 Open [hardhat.config.js](https://hardhat.org/config/) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/celo-composer/blob/main/templates/contracts/hardhat/hardhat.config.ts.hbs). This code is similar to Hardhat settings with a few configuration updates needed to deploy to a Celo network. You will need to create a `.env` file in the project root directory and install `dotenv` with npm or yarn in order to read the `process.env.MNEMONIC` variable in the config file.
 
-### Connect to Testnet using Forno
+### Connect to testnet using Forno
 
 Using [Forno](/build/tools/nodes/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Sepolia Testnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
@@ -49,7 +49,7 @@ Using [Forno](/build/tools/nodes/forno) allows you to connect to the Celo test b
 Celo uses a different account derivation path than Ethereum, so you have to specify "m/44'/52752'/0'/0" as the path.
 </Info>
 
-### Connect to Mainnet using Forno
+### Connect to mainnet using Forno
 
 Using [Forno](/build/tools/nodes/forno) also allows you to connect to the Celo main blockchain without running a local node. The Mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
@@ -82,7 +82,7 @@ npx hardhat run scripts/sample-script.js --network celoSepolia
 npx hardhat run scripts/sample-script.js --network celo
 ```
 
-## View Contract Deployment
+## View contract deployment
 
 Copy your **contract address** from the terminal and navigate to the [block explorer](https://celo.blockscout.com/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
@@ -94,7 +94,7 @@ Copy your **contract address** from the terminal and navigate to the [block expl
 Learn more about building and deploying apps using the <a href="https://hardhat.org/">HardHat documentation</a>.
 </Tip>
 
-## Verify Contracts on Celo
+## Verify contracts on Celo
 
 - [Using Blockscout](/developer/verify/blockscout)
 - [Using Remix](/developer/verify/remix)

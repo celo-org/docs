@@ -8,7 +8,7 @@ MultiBaas manages contracts in two layers:
 - **[Library](https://docs.curvegrid.com/multibaas/manage-contracts#smart-contract-library)** — contract definitions (ABI and bytecode)
 - **[On-chain](https://docs.curvegrid.com/multibaas/manage-contracts#on-chain-smart-contracts)** — deployed instances linked to a blockchain address
 
-## Adding a Contract to the Library
+## Adding a contract to the library
 
 You can add a contract to the library in four ways:
 
@@ -17,7 +17,7 @@ You can add a contract to the library in four ways:
 3. **Address lookup** — MultiBaas fetches the ABI from Blockscout or Etherscan by contract address
 4. **Framework plugin** — automated via the [Hardhat](#hardhat) or [Forge](#foundry--forge) plugin during deployment (see below)
 
-## Deploying or Linking a Contract
+## Deploying or linking a contract
 
 ### Deploy a new contract
 
@@ -34,7 +34,7 @@ You can add a contract to the library in four ways:
 3. Select the contract definition from the library
 4. Optionally enable **Sync Events**
 
-## Calling Contract Methods
+## Calling contract methods
 
 Once a contract is linked, MultiBaas exposes all its functions via the [REST API](https://docs.curvegrid.com/multibaas/api/multibaas-api). Toggle on Developer Mode in the contract functions UI to see sample payload, curl, TypeScript, or golang code. The base URL for all API calls is:
 
@@ -133,7 +133,7 @@ await walletClient.sendTransaction({
 });
 ```
 
-## Framework Plugins
+## Framework plugins
 
 ### Hardhat
 

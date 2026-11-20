@@ -11,7 +11,7 @@ Check out the [migration guide](/developer/contractkit/migrating-to-viem) for up
 To learn more visit the [Celo forum](https://forum.celo.org/t/sunsetting-contractkit/5337). 
 </Warning>
 
-## Setting Default Tx Options
+## Setting default tx options
 
 `kit` allows you to set default transaction options:
 
@@ -35,7 +35,7 @@ let USDmTx = await USDmContract
   .send({ feeCurrency: USDmContract.address });
 ```
 
-## Getting the Total Balance
+## Getting the total balance
 
 This method from the `kit` will return the CELO, locked CELO, USDm and total balance of the address
 
@@ -60,7 +60,7 @@ let receipt = tx.waitReceipt();
 console.log(receipt);
 ```
 
-## Sending Custom Transactions
+## Sending custom transactions
 
 The Celo transaction object is not the same as Ethereum's. There is a new optional field present:
 
@@ -94,7 +94,7 @@ const hash = await tx.getHash();
 const receipt = await tx.waitReceipt();
 ```
 
-## Interacting with Custom contracts
+## Interacting with custom contracts
 
 You can use ContractKit to interact with any deployed smart contract, provided you have the contract address and the [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html). To do so, you will initialize a new `web3` Contract instance. Then you can call functions on the contract instance to read state or send transactions to update the contract. You can see some code snippets below.
 

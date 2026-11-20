@@ -6,7 +6,7 @@ sidebarTitle: "JAW"
 
 [JAW](https://jaw.id/) provides smart account infrastructure for Celo applications. Give users passkey-secured accounts with ENS identity, sponsor their gas, and enable programmable permissions for subscriptions and delegated agent execution.
 
-## Key Features
+## Key features
 
 - **Passkey authentication**: phishing-resistant, synced across devices via iCloud/Google (works as transport layer)
 - **ERC-4337 smart accounts**: gasless, batchable, and programmable
@@ -15,7 +15,7 @@ sidebarTitle: "JAW"
 - **ENS subname issuance**: assign human-readable identities on onboarding
 - **Headless/server-side support**: AI agent wallets or backend-triggered transactions
 
-## Getting Started
+## Getting started
 
 Get an API key from the [JAW Dashboard](https://dashboard.jaw.id) and add your domain to the allowed list. Use `localhost` for local development, your production domain for production.
 
@@ -211,7 +211,7 @@ function GrantPermission() {
 
 Use `usePermissions` to query active permissions and `useRevokePermissions` to revoke them, both from `@jaw.id/wagmi`.
 
-### @jaw.id/core (Framework-agnostic)
+### @jaw.id/core (framework-agnostic)
 
 **Installation**
 
@@ -323,14 +323,14 @@ console.log('Permission granted:', result.permissionId);
 
 Once a permission is granted, a server-side spender can execute calls against it using `Account.fromLocalAccount()` from `@jaw.id/core`. See [Subscription Payments](https://docs.jaw.id/guides/subscription) and [Account API](https://docs.jaw.id/account) for full details.
 
-## Authentication Modes
+## Authentication modes
 
 - **CrossPlatform** (default): passkey operations run on `keys.jaw.id` via a popup, giving users a portable wallet that works across any JAW-powered app.
 - **AppSpecific**: passkey operations run inside your app via a `uiHandler`, giving you full UI control at the cost of wallet portability.
 
 See the [JAW configuration docs](https://docs.jaw.id/configuration) for setup details and UIHandler implementation.
 
-## Common Setup Issues
+## Common setup issues
 
 | Symptom | Likely cause |
 |---|---|
@@ -338,7 +338,7 @@ See the [JAW configuration docs](https://docs.jaw.id/configuration) for setup de
 | Testnet chain not available | Set `preference: { showTestnets: true }` when using a testnet `defaultChainId` |
 | AppSpecific mode throws on init | `uiHandler` is missing, required when using `Mode.AppSpecific` |
 
-## Next Steps
+## Next steps
 
 - [Quickstart guide](https://docs.jaw.id/guides/quickstart): full end-to-end walkthrough
 - [Account API](https://docs.jaw.id/account): headless smart accounts for agents and server-side use

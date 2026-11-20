@@ -7,7 +7,7 @@ USA₮ (Tether America USD) is a US-regulated dollar stablecoin issued by [Ancho
 
 Celo is the first chain outside Ethereum to host USA₮, launched on March 31, 2026.
 
-## Contract Details
+## Contract details
 
 | Field | Value |
 |-------|-------|
@@ -39,7 +39,7 @@ USA₮ and USD₮ are separate assets from different issuers with different trus
 
 Both are available on Celo Mainnet. Use USD₮ for general stablecoin flows; use USA₮ when compliance, regulatory clarity, or institutional credibility matters to your use case.
 
-## Fee Abstraction
+## Fee abstraction
 
 USA₮ is a whitelisted fee currency on Celo from day one. Users can pay gas fees directly in USA₮ — no CELO required.
 
@@ -57,7 +57,7 @@ const tx = {
 
 For a full implementation guide, see [Using Fee Abstraction](/build/fee-abstraction/using-fee-abstraction).
 
-## What to Build
+## What to build
 
 **Wallet integration** — Send, receive, and display USA₮ balances. Implement fee abstraction using the adapter address so users never need CELO.
 
@@ -69,7 +69,7 @@ For a full implementation guide, see [Using Fee Abstraction](/build/fee-abstract
 
 **Compliant remittance** — Use USA₮ as the regulated on-ramp leg, then convert to a local stablecoin via Mento (USDm, BRLm, KESm, NGNm, and more), Ripio wFIAT (wBRL, wARS, wMXN, wCOP), or VNX (VGBP, VCHF) depending on the destination corridor.
 
-**MiniPay** — MiniPay wallets can hold USA₮, but MiniPay asks Mini Apps to price and settle in USDT, USDC or USDm only ([supported tokens for Mini Apps](https://docs.minipay.xyz/technical-references/retrieve-balance.html#supported-tokens-for-mini-apps)). Build a USA₮ app for other wallets, or check MiniPay's docs before pricing a Mini App in USA₮. See [Mini Apps](/build/mini-apps/overview).
+**MiniPay** — MiniPay wallets can hold USA₮, but MiniPay asks Mini Apps to price and settle in USD₮, USDC or USDm only ([supported tokens for Mini Apps](https://docs.minipay.xyz/technical-references/retrieve-balance.html#supported-tokens-for-mini-apps)). Build a USA₮ app for other wallets, or check MiniPay's docs before pricing a Mini App in USA₮. See [Mini Apps](/build/mini-apps/overview).
 
 ## Related
 

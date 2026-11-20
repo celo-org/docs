@@ -190,8 +190,10 @@
               "build/agents/self-agent-id",
               "build/agents/agent-vault",
               "build/agents/x402",
+              "build/agents/x402-add-celo",
               "build/agents/x402-get-discovered",
               "build/agents/mpp",
+              "build/agents/buy",
               "build/agents/celopedia",
               "build/agents/vibe-coding",
               "build/agents/mcp/index",
@@ -350,7 +352,8 @@
                   "build/tools/indexers/envio",
                   "build/tools/indexers/goldrush",
                   "build/tools/indexers/indexing-co",
-                  "build/tools/indexers/codex"
+                  "build/tools/indexers/codex",
+                  "build/tools/indexers/pinax"
                 ]
               },
               {

@@ -5,7 +5,7 @@ description: "Credit on-chain activity back to your app on Celo using ERC-8021 a
 
 Attribution tags let you mark transactions as coming from your app — so on-chain activity can be credited back to you for programs like MiniPay leaderboards and hackathon tracking. Celo's implementation follows [ERC-8021](https://oxlib.sh/ercs/erc8021/Attribution).
 
-## How It Works
+## How it works
 
 ERC-8021 appends a small suffix to a transaction's calldata. The suffix is invisible to the contract being called — the EVM discards trailing bytes — so adding it never changes execution semantics. It just makes the transaction identifiable as having come through your app to anyone reading calldata off-chain.
 
@@ -48,7 +48,7 @@ Any string matching `[a-z0-9_]` (1–32 characters) is a valid code. If a progra
 const tag = toDataSuffix(["your_own_code", "celo_assigned1234"]);
 ```
 
-## Tagging a Contract Call
+## Tagging a contract call
 
 Concatenate your encoded calldata with the suffix:
 
@@ -75,7 +75,7 @@ writeContract({
 });
 ```
 
-## The Layering Rule
+## The layering rule
 
 ERC-8021 suffixes can carry multiple codes, but **each code should only be added by the entity it represents**:
 
@@ -84,7 +84,7 @@ ERC-8021 suffixes can carry multiple codes, but **each code should only be added
 
 Adding a platform code from your own app would falsely claim every transaction ran inside that platform, polluting attribution data.
 
-## x402 Settlements
+## x402 settlements
 
 When a payment is settled through an x402 facilitator, the facilitator submits the transaction, not your wallet, so you cannot append the suffix yourself. ERC-8021 covers this with a role-based tag (Schema 2) that the facilitator writes: your app is credited in the `a` (app) field, the facilitator identifies itself in `w`, and the paying client can add `s`.
 
@@ -98,9 +98,9 @@ Once live, your app code travels through the standard x402 `builder-code` extens
 - The client echoes it in the payment payload; a client paying on its own behalf adds its code under `extensions["builder-code"].info.s`.
 - The facilitator reads both, adds its own `w`, and appends the suffix to the settlement calldata.
 
-You can declare the code now: it is ignored until the facilitator update ships, then applied automatically. It applies to x402 v2 payments only (v1 has no `extensions` field) and, at first, to settlements in USDC, USDT and USAT.
+You can declare the code now: it is ignored until the facilitator update ships, then applied automatically. It applies to x402 v2 payments only (v1 has no `extensions` field) and, at first, to settlements in USDC, USD₮ and USA₮.
 
-## Verifying It Worked
+## Verifying it worked
 
 ```ts
 import { verifyTx } from "@celo/attribution-tags";

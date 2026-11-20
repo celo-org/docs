@@ -9,12 +9,12 @@ This guide is designed to help node operators run a Celo L2 node with Docker.
 <Info>
 **Execution client: op-reth**
 
-These instructions use `op-reth`, Celo's supported execution client. A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
+These instructions use `op-reth`, Celo's supported execution client. It is the Celo build, `celo-reth`; upstream `op-reth` builds are [not Celo-compatible](/operate/operators/overview#execution-client). A fresh node starts from an empty datadir and bootstraps from a published snapshot (required on mainnet) or, on Celo Sepolia, syncs from genesis — no L1 data migration required.
 
 Support for `op-geth` has ended, and a node still running it can follow the wrong chain; see [End of Support for op-geth](/operate/notices/op-geth-deprecation). To switch an existing mainnet node, [RETH_MIGRATION.md](https://github.com/celo-org/celo-l2-node-docker-compose/blob/main/RETH_MIGRATION.md) in the compose repository describes running `op-reth` alongside `op-geth` on an empty datadir, repointing `op-node` with `--l2.enginekind=reth`, and moving traffic over once `op-reth` reaches the chain tip.
 </Info>
 
-## Recommended Hardware
+## Recommended hardware
 
 ### Mainnet
 
@@ -38,11 +38,11 @@ Storage size requirements will increase over time, especially for archive nodes.
 If running an archive node, please make sure you also have enough storage for the legacy Celo L1 archive datadir. See [Running an archive node](/operate/operators/archive-node).
 </Warning>
 
-## Run Node with Docker
+## Run node with Docker
 
 To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repository with all the necessary configuration files and docker compose templates to make running a Celo L2 node easy.
 
-### Running a Full Node
+### Running a full node
 
 Follow these steps to run a full node. If you would like to run an archive node, see [Running an archive node](/operate/operators/archive-node).
 
