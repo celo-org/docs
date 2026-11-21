@@ -1,0 +1,393 @@
+---
+title: celocli bridge
+sidebarTitle: "Bridge"
+---
+
+`celocli bridge`
+================
+
+Bridge CELO between Ethereum (L1) and Celo (L2)
+
+* [`celocli bridge:deposit`](#celocli-bridgedeposit)
+* [`celocli bridge:withdraw-finalize`](#celocli-bridgewithdraw-finalize)
+* [`celocli bridge:withdraw-init`](#celocli-bridgewithdraw-init)
+* [`celocli bridge:withdraw-prove`](#celocli-bridgewithdraw-prove)
+* [`celocli bridge:withdraw-status`](#celocli-bridgewithdraw-status)
+
+## `celocli bridge:deposit`
+
+Deposit CELO from Ethereum (L1) to Celo (L2). This bridges your CELO tokens to the Celo L2 network.
+
+```sh
+USAGE
+  $ celocli bridge:deposit --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
+    10000000000000000000000 --network mainnet|sepolia --l1RpcUrl <value> [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp] [--to 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
+    [--gasLimit <value>]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender on L1
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --gasLimit=<value>
+      [default: 100000] Gas limit for the L2 transaction
+
+  --globalHelp
+      View all available global flags
+
+  --l1RpcUrl=<value>
+      (required) RPC URL for the Ethereum L1 network
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --network=<option>
+      (required) Network to bridge on (mainnet or sepolia)
+      <options: mainnet|sepolia>
+
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the recipient on L2 (defaults to sender address)
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --value=10000000000000000000000
+      (required) Amount of CELO to deposit (in wei)
+
+DESCRIPTION
+  Deposit CELO from Ethereum (L1) to Celo (L2). This bridges your CELO tokens to the
+  Celo L2 network.
+
+EXAMPLES
+  bridge:deposit --from 0xYOUR_ADDRESS --to 0xRECIPIENT --value 1000000000000000000 --network mainnet --l1RpcUrl https://eth-mainnet.example.com -k 0xPRIVATE_KEY
+
+  bridge:deposit --from 0xYOUR_ADDRESS --value 1000000000000000000 --network sepolia --l1RpcUrl https://eth-sepolia.example.com -k 0xPRIVATE_KEY
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/bridge/deposit.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%409.0.1/packages/cli/src/commands/bridge/deposit.ts)_
+
+## `celocli bridge:withdraw-finalize`
+
+Finalize a withdrawal and claim your CELO on Ethereum (L1). This is the final step of the withdrawal process.
+
+```sh
+USAGE
+  $ celocli bridge:withdraw-finalize --txHash 0x --from
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --network mainnet|sepolia --l1RpcUrl
+    <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address that will finalize the withdrawal on L1 (pays L1 gas)
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --l1RpcUrl=<value>
+      (required) RPC URL for the Ethereum L1 network
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --network=<option>
+      (required) Network (mainnet or sepolia)
+      <options: mainnet|sepolia>
+
+  --txHash=0x
+      (required) Transaction hash of the withdrawal initiation on L2
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Finalize a withdrawal and claim your CELO on Ethereum (L1). This is the final step of
+  the withdrawal process.
+
+  Can only be run after the 7-day challenge period has passed. Use
+  bridge:withdraw-status to check if your withdrawal is ready.
+
+EXAMPLES
+  bridge:withdraw-finalize --txHash 0xYOUR_L2_TX_HASH --from 0xYOUR_ADDRESS --network mainnet --l1RpcUrl https://eth-mainnet.example.com -n mainnet -k 0xPRIVATE_KEY
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/bridge/withdraw-finalize.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%409.0.1/packages/cli/src/commands/bridge/withdraw-finalize.ts)_
+
+## `celocli bridge:withdraw-init`
+
+Initiate a withdrawal of CELO from Celo (L2) to Ethereum (L1). This is step 1 of the withdrawal process.
+
+```sh
+USAGE
+  $ celocli bridge:withdraw-init --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value
+    10000000000000000000000 --network mainnet|sepolia [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--to
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender on L2
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --network=<option>
+      (required) Network to bridge on (mainnet or sepolia)
+      <options: mainnet|sepolia>
+
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the recipient on L1 (defaults to sender address)
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --value=10000000000000000000000
+      (required) Amount of CELO to withdraw (in wei)
+
+DESCRIPTION
+  Initiate a withdrawal of CELO from Celo (L2) to Ethereum (L1). This is step 1 of the
+  withdrawal process.
+
+  After initiating, you will need to:
+  1. Wait ~1 hour for the proof to become available
+  2. Run bridge:withdraw-prove to submit the proof
+  3. Wait 7 days for the challenge period
+  4. Run bridge:withdraw-finalize to claim your funds on L1
+
+EXAMPLES
+  bridge:withdraw-init --from 0xYOUR_L2_ADDRESS --to 0xL1_RECIPIENT --value 1000000000000000000 --network mainnet -n mainnet -k 0xPRIVATE_KEY
+
+  bridge:withdraw-init --from 0xYOUR_L2_ADDRESS --value 1000000000000000000 --network sepolia -n celo-sepolia -k 0xPRIVATE_KEY
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/bridge/withdraw-init.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%409.0.1/packages/cli/src/commands/bridge/withdraw-init.ts)_
+
+## `celocli bridge:withdraw-prove`
+
+Build a withdrawal proof and submit it to Ethereum (L1). This is step 2 of the withdrawal process.
+
+```sh
+USAGE
+  $ celocli bridge:withdraw-prove --txHash 0x --from
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --network mainnet|sepolia --l1RpcUrl
+    <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address that will submit the proof on L1 (pays L1 gas)
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --l1RpcUrl=<value>
+      (required) RPC URL for the Ethereum L1 network
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --network=<option>
+      (required) Network to bridge on (mainnet or sepolia)
+      <options: mainnet|sepolia>
+
+  --txHash=0x
+      (required) Transaction hash of the withdrawal initiation on L2
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Build a withdrawal proof and submit it to Ethereum (L1). This is step 2 of the
+  withdrawal process.
+
+  This command will wait until the proof is available (~1 hour after withdrawal
+  initiation), then automatically build and submit it.
+
+EXAMPLES
+  bridge:withdraw-prove --txHash 0xYOUR_L2_TX_HASH --from 0xYOUR_ADDRESS --network mainnet --l1RpcUrl https://eth-mainnet.example.com -n mainnet -k 0xPRIVATE_KEY
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/bridge/withdraw-prove.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%409.0.1/packages/cli/src/commands/bridge/withdraw-prove.ts)_
+
+## `celocli bridge:withdraw-status`
+
+Check the status of a CELO withdrawal from Celo (L2) to Ethereum (L1).
+
+```sh
+USAGE
+  $ celocli bridge:withdraw-status --txHash 0x --network mainnet|sepolia --l1RpcUrl <value>
+    [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --l1RpcUrl=<value>
+      (required) RPC URL for the Ethereum L1 network
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --network=<option>
+      (required) Network (mainnet or sepolia)
+      <options: mainnet|sepolia>
+
+  --txHash=0x
+      (required) Transaction hash of the withdrawal initiation on L2
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Check the status of a CELO withdrawal from Celo (L2) to Ethereum (L1).
+
+  Provide the L2 transaction hash from the initial bridge:withdraw-init command to see
+  where your withdrawal stands in the process.
+
+EXAMPLES
+  bridge:withdraw-status --txHash 0xYOUR_L2_TX_HASH --network mainnet --l1RpcUrl https://eth-mainnet.example.com -n mainnet
+
+  bridge:withdraw-status --txHash 0xYOUR_L2_TX_HASH --network sepolia --l1RpcUrl https://eth-sepolia.example.com -n celo-sepolia
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    testnet, celo-sepolia => Celo Sepolia Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/bridge/withdraw-status.ts](https://github.com/celo-org/developer-tooling/tree/%40celo/celocli%409.0.1/packages/cli/src/commands/bridge/withdraw-status.ts)_
