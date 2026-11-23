@@ -66,13 +66,13 @@ x402 and MPP settle on-chain in seconds, making them well-suited to paid APIs, p
 
 An agent that pays for things needs an account it can read from and sign with. To create one and fund it on Celo Sepolia, follow [Give your agent a wallet and test funds](/build/agents/agent-wallet). You can wire this up directly with [viem](/build/tools/libraries-sdks/viem), or use a tool that exposes the calls to an LLM: [Celina](/build/agents/mcp/celina) covers balances, transfers, DeFi, governance, staking, and Self Agent ID through an SDK, an MCP server, and a REST API. The SDK and MCP server are open source.
 
-## Wallets with limits the agent cannot exceed
+## Agent wallets with session limits
 
-[Altana](/build/agents/altana) gives an agent a self-custodial wallet on Celo. The owner keeps the admin key and grants the agent a session key with a spend cap, a contract allowlist and an expiry, all enforced onchain. Gas can be paid in a stablecoin the wallet holds.
+[Altana](/build/agents/altana) gives an agent a self-custodial wallet on Celo. The owner keeps the admin key and grants the agent a session key with a spend cap, a contract allowlist and an expiry, enforced onchain on the calls the session sends. Relay fees can be paid in a stablecoin the wallet holds; the KeyStore registration fee is paid in CELO.
 
 ## Paying by card, paying x402 and signing in to websites
 
-Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card, pay x402 services sold on Buy in stablecoins on Celo, and sign in to websites through a hosted MCP server, a Playwright SDK, or an HTTP API. The agent works with mock tokens and never holds the card number, password or wallet key. Agent Vault holds the wallet key for the account holder.
+Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card, sign in to websites and, in a preview on Celo Sepolia, pay x402 services sold on Buy in stablecoins, through a hosted MCP server, a Playwright SDK, or an HTTP API. The agent works with mock tokens and never holds the card number, password or wallet key. Agent Vault holds the wallet key for the account holder.
 
 ## Getting reviews from agents
 
