@@ -8,15 +8,15 @@ This page is the protocol specification of fee abstraction. To pay gas in a toke
 
 Fee Abstraction is a Celo feature that allows users to send transactions without spending any native CELO tokens. Instead, ERC20 tokens are used to pay for the transaction's gas cost.
 
-## As a User
+## As a user
 
-### Sending Fee Abstraction Transactions
+### Sending fee abstraction transactions
 
 To pay gas via Fee Abstraction, the gas token must be specified in a [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) transaction. This tx type has an additional `feeCurrency` field that specifies which token is used for the `maxFeePerGas` and `maxPriorityFeePerGas` fields. See [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md) for details.
 
 Client library support is [described in docs.celo.org](/learn/protocol/transactions/transaction-types#client-library-support).
 
-### JSON-RPC Changes
+### JSON-RPC changes
 
 To make it easier to reliably send Fee Abstraction transactions, the JSON-RPC interface has been extended in two ways:
 
@@ -25,7 +25,7 @@ To make it easier to reliably send Fee Abstraction transactions, the JSON-RPC in
 
 A request pays fees in native CELO only when `feeCurrency` is omitted or `null`. The zero address is not an alias for native CELO; the node rejects it as an unregistered fee currency.
 
-### The Fee Currency Directory
+### The fee currency directory
 
 Only tokens that have been registered in the `FeeCurrencyDirectory` contract using Celo's governance process can be used for Fee Abstraction. The directory entry shows that the token is trustworthy and contains additional information about the token:
 
@@ -41,9 +41,9 @@ Tokens with a low number of `decimals` (USDC, USD₮, and USA₮) would cause pr
 
 This only really impacts the user in a single way: Instead of using the USDC, USD₮, or USA₮ token addresses, you have to pass their `FeeCurrencyAdapter` addresses in the `feeCurrency` field for CIP-64 txs.
 
-## For Token Authors
+## For token authors
 
-### Requirements for Registering a Fee Abstraction Token
+### Requirements for registering a fee abstraction token
 
 To become registered as a Fee Abstraction currency, the following requirements have to be met:
 
@@ -53,7 +53,7 @@ To become registered as a Fee Abstraction currency, the following requirements h
 
 The [fee-currency-example repository](https://github.com/celo-org/fee-currency-example) contains the interface description and an example Fee Abstraction token implementation with tests.
 
-### Tokens With Non-18 Decimals
+### Tokens with non-18 decimals
 
 Tokens that do not use 18 decimal places (e.g. USD₮ with 6 decimals) cannot be registered directly in the `FeeCurrencyDirectory`. The low precision causes problems during gas price calculation, where the cost per gas can only be accurately represented as a fraction, not an integer with few decimal places.
 
@@ -61,15 +61,15 @@ To support Fee Abstraction, the token deployer must deploy a [`FeeCurrencyAdapte
 
 The `FeeCurrencyAdapter` contract has been [audited by Trail of Bits](https://github.com/celo-org/celo-monorepo/files/14377164/cLabs.Equivalent.Tokens.Review.-.Summary.Report.pdf) and was released as part of [Core Contracts v11](https://github.com/celo-org/celo-monorepo/releases/tag/core-contracts.v11).
 
-## Inside the Celo Blockchain
+## Inside the Celo blockchain
 
-### Exchange Rate Handling Inside the Blockchain Client
+### Exchange rate handling inside the blockchain client
 
 Before each block, the blockchain client reads the list of all registered Fee Abstraction tokens from the `FeeCurrencyDirectory` and fetches the currency exchange rate for each of them. If the Oracle for a token reverts or returns invalid exchange rates (numerator or denominator are zero), the token is treated as if it was not registered. Token registrations and exchange rates stay the same within a block and are only updated before the next block.
 
 Transactions with unregistered `feeCurrency` values are not accepted into the tx pool and dropped from the pool if they have been previously accepted. The same is true if the `maxFeePerGas` falls below the current base fee. Only an absent `feeCurrency` (an empty RLP string) means native CELO; a CIP-64 transaction whose `feeCurrency` is the zero address is invalid, and so is any block that contains one.
 
-### Gas Calculation for Fee Abstraction Transactions
+### Gas calculation for fee abstraction transactions
 
 Ethereum transactions pay a fixed fee of 21000 gas ("intrinsic gas") in addition to the cost for executing the transaction. This is meant to cover the operating expenses during tx processing outside the actual tx execution, like debiting the gas cost from the tx sender's account, refunding the unused gas or transferring the base fee and tip to the respective receivers.
 
@@ -78,7 +78,7 @@ Addresses warmed during the debit will keep their warm status for the execution 
 
 If fetching the intrinsic gas for a token from the `FeeCurrencyDirectory` reverts, the token is treated as unregistered. Values exceeding `2^64-1` are capped at that value.
 
-### EIP-7623 Implementation and Intrinsic Gas Considerations
+### EIP-7623 implementation and intrinsic gas considerations
 
 Celo L2 implements [EIP-7623](https://eips.ethereum.org/EIPS/eip-7623) to mitigate transaction spam by enforcing a minimum gas cost floor for transactions with significant calldata. This floor is calculated as:
 
@@ -88,7 +88,7 @@ Celo L2 implements [EIP-7623](https://eips.ethereum.org/EIPS/eip-7623) to mitiga
 
 The `21_000` value represents the **standard Ethereum intrinsic gas** and is used consistently across all transaction types for EIP-7623 floor calculations, regardless of whether the transaction uses Fee Abstraction or not.
 
-### Block Space Limits Per Fee Abstraction Token
+### Block space limits per fee abstraction token
 
 As described above, Celo allows users to pay for gas using ERC20 tokens. There is a governable list of accepted tokens. However, the Celo blockchain client starting with version 1.8.1 implements a protective mechanism that allows validators to control the percentage of available block space used by transactions paid with an alternative fee currency (other than CELO) more precisely.
 

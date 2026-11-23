@@ -37,7 +37,7 @@ client.writeContract({
 });
 ```
 
-## Gas Price
+## Gas price
 
 When paying for transaction with an alternate feeCurrency token it is important to know the price of gas denominated in that token. As such Celo nodes accept an optional param of the address of the token for the `eth_gasPrice` call. Therefore rather than use viem's `publicClient.getGasPrice()` function you should fetch it like the example.
 

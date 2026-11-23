@@ -6,7 +6,7 @@ description: Core contract changes made for the L2 transition, including epochs 
 
 Smart contract changes that have been deployed to Celo before the transition can be seen in this diff: [https://github.com/celo-org/celo-monorepo/pull/11035/files](https://github.com/celo-org/celo-monorepo/pull/11035/files)
 
-## Epochs And rewards
+## Epochs and rewards
 
 ### Overview of rewards and epochs in L1
 
@@ -86,7 +86,7 @@ This comes with the implication that the `totalSuply()` function of the Celo Tok
 
 This means that the Celo token is now an ERC20 on the Ethereum network, and the tokens available on the Celo chain are a bridged representation of the tokens in the L1. This is achieved by using the custom gas token functionality of the OP stack.
 
-## Governance Hotfix
+## Governance hotfix
 
 The hot fix mechanism has been changed from a consensus of validators to a security council multisig.
 
@@ -127,7 +127,7 @@ Some functionality that was provided by  precompiles (notably epoch number and e
 
 Some contracts had functions that exposed precompiles; these revert on the L2, at least where the contract still internally uses those functions. For more details, please refer to this [forum post](https://forum.celo.org/t/upcoming-changes-deprecation-of-celo-precompiles-and-usingprecompilescontract-functions-in-l2-migration/9421/2).
 
-### Deprecated Contract Methods with Replacements Table
+### Deprecated contract methods with replacements table
 
 | Deprecated Contract Method | Replacement  |
 |--------|--------|

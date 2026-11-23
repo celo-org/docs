@@ -6,7 +6,7 @@ description: Each Celo account role in detail, with the celocli commands to desi
 
 This page is for CELO holders and node operators setting up staking keys. It describes each account role and shows how to designate an account as playing that role.
 
-## Celo Accounts
+## Celo accounts
 
 Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.
 
@@ -34,7 +34,7 @@ celocli account:show $ADDRESS_TO_DESIGNATE
 
 Note that [ReleaseGold](/learn/manage/release-gold) beneficiary keys are considered vanilla Celo accounts with respect to staking, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked CELO Account.
 
-## Authorized Vote Signers
+## Authorized vote signers
 
 Any Locked CELO Account may optionally authorize a Celo account as a vote signer. Authorized vote signers can vote for validator groups and for on-chain governance proposals on behalf of the Locked CELO Account.
 
@@ -42,7 +42,7 @@ Note that the vote signer must first generate a "proof-of-possession" indicating
 
 Authorized vote signers can only be used to send voting transactions and **can be stored on a Ledger hardware wallet**.
 
-### Authorizing a Vote Signer
+### Authorizing a vote signer
 
 A Celo account may be authorized as a vote signer on behalf of a Locked CELO Account by running the following commands:
 
@@ -60,7 +60,7 @@ celocli account:show $LOCKED_GOLD_ACCOUNT
 celocli account:show $SIGNER_TO_AUTHORIZE
 ```
 
-## Authorized Validator Signers
+## Authorized validator signers
 
 Any Locked CELO Account may optionally authorize a Celo account as a validator signer. Authorized validator signers can be used to register and manage a validator or validator group on behalf of the Locked CELO Account.
 
@@ -72,7 +72,7 @@ Note that the validator signer must first generate a "proof-of-possession" indic
 On the Celo L1, the validator signer key was also used to sign consensus messages, together with a BLS signer key derived from it. Consensus signing ended with the L2 migration; see [About Celo L1](/learn/celo-l1).
 </Note>
 
-### Authorizing a Validator Signer
+### Authorizing a validator signer
 
 A Celo account may be authorized as a validator signer on behalf of a Locked CELO Account by running the following commands:
 

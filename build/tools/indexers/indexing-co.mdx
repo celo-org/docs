@@ -5,7 +5,7 @@ description: Build custom Celo data pipelines with Indexing Co, delivering to Po
 
 [Indexing Co](https://indexing.co) provides custom blockchain data pipelines with JavaScript transformation logic, sub-second latency, and delivery to Postgres, webhooks, or Kafka. Indexing Co supports Celo and 100+ other blockchains, making it easy to build cross-chain data workflows from a single platform.
 
-## How It Works
+## How it works
 
 Indexing Co pipelines have three stages:
 
@@ -15,7 +15,7 @@ Indexing Co pipelines have three stages:
 | **Transformation** | Write JavaScript functions that extract and reshape the data you need from each block. |
 | **Destination** | Deliver processed data to Postgres, HTTP webhooks, WebSockets, or other adapters. |
 
-## Key Features
+## Key features
 
 - **Celo support** — Native support for Celo mainnet with real-time and historical data.
 - **Custom JavaScript transformations** — Write `function main(block)` handlers with full control over how data is extracted and shaped.
@@ -24,11 +24,11 @@ Indexing Co pipelines have three stages:
 - **Cross-chain** — Run the same pipeline logic across 100+ supported blockchains.
 - **Built-in helpers** — Use `templates.tokenTransfers(block)`, `utils.evmDecodeLog()`, and other utilities to accelerate development.
 
-## Quick Start
+## Quick start
 
 All API requests use the base URL `https://app.indexing.co/dw` and require an `X-API-KEY` header for authentication. Sign up at [indexing.co](https://indexing.co) to get your API key.
 
-### Step 1: Create a Filter
+### Step 1: Create a filter
 
 Create a filter to select which Celo transactions to process. This example filters for a specific contract address:
 
@@ -41,7 +41,7 @@ curl -X POST https://app.indexing.co/dw/filters/my-celo-filter \
   }'
 ```
 
-### Step 2: Create a Transformation
+### Step 2: Create a transformation
 
 Create a transformation with a JavaScript `function main(block)` handler that processes each block:
 
@@ -54,7 +54,7 @@ curl -X POST https://app.indexing.co/dw/transformations/my-celo-transform \
   }'
 ```
 
-### Step 3: Test the Transformation
+### Step 3: Test the transformation
 
 Test your transformation against a real Celo block to verify the output:
 
@@ -67,7 +67,7 @@ curl -X POST "https://app.indexing.co/dw/transformations/test?network=celo&beat=
   }'
 ```
 
-### Step 4: Create a Pipeline
+### Step 4: Create a pipeline
 
 Combine the filter, transformation, and a destination into a pipeline that delivers data to Postgres:
 
@@ -90,7 +90,7 @@ curl -X POST https://app.indexing.co/dw/pipelines \
   }'
 ```
 
-## Backfilling Historical Data
+## Backfilling historical data
 
 Once your pipeline is running, you can backfill historical data from any starting block:
 
@@ -103,11 +103,11 @@ curl -X POST https://app.indexing.co/dw/pipelines/my-celo-pipeline/backfill \
   }'
 ```
 
-## Claude Code Integration
+## Claude Code integration
 
 Indexing Co provides first-class support for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) through an MCP server and a pipeline skill, enabling you to build and query Celo data pipelines directly from your AI coding workflow.
 
-### MCP Server
+### MCP server
 
 The [Indexing Co MCP server](https://github.com/indexing-co/indexing-co-mcp) streams real-time blockchain data from your pipelines into Claude Code. Events are stored in local SQLite and queryable with SQL — no external database needed for development.
 
@@ -132,7 +132,7 @@ To stream Celo data into Claude Code, set the pipeline destination to the `DIREC
 }
 ```
 
-### Claude Code Skill
+### Claude Code skill
 
 The [Indexing Co pipeline skill](https://github.com/indexing-co/indexing-co-pipeline-skill) guides Claude through building and deploying pipelines via conversation. Install it to let Claude help you write transformation functions, generate SQL schemas, and manage pipelines:
 

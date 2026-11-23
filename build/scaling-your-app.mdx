@@ -15,9 +15,9 @@ As your app grows, costs can scale exponentially if not managed properly. This g
 - AI/LLM cost optimization
 - Testing and monitoring best practices
 
-## Infrastructure & Hosting
+## Infrastructure & hosting
 
-### Server Architecture
+### Server architecture
 
 Start simple, but plan for growth:
 
@@ -33,7 +33,7 @@ Start simple, but plan for growth:
   disk usage to catch scaling issues before they impact users.
 </Info>
 
-### Image Hosting & CDN
+### Image hosting & CDN
 
 Avoid expensive default CDNs:
 
@@ -49,7 +49,7 @@ Avoid expensive default CDNs:
   pricing and monitor bandwidth usage.
 </Warning>
 
-### Backend Architecture
+### Backend architecture
 
 Separate your backend from your frontend for better scaling:
 
@@ -66,7 +66,7 @@ Separate your backend from your frontend for better scaling:
   service.
 </Info>
 
-### Message Queues
+### Message queues
 
 Implement queues wherever they make sense:
 
@@ -89,9 +89,9 @@ Implement queues wherever they make sense:
   process jobs at your own pace without overwhelming your server.
 </Info>
 
-## RPC & Blockchain Interactions
+## RPC & blockchain interactions
 
-### RPC Strategy
+### RPC strategy
 
 RPC calls are a precious resource—treat them carefully:
 
@@ -119,7 +119,7 @@ RPC calls are a precious resource—treat them carefully:
   thousands at scale.
 </Warning>
 
-### Caching Strategy
+### Caching strategy
 
 Cache API responses wherever it makes sense:
 
@@ -147,7 +147,7 @@ Cache API responses wherever it makes sense:
   fetch fresh data when absolutely necessary.
 </Info>
 
-### Indexer Selection
+### Indexer selection
 
 If you need an indexer, choose cost-effective options:
 
@@ -164,9 +164,9 @@ See [Indexers](/build/tools/indexers/overview) for the providers documented on C
   blockchain data. Choose one that fits your budget and requirements.
 </Info>
 
-## AI & LLM Optimization
+## AI & LLM optimization
 
-### Model Selection
+### Model selection
 
 Optimize LLM costs by choosing the right model for each task:
 
@@ -198,9 +198,9 @@ Use AI SDKs for better developer experience:
   - [LangChain](https://www.langchain.com/) for Python
   - [LlamaIndex](https://www.llamaindex.ai/) for data indexing
 
-## Testing & Monitoring
+## Testing & monitoring
 
-### Testing Strategy
+### Testing strategy
 
 Comprehensive testing prevents costly production issues:
 
@@ -215,7 +215,7 @@ Comprehensive testing prevents costly production issues:
   trust. Invest in a solid testing strategy from the start.
 </Warning>
 
-### Error Monitoring
+### Error monitoring
 
 Use Sentry to audit error rates:
 
@@ -237,7 +237,7 @@ Use Sentry to audit error rates:
   up error monitoring from day one.
 </Info>
 
-### Analytics & Logging
+### Analytics & logging
 
 Use Grafana for analytics and logs:
 
@@ -266,9 +266,9 @@ Use Grafana for analytics and logs:
   about scaling. Invest in monitoring from the start.
 </Info>
 
-## Best Practices Summary
+## Best practices summary
 
-### Cost Optimization Checklist
+### Cost optimization checklist
 
 - [ ] Use cost-effective CDNs instead of default options
 - [ ] Separate backend from frontend for independent scaling
@@ -280,7 +280,7 @@ Use Grafana for analytics and logs:
 - [ ] Use cheaper LLM models for simple tasks
 - [ ] Monitor all costs and set up alerts
 
-### Scaling Readiness Checklist
+### Scaling readiness checklist
 
 - [ ] Monitor server metrics (CPU, memory, disk)
 - [ ] Have a plan to migrate to scalable infrastructure (K8s, Docker Swarm)
@@ -290,7 +290,7 @@ Use Grafana for analytics and logs:
 - [ ] Document your architecture and scaling plan
 - [ ] Set up alerts for critical metrics
 
-## Additional Resources
+## Additional resources
 
 - [Celo Documentation](/build) - Explore Celo development resources
 - [Launch Checklist](/build/launch-checklist) - Pre-launch preparation guide
