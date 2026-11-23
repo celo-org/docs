@@ -603,7 +603,7 @@
   "redirects": [
     {
       "source": "/build/build-with-farcaster",
-      "destination": "/build/mini-apps/overview"
+      "destination": "/build/quickstart#farcaster-miniapp"
     },
     {
       "source": "/build/build-on-socialconnect",

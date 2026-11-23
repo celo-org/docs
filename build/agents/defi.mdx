@@ -22,7 +22,7 @@ The page uses Textile's FX API as the worked example because onchain FX in local
 4. It simulates the transaction, then signs it with its own key and sets `feeCurrency` so gas comes out of the stablecoin balance.
 5. It submits, waits for the receipt and records the result.
 
-Nothing in this loop is custodial. Textile, Uniswap, Aave and Morpho never hold the agent's key or funds.
+No operator can move the agent's funds: swaps settle atomically, and supplied assets sit in the protocol's contracts.
 
 ## Quote and settle FX with Textile
 
@@ -35,13 +35,13 @@ The v2 API lives at `https://api.textilecredit.com/v2`. Amounts are strings in b
 | `POST /rfq/preview` | none | Indicative price for a size, a few seconds stale |
 | `GET /rfq/levels?chainId=42220` | none | Price ladder per pair, with minimum and maximum size |
 | `POST /rfq/request` | API key or wallet signature | Firm quote with signed maker orders and the calldata to execute |
-| `POST /rfq/{id}/submit` | same | Report the transaction hash after you broadcast |
-| `GET /rfq/{id}` | same | Status and settled amounts |
+| `POST /rfq/{id}/submit` | `claimToken` from `/rfq/request` in an `X-Rfq-Claim` header, or the API key that created the RFQ | Report the transaction hash after you broadcast |
+| `GET /rfq/{id}` | same as submit | Status and settled amounts |
 
 The example below asks for an indicative price for 1 USD₮ into wARS on Celo mainnet. It runs without a key.
 
 ```ts
-// textile-preview.mts — Celo mainnet (42220)
+// textile-preview.mjs — Celo mainnet (42220)
 // USD₮ 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e, 6 decimals
 // wARS 0x0DC4F92879B7670e5f4e4e6e3c801D229129D90D, 18 decimals
 const res = await fetch("https://api.textilecredit.com/v2/rfq/preview", {
@@ -58,20 +58,20 @@ const { data } = await res.json();
 console.log(data.status, data.buyAmount, data.rateRay);
 ```
 
-Run it with `node textile-preview.mts`. A `preview` status prints the wARS amount in base units and the rate; `no_quote` means no maker is pricing that size right now.
+Run it with `node textile-preview.mjs`. A `preview` status prints the wARS amount in base units and the rate; `no_quote` means no maker is pricing that size right now.
 
-To trade, the agent calls `/rfq/request` with the same body plus its `taker` address. With an API key it sends `Authorization: Bearer <key>`; without one it signs a challenge once and sends it as `takerProof`, which covers about 12 hours of requests. The response carries `quote.takerPays`, `quote.reactor`, `quote.expiresAt` and `transactions.swap`. The agent then:
+To trade, the agent calls `/rfq/request` with the same body plus its `taker` address. With an API key it sends `Authorization: Bearer <key>`; without one it signs a challenge once and sends it as `takerProof`, which covers about 12 hours of requests. The response carries `rfqId`, a one-time `claimToken`, `quote.takerPays`, `quote.reactor`, `quote.expiresAt` and `transactions.swap`. Store the `claimToken` with the quote: it is returned once, and without an API key it is the only thing that authorizes submit and status for that RFQ. A missing or wrong token returns `404`. The agent then:
 
 1. Checks the allowance of the sell token for `quote.reactor` and approves `takerPays` if it is short. For USD₮ reset a non-zero allowance to zero first.
 2. Confirms the current time is before `expiresAt`. Quotes live about 60 seconds.
 3. Sends `transactions.swap` from the taker wallet, with `feeCurrency` set so gas is paid in USD₮.
-4. Posts the transaction hash to `/rfq/{id}/submit` and polls `/rfq/{id}` for the settled amounts.
+4. Posts the transaction hash to `/rfq/{id}/submit` and polls `/rfq/{id}` for the settled amounts, sending `X-Rfq-Claim: <claimToken>` on both calls (or the API key that created the RFQ).
 
-A limit order is the alternative when the agent wants to set the price: it signs a gasless order, keeps the funds in its wallet, and a maker fills it when the price is met. Textile's [RFQ reference](https://docs.textilecredit.com/api/v2/rfq.html), [authentication](https://docs.textilecredit.com/api/v2/authentication.html) and [API key](https://docs.textilecredit.com/api/how-to-get-an-api-key.html) pages have the field-level detail and a viem walkthrough.
+Textile's [RFQ reference](https://docs.textilecredit.com/api/v2/rfq.html), [authentication](https://docs.textilecredit.com/api/v2/authentication.html) and [API key](https://docs.textilecredit.com/api/how-to-get-an-api-key.html) pages have the field-level detail and a viem walkthrough.
 
 ## Swap on Uniswap
 
-Uniswap v4 and v3 are deployed on Celo mainnet and Celo Sepolia; the router and pool manager addresses are on [Uniswap contracts](/build/tools/contracts/uniswap-contracts). An agent quotes through the Quoter contract, sets a slippage bound, and sends the swap through the Universal Router with `feeCurrency` set. Stablecoin pairs such as USDC/USD₮ and USDm/USD₮ carry [Merkl](https://app.merkl.xyz/) incentives, which is where liquidity concentrates.
+Uniswap v4 is deployed on Celo mainnet and Celo Sepolia, and Uniswap v3 on Celo mainnet only; the router and pool manager addresses are on [Uniswap contracts](/build/tools/contracts/uniswap-contracts). An agent quotes through the Quoter contract, sets a slippage bound, and sends the swap through the Universal Router with `feeCurrency` set. Some Celo pools carry [Merkl](https://app.merkl.xyz/) incentives; campaigns change, so check Merkl for the current list.
 
 ## Lend and earn on Aave and Morpho
 
@@ -89,13 +89,13 @@ Every write above is a normal Celo transaction, so the agent sets `feeCurrency` 
 - **Cap spend in code.** Enforce a per-transaction maximum and a daily maximum on the agent side, independent of what the model decides. [buy](/build/agents/buy) does this for x402 with `--max-amount`; do the same for DeFi calls.
 - **Use a dedicated key with limited funds.** The agent's account holds what it may lose. Top it up from a treasury it cannot sign for.
 - **Bound price and time.** Reject a quote whose rate deviates more than your threshold from the preview or an oracle, and never broadcast after `expiresAt`.
-- **Handle `no_quote` and partial liquidity.** Textile quotes are all-or-nothing. Retry with a smaller size, split the order, or place a limit order.
+- **Handle `no_quote` and partial liquidity.** Textile quotes are all-or-nothing. Retry with a smaller size or split the order.
 - **Give the agent an identity.** Register it with [ERC-8004](/build/agents/8004) or [Self Agent ID](/build/agents/self-agent-id) so services and counterparties can verify who is trading.
 - **Tag the transactions.** Append an [attribution tag](/build/agents/attribution-tags) so the activity is credited to your app.
 
 ## Troubleshooting
 
-- **`status: "no_quote"`** - No maker priced the size within the reply window. Check the pair's `minSellAmount` and `maxSellAmount` on `/rfq/levels`, then retry smaller or use a limit order.
+- **`status: "no_quote"`** - No maker priced the size within the reply window. Check the pair's `minSellAmount` and `maxSellAmount` on `/rfq/levels`, then retry smaller.
 - **`429 rate_limited`** - More than 4 RFQs outstanding. Cancel or let them expire before requesting again.
 - **Quote expired** - More than 60 seconds passed between `/rfq/request` and the broadcast. Request a new quote; approve the reactor ahead of time so the swap is the only transaction in the window.
 - **`takerProof` rejected** - The signing wallet must be the `taker` named in the request, and the proof expires after about 12 hours.

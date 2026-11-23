@@ -3,7 +3,7 @@ title: Build with Self
 description: Verify that a user is a real, unique human, or meets an age, nationality or sanctions rule, with zero-knowledge proofs from passports and Aadhaar through Self Enterprise on Celo
 ---
 
-This page is for app developers who need to know that a user is a real, unique human, or that they meet an age, nationality or sanctions rule, without collecting their documents. [Self](https://self.xyz/) is identity infrastructure for humans and AI agents: the user proves a fact from a government ID in the Self app, the zero-knowledge proof is generated on their phone, and your app receives only the facts the user chose to disclose. Self stores no document data and keeps no central database. Attestations are recorded on Celo.
+This page is for app developers who need to know that a user is a real, unique human, or that they meet an age, nationality or sanctions rule, without collecting their documents. [Self](https://self.xyz/) is identity infrastructure for humans and AI agents: the user proves a fact from a government ID in the Self app, the zero-knowledge proof is generated on their phone, and your app receives only the facts the user chose to disclose. Self stores no document data and keeps no central database. By default proofs are verified on Self's servers and nothing is recorded on chain; in on-chain mode the result is also recorded on Celo as a soulbound token.
 
 If you are giving an **AI agent** an identity rather than verifying a person, go to [Self Agent ID](/build/agents/self-agent-id). If you want an agent to pay by card or sign in to websites, see [Agent Vault](/build/agents/agent-vault).
 
@@ -11,10 +11,10 @@ If you are giving an **AI agent** an identity rather than verifying a person, go
 
 Self Enterprise is the managed way to integrate Self: you configure a flow in the dashboard, call one SDK, and receive a signed result.
 
-1. **Configure.** In the [Self dashboard](https://dashboard.self.xyz) you pick a workspace (for example Age Verification), set the rule, and deploy a flow. The flow has a test and a live environment.
+1. **Configure.** In the [Self dashboard](https://dashboard.self.xyz) you pick a workspace (for example Age Verification), set the rule, and deploy a flow. One flow serves both the test and the live environment; the API key you use decides which.
 2. **Start a session.** Your backend creates a verification session for the flow with the Enterprise SDK and gets back a verification URL.
 3. **Prove.** The user opens the URL in the Self app, which generates a zero-knowledge proof over their document and discloses only the attributes the flow asks for, such as "over 18" or "not on a sanctions list". The document data never leaves the phone.
-4. **Receive the result.** Self sends a signed `verification.completed` webhook to your backend, or, in on-chain mode, mints a soulbound token to the user's wallet on Celo.
+4. **Receive the result.** Self sends a signed `verification.completed` webhook to your backend and, in on-chain mode, also mints a soulbound token to the user's wallet on Celo.
 
 Every proof also yields a nullifier, so you can tell one human from another without knowing who they are.
 
@@ -35,7 +35,7 @@ Supported documents are biometric passports (NFC chip, 60+ countries), Indian Aa
 ## Get started
 
 1. Sign in at the [Self dashboard](https://dashboard.self.xyz). Self creates your organization on first sign-in.
-2. Open a workspace, create a config, set the rule, and deploy the flow. Copy its `flowId` from the test tab.
+2. Open a workspace, create a config, set the rule, and deploy the flow. Copy its `flowId`.
 3. Under **Developer → API keys**, generate a test key and store it as `SELF_API_KEY`. It is shown once.
 4. Install the SDK:
 
@@ -51,25 +51,29 @@ Live keys need an email confirmation and, for some accounts, a manual review. Pr
 
 ## Verify on-chain
 
-Instead of a webhook, a flow can run its checks in a smart contract on Celo. Self deploys one soulbound ERC-721 contract per flow and environment (name `Self Verification SBT`, symbol `SELFSBT`), pays the gas, and mints a token to the user's wallet when the proof passes. The contract enforces minimum age, country lists, OFAC and security level; a maximum age cannot be enforced on-chain.
+Backend mode is the default and records nothing on chain. A flow set to on-chain mode also runs its checks in a smart contract on Celo, in addition to the webhook, which then carries the transaction hash and contract address. Self deploys one soulbound ERC-721 contract per flow and environment (name `Self Verification SBT`, symbol `SELFSBT`), pays the gas, and mints a token to the user's wallet when the proof passes. The contract enforces minimum age, country lists, OFAC and security level; a maximum age cannot be enforced on-chain.
 
 - Test flows mint on Celo Sepolia (chain ID 11142220); live flows mint on Celo mainnet (chain ID 42220).
 - The receiving wallet must be an externally owned account. Smart-contract wallets cannot receive the SBT.
 - One person can verify once per flow, and one wallet can hold one SBT per flow. Tokens cannot be transferred, approved or burned.
 - Any contract gates access by calling `balanceOf(wallet)` on the flow's SBT contract: a non-zero balance means the wallet passed.
 
-Details are on Self's [on-chain verification](https://docs.self.xyz/docs/self-enterprise/flows/onchain-verification/) page. Your own contracts on Celo follow the same fee rules as any other contract: users can pay gas in USDm, USDC or USD₮ through [fee abstraction](/build/fee-abstraction/overview), so a verification flow never requires them to hold CELO.
+Details are on Self's [verification modes](https://docs.self.xyz/docs/self-enterprise/flows/verification-modes/) and [on-chain verification](https://docs.self.xyz/docs/self-enterprise/flows/onchain-verification/) pages.
 
 ## Self Connect
 
-Self Connect is the protocol formerly called SocialConnect: it maps off-chain identifiers such as phone numbers, email addresses and social handles to Celo addresses, so a user can pay a contact by phone number instead of a hex address. It is federated: any issuer can verify that a user owns an identifier (by SMS, OAuth or custom logic) and register the mapping as an attestation in the on-chain `FederatedAttestations` registry. Identifiers are obfuscated through ODIS before they are stored, and lookups need no gas. MiniPay uses it to resolve phone numbers; see [Resolve MiniPay phone numbers to addresses](/build/mini-apps/overview#resolve-minipay-phone-numbers-to-addresses).
+Self Connect maps off-chain identifiers such as phone numbers, email addresses and social handles to Celo addresses, so a user can pay a contact by phone number instead of a hex address. It is federated: any issuer can verify that a user owns an identifier (by SMS, OAuth or custom logic) and register the mapping as an attestation in the on-chain `FederatedAttestations` registry. Identifiers are obfuscated through ODIS before they are stored, and lookups need no gas. MiniPay uses it to resolve phone numbers; see [Resolve MiniPay phone numbers to addresses](/build/mini-apps/overview#resolve-minipay-phone-numbers-to-addresses). The contracts and SDK keep the SocialConnect name: [celo-org/social-connect](https://github.com/celo-org/social-connect) and `@celo/identity`.
 
 Self documents the protocol: start with the [Self Connect overview](https://docs.self.xyz/docs/self-connect/overview/), then [becoming an issuer](https://docs.self.xyz/docs/self-connect/becoming-an-issuer/) and the [SDK integration with viem](https://docs.self.xyz/docs/self-connect/sdk-integration/). ODIS query patterns with ContractKit are on [Querying on-chain identifiers with ODIS](/build/tools/libraries-sdks/contractkit/odis).
+
+<Warning>
+The Self Connect examples on docs.self.xyz target Alfajores (`alfajores-forno`, `OdisContextName.ALFAJORES`), which no longer exists. Use Celo Sepolia for testing: the ODIS combiner URL and service context for Celo Sepolia are on [Querying on-chain identifiers with ODIS](/build/tools/libraries-sdks/contractkit/odis).
+</Warning>
 
 ## Troubleshooting
 
 - **Webhook signature fails.** Pass the raw request body to the SDK's verify function, not a parsed JSON object.
-- **Mock passport rejected on a live flow.** Live flows accept only real documents; test flows accept only mock ones. Check which tab the `flowId` came from.
+- **Mock passport rejected on a live flow.** Live sessions accept only real documents; test sessions accept only mock ones. A flow has one `flowId` for both environments, and the API key decides: check whether the session was created with an `sk_test_` or an `sk_live_` key.
 - **SBT mint fails for a Safe or other smart-contract wallet.** On-chain mode mints to externally owned accounts only.
 - **Flow cannot be deployed on-chain.** Flows with a maximum age rule run in backend mode only.
 
