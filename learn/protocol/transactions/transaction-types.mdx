@@ -12,7 +12,7 @@ import {InlineImage} from "/snippets/InlineImage.mdx";
 
 Celo has support for all Ethereum transaction types (i.e. "100% Ethereum compatibility") and a single Celo transaction type.
 
-### Actively Supported on Celo
+### Actively supported on Celo
 
 | Chain                                                                   | Transaction type           | #     | Specification                                                                                                                                                 | Recommended | Support   | Comment                                                  |
 | ----------------------------------------------------------------------- | -------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------- | -------------------------------------------------------- |
@@ -36,7 +36,7 @@ The stages of support are:
   because it might be deprecated in the future.
 - **Deprecated** 🔴: the transaction type is not supported and not recommended for use.
 
-### Client Library Support
+### Client library support
 
 Legend:
 
@@ -62,7 +62,7 @@ Legend:
 
 ## Background
 
-### Legacy Transactions
+### Legacy transactions
 
 Ethereum originally had one format for transactions (now called "legacy transactions").
 A legacy transaction contains the following transaction parameters:
@@ -91,7 +91,7 @@ To produce a valid "legacy transaction":
 A valid signed transaction can then be submitted on-chain, and its raw parameters can be
 parsed by RLP-decoding the transaction.
 
-### Typed Transactions
+### Typed transactions
 
 Over time, the Ethereum community has sought to add new types of transactions
 such as dynamic fee transactions
@@ -105,7 +105,7 @@ legacy transaction format, the concept of **typed transactions** was proposed in
 [EIP-2718: Typed Transaction Envelope](https://eips.ethereum.org/EIPS/eip-2718), which introduces
 a new high-level transaction format that is used to implement all future transaction types.
 
-### Distinguishing Between Legacy and Typed Transactions
+### Distinguishing between legacy and typed transactions
 
 Whereas a valid "legacy transaction" is simply an RLP-encoded list of
 **transaction parameters**, a valid "typed transactions" is an arbitrary byte array
@@ -135,9 +135,9 @@ Every transaction type is defined in an EIP, which specifies how to _encode_ as 
 transaction payloads. This means that a typed transaction can only be interpreted with knowledge of
 its transaction type and a relevant decoder.
 
-## List of Transaction Types on Celo
+## List of transaction types on Celo
 
-### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Legacy Transaction (`0`)
+### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Legacy transaction (`0`)
 
 <Info>
 This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
@@ -160,7 +160,7 @@ they are commonly referred to as "type 0" transactions.
   on [May 19, 2021](https://blog.celo.org/donut-hardfork-is-live-on-celo-585e2e294dcb)
   as specified in [CIP-35: Support for Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
 
-### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Access List Transaction (`1`)
+### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Access list transaction (`1`)
 
 <Info>
 This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
@@ -181,7 +181,7 @@ This transaction type is 100% compatible with Ethereum and has no Celo-specific 
   on [May 19, 2021](https://blog.celo.org/donut-hardfork-is-live-on-celo-585e2e294dcb)
   as specified in [CIP-35: Support for Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
 
-### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Dynamic Fee Transaction (`2`)
+### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Dynamic fee transaction (`2`)
 
 <Info>
 This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
@@ -202,7 +202,7 @@ This transaction type is 100% compatible with Ethereum and has no Celo-specific 
   on [Mar 8, 2022](https://blog.celo.org/brewing-the-espresso-hardfork-92a696af1a17) as specified
   in [CIP-42: Modification to EIP-1559](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md)
 
-### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Set Code Transaction (`4`)
+### <InlineImage src="/img/doc-images/transaction-types/Ethereum.png" /> Set code transaction (`4`)
 
 <Info>
 This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
@@ -221,7 +221,7 @@ This transaction type is 100% compatible with Ethereum and has no Celo-specific 
 - It is scheduled for support on Celo during the
   [Celo Isthmus](/operate/notices/archive/isthmus-upgrade) hardfork.
 
-### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Legacy Transaction (`0`)
+### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Legacy transaction (`0`)
 
 <Danger>
 This transaction type is no longer supported following the migration to Celo L2.
@@ -242,7 +242,7 @@ parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
   [Apr 22, 2020](https://dune.com/queries/3106924/5185945) as specified in
   [Blockchain client v1.0.0](https://github.com/celo-org/celo-blockchain/tree/celo-v1.0.0).
 
-### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic Fee Transaction (`124`)
+### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction (`124`)
 
 <Danger>
 This transaction type is no longer supported following the migration to Celo L2.
@@ -269,7 +269,7 @@ parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
   on [Mar 8, 2022](https://blog.celo.org/brewing-the-espresso-hardfork-92a696af1a17) as specified
   in [CIP-42: Modification to EIP-1559](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md).
 
-### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic Fee Transaction v2 (`123`)
+### <InlineImage src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction v2 (`123`)
 
 <Warning>
 This transaction is not compatible with Ethereum and has one Celo-specific
@@ -288,9 +288,9 @@ parameter: `feecurrency`.
   as specified in
   [CIP-64: New Transaction Type: Celo Dynamic Fee v2](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md)
 
-## How to Send Transactions
+## How to send transactions
 
-### Import Dependencies
+### Import dependencies
 
 <Tabs>
 
@@ -314,7 +314,7 @@ import "dotenv/config"; // use to read private key from environment variable
 
 </Tabs>
 
-### Create Public and Wallet Client
+### Create public and wallet client
 
 <Tabs>
 
@@ -341,7 +341,7 @@ const walletClient = createWalletClient({
 
 </Tabs>
 
-### Function to Print Transaction Receipt
+### Function to print transaction receipt
 
 <Tabs>
 
@@ -386,7 +386,7 @@ const walletClient = createWalletClient({
 
 </Tabs>
 
-### Code to Send Transaction Type (0)
+### Code to send transaction type (0)
 
 <Tabs>
   
@@ -419,7 +419,7 @@ const walletClient = createWalletClient({
 
 </Tabs>
 
-### Code to Send Transaction Type (2)
+### Code to send transaction type (2)
 
 <Tabs>
   
@@ -453,7 +453,7 @@ const walletClient = createWalletClient({
 
 </Tabs>
 
-### Code to Send Transaction Type (123)
+### Code to send transaction type (123)
 
 <Tabs>
   

@@ -6,7 +6,7 @@ description: The changes introduced by the L1 to L2 migration that tool develope
 
 The switch from the Celo L1 blockchain to the Celo L2 introduces a variety of changes, most of which are not visible to the majority of developers and even less to the end users. However, tool developers, infrastructure operators and some developers will have to take a few of these changes into account. This page contains all information to check if this is the case for you or not.
 
-## Changes for Contracts Developers
+## Changes for contracts developers
 
 - [Removed precompiles](/operate/specification/smart-contract-updates-from-l1#precompiles-deprecation) (all except the `transfer` precompile)
 - During the migration the following hardforks are enabled:
@@ -24,7 +24,7 @@ The switch from the Celo L1 blockchain to the Celo L2 introduces a variety of ch
     - Notably, this hardfork also enables the [`P256VERIFY`](https://specs.optimism.io/protocol/precompiles.html#p256verify) precompile, which performs signature verification for the secp256r1 elliptic curve. This curve has widespread adoption. It's used by Passkeys, Apple Secure Enclave and many other systems.
   - [Granite](https://specs.optimism.io/protocol/granite/overview.html)
 
-### Precompile Deprecation and Epoch Management
+### Precompile deprecation and epoch management
 
 As part of Celo's transition to a L2 network, the following Celo precompiles, except the `Transfer` precompile, were removed.
 
@@ -59,14 +59,14 @@ We introduced a new contract, `FeeCurrencyDirectory`, which is responsible for m
 
 The `FeeCurrencyWhitelist` contract has been replaced by the `FeeCurrencyDirectory` contract.
 
-### Deactivated Random Contract
+### Deactivated random contract
 
 The `Random` core contract has been deactivated. The [EIP-4399](https://eips.ethereum.org/EIPS/eip-4399) `PREVRANDAO` opcode provide some pseudo-randomness now. Please be aware of the limitations mentioned in the EIP, as well as the following OP Stack specific limitations:
 
 - The randao value is read from the L1, it is known a longer time in advance.
 - Since multiple L2 blocks are derived from the same L1 block, the `PREVRANDAO` value will not change with every L2 block, but only with the L1 block.
 
-### Deactivated BlockchainParameters Contract
+### Deactivated BlockchainParameters contract
 
 The `BlockchainParameters` core contract has been deactivated.
 
@@ -74,11 +74,11 @@ The `blockGasLimit` can now be found by querying the Optimism L1 `SystemConfig` 
 
 The `intrinsicGasForAlternativeFeeCurrency` can now be found by querying the [FeeCurrencyDirectory contract](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts-0.8/common/FeeCurrencyDirectory.sol) function `getCurrencyConfig(token).intrinsicGas`.
 
-### Updated Governance Hotfix
+### Updated governance hotfix
 
 The Governance Hotfix process has undergone several changes due to the absence of validators on L2, now using a multisig approach. Here’s a detailed explanation of these changes:
 
-#### Original Hotfix Process
+#### Original hotfix process
 
 Previously, the hotfix process relied heavily on a set of validators:
 
@@ -87,7 +87,7 @@ Previously, the hotfix process relied heavily on a set of validators:
 3. **Epoch-Dependent**: If a hotfix was not executed within the same epoch it was approved, it needed to be reapproved by the new set of validators in the next epoch.
 4. **Prepare Step**: The hotfix required a "prepare" step, ensuring that the current set of validators had approved the hotfix before it could be executed.
 
-#### Updated Hotfix Process
+#### Updated hotfix process
 
 Due to the absence of validators on L2, the process now incorporates a multisig approach:
 
@@ -96,9 +96,9 @@ Due to the absence of validators on L2, the process now incorporates a multisig 
 3. **Execution Time Limit**: If a hotfix is not executed within the specified `executionTimeLimit`, it must be reset and re-approved. This keeps the time constraint but no longer depends on epoch changes.
 4. **Collusion Risk**: The fixed list of Security Council signers introduces a new risk factor. Without clear incentives for the signers to act in the network's best interest, there is a higher risk of collusion and the potential for malicious hotfixes being approved.
 
-## Changes for JSON-RPC Users
+## Changes for JSON-RPC users
 
-### Removed Tx Types
+### Removed tx types
 
 New transactions can't be submitted using the following transaction types, see also the [tx types page](/operate/specification/transaction-types):
 
@@ -107,14 +107,14 @@ New transactions can't be submitted using the following transaction types, see a
 
 Information about existing transactions of these types can still be retrieved via RPC.
 
-### Block and Tx changes in RPC Responses
+### Block and tx changes in RPC responses
 
 To match the Ethereum and OP-Stack responses more closely, the RPC responses for historical blocks and transactions have been updated.
 The following examples show the difference between the old (Celo L1) and the new (Celo L2) responses.
 
 #### Blocks
 
-##### Pre Gingerbread Block
+##### Pre Gingerbread block
 
 The new representation will lack the no longer needed `randomness` and `epochSnarkData` fields and gain `sha3Uncles`, `uncles`, `mixHash` and `nonce`.
 The choice was taken to add `sha3Uncles`, `uncles`, `mixHash` and `nonce` even though they have zero values or are empty, in order to align better with the
@@ -159,7 +159,7 @@ Note that the `size` will be different because of the missing `epochSnarkData` a
  }
 ```
 
-##### Post Gingerbread, Pre CeL2 Block
+##### Post Gingerbread, pre CeL2 block
 
 In this case, the new representation will lack the no longer needed `randomness` and `epochSnarkData` fields.
 
@@ -202,7 +202,7 @@ Note that the `size` will be different because of the missing `epochSnarkData` a
  }
 ```
 
-##### Post Cel2 Block
+##### Post Cel2 block
 
 Since the blocks after the migration are not available in a Celo L1 node, we can't show the diff between the response of a Celo L1 and a Celo L2 node. Instead, the following is a fictional diff between an L1 block right before the L2 migration and the same block if it was an L2 block instead. This illustrates the following changes for new blocks after the migration:
 
@@ -263,7 +263,7 @@ In CeL2, we have updated the RPC API to omit the `feeCurrency`, `gatewayFee` and
 
 In addition to the previous data, the CeL2 node will return `yParity` for all non 0 transaction types.
 
-##### Type 0 Eth Compatible
+##### Type 0 Eth compatible
 
 ```diff
  {
@@ -288,7 +288,7 @@ In addition to the previous data, the CeL2 node will return `yParity` for all no
  }
  ```
 
-##### Type 0 Not Eth Compatible With No Fee Currency And Gateway Fee Recipeint
+##### Type 0 not Eth compatible with no fee currency and gateway fee recipeint
 
 ```diff
  {
@@ -313,7 +313,7 @@ In addition to the previous data, the CeL2 node will return `yParity` for all no
  }
 ```
 
-##### Type 0 Not Eth Compatible With Fee Currency
+##### Type 0 not Eth compatible with fee currency
 
 ```diff
  {
@@ -396,7 +396,7 @@ In addition to the previous data, the CeL2 node will return `yParity` for all no
  }
 ```
 
-## State Changes during the Migration
+## State changes during the migration
 
 The migration is the process of converting the Celo L1 chain into an L2 based on Ethereum.
 This migration involves different steps and requires the blockchain to shortly pause block production.
@@ -435,7 +435,7 @@ As additions they do not damage compatibility at the RPC API level as API client
 In the transition to L2 as an attempt to improve the situation with RPC API compatibility for historical blocks, all post-Gingerbread fields will be returned for **all** blocks.
 Both pre-Gingerbread and post-Gingerbread blocks retrieved from the L2 RPC API would look the same with the exception of `baseFeePerGas` which for now will not be returned for pre-Gingerbread blocks.
 
-#### L2 Block Structure
+#### L2 block structure
 
 Going forward, blocks occurring after the transition point will gain an extra field, `parentBeaconBlockRoot`, which will bring our block structure fully up to date with Ethereum’s block structure.
 
@@ -464,18 +464,18 @@ During the migration it needs to be setup with the remaining unminted Celo.
 
 This is done by first reading the total supply of Celo tokens at the time of the migration. This value is then subtracted from the max supply of Celo tokens, which is *1,000,000,000*. This difference is the remaining amount of tokens that gets set as the balance of the distribution schedule contract.
 
-## Other Changes
+## Other changes
 
 ### Validators
 
 Until Celo has decentralized sequencing, validators will no longer validate blocks, but instead operate community RPC nodes.
 Refer to the [proposal](https://forum.celo.org/t/proposal-validator-engagement-during-the-transition-to-celo-l2/9700) in the context of [The Great Celo Halvening Temperature Check](https://mondo.celo.org/governance/cgp-164).
 
-### CIP-64 Receipts Now Contain the `baseFee`
+### CIP-64 receipts now contain the `baseFee`
 
 For the Celo L1, the `effectiveGasPrice` for CIP-64 txs is only available until the block state is pruned. Afterwards, the blockchain client is unable to get the `baseFee` for the relevant `feeCurrency`, which is required to calculate the `effectiveGasPrice`. To avoid this and make the `effectiveGasPrice` available permanently, the `baseFee` is [included as the last field in the RLP-encoded CIP-64 receipt](https://github.com/celo-org/op-geth/commit/6a1996f17b2ae22fcb3c24b82acbaffa1753f667) for CIP-64 txs submitted after the L2 migration. The EIP-2718 `ReceiptPayload` for this transaction type is now `rlp([status, cumulativeGasUsed, logsBloom, logs, baseFee])`.
 
-### Contract Code Size Limit
+### Contract code size limit
 
 The hardcoded protocol parameter `MaxCodeSize` is raised from 24576 to 65536.
 

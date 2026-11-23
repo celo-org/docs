@@ -18,7 +18,7 @@ This guide covers how to use Portal to embed secure MPC wallets in your Celo app
 
 Portal's comprehensive SDK makes it straightforward to add these features while maintaining a smooth user experience.
 
-## How Portal's MPC Works
+## How Portal's MPC works
 
 Portal leverages Multi-Party Computation (MPC) and specifically Threshold Signature Schemes (TSS) to distribute cryptographic key shares across multiple parties:
 
@@ -29,7 +29,7 @@ Portal leverages Multi-Party Computation (MPC) and specifically Threshold Signat
 
 This approach provides significant security advantages over traditional wallet solutions while maintaining flexibility for developers.
 
-## What Can You Build?
+## What can you build?
 
 With Portal's SDK, you can build a variety of blockchain applications on Celo, including:
 
@@ -39,11 +39,11 @@ With Portal's SDK, you can build a variety of blockchain applications on Celo, i
 - **Enterprise Solutions**: Create business applications with secure treasury management
 - **NFT & Gaming Platforms**: Build digital asset platforms with seamless wallet integration
 
-## Getting Started
+## Getting started
 
 Ready to start building with Portal on Celo? Check out our [quickstart guide](#portal-sdk-quick-start) to set up the Portal SDK and create your first integration.
 
-## Key Features
+## Key features
 
 Portal provides extensive wallet and web3 functionality for Celo developers:
 
@@ -62,7 +62,7 @@ Portal provides extensive wallet and web3 functionality for Celo developers:
 - [API Reference](https://docs.portalhq.io/getting-started/api-quick-start)
 
 
-## Portal SDK Quick Start
+## Portal SDK quick start
 
 ### Installation
 
@@ -181,7 +181,7 @@ const portal = new Portal({
 Portal's [chain list](https://docs.portalhq.io/resources/blockchain-support) does not yet name Celo Sepolia (`eip155:11142220`). Confirm support with Portal before relying on the Celo Sepolia examples on this page.
 </Warning>
 
-### Creating an MPC Wallet
+### Creating an MPC wallet
 
 To create a new MPC wallet, use the `portal.createWallet()` function. This will generate distributed MPC key shares, storing the user's signing share in the device's secure keychain.
 
@@ -220,11 +220,11 @@ console.log(`My Portal EVM address: ${addresses.eip155}`);
   </Tab>
 </Tabs>
 
-### Backing Up and Recovering the Wallet
+### Backing up and recovering the wallet
 
 Portal's MPC architecture creates backup key shares that enable wallet recovery if a device is lost or replaced. Portal supports the following backup methods: iCloud, Gdrive, Passkey, and Password.
 
-## Receive Testnet Tokens
+## Receive testnet tokens
 
 After creating a wallet, you can fund it with test tokens using `portal.receiveTestnetAsset`. For Celo testnet tokens, you also can use the [Celo faucet](https://faucet.celo.org/celo-sepolia/).
 
@@ -287,7 +287,7 @@ console.log(`✅ Transaction hash: ${response.data.txHash}`);
   </Tab>
 </Tabs>
 
-### Sending Tokens
+### Sending tokens
 
 Portal provides two ways to send transactions:
 
@@ -359,6 +359,6 @@ console.log(`✅ Transaction hash: ${txHash}`);
   </Tab>
 </Tabs>
 
-### Next Steps
+### Next steps
 
 Congratulations! You've successfully integrated Portal with your Celo application. You've created secure MPC wallets for your users and implemented basic transaction functionality. For more comprehensive information about Portal's MPC architecture and additional features, explore the [complete Portal documentation](https://docs.portalhq.io/).

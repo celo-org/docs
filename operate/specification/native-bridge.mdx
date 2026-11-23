@@ -19,10 +19,10 @@ To withdraw Celo from the L2 chain, users should use the `L2ToL1MessagePasser.in
 
 Native ETH bridging is not supported for now since L1 bridge considers L1 Celo ERC20 as native token for Celo L2 and actively rejects any native ETH sent to the bridge. It is possible to bridge WETH (wrapped ETH) which behaves as standard ERC20 token both on L1 and L2.
 
-## Bridged ERC20 Tokens
+## Bridged ERC20 tokens
 
 ERC20 tokens can be bridged the same way as in the unmodified OP Stack, see [Bridging ERC-20 Tokens to OP Mainnet With the Optimism SDK](https://docs.optimism.io/app-developers/tutorials/bridging/cross-dom-bridge-erc20) for a tutorial on this.
 
-## Using Bridged Tokens as Fee Abstraction
+## Using bridged tokens as fee abstraction
 
 The `OptimismMintableERC20` (used to represent ERC20 tokens from L1 on L2) supports the [`IFeeCurrency`](https://github.com/celo-org/fee-currency-example/blob/master/src/IFeeCurrency.sol) interface, which is a requirement to use them as a Fee Abstraction token. Before a new `OptimismMintableERC20` instance can actually be used as Fee Abstraction, it still has to be added to the [`FeeCurrencyDirectory`](/build/tools/contracts/core-contracts#celo-mainnet) by Celo governance. This is currently only the case for `WETH`.
