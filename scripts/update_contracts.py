@@ -306,8 +306,13 @@ def stablecoins_to_markdown(rows_by_network: dict, data: dict) -> str:
         # above, with testnet coverage the curated entry cannot provide.
         if token["symbol"] in mainnet:
             continue
+        symbol_cell = f"**{token['symbol']}**"
+        if token.get("formerly"):
+            symbol_cell += f" (formerly {token['formerly']})"
+        if token.get("wind_down"):
+            symbol_cell += f" — {token['wind_down']}"
         lines.append(
-            f"| **{token['symbol']}** | [{token['issuer']}]({token['issuer_url']}) "
+            f"| {symbol_cell} | [{token['issuer']}]({token['issuer_url']}) "
             f"| {explorer_link(token['mainnet_address'], 'mainnet')} "
             f"| {explorer_link(token.get('sepolia_address', ''), 'celo-sepolia')} |"
         )
