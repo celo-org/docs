@@ -6,7 +6,7 @@ description: Register an AI agent, API, MCP server or bot on Celo with ERC-8004 
 
 [ERC-8004](https://github.com/erc-8004/erc-8004-contracts/tree/master) is an Ethereum standard that establishes trust infrastructure for autonomous AI agents. It enables agents to discover, identify, and evaluate other agents across organizational boundaries without pre-existing trust relationships.
 
-## Key Features
+## Key features
 
 - **Identity Registry**: Portable agent identifiers based on ERC-721 NFTs
 - **Reputation Registry**: Standardized feedback and rating system for agents
@@ -50,7 +50,7 @@ flowchart TB
     PAY --> COMM
 ```
 
-## The Three Registries
+## The three registries
 
 ### 1. Identity Registry
 
@@ -100,7 +100,7 @@ Independent verification hooks for high-stakes operations.
 Check out the [repository](https://github.com/erc-8004/erc-8004-contracts/tree/master) of the ERC-8004 protocol for agent discovery and trust through reputation and validation.
 
 
-## Contract Deployments
+## Contract deployments
 
 ### Celo Mainnet
 
@@ -109,14 +109,14 @@ Check out the [repository](https://github.com/erc-8004/erc-8004-contracts/tree/m
 | Identity Registry |  0x8004A169FB4a3325136EB29fA0ceB6D2e539a432 |
 | Reputation Registry |  0x8004BAa17C55a88189AE136b182e5fdA19dE9b63 |
 
-### Celo Sepolia (Testnet)
+### Celo Sepolia (testnet)
 
 | Contract | Address |
 |----------|---------|
 | Identity Registry | 0x8004A818BFB912233c491871b3d84c89A494BD9e |
 | Reputation Registry | 0x8004B663056A597Dffe9eCcC1965A193B7388713 |
 
-## Quick Start
+## Quick start
 
 ### Register a service
 
@@ -241,7 +241,7 @@ console.log('Registered as agent', registered.args.agentId);
 
 Swap in a new file later with `setAgentURI(agentId, newURI)`, and set `"active": false` in the file when you retire the service. Transferring the agent NFT clears `agentWallet`, so the new owner sets it again. Gas for either call can be paid in a stablecoin — see [fee abstraction](/build/fee-abstraction/overview).
 
-### Give Feedback
+### Give feedback
 
 After interacting with an agent, submit feedback to the Reputation Registry. `giveFeedback` takes eight positional arguments, so the ABI below spells them out rather than compressing them into one signature string.
 
@@ -313,7 +313,7 @@ await publicClient.waitForTransactionReceipt({ hash });
 
 `value` is an `int128`, so scores can be negative, and `valueDecimals` (max 18) fixes the scale: `85` with `0` decimals is 85, `850` with `1` is also 85. `feedbackHash` is the `keccak256` of the content at `feedbackURI`; with no URI there is nothing to hash, so pass `zeroHash`.
 
-### Query Agent Reputation
+### Query agent reputation
 
 Before delegating work to an agent, read its reputation. `getSummary` aggregates, but it needs the list of addresses to aggregate over — fetch those with `getClients` first.
 
@@ -400,9 +400,9 @@ if (clients.length === 0) {
 }
 ```
 
-## Use Cases
+## Use cases
 
-### DeFi Trading Agents
+### DeFi trading agents
 
 This diagram shows a typical agent-to-agent interaction flow. A portfolio management agent needs to execute a trade, so it:
 1. Queries the Identity Registry to discover available strategy agents
@@ -431,7 +431,7 @@ sequenceDiagram
     PA->>RR: Submit feedback
 ```
 
-### Multi-Agent Workflows
+### Multi-agent workflows
 
 AI agents collaborating across organizations can:
 - Discover each other via Identity Registry

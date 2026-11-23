@@ -40,7 +40,7 @@ const authSigner: AuthSigner = {
 };
 ```
 
-## Service Context
+## Service context
 
 The `ServiceContext` object provides the ODIS endpoint URL and the ODIS public key (same as above).
 
@@ -84,7 +84,7 @@ Version 5.1.2 has no Celo Sepolia context, so build the `ServiceContext` from th
 
 This call consumes quota. When the user runs out of quota, it's recommended to prompt the user to "purchase" more quota by sending a transaction to themselves. This method returns the pepper retrieved from the service as well as the computed on-chain identifier that is generated using this pepper and the phone number.
 
-### BLS Blinding Client
+### BLS blinding client
 
 It's important for user privacy that the ODIS servers don't have the ability to view the raw phone number. Before making the request, the library first blinds the phone number using a BLS library. This prevents ODIS from seeing the phone number while still making the resulting signature recoverable to the original phone number. The blinding client is written in [Rust](https://github.com/celo-org/celo-threshold-bls-rs) and compiled to WebAssembly.
 

@@ -11,11 +11,11 @@ This guide assumes:
 - You have read [Key Management](/learn/protocol/staking/key-management/summary) on Celo
 - You have installed the [Celo Command Line Interface](/cli/) (Celo CLI)
 
-## Choose a Node
+## Choose a node
 
 In order to execute the tasks listed below, you will need to point the Celo CLI to a node that is synchronized with the [Mainnet](/learn/network/overview).
 
-## Create an Account
+## Create an account
 
 There are two ways to create an account:
 
@@ -28,7 +28,7 @@ After creating an account, record its address in environment variables:
 export CELO_ACCOUNT_ADDRESS=<YOUR-CELO-ACCOUNT-ADDRESS>
 ```
 
-## Exchange CELO for Mento Stablecoins
+## Exchange CELO for Mento stablecoins
 
 Once you have deposited CELO to your account, you can check your balance:
 
@@ -42,7 +42,7 @@ As an example of a common stablecoin swap, you can exchange CELO for USDm using 
 celocli exchange:celo --value <VALUE-TO-EXCHANGE> --from $CELO_ACCOUNT_ADDRESS
 ```
 
-## Transfer Mento Stablecoins
+## Transfer Mento stablecoins
 
 When you have sufficient balance, you can send Mento stablecoins such as USDm to other accounts. Note that the unit of value is USDm Wei (1 USDm = 10^18 USDm Wei).
 

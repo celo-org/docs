@@ -15,11 +15,11 @@ For background on how fee abstraction works, see the [Overview](/build/fee-abstr
 
 ---
 
-## Step 1: Implement the IFeeCurrency Interface
+## Step 1: Implement the IFeeCurrency interface
 
 This step must be completed by the token issuer — every project implements and maintains its own fee currency token.
 
-### The IFeeCurrency Interface
+### The IFeeCurrency interface
 
 Fee currencies must implement the [IFeeCurrency](https://github.com/celo-org/fee-currency-example/blob/92e2fcb/src/IFeeCurrency.sol) interface, which extends ERC20 with two additional functions used by the Celo blockchain to debit and credit gas fees.
 
@@ -71,7 +71,7 @@ function creditGasFees(
 
 ---
 
-### Example Implementation
+### Example implementation
 
 The following example from [celo-org/fee-currency-example](https://github.com/celo-org/fee-currency-example) shows a minimal fee currency token using OpenZeppelin's ERC20 with burn/mint mechanics for gas fee handling:
 
@@ -153,7 +153,7 @@ Key things to test:
 
 ---
 
-## Step 2: Register Through Governance
+## Step 2: Register through governance
 
 Once your token implements `IFeeCurrency`, it must be added to the on-chain allowlist in [**FeeCurrencyDirectory.sol**](/build/tools/contracts/core-contracts) through a governance proposal. The governance process ensures that fee currencies meet the necessary requirements for network stability.
 

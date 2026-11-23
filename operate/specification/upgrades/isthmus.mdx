@@ -17,12 +17,12 @@ The Celo Isthmus upgrade brings in all consensus and execution changes from Opti
 - [Optimism's Holocene Upgrade Specifications](https://specs.optimism.io/protocol/holocene/overview.html)
 - [Optimism's Isthmus Upgrade Specifications](https://specs.optimism.io/protocol/isthmus/overview.html)
 
-### Holocene Highlights
+### Holocene highlights
 
 - Upgraded derivation pipeline – A stricter, simpler derivation pipeline enhances the Fault Proof System's worst-case behaviour and compatibility.
 - EIP-1559 configurability - The `SystemConfig` L1 contract lets operators adjust the elasticity and denominator parameters, so the gas target and gas limit can be tuned independently.
 
-### Isthmus Highlights
+### Isthmus highlights
 
 Isthmus incorporates the execution-layer EIPs from Ethereum’s Prague upgrade, along with several Optimism-specific enhancements.
 
@@ -36,12 +36,12 @@ Isthmus incorporates the execution-layer EIPs from Ethereum’s Prague upgrade, 
 
 > **Note:** Although **EIP-6110**, **EIP-7002**, and **EIP-7251** exist in the execution-layer codebase, they remain **disabled** in the Isthmus upgrade.
 
-#### Optimism-Specific Improvements
+#### Optimism-specific improvements
 
 - Updated `withdrawalsRoot`: The `withdrawalsRoot` in block header points to the storage root of `L2ToL1MessagePasser`, simplifying proof generation.
 - Operator Fee: A flexible surcharge that can be tuned to cover chain-specific costs such as Alt-DA storage, ZK proving, or custom gas-token overhead. **In Celo, as with the L1 data fee, the Operator Fee is set to zero by setting `operatorFeeScalar` and `operatorFeeConstant` in `SystemConfig` contract to 0.**
 
-## Upgrade Timelines
+## Upgrade timelines
 
 The Isthmus upgrade was activated on Mainnet, Alfajores, and Baklava, with the activation process for each network occurring independently.
 
