@@ -109,7 +109,7 @@ Check for `window.ethereum` before initialising any web3 library; the provider i
 
 ### Resolve MiniPay phone numbers to addresses
 
-MiniPay maps phone numbers to addresses through [SocialConnect](/build/build-on-socialconnect) and ODIS. To look a number up you act as an *issuer*: an account that has verified the user owns the number (for example by SMS), has a [data encryption key (DEK)](https://github.com/celo-org/social-connect) registered on the Accounts contract, and holds ODIS quota.
+MiniPay maps phone numbers to addresses through [Self Connect](/build/build-with-self#self-connect) and ODIS. To look a number up you act as an *issuer*: an account that has verified the user owns the number (for example by SMS), has a [data encryption key (DEK)](https://github.com/celo-org/social-connect) registered on the Accounts contract, and holds ODIS quota.
 
 ```bash
 npm install @celo/identity @celo/abis viem
@@ -226,5 +226,5 @@ Everything below lives at docs.minipay.xyz and is maintained by the MiniPay team
 - [Fee abstraction](/build/fee-abstraction/overview) - How gas in stablecoins works and the adapter addresses for USDC and USD₮
 - [Fee currency contracts](/build/tools/contracts/fee-currencies) - Token and adapter addresses per network
 - [Build with local stablecoins](/build/build-with-local-stablecoin) - Mento stablecoins beyond USDm
-- [SocialConnect](/build/build-on-socialconnect) - Phone-number to address mapping
+- [Self Connect](/build/build-with-self#self-connect) - Phone-number to address mapping
 - [Celo Composer](/build/quickstart) - Scaffold a MiniPay-ready app
