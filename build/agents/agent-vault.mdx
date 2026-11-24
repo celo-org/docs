@@ -1,10 +1,10 @@
 ---
 title: "Agent Vault: Payments and Logins for Agents"
 sidebarTitle: "Self: Agent Vault"
-description: Let an agent you build pay at online checkouts, sign in to websites and, in a preview on Celo Sepolia, pay x402 services sold on Buy in stablecoins, without the agent holding card numbers, passwords or keys
+description: Let an agent you build pay at online checkouts, sign in to websites and pay x402 services sold on Buy in stablecoins on Celo, without the agent holding card numbers, passwords or keys
 ---
 
-This page is for developers who build AI agents that must pay a merchant by card, pay for an API in stablecoins on Celo, or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol. Its agent wallet, which pays over [x402](/build/agents/x402) without the agent holding a key, is a preview on Celo Sepolia.
+This page is for developers who build AI agents that must pay a merchant by card, pay for an API in stablecoins on Celo, or sign in to a website. Agent Vault is built by Self Labs, the team behind [Self](/build/build-with-self). It is not a Celo protocol. Its agent wallet pays over [x402](/build/agents/x402) on Celo mainnet without the agent holding a key.
 
 Your agent never holds a card number or a password. It gets mock tokens, fills a checkout or sign-in form in a browser that Agent Vault runs, and Agent Vault replaces each token with the real value as it types, after checking the account holder's rules. A prompt, a log or a model provider's retention then holds only tokens.
 
@@ -25,9 +25,10 @@ For card payments, Agent Vault does not move money. The merchant sees an ordinar
 
 ## Pay x402 services from the agent wallet
 
-Agent wallets are a preview. Agent Vault creates an onchain wallet for the account holder and pays [x402](/build/agents/x402) services sold on Buy from it for the agent. Only services sold on Buy are supported. Agent Vault holds the wallet's key for the account holder, and only the account holder can withdraw. The agent can spend from the wallet but never gets the key or signs a payment.
+Agent Vault creates an onchain wallet for the account holder and pays [x402](/build/agents/x402) services sold on Buy from it for the agent. Only services sold on Buy are supported. Agent Vault holds the wallet's key for the account holder, and only the account holder can withdraw. The agent can spend from the wallet but never gets the key or signs a payment.
 
-- **Network:** during the preview, payments run on Buy's Celo Sepolia sandbox. The [Wallet](https://docs.agentvault.io/dashboard/wallet) page lists the tokens and networks the wallet accepts.
+- **Network and tokens:** payments run on Celo mainnet in USDC, USD₮ or USA₮, with real funds. The [Wallet](https://docs.agentvault.io/dashboard/wallet) page lists the tokens the wallet accepts.
+- **Fees:** the wallet needs no CELO. For an x402 payment it signs an EIP-3009 transfer authorization, and the facilitator submits the settlement transaction and pays its gas, so the wallet is debited exactly the price. A withdrawal pays its network fee in the token withdrawn, through Celo's [fee currencies](/build/fee-abstraction/overview).
 - **What it pays for:** only API calls sold on Buy, a pay-per-call API marketplace. It does not pay other x402 endpoints. To pay any x402 API from your own code, see [buy](/build/agents/buy).
 - **Limits:** the account holder's agent card sets the spending limits, and a payment can wait for approval first, depending on the seller and the card's approval amount.
 - **Final payments:** a payment on Buy cannot be reversed from the Wallet page.
