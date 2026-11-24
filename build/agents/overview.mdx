@@ -17,7 +17,7 @@ On Celo, AI Agents can experiment and execute at scale. Celo's infrastructure is
 Key advantages include:
 
 - **Fast finality and sub-cent transaction costs**, enabling agents to act continuously without prohibitive fees
-- **Stablecoin-optimized design**, supporting payments, savings, subscriptions, and settlements across 25 stable assets tracking a wide range of local currencies
+- **Stablecoin-optimized design**, supporting payments, savings, subscriptions, and settlements across 30+ stablecoins tracking a wide range of local currencies
 - **Mobile-first reach**, allowing agents to interact with users through wallets and apps used daily across global markets
 - **Ethereum alignment**, giving agents access to the broader Ethereum ecosystem while operating in a purpose-built execution environment
 
@@ -65,6 +65,10 @@ x402 and MPP settle on-chain in seconds, making them well-suited to paid APIs, p
 ## Giving an agent a wallet
 
 An agent that pays for things needs an account it can read from and sign with. To create one and fund it on Celo Sepolia, follow [Give your agent a wallet and test funds](/build/agents/agent-wallet). You can wire this up directly with [viem](/build/tools/libraries-sdks/viem), or use a tool that exposes the calls to an LLM: [Celina](/build/agents/mcp/celina) covers balances, transfers, DeFi, governance, staking, and Self Agent ID through an SDK, an MCP server, and a REST API. The SDK and MCP server are open source.
+
+## DeFi for agents
+
+An agent with a funded wallet can quote and settle FX between local stablecoins on Textile, swap on Uniswap, and supply to Aave or Morpho, paying gas in the stablecoin it holds. [Agentic DeFi on Celo](/build/agents/defi) walks through the loop, the Textile RFQ calls and the guardrails; [Build with DeFi](/build/build-with-defi) lists every protocol live on Celo.
 
 ## Paying by card and signing in to websites
 
