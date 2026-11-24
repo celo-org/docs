@@ -60,7 +60,7 @@ The server stores wallet and session keys in the OS keychain, then in `~/.altana
 
 ## Use the SDK
 
-`@altananetwork/sdk` exports `CELO` (chain ID `42220`) and `CELO_SEPOLIA` (chain ID `11142220`) from 1.0.0; earlier versions have no Celo config. Install 1.1.0 or later to pay a session grant's relay fee in a stablecoin: the `feeToken` option on `grantSession` arrives in 1.1.0.
+`@altananetwork/sdk` exports `CELO` (chain ID `42220`) and `CELO_SEPOLIA` (chain ID `11142220`) from 1.0.0; earlier versions have no Celo config. Install 1.1.0 or later to pay x402 v2 endpoints: from 1.1.0, `fetchWithX402` reads the payment requirements from the `PAYMENT-REQUIRED` header.
 
 ```bash
 npm install @altananetwork/sdk@^1.1.0 viem
@@ -80,7 +80,7 @@ Wallet creation, session grants and revocation follow [Altana's SDK setup](https
 An agent can pay [x402](/build/agents/x402) endpoints on Celo from its Altana wallet in USDC, USD₮ or USA₮. Pass the tokens as `x402Tokens` when you grant the session, then call `fetchWithX402`, which signs one payment and retries the request once. Altana's [x402 payments](https://docs.altana.network/sdk/x402) page shows the full grant and call.
 
 <Warning>
-x402 payments are signed by the session key rather than sent by the session as calls, so the session's daily spend caps do not bound them. A session granted with `x402Tokens` can sign payments in those tokens until it expires or is revoked. Give it a short expiry and fund the wallet only with what the agent should spend.
+x402 payments are signed by the session key rather than sent by the session as calls, so the session's spend caps do not bound them. A session granted with `x402Tokens` can sign payments in those tokens until it expires or is revoked. Give it a short expiry and fund the wallet only with what the agent should spend.
 </Warning>
 
 Run `fetchWithX402` server side, because many endpoints block the payment header in browsers.
@@ -95,7 +95,7 @@ Settlement can go through the Celo facilitator at `https://api.x402.celo.org` (C
 
 The intent relay sends each transaction and the wallet pays the relay back. On Celo the wallet can pay that relay fee in CELO or in a stablecoin the relay lists; `client.feeCurrencies()` returns the list. This is the relay's own fee, not Celo [fee abstraction](/build/fee-abstraction/overview), which is the other way to pay gas in a stablecoin on Celo.
 
-The KeyStore registration fee is paid in CELO, whatever token pays the relay fee. A grant that registers a session key in the KeyStore pays it, so keep CELO in the wallet for grants. The KeyStore controller's `getRegistrationFeeInWei()` returns the current amount; Altana's [Networks](https://docs.altana.network/concepts/networks) page lists the controller address.
+The KeyStore registration fee is paid in CELO, whatever token pays the relay fee. A grant that registers a session key in the KeyStore pays it, so keep CELO in the wallet for grants. A new wallet also pays the fee once for its admin key, on its first grant. Pass `register: false` to skip registration if nothing needs to find the session in the KeyStore. The KeyStore controller's `getRegistrationFeeInWei()` returns the current amount; Altana's [Networks](https://docs.altana.network/concepts/networks) page lists the controller address.
 
 ## Set limits that fit the task
 
