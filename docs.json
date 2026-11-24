@@ -54,7 +54,7 @@
     "default": "dark"
   },
   "banner": {
-    "content": "🤖 **Agents on Open Rails** | Celo’s global hackathon — $5,000 in prizes, kicks off Oct 6. [Join the hackathon](https://www.loops.house/agents-on-open-rails)",
+    "content": "🤖 **Agents Open for Business** | Celo’s global hackathon: $5,000 in bounties. Submissions until Dec 7 at 9am GMT. [Register now](https://qrco.de/agentsopenforbusiness)",
     "dismissible": true
   },
   "fonts": {
@@ -4725,5 +4725,5 @@
       }
     ]
   },
-  "description": "Learn to develop on the Ethereum L2 built for the real world. Access guides, APIs, and tools for fast, affordable blockchain applications"
+  "description": "Developer docs for Celo, the Ethereum L2 where the world's money meets local markets: build with stablecoins, local currencies and FX, run a node, or read the protocol spec"
 }

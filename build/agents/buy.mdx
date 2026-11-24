@@ -30,7 +30,7 @@ Paid calls to the buy gateway go to `https://gateway.usebuy.ai`, which holds the
 
 ```bash
 # Celo Sepolia (11142220), test USDC, no real funds
-npx --yes @celo/buy@0.8.5 --sandbox curl https://gateway.usebuy.ai/v1/social/x/posts/search \
+npx --yes @celo/buy@0.8.6 --sandbox curl https://gateway.usebuy.ai/v1/social/x/posts/search \
   -X POST -H 'content-type: application/json' -d '{"query":"celo"}'
 ```
 
@@ -42,7 +42,7 @@ Create a dedicated wallet. Celo mainnet is the default network:
 
 ```bash
 # Celo mainnet (42220)
-npx --yes @celo/buy@0.8.5 setup --name demo
+npx --yes @celo/buy@0.8.6 setup --name demo
 ```
 
 Fund the printed address with a small amount of USDC, USD₮, or USA₮ on Celo mainnet. To see what an endpoint charges before paying, use `buy quote`: it takes the same arguments as `buy curl`, prints each offer's token, price, network and recipient, and pays nothing.
@@ -50,22 +50,22 @@ Fund the printed address with a small amount of USDC, USD₮, or USA₮ on Celo 
 Every paid call should carry `--max-amount`. buy refuses to sign when the quote is above it:
 
 ```bash
-# Celo mainnet (42220), pays at most 0.01 USDC
-npx --yes @celo/buy@0.8.5 curl --max-amount 0.01 https://gateway.usebuy.ai/v1/social/x/posts/search \
+# Celo mainnet (42220), pays at most 0.01 USDC (or 0.01 USD₮ or USA₮)
+npx --yes @celo/buy@0.8.6 curl --max-amount 0.01 https://gateway.usebuy.ai/v1/social/x/posts/search \
   -X POST -H 'content-type: application/json' -d '{"query":"celo"}'
 ```
 
-USDC is the default token. Add `--token USDT` or `--token USAT` to pay in one of those instead; the service must offer that token in its `402` response.
+USDC is the preferred token. Without `--token`, buy pays in another token the service accepts when its `402` offers no USDC, or when the wallet cannot cover USDC but covers that other token (a wallet funded only with USA₮ pays in USA₮). `--token USDC`, `--token USDT` or `--token USAT` pays in that token only; the service must offer it in its `402` response.
 
 ## Give an agent payment tools
 
 Register the buy MCP server with Claude Code and Codex:
 
 ```bash
-npx --yes @celo/buy@0.8.5 mcp install --client all
+npx --yes @celo/buy@0.8.6 mcp install --client all
 ```
 
-For any other MCP client, configure `npx --yes @celo/buy@0.8.5 mcp serve` as a stdio server.
+For any other MCP client, configure `npx --yes @celo/buy@0.8.6 mcp serve` as a stdio server.
 
 The agent gets tools such as `buy_pay_quote`, `buy_curl`, `buy_balance` and `buy_whoami`. Pass `maxAmount` on every paid call: it is optional, in atomic units (`20000` is 0.02 USDC), and without it the call is capped only by the account's daily cap, if you set one with `buy account cap <name> <amount>`. `buy_send`, which moves money directly, is off by default. To turn it on, set `BUY_MCP_ENABLE_SEND=1`, `BUY_MCP_SEND_ACCOUNT`, and either `BUY_MCP_SEND_BUDGET` or `BUY_MCP_SEND_ALLOWLIST`.
 

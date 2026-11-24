@@ -212,7 +212,7 @@ const stageCalls = _dequeue.map((proposalId) => ({
 const stages = (await publicClient.multicall({ contracts: stageCalls })).map((x) => x.result)
 ```
 
-#### Fee Currency
+#### Fee currency
 
 With Viem's built in Celo transaction serializer and Celo block/transaction formatters it is easy to build a wallet that supports Celo's ability to pay gas fees with various erc20 tokens. Simply, import a Celo chain from `viem/chain` and pass it to Viem's `createWalletClient`. Once the client is created you can add the feeCurrency field to your transaction with the address of the token you want to use for gas.
 

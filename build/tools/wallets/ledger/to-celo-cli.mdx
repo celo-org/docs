@@ -6,19 +6,19 @@ sidebarTitle: "Connect to Celo CLI"
 
 ### Install the Celo CLI
 
-Open the terminal application on your computer and install the [Celo CLI](/cli/):
+Open the terminal application on your computer and install the [Celo CLI](/build/tools/libraries-sdks/cli/index):
 
 ```bash
 npm install -g @celo/celocli
 ```
 
-If you have previously installed the CLI, ensure that you are using version 0.0.47 or later:
+If you have previously installed the CLI, ensure that you are using version 9 or later:
 
 ```bash
 celocli --version
 ```
 
-And if not, upgrade by running the same command as above.
+To upgrade to the latest version, run the install command again.
 
 You will now need to point the Celo CLI to a node that is synchronized with one of Celo’s networks.
 
@@ -53,7 +53,7 @@ celocli node:synced
 
 The output should display `true`. If it displays `false` you may need to wait a bit and try again.
 
-### Confirm Addresses on Celo CLI
+### Confirm addresses on Celo CLI
 
 The Ledger's current seed phrase determines the device's accounts. In the terminal on your computer, you can view the first account's address with the following command:
 
@@ -79,7 +79,7 @@ celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 **Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.
 </Note>
 
-### Performing a Testnet transaction on Celo CLI
+### Performing a testnet transaction on Celo CLI
 
 Before using your address on the Celo Mainnet, you may want to test it on the Celo Sepolia Testnet
 with the following instructions.
@@ -114,7 +114,7 @@ To use `celocli` with your Ledger, ensure the device is connected to your comput
 
 Then, simply append the `--useLedger` flag to any `celocli` commands with which you'd like to use a Ledger. You may also append the `--ledgerConfirmAddress` flag, which will require that you manually verify on the Ledger the address from which the transaction is being sent.
 
-## View Account Balance
+## View account balance
 
 In order to view your account Balance on your Ledger with `celocli`, you need to run the following command:
 
@@ -126,13 +126,13 @@ celocli account:balance <your-address>
 
 This will display the specific account balance for your address on Celo Mainnet.
 
-## Receive Crypto Assets
+## Receive crypto assets
 
 In order to receive Celo on your address, whether it's CELO or USDm or any Mento stablecoin, you must share your specific address with the sender.
 
 Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://celo.blockscout.com/).
 
-## Send Crypto Assets
+## Send crypto assets
 
 In order to send CELO or USDm from your Ledger, you just need a recipient address to send to. Once you have that and the amount you would like to send (in our example, 10 CELO), we will go over how to send CELO using `celocli`.
 
@@ -149,7 +149,7 @@ You'll then get a transaction hash when it's confirmed that the transaction was 
 If you have issues connecting to the Ledger, try the following:
 
 - Check that the Ledger device is connected, powered on, and that you've unlocked it using the PIN.
-- Check that no other applications are using the device. Close Ledger Wallet. Stop any local Celo Blockchain node, or ensure it is run with the `--usb` option.
+- Check that no other applications are using the device. Close Ledger Wallet.
 - Try unplugging and replugging the device. Some devices appear to trigger a warning on Macs saying: “USB Devices Disabled. Unplug the device using too much power to re-enable USB devices” which is usually resolved by reconnecting.
 - Ensure that you are using the original cable supplied with your Ledger.
 - Ensure that your Ledger has the [latest firmware](https://support.ledger.com/hc/en-us/articles/360002731113-Update-device-firmware). For Ledger Nano S, a firmware version of 1.6 or later is required.

@@ -12,7 +12,7 @@ This guide walks through verifying Celo L1 (Ethereum) smart contracts deployment
 - **JQ Installed:** jq cli tool for handling json files is required later.
 - **API Key:** Obtain an Etherscan (or corresponding block explorer) API key.
 
-## 2. Verify Smart Contracts bytecode
+## 2. Verify smart contracts bytecode
 
 Check that on chain bytecode correspond to compiled bytecode from smart contract release.
 
@@ -133,7 +133,7 @@ Then to verify each contract:
 ./scripts/compare_bytecode.sh 0x3Da872782f9fB696fD72Af2ec9313a56bDA6f06d forge-artifacts/OptimismPortal2.sol/OptimismPortal2.json
 ```
 
-## 3. Verify Contract are correctly configured
+## 3. Verify contract are correctly configured
 
 **Preliminary**. On a terminal set up RPC and Etherscan variables:
 
@@ -197,7 +197,7 @@ $ cast call 0xa440975E5A6BB19Bc3Bee901d909BB24b0f43D33 "guardian() (address)"
 0x6E226fa22e5F19363d231D3FA048aaBa73CC1f47
 ```
 
-### 3.4 Bridge Contracts are correctly configured
+### 3.4 Bridge contracts are correctly configured
 
 Bridge Contracts:
 
@@ -252,7 +252,7 @@ $ cast call 0xc5c5D157928BDBD2ACf6d0777626b6C75a9EAEDC "guardian() (address)"
 0x6E226fa22e5F19363d231D3FA048aaBa73CC1f47
 ```
 
-## 4 Verify CELO L1 Token is correctly deployed
+## 4 Verify CELO L1 token is correctly deployed
 
 Start by checking on `SystemConfig` that customGasToken is enabled and pointing to CELO ERC20
 
@@ -285,7 +285,7 @@ $ cast call 0x057898f3C43F129a17517B9056D23851F124b19f "balanceOf(address) (uint
 1000000000000000000000000000 [1e27]
 ```
 
-## 5. Verifying SecurityCouncil Configuration
+## 5. Verifying SecurityCouncil configuration
 
 Based on [this forum post](https://forum.celo.org/t/proposing-celo-l2s-security-council/10578), tied to [CGP-171](https://mondo.celo.org/governance/cgp-171); the security council is a 2/2 multisig whose members are a cLabsMultisig and "Celo Community Security Council"
 
@@ -303,7 +303,7 @@ $ cast call 0x4092A77bAF58fef0309452cEaCb09221e556E112 "getThreshold()(uint256)"
 1
 ```
 
-### 5.2 Verify the cLabs Multisig
+### 5.2 Verify the cLabs multisig
 
 cLabs Multisig is a 6/8 multisig, and is a member of the SystemOwnerSafe multisig
 
