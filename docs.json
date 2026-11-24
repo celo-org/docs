@@ -607,7 +607,7 @@
     },
     {
       "source": "/build/build-on-socialconnect",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/tooling/libraries-sdks/particle-network/:slug*",
@@ -1311,7 +1311,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/celo-codebase/protocol/identity/encrypted-cloud-backup",
@@ -1319,7 +1319,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/index",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/celo-codebase/protocol/identity/metadata",
@@ -1327,7 +1327,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/phone-number-privacy",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/celo-codebase/protocol/identity/privacy-research",
@@ -2615,7 +2615,7 @@
     },
     {
       "source": "/protocol/identity/index",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/protocol/index",
@@ -2699,7 +2699,7 @@
     },
     {
       "source": "/protocol/socialconnect",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/protocol/stability",
@@ -3595,7 +3595,7 @@
     },
     {
       "source": "/legacy/protocol/identity/index",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/legacy/protocol/identity/odis",
@@ -3911,7 +3911,7 @@
     },
     {
       "source": "/protocol/identity/odis-use-case-phone-number-privacy",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/protocol/identity/encrypted-cloud-backup",
@@ -4059,7 +4059,7 @@
     },
     {
       "source": "/developer/socialconnect",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/developer/tools",
@@ -4267,7 +4267,7 @@
     },
     {
       "source": "/celo-codebase/protocol/identity/README",
-      "destination": "/build/build-with-self"
+      "destination": "/build/build-with-self#self-connect"
     },
     {
       "source": "/celo-codebase/protocol/proof-of-stake/README",

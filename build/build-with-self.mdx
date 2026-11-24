@@ -47,11 +47,11 @@ Supported documents are biometric passports (NFC chip, 60+ countries), Indian Aa
 6. Under **Developer → Webhooks**, add your handler URL and store the signing secret as `SELF_WEBHOOK_SECRET`. Verify every delivery with the SDK before you trust it; the [webhook events](https://docs.self.xyz/docs/self-enterprise/webhooks/events/) page lists the payload fields.
 7. Test the loop with a mock passport generated in the Self app (**Settings → Manage ID documents → Generate Mock Document**). The flow's activity log shows the result.
 
-Live keys need an email confirmation and, for some accounts, a manual review. Pricing per check is listed on [self.xyz](https://self.xyz/).
+Pricing per check is listed on [self.xyz](https://self.xyz/).
 
 ## Verify on-chain
 
-Backend mode is the default and records nothing on chain. A flow set to on-chain mode also runs its checks in a smart contract on Celo, in addition to the webhook, which then carries the transaction hash and contract address. Self deploys one soulbound ERC-721 contract per flow and environment (name `Self Verification SBT`, symbol `SELFSBT`), pays the gas, and mints a token to the user's wallet when the proof passes. The contract enforces minimum age, country lists, OFAC and security level; a maximum age cannot be enforced on-chain.
+Backend mode is the default and records nothing on chain. A flow set to on-chain mode verifies the proof in a smart contract on Celo instead of on Self's servers. You still get the same webhook, which then also carries the transaction hash and contract address. Self deploys one soulbound ERC-721 contract per flow and environment (name `Self Verification SBT`, symbol `SELFSBT`), pays the gas, and mints a token to the user's wallet when the proof passes. The contract enforces minimum age, country lists, OFAC and security level; a maximum age cannot be enforced on-chain.
 
 - Test flows mint on Celo Sepolia (chain ID 11142220); live flows mint on Celo mainnet (chain ID 42220).
 - The receiving wallet must be an externally owned account. Smart-contract wallets cannot receive the SBT.

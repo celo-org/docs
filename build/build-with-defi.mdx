@@ -5,7 +5,7 @@ description: Find the lending, exchange, FX, aggregator, incentive, derivatives 
 
 This page is for app and agent developers building lending, swaps, FX, savings or yield products on Celo. It lists the protocols that are live on Celo mainnet and where their documentation and addresses live.
 
-Stablecoins are the unit of account on Celo. Dollar stablecoins ([USA₮](/build/build-with-usat), USDC, USD₮) and [local stablecoins](/build/build-with-local-stablecoin) in more than 20 currencies share one chain, so a protocol can price, lend and settle in the currency its users earn in. Users and agents pay gas in those same stablecoins through [fee abstraction](/build/fee-abstraction/overview), and a typical transaction costs below $0.01. Addresses for every stablecoin are on [Stablecoin contracts](/build/tools/contracts/stablecoin-contracts).
+Stablecoins are the unit of account on Celo. Dollar stablecoins ([USA₮](/build/build-with-usat), USDC, USD₮) and [local stablecoins](/build/build-with-local-stablecoin) share one chain, so a protocol can price, lend and settle in the currency its users earn in. Users and agents pay gas in those same stablecoins through [fee abstraction](/build/fee-abstraction/overview), and a typical transaction costs below $0.01. Addresses for every stablecoin are on [Stablecoin contracts](/build/tools/contracts/stablecoin-contracts).
 
 <Note>
   Partner contract addresses are not listed here. Each entry links to the provider's own documentation, which is the canonical source for addresses.
@@ -22,7 +22,7 @@ Stablecoins are the unit of account on Celo. Dollar stablecoins ([USA₮](/build
 For where to buy and swap CELO see [Exchanges](/learn/exchanges). For cross-chain transfers see [Bridges](/build/tools/bridges/bridges) and [Cross-chain messaging](/build/tools/bridges/cross-chain-messaging).
 
 - **[Uniswap v4](https://app.uniswap.org/)** - Concentrated liquidity pools with hooks for custom pool logic. Deployment addresses on Celo are on [Uniswap contracts](/build/tools/contracts/uniswap-contracts).
-- **[Textile FX](https://app.textilecredit.com/)** - Onchain FX between local stablecoins and USD₮. Makers quote each corridor from their own price feeds; a trader takes a firm request-for-quote or places a gasless limit order, and the swap settles in one transaction. Live Celo corridors include cNGN, wARS, wBRL, wCOP, wMXN, IDRX and G$ against USD₮. The [Textile docs](https://docs.textilecredit.com/) cover the RFQ API and the [address book](https://docs.textilecredit.com/protocol/address-book.html).
+- **[Textile FX](https://app.textilecredit.com/)** - Onchain FX between local stablecoins and USD₮. Makers quote each corridor from their own price feeds; a trader takes a firm request-for-quote, and the swap settles in one transaction. Gasless limit orders are placed in the Textile app; the API open to new integrations, which an agent uses, covers request-for-quote only. Live Celo corridors include cNGN, wARS, wBRL, wCOP, wMXN, IDRX and G$ against USD₮. The [Textile docs](https://docs.textilecredit.com/) cover the RFQ API and the [address book](https://docs.textilecredit.com/protocol/address-book.html).
 - **[Mento](https://www.mento.org/)** - Onchain swaps between the Mento stablecoins, Celo's onchain FX for local currencies. See [Build with local stablecoins](/build/build-with-local-stablecoin).
 - **[Carbon DeFi](https://www.carbondefi.xyz/)** - Onchain limit and range orders with automated strategies.
 - **[Ubeswap](https://ubeswap.org/)** - Celo-native exchange built for mobile users.
