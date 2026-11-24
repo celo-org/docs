@@ -1,28 +1,19 @@
 {
   "_note": "Curated input for build/tools/contracts/stablecoin-contracts.mdx. Mento tokens plus USDC and USDT are read from the on-chain fee-currency allowlist by scripts/update_contracts.py; everything in this file has no registry to read from and must be maintained by hand.",
+
   "issuers": {
     "_note": "Issuer attribution for the allowlisted stablecoins. _default covers the Mento tokens.",
-    "_default": {
-      "name": "Mento",
-      "url": "https://www.mento.org/"
-    },
-    "USDC": {
-      "name": "Circle",
-      "url": "https://www.circle.com/usdc"
-    },
-    "USD\u20ae": {
-      "name": "Tether",
-      "url": "https://tether.to/en/"
-    },
-    "USA\u20ae": {
-      "name": "Anchorage Digital Bank",
-      "url": "https://usat.io/"
-    }
+    "_default": { "name": "Mento", "url": "https://www.mento.org/" },
+    "USDC": { "name": "Circle", "url": "https://www.circle.com/usdc" },
+    "USD₮": { "name": "Tether", "url": "https://tether.to/en/" },
+    "USA₮": { "name": "Anchorage Digital Bank", "url": "https://usat.io/" }
   },
+
   "symbol_overrides": {
-    "_note": "Display symbols that differ from the token's on-chain symbol() value. USA\u20ae reports as USAT on-chain but is branded with the U+20AE glyph everywhere else in these docs.",
-    "USAT": "USA\u20ae"
+    "_note": "Display symbols that differ from the token's on-chain symbol() value. USA₮ reports as USAT on-chain but is branded with the U+20AE glyph everywhere else in these docs.",
+    "USAT": "USA₮"
   },
+
   "third_party": [
     {
       "symbol": "IDRX",
@@ -57,7 +48,8 @@
       "name": "Angle USD",
       "issuer": "Angle",
       "issuer_url": "https://www.angle.money/",
-      "mainnet_address": "0x0000206329b97DB379d5E1Bf586BbDB969C63274"
+      "mainnet_address": "0x0000206329b97DB379d5E1Bf586BbDB969C63274",
+      "wind_down": "Angle is winding down; redeem before March 1, 2027"
     },
     {
       "symbol": "EURA",
@@ -66,7 +58,7 @@
       "issuer_url": "https://www.angle.money/",
       "mainnet_address": "0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049",
       "formerly": "agEUR",
-      "wind_down": "Angle is winding down \u2014 redeem before March\u00a01,\u00a02027"
+      "wind_down": "Angle is winding down; redeem before March 1, 2027"
     },
     {
       "symbol": "USDGLO",
