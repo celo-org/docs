@@ -69,6 +69,12 @@ Run it with your key in the environment, for example `node --env-file=.env first
 
 You are done when it prints `Status: success`. Look the hash up on the [Celo Sepolia explorer](https://celo-sepolia.blockscout.com) to see the transaction.
 
+## Choose wallet infrastructure for an agent
+
+A raw key is enough for testing. For an agent that holds real funds, use a wallet provider. The [wallet providers](/build/tools/wallets/index) page lists the providers that work on Celo.
+
+To sponsor gas for an ERC-4337 smart account, see [Pimlico](/build/tools/wallets/pimlico). To pay gas in a stablecoin from any account, see [fee abstraction](/build/fee-abstraction/overview).
+
 ## Troubleshooting
 
 | Symptom | Cause | Fix |

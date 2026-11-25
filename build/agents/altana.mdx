@@ -1,0 +1,135 @@
+---
+title: "Altana: Agent Wallets with Onchain Limits"
+sidebarTitle: "Altana"
+description: Give an agent a self-custodial wallet on Celo with a session key whose spend cap, contract allowlist and expiry are enforced onchain
+---
+
+This page is for agent developers who want an agent to move stablecoins onchain from a wallet the owner keeps, under limits the blockchain enforces. Altana is built by Altana Network, not by Celo. Altana runs on Celo mainnet. Relay fees can be paid in a stablecoin the wallet holds; the KeyStore registration fee is paid in CELO.
+
+## Prerequisites
+
+- [Bun](https://bun.sh) 1.1 or later for the MCP server
+- An MCP client such as Claude Code or Cursor
+- A key for the wallet owner, kept on your machine. Altana does not receive it.
+
+## How it works
+
+1. The owner creates a Smart Agentic Wallet. The owner holds the admin key. Altana never holds keys or funds.
+2. The owner grants the agent a session key: a scoped, time-bounded delegation from the admin key. The agent signs with the session key only.
+3. A session carries three limits: a spend cap per token per fixed period (a day from 00:00 UTC, a week from Monday, a month from the 1st), an allowlist of contracts and methods, and an expiry. The wallet contract enforces them on the calls the session sends. A call outside them reverts. The wallet contract does not apply the spend cap to x402 payments the session signs; see [Pay for x402 APIs on Celo](#pay-for-x402-apis-on-celo).
+4. By default, a grant registers the session's public key in the KeyStore, a public onchain registry. Any client can then check that a session key is valid, and the owner revokes a session in one transaction. A revoked session cannot be reactivated.
+5. An intent relay turns the agent's intents into transactions and simulates each one before signing.
+
+Wallet addresses are the same on every chain Altana supports, and permissions work the same way on each.
+
+## Connect the MCP server on Celo
+
+`@altananetwork/mcp` exposes wallet and session tools to an MCP client. Use it to operate wallets from a chat interface and to prototype. One server process serves one chain; select Celo mainnet with `ALTANA_CHAIN`.
+
+<Warning>
+The MCP server holds the owner's admin key as well as session keys. Its `wallet_execute` tool submits calls signed by the admin key, so an agent connected to the server can act as the owner, and session limits do not bind it. Keep the admin key off the machine where the agent runs.
+</Warning>
+
+<Tabs>
+  <Tab title="Claude Code">
+    ```bash
+    # Celo mainnet (42220)
+    claude mcp add altana -e ALTANA_CHAIN=celo -- bunx @altananetwork/mcp
+    ```
+
+    Restart Claude Code after you add the server.
+  </Tab>
+  <Tab title="Other clients">
+    ```json
+    {
+      "mcpServers": {
+        "altana": {
+          "command": "bunx",
+          "args": ["@altananetwork/mcp"],
+          "env": { "ALTANA_CHAIN": "celo" }
+        }
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+To test first, use `ALTANA_CHAIN=celo-sepolia` (chain ID `11142220`) and get test CELO from the [Celo Sepolia faucet](https://faucet.celo.org/celo-sepolia). To change chain, restart the server with a different value.
+
+The server stores wallet and session keys in the OS keychain, then in `~/.altana/keys.json`, then in environment variables. Keys stay on your machine.
+
+## Use the SDK
+
+`@altananetwork/sdk` exports `CELO` (chain ID `42220`) and `CELO_SEPOLIA` (chain ID `11142220`) from 1.0.0; earlier versions have no Celo config. Install 1.1.0 or later to pay x402 v2 endpoints: from 1.1.0, `fetchWithX402` reads the payment requirements from the `PAYMENT-REQUIRED` header. Install 1.2.0 or later if the session's spend cap should limit x402 payments: from 1.2.0, `fetchWithX402` checks each payment against the cap before it signs.
+
+```bash
+npm install @altananetwork/sdk@^1.2.0 viem
+```
+
+```ts
+// Celo mainnet (42220)
+import { createClient, CELO } from "@altananetwork/sdk";
+
+const client = createClient({ chains: [CELO] });
+```
+
+Wallet creation, session grants and revocation follow [Altana's SDK setup](https://docs.altana.network/sdk/setup).
+
+## Pay for x402 APIs on Celo
+
+An agent can pay [x402](/build/agents/x402) endpoints on Celo from its Altana wallet in USDC, USD₮ or USA₮. Pass the tokens as `x402Tokens` when you grant the session, then call `fetchWithX402`, which signs one payment and retries the request once. Altana's [x402 payments](https://docs.altana.network/sdk/x402) page shows the full grant and call.
+
+<Warning>
+The wallet contract never sees an x402 payment, so it cannot apply the session's spend caps to it. From SDK 1.2.0, `fetchWithX402` checks each payment against the session's caps on the payment token before it signs, and throws `spend_limit_exceeded` over the limit; `checkSpendCap: false` turns the check off. The check runs in the agent's process: its count of x402 payments starts again when the process restarts, and `signX402Payment` or any other signer holding the session key skips it. On SDK 1.1.0 and earlier, nothing checks x402 payments against the caps. A session with no cap on the payment token has no limit. Set a cap for every token in `x402Tokens`, give the session a short expiry and fund the wallet only with what the agent should spend.
+</Warning>
+
+With the MCP server, pass `x402SpendLimit` to `grant_session` with `x402Tokens` to cap what the session pays per day in each token; without it, the session has no cap on those tokens. `x402SpendLimit` needs `@altananetwork/mcp` 1.2.0 or later.
+
+Run `fetchWithX402` server side, because many endpoints block the payment header in browsers.
+
+## Sell over x402 on Celo
+
+`@altananetwork/x402-server` lets a merchant charge for an endpoint over [x402](/build/agents/x402) on Celo. It ships token configs for `USDC_CELO`, `USDT_CELO` and `USAT_CELO` on mainnet; `USAT_CELO` needs 0.4.0 or later. All three use 6 decimals, so a price of `200_000n` is 0.2. A merchant can list several tokens, and each payment settles on its own token's contract.
+
+Settlement can go through the Celo facilitator at `https://api.x402.celo.org` (Celo Sepolia: `https://api.x402.sepolia.celo.org`). Set `facilitatorService` on the merchant. With the Celo facilitator, eip3009 payments settle through it and it pays the gas. The merchant still needs its own RPC and key. `POST /settle` needs an API key from [x402.celo.org](https://x402.celo.org). See [Settling through Celo's facilitator](https://docs.altana.network/sdk/x402-server#settling-through-celos-facilitator).
+
+## Pay relay fees in a stablecoin
+
+The intent relay sends each transaction and the wallet pays the relay back. On Celo the wallet can pay that relay fee in CELO or in a stablecoin the relay lists; `client.feeCurrencies()` returns the list. This is the relay's own fee, not Celo [fee abstraction](/build/fee-abstraction/overview), which is the other way to pay gas in a stablecoin on Celo.
+
+The KeyStore registration fee is paid in CELO, whatever token pays the relay fee. A grant that registers a session key in the KeyStore pays it, so keep CELO in the wallet for grants. A new wallet also pays the fee once for its admin key, on its first grant. Pass `register: false` to skip registration if nothing needs to find the session in the KeyStore. The KeyStore controller's `getRegistrationFeeInWei()` returns the current amount; Altana's [Networks](https://docs.altana.network/concepts/networks) page lists the controller address.
+
+## Set limits that fit the task
+
+Set both `calls` and `spend` when you grant a session. If you leave out `calls`, the session can reach any contract, bounded only by its spend cap. Periods are fixed on the UTC clock, so a session can spend a full daily cap just before 00:00 UTC and again just after; size the cap for that. The wallet contract does not apply spend caps to x402 payments. From SDK 1.2.0, `fetchWithX402` checks them before it signs, so give a session that pays x402 a cap on each payment token and a short expiry. Spend limits are in a token's smallest unit, so check the token's decimals on Celo first: USDC and USD₮ use 6, USDm uses 18. Limit amounts per token over a period such as a day, and give every session an expiry.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| TypeScript syntax error when the server starts | You ran `npx`. Use `bunx` and confirm Bun 1.1 or later is installed. |
+| The agent acts on the wrong network | The server uses the chain set at startup. Restart it with the right `ALTANA_CHAIN`. |
+| The wallet registers an ERC-8004 agent identity you did not want | Set `ALTANA_AGENT_IDENTITY=off`. |
+| A call reverts at validation | The call is outside the session's allowlist, spend cap or expiry. Grant a new session with the limits you need. |
+| `fetchWithX402` throws `spend_limit_exceeded` | The payment, plus what the session already spent in the cap's current period, is over its cap on that token. Caps cannot be raised: grant a new session with a higher cap, or wait for the next period. |
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Product | [altana.network](https://www.altana.network) |
+| Documentation | [docs.altana.network](https://docs.altana.network) |
+| Supported networks, endpoints and Keystore addresses | [Networks](https://docs.altana.network/concepts/networks) |
+| MCP server install | [MCP install](https://docs.altana.network/mcp/install) |
+| Paying x402 from an Altana wallet | [x402 payments](https://docs.altana.network/sdk/x402) |
+| Selling over x402 on Celo | [x402 server](https://docs.altana.network/sdk/x402-server#celo) |
+| Session keys | [Sessions](https://docs.altana.network/concepts/sessions) |
+| Keystore | [Keystore](https://docs.altana.network/concepts/keystore) |
+
+## Related
+
+- [Give your agent a wallet and test funds](/build/agents/agent-wallet) - a plain key-based account on Celo Sepolia
+- [Agent Vault](/build/agents/agent-vault) - keeps cards, logins and payment authority out of the agent's hands
+- [x402: Agent Payments](/build/agents/x402) - pay per HTTP request with stablecoins on Celo
+- [ERC-8004](/build/agents/8004) - register an agent onchain so others can find and rate it
+- [Fee abstraction](/build/fee-abstraction/overview) - pay gas in a stablecoin

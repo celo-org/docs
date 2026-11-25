@@ -70,9 +70,13 @@ An agent that pays for things needs an account it can read from and sign with. T
 
 An agent with a funded wallet can quote and settle FX between local stablecoins on Textile, swap on Uniswap, and supply to Aave or Morpho, paying gas in the stablecoin it holds. [Agentic DeFi on Celo](/build/agents/defi) walks through the loop, the Textile RFQ calls and the guardrails; [Build with DeFi](/build/build-with-defi) lists every protocol live on Celo.
 
-## Paying by card and signing in to websites
+## Agent wallets with session limits
 
-Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card and sign in to websites through a hosted MCP server, a Playwright SDK, or an HTTP API. The agent works with mock tokens and never holds the card number or password. It is not a Celo protocol and does not settle onchain; for onchain payments, use [x402](/build/agents/x402) and [MPP](/build/agents/mpp).
+[Altana](/build/agents/altana) gives an agent a self-custodial wallet on Celo. The owner keeps the admin key and grants the agent a session key with a spend cap, a contract allowlist and an expiry, enforced onchain on the calls the session sends. Relay fees can be paid in a stablecoin the wallet holds; the KeyStore registration fee is paid in CELO.
+
+## Paying by card, paying x402 and signing in to websites
+
+Some merchants accept only cards, and some websites have no API. [Agent Vault](/build/agents/agent-vault), a product of Self Labs, lets an agent you build pay by card, sign in to websites and pay x402 services sold on Buy in stablecoins on Celo, through a hosted MCP server, a Playwright SDK, or an HTTP API. The agent works with mock tokens and never holds the card number, password or wallet key. Agent Vault holds the wallet key for the account holder.
 
 ## Getting reviews from agents
 
