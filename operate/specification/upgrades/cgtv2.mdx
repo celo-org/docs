@@ -16,23 +16,29 @@ Optimism introduced CGT v2 for new chains in [Upgrade 18](https://docs.optimism.
 - [Optimism's Custom Gas Token Specifications](https://specs.optimism.io/protocol/custom-gas-token/overview.html)
 - [Optimism's Upgrade 18 Notice](https://docs.optimism.io/notices/archive/upgrade-18)
 
-### L1 Contract changes
+### L1 contract changes
 
-The L1 contracts are upgraded to op-contracts v6.0.0 in one governance transaction. The L1 CELO held by `OptimismPortal2` moves into a new `CeloGasBridgeL1` escrow contract, and the custom gas token mode is enabled. CELO deposits go through `CeloGasBridgeL1` instead of `OptimismPortal2.depositERC20Transaction()`, which is removed.
+The guardian pauses the system before the upgrade. One governance transaction then moves the L1 CELO held by `OptimismPortal2` into a new `CeloGasBridgeL1` escrow contract, upgrades the L1 contracts to op-contracts v6.0.0 and enables the custom gas token mode. Moving the CELO makes `CeloGasBridgeL1` emit `EscrowSeeded`, which activates the L2 changes. The system stays paused until the L2 upgrade has succeeded.
+
+CELO deposits go through `CeloGasBridgeL1` instead of `OptimismPortal2.depositERC20Transaction()`, which is removed. In custom gas token mode, `OptimismPortal2` rejects deposits and withdrawals that carry value.
 
 The governance proposal is TBD.
 
 ### L2 changes
 
-At activation, upgrade transactions add the CGT v2 predeploys `LiquidityController` and `NativeAssetLiquidity`, which hold and release native CELO, and the Celo-specific `CeloGasBridgeL2`, which pairs with `CeloGasBridgeL1`. CELO withdrawals start from `CeloGasBridgeL2` instead of `L2ToL1MessagePasser`.
+The upgrade activates in the first L2 block whose L1 origin contains the `EscrowSeeded` event. That block contains only deposit transactions. They install the CGT v2 predeploys `NativeAssetLiquidity` (`0x4200000000000000000000000000000000000029`) and `LiquidityController` (`0x420000000000000000000000000000000000002a`), which hold and release native CELO, and the Celo-specific `CeloGasBridgeL2` (`0x42000000000000000000000000000000000007ef`), which pairs with `CeloGasBridgeL1`. They also upgrade `L1Block`, `L2ToL1MessagePasser` and the sequencer fee vault to their CGT v2 versions.
+
+A final deposit funds `NativeAssetLiquidity` with 1,000,000,000 CELO minus the amount moved into `CeloGasBridgeL1`. CELO withdrawals start from `CeloGasBridgeL2` instead of `L2ToL1MessagePasser`, which rejects withdrawals that carry value.
+
+If an upgrade transaction fails, nodes build the block without the upgrade and CGT v2 stays inactive. While the system is paused, the `SystemConfig` owner can request another attempt from L1.
 
 Native CELO and the CELO ERC-20 are unchanged, so [token duality](/operate/specification/token-duality) works as before.
 
-## Upgrade Timelines
+## Upgrade timelines
 
-The CGTv2 upgrade will activate on Celo Sepolia first and then on Mainnet, with the activation process for each network occurring independently.
+The CGTv2 upgrade will activate on Celo Sepolia first and then on Mainnet, with the activation process for each network occurring independently. Each activation follows the L1 governance transaction, so there is no activation timestamp.
 
-| Network      | Date & Time (UTC) |
-| ------------ | ----------------- |
-| Celo Sepolia | TBD               |
-| Mainnet      | TBD               |
+| Network      | Date (UTC) | L2 activation block |
+| ------------ | ---------- | ------------------- |
+| Celo Sepolia | TBD        | TBD                 |
+| Mainnet      | TBD        | TBD                 |
