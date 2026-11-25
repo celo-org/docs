@@ -29,9 +29,9 @@ Agent Vault creates an onchain wallet for the account holder and pays [x402](/bu
 
 - **Network and tokens:** payments run on Celo mainnet in USDC, USD₮ or USA₮, with real funds. The [Wallet](https://docs.agentvault.io/dashboard/wallet) page lists the tokens the wallet accepts.
 - **Fees:** the wallet needs no CELO. A payment costs the wallet no network fee: it signs the payment and the facilitator submits it. A withdrawal's network fee is paid in the token withdrawn.
-- **How the agent pays:** the agent calls the MCP tool `pay_request` with the wallet's handle (`av_wallet_<userId>`, listed under `wallets` in the token catalog) as its `card`. Agent Vault makes the paid request, so the agent never holds the key or a signed payment. Every agent card linked to the wallet applies its limits, merchant list and approvals. See [Wallet payments](https://docs.agentvault.io/mcp/tool-reference#wallet-payments).
+- **How the agent pays:** the agent calls the MCP tool `pay_request` with the wallet's handle (`av_wallet_<userId>`, listed under `wallets` in the token catalog) as its `card`. The SDK's `payRequest` and `POST /v1/wallet/pay` on the proxy make the same call. Agent Vault makes the paid request, so the agent never holds the key or a signed payment. Every agent card linked to the wallet applies its limits, merchant list and approvals. See [Wallet payments](https://docs.agentvault.io/mcp/tool-reference#wallet-payments).
 - **What it pays for:** only API calls sold on Buy, a pay-per-call API marketplace. It does not pay other x402 endpoints. To pay any x402 API from your own code, see [buy](/build/agents/buy).
-- **Limits:** the account holder's agent card sets the spending limits, and a payment can wait for approval first, depending on the seller and the card's approval amount.
+- **Limits:** the account holder's agent card sets the spending limits, and a payment can wait for approval first, depending on the seller and the card's approval amount. A wallet that no agent card governs has no spending cap: once the account holder approves a seller, it pays that seller any amount. If the account already has an agent card, the wallet starts that way, so give an agent card access to it before funding it.
 - **Final payments:** a payment on Buy cannot be reversed from the Wallet page.
 
 <Warning>
@@ -93,7 +93,7 @@ export SELF_AGENT_PAY_API_URL=https://api.agentvault.io
 
 ## MCP tools and HTTP endpoints
 
-The MCP server exposes 29 tools, plus `get_pending_result` on the hosted server. They are grouped in the order a run uses them:
+The MCP server's tools, plus `get_pending_result` on the hosted server, are grouped in the order a run uses them:
 
 | Stage | Tools |
 |---|---|
@@ -104,6 +104,7 @@ The MCP server exposes 29 tools, plus `get_pending_result` on the hosted server.
 | Look at the page | `observe_page`, `snapshot_page`, `list_frames`, `detect_challenge`, `get_network_log` |
 | Hand off | `request_challenge_handoff` |
 | Confirm and finish | `get_session_outcome`, `get_run_report`, `close_session` |
+| Wallet payments | `pay_request` |
 
 The HTTP API covers everything except driving the browser, which uses the proxy's WebSocket protocol through the SDK or the MCP server:
 

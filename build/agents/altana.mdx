@@ -16,7 +16,7 @@ This page is for agent developers who want an agent to move stablecoins onchain 
 
 1. The owner creates a Smart Agentic Wallet. The owner holds the admin key. Altana never holds keys or funds.
 2. The owner grants the agent a session key: a scoped, time-bounded delegation from the admin key. The agent signs with the session key only.
-3. A session carries three limits: a spend cap per token over a rolling period, an allowlist of contracts and methods, and an expiry. The wallet contract enforces them on the calls the session sends. A call outside them reverts. The spend cap does not bound x402 payments the session signs; see [Pay for x402 APIs on Celo](#pay-for-x402-apis-on-celo).
+3. A session carries three limits: a spend cap per token per fixed period (a day from 00:00 UTC, a week from Monday, a month from the 1st), an allowlist of contracts and methods, and an expiry. The wallet contract enforces them on the calls the session sends. A call outside them reverts. The wallet contract does not apply the spend cap to x402 payments the session signs; see [Pay for x402 APIs on Celo](#pay-for-x402-apis-on-celo).
 4. By default, a grant registers the session's public key in the KeyStore, a public onchain registry. Any client can then check that a session key is valid, and the owner revokes a session in one transaction. A revoked session cannot be reactivated.
 5. An intent relay turns the agent's intents into transactions and simulates each one before signing.
 
@@ -60,10 +60,10 @@ The server stores wallet and session keys in the OS keychain, then in `~/.altana
 
 ## Use the SDK
 
-`@altananetwork/sdk` exports `CELO` (chain ID `42220`) and `CELO_SEPOLIA` (chain ID `11142220`) from 1.0.0; earlier versions have no Celo config. Install 1.1.0 or later to pay x402 v2 endpoints: from 1.1.0, `fetchWithX402` reads the payment requirements from the `PAYMENT-REQUIRED` header.
+`@altananetwork/sdk` exports `CELO` (chain ID `42220`) and `CELO_SEPOLIA` (chain ID `11142220`) from 1.0.0; earlier versions have no Celo config. Install 1.1.0 or later to pay x402 v2 endpoints: from 1.1.0, `fetchWithX402` reads the payment requirements from the `PAYMENT-REQUIRED` header. Install 1.2.0 or later if the session's spend cap should limit x402 payments: from 1.2.0, `fetchWithX402` checks each payment against the cap before it signs.
 
 ```bash
-npm install @altananetwork/sdk@^1.1.0 viem
+npm install @altananetwork/sdk@^1.2.0 viem
 ```
 
 ```ts
@@ -80,8 +80,10 @@ Wallet creation, session grants and revocation follow [Altana's SDK setup](https
 An agent can pay [x402](/build/agents/x402) endpoints on Celo from its Altana wallet in USDC, USD₮ or USA₮. Pass the tokens as `x402Tokens` when you grant the session, then call `fetchWithX402`, which signs one payment and retries the request once. Altana's [x402 payments](https://docs.altana.network/sdk/x402) page shows the full grant and call.
 
 <Warning>
-x402 payments are signed by the session key rather than sent by the session as calls, so the session's spend caps do not bound them. A session granted with `x402Tokens` can sign payments in those tokens until it expires or is revoked. Give it a short expiry and fund the wallet only with what the agent should spend.
+The wallet contract never sees an x402 payment, so it cannot apply the session's spend caps to it. From SDK 1.2.0, `fetchWithX402` checks each payment against the session's caps on the payment token before it signs, and throws `spend_limit_exceeded` over the limit; `checkSpendCap: false` turns the check off. The check runs in the agent's process: its count of x402 payments starts again when the process restarts, and `signX402Payment` or any other signer holding the session key skips it. On SDK 1.1.0 and earlier, nothing checks x402 payments against the caps. A session with no cap on the payment token has no limit. Set a cap for every token in `x402Tokens`, give the session a short expiry and fund the wallet only with what the agent should spend.
 </Warning>
+
+With the MCP server, pass `x402SpendLimit` to `grant_session` with `x402Tokens` to cap what the session pays per day in each token; without it, the session has no cap on those tokens. `x402SpendLimit` needs `@altananetwork/mcp` 1.2.0 or later.
 
 Run `fetchWithX402` server side, because many endpoints block the payment header in browsers.
 
@@ -99,7 +101,7 @@ The KeyStore registration fee is paid in CELO, whatever token pays the relay fee
 
 ## Set limits that fit the task
 
-Set both `calls` and `spend` when you grant a session. If you leave out `calls`, the session can reach any contract, bounded only by its spend cap. Spend caps do not bound x402 payments, so give a session that pays x402 a short expiry. Spend limits are in a token's smallest unit, so check the token's decimals on Celo first: USDC and USD₮ use 6, USDm uses 18. Limit amounts per token over a period such as a day, and give every session an expiry.
+Set both `calls` and `spend` when you grant a session. If you leave out `calls`, the session can reach any contract, bounded only by its spend cap. Periods are fixed on the UTC clock, so a session can spend a full daily cap just before 00:00 UTC and again just after; size the cap for that. The wallet contract does not apply spend caps to x402 payments. From SDK 1.2.0, `fetchWithX402` checks them before it signs, so give a session that pays x402 a cap on each payment token and a short expiry. Spend limits are in a token's smallest unit, so check the token's decimals on Celo first: USDC and USD₮ use 6, USDm uses 18. Limit amounts per token over a period such as a day, and give every session an expiry.
 
 ## Troubleshooting
 
@@ -109,6 +111,7 @@ Set both `calls` and `spend` when you grant a session. If you leave out `calls`,
 | The agent acts on the wrong network | The server uses the chain set at startup. Restart it with the right `ALTANA_CHAIN`. |
 | The wallet registers an ERC-8004 agent identity you did not want | Set `ALTANA_AGENT_IDENTITY=off`. |
 | A call reverts at validation | The call is outside the session's allowlist, spend cap or expiry. Grant a new session with the limits you need. |
+| `fetchWithX402` throws `spend_limit_exceeded` | The payment, plus what the session already spent in the cap's current period, is over its cap on that token. Caps cannot be raised: grant a new session with a higher cap, or wait for the next period. |
 
 ## Resources
 
