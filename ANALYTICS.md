@@ -50,7 +50,12 @@ Edit rights cannot ship a change.
 
 ### Script hardening
 
-`assistant.js` loads `https://docs-assistant.celo.org/widget.js` with `crossOrigin = 'anonymous'`; the host sends `access-control-allow-origin: *` from the `/widget.js` headers rule in `docs-ai-assistant`'s `next.config.ts`, so the load works under CORS. Anyone editing that rule should know docs.celo.org depends on it. There is **no Subresource Integrity hash and no Content-Security-Policy** on this site: an `integrity` hash would break the widget on every widget deploy, and the Mintlify Starter plan offers no header configuration we have confirmed. Whoever controls `docs-assistant.celo.org` can therefore run script on every docs page, so changes to that host need the same review as a change to this repo (#2302).
+`assistant.js` loads `https://docs-assistant.celo.org/widget.js` with `crossOrigin = 'anonymous'`; the host sends `access-control-allow-origin: *` from the `/widget.js` headers rule in `docs-ai-assistant`'s `next.config.ts`, so the load works under CORS. Anyone editing that rule should know docs.celo.org depends on it. There is **no Subresource Integrity hash and no site-specific Content-Security-Policy**:
+
+- An `integrity` hash pins one build, so it would break the widget on every widget deploy.
+- The site is on Mintlify's Free plan, and Mintlify sets the response headers. Every hosted site gets Mintlify's [default CSP](https://www.mintlify.com/docs/deploy/csp-configuration), whose `script-src` is `'self' 'unsafe-inline' 'unsafe-eval' https:`. That allows a script from any HTTPS origin, so it does nothing to limit the widget host. `docs.json` has no setting for response headers. The only way to send our own CSP is a reverse proxy we run in front of Mintlify, and that policy would still have to allow Mintlify's own hosts and inline scripts.
+
+Whoever controls `docs-assistant.celo.org` can therefore run script on every docs page, so changes to that host need the same review as a change to this repo (#2302).
 
 ## Runbook 1: Google Tag Manager container
 
