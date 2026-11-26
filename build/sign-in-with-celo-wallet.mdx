@@ -1,0 +1,158 @@
+---
+title: Sign in with a Celo wallet
+description: Let users sign in to your web app with a browser wallet on Celo through Sign-In with Ethereum and Supabase Auth, with no email, password or gas
+---
+
+This page is for app developers who want users to sign in with the wallet they already use on Celo instead of an email and password. Sign-In with Ethereum ([EIP-4361](https://eips.ethereum.org/EIPS/eip-4361)) works on Celo as it does on any EVM chain: the wallet signs a plain-text message, nothing is sent on chain, and the user pays no gas and needs no CELO. [Supabase Auth](https://supabase.com/docs/guides/auth/auth-web3) verifies the signature and returns a normal Supabase session, so the wallet becomes a Supabase user you can protect data for with row level security.
+
+<Warning>
+  Do not use this flow inside MiniPay. MiniPay does not support `personal_sign` or `eth_signTypedData`, so a sign-in prompt never resolves, and Mini Apps must not ask users to sign a message to access or authenticate. In MiniPay the user is already connected when the page loads. See [MiniPay](/build/mini-apps/overview).
+</Warning>
+
+## Prerequisites
+
+- A Supabase project with the **Web3 Wallet** provider enabled for Ethereum on its [Auth providers](https://supabase.com/dashboard/project/_/auth/providers) page.
+- Your site's URL in the project's [Redirect URLs](https://supabase.com/dashboard/project/_/auth/url-configuration), for example `https://example.com/**`. Supabase rejects messages signed for any URL that is not listed.
+- `@supabase/supabase-js` 2.58.0 or later, the first release with Ethereum support in `signInWithWeb3`.
+- A browser wallet that supports `personal_sign`, such as MetaMask, on Celo mainnet (chain ID `42220`).
+
+## How it works
+
+1. Your app asks the wallet for the user's address and builds a Sign-In with Ethereum message for your domain, with Celo's chain ID `42220`.
+2. The wallet shows the message and the user signs it with `personal_sign`. No transaction is created.
+3. Supabase Auth checks the signature, that the URI and domain match one of your redirect URLs, and that the message was issued within the last 10 minutes (the default validity window). It then creates the user on first sign-in and returns a session.
+4. The wallet address is the user's identity. Supabase stores it, together with the chain ID, in the user's metadata.
+
+Supabase accepts any EVM chain ID and keys the user on the address alone, so the same address signing on Celo or on another chain is the same Supabase user. If your app must only accept Celo, check the chain ID as shown in [Accept only Celo](#accept-only-celo).
+
+## Sign in with Supabase Auth
+
+Pass `chainId: 42220` so the message names Celo even when the wallet is connected to another network. Without it, Supabase uses the wallet's current chain.
+
+```ts
+import { createClient } from "@supabase/supabase-js"
+
+// NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY come from your Supabase project settings
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
+
+export async function signInWithCelo(wallet?: unknown) {
+  const { data, error } = await supabase.auth.signInWithWeb3({
+    chain: "ethereum", // Supabase's name for every EVM chain, Celo included
+    statement: "Sign in to Example. This doesn't move any funds or cost gas.",
+    wallet, // optional: a provider picked through EIP-6963, see below
+    options: { signInWithEthereum: { chainId: 42220 } }, // Celo mainnet
+  })
+  if (error) throw error
+  return data.user // data.user.user_metadata.custom_claims.address is the wallet address
+}
+```
+
+## Pick the wallet
+
+`signInWithWeb3` uses `window.ethereum` unless you pass a `wallet`. When the user has several browser extensions they compete for `window.ethereum` and the first one to load wins, so list the wallets that announce themselves through [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963) and pass the one the user picks. If `window.ethereum?.isMiniPay` is `true`, do not show the sign-in at all (see the warning above).
+
+```ts
+type Announced = { info: { name: string; icon: string; rdns: string }; provider: unknown }
+
+export function discoverWallets(onWallet: (w: Announced) => void) {
+  window.addEventListener("eip6963:announceProvider", (event) => onWallet((event as CustomEvent<Announced>).detail))
+  window.dispatchEvent(new Event("eip6963:requestProvider"))
+}
+
+// Later: await signInWithCelo(selected.provider)
+```
+
+## Accept only Celo
+
+Supabase stores the chain ID from the signed message as a string (`"42220"`) in two places: the user's `user_metadata.custom_claims.network` and the `identity_data` of their Web3 identity in `auth.identities`. Both hold the chain of the user's latest sign-in.
+
+Check it in the app right after sign-in to tell the user to switch networks:
+
+```ts
+const user = await signInWithCelo()
+if (user.user_metadata.custom_claims?.network !== "42220") {
+  await supabase.auth.signOut()
+  throw new Error("Sign in on Celo mainnet (chain ID 42220)")
+}
+```
+
+<Warning>
+  Never use `user_metadata` in row level security. Users can change it themselves with `supabase.auth.updateUser({ data })`, so a user who signed in on another chain can set `network` to `"42220"`. Read the chain from `auth.identities`, which only Supabase Auth writes.
+</Warning>
+
+To enforce it in the database, read `identity_data` through a `security definer` function in a schema the API does not expose, and use the function in your policies:
+
+```sql
+create schema if not exists private;
+
+-- true when the user's latest Web3 sign-in was on Celo mainnet (42220)
+create function private.signed_in_on_celo()
+returns boolean
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select exists (
+    select 1 from auth.identities i
+    where i.user_id = (select auth.uid())
+      and i.provider = 'web3'
+      and i.identity_data -> 'custom_claims' ->> 'network' = '42220'
+  );
+$$;
+
+revoke all on function private.signed_in_on_celo() from public, anon;
+grant usage on schema private to authenticated;
+grant execute on function private.signed_in_on_celo() to authenticated;
+
+-- Only users whose latest sign-in was on Celo can read their own rows
+create policy "celo wallets read own rows" on public.profiles
+  for select to authenticated
+  using (user_id = (select auth.uid()) and (select private.signed_in_on_celo()));
+```
+
+## Support smart contract wallets
+
+Supabase Auth only accepts 65-byte signatures from externally owned accounts (EOAs). A smart contract wallet signs with [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271), or [ERC-6492](https://eips.ethereum.org/EIPS/eip-6492) before it is deployed, and Supabase rejects those signatures.
+
+To accept both, verify the message on your own server with viem, which checks EOA, ERC-1271 and ERC-6492 signatures against Celo, and then issue your own session:
+
+```ts
+import { createPublicClient, http } from "viem"
+import { celo } from "viem/chains"
+
+// Celo mainnet (42220). Runs on your server.
+const client = createPublicClient({ chain: celo, transport: http() })
+
+export async function verifyCeloSignIn(message: string, signature: `0x${string}`, nonce: string) {
+  return client.verifySiweMessage({ message, signature, domain: "example.com", nonce })
+}
+```
+
+Generate the nonce on the server with `generateSiweNonce()` from `viem/siwe`, store it until the user signs, and check that the message's domain and chain ID are the ones you expect before you trust it.
+
+## Troubleshooting
+
+| Error | Cause and fix |
+|---|---|
+| `signature must be 65 bytes long, encoded as a 130 character-long hexadecimal string` | The user signed with a smart contract wallet. Verify on your server with viem, see [Support smart contract wallets](#support-smart-contract-wallets). |
+| `Signed Ethereum message is using URI which is not allowed on this server, message was signed for another app` | The page URL is not in your Supabase redirect URLs. Add it, for example `https://example.com/**`. |
+| `Ethereum message was issued too long ago` | More than 10 minutes passed between building the message and sending it. Ask the user to sign again. |
+| `Web3 provider is disabled` or `Ethereum Web3 provider is disabled` | Enable the Web3 Wallet provider for Ethereum on the project's [Auth providers](https://supabase.com/dashboard/project/_/auth/providers) page. |
+| `@supabase/auth-js: Wallet method eth_requestAccounts is missing or invalid` | The wallet refused to share an address. Besides a wallet without that method, Supabase shows this when the user rejects the connection and when the wallet already has a request pending for your site (MetaMask code `-32002`). Ask the user to open the wallet extension, resolve the pending request and try again. |
+| `@supabase/auth-js: No compatible Ethereum wallet interface on the window object (window.ethereum) detected` | No wallet is installed, or it does not inject `window.ethereum`. Link to a wallet, or pass a provider found through EIP-6963. |
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Supabase: Sign in with Web3 | [supabase.com/docs/guides/auth/auth-web3](https://supabase.com/docs/guides/auth/auth-web3) |
+| EIP-4361: Sign-In with Ethereum | [eips.ethereum.org/EIPS/eip-4361](https://eips.ethereum.org/EIPS/eip-4361) |
+| EIP-6963: Multi Injected Provider Discovery | [eips.ethereum.org/EIPS/eip-6963](https://eips.ethereum.org/EIPS/eip-6963) |
+| viem: verifySiweMessage | [viem.sh/docs/siwe/actions/verifySiweMessage](https://viem.sh/docs/siwe/actions/verifySiweMessage) |
+
+## Related
+
+- [MiniPay](/build/mini-apps/overview) - how the MiniPay provider behaves inside a Mini App
+- [Network overview](/learn/network/overview) - chain IDs and RPC URLs for Celo mainnet and Celo Sepolia
+- [Build with Self](/build/build-with-self) - prove that a signed-in wallet belongs to a unique human
