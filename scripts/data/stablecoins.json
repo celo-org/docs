@@ -48,14 +48,17 @@
       "name": "Angle USD",
       "issuer": "Angle",
       "issuer_url": "https://www.angle.money/",
-      "mainnet_address": "0x0000206329b97DB379d5E1Bf586BbDB969C63274"
+      "mainnet_address": "0x0000206329b97DB379d5E1Bf586BbDB969C63274",
+      "wind_down": "Angle is winding down; redeem before March 1, 2027"
     },
     {
       "symbol": "EURA",
       "name": "Angle Euro",
       "issuer": "Angle",
       "issuer_url": "https://www.angle.money/",
-      "mainnet_address": "0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049"
+      "mainnet_address": "0xC16B81Af351BA9e64C1a069E3Ab18c244A1E3049",
+      "formerly": "agEUR",
+      "wind_down": "Angle is winding down; redeem before March 1, 2027"
     },
     {
       "symbol": "USDGLO",
