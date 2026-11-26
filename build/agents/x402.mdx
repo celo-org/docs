@@ -76,14 +76,6 @@ Two hosts are involved, and they are not interchangeable:
   The endpoints below are live at `https://api.x402.celo.org` (mainnet) and `https://api.x402.sepolia.celo.org` (Celo Sepolia).
 </Note>
 
-<Tip>
-  Working with a coding assistant? Install the facilitator's integration skill. It covers both the seller flow (charge for your API) and the buyer flow (pay for an x402 endpoint) on Celo:
-
-  ```bash
-  npx skills add https://x402.celo.org/skill.md
-  ```
-</Tip>
-
 ### Endpoints
 
 Base URLs:
@@ -101,7 +93,31 @@ Base URLs:
 Only `/settle` requires an API key — so `/verify` and `/supported` succeed and an integration looks healthy right up until its first settlement, which fails with `401` if no key is attached. See [Getting an API Key](#getting-an-api-key).
 
 
+### Getting an API key
+
+`/settle` is metered, so accepting real payments requires an API key. To create one:
+
+1. Open the [dashboard](https://x402.celo.org) and connect your wallet.
+2. Click **Create API key** and sign the message. This is an off-chain signature — no gas, no transaction.
+3. The key is shown once. Copy it and set it as `X402_API_KEY` in your server environment.
+
+<Warning>
+  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement balance.
+</Warning>
+
+New accounts get free credits on both networks, one per settlement. After that, deposit USDC, USD₮ or USA₮ on the dashboard (USDC on Celo Sepolia) and it becomes a balance in USD. Each settlement is charged gas at cost plus 0.3% of the payment value, or gas only when the asset has no USD price. `GET https://api.x402.celo.org/api/config` returns the current model under `pricing`.
+
+If a call to `/settle` fails, the status code tells you why:
+
+| Status | Meaning                                                        |
+|--------|---------------------------------------------------------------|
+| `401`  | Missing or invalid API key.                                   |
+| `402`  | Out of free credits and balance — top up on the dashboard.    |
+| `429`  | Free-tier rate limit reached.                                 |
+
 ### Pointing a resource server at it
+
+Before you start, have `X402_API_KEY` set in the server environment (see [Getting an API Key](#getting-an-api-key) above). Without it the server still starts and still answers `402`, but every settlement fails.
 
 The x402 v2 middleware wires a resource server to the Celo facilitator. Install the scoped packages:
 
@@ -165,28 +181,6 @@ Using Hono instead of Express? Swap `@x402/express` → `@x402/hono`; the body i
   USD₮ has no `version()` method on-chain — its EIP-712 domain resolves to `name: "Tether USD"`, `version: "1"`. Set those exactly in the `extra` field or signature verification fails.
 </Warning>
 
-### Getting an API key
-
-`/settle` is metered, so accepting real payments requires an API key. To create one:
-
-1. Open the [dashboard](https://x402.celo.org) and connect your wallet.
-2. Click **Create API key** and sign the message. This is an off-chain signature — no gas, no transaction.
-3. The key is shown once. Copy it and set it as `X402_API_KEY` in your server environment.
-
-<Warning>
-  The API key is a server-side secret. Never ship it to the browser or expose it to buyers — anyone with the key can spend your settlement balance.
-</Warning>
-
-New accounts get free credits on both networks, one per settlement. After that, deposit USDC, USD₮ or USA₮ on the dashboard (USDC on Celo Sepolia) and it becomes a balance in USD. Each settlement is charged gas at cost plus 0.3% of the payment value, or gas only when the asset has no USD price. `GET https://api.x402.celo.org/api/config` returns the current model under `pricing`.
-
-If a call to `/settle` fails, the status code tells you why:
-
-| Status | Meaning                                                        |
-|--------|---------------------------------------------------------------|
-| `401`  | Missing or invalid API key.                                   |
-| `402`  | Out of free credits and balance — top up on the dashboard.    |
-| `429`  | Free-tier rate limit reached.                                 |
-
 ### Check that it works
 
 Start the server and request the paid route without a payment. This step needs no API key:
@@ -206,7 +200,9 @@ The decoded JSON shows the route's price: `10000` base units of USDC, which is $
 
 To see a paid response you need a buyer that signs the authorization and retries the request. The simplest way is the `x402` template of Celo Composer, which ships its own seller and buyer wired to Celo Sepolia (see [x402 paid API](/build/quickstart#x402-paid-api)). Run the seller with `pnpm api:dev` and the buyer with `pnpm api:buy`. The buyer pays the template's own route and prints the response and the settlement transaction, so expect that output rather than the `{"data":"paid content"}` from the server above. The buyer wallet needs test USDC on Celo Sepolia and no CELO.
 
-To charge for the server on this page instead, switch it to Celo Sepolia. Change the `network`, `asset` and `payTo` values to the Celo Sepolia ones under [Celo Configuration](#celo-configuration), and change the facilitator `url` to `https://api.x402.sepolia.celo.org`. The mainnet facilitator does not list Celo Sepolia, so the server fails on startup if the URL stays as it is. Settlement needs the key from the previous section. A paid request then returns `200` with `{"data":"paid content"}` and the payment settles on Celo Sepolia for the price above. At that point you have charged an agent $0.01 in test USDC.
+To charge for the server on this page instead, switch it to Celo Sepolia. Change the `network`, `asset` and `payTo` values to the Celo Sepolia ones under [Celo Configuration](#celo-configuration), and change the facilitator `url` to `https://api.x402.sepolia.celo.org`. The mainnet facilitator does not list Celo Sepolia, so the server fails on startup if the URL stays as it is. Settlement needs the key from [Getting an API Key](#getting-an-api-key). A paid request then returns `200` with `{"data":"paid content"}` and the payment settles on Celo Sepolia for the price above. At that point you have charged an agent $0.01 in test USDC.
+
+Run that paid request once before you go live. It is the only step on this page that reaches `/settle`. If `X402_API_KEY` is missing or wrong, the paid retry does not return `200`: the facilitator rejects the settlement with `401 Missing X-API-Key` (or `401` for an invalid key), the buyer is not charged, and the paid retry comes back as `402` with a `PAYMENT-RESPONSE` header whose decoded `errorReason` reads `Facilitator settle failed (401): … Missing X-API-Key` (decode it with `base64 -d`). Nothing is written to your server logs. A green unpaid `402` check alone does not prove that settlement works.
 
 ## x402 on Celo
 
@@ -313,7 +309,6 @@ thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb
 | x402 Official Website | [x402.org](https://www.x402.org) |
 | Celo x402 Dashboard | [x402.celo.org](https://x402.celo.org/) |
 | Celo x402 Facilitator API | `https://api.x402.celo.org` |
-| Celo x402 integration skill | [x402.celo.org/skill.md](https://x402.celo.org/skill.md) |
 | thirdweb x402 Docs | [portal.thirdweb.com/x402](https://portal.thirdweb.com/x402) |
 | GitHub | [github.com/coinbase/x402](https://github.com/coinbase/x402) |
 | Whitepaper | [x402.org/x402-whitepaper.pdf](https://www.x402.org/x402-whitepaper.pdf) |
@@ -321,7 +316,6 @@ thirdweb runs a hosted x402 facilitator that supports Celo — see the [thirdweb
 ## Related
 
 - [ERC-8004](/build/agents/8004) - Trust layer for AI agents
-- [x402: Add Celo to your endpoint](/build/agents/x402-add-celo) - Accept Celo payments on an endpoint that already sells on another network
 - [x402: Get your endpoint discovered](/build/agents/x402-get-discovered) - Make the endpoint findable by agents and indexes
 - [MPP](/build/agents/mpp) - Machine Payments Protocol: charge USDC per request over HTTP
 - [Celopedia](/build/agents/celopedia) - Celo ecosystem knowledge for coding assistants
