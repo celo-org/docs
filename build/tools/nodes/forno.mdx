@@ -53,3 +53,29 @@ wss://forno.celo-sepolia.celo-testnet.org/ws
 Websocket connections are useful for listening to logs (events) emitted by smart contracts. However, Forno automatically disconnects websocket connections after 20 minutes.
 
 When disconnected, you can reconnect to the websocket endpoint to continue listening for events. [This example script](https://gist.github.com/critesjosh/a230e7b2eb54c8d330ca57db1f6239db) demonstrates how to set up an event listener that automatically reconnects when the connection drops.
+
+## `eth_getLogs` block range limit
+
+On Celo mainnet, Forno rejects an `eth_getLogs` request when `toBlock` minus `fromBlock` is more than 5,000 blocks, about 83 minutes of history:
+
+```json
+{"jsonrpc":"2.0","error":{"code":-32602,"message":"query exceeds range, retry smaller (max block range 5000, got 5001)"},"id":1}
+```
+
+Forno on Celo Sepolia accepts a 50,000-block range, so code tested only on Celo Sepolia can pass there and fail on mainnet.
+
+To read a longer history:
+
+- Request it in chunks of 5,000 blocks or fewer.
+- Use a [data indexer](/build/tools/indexers/overview), such as a subgraph, for history your app reads often.
+- Stream the logs from SQD's Celo dataset through the [buy](/build/agents/buy) gateway. It needs no payment or account, and one request covers a long range:
+
+  ```bash
+  # Celo mainnet (42220): USDC (6 decimals) Transfer events, blocks 83,400,000 to 83,450,000
+  curl -X POST https://gateway.usebuy.ai/sqd/datasets/celo-mainnet/stream \
+    -H 'Content-Type: application/json' \
+    --data '{"type":"evm","fromBlock":83400000,"toBlock":83450000,"fields":{"block":{"number":true},"log":{"transactionHash":true,"topics":true,"data":true}},"logs":[{"address":["0xcebA9300f2b948710d2653dD7B07f33A8B32118C"],"topic0":["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}]}'
+  ```
+
+  The response is newline-delimited JSON, one line per block that has matching logs. Check the last block number before treating a long range as complete. If the gateway answers `529` (`Service is overloaded`), wait the number of seconds in `Retry-After` and send the request again.
+- Pay per request for Chainstack's archive RPC through buy: $0.01 in USDC, USD₮ or USA₮ covers a JSON-RPC batch of up to 2,000 calls, so a chunked scan fits in one paid request. Chainstack also limits the range of each call, so keep each one at 5,000 blocks.
