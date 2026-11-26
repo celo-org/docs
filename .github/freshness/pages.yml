@@ -1,0 +1,284 @@
+# Registry of docs pages whose facts change as the outside world changes:
+# providers, partners, programs, ecosystem numbers, token lists.
+#
+# The monthly freshness run (.github/workflows/docs-freshness.yml) reads this file,
+# checks every page that is due against its sources, and records the result.
+# Procedure: .github/freshness/RUNBOOK.md
+#
+# Fields
+#   path           page to check (repo-relative)
+#   cadence        monthly | quarterly
+#   last_verified  YYYY-MM-DD the run last confirmed every listed fact, or null
+#                  (null = never fully verified; due on the next run)
+#   what           the facts on the page that go stale
+#   sources        canonical sources beyond the links already on the page.
+#                  Every external link on the page is always checked as well.
+#   generated_by   the page is generated: compare with the source, never hand-edit;
+#                  raise a question to rerun the generator instead
+#   celopedia      matching reference files in celo-org/celopedia-skills
+#                  (skills/celopedia-skill/references/), synced by its own run
+#
+# Adding a directory-style page to the docs? Add it here in the same PR (AGENTS.md §7).
+
+pages:
+  # ---------------------------------------------------------------- monthly
+  - path: learn/ramps.mdx
+    cadence: monthly
+    last_verified: null
+    what: >-
+      On/off-ramp providers: whether each still supports Celo, supported countries,
+      payment methods, Celo assets offered; the provider count in the intro
+    sources:
+      - https://celo.org/ecosystem
+    celopedia: [ecosystem.md, wfiat-access.md]
+
+  - path: learn/exchanges.mdx
+    cadence: monthly
+    last_verified: null
+    what: Centralized and decentralized exchanges listing CELO or Celo stablecoins
+    sources:
+      - https://celo.org/ecosystem
+      - https://api.coingecko.com/api/v3/coins/celo/tickers (exchange listings)
+    celopedia: [ecosystem.md]
+
+  - path: learn/wallets.mdx
+    cadence: monthly
+    last_verified: null
+    what: Consumer wallets supporting Celo, their platforms and features
+    sources:
+      - https://celo.org/ecosystem
+    celopedia: [ecosystem.md]
+
+  - path: build/build-with-local-stablecoin.mdx
+    cadence: monthly
+    last_verified: null
+    what: >-
+      Stablecoin count ("30+"), the 15 Mento stablecoins, third-party issuers and
+      what each issuer offers on Celo
+    sources:
+      - https://www.mento.org
+      - https://github.com/mento-protocol
+    celopedia: [stablecoin-orchestration.md, contracts.md]
+
+  - path: build/tools/contracts/stablecoin-contracts.mdx
+    cadence: monthly
+    last_verified: null
+    what: Stablecoin addresses on mainnet and Celo Sepolia; issuer wind-down notes
+    generated_by: scripts/update_contracts.py (third-party rows from scripts/data/stablecoins.json)
+    sources:
+      - onchain:FeeCurrencyDirectory.getCurrencies() on mainnet and Celo Sepolia
+    celopedia: [contracts.md, stablecoin-orchestration.md]
+
+  - path: build/tools/contracts/fee-currencies.mdx
+    cadence: monthly
+    last_verified: null
+    what: Tokens on the fee-currency allowlist and their adapter addresses
+    generated_by: scripts/update_contracts.py
+    sources:
+      - onchain:FeeCurrencyDirectory.getCurrencies() on mainnet and Celo Sepolia
+    celopedia: [contracts.md, network-info.md]
+
+  - path: learn/bridged-tokens/bridges.mdx
+    cadence: monthly
+    last_verified: null
+    what: Bridges for users and the bridged tokens they carry to Celo
+    sources:
+      - https://superbridge.app
+    celopedia: [ecosystem.md]
+
+  - path: build/tools/bridges/bridges.mdx
+    cadence: monthly
+    last_verified: null
+    what: Bridge providers for developers (cards), whether each still supports Celo
+    celopedia: [ecosystem.md, builder-guide.md]
+
+  - path: build/mini-apps/overview.mdx
+    cadence: monthly
+    last_verified: null
+    what: >-
+      MiniPay stats (wallet activations, countries), supported stablecoins,
+      Mini App discovery and submission links
+    sources:
+      - https://www.opera.com/products/minipay
+      - https://docs.minipay.xyz
+    celopedia: [minipay-guide.md, minipay-requirements.md, minipay-docs-map.md]
+
+  - path: build/build-with-usat.mdx
+    cadence: monthly
+    last_verified: null
+    what: Where to get USA₮ on Celo, supporting wallets and ramps, MiniPay stats
+    sources:
+      - https://tether.io
+    celopedia: [stablecoin-orchestration.md]
+
+  - path: build/agents/overview.mdx
+    cadence: monthly
+    last_verified: null
+    what: Agent tooling directory (partners, products, SDKs)
+    celopedia: [ai-agents.md]
+
+  - path: build/agents/ai-resources.mdx
+    cadence: monthly
+    last_verified: null
+    what: AI tooling index (MCP servers, skills, llms.txt, partner tools)
+    celopedia: [ai-agents.md, docs-map.md]
+
+  - path: build/agents/x402.mdx
+    cadence: monthly
+    last_verified: null
+    what: Facilitator URL, supported stablecoins, SDK package names and versions
+    sources:
+      - https://api.x402.celo.org
+      - https://www.x402.org
+    celopedia: [ai-agents.md, x402-seller-discoverability.md]
+
+  - path: build/agents/buy.mdx
+    cadence: monthly
+    last_verified: null
+    what: "@celo/buy package version, commands and supported APIs"
+    sources:
+      - npm view @celo/buy version
+    celopedia: [ai-agents.md]
+
+  - path: build/agents/usecases.mdx
+    cadence: monthly
+    last_verified: null
+    what: Live agent products and partners used as examples
+    celopedia: [ai-agents.md]
+
+  - path: build/agents/defi.mdx
+    cadence: monthly
+    last_verified: null
+    what: Agentic DeFi protocols and tools on Celo
+    celopedia: [defi-protocols.md, ai-agents.md]
+
+  - path: build/build-with-defi.mdx
+    cadence: monthly
+    last_verified: null
+    what: DeFi protocol table (which protocols are live on Celo, what they offer)
+    sources:
+      - https://api.llama.fi/protocols (filter chains contains "Celo")
+    celopedia: [defi-protocols.md]
+
+  - path: AGENTS.md
+    cadence: monthly
+    last_verified: null
+    what: >-
+      Section 7 fact table only: stablecoin count, Mento token count, MiniPay stats,
+      facilitator URL. Must match the canonical pages above after this run's edits.
+    celopedia: [network-info.md]
+
+  # -------------------------------------------------------------- quarterly
+  - path: build/tools/nodes/overview.mdx
+    cadence: quarterly
+    last_verified: null
+    what: RPC and node providers supporting Celo mainnet and Celo Sepolia
+    celopedia: [network-info.md, builder-guide.md]
+
+  - path: build/tools/indexers/overview.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Indexer providers supporting Celo (also check each build/tools/indexers/*.mdx)
+    celopedia: [builder-guide.md]
+
+  - path: build/tools/oracles/index.mdx
+    cadence: quarterly
+    last_verified: null
+    what: >-
+      Oracle providers on Celo, their feeds and docs links (also check each
+      build/tools/oracles/*.mdx; feed addresses link to the provider, never listed here)
+    celopedia: [defi-protocols.md, builder-guide.md]
+
+  - path: build/tools/explorers/block-explorers.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Block explorers for mainnet and Celo Sepolia
+    celopedia: [network-info.md]
+
+  - path: build/tools/explorers/analytics.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Analytics and data tools covering Celo
+    celopedia: [growth-analytics.md, live-data-sources.md]
+
+  - path: build/tools/bridges/cross-chain-messaging.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Cross-chain messaging protocols supporting Celo
+    celopedia: [builder-guide.md]
+
+  - path: build/fund-your-project.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Grants, funding and accelerator programs open to Celo builders
+    sources:
+      - https://celo.org
+      - https://forum.celo.org
+    celopedia: [grants-funding.md]
+
+  - path: build/launch-checklist.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Programs, listings and support channels referenced in the checklist
+    celopedia: [growth-gtm.md, builder-guide.md]
+
+  - path: contribute/index.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Community programs and channels
+    celopedia: [ecosystem.md]
+
+  - path: contribute/builders.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Builder programs and channels
+    celopedia: [grants-funding.md]
+
+  - path: learn/protocol/governance/governance-toolkit.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Governance tools and links
+    sources:
+      - https://forum.celo.org
+      - https://mondo.celo.org
+    celopedia: [governance.md]
+
+  - path: learn/protocol/epoch-rewards/community-fund.mdx
+    cadence: quarterly
+    last_verified: null
+    what: How the community fund is governed and accessed today
+    sources:
+      - https://forum.celo.org
+    celopedia: [governance.md, grants-funding.md]
+
+  - path: build/tools/wallets/index.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Developer wallet SDKs and account-abstraction providers supporting Celo
+    celopedia: [builder-guide.md, sdk-reference.md]
+
+  - path: build/tools/contracts/uniswap-contracts.mdx
+    cadence: quarterly
+    last_verified: null
+    what: >-
+      Uniswap deployment addresses. AGENTS.md says partner addresses link out instead;
+      raise a question on whether to replace the table with a link.
+    sources:
+      - https://docs.uniswap.org/contracts/v3/reference/deployments/celo-deployments
+    celopedia: [contracts.md, defi-protocols.md]
+
+  - path: build/tools/testnets/celo-sepolia/index.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Celo Sepolia faucets and explorers
+    sources:
+      - https://faucet.celo.org/celo-sepolia
+    celopedia: [network-info.md]
+
+  - path: snippets/tokens.mdx
+    cadence: quarterly
+    last_verified: null
+    what: Tokens natively bridged from Ethereum to Celo (L1 and L2 addresses)
+    sources:
+      - https://github.com/ethereum-optimism/ethereum-optimism.github.io
+    celopedia: [contracts.md]

@@ -1,0 +1,86 @@
+# Monthly check of directory-style pages (ramps, exchanges, wallets, bridges, providers,
+# grants, stablecoins, agent tooling) against their sources of truth.
+#
+# Registry: .github/freshness/pages.yml   Procedure: .github/freshness/RUNBOOK.md
+# Output: a draft PR with source-confirmed updates and an issue with open questions.
+# Nothing merges without review.
+#
+# One-time setup:
+#   - Install the Claude GitHub App on this repo (https://github.com/apps/claude) and add the
+#     ANTHROPIC_API_KEY secret. Leave github_token unset so the action uses the App's token:
+#     PRs opened with the default GITHUB_TOKEN do not trigger docs-validation.yml.
+#   - Repository variable FRESHNESS_MAINTAINER = GitHub handle to assign the questions issue to.
+name: Docs freshness
+
+on:
+  schedule:
+    - cron: "0 7 1 * *" # 07:00 UTC on the 1st of every month
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "Space-separated paths to check regardless of due date (empty = all due pages)"
+        required: false
+        default: ""
+      max_pages:
+        description: "Maximum pages to check this run"
+        required: false
+        default: "25"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write # lets claude-code-action exchange OIDC for the Claude GitHub App token
+
+concurrency:
+  group: docs-freshness
+  cancel-in-progress: false
+
+# Same pin as docs-validation.yml; bump them together.
+env:
+  MINTLIFY_VERSION: "4.2.920"
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the runbook reads git history to find stale pages
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26"
+
+      - name: Install Foundry (cast, for on-chain checks)
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Install Python dependencies and set the run date
+        run: |
+          pip install pyyaml
+          echo "RUN_DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+
+      - name: Prefetch the pinned Mintlify CLI
+        run: npx -y mintlify@${{ env.MINTLIFY_VERSION }} --version
+
+      - name: Run the freshness check
+        uses: anthropics/claude-code-action@v1
+        env:
+          FORCE_PAGES: ${{ inputs.pages }}
+          MAX_PAGES: ${{ inputs.max_pages || '25' }}
+          MAINTAINER: ${{ vars.FRESHNESS_MAINTAINER }}
+          MINTLIFY_VERSION: ${{ env.MINTLIFY_VERSION }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Follow .github/freshness/RUNBOOK.md exactly, in repository ${{ github.repository }}.
+            Read AGENTS.md first.
+            Inputs are in the environment: RUN_DATE, FORCE_PAGES, MAX_PAGES, MAINTAINER, MINTLIFY_VERSION.
+            Use `gh` for the branch push, the draft PR and the issue. Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          claude_args: |
+            --model claude-opus-5-5
+            --max-turns 400
+            --allowedTools "Read,Edit,Write,Glob,Grep,WebFetch,WebSearch,Bash(git:*),Bash(gh:*),Bash(npx:*),Bash(npm view:*),Bash(python3:*),Bash(node:*),Bash(cast:*),Bash(curl:*),Bash(grep:*),Bash(date:*)"
