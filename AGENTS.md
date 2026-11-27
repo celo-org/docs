@@ -135,6 +135,14 @@ Numbers and addresses live on one canonical page; every other page links there i
 
 Third-party (partner) contract addresses are not listed in these docs — link to the provider's canonical address page instead. Nothing here watches on-chain activity, and listed partner addresses have gone quiet in place before (#2277). Celo-core contracts — the registry, fee-currency directory entries, the CELO token, our spec deployments — keep their tables here. Example addresses in code snippets are labelled `// example` so nobody funds them.
 
+### Keeping directory pages current
+
+Pages that list providers, partners, programs or ecosystem numbers (ramps, exchanges, wallets, bridges, RPC and indexer providers, grants, stablecoins, agent tooling) go stale even when nobody edits them. Each one has an entry in `.github/freshness/pages.yml`. The monthly `.github/workflows/docs-freshness.yml` workflow checks the due entries against their sources, following `.github/freshness/RUNBOOK.md`. It opens a draft PR with the changes the sources confirm and an issue with open questions for the maintainer.
+
+- A PR that adds a directory-style page adds its registry entry too: `path`, `cadence`, `what`, `sources`, and the matching Celopedia reference files.
+- A PR that re-verifies a registered page by hand sets that entry's `last_verified`.
+- Review freshness PRs like any content PR. The run leaves anything a source does not confirm to the questions issue, not the diff.
+
 ### Names
 
 - `USDm`, `EURm`, `BRLm` … — Mento stablecoins, lowercase `m`. `USDM` (capital M) is Mountain Protocol's token, a different asset. Never use one for the other.
