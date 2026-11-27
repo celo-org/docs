@@ -228,6 +228,7 @@
               "build/build-with-usat",
               "build/build-with-local-stablecoin",
               "build/build-with-self",
+              "build/sign-in-with-celo-wallet",
               {
                 "group": "Fee Abstraction",
                 "pages": [
