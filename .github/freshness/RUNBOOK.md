@@ -16,6 +16,8 @@ These come from the environment the workflow sets.
 | `FORCE_PAGES` | optional, space-separated paths. Check these and nothing else, whether due or not. |
 | `MAX_PAGES` | upper bound on pages checked this run (default 25). Pages over the limit roll to the next run. |
 | `MAINTAINER` | GitHub handle to assign the questions issue to. May be empty. |
+| `RUN_NUMBER` | the workflow run number, for a re-run's branch name |
+| `MINTLIFY_VERSION` | the pinned Mintlify CLI version, for the step 3 commands |
 
 ## 1. Pick the pages
 
@@ -34,7 +36,7 @@ For each page:
 
 1. Read the page and list every volatile fact: each provider or partner entry, each number, each program, each external link. The registry's `what` field says what to focus on. It is not exhaustive.
 2. Check each fact at its source:
-   - **Every external link on the page.** Fetch it. A 404, a domain for sale, a redirect to an unrelated site, or a page that no longer mentions Celo is a finding. Some sites block bots (403 or 429). That is not evidence of anything: try a search, or the provider's docs or API, and if it stays inconclusive, make it a question.
+   - **Every external link on the page.** Fetch it with WebFetch (the workflow allows no `curl`). A 404, a domain for sale, a redirect to an unrelated site, or a page that no longer mentions Celo is a finding. Some sites block bots (403 or 429). That is not evidence of anything: try a search, or the provider's docs or API, and if it stays inconclusive, make it a question.
    - **The registry `sources`.** Fetch each one. `npm view <pkg> version` and `gh` are fine for packages and repos.
    - **On-chain facts.** Never trust a page for an address. Resolve the fee-currency directory through the registry and list the allowlist:
      ```bash
@@ -66,13 +68,13 @@ Rules for `update`:
 
 ## 3. Validate
 
-Run these and keep their output for the PR body:
+Run these and keep their output for the PR body. Write the version number from `MINTLIFY_VERSION` into the command (for example `npx mintlify@4.2.920 broken-links`): the workflow allows each command exactly as written here, with the pinned version, and refuses a `$MINTLIFY_VERSION` it cannot expand.
 
 ```bash
 npx mintlify@$MINTLIFY_VERSION broken-links
 python3 scripts/check_redirects.py
 npx -p mintlify@$MINTLIFY_VERSION -c 'node scripts/check_components.mjs'
-python3 -c "import yaml,sys; yaml.safe_load(open('.github/freshness/pages.yml'))"
+python3 .github/freshness/check_registry.py
 ```
 
 If a check fails because of your edit, fix it. If it fails on `main` without your edit, say so in the PR body and don't fix unrelated pages.
@@ -83,7 +85,7 @@ Let `MONTH` be the run's month as `Month YYYY` (e.g. `December 2026`) and `YM` b
 
 ### Pull request (only if any page or `pages.yml` changed)
 
-- Branch: `freshness/<YM>`. If it already exists (a re-run), use `freshness/<YM>-<run number>`.
+- Branch: `freshness/<YM>`. If it already exists (a re-run; check with `git ls-remote --heads origin freshness/<YM>`), use `freshness/<YM>-<run number>`. Push with `git push -u origin <branch>`: the action has already set `origin` to use its GitHub App token.
 - Commit message and PR title: `docs: monthly freshness refresh (<MONTH>)`
 - Open it as a **draft**, with base `main`.
 - Body:
